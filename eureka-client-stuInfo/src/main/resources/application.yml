@@ -1,0 +1,11 @@
+server:
+  port: 7073
+spring:
+  application:
+    name: eureka-client-stuInfo
+eureka:
+  client:
+    service-url:
+       defaultZone: http://localhost:8761/eureka/
+      
+      
