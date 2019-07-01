@@ -6,7 +6,8 @@ public class RequestMessage<E> implements Serializable{
 	private static final long serialVersionUID = 123L;
 	
 	private String appID;
-	private String machineNumber;
+	private String machineID;
+	private String accountTonken;
 	private E data;
 	public String getAppID() {
 		return appID;
@@ -14,11 +15,11 @@ public class RequestMessage<E> implements Serializable{
 	public void setAppID(String appID) {
 		this.appID = appID;
 	}
-	public String getMachineNumber() {
-		return machineNumber;
+	public String getMachineID() {
+		return machineID;
 	}
-	public void setMachineNumber(String machineNumber) {
-		this.machineNumber = machineNumber;
+	public void setMachineNumber(String machineID) {
+		this.machineID = machineID;
 	}
 	public E getData() {
 		return data;
@@ -26,9 +27,16 @@ public class RequestMessage<E> implements Serializable{
 	public void setData(E data) {
 		this.data = data;
 	}
+	public String getAccountTonken() {
+		return accountTonken;
+	}
+	public void setAccountTonken(String accountTonken) {
+		this.accountTonken = accountTonken;
+	}
 	@Override
 	public String toString() {
-		return "RequestMessage [appID=" + appID + ", machineNumber=" + machineNumber + ", data=" + data + "]";
+		return "RequestMessage [appID=" + appID + ", machineID=" + machineID + ", accountTonken="
+				+ accountTonken + ", data=" + data + "]";
 	}
 	
 

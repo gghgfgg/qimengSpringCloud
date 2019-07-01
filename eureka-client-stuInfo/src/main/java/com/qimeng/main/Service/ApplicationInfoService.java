@@ -32,6 +32,7 @@ public class ApplicationInfoService {
 		}
 		
 	}
+	
 	public String decodeMessage(ApplicationInfo appInfo,String message) 
 	{
 		try {

@@ -37,8 +37,8 @@ public class EurekaClientStuInfoApplicationTests {
 		System.out.println(tempString);
 		System.out.println(applicationInfoService.decodeMessage(appInfo, tempString));
 		
-		stringRedisTemplate.opsForValue().set("123","123");
-		stringRedisTemplate.opsForValue()。get("a");
+		//stringRedisTemplate.opsForValue().set("123","123");
+		//stringRedisTemplate.opsForValue().get(key)
 	}
 
 }

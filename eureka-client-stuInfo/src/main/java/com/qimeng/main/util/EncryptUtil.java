@@ -45,7 +45,8 @@ public class EncryptUtil {
         key = keyFactory.generateSecret(keySpec);// 得到密钥对象
     }
     
-    public EncryptUtil(String deskey) throws Exception {
+    public EncryptUtil() throws Exception {
+    	String deskey="9ba45bfd500642328ec03ad8ef1b6e751234567890qwertaaaaaa";
         DESKeySpec keySpec = new DESKeySpec(deskey.getBytes(this.charset));// 设置密钥参数
         iv = new IvParameterSpec(DESIV);// 设置向量
         SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("DES");// 获得密钥工厂
