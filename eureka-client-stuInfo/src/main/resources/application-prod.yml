@@ -1,0 +1,13 @@
+spring: 
+  datasource:
+    #username: sql664057
+    #password: 3d95126e
+    #url: jdbc:mysql://m.qimenghb.com:3306/sql664057?useUnicode=true&characterEncoding=UTF-8&&serverTimezone=UTC
+    username: root
+    password: qmhbkj20190402@
+    url: jdbc:mysql://47.112.126.70:3333/jspgou?useUnicode=true&characterEncoding=UTF-8&&serverTimezone=UTC
+    
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+      
+      
