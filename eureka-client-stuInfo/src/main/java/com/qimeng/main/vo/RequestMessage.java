@@ -18,7 +18,7 @@ public class RequestMessage<E> implements Serializable{
 	public String getMachineID() {
 		return machineID;
 	}
-	public void setMachineNumber(String machineID) {
+	public void setMachineID(String machineID) {
 		this.machineID = machineID;
 	}
 	public E getData() {
@@ -33,6 +33,7 @@ public class RequestMessage<E> implements Serializable{
 	public void setAccountTonken(String accountTonken) {
 		this.accountTonken = accountTonken;
 	}
+
 	@Override
 	public String toString() {
 		return "RequestMessage [appID=" + appID + ", machineID=" + machineID + ", accountTonken="

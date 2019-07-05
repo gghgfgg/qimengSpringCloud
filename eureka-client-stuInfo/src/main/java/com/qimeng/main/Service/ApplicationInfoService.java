@@ -1,5 +1,6 @@
 package com.qimeng.main.Service;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,10 @@ public class ApplicationInfoService {
 	public ApplicationInfo getApplicationInfo(String appId)
 	{
 		return applicationInfoDao.getApplicationInfoByAppID(appId);
+	}
+	public int updateMachineID(String machineID,String serialNumber)
+	{
+		return applicationInfoDao.updateMachineID(machineID, serialNumber);
 	}
 	
 	public String encodeMessage(ApplicationInfo appInfo,String message) 

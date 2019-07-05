@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 public class ResponseMessage <E> implements Serializable{
 	private static final long serialVersionUID = 123L;
-	private int statusCode;
+	private int statusCode = 1;
 	private boolean success;
 	private String message;
-	private String accountTonken;
+	private String accountTonken="";
 	private E data;
 	public int getStatusCode() {
 		return statusCode;
@@ -41,6 +41,14 @@ public class ResponseMessage <E> implements Serializable{
 	}
 	public void setAccountTonken(String accountTonken) {
 		this.accountTonken = accountTonken;
+	}
+	public void setSuccessMessage(String message) {
+		this.success = true;
+		this.message = message;
+	}
+	public void setFailedMessage(String message) {
+		this.success = true;
+		this.message = message;
 	}
 	@Override
 	public String toString() {

@@ -1,7 +1,7 @@
 package com.qimeng.main.vo;
 
 
-public class StudentInfo {
+public class StudentInfoVo {
 	private String name;
 	private String stuCode;
 	private int  wasteType;

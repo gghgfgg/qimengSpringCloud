@@ -12,7 +12,7 @@ import com.netflix.ribbon.proxy.annotation.Http.HttpMethod;
 import com.qimeng.main.util.EncryptUtil;
 import com.qimeng.main.vo.MachineInfo;
 import com.qimeng.main.vo.OldResponseJson;
-import com.qimeng.main.vo.StudentInfo;
+import com.qimeng.main.vo.StudentInfoVo;
 
 
 @Service
@@ -28,19 +28,18 @@ public class OldService {
 	@Autowired
 	RestTemplate restTemplate;
 	  
-	public OldResponseJson getStudent(String stucode) {
+	public String getStudent(String stucode) {
 		 HashMap<String, String> map = new HashMap<>();
 	     map.put("code",stucode);
 	     map.put("class","1");
 	     String json = restTemplate.getForEntity(BASE_URL+"getUser.jsp?code={code}&class={class}", String.class, map).getBody();
 		 System.out.println(json);
-		 OldResponseJson messJson=JSONObject.parseObject(json,OldResponseJson.class);
-		 return messJson;
+		 return json;
 	}
 	
-	public String uploadIntegral(StudentInfo stuInfo,String machineNumber) throws Exception
+	public String uploadIntegral(StudentInfoVo stuInfo,String machineID) throws Exception
 	{
-		 String data=stuInfo.getStuCode()+":"+stuInfo.getWasteType()+":"+stuInfo.getUnit()+":"+machineNumber;
+		 String data=stuInfo.getStuCode()+":"+stuInfo.getWasteType()+":"+stuInfo.getUnit()+":"+machineID;
 		 EncryptUtil encryptUtil=new EncryptUtil();
 		 String encode=encryptUtil.encode(data);
 		 System.out.println(encode);
@@ -51,7 +50,20 @@ public class OldService {
 	
 	public String updateJqm(MachineInfo machineInfo)
 	{
-		 String json = restTemplate.getForEntity(BASE_URL+"uploadIntegral.jsp?bh={bh}&jqm={jqm}",String.class,machineInfo.getMachineID(),machineInfo.getSerialNumber()).getBody();
+		 String json = restTemplate.getForEntity(BASE_URL+"updateJqm.jsp?bh={bh}&jqm={jqm}",String.class,machineInfo.getMachineID(),machineInfo.getSerialNumber()).getBody();
+		 System.out.println(json);
+		 return json;
+	}
+	
+	public String newuploadIntegral(StudentInfoVo stuInfo,String machineID) throws Exception
+	{
+		 HashMap<String, String> map = new HashMap<>();
+	     map.put("code",stuInfo.getStuCode());
+	     map.put("classtype",String.valueOf(stuInfo.getWasteType()));
+	     map.put("snum", String.valueOf(stuInfo.getUnit()));
+	     map.put("maid",machineID);
+		 String json = restTemplate.getForEntity("http://sys.qimenghb.com/api/getjf.php?code={code}&classtype={classtype}&snum={snum}&maid={maid}",
+                                                  String.class,map).getBody();
 		 System.out.println(json);
 		 return json;
 	}

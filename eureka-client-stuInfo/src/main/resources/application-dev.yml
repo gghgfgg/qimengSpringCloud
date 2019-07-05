@@ -5,7 +5,7 @@ spring:
     #url: jdbc:mysql://m.qimenghb.com:3306/sql664057?useUnicode=true&characterEncoding=UTF-8&&serverTimezone=UTC
     username: root
     password: root
-    url: jdbc:mysql://localhost:3306/testweb?useUnicode=true&characterEncoding=UTF-8&&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/testweb?useUnicode=true&characterEncoding=UTF-8&&serverTimezone=UTC&useAffectedRows=true
     
     driver-class-name: com.mysql.cj.jdbc.Driver
    #type: com.alibaba.druid.pool.DruidDataSource
