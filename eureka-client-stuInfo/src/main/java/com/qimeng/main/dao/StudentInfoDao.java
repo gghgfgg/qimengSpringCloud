@@ -14,7 +14,7 @@ public interface StudentInfoDao {
 			+ "realname as name,"
 			+ "qrid as stuCode,"
 			+ "hbday as startTime, "
-			+ "ajf as totalpoints, usedjf as usedpoints"
+			+ "ajf as totalpoints,"
 			+ "schoolid from qmhb_student where qrid=#{studcode}")
 	public StudentInfo getStudent(@Param("studcode")String studcode);
 	

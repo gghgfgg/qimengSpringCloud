@@ -15,7 +15,7 @@ public class StudentInfo implements Serializable{
 	private String stuCode;
 	private String schoolId;
 	
-	private String usedPoints;
+	//private String usedPoints;
 	private String totalPoints;
 
 	
@@ -53,12 +53,12 @@ public class StudentInfo implements Serializable{
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getUsedPoints() {
-		return usedPoints;
-	}
-	public void setUsedPoints(String usedPoints) {
-		this.usedPoints = usedPoints;
-	}
+//	public String getUsedPoints() {
+//		return usedPoints;
+//	}
+//	public void setUsedPoints(String usedPoints) {
+//		this.usedPoints = usedPoints;
+//	}
 	public String getTotalPoints() {
 		return totalPoints;
 	}
@@ -71,7 +71,7 @@ public class StudentInfo implements Serializable{
 	@Override
 	public String toString() {
 		return "StudentInfo [id=" + id + ", name=" + name + ", stuCode=" + stuCode + ", schoolId=" + schoolId
-				+ ", usedPoints=" + usedPoints + ", totalPoints=" + totalPoints + ", startTime=" + startTime + "]";
+				+ ", usedPoints=" + /*usedPoints + */", totalPoints=" + totalPoints + ", startTime=" + startTime + "]";
 	}
 	
 	
