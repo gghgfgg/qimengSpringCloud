@@ -106,7 +106,7 @@ public class OldShopController {
 		Student student=oldServiceDao.getStudentByID(Integer.parseInt(userid));
 		CommodityEntity commodityEntity=oldServiceDao.getProutBy(Integer.parseInt(lpid));
 		String name=oldServiceDao.getNameByCode(jqbh);
-		if(student==null||commodityEntity==null||name==null||student.getPoints()<(Integer.parseInt(jf)*10))
+		if(student==null||commodityEntity==null||name==null||student.getPoints()<(Integer.parseInt(jf)))
 		{
 			map.put("success", false);
 			return JSONObject.toJSONString(map);
@@ -125,7 +125,7 @@ public class OldShopController {
 		usepointsLog.setUsedPoints(Integer.parseInt(jf));
 		usepointsLog.setCreateTime(currDate);
 		usepointsLog.setMark("大屏机扣分");
-		oldServiceDao.updatePoints(student.getCode(), student.getPoints()-(Integer.parseInt(jf)*10));
+		oldServiceDao.updatePoints(student.getCode(), student.getPoints()-(Integer.parseInt(jf)));
 		usePointsLogService.insertPointsLog(usepointsLog);
 		map.put("ddh", orderNo);
 		map.put("success", true);
