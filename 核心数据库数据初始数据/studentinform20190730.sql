@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2019-07-30 17:11:03
+Date: 2019-07-30 23:10:29
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -461,7 +461,7 @@ CREATE TABLE `kernel_points_manage_log` (
   `operator` varchar(20) DEFAULT NULL,
   `points` int(11) unsigned DEFAULT NULL,
   `mark` varchar(255) DEFAULT NULL,
-  `creat` date DEFAULT NULL,
+  `createTime` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `uuid` (`uuid`) USING HASH
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -613,7 +613,7 @@ CREATE TABLE `kernel_student_inform` (
   `nationality` varchar(50) DEFAULT NULL,
   `identity_type` varchar(20) DEFAULT NULL,
   `grade` varchar(2) DEFAULT NULL,
-  `class` varchar(2) DEFAULT NULL,
+  `classS` varchar(2) DEFAULT NULL,
   `overseas_chinese` char(1) DEFAULT NULL,
   `politics_status` varchar(5) DEFAULT NULL,
   `health` varchar(10) DEFAULT NULL,
