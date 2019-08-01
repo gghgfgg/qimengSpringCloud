@@ -7,7 +7,7 @@ public class StudentInform {
 
     private Boolean sex;
 
-    private String strudentCode;
+    private String studentCode;
 
     private String identityCard;
 
@@ -119,12 +119,12 @@ public class StudentInform {
         this.sex = sex;
     }
 
-    public String getStrudentCode() {
-        return strudentCode;
+    public String getStudentCode() {
+        return studentCode;
     }
 
-    public void setStrudentCode(String strudentCode) {
-        this.strudentCode = strudentCode == null ? null : strudentCode.trim();
+    public void setStudentCode(String studentCode) {
+        this.studentCode = studentCode == null ? null : studentCode.trim();
     }
 
     public String getIdentityCard() {

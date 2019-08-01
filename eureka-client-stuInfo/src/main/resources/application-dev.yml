@@ -4,8 +4,8 @@ spring:
     #password: 3d95126e
     #url: jdbc:mysql://m.qimenghb.com:3306/sql664057?useUnicode=true&characterEncoding=UTF-8&&serverTimezone=UTC
     username: root
-    password: qmhbkj20190402@
-    url: jdbc:mysql://47.112.126.70:3333/testweb?useUnicode=true&characterEncoding=UTF-8&&serverTimezone=UTC&useAffectedRows=true
+    password: root
+    url: jdbc:mysql://localhost:3306/studentinform?useUnicode=true&characterEncoding=UTF-8&&serverTimezone=UTC&useAffectedRows=true
     
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource

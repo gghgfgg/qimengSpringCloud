@@ -1,0 +1,319 @@
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} closed
+ERROR main com.qimeng.main.Service.StudentDataService - 学生数据批量导入异常
+DEBUG main druid.sql.Connection - {conn 10005} rollback
+DEBUG main druid.sql.Connection - {conn-10005} setAutoCommit true
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG Thread-5 druid.sql.Connection - {conn-10001} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10002} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10003} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10004} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001} connected
+DEBUG main druid.sql.Connection - {conn-10002} connected
+DEBUG main druid.sql.Connection - {conn-10003} connected
+DEBUG main druid.sql.Connection - {conn-10004} connected
+DEBUG main druid.sql.Connection - {conn-10005} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} setAutoCommit false
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} created. insert into kernel_student_inform(name,sex,student_code,identity_card,native_place,nation,phone,school_name,school_code,birthday,birthplace,nationality,identity_type,grade,classS,overseas_chinese,politics_status,health,census_register,census_register_type,enrollment_time,entrance_way,studying_way,address,contact_address,residence,postal_code,workers_children,only_child,preschool_education,leftover_children,orphan,martyr_children,funding,boarder_alimony,auxiliary_number,student_number,student_source,learning_class,disability_types,family_name,family_relationship,family_work,family_residence,family_census_register,family_phone) values   (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ,  (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ,  (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ,  (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE name=VALUES(name),sex=VALUES(sex),native_place=VALUES(native_place),nation=VALUES(nation),phone=VALUES(phone),school_name=VALUES(school_name),school_code=VALUES(school_code),birthday=VALUES(birthday),birthplace=VALUES(birthplace),nationality=VALUES(nationality),identity_type=VALUES(identity_type),grade=VALUES(grade),classS=VALUES(classS),overseas_chinese=VALUES(overseas_chinese),politics_status=VALUES(politics_status),health=VALUES(health),census_register=VALUES(census_register),census_register_type=VALUES(census_register_type),enrollment_time=VALUES(enrollment_time),entrance_way=VALUES(entrance_way),studying_way=VALUES(studying_way),address=VALUES(address),contact_address=VALUES(contact_address),residence=VALUES(residence),postal_code=VALUES(postal_code),workers_children=VALUES(workers_children),only_child=VALUES(only_child),preschool_education=VALUES(preschool_education),leftover_children=VALUES(leftover_children),orphan=VALUES(orphan),martyr_children=VALUES(martyr_children),funding=VALUES(funding),boarder_alimony=VALUES(boarder_alimony),auxiliary_number=VALUES(auxiliary_number),student_number=VALUES(student_number),student_source=VALUES(student_source),learning_class=VALUES(learning_class),disability_types=VALUES(disability_types),family_name=VALUES(family_name),family_relationship=VALUES(family_relationship),family_work=VALUES(family_work),family_residence=VALUES(family_residence),family_census_register=VALUES(family_census_register),family_phone=VALUES(family_phone)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [99, null, G441423201201101050, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 99, null, G441423201201101051, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 99, null, G441423201201101052, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 99, null, null, 441423201201101050, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Types : [VARCHAR, OTHER, VARCHAR, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, VARCHAR, OTHER, VARCHAR, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, VARCHAR, OTHER, VARCHAR, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, VARCHAR, OTHER, OTHER, VARCHAR, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} executed. 3.1126 millis. insert into kernel_student_inform(name,sex,student_code,identity_card,native_place,nation,phone,school_name,school_code,birthday,birthplace,nationality,identity_type,grade,classS,overseas_chinese,politics_status,health,census_register,census_register_type,enrollment_time,entrance_way,studying_way,address,contact_address,residence,postal_code,workers_children,only_child,preschool_education,leftover_children,orphan,martyr_children,funding,boarder_alimony,auxiliary_number,student_number,student_source,learning_class,disability_types,family_name,family_relationship,family_work,family_residence,family_census_register,family_phone) values   (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ,  (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ,  (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ,  (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE name=VALUES(name),sex=VALUES(sex),native_place=VALUES(native_place),nation=VALUES(nation),phone=VALUES(phone),school_name=VALUES(school_name),school_code=VALUES(school_code),birthday=VALUES(birthday),birthplace=VALUES(birthplace),nationality=VALUES(nationality),identity_type=VALUES(identity_type),grade=VALUES(grade),classS=VALUES(classS),overseas_chinese=VALUES(overseas_chinese),politics_status=VALUES(politics_status),health=VALUES(health),census_register=VALUES(census_register),census_register_type=VALUES(census_register_type),enrollment_time=VALUES(enrollment_time),entrance_way=VALUES(entrance_way),studying_way=VALUES(studying_way),address=VALUES(address),contact_address=VALUES(contact_address),residence=VALUES(residence),postal_code=VALUES(postal_code),workers_children=VALUES(workers_children),only_child=VALUES(only_child),preschool_education=VALUES(preschool_education),leftover_children=VALUES(leftover_children),orphan=VALUES(orphan),martyr_children=VALUES(martyr_children),funding=VALUES(funding),boarder_alimony=VALUES(boarder_alimony),auxiliary_number=VALUES(auxiliary_number),student_number=VALUES(student_number),student_source=VALUES(student_source),learning_class=VALUES(learning_class),disability_types=VALUES(disability_types),family_name=VALUES(family_name),family_relationship=VALUES(family_relationship),family_work=VALUES(family_work),family_residence=VALUES(family_residence),family_census_register=VALUES(family_census_register),family_phone=VALUES(family_phone)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} created. insert into kernel_student_data(uuid,identity_card,student_code,card,code,name,type,school_code,create_time,update_time) values   (?,?,?,?,?,?,?,?,?,?) ,  (?,?,?,?,?,?,?,?,?,?) ,  (?,?,?,?,?,?,?,?,?,?) ,  (?,?,?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE name=VALUES(name),type=VALUES(type),school_code=VALUES(school_code),update_time=VALUES(update_time)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : [001da66853024c7f9a3fbb42f736f735, null, G441423201201101050, 001da66853024c7f, 9a3fbb42f736f735, 99, 0, null, 2019-08-01 23:02:00.239, 2019-08-01 23:02:00.239, 583a4f07520041c4994ca17aa466f024, null, G441423201201101051, 583a4f07520041c4, 994ca17aa466f024, 99, 0, null, 2019-08-01 23:02:00.239, 2019-08-01 23:02:00.239, c5f7e64bcfae4d108dd00a4ee3126312, null, G441423201201101052, c5f7e64bcfae4d10, 8dd00a4ee3126312, 99, 0, null, 2019-08-01 23:02:00.239, 2019-08-01 23:02:00.239, a2cd57db60444e538504025d409c2e24, 441423201201101050, null, a2cd57db60444e53, 8504025d409c2e24, 99, 0, null, 2019-08-01 23:02:00.239, 2019-08-01 23:02:00.239]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} Types : [VARCHAR, OTHER, VARCHAR, VARCHAR, VARCHAR, VARCHAR, TINYINT, OTHER, TIMESTAMP, TIMESTAMP, VARCHAR, OTHER, VARCHAR, VARCHAR, VARCHAR, VARCHAR, TINYINT, OTHER, TIMESTAMP, TIMESTAMP, VARCHAR, OTHER, VARCHAR, VARCHAR, VARCHAR, VARCHAR, TINYINT, OTHER, TIMESTAMP, TIMESTAMP, VARCHAR, VARCHAR, OTHER, VARCHAR, VARCHAR, VARCHAR, TINYINT, OTHER, TIMESTAMP, TIMESTAMP]
+ERROR main druid.sql.Statement - {conn-10005, pstmt-20001} execute error. insert into kernel_student_data(uuid,identity_card,student_code,card,code,name,type,school_code,create_time,update_time) values   (?,?,?,?,?,?,?,?,?,?) ,  (?,?,?,?,?,?,?,?,?,?) ,  (?,?,?,?,?,?,?,?,?,?) ,  (?,?,?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE name=VALUES(name),type=VALUES(type),school_code=VALUES(school_code),update_time=VALUES(update_time)
+java.sql.SQLIntegrityConstraintViolationException: Column 'school_code' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:955)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:372)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3409)
+	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:620)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:498)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy121.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy91.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:57)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy95.insertStudentDataList(Unknown Source)
+	at com.qimeng.main.Service.StudentDataService.insertStudentDataList(StudentDataService.java:30)
+	at com.qimeng.main.Service.StudentUpdateService.insertStudentInformList(StudentUpdateService.java:55)
+	at com.qimeng.main.Service.StudentUpdateService$$FastClassBySpringCGLIB$$cd85e1a7.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:295)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.qimeng.main.Service.StudentUpdateService$$EnhancerBySpringCGLIB$$981f4aa6.insertStudentInformList(<generated>)
+	at com.qimeng.main.EurekaClientStuInfoApplicationTests.contextLoads(EurekaClientStuInfoApplicationTests.java:110)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} closed
+ERROR main com.qimeng.main.Service.StudentDataService - 学生数据批量导入异常
+DEBUG main druid.sql.Connection - {conn 10005} rollback
+DEBUG main druid.sql.Connection - {conn-10005} setAutoCommit true
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG Thread-5 druid.sql.Connection - {conn-10001} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10002} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10003} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10004} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001} connected
+DEBUG main druid.sql.Connection - {conn-10002} connected
+DEBUG main druid.sql.Connection - {conn-10003} connected
+DEBUG main druid.sql.Connection - {conn-10004} connected
+DEBUG main druid.sql.Connection - {conn-10005} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} setAutoCommit false
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} created. insert into kernel_student_inform(name,sex,student_code,identity_card,native_place,nation,phone,school_name,school_code,birthday,birthplace,nationality,identity_type,grade,classS,overseas_chinese,politics_status,health,census_register,census_register_type,enrollment_time,entrance_way,studying_way,address,contact_address,residence,postal_code,workers_children,only_child,preschool_education,leftover_children,orphan,martyr_children,funding,boarder_alimony,auxiliary_number,student_number,student_source,learning_class,disability_types,family_name,family_relationship,family_work,family_residence,family_census_register,family_phone) values   (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ,  (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ,  (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ,  (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE name=VALUES(name),sex=VALUES(sex),native_place=VALUES(native_place),nation=VALUES(nation),phone=VALUES(phone),school_name=VALUES(school_name),school_code=VALUES(school_code),birthday=VALUES(birthday),birthplace=VALUES(birthplace),nationality=VALUES(nationality),identity_type=VALUES(identity_type),grade=VALUES(grade),classS=VALUES(classS),overseas_chinese=VALUES(overseas_chinese),politics_status=VALUES(politics_status),health=VALUES(health),census_register=VALUES(census_register),census_register_type=VALUES(census_register_type),enrollment_time=VALUES(enrollment_time),entrance_way=VALUES(entrance_way),studying_way=VALUES(studying_way),address=VALUES(address),contact_address=VALUES(contact_address),residence=VALUES(residence),postal_code=VALUES(postal_code),workers_children=VALUES(workers_children),only_child=VALUES(only_child),preschool_education=VALUES(preschool_education),leftover_children=VALUES(leftover_children),orphan=VALUES(orphan),martyr_children=VALUES(martyr_children),funding=VALUES(funding),boarder_alimony=VALUES(boarder_alimony),auxiliary_number=VALUES(auxiliary_number),student_number=VALUES(student_number),student_source=VALUES(student_source),learning_class=VALUES(learning_class),disability_types=VALUES(disability_types),family_name=VALUES(family_name),family_relationship=VALUES(family_relationship),family_work=VALUES(family_work),family_residence=VALUES(family_residence),family_census_register=VALUES(family_census_register),family_phone=VALUES(family_phone)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [99, null, G441423201201101050, null, null, null, null, null, 123, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 99, null, G441423201201101051, null, null, null, null, null, 123, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 99, null, G441423201201101052, null, null, null, null, null, 123, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 99, null, null, 441423201201101050, null, null, null, null, 123, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Types : [VARCHAR, OTHER, VARCHAR, OTHER, OTHER, OTHER, OTHER, OTHER, VARCHAR, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, VARCHAR, OTHER, VARCHAR, OTHER, OTHER, OTHER, OTHER, OTHER, VARCHAR, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, VARCHAR, OTHER, VARCHAR, OTHER, OTHER, OTHER, OTHER, OTHER, VARCHAR, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, VARCHAR, OTHER, OTHER, VARCHAR, OTHER, OTHER, OTHER, OTHER, VARCHAR, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} executed. 3.8249 millis. insert into kernel_student_inform(name,sex,student_code,identity_card,native_place,nation,phone,school_name,school_code,birthday,birthplace,nationality,identity_type,grade,classS,overseas_chinese,politics_status,health,census_register,census_register_type,enrollment_time,entrance_way,studying_way,address,contact_address,residence,postal_code,workers_children,only_child,preschool_education,leftover_children,orphan,martyr_children,funding,boarder_alimony,auxiliary_number,student_number,student_source,learning_class,disability_types,family_name,family_relationship,family_work,family_residence,family_census_register,family_phone) values   (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ,  (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ,  (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ,  (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE name=VALUES(name),sex=VALUES(sex),native_place=VALUES(native_place),nation=VALUES(nation),phone=VALUES(phone),school_name=VALUES(school_name),school_code=VALUES(school_code),birthday=VALUES(birthday),birthplace=VALUES(birthplace),nationality=VALUES(nationality),identity_type=VALUES(identity_type),grade=VALUES(grade),classS=VALUES(classS),overseas_chinese=VALUES(overseas_chinese),politics_status=VALUES(politics_status),health=VALUES(health),census_register=VALUES(census_register),census_register_type=VALUES(census_register_type),enrollment_time=VALUES(enrollment_time),entrance_way=VALUES(entrance_way),studying_way=VALUES(studying_way),address=VALUES(address),contact_address=VALUES(contact_address),residence=VALUES(residence),postal_code=VALUES(postal_code),workers_children=VALUES(workers_children),only_child=VALUES(only_child),preschool_education=VALUES(preschool_education),leftover_children=VALUES(leftover_children),orphan=VALUES(orphan),martyr_children=VALUES(martyr_children),funding=VALUES(funding),boarder_alimony=VALUES(boarder_alimony),auxiliary_number=VALUES(auxiliary_number),student_number=VALUES(student_number),student_source=VALUES(student_source),learning_class=VALUES(learning_class),disability_types=VALUES(disability_types),family_name=VALUES(family_name),family_relationship=VALUES(family_relationship),family_work=VALUES(family_work),family_residence=VALUES(family_residence),family_census_register=VALUES(family_census_register),family_phone=VALUES(family_phone)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} created. insert into kernel_student_data(uuid,identity_card,student_code,card,code,name,type,school_code,create_time,update_time) values   (?,?,?,?,?,?,?,?,?,?) ,  (?,?,?,?,?,?,?,?,?,?) ,  (?,?,?,?,?,?,?,?,?,?) ,  (?,?,?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE name=VALUES(name),type=VALUES(type),school_code=VALUES(school_code),update_time=VALUES(update_time)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : [56786b33c9d3491b8e429bab9e5210b6, null, G441423201201101050, 56786b33c9d3491b, 8e429bab9e5210b6, 99, 0, 123, 2019-08-01 23:03:24.399, 2019-08-01 23:03:24.399, bb3f1d25a3c144cdacbf59d96a519de3, null, G441423201201101051, bb3f1d25a3c144cd, acbf59d96a519de3, 99, 0, 123, 2019-08-01 23:03:24.399, 2019-08-01 23:03:24.399, 890197e4ebbd44b8a29ae358829cc895, null, G441423201201101052, 890197e4ebbd44b8, a29ae358829cc895, 99, 0, 123, 2019-08-01 23:03:24.399, 2019-08-01 23:03:24.399, f2820cd43aa94669a9772274f5fe5af3, 441423201201101050, null, f2820cd43aa94669, a9772274f5fe5af3, 99, 0, 123, 2019-08-01 23:03:24.399, 2019-08-01 23:03:24.399]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} Types : [VARCHAR, OTHER, VARCHAR, VARCHAR, VARCHAR, VARCHAR, TINYINT, VARCHAR, TIMESTAMP, TIMESTAMP, VARCHAR, OTHER, VARCHAR, VARCHAR, VARCHAR, VARCHAR, TINYINT, VARCHAR, TIMESTAMP, TIMESTAMP, VARCHAR, OTHER, VARCHAR, VARCHAR, VARCHAR, VARCHAR, TINYINT, VARCHAR, TIMESTAMP, TIMESTAMP, VARCHAR, VARCHAR, OTHER, VARCHAR, VARCHAR, VARCHAR, TINYINT, VARCHAR, TIMESTAMP, TIMESTAMP]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} executed. 1.1889 millis. insert into kernel_student_data(uuid,identity_card,student_code,card,code,name,type,school_code,create_time,update_time) values   (?,?,?,?,?,?,?,?,?,?) ,  (?,?,?,?,?,?,?,?,?,?) ,  (?,?,?,?,?,?,?,?,?,?) ,  (?,?,?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE name=VALUES(name),type=VALUES(type),school_code=VALUES(school_code),update_time=VALUES(update_time)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} closed
+DEBUG main druid.sql.Connection - {conn-10005} commited
+DEBUG main druid.sql.Connection - {conn-10005} setAutoCommit true
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG Thread-5 druid.sql.Connection - {conn-10001} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10002} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10003} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10004} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001} connected
+DEBUG main druid.sql.Connection - {conn-10002} connected
+DEBUG main druid.sql.Connection - {conn-10003} connected
+DEBUG main druid.sql.Connection - {conn-10004} connected
+DEBUG main druid.sql.Connection - {conn-10005} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} setAutoCommit false
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} created. insert into kernel_student_inform(name,sex,student_code,identity_card,native_place,nation,phone,school_name,school_code,birthday,birthplace,nationality,identity_type,grade,classS,overseas_chinese,politics_status,health,census_register,census_register_type,enrollment_time,entrance_way,studying_way,address,contact_address,residence,postal_code,workers_children,only_child,preschool_education,leftover_children,orphan,martyr_children,funding,boarder_alimony,auxiliary_number,student_number,student_source,learning_class,disability_types,family_name,family_relationship,family_work,family_residence,family_census_register,family_phone) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE name=VALUES(name),sex=VALUES(sex),native_place=VALUES(native_place),nation=VALUES(nation),phone=VALUES(phone),school_name=VALUES(school_name),school_code=VALUES(school_code),birthday=VALUES(birthday),birthplace=VALUES(birthplace),nationality=VALUES(nationality),identity_type=VALUES(identity_type),grade=VALUES(grade),classS=VALUES(classS),overseas_chinese=VALUES(overseas_chinese),politics_status=VALUES(politics_status),health=VALUES(health),census_register=VALUES(census_register),census_register_type=VALUES(census_register_type),enrollment_time=VALUES(enrollment_time),entrance_way=VALUES(entrance_way),studying_way=VALUES(studying_way),address=VALUES(address),contact_address=VALUES(contact_address),residence=VALUES(residence),postal_code=VALUES(postal_code),workers_children=VALUES(workers_children),only_child=VALUES(only_child),preschool_education=VALUES(preschool_education),leftover_children=VALUES(leftover_children),orphan=VALUES(orphan),martyr_children=VALUES(martyr_children),funding=VALUES(funding),boarder_alimony=VALUES(boarder_alimony),auxiliary_number=VALUES(auxiliary_number),student_number=VALUES(student_number),student_source=VALUES(student_source),learning_class=VALUES(learning_class),disability_types=VALUES(disability_types),family_name=VALUES(family_name),family_relationship=VALUES(family_relationship),family_work=VALUES(family_work),family_residence=VALUES(family_residence),family_census_register=VALUES(family_census_register),family_phone=VALUES(family_phone),student_code=VALUES(student_code),identity_card=VALUES(identity_card)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [99, null, G441423201201101053, 441423201201101053, null, null, null, null, 123, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Types : [VARCHAR, OTHER, VARCHAR, VARCHAR, OTHER, OTHER, OTHER, OTHER, VARCHAR, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} executed. 3.267 millis. insert into kernel_student_inform(name,sex,student_code,identity_card,native_place,nation,phone,school_name,school_code,birthday,birthplace,nationality,identity_type,grade,classS,overseas_chinese,politics_status,health,census_register,census_register_type,enrollment_time,entrance_way,studying_way,address,contact_address,residence,postal_code,workers_children,only_child,preschool_education,leftover_children,orphan,martyr_children,funding,boarder_alimony,auxiliary_number,student_number,student_source,learning_class,disability_types,family_name,family_relationship,family_work,family_residence,family_census_register,family_phone) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE name=VALUES(name),sex=VALUES(sex),native_place=VALUES(native_place),nation=VALUES(nation),phone=VALUES(phone),school_name=VALUES(school_name),school_code=VALUES(school_code),birthday=VALUES(birthday),birthplace=VALUES(birthplace),nationality=VALUES(nationality),identity_type=VALUES(identity_type),grade=VALUES(grade),classS=VALUES(classS),overseas_chinese=VALUES(overseas_chinese),politics_status=VALUES(politics_status),health=VALUES(health),census_register=VALUES(census_register),census_register_type=VALUES(census_register_type),enrollment_time=VALUES(enrollment_time),entrance_way=VALUES(entrance_way),studying_way=VALUES(studying_way),address=VALUES(address),contact_address=VALUES(contact_address),residence=VALUES(residence),postal_code=VALUES(postal_code),workers_children=VALUES(workers_children),only_child=VALUES(only_child),preschool_education=VALUES(preschool_education),leftover_children=VALUES(leftover_children),orphan=VALUES(orphan),martyr_children=VALUES(martyr_children),funding=VALUES(funding),boarder_alimony=VALUES(boarder_alimony),auxiliary_number=VALUES(auxiliary_number),student_number=VALUES(student_number),student_source=VALUES(student_source),learning_class=VALUES(learning_class),disability_types=VALUES(disability_types),family_name=VALUES(family_name),family_relationship=VALUES(family_relationship),family_work=VALUES(family_work),family_residence=VALUES(family_residence),family_census_register=VALUES(family_census_register),family_phone=VALUES(family_phone),student_code=VALUES(student_code),identity_card=VALUES(identity_card)
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [GENERATED_KEY]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [33]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} created. insert into kernel_student_data(uuid,identity_card,student_code,card,code,name,type,school_code,create_time,update_time) values(?,?,?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE name=VALUES(name),type=VALUES(type),school_code=VALUES(school_code),update_time=VALUES(update_time),student_code=VALUES(student_code),identity_card=VALUES(identity_card)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : [bba6e3ca2c1c4b5f8b26b663cd53220b, 441423201201101053, G441423201201101053, bba6e3ca2c1c4b5f, 8b26b663cd53220b, 99, 0, 123, 2019-08-01 23:13:18.874, 2019-08-01 23:13:18.874]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} Types : [VARCHAR, VARCHAR, VARCHAR, VARCHAR, VARCHAR, VARCHAR, TINYINT, VARCHAR, TIMESTAMP, TIMESTAMP]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} executed. 1.2698 millis. insert into kernel_student_data(uuid,identity_card,student_code,card,code,name,type,school_code,create_time,update_time) values(?,?,?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE name=VALUES(name),type=VALUES(type),school_code=VALUES(school_code),update_time=VALUES(update_time),student_code=VALUES(student_code),identity_card=VALUES(identity_card)
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [GENERATED_KEY]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Result: [10]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} closed
+DEBUG main druid.sql.Connection - {conn-10005} commited
+DEBUG main druid.sql.Connection - {conn-10005} setAutoCommit true
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG Thread-5 druid.sql.Connection - {conn-10001} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10002} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10003} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10004} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001} connected
+DEBUG main druid.sql.Connection - {conn-10002} connected
+DEBUG main druid.sql.Connection - {conn-10003} connected
+DEBUG main druid.sql.Connection - {conn-10004} connected
+DEBUG main druid.sql.Connection - {conn-10005} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} setAutoCommit false
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} created. insert into kernel_student_inform(name,sex,student_code,identity_card,native_place,nation,phone,school_name,school_code,birthday,birthplace,nationality,identity_type,grade,classS,overseas_chinese,politics_status,health,census_register,census_register_type,enrollment_time,entrance_way,studying_way,address,contact_address,residence,postal_code,workers_children,only_child,preschool_education,leftover_children,orphan,martyr_children,funding,boarder_alimony,auxiliary_number,student_number,student_source,learning_class,disability_types,family_name,family_relationship,family_work,family_residence,family_census_register,family_phone) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE name=VALUES(name),sex=VALUES(sex),native_place=VALUES(native_place),nation=VALUES(nation),phone=VALUES(phone),school_name=VALUES(school_name),school_code=VALUES(school_code),birthday=VALUES(birthday),birthplace=VALUES(birthplace),nationality=VALUES(nationality),identity_type=VALUES(identity_type),grade=VALUES(grade),classS=VALUES(classS),overseas_chinese=VALUES(overseas_chinese),politics_status=VALUES(politics_status),health=VALUES(health),census_register=VALUES(census_register),census_register_type=VALUES(census_register_type),enrollment_time=VALUES(enrollment_time),entrance_way=VALUES(entrance_way),studying_way=VALUES(studying_way),address=VALUES(address),contact_address=VALUES(contact_address),residence=VALUES(residence),postal_code=VALUES(postal_code),workers_children=VALUES(workers_children),only_child=VALUES(only_child),preschool_education=VALUES(preschool_education),leftover_children=VALUES(leftover_children),orphan=VALUES(orphan),martyr_children=VALUES(martyr_children),funding=VALUES(funding),boarder_alimony=VALUES(boarder_alimony),auxiliary_number=VALUES(auxiliary_number),student_number=VALUES(student_number),student_source=VALUES(student_source),learning_class=VALUES(learning_class),disability_types=VALUES(disability_types),family_name=VALUES(family_name),family_relationship=VALUES(family_relationship),family_work=VALUES(family_work),family_residence=VALUES(family_residence),family_census_register=VALUES(family_census_register),family_phone=VALUES(family_phone),student_code=VALUES(student_code),identity_card=VALUES(identity_card)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [99, null, G441423201201101052, 441423201201101054, null, null, null, null, 123, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Types : [VARCHAR, OTHER, VARCHAR, VARCHAR, OTHER, OTHER, OTHER, OTHER, VARCHAR, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} executed. 3.1312 millis. insert into kernel_student_inform(name,sex,student_code,identity_card,native_place,nation,phone,school_name,school_code,birthday,birthplace,nationality,identity_type,grade,classS,overseas_chinese,politics_status,health,census_register,census_register_type,enrollment_time,entrance_way,studying_way,address,contact_address,residence,postal_code,workers_children,only_child,preschool_education,leftover_children,orphan,martyr_children,funding,boarder_alimony,auxiliary_number,student_number,student_source,learning_class,disability_types,family_name,family_relationship,family_work,family_residence,family_census_register,family_phone) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE name=VALUES(name),sex=VALUES(sex),native_place=VALUES(native_place),nation=VALUES(nation),phone=VALUES(phone),school_name=VALUES(school_name),school_code=VALUES(school_code),birthday=VALUES(birthday),birthplace=VALUES(birthplace),nationality=VALUES(nationality),identity_type=VALUES(identity_type),grade=VALUES(grade),classS=VALUES(classS),overseas_chinese=VALUES(overseas_chinese),politics_status=VALUES(politics_status),health=VALUES(health),census_register=VALUES(census_register),census_register_type=VALUES(census_register_type),enrollment_time=VALUES(enrollment_time),entrance_way=VALUES(entrance_way),studying_way=VALUES(studying_way),address=VALUES(address),contact_address=VALUES(contact_address),residence=VALUES(residence),postal_code=VALUES(postal_code),workers_children=VALUES(workers_children),only_child=VALUES(only_child),preschool_education=VALUES(preschool_education),leftover_children=VALUES(leftover_children),orphan=VALUES(orphan),martyr_children=VALUES(martyr_children),funding=VALUES(funding),boarder_alimony=VALUES(boarder_alimony),auxiliary_number=VALUES(auxiliary_number),student_number=VALUES(student_number),student_source=VALUES(student_source),learning_class=VALUES(learning_class),disability_types=VALUES(disability_types),family_name=VALUES(family_name),family_relationship=VALUES(family_relationship),family_work=VALUES(family_work),family_residence=VALUES(family_residence),family_census_register=VALUES(family_census_register),family_phone=VALUES(family_phone),student_code=VALUES(student_code),identity_card=VALUES(identity_card)
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [GENERATED_KEY]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [31]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} created. insert into kernel_student_data(uuid,identity_card,student_code,card,code,name,type,school_code,create_time,update_time) values(?,?,?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE name=VALUES(name),type=VALUES(type),school_code=VALUES(school_code),update_time=VALUES(update_time),student_code=VALUES(student_code),identity_card=VALUES(identity_card)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : [9a36d6038e11422cbf3519eef1f8e9f3, 441423201201101054, G441423201201101052, 9a36d6038e11422c, bf3519eef1f8e9f3, 99, 0, 123, 2019-08-01 23:15:07.154, 2019-08-01 23:15:07.154]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} Types : [VARCHAR, VARCHAR, VARCHAR, VARCHAR, VARCHAR, VARCHAR, TINYINT, VARCHAR, TIMESTAMP, TIMESTAMP]
+ERROR main druid.sql.Statement - {conn-10005, pstmt-20001} execute error. insert into kernel_student_data(uuid,identity_card,student_code,card,code,name,type,school_code,create_time,update_time) values(?,?,?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE name=VALUES(name),type=VALUES(type),school_code=VALUES(school_code),update_time=VALUES(update_time),student_code=VALUES(student_code),identity_card=VALUES(identity_card)
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'G441423201201101052' for key 'student_code'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:955)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:372)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3409)
+	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:620)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:498)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy121.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy91.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:57)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy95.insertStudentData(Unknown Source)
+	at com.qimeng.main.Service.StudentDataService.insertStudentData(StudentDataService.java:46)
+	at com.qimeng.main.Service.StudentUpdateService.insertStudentInform(StudentUpdateService.java:81)
+	at com.qimeng.main.Service.StudentUpdateService$$FastClassBySpringCGLIB$$cd85e1a7.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:295)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.qimeng.main.Service.StudentUpdateService$$EnhancerBySpringCGLIB$$3f2280e7.insertStudentInform(<generated>)
+	at com.qimeng.main.EurekaClientStuInfoApplicationTests.contextLoads(EurekaClientStuInfoApplicationTests.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} closed
+ERROR main com.qimeng.main.Service.StudentDataService - 学生数据导入异常
+DEBUG main druid.sql.Connection - {conn 10005} rollback
+DEBUG main druid.sql.Connection - {conn-10005} setAutoCommit true
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG Thread-5 druid.sql.Connection - {conn-10001} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10002} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10003} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10004} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001} connected
+DEBUG main druid.sql.Connection - {conn-10002} connected
+DEBUG main druid.sql.Connection - {conn-10003} connected
+DEBUG main druid.sql.Connection - {conn-10004} connected
+DEBUG main druid.sql.Connection - {conn-10005} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} setAutoCommit false
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} created. insert into kernel_student_inform(name,sex,student_code,identity_card,native_place,nation,phone,school_name,school_code,birthday,birthplace,nationality,identity_type,grade,classS,overseas_chinese,politics_status,health,census_register,census_register_type,enrollment_time,entrance_way,studying_way,address,contact_address,residence,postal_code,workers_children,only_child,preschool_education,leftover_children,orphan,martyr_children,funding,boarder_alimony,auxiliary_number,student_number,student_source,learning_class,disability_types,family_name,family_relationship,family_work,family_residence,family_census_register,family_phone) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE name=VALUES(name),sex=VALUES(sex),native_place=VALUES(native_place),nation=VALUES(nation),phone=VALUES(phone),school_name=VALUES(school_name),school_code=VALUES(school_code),birthday=VALUES(birthday),birthplace=VALUES(birthplace),nationality=VALUES(nationality),identity_type=VALUES(identity_type),grade=VALUES(grade),classS=VALUES(classS),overseas_chinese=VALUES(overseas_chinese),politics_status=VALUES(politics_status),health=VALUES(health),census_register=VALUES(census_register),census_register_type=VALUES(census_register_type),enrollment_time=VALUES(enrollment_time),entrance_way=VALUES(entrance_way),studying_way=VALUES(studying_way),address=VALUES(address),contact_address=VALUES(contact_address),residence=VALUES(residence),postal_code=VALUES(postal_code),workers_children=VALUES(workers_children),only_child=VALUES(only_child),preschool_education=VALUES(preschool_education),leftover_children=VALUES(leftover_children),orphan=VALUES(orphan),martyr_children=VALUES(martyr_children),funding=VALUES(funding),boarder_alimony=VALUES(boarder_alimony),auxiliary_number=VALUES(auxiliary_number),student_number=VALUES(student_number),student_source=VALUES(student_source),learning_class=VALUES(learning_class),disability_types=VALUES(disability_types),family_name=VALUES(family_name),family_relationship=VALUES(family_relationship),family_work=VALUES(family_work),family_residence=VALUES(family_residence),family_census_register=VALUES(family_census_register),family_phone=VALUES(family_phone),student_code=VALUES(student_code),identity_card=VALUES(identity_card)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [99, null, G441423201201101052, 441423201201101055, null, null, null, null, 123, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Types : [VARCHAR, OTHER, VARCHAR, VARCHAR, OTHER, OTHER, OTHER, OTHER, VARCHAR, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER, OTHER]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} executed. 3.3633 millis. insert into kernel_student_inform(name,sex,student_code,identity_card,native_place,nation,phone,school_name,school_code,birthday,birthplace,nationality,identity_type,grade,classS,overseas_chinese,politics_status,health,census_register,census_register_type,enrollment_time,entrance_way,studying_way,address,contact_address,residence,postal_code,workers_children,only_child,preschool_education,leftover_children,orphan,martyr_children,funding,boarder_alimony,auxiliary_number,student_number,student_source,learning_class,disability_types,family_name,family_relationship,family_work,family_residence,family_census_register,family_phone) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE name=VALUES(name),sex=VALUES(sex),native_place=VALUES(native_place),nation=VALUES(nation),phone=VALUES(phone),school_name=VALUES(school_name),school_code=VALUES(school_code),birthday=VALUES(birthday),birthplace=VALUES(birthplace),nationality=VALUES(nationality),identity_type=VALUES(identity_type),grade=VALUES(grade),classS=VALUES(classS),overseas_chinese=VALUES(overseas_chinese),politics_status=VALUES(politics_status),health=VALUES(health),census_register=VALUES(census_register),census_register_type=VALUES(census_register_type),enrollment_time=VALUES(enrollment_time),entrance_way=VALUES(entrance_way),studying_way=VALUES(studying_way),address=VALUES(address),contact_address=VALUES(contact_address),residence=VALUES(residence),postal_code=VALUES(postal_code),workers_children=VALUES(workers_children),only_child=VALUES(only_child),preschool_education=VALUES(preschool_education),leftover_children=VALUES(leftover_children),orphan=VALUES(orphan),martyr_children=VALUES(martyr_children),funding=VALUES(funding),boarder_alimony=VALUES(boarder_alimony),auxiliary_number=VALUES(auxiliary_number),student_number=VALUES(student_number),student_source=VALUES(student_source),learning_class=VALUES(learning_class),disability_types=VALUES(disability_types),family_name=VALUES(family_name),family_relationship=VALUES(family_relationship),family_work=VALUES(family_work),family_residence=VALUES(family_residence),family_census_register=VALUES(family_census_register),family_phone=VALUES(family_phone),student_code=VALUES(student_code),identity_card=VALUES(identity_card)
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [GENERATED_KEY]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [31]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} created. insert into kernel_student_data(uuid,identity_card,student_code,card,code,name,type,school_code,create_time,update_time) values(?,?,?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE name=VALUES(name),type=VALUES(type),school_code=VALUES(school_code),update_time=VALUES(update_time),student_code=VALUES(student_code),identity_card=VALUES(identity_card)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : [10b9219da162476189608d24026494a6, 441423201201101055, G441423201201101052, 10b9219da1624761, 89608d24026494a6, 99, 0, 123, 2019-08-01 23:15:49.712, 2019-08-01 23:15:49.712]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} Types : [VARCHAR, VARCHAR, VARCHAR, VARCHAR, VARCHAR, VARCHAR, TINYINT, VARCHAR, TIMESTAMP, TIMESTAMP]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} executed. 1.0152 millis. insert into kernel_student_data(uuid,identity_card,student_code,card,code,name,type,school_code,create_time,update_time) values(?,?,?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE name=VALUES(name),type=VALUES(type),school_code=VALUES(school_code),update_time=VALUES(update_time),student_code=VALUES(student_code),identity_card=VALUES(identity_card)
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [GENERATED_KEY]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Result: [9]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} closed
+DEBUG main druid.sql.Connection - {conn-10005} commited
+DEBUG main druid.sql.Connection - {conn-10005} setAutoCommit true
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG Thread-5 druid.sql.Connection - {conn-10001} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10002} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10003} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10004} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10005} closed

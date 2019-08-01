@@ -5,7 +5,7 @@ spring:
     name: eureka-client-stuInfo
      # 环境 dev:开发环境|test:测试环境|prod:生产环境
   profiles:
-    active: prod #激活的配置文件
+    active: dev #激活的配置文件
 eureka:
   client:
     service-url:
@@ -15,6 +15,7 @@ eureka:
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
+    jdbc-type-for-null: null
 pagehelper:
     helperDialect: mysql
     reasonable: true

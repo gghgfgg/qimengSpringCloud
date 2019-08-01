@@ -24,10 +24,10 @@ CREATE TABLE `auxiliary_device_state` (
   `type` tinyint(1) unsigned DEFAULT NULL,
   `status` tinyint(1) unsigned DEFAULT NULL,
   `mark` varchar(255) DEFAULT NULL,
-  `create_time` date DEFAULT NULL,
-  `update_time` date DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of auxiliary_device_state
@@ -43,10 +43,10 @@ CREATE TABLE `auxiliary_recycle_type` (
   `mark` varchar(255) DEFAULT NULL,
   `uint` varchar(20) DEFAULT NULL,
   `factor` int(11) unsigned DEFAULT NULL,
-  `create_time` date DEFAULT NULL,
-  `update_time` date DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of auxiliary_recycle_type
@@ -61,10 +61,10 @@ CREATE TABLE `auxiliary_school_contacts_type` (
   `type` tinyint(1) unsigned DEFAULT NULL,
   `position` varchar(20) DEFAULT NULL,
   `weight` tinyint(1) unsigned DEFAULT NULL,
-  `create_time` date DEFAULT NULL,
-  `update_time` date DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of auxiliary_school_contacts_type
@@ -80,7 +80,7 @@ CREATE TABLE `auxiliary_school_id` (
   `school_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `school_id` (`school_id`) USING HASH
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of auxiliary_school_id
@@ -98,7 +98,7 @@ CREATE TABLE `city` (
   `is_hot` int(10) NOT NULL DEFAULT '0',
   `state` int(10) NOT NULL DEFAULT '1',
   PRIMARY KEY (`city_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB DEFAULT CHARSET=gbk;
 
 -- ----------------------------
 -- Records of city
@@ -461,10 +461,10 @@ CREATE TABLE `kernel_points_manage_log` (
   `operator` varchar(20) DEFAULT NULL,
   `points` int(11) unsigned DEFAULT NULL,
   `mark` varchar(255) DEFAULT NULL,
-  `createTime` date DEFAULT NULL,
+  `createTime` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `uuid` (`uuid`) USING HASH
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of kernel_points_manage_log
@@ -481,10 +481,10 @@ CREATE TABLE `kernel_points_used_log` (
   `app_id` varchar(20) DEFAULT NULL,
   `points` int(11) unsigned DEFAULT NULL,
   `mark` varchar(255) DEFAULT NULL,
-  `creat_time` date DEFAULT NULL,
+  `creat_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `uuid` (`uuid`) USING HASH
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of kernel_points_used_log
@@ -503,10 +503,10 @@ CREATE TABLE `kernel_school_auto_count` (
   `remainder` int(11) unsigned DEFAULT NULL,
   `activity_count` int(11) unsigned DEFAULT NULL,
   `count_type` tinyint(1) unsigned DEFAULT NULL,
-  `create_time` date DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `school_code` (`school_code`) USING HASH
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of kernel_school_auto_count
@@ -525,12 +525,12 @@ CREATE TABLE `kernel_school_inform` (
   `address` varchar(255) DEFAULT NULL,
   `contacts` varchar(20) DEFAULT NULL,
   `active` tinyint(1) DEFAULT NULL,
-  `create_time` date DEFAULT NULL,
-  `update_time` date DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `school_code` (`school_code`) USING HASH,
   KEY `school_id` (`school_id`) USING HASH
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of kernel_school_inform
@@ -548,11 +548,11 @@ CREATE TABLE `kernel_school_recycle_count` (
   `points` int(11) unsigned DEFAULT NULL,
   `remainder` int(11) unsigned DEFAULT NULL,
   `activity_count` int(11) unsigned DEFAULT NULL,
-  `create_time` date DEFAULT NULL,
-  `update_time` date DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `school_code` (`school_code`,`type`) USING HASH
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of kernel_school_recycle_count
@@ -561,7 +561,6 @@ CREATE TABLE `kernel_school_recycle_count` (
 -- ----------------------------
 -- Table structure for kernel_student_data
 -- ----------------------------
-DROP TABLE IF EXISTS `kernel_student_data`;
 CREATE TABLE `kernel_student_data` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `uuid` char(32) NOT NULL,
@@ -570,24 +569,24 @@ CREATE TABLE `kernel_student_data` (
   `card` varchar(40) DEFAULT NULL,
   `code` varchar(40) DEFAULT NULL,
   `name` varchar(20) DEFAULT NULL,
-  `type` tinyint(1) unsigned DEFAULT NULL,
-  `school_code` char(12) DEFAULT NULL,
-  `binding` tinyint(1) unsigned DEFAULT NULL,
-  `active` tinyint(1) unsigned DEFAULT NULL,
-  `create_time` date DEFAULT NULL,
-  `update_time` date DEFAULT NULL,
-  `first_time` date DEFAULT NULL,
-  `last_time` date DEFAULT NULL,
-  `activity_count` int(11) unsigned zerofill DEFAULT NULL,
-  `total_points` int(11) unsigned zerofill DEFAULT NULL,
-  `used_points` int(11) unsigned zerofill DEFAULT NULL,
-  `deduct_points` int(11) unsigned zerofill DEFAULT NULL,
+  `type` tinyint(1) unsigned zerofill NOT NULL,
+  `school_code` char(12) NOT NULL,
+  `binding` tinyint(1) unsigned zerofill NOT NULL,
+  `active` tinyint(1) unsigned zerofill NOT NULL,
+  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
+  `first_time` datetime DEFAULT NULL,
+  `last_time` datetime DEFAULT NULL,
+  `activity_count` int(11) unsigned zerofill NOT NULL,
+  `total_points` int(11) unsigned zerofill NOT NULL,
+  `used_points` int(11) unsigned zerofill NOT NULL,
+  `deduct_points` int(11) unsigned zerofill NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uuid` (`uuid`) USING HASH,
   UNIQUE KEY `identity_card` (`identity_card`) USING HASH,
   UNIQUE KEY `student_code` (`student_code`) USING HASH,
   UNIQUE KEY `card_code` (`card`,`code`) USING HASH
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of kernel_student_data
@@ -601,7 +600,7 @@ CREATE TABLE `kernel_student_inform` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(20) DEFAULT NULL,
   `sex` tinyint(1) unsigned DEFAULT NULL,
-  `strudent_code` char(19) DEFAULT NULL,
+  `student_code` char(19) DEFAULT NULL,
   `identity_card` char(18) DEFAULT NULL,
   `native_place` varchar(20) DEFAULT NULL,
   `nation` varchar(20) DEFAULT NULL,
@@ -646,9 +645,9 @@ CREATE TABLE `kernel_student_inform` (
   `family_census_register` varchar(255) DEFAULT NULL,
   `family_phone` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `strudent_code` (`strudent_code`) USING HASH,
+  UNIQUE KEY `student_code` (`student_code`) USING HASH,
   UNIQUE KEY `identity_card` (`identity_card`) USING HASH
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of kernel_student_inform
@@ -666,11 +665,11 @@ CREATE TABLE `kernel_student_recycle_count` (
   `points` int(11) unsigned DEFAULT NULL,
   `remainder` int(11) unsigned DEFAULT NULL,
   `activity_count` int(11) unsigned DEFAULT NULL,
-  `create_time` date DEFAULT NULL,
-  `updata_time` date DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
+  `updata_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uuid` (`uuid`,`type`) USING HASH
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of kernel_student_recycle_count
@@ -686,13 +685,13 @@ CREATE TABLE `machine_device_management` (
   `serial_number` varchar(50) DEFAULT NULL,
   `school_code` char(12) DEFAULT NULL,
   `active` tinyint(1) unsigned DEFAULT NULL,
-  `create_time` date DEFAULT NULL,
-  `update_time` date DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `machine_id` (`machine_id`) USING HASH,
   KEY `serial_number` (`serial_number`) USING HASH,
   KEY `school_code` (`school_code`) USING HASH
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of machine_device_management
@@ -710,11 +709,11 @@ CREATE TABLE `machine_device_recycle_count` (
   `points` int(11) unsigned DEFAULT NULL,
   `remainder` int(11) unsigned DEFAULT NULL,
   `activity_count` int(11) unsigned DEFAULT NULL,
-  `create_time` date DEFAULT NULL,
-  `updata_time` date DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
+  `updata_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `machine_id` (`machine_id`,`type`) USING HASH
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of machine_device_recycle_count
@@ -737,13 +736,13 @@ CREATE TABLE `machine_device_recycle_log` (
   `factor` int(11) unsigned DEFAULT NULL,
   `points` int(11) unsigned DEFAULT NULL,
   `remainder` int(11) unsigned DEFAULT NULL,
-  `create_time` date DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `machine_id` (`machine_id`) USING HASH,
   KEY `schoolid_of_device` (`schoolid_of_device`) USING HASH,
   KEY `uuid` (`uuid`) USING HASH,
   KEY `schoolid_of_student` (`schoolid_of_student`) USING HASH
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of machine_device_recycle_log
@@ -758,11 +757,11 @@ CREATE TABLE `machine_device_state` (
   `serial_number` varchar(50) DEFAULT NULL,
   `status` tinyint(1) unsigned zerofill DEFAULT NULL,
   `status_type` tinyint(1) unsigned DEFAULT NULL,
-  `create_time` date DEFAULT NULL,
-  `update_time` date DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `serial_number` (`serial_number`) USING HASH
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of machine_device_state
@@ -777,10 +776,10 @@ CREATE TABLE `machine_device_state_log` (
   `serial_number` varchar(50) DEFAULT NULL,
   `status` tinyint(1) unsigned zerofill DEFAULT NULL,
   `status_type` tinyint(1) unsigned DEFAULT NULL,
-  `create_time` date DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `serial_number` (`serial_number`) USING HASH
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of machine_device_state_log
@@ -798,10 +797,10 @@ CREATE TABLE `management_application_management` (
   `app_type` tinyint(1) unsigned DEFAULT NULL,
   `app_name` varchar(20) DEFAULT NULL,
   `active` tinyint(1) DEFAULT NULL,
-  `create_time` date DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `app_id` (`app_id`) USING HASH
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of management_application_management
@@ -815,7 +814,7 @@ CREATE TABLE `province` (
   `province_id` varchar(20) NOT NULL,
   `province_name` varchar(50) NOT NULL,
   PRIMARY KEY (`province_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB DEFAULT CHARSET=gbk;
 
 -- ----------------------------
 -- Records of province

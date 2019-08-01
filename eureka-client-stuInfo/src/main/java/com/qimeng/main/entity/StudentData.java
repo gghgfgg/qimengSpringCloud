@@ -21,13 +21,13 @@ public class StudentData {
 
     private String name;
 
-    private Boolean type;
+    private Byte type;
 
     private String schoolCode;
 
-    private Boolean binding;
+    private Byte binding;
 
-    private Boolean active;
+    private Byte active;
     @DateTimeFormat(pattern="yyyy-MM-dd HH-mm-ss")//页面写入数据库时格式化
    	@JSONField(format="yyyy-MM-dd HH-mm-ss")//数据库导出页面时json格式化
     private Date createTime;
@@ -105,11 +105,11 @@ public class StudentData {
         this.name = name == null ? null : name.trim();
     }
 
-    public Boolean getType() {
+    public Byte getType() {
         return type;
     }
 
-    public void setType(Boolean type) {
+    public void setType(Byte type) {
         this.type = type;
     }
 
@@ -121,19 +121,19 @@ public class StudentData {
         this.schoolCode = schoolCode == null ? null : schoolCode.trim();
     }
 
-    public Boolean getBinding() {
+    public Byte getBinding() {
         return binding;
     }
 
-    public void setBinding(Boolean binding) {
+    public void setBinding(Byte binding) {
         this.binding = binding;
     }
 
-    public Boolean getActive() {
+    public Byte getActive() {
         return active;
     }
 
-    public void setActive(Boolean active) {
+    public void setActive(Byte active) {
         this.active = active;
     }
 
