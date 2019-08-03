@@ -6,12 +6,12 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import com.alibaba.fastjson.annotation.JSONField;
 
-public class DevicRecycleCount {
+public class DeviceRecycleCount {
     private Integer id;
 
     private String machineId;
 
-    private Boolean type;
+    private Byte type;
 
     private Integer count;
 
@@ -25,7 +25,7 @@ public class DevicRecycleCount {
     private Date createTime;
     @DateTimeFormat(pattern="yyyy-MM-dd HH-mm-ss")//页面写入数据库时格式化
    	@JSONField(format="yyyy-MM-dd HH-mm-ss")//数据库导出页面时json格式化
-    private Date updataTime;
+    private Date updateTime;
 
     public Integer getId() {
         return id;
@@ -43,11 +43,11 @@ public class DevicRecycleCount {
         this.machineId = machineId == null ? null : machineId.trim();
     }
 
-    public Boolean getType() {
+    public Byte getType() {
         return type;
     }
 
-    public void setType(Boolean type) {
+    public void setType(Byte type) {
         this.type = type;
     }
 
@@ -91,11 +91,11 @@ public class DevicRecycleCount {
         this.createTime = createTime;
     }
 
-    public Date getUpdataTime() {
-        return updataTime;
+    public Date getUpdateTime() {
+        return updateTime;
     }
 
-    public void setUpdataTime(Date updataTime) {
-        this.updataTime = updataTime;
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 }

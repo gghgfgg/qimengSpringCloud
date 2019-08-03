@@ -11,7 +11,7 @@ public class SchoolRecycleCount {
 
     private String schoolCode;
 
-    private Boolean type;
+    private Byte type;
 
     private Integer count;
 
@@ -43,11 +43,11 @@ public class SchoolRecycleCount {
         this.schoolCode = schoolCode == null ? null : schoolCode.trim();
     }
 
-    public Boolean getType() {
+    public Byte getType() {
         return type;
     }
 
-    public void setType(Boolean type) {
+    public void setType(Byte type) {
         this.type = type;
     }
 

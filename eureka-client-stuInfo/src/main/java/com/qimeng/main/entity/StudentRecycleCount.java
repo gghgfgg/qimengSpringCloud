@@ -11,7 +11,7 @@ public class StudentRecycleCount {
 
     private String uuid;
 
-    private Boolean type;
+    private Byte type;
 
     private Integer count;
 
@@ -25,7 +25,7 @@ public class StudentRecycleCount {
     private Date createTime;
     @DateTimeFormat(pattern="yyyy-MM-dd HH-mm-ss")//页面写入数据库时格式化
    	@JSONField(format="yyyy-MM-dd HH-mm-ss")//数据库导出页面时json格式化
-    private Date updataTime;
+    private Date updateTime;
 
     public Integer getId() {
         return id;
@@ -43,11 +43,11 @@ public class StudentRecycleCount {
         this.uuid = uuid == null ? null : uuid.trim();
     }
 
-    public Boolean getType() {
+    public Byte getType() {
         return type;
     }
 
-    public void setType(Boolean type) {
+    public void setType(Byte type) {
         this.type = type;
     }
 
@@ -91,11 +91,11 @@ public class StudentRecycleCount {
         this.createTime = createTime;
     }
 
-    public Date getUpdataTime() {
-        return updataTime;
+    public Date getUpdateTime() {
+        return updateTime;
     }
 
-    public void setUpdataTime(Date updataTime) {
-        this.updataTime = updataTime;
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 }

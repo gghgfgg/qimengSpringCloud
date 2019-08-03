@@ -15,16 +15,19 @@ public class ApplicationManagement {
 
     private String ivkey;
 
-    private Boolean appType;
+    private Byte appType;
 
     private String appName;
 
-    private Boolean active;
+    private Byte active;
 
     @DateTimeFormat(pattern="yyyy-MM-dd HH-mm-ss")//页面写入数据库时格式化
 	@JSONField(format="yyyy-MM-dd HH-mm-ss")//数据库导出页面时json格式化
     private Date createTime;
-
+    @DateTimeFormat(pattern="yyyy-MM-dd HH-mm-ss")//页面写入数据库时格式化
+   	@JSONField(format="yyyy-MM-dd HH-mm-ss")//数据库导出页面时json格式化
+    private Date updateTime;
+    
     public Integer getId() {
         return id;
     }
@@ -57,11 +60,11 @@ public class ApplicationManagement {
         this.ivkey = ivkey == null ? null : ivkey.trim();
     }
 
-    public Boolean getAppType() {
+    public Byte getAppType() {
         return appType;
     }
 
-    public void setAppType(Boolean appType) {
+    public void setAppType(Byte appType) {
         this.appType = appType;
     }
 
@@ -73,11 +76,11 @@ public class ApplicationManagement {
         this.appName = appName == null ? null : appName.trim();
     }
 
-    public Boolean getActive() {
+    public Byte getActive() {
         return active;
     }
 
-    public void setActive(Boolean active) {
+    public void setActive(Byte active) {
         this.active = active;
     }
 
@@ -87,5 +90,13 @@ public class ApplicationManagement {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+    
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 }

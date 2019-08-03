@@ -17,9 +17,9 @@ public class DeviceRecycleLog {
 
     private String schoolidOfStudent;
 
-    private Boolean recycleType;
+    private Byte recycleType;
 
-    private Boolean identityType;
+    private Byte identityType;
 
     private Integer count;
 
@@ -74,19 +74,19 @@ public class DeviceRecycleLog {
         this.schoolidOfStudent = schoolidOfStudent == null ? null : schoolidOfStudent.trim();
     }
 
-    public Boolean getRecycleType() {
+    public Byte getRecycleType() {
         return recycleType;
     }
 
-    public void setRecycleType(Boolean recycleType) {
+    public void setRecycleType(Byte recycleType) {
         this.recycleType = recycleType;
     }
 
-    public Boolean getIdentityType() {
+    public Byte getIdentityType() {
         return identityType;
     }
 
-    public void setIdentityType(Boolean identityType) {
+    public void setIdentityType(Byte identityType) {
         this.identityType = identityType;
     }
 

@@ -9,7 +9,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 public class RecycleType {
     private Integer id;
 
-    private Boolean type;
+    private Byte type;
 
     private String mark;
 
@@ -31,11 +31,11 @@ public class RecycleType {
         this.id = id;
     }
 
-    public Boolean getType() {
+    public Byte getType() {
         return type;
     }
 
-    public void setType(Boolean type) {
+    public void setType(Byte type) {
         this.type = type;
     }
 

@@ -104,13 +104,19 @@ public class EurekaClientStuInfoApplicationTests {
 		list.add(studentInform2);
 		StudentInform studentInform3=new StudentInform();
 		
-		studentInform3.setName("99");
-		studentInform3.setStudentCode("G441423201201101052");
-		studentInform3.setIdentityCard("441423201201101055");
+		studentInform3.setName("98");
+		studentInform3.setStudentCode("G441423201201101060");
+		studentInform3.setIdentityCard("441423201201101061");
 		studentInform3.setSchoolCode("123");
 		list.add(studentInform3);
 
-		System.out.println(service.insertStudentInform(studentInform3,(byte) 0));
+		try {
+			System.out.println(service.insertStudentInformList(list,"12300",(byte) 0));
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.toString());
+		}
+		
 		
 		//System.out.println(dao.insertStudentDataList(list));
 		//System.out.println(dao.insertStudentInform(studentInform3));

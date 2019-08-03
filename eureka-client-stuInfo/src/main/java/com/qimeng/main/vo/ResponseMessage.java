@@ -47,7 +47,7 @@ public class ResponseMessage <E> implements Serializable{
 		this.message = message;
 	}
 	public void setFailedMessage(String message) {
-		this.success = true;
+		this.success = false;
 		this.message = message;
 	}
 	@Override

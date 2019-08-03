@@ -31,7 +31,7 @@ public class StudentDataService {
 		} catch (Exception e) {
 			// TODO: handle exception
 			logger.error("学生数据批量导入异常");
-			e.printStackTrace();
+			logger.error("Error:",e);
 			throw new RuntimeException(e);		
 		}
 	}
@@ -47,7 +47,7 @@ public class StudentDataService {
 		} catch (Exception e) {
 			// TODO: handle exception
 			logger.error("学生数据导入异常");
-			e.printStackTrace();
+			logger.error("Error:",e);
 			throw new RuntimeException(e);
 		}
 	}
@@ -63,7 +63,7 @@ public class StudentDataService {
 		} catch (Exception e) {
 			// TODO: handle exception
 			logger.error("更新学生数据异常,身份证号重复");
-			e.printStackTrace();
+			logger.error("Error:",e);
 			throw new RuntimeException(e);		
 		}
 	}
@@ -91,9 +91,9 @@ public class StudentDataService {
 		try {
 			return studentDataDao.updateStudentDateByUuid(studentData);
 		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
+			// TODO: handle exception	
 			logger.error("找不到当前uuid");
+			logger.error("Error:",e);
 			return -1;
 		}
 	}
@@ -175,8 +175,8 @@ public class StudentDataService {
 			return studentDataDao.selectStudentData(studentData);
 		} catch (Exception e) {
 			// TODO: handle exception
-			e.printStackTrace();
 			logger.error("学生数据,查询异常");
+			logger.error("Error:",e);
 			return null;
 		}
 	}

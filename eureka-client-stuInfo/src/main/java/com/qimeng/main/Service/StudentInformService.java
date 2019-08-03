@@ -32,7 +32,7 @@ public class StudentInformService {
 		} catch (Exception e) {
 			// TODO: handle exception
 			logger.error("学生原始数据批量导入异常");
-			e.printStackTrace();
+			logger.error("Error:",e);
 			throw new RuntimeException(e);
 		}
 	}
@@ -48,7 +48,7 @@ public class StudentInformService {
 		} catch (Exception e) {
 			// TODO: handle exception
 			logger.error("学生原始数据导入异常");
-			e.printStackTrace();
+			logger.error("Error:",e);
 			throw new RuntimeException(e);		
 		}
 	}
@@ -65,7 +65,7 @@ public class StudentInformService {
 		} catch (Exception e) {
 			// TODO: handle exception
 			logger.error("更新学生原始数据异常,身份证号重复");
-			e.printStackTrace();
+			logger.error("Error:",e);
 			throw new RuntimeException(e);		
 		}
 	}
@@ -80,8 +80,8 @@ public class StudentInformService {
 			return studentInformDao.selectStudentInform(studentInform);
 		} catch (Exception e) {
 			// TODO: handle exception
-			e.printStackTrace();
 			logger.error("学生原始数据,查询异常");
+			logger.error("Error:",e);
 			return null;
 		}
 	}

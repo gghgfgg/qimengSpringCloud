@@ -1,4 +1,4 @@
-/*
+﻿/*
 Navicat MySQL Data Transfer
 
 Source Server         : php
@@ -46,6 +46,7 @@ CREATE TABLE `auxiliary_recycle_type` (
   `create_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
+  UNIQUE KEY `type` (`type`) USING HASH
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -457,11 +458,11 @@ CREATE TABLE `kernel_points_manage_log` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `uuid` char(32) DEFAULT NULL,
   `name` varchar(20) DEFAULT NULL,
-  `appid` varchar(20) DEFAULT NULL,
+  `app_id` varchar(20) DEFAULT NULL,
   `operator` varchar(20) DEFAULT NULL,
   `points` int(11) unsigned DEFAULT NULL,
   `mark` varchar(255) DEFAULT NULL,
-  `createTime` datetime DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `uuid` (`uuid`) USING HASH
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -667,7 +668,7 @@ CREATE TABLE `kernel_student_recycle_count` (
   `remainder` int(11) unsigned DEFAULT NULL,
   `activity_count` int(11) unsigned DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
-  `updata_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uuid` (`uuid`,`type`) USING HASH
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -711,7 +712,7 @@ CREATE TABLE `machine_device_recycle_count` (
   `remainder` int(11) unsigned DEFAULT NULL,
   `activity_count` int(11) unsigned DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
-  `updata_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `machine_id` (`machine_id`,`type`) USING HASH
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -726,18 +727,18 @@ CREATE TABLE `machine_device_recycle_count` (
 DROP TABLE IF EXISTS `machine_device_recycle_log`;
 CREATE TABLE `machine_device_recycle_log` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `machine_id` char(14) DEFAULT NULL,
-  `schoolid_of_device` char(12) DEFAULT NULL,
-  `uuid` char(32) DEFAULT NULL,
-  `schoolid_of_student` char(12) DEFAULT NULL,
-  `recycle_type` tinyint(1) unsigned DEFAULT NULL,
-  `identity_type` tinyint(1) unsigned DEFAULT NULL,
-  `count` int(11) unsigned DEFAULT NULL,
-  `last_remainder` int(11) unsigned DEFAULT NULL,
-  `factor` int(11) unsigned DEFAULT NULL,
-  `points` int(11) unsigned DEFAULT NULL,
-  `remainder` int(11) unsigned DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
+  `machine_id` char(14) NOT NULL,
+  `schoolid_of_device` char(12) NOT NULL,
+  `uuid` char(32) NOT NULL,
+  `schoolid_of_student` char(12) NOT NULL,
+  `recycle_type` tinyint(1) unsigned NOT NULL,
+  `identity_type` tinyint(1) unsigned NOT NULL,
+  `count` int(11) unsigned NOT NULL,
+  `last_remainder` int(11) unsigned NOT NULL,
+  `factor` int(11) unsigned NOT NULL,
+  `points` int(11) unsigned NOT NULL,
+  `remainder` int(11) unsigned NOT NULL,
+  `create_time` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `machine_id` (`machine_id`) USING HASH,
   KEY `schoolid_of_device` (`schoolid_of_device`) USING HASH,
@@ -799,6 +800,7 @@ CREATE TABLE `management_application_management` (
   `app_name` varchar(20) DEFAULT NULL,
   `active` tinyint(1) DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `app_id` (`app_id`) USING HASH
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
