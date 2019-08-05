@@ -1,4 +1,4 @@
-package com.qimeng.main.Service;
+package com.qimeng.main.service;
 
 import java.util.List;
 
@@ -40,6 +40,17 @@ public class DeviceRecycleLogService {
 	List<DeviceRecycleLog> selectDeviceRecycleLogList(DeviceRecycleLog deviceRecycleLog){
 		try {
 			return deviceRecycleLogDao.selectDeviceRecycleLogList(deviceRecycleLog);
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.error("查询机器回收日志数据数据异常");
+			logger.error("Error:", e);
+			throw new RuntimeException(e);
+		}
+	}
+	
+	List<DeviceRecycleLog> selectDeviceRecycleLogBySchoolDate(String schoolcode,byte type){
+		try {
+			return deviceRecycleLogDao.selectDeviceRecycleLogBySchoolDate(schoolcode,type);
 		} catch (Exception e) {
 			// TODO: handle exception
 			logger.error("查询机器回收日志数据数据异常");

@@ -1,4 +1,6 @@
-package com.qimeng.main.Service;
+package com.qimeng.main.service;
+
+import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,15 +59,19 @@ public class RecycleTypeService {
 	 * @param recycleType
 	 * @return
 	 */
-	public RecycleType selectRecycleType(RecycleType recycleType) {
+	public List<RecycleType> selectRecycleTypeList(RecycleType recycleType) {
 		try {
-			return recycleTypeDao.selectRecycleType(recycleType);
+			return recycleTypeDao.selectRecycleTypeList(recycleType);
 		} catch (Exception e) {
 			// TODO: handle exception
 			logger.error("查找垃圾类型异常");
 			logger.error("Error:",e);
 			throw new RuntimeException(e);
 		}
+	}
+	public List<RecycleType> selectRecycleTypeList() {
+		RecycleType recycleType=new RecycleType();
+		return selectRecycleTypeList(recycleType);
 	}
 	
 	/**
@@ -76,7 +82,8 @@ public class RecycleTypeService {
 	public RecycleType selectRecycleTypeById(int id) {
 		RecycleType recycleType=new RecycleType();
 		recycleType.setId(id);
-		return selectRecycleType(recycleType);
+		List<RecycleType> list = selectRecycleTypeList(recycleType);
+		return list.isEmpty()?null:list.get(0);
 	}
 	
 	/**
@@ -87,7 +94,8 @@ public class RecycleTypeService {
 	public RecycleType selectRecycleTypeByType(byte type) {
 		RecycleType recycleType=new RecycleType();
 		recycleType.setType(type);
-		return selectRecycleType(recycleType);
+		List<RecycleType> list = selectRecycleTypeList(recycleType);
+		return list.isEmpty()?null:list.get(0);
 	}
 }
 

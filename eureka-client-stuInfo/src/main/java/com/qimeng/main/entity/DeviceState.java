@@ -5,9 +5,9 @@ import java.util.Date;
 public class DeviceState {
     private Integer id;
 
-    private Boolean type;
+    private Byte type;
 
-    private Boolean status;
+    private Byte status;
 
     private String mark;
 
@@ -23,19 +23,19 @@ public class DeviceState {
         this.id = id;
     }
 
-    public Boolean getType() {
+    public Byte getType() {
         return type;
     }
 
-    public void setType(Boolean type) {
+    public void setType(Byte type) {
         this.type = type;
     }
 
-    public Boolean getStatus() {
+    public Byte getStatus() {
         return status;
     }
 
-    public void setStatus(Boolean status) {
+    public void setStatus(Byte status) {
         this.status = status;
     }
 

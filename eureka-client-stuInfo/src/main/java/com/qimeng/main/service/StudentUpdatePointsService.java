@@ -1,4 +1,4 @@
-package com.qimeng.main.Service;
+package com.qimeng.main.service;
 
 import java.util.Date;
 
@@ -12,6 +12,7 @@ import com.qimeng.main.entity.DeviceRecycleLog;
 import com.qimeng.main.entity.PointsManageLog;
 import com.qimeng.main.entity.PointsUsedLog;
 import com.qimeng.main.entity.RecycleType;
+import com.qimeng.main.entity.SchoolRecycleCount;
 import com.qimeng.main.entity.StudentData;
 import com.qimeng.main.entity.StudentRecycleCount;
 
@@ -43,6 +44,8 @@ public class StudentUpdatePointsService {
 	PointsUsedLogService pointsUsedLogService;
 	@Autowired
 	PointsManageLogService pointsManageLogService;
+	@Autowired
+	SchoolRecycleCountService schoolRecycleCountService;
 	
 	public int updateStudentPoints(StudentData studentData,int wasteType,int uint,String machineId) {
 		try {
@@ -79,6 +82,19 @@ public class StudentUpdatePointsService {
 				deviceRecycleCount.setCreateTime(date);
 				deviceRecycleCount.setUpdateTime(date);
 			}
+			SchoolRecycleCount schoolRecycleCount=schoolRecycleCountService.selectSchoolRecycleCount(deviceManagement.getSchoolCode(),(byte) wasteType);
+			if(schoolRecycleCount==null) {
+				schoolRecycleCount=new SchoolRecycleCount();
+				schoolRecycleCount.setActivityCount(0);
+				schoolRecycleCount.setCount(0);
+				schoolRecycleCount.setPoints(0);
+				schoolRecycleCount.setRemainder(0);
+				schoolRecycleCount.setType((byte) wasteType);
+				schoolRecycleCount.setSchoolCode(deviceManagement.getSchoolCode());
+				schoolRecycleCount.setCreateTime(date);
+				schoolRecycleCount.setUpdateTime(date);
+			}
+			
 				
 			DeviceRecycleLog deviceRecycleLog=new DeviceRecycleLog();
 			deviceRecycleLog.setMachineId(deviceManagement.getMachineId());
@@ -127,6 +143,15 @@ public class StudentUpdatePointsService {
 			deviceRecycleCount.setRemainder(remainder);
 			deviceRecycleCount.setUpdateTime(date);
 			deviceRecycleCountService.insertDeviceRecycleCount(deviceRecycleCount);
+			
+			schoolRecycleCount.setActivityCount(schoolRecycleCount.getActivityCount()+1);
+			schoolRecycleCount.setCount(schoolRecycleCount.getCount()+uint);
+			points=(schoolRecycleCount.getRemainder()+uint)/recycleType.getFactor();
+			remainder=(schoolRecycleCount.getRemainder()+uint)%recycleType.getFactor();
+			schoolRecycleCount.setPoints(schoolRecycleCount.getPoints()+points);
+			schoolRecycleCount.setRemainder(remainder);
+			schoolRecycleCount.setUpdateTime(date);
+			schoolRecycleCountService.insertSchoolRecycleCount(schoolRecycleCount);
 			
 			return 1;
 			

@@ -33,7 +33,7 @@ public class DruidConfig {
         Map<String,String> initParams = new HashMap<String,String>();
 
         initParams.put("loginUsername", "admin");
-        initParams.put("loginPassword", "123456");
+        initParams.put("loginPassword", "qimenghb@2019");
         //设置ip白名单
         initParams.put("allow", "");
         //设置ip黑名单。deny优先级高于allow

@@ -1,6 +1,8 @@
 package com.qimeng.main.dao;
 
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -36,7 +38,8 @@ public interface RecycleTypeDao {
 	int updateRecycleType(@Param("item")RecycleType recycleType);
 	
 	@SelectProvider(type = SqlFactory.class,method = "selectRecycleType")
-	RecycleType selectRecycleType(@Param("item")RecycleType recycleType);
+	List<RecycleType> selectRecycleTypeList(@Param("item")RecycleType recycleType);
+	
 	public class SqlFactory extends SQL{
 		public String selectRecycleType(@Param("item")RecycleType recycleType) {
 			SQL sql = new SQL(); //SQL语句对象，所在包：org.apache.ibatis.jdbc.SQL

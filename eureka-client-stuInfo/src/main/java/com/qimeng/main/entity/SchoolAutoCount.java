@@ -11,7 +11,7 @@ public class SchoolAutoCount {
 
     private String schoolCode;
 
-    private Boolean type;
+    private Byte type;
 
     private Integer count;
 
@@ -21,7 +21,7 @@ public class SchoolAutoCount {
 
     private Integer activityCount;
 
-    private Boolean countType;
+    private Byte countType;
     @DateTimeFormat(pattern="yyyy-MM-dd HH-mm-ss")//页面写入数据库时格式化
    	@JSONField(format="yyyy-MM-dd HH-mm-ss")//数据库导出页面时json格式化
     private Date createTime;
@@ -42,11 +42,11 @@ public class SchoolAutoCount {
         this.schoolCode = schoolCode == null ? null : schoolCode.trim();
     }
 
-    public Boolean getType() {
+    public Byte getType() {
         return type;
     }
 
-    public void setType(Boolean type) {
+    public void setType(Byte type) {
         this.type = type;
     }
 
@@ -82,11 +82,11 @@ public class SchoolAutoCount {
         this.activityCount = activityCount;
     }
 
-    public Boolean getCountType() {
+    public Byte getCountType() {
         return countType;
     }
 
-    public void setCountType(Boolean countType) {
+    public void setCountType(Byte countType) {
         this.countType = countType;
     }
 

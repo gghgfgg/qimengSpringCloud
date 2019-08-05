@@ -11,9 +11,11 @@ public class DeviceStateLog {
 
     private String serialNumber;
 
-    private Boolean status;
+    private Byte status;
 
-    private Boolean statusType;
+    private Byte statusType;
+    
+    private String mark;
     @DateTimeFormat(pattern="yyyy-MM-dd HH-mm-ss")//页面写入数据库时格式化
    	@JSONField(format="yyyy-MM-dd HH-mm-ss")//数据库导出页面时json格式化
     private Date createTime;
@@ -34,23 +36,31 @@ public class DeviceStateLog {
         this.serialNumber = serialNumber == null ? null : serialNumber.trim();
     }
 
-    public Boolean getStatus() {
+    public Byte getStatus() {
         return status;
     }
 
-    public void setStatus(Boolean status) {
+    public void setStatus(Byte status) {
         this.status = status;
     }
 
-    public Boolean getStatusType() {
+    public Byte getStatusType() {
         return statusType;
     }
 
-    public void setStatusType(Boolean statusType) {
+    public void setStatusType(Byte statusType) {
         this.statusType = statusType;
     }
 
-    public Date getCreateTime() {
+    public String getMark() {
+		return mark;
+	}
+
+	public void setMark(String mark) {
+		this.mark = mark;
+	}
+
+	public Date getCreateTime() {
         return createTime;
     }
 

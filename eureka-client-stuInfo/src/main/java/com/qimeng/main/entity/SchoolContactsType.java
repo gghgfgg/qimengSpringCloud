@@ -9,11 +9,11 @@ import com.alibaba.fastjson.annotation.JSONField;
 public class SchoolContactsType {
     private Integer id;
 
-    private Boolean type;
+    private Byte type;
 
     private String position;
 
-    private Boolean weight;
+    private Byte weight;
     @DateTimeFormat(pattern="yyyy-MM-dd HH-mm-ss")//页面写入数据库时格式化
    	@JSONField(format="yyyy-MM-dd HH-mm-ss")//数据库导出页面时json格式化
     private Date createTime;
@@ -29,11 +29,11 @@ public class SchoolContactsType {
         this.id = id;
     }
 
-    public Boolean getType() {
+    public Byte getType() {
         return type;
     }
 
-    public void setType(Boolean type) {
+    public void setType(Byte type) {
         this.type = type;
     }
 
@@ -45,11 +45,11 @@ public class SchoolContactsType {
         this.position = position == null ? null : position.trim();
     }
 
-    public Boolean getWeight() {
+    public Byte getWeight() {
         return weight;
     }
 
-    public void setWeight(Boolean weight) {
+    public void setWeight(Byte weight) {
         this.weight = weight;
     }
 

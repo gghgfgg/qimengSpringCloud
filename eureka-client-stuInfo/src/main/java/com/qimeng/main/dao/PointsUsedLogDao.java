@@ -32,6 +32,7 @@ public interface PointsUsedLogDao {
 	@Insert("insert into "+tablename+"("+fields+") values" + "("+item+")")
 	@Options(useGeneratedKeys = true,keyProperty = "id")
 	int insertPointsUsedLog(@Param("item")PointsUsedLog pointsUsedLog);
+
 	@SelectProvider(type = SqlFactory.class,method ="selectPointsUsedLog")
 	List<PointsUsedLog> selectPointsUsedLogList(@Param("item")PointsUsedLog pointsUsedLog);
 	

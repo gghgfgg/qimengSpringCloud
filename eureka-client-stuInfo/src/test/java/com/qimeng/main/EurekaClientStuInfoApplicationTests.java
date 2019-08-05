@@ -18,13 +18,14 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.qimeng.main.Service.StudentDataService;
-import com.qimeng.main.Service.StudentInformService;
-import com.qimeng.main.Service.StudentUpdateService;
 import com.qimeng.main.dao.StudentDataDao;
 import com.qimeng.main.dao.StudentInformDao;
 import com.qimeng.main.entity.StudentData;
 import com.qimeng.main.entity.StudentInform;
+import com.qimeng.main.service.SchoolAutoCountRecycleService;
+import com.qimeng.main.service.StudentDataService;
+import com.qimeng.main.service.StudentInformService;
+import com.qimeng.main.service.StudentUpdateService;
 
 //import com.qimeng.main.Service.ApplicationInfoService;
 //import com.qimeng.main.Service.PointsLogService;
@@ -60,6 +61,9 @@ public class EurekaClientStuInfoApplicationTests {
 	@Autowired
 	//StudentDataService service;
 	StudentUpdateService service;
+	
+	@Autowired
+	SchoolAutoCountRecycleService schoolAutoCountRecycleService;
 	@Test
 	public void contextLoads() throws UnsupportedEncodingException {
 		
@@ -110,13 +114,13 @@ public class EurekaClientStuInfoApplicationTests {
 		studentInform3.setSchoolCode("123");
 		list.add(studentInform3);
 
-		try {
-			System.out.println(service.insertStudentInformList(list,"12300",(byte) 0));
-		} catch (Exception e) {
-			// TODO: handle exception
-			System.out.println(e.toString());
-		}
-		
+//		try {
+//			System.out.println(service.insertStudentInformList(list,"12300",(byte) 0));
+//		} catch (Exception e) {
+//			// TODO: handle exception
+//			System.out.println(e.toString());
+//		}
+		schoolAutoCountRecycleService.SchoolAutoCountRecycle((byte) 0);
 		
 		//System.out.println(dao.insertStudentDataList(list));
 		//System.out.println(dao.insertStudentInform(studentInform3));

@@ -26,7 +26,8 @@ CREATE TABLE `auxiliary_device_state` (
   `mark` varchar(255) DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `type` (`type`,`status`) USING HASH
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -64,7 +65,8 @@ CREATE TABLE `auxiliary_school_contacts_type` (
   `weight` tinyint(1) unsigned DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `type` (`type`) USING HASH
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -529,7 +531,7 @@ CREATE TABLE `kernel_school_inform` (
   `create_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `school_code` (`school_code`) USING HASH,
+  UNIQUE KEY `school_code` (`school_code`) USING HASH,
   KEY `school_id` (`school_id`) USING HASH
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -778,9 +780,9 @@ CREATE TABLE `machine_device_state_log` (
   `serial_number` varchar(50) DEFAULT NULL,
   `status` tinyint(1) unsigned zerofill DEFAULT NULL,
   `status_type` tinyint(1) unsigned DEFAULT NULL,
+  `mark` varchar(50) DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `serial_number` (`serial_number`) USING HASH
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------

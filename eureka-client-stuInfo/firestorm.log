@@ -1,574 +1,145 @@
-DEBUG http-nio-7073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20005} Types : [VARCHAR, VARCHAR, VARCHAR, INTEGER, VARCHAR, TIMESTAMP]
-DEBUG http-nio-7073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20005} executed. 5.2664 millis. insert into kernel_points_used_log(uuid,name,app_id,points,mark,create_time) values(?,?,?,?,?,?)
-DEBUG http-nio-7073-exec-3 druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50004} open
-DEBUG http-nio-7073-exec-3 druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50004} Header: [GENERATED_KEY]
-DEBUG http-nio-7073-exec-3 druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50004} Result: [3]
-DEBUG http-nio-7073-exec-3 druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50004} closed
-DEBUG http-nio-7073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20005} closed
-DEBUG http-nio-7073-exec-3 druid.sql.Connection - {conn-10005} commited
-DEBUG http-nio-7073-exec-3 druid.sql.Connection - {conn-10005} setAutoCommit true
-DEBUG http-nio-7073-exec-3 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-7073-exec-5 com.qimeng.main.UpdateStudentPointsController - StudentInfoVo [name=, stuCode=a94cd604baab2c30, stuCard=32f96b9612764e24, wasteType=2, unit=7000, point=0, bind=0]
-DEBUG http-nio-7073-exec-5 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-7073-exec-5 druid.sql.Statement - {conn-10005, pstmt-20006} created. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-7073-exec-5 druid.sql.Statement - {conn-10005, pstmt-20006} Parameters : [1, 7166912116544627]
-DEBUG http-nio-7073-exec-5 druid.sql.Statement - {conn-10005, pstmt-20006} Types : [TINYINT, VARCHAR]
-DEBUG http-nio-7073-exec-5 druid.sql.Statement - {conn-10005, pstmt-20006} executed. 0.8279 millis. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-7073-exec-5 druid.sql.ResultSet - {conn-10005, pstmt-20006, rs-50005} open
-DEBUG http-nio-7073-exec-5 druid.sql.ResultSet - {conn-10005, pstmt-20006, rs-50005} Header: [id, app_id, deskey, ivkey, app_type, app_name, active, create_time, update_time]
-DEBUG http-nio-7073-exec-5 druid.sql.ResultSet - {conn-10005, pstmt-20006, rs-50005} Result: [1, 7166912116544627, null, null, true, null, true, null, null]
-DEBUG http-nio-7073-exec-5 druid.sql.ResultSet - {conn-10005, pstmt-20006, rs-50005} closed
-DEBUG http-nio-7073-exec-5 druid.sql.Statement - {conn-10005, pstmt-20006} closed
-DEBUG http-nio-7073-exec-5 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-7073-exec-5 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-7073-exec-5 druid.sql.Statement - {conn-10005, pstmt-20007} created. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
-FROM kernel_student_data
-WHERE (code=? AND card=?)
-DEBUG http-nio-7073-exec-5 druid.sql.Statement - {conn-10005, pstmt-20007} Parameters : [a94cd604baab2c30, 32f96b9612764e24]
-DEBUG http-nio-7073-exec-5 druid.sql.Statement - {conn-10005, pstmt-20007} Types : [VARCHAR, VARCHAR]
-DEBUG http-nio-7073-exec-5 druid.sql.Statement - {conn-10005, pstmt-20007} executed. 0.9774 millis. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
-FROM kernel_student_data
-WHERE (code=? AND card=?)
-DEBUG http-nio-7073-exec-5 druid.sql.ResultSet - {conn-10005, pstmt-20007, rs-50006} open
-DEBUG http-nio-7073-exec-5 druid.sql.ResultSet - {conn-10005, pstmt-20007, rs-50006} Header: [id, uuid, identity_card, student_code, card, code, name, type, school_code, binding, active, create_time, update_time, first_time, last_time, activity_count, total_points, used_points, deduct_points]
-DEBUG http-nio-7073-exec-5 druid.sql.ResultSet - {conn-10005, pstmt-20007, rs-50006} Result: [23, 32f96b9612764e24a94cd604baab2c30, null, G441423201201101050, 32f96b9612764e24, a94cd604baab2c30, 99, false, 12300, false, true, 2019-08-01 15:58:02.0, 2019-08-02 01:09:03.0, 2019-08-03 04:21:44.0, 2019-08-03 16:58:30.0, 4, 49963, 10963, 0]
-DEBUG http-nio-7073-exec-5 druid.sql.ResultSet - {conn-10005, pstmt-20007, rs-50006} closed
-DEBUG http-nio-7073-exec-5 druid.sql.Statement - {conn-10005, pstmt-20007} closed
-DEBUG http-nio-7073-exec-5 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-7073-exec-4 com.qimeng.main.UpdateStudentPointsController - UsedPointsVo [stuCode=a94cd604baab2c30, stuCard=32f96b9612764e24, usedPoints=10000, mark=测试扣分, operator=null]
-DEBUG http-nio-7073-exec-4 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20008} created. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20008} Parameters : [1, 7166912116544627]
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20008} Types : [TINYINT, VARCHAR]
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20008} executed. 0.9045 millis. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20008, rs-50007} open
-DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20008, rs-50007} Header: [id, app_id, deskey, ivkey, app_type, app_name, active, create_time, update_time]
-DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20008, rs-50007} Result: [1, 7166912116544627, null, null, true, null, true, null, null]
-DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20008, rs-50007} closed
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20008} closed
-DEBUG http-nio-7073-exec-4 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-7073-exec-4 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20009} created. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
-FROM kernel_student_data
-WHERE (code=? AND card=?)
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20009} Parameters : [a94cd604baab2c30, 32f96b9612764e24]
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20009} Types : [VARCHAR, VARCHAR]
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20009} executed. 0.8483 millis. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
-FROM kernel_student_data
-WHERE (code=? AND card=?)
-DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20009, rs-50008} open
-DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20009, rs-50008} Header: [id, uuid, identity_card, student_code, card, code, name, type, school_code, binding, active, create_time, update_time, first_time, last_time, activity_count, total_points, used_points, deduct_points]
-DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20009, rs-50008} Result: [23, 32f96b9612764e24a94cd604baab2c30, null, G441423201201101050, 32f96b9612764e24, a94cd604baab2c30, 99, false, 12300, false, true, 2019-08-01 15:58:02.0, 2019-08-02 01:09:03.0, 2019-08-03 04:21:44.0, 2019-08-03 16:58:30.0, 4, 49963, 10963, 0]
-DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20009, rs-50008} closed
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20009} closed
-DEBUG http-nio-7073-exec-4 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-7073-exec-4 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-7073-exec-4 druid.sql.Connection - {conn-10005} setAutoCommit false
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20010} created. UPDATE kernel_student_data
-SET used_points=?
-WHERE (uuid=?)
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20010} Parameters : [10963, 32f96b9612764e24a94cd604baab2c30]
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20010} Types : [INTEGER, VARCHAR]
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20010} executed. 0.7985 millis. UPDATE kernel_student_data
-SET used_points=?
-WHERE (uuid=?)
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20010} closed
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20011} created. insert into kernel_points_manage_log(uuid,name,app_id,operator,points,mark,create_time) values(?,?,?,?,?,?,?)
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20011} Parameters : [32f96b9612764e24a94cd604baab2c30, 99, 7166912116544627, null, 10000, 测试扣分, 2019-08-03 17:37:26.926]
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20011} Types : [VARCHAR, VARCHAR, VARCHAR, OTHER, INTEGER, VARCHAR, TIMESTAMP]
-ERROR http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20011} execute error. insert into kernel_points_manage_log(uuid,name,app_id,operator,points,mark,create_time) values(?,?,?,?,?,?,?)
-java.sql.SQLSyntaxErrorException: Unknown column 'create_time' in 'field list'
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:955)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:372)
-	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3409)
-	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:620)
-	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
-	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
-	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
-	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
-	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
-	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
-	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:498)
-	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
-	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
-	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
-	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
-	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
-	at com.sun.proxy.$Proxy119.update(Unknown Source)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
-	at com.sun.proxy.$Proxy84.insert(Unknown Source)
-	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
-	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:57)
-	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
-	at com.sun.proxy.$Proxy93.insertPointsManageLog(Unknown Source)
-	at com.qimeng.main.Service.PointsManageLogService.insertPointsManageLog(PointsManageLogService.java:35)
-	at com.qimeng.main.Service.StudentUpdatePointsService.deductStudentPoints(StudentUpdatePointsService.java:172)
-	at com.qimeng.main.Service.StudentUpdatePointsService$$FastClassBySpringCGLIB$$2cc5e9c4.invoke(<generated>)
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:295)
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
-	at com.qimeng.main.Service.StudentUpdatePointsService$$EnhancerBySpringCGLIB$$2b2e715.deductStudentPoints(<generated>)
-	at com.qimeng.main.UpdateStudentPointsController.deductPoints(UpdateStudentPointsController.java:257)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Unknown Source)
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20011} closed
-ERROR http-nio-7073-exec-4 com.qimeng.main.Service.PointsManageLogService - 插入积分管理日志数据异常
-ERROR http-nio-7073-exec-4 com.qimeng.main.Service.PointsManageLogService - Error:
-org.springframework.jdbc.BadSqlGrammarException: 
-### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'create_time' in 'field list'
-### The error may involve com.qimeng.main.dao.PointsManageLogDao.insertPointsManageLog-Inline
-### The error occurred while setting parameters
-### SQL: insert into kernel_points_manage_log(uuid,name,app_id,operator,points,mark,create_time) values(?,?,?,?,?,?,?)
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'create_time' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'create_time' in 'field list'
-	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:234)
-	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
-	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
-	at com.sun.proxy.$Proxy84.insert(Unknown Source)
-	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
-	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:57)
-	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
-	at com.sun.proxy.$Proxy93.insertPointsManageLog(Unknown Source)
-	at com.qimeng.main.Service.PointsManageLogService.insertPointsManageLog(PointsManageLogService.java:35)
-	at com.qimeng.main.Service.StudentUpdatePointsService.deductStudentPoints(StudentUpdatePointsService.java:172)
-	at com.qimeng.main.Service.StudentUpdatePointsService$$FastClassBySpringCGLIB$$2cc5e9c4.invoke(<generated>)
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:295)
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
-	at com.qimeng.main.Service.StudentUpdatePointsService$$EnhancerBySpringCGLIB$$2b2e715.deductStudentPoints(<generated>)
-	at com.qimeng.main.UpdateStudentPointsController.deductPoints(UpdateStudentPointsController.java:257)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Unknown Source)
-Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'create_time' in 'field list'
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:955)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:372)
-	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3409)
-	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:620)
-	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
-	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
-	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
-	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
-	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
-	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
-	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:498)
-	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
-	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
-	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
-	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
-	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
-	at com.sun.proxy.$Proxy119.update(Unknown Source)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
-	... 74 more
-DEBUG http-nio-7073-exec-4 druid.sql.Connection - {conn 10005} rollback
-DEBUG http-nio-7073-exec-4 druid.sql.Connection - {conn-10005} setAutoCommit true
-DEBUG http-nio-7073-exec-4 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-7073-exec-6 com.qimeng.main.UpdateStudentPointsController - StudentInfoVo [name=, stuCode=a94cd604baab2c30, stuCard=32f96b9612764e24, wasteType=2, unit=7000, point=0, bind=0]
-DEBUG http-nio-7073-exec-6 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20012} created. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20012} Parameters : [1, 7166912116544627]
-DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20012} Types : [TINYINT, VARCHAR]
-DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20012} executed. 1.9033 millis. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20012, rs-50009} open
-DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20012, rs-50009} Header: [id, app_id, deskey, ivkey, app_type, app_name, active, create_time, update_time]
-DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20012, rs-50009} Result: [1, 7166912116544627, null, null, true, null, true, null, null]
-DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20012, rs-50009} closed
-DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20012} closed
-DEBUG http-nio-7073-exec-6 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-7073-exec-6 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20013} created. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
-FROM kernel_student_data
-WHERE (code=? AND card=?)
-DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20013} Parameters : [a94cd604baab2c30, 32f96b9612764e24]
-DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20013} Types : [VARCHAR, VARCHAR]
-DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20013} executed. 0.8991 millis. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
-FROM kernel_student_data
-WHERE (code=? AND card=?)
-DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20013, rs-50010} open
-DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20013, rs-50010} Header: [id, uuid, identity_card, student_code, card, code, name, type, school_code, binding, active, create_time, update_time, first_time, last_time, activity_count, total_points, used_points, deduct_points]
-DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20013, rs-50010} Result: [23, 32f96b9612764e24a94cd604baab2c30, null, G441423201201101050, 32f96b9612764e24, a94cd604baab2c30, 99, false, 12300, false, true, 2019-08-01 15:58:02.0, 2019-08-02 01:09:03.0, 2019-08-03 04:21:44.0, 2019-08-03 16:58:30.0, 4, 49963, 10963, 0]
-DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20013, rs-50010} closed
-DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20013} closed
-DEBUG http-nio-7073-exec-6 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-7073-exec-7 com.qimeng.main.UpdateStudentPointsController - UsedPointsVo [stuCode=a94cd604baab2c30, stuCard=32f96b9612764e24, usedPoints=10000, mark=测试扣分, operator=null]
-DEBUG http-nio-7073-exec-7 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20014} created. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20014} Parameters : [1, 7166912116544627]
-DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20014} Types : [TINYINT, VARCHAR]
-DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20014} executed. 0.8166 millis. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20014, rs-50011} open
-DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20014, rs-50011} Header: [id, app_id, deskey, ivkey, app_type, app_name, active, create_time, update_time]
-DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20014, rs-50011} Result: [1, 7166912116544627, null, null, true, null, true, null, null]
-DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20014, rs-50011} closed
-DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20014} closed
-DEBUG http-nio-7073-exec-7 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-7073-exec-7 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20015} created. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
-FROM kernel_student_data
-WHERE (code=? AND card=?)
-DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20015} Parameters : [a94cd604baab2c30, 32f96b9612764e24]
-DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20015} Types : [VARCHAR, VARCHAR]
-DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20015} executed. 1.4039 millis. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
-FROM kernel_student_data
-WHERE (code=? AND card=?)
-DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20015, rs-50012} open
-DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20015, rs-50012} Header: [id, uuid, identity_card, student_code, card, code, name, type, school_code, binding, active, create_time, update_time, first_time, last_time, activity_count, total_points, used_points, deduct_points]
-DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20015, rs-50012} Result: [23, 32f96b9612764e24a94cd604baab2c30, null, G441423201201101050, 32f96b9612764e24, a94cd604baab2c30, 99, false, 12300, false, true, 2019-08-01 15:58:02.0, 2019-08-02 01:09:03.0, 2019-08-03 04:21:44.0, 2019-08-03 16:58:30.0, 4, 49963, 10963, 0]
-DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20015, rs-50012} closed
-DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20015} closed
-DEBUG http-nio-7073-exec-7 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-7073-exec-7 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-7073-exec-7 druid.sql.Connection - {conn-10005} setAutoCommit false
-DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20016} created. UPDATE kernel_student_data
-SET used_points=?
-WHERE (uuid=?)
-DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20016} Parameters : [10963, 32f96b9612764e24a94cd604baab2c30]
-DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20016} Types : [INTEGER, VARCHAR]
-DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20016} executed. 0.5754 millis. UPDATE kernel_student_data
-SET used_points=?
-WHERE (uuid=?)
-DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20016} closed
-DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20017} created. insert into kernel_points_manage_log(uuid,name,app_id,operator,points,mark,create_time) values(?,?,?,?,?,?,?)
-DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20017} Parameters : [32f96b9612764e24a94cd604baab2c30, 99, 7166912116544627, null, 10000, 测试扣分, 2019-08-03 17:38:23.298]
-DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20017} Types : [VARCHAR, VARCHAR, VARCHAR, OTHER, INTEGER, VARCHAR, TIMESTAMP]
-DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20017} executed. 0.5982 millis. insert into kernel_points_manage_log(uuid,name,app_id,operator,points,mark,create_time) values(?,?,?,?,?,?,?)
-DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20017, rs-50013} open
-DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20017, rs-50013} Header: [GENERATED_KEY]
-DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20017, rs-50013} Result: [1]
-DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20017, rs-50013} closed
-DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20017} closed
-DEBUG http-nio-7073-exec-7 druid.sql.Connection - {conn-10005} commited
-DEBUG http-nio-7073-exec-7 druid.sql.Connection - {conn-10005} setAutoCommit true
-DEBUG http-nio-7073-exec-7 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-7073-exec-10 com.qimeng.main.UpdateStudentPointsController - StudentInfoVo [name=, stuCode=a94cd604baab2c30, stuCard=32f96b9612764e24, wasteType=2, unit=7000, point=0, bind=0]
-DEBUG http-nio-7073-exec-10 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-7073-exec-10 druid.sql.Statement - {conn-10005, pstmt-20018} created. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-7073-exec-10 druid.sql.Statement - {conn-10005, pstmt-20018} Parameters : [1, 7166912116544627]
-DEBUG http-nio-7073-exec-10 druid.sql.Statement - {conn-10005, pstmt-20018} Types : [TINYINT, VARCHAR]
-DEBUG http-nio-7073-exec-10 druid.sql.Statement - {conn-10005, pstmt-20018} executed. 0.9482 millis. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-7073-exec-10 druid.sql.ResultSet - {conn-10005, pstmt-20018, rs-50014} open
-DEBUG http-nio-7073-exec-10 druid.sql.ResultSet - {conn-10005, pstmt-20018, rs-50014} Header: [id, app_id, deskey, ivkey, app_type, app_name, active, create_time, update_time]
-DEBUG http-nio-7073-exec-10 druid.sql.ResultSet - {conn-10005, pstmt-20018, rs-50014} Result: [1, 7166912116544627, null, null, true, null, true, null, null]
-DEBUG http-nio-7073-exec-10 druid.sql.ResultSet - {conn-10005, pstmt-20018, rs-50014} closed
-DEBUG http-nio-7073-exec-10 druid.sql.Statement - {conn-10005, pstmt-20018} closed
-DEBUG http-nio-7073-exec-10 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-7073-exec-10 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-7073-exec-10 druid.sql.Statement - {conn-10005, pstmt-20019} created. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
-FROM kernel_student_data
-WHERE (code=? AND card=?)
-DEBUG http-nio-7073-exec-10 druid.sql.Statement - {conn-10005, pstmt-20019} Parameters : [a94cd604baab2c30, 32f96b9612764e24]
-DEBUG http-nio-7073-exec-10 druid.sql.Statement - {conn-10005, pstmt-20019} Types : [VARCHAR, VARCHAR]
-DEBUG http-nio-7073-exec-10 druid.sql.Statement - {conn-10005, pstmt-20019} executed. 1.0496 millis. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
-FROM kernel_student_data
-WHERE (code=? AND card=?)
-DEBUG http-nio-7073-exec-10 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50015} open
-DEBUG http-nio-7073-exec-10 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50015} Header: [id, uuid, identity_card, student_code, card, code, name, type, school_code, binding, active, create_time, update_time, first_time, last_time, activity_count, total_points, used_points, deduct_points]
-DEBUG http-nio-7073-exec-10 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50015} Result: [23, 32f96b9612764e24a94cd604baab2c30, null, G441423201201101050, 32f96b9612764e24, a94cd604baab2c30, 99, false, 12300, false, true, 2019-08-01 15:58:02.0, 2019-08-02 01:09:03.0, 2019-08-03 04:21:44.0, 2019-08-03 16:58:30.0, 4, 49963, 10963, 0]
-DEBUG http-nio-7073-exec-10 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50015} closed
-DEBUG http-nio-7073-exec-10 druid.sql.Statement - {conn-10005, pstmt-20019} closed
-DEBUG http-nio-7073-exec-10 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-7073-exec-4 com.qimeng.main.UpdateStudentPointsController - UsedPointsVo [stuCode=a94cd604baab2c30, stuCard=32f96b9612764e24, usedPoints=10000, mark=测试扣分, operator=admin]
-DEBUG http-nio-7073-exec-4 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20020} created. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20020} Parameters : [1, 7166912116544627]
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20020} Types : [TINYINT, VARCHAR]
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20020} executed. 1.2463 millis. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20020, rs-50016} open
-DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20020, rs-50016} Header: [id, app_id, deskey, ivkey, app_type, app_name, active, create_time, update_time]
-DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20020, rs-50016} Result: [1, 7166912116544627, null, null, true, null, true, null, null]
-DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20020, rs-50016} closed
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20020} closed
-DEBUG http-nio-7073-exec-4 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-7073-exec-4 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20021} created. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
-FROM kernel_student_data
-WHERE (code=? AND card=?)
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20021} Parameters : [a94cd604baab2c30, 32f96b9612764e24]
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20021} Types : [VARCHAR, VARCHAR]
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20021} executed. 0.8567 millis. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
-FROM kernel_student_data
-WHERE (code=? AND card=?)
-DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20021, rs-50017} open
-DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20021, rs-50017} Header: [id, uuid, identity_card, student_code, card, code, name, type, school_code, binding, active, create_time, update_time, first_time, last_time, activity_count, total_points, used_points, deduct_points]
-DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20021, rs-50017} Result: [23, 32f96b9612764e24a94cd604baab2c30, null, G441423201201101050, 32f96b9612764e24, a94cd604baab2c30, 99, false, 12300, false, true, 2019-08-01 15:58:02.0, 2019-08-02 01:09:03.0, 2019-08-03 04:21:44.0, 2019-08-03 16:58:30.0, 4, 49963, 10963, 0]
-DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20021, rs-50017} closed
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20021} closed
-DEBUG http-nio-7073-exec-4 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-7073-exec-4 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-7073-exec-4 druid.sql.Connection - {conn-10005} setAutoCommit false
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20022} created. UPDATE kernel_student_data
-SET used_points=?
-WHERE (uuid=?)
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20022} Parameters : [10963, 32f96b9612764e24a94cd604baab2c30]
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20022} Types : [INTEGER, VARCHAR]
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20022} executed. 0.7232 millis. UPDATE kernel_student_data
-SET used_points=?
-WHERE (uuid=?)
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20022} closed
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20023} created. insert into kernel_points_manage_log(uuid,name,app_id,operator,points,mark,create_time) values(?,?,?,?,?,?,?)
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20023} Parameters : [32f96b9612764e24a94cd604baab2c30, 99, 7166912116544627, admin, 10000, 测试扣分, 2019-08-03 17:40:12.716]
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20023} Types : [VARCHAR, VARCHAR, VARCHAR, VARCHAR, INTEGER, VARCHAR, TIMESTAMP]
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20023} executed. 0.8782 millis. insert into kernel_points_manage_log(uuid,name,app_id,operator,points,mark,create_time) values(?,?,?,?,?,?,?)
-DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20023, rs-50018} open
-DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20023, rs-50018} Header: [GENERATED_KEY]
-DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20023, rs-50018} Result: [2]
-DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20023, rs-50018} closed
-DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20023} closed
-DEBUG http-nio-7073-exec-4 druid.sql.Connection - {conn-10005} commited
-DEBUG http-nio-7073-exec-4 druid.sql.Connection - {conn-10005} setAutoCommit true
-DEBUG http-nio-7073-exec-4 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-7073-exec-8 com.qimeng.main.UpdateStudentPointsController - StudentInfoVo [name=, stuCode=a94cd604baab2c30, stuCard=32f96b9612764e24, wasteType=2, unit=7000, point=0, bind=0]
-DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20024} created. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20024} Parameters : [1, 7166912116544627]
-DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20024} Types : [TINYINT, VARCHAR]
-DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20024} executed. 0.8791 millis. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20024, rs-50019} open
-DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20024, rs-50019} Header: [id, app_id, deskey, ivkey, app_type, app_name, active, create_time, update_time]
-DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20024, rs-50019} Result: [1, 7166912116544627, null, null, true, null, true, null, null]
-DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20024, rs-50019} closed
-DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20024} closed
-DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20025} created. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
-FROM kernel_student_data
-WHERE (code=? AND card=?)
-DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20025} Parameters : [a94cd604baab2c30, 32f96b9612764e24]
-DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20025} Types : [VARCHAR, VARCHAR]
-DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20025} executed. 0.7418 millis. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
-FROM kernel_student_data
-WHERE (code=? AND card=?)
-DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20025, rs-50020} open
-DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20025, rs-50020} Header: [id, uuid, identity_card, student_code, card, code, name, type, school_code, binding, active, create_time, update_time, first_time, last_time, activity_count, total_points, used_points, deduct_points]
-DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20025, rs-50020} Result: [23, 32f96b9612764e24a94cd604baab2c30, null, G441423201201101050, 32f96b9612764e24, a94cd604baab2c30, 99, false, 12300, false, true, 2019-08-01 15:58:02.0, 2019-08-02 01:09:03.0, 2019-08-03 04:21:44.0, 2019-08-03 16:58:30.0, 4, 49963, 10963, 0]
-DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20025, rs-50020} closed
-DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20025} closed
-DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-7073-exec-9 com.qimeng.main.UpdateStudentPointsController - UsedPointsVo [stuCode=a94cd604baab2c30, stuCard=32f96b9612764e24, usedPoints=10000, mark=测试扣分, operator=admin]
-DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20026} created. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20026} Parameters : [1, 7166912116544627]
-DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20026} Types : [TINYINT, VARCHAR]
-DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20026} executed. 0.8957 millis. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20026, rs-50021} open
-DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20026, rs-50021} Header: [id, app_id, deskey, ivkey, app_type, app_name, active, create_time, update_time]
-DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20026, rs-50021} Result: [1, 7166912116544627, null, null, true, null, true, null, null]
-DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20026, rs-50021} closed
-DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20026} closed
-DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20027} created. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
-FROM kernel_student_data
-WHERE (code=? AND card=?)
-DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20027} Parameters : [a94cd604baab2c30, 32f96b9612764e24]
-DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20027} Types : [VARCHAR, VARCHAR]
-DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20027} executed. 1.6621 millis. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
-FROM kernel_student_data
-WHERE (code=? AND card=?)
-DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20027, rs-50022} open
-DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20027, rs-50022} Header: [id, uuid, identity_card, student_code, card, code, name, type, school_code, binding, active, create_time, update_time, first_time, last_time, activity_count, total_points, used_points, deduct_points]
-DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20027, rs-50022} Result: [23, 32f96b9612764e24a94cd604baab2c30, null, G441423201201101050, 32f96b9612764e24, a94cd604baab2c30, 99, false, 12300, false, true, 2019-08-01 15:58:02.0, 2019-08-02 01:09:03.0, 2019-08-03 04:21:44.0, 2019-08-03 16:58:30.0, 4, 49963, 10963, 0]
-DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20027, rs-50022} closed
-DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20027} closed
-DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10005} setAutoCommit false
-DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20028} created. UPDATE kernel_student_data
-SET deduct_points=?
-WHERE (uuid=?)
-DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20028} Parameters : [10000, 32f96b9612764e24a94cd604baab2c30]
-DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20028} Types : [INTEGER, VARCHAR]
-DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20028} executed. 1.0627 millis. UPDATE kernel_student_data
-SET deduct_points=?
-WHERE (uuid=?)
-DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20028} closed
-DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20029} created. insert into kernel_points_manage_log(uuid,name,app_id,operator,points,mark,create_time) values(?,?,?,?,?,?,?)
-DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20029} Parameters : [32f96b9612764e24a94cd604baab2c30, 99, 7166912116544627, admin, 10000, 测试扣分, 2019-08-03 17:42:02.398]
-DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20029} Types : [VARCHAR, VARCHAR, VARCHAR, VARCHAR, INTEGER, VARCHAR, TIMESTAMP]
-DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20029} executed. 1.0941 millis. insert into kernel_points_manage_log(uuid,name,app_id,operator,points,mark,create_time) values(?,?,?,?,?,?,?)
-DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20029, rs-50023} open
-DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20029, rs-50023} Header: [GENERATED_KEY]
-DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20029, rs-50023} Result: [3]
-DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20029, rs-50023} closed
-DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20029} closed
-DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10005} commited
-DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10005} setAutoCommit true
-DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : [true]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} Types : [BOOLEAN]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} executed. 1.1126 millis. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_school_inform
+WHERE (active=?)
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [id, school_name, school_id, school_code, postal_code, address, contacts, active, create_time, update_time]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Result: [1, 456, 123, 12300, 5555, null, null, true, null, null]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} closed
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} created. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} Parameters : [12300, 2]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} Types : [VARCHAR, TINYINT]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} executed. 1.3117 millis. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} Header: [id, schoolid_of_device, uuid, schoolid_of_student, recycle_type, identity_type, count, last_remainder, factor, points, remainder, create_time]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} Result: [16, 12300, 32f96b9612764e24a94cd604baab2c30, 12300, true, false, 7066, 0, 70, 100, 66, 2019-08-05 21:28:26.0]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} closed
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20003} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20003} Parameters : [12300, null, 7066, 100, 66, 1, 0, 2019-08-06 00:37:38.042]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20003} Types : [VARCHAR, OTHER, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20003} executed. 4.3454 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20003, rs-50003} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20003, rs-50003} Header: [GENERATED_KEY]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20003, rs-50003} Result: [1]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20003, rs-50003} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20003} closed
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20004} created. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20004} Parameters : [12300, 1]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20004} Types : [VARCHAR, TINYINT]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20004} executed. 0.8762 millis. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50004} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50004} Header: [id, schoolid_of_device, uuid, schoolid_of_student, recycle_type, identity_type, count, last_remainder, factor, points, remainder, create_time]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50004} Result: [14, 12300, 32f96b9612764e24a94cd604baab2c30, 12300, true, false, 7066, 0, 1, 7066, 0, 2019-08-05 16:26:50.0]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50004} Result: [15, 12300, 32f96b9612764e24a94cd604baab2c30, 12300, true, false, 7066, 0, 1, 7066, 0, 2019-08-05 16:29:35.0]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50004} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20004} closed
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20005} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20005} Parameters : [12300, null, 14132, 14132, 0, 2, 0, 2019-08-06 00:37:38.042]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20005} Types : [VARCHAR, OTHER, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20005} executed. 3.8267 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50005} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50005} Header: [GENERATED_KEY]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50005} Result: [2]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50005} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20005} closed
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG Thread-5 druid.sql.Connection - {conn-10001} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10002} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10003} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10004} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001} connected
+DEBUG main druid.sql.Connection - {conn-10002} connected
+DEBUG main druid.sql.Connection - {conn-10003} connected
+DEBUG main druid.sql.Connection - {conn-10004} connected
+DEBUG main druid.sql.Connection - {conn-10005} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} created. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} executed. 11.0149 millis. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, type, mark, uint, factor, create_time, update_time]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [1, true, 纸, 克, 70, null, null]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [2, true, 瓶子, 个, 1, null, null]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} created. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_school_inform
+WHERE (active=?)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : [true]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} Types : [BOOLEAN]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} executed. 2.0751 millis. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_school_inform
+WHERE (active=?)
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [id, school_name, school_id, school_code, postal_code, address, contacts, active, create_time, update_time]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Result: [1, 456, 123, 12300, 5555, null, null, true, null, null]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} closed
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} created. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} Parameters : [12300, 2]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} Types : [VARCHAR, TINYINT]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} executed. 1.3132 millis. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} Header: [id, schoolid_of_device, uuid, schoolid_of_student, recycle_type, identity_type, count, last_remainder, factor, points, remainder, create_time]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} Result: [16, 12300, 32f96b9612764e24a94cd604baab2c30, 12300, true, false, 7066, 0, 70, 100, 66, 2019-08-05 21:28:26.0]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} closed
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20003} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20003} Parameters : [12300, 2, 7066, 100, 66, 1, 0, 2019-08-06 00:39:39.66]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20003} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20003} executed. 4.8386 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20003, rs-50003} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20003, rs-50003} Header: [GENERATED_KEY]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20003, rs-50003} Result: [3]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20003, rs-50003} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20003} closed
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20004} created. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20004} Parameters : [12300, 1]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20004} Types : [VARCHAR, TINYINT]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20004} executed. 1.1376 millis. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50004} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50004} Header: [id, schoolid_of_device, uuid, schoolid_of_student, recycle_type, identity_type, count, last_remainder, factor, points, remainder, create_time]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50004} Result: [14, 12300, 32f96b9612764e24a94cd604baab2c30, 12300, true, false, 7066, 0, 1, 7066, 0, 2019-08-05 16:26:50.0]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50004} Result: [15, 12300, 32f96b9612764e24a94cd604baab2c30, 12300, true, false, 7066, 0, 1, 7066, 0, 2019-08-05 16:29:35.0]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50004} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20004} closed
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20005} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20005} Parameters : [12300, 1, 14132, 14132, 0, 2, 0, 2019-08-06 00:39:39.66]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20005} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20005} executed. 4.3763 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50005} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50005} Header: [GENERATED_KEY]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50005} Result: [4]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50005} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20005} closed
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG Thread-5 druid.sql.Connection - {conn-10001} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10002} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10003} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10004} closed
+DEBUG Thread-5 druid.sql.Connection - {conn-10005} closed
