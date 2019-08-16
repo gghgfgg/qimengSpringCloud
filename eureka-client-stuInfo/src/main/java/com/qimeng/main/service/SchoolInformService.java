@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.qimeng.main.dao.SchoolInformDao;
@@ -23,6 +25,7 @@ public class SchoolInformService {
 	@Autowired
 	SchoolInformDao schoolInformDao;
 	
+	@CacheEvict(value="SchoolInform",key="#p0.schoolCode")
 	public int insertSchoolInform(SchoolInform schoolInform)
 	{
 		try {
@@ -35,6 +38,7 @@ public class SchoolInformService {
 		}
 	}
 	
+	@CacheEvict(value="SchoolInform",key="#p0.schoolCode")
 	public int updateSchoolInform(SchoolInform schoolInform) {
 		try {
 			return schoolInformDao.updateSchoolInform(schoolInform);
@@ -62,13 +66,14 @@ public class SchoolInformService {
 		schoolInform.setActive(active);
 		return selectSchoolInformList(schoolInform);
 	}
-	
+	@Cacheable(value="SchoolInform",key="#schoolCode")
 	public SchoolInform selectSchoolInformBySchoolCode(String schoolCode) {
 		SchoolInform schoolInform=new SchoolInform();
 		schoolInform.setSchoolCode(schoolCode);
 		List<SchoolInform> list=selectSchoolInformList(schoolInform);
 		return list.isEmpty()?null:list.get(0);
 	}
+	@Cacheable(value="SchoolInform",key="#schoolCode")
 	public SchoolInform selectSchoolInformBySchoolCode(String schoolCode,Boolean active) {
 		SchoolInform schoolInform=new SchoolInform();
 		schoolInform.setSchoolCode(schoolCode);
@@ -77,6 +82,21 @@ public class SchoolInformService {
 		return list.isEmpty()?null:list.get(0);
 	}
 	
-
+	public List<SchoolInform> selectSchoolInformByName(String schoolName) {
+		SchoolInform schoolInform=new SchoolInform();
+		schoolInform.setSchoolName(schoolName);
+		return selectSchoolInformList(schoolInform);
+	}
+	
+	public List<SchoolInform> selectSchoolCodeList(String postalCode){
+		try {
+			return schoolInformDao.selectSchoolCodeList(postalCode);
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.error("学校代码查询异常");
+			logger.error("Error:",e);
+			throw new RuntimeException(e);		
+		}
+	}
 }
 

@@ -1,9 +1,15 @@
 package com.qimeng.main.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class DeviceState {
-    private Integer id;
+public class DeviceState implements Serializable{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private Integer id;
 
     private Byte type;
 

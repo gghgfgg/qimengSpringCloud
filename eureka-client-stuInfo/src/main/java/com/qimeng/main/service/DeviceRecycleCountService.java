@@ -46,7 +46,7 @@ public class DeviceRecycleCountService {
 	 * @param studentRecycleCount
 	 * @return
 	 */
-	List<DeviceRecycleCount> selectDeviceRecycleCountList(DeviceRecycleCount deviceRecycleCount){
+	public List<DeviceRecycleCount> selectDeviceRecycleCountList(DeviceRecycleCount deviceRecycleCount){
 		try {
 			return deviceRecycleCountDao.selectDeviceRecycleCountList(deviceRecycleCount);
 		} catch (Exception e) {
@@ -62,7 +62,7 @@ public class DeviceRecycleCountService {
 	 * @param uuid
 	 * @return
 	 */
-	List<DeviceRecycleCount> selectDeviceRecycleCountByUuid(String machineId){
+	public List<DeviceRecycleCount> selectDeviceRecycleCountByUuid(String machineId){
 		DeviceRecycleCount deviceRecycleCount=new DeviceRecycleCount();
 		deviceRecycleCount.setMachineId(machineId);
 		return selectDeviceRecycleCountList(deviceRecycleCount);
@@ -73,7 +73,7 @@ public class DeviceRecycleCountService {
 	 * @param type
 	 * @return
 	 */
-	List<DeviceRecycleCount> selectDeviceRecycleCountByType(byte type){
+	public List<DeviceRecycleCount> selectDeviceRecycleCountByType(byte type){
 		DeviceRecycleCount deviceRecycleCount=new DeviceRecycleCount();
 		deviceRecycleCount.setType(type);
 		return selectDeviceRecycleCountList(deviceRecycleCount);
@@ -84,7 +84,7 @@ public class DeviceRecycleCountService {
 	 * @param type
 	 * @return
 	 */
-	DeviceRecycleCount selectDeviceRecycleCount(String machineId,byte type){
+	public DeviceRecycleCount selectDeviceRecycleCount(String machineId,byte type){
 		DeviceRecycleCount deviceRecycleCount=new DeviceRecycleCount();
 		deviceRecycleCount.setMachineId(machineId);
 		deviceRecycleCount.setType(type);

@@ -25,9 +25,9 @@ public interface DeviceManagementDao {
 
 	static String tablename="machine_device_management";
 	
-	static String fields="machine_id,serial_number,school_code,active,create_time,update_time";
+	static String fields="machine_id,serial_number,school_code,postal_code,active,create_time,update_time";
 	
-	static String item="#{item.machineId},#{item.serialNumber},#{item.schoolCode},#{item.active},#{item.createTime},#{item.updateTime}";
+	static String item="#{item.machineId},#{item.serialNumber},#{item.schoolCode},#{item.postalCode},#{item.active},#{item.createTime},#{item.updateTime}";
 	
 	@Insert("insert into "+tablename+"("+fields+") values" + "("+item+")")
 	@Options(useGeneratedKeys = true,keyProperty = "id")
@@ -46,6 +46,12 @@ public interface DeviceManagementDao {
 	        
 	        if(!StringUtils.isEmpty(deviceManagement.getSerialNumber())) {
 	        	sql.SET("serial_number=#{item.serialNumber}");
+	        }
+	        if(!StringUtils.isEmpty(deviceManagement.getSchoolCode())) {
+	        	sql.SET("school_code=#{item.schoolCode}");
+	        }
+	        if(!StringUtils.isEmpty(deviceManagement.getPostalCode())) {
+	        	sql.SET("postal_code=#{item.postalCode}");
 	        }
 	        if(deviceManagement.getActive()!=null) {
 	        	 sql.SET("active=#{item.active}");
@@ -69,10 +75,15 @@ public interface DeviceManagementDao {
 	    	if(!StringUtils.isEmpty(deviceManagement.getSerialNumber())) {
 	        	sql.WHERE("serial_number=#{item.serialNumber}");
 	        }
+	    	if(!StringUtils.isEmpty(deviceManagement.getSchoolCode())) {
+	        	sql.WHERE("school_code=#{item.schoolCode}");
+	        }
+	        if(!StringUtils.isEmpty(deviceManagement.getPostalCode())) {
+	        	sql.WHERE("postal_code=#{item.postalCode}");
+	        }
 	        if(deviceManagement.getActive()!=null) {
 	        	 sql.WHERE("active=#{item.active}");
 	        }
-	        sql.SET("update_time=#{item.updateTime}");
 	        
 	        if(deviceManagement.getId()!=null) {
 	        	sql.WHERE("id=#{item.id}");

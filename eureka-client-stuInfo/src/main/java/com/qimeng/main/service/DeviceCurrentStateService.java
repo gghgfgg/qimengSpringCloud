@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.qimeng.main.dao.DeviceCurrentStateDao;
@@ -23,6 +25,7 @@ public class DeviceCurrentStateService {
 	@Autowired
 	DeviceCurrentStateDao deviceCurrentStateDao;
 	
+	@CacheEvict(value="DeviceCurrentState",key="#p0.serialNumber")
 	public int insertDeviceStateLog(DeviceCurrentState deviceCurrentState) {
 		try {
 			return deviceCurrentStateDao.insertDeviceCurrentState(deviceCurrentState);
@@ -34,7 +37,7 @@ public class DeviceCurrentStateService {
 		}
 	}
 	
-	public List<DeviceCurrentState> selectDeviceStateLog(DeviceCurrentState deviceCurrentState){
+	public List<DeviceCurrentState> selectDeviceCurrentStateList(DeviceCurrentState deviceCurrentState){
 		try {
 			return deviceCurrentStateDao.selectDeviceCurrentStateList(deviceCurrentState);
 		} catch (Exception e) {
@@ -45,10 +48,11 @@ public class DeviceCurrentStateService {
 		}
 	}
 	
+	@Cacheable(value="DeviceCurrentState",key="#serialNumber")
 	public DeviceCurrentState selectDeviceStateLogBySerialNumber(String serialNumber) {
 		DeviceCurrentState deviceCurrentState=new DeviceCurrentState();
 		deviceCurrentState.setSerialNumber(serialNumber);
-		List<DeviceCurrentState> list=selectDeviceStateLog(deviceCurrentState);
+		List<DeviceCurrentState> list=selectDeviceCurrentStateList(deviceCurrentState);
 		return list.isEmpty()?null:list.get(0);
 	}
 }

@@ -1,35 +1,29 @@
-//package com.qimeng.main;
-//
-//import java.io.Serializable;
-//import java.util.Date;
-//import java.util.concurrent.TimeUnit;
-//
-//import org.apache.commons.lang.RandomStringUtils;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.data.redis.core.RedisTemplate;
-//import org.springframework.data.redis.core.StringRedisTemplate;
-//import org.springframework.web.bind.annotation.RequestBody;
-//import org.springframework.web.bind.annotation.RequestMapping;
-//import org.springframework.web.bind.annotation.RestController;
-//
-//import com.alibaba.fastjson.JSON;
-//import com.alibaba.fastjson.JSONObject;
-//import com.alibaba.fastjson.TypeReference;
-//import com.qimeng.main.Service.ApplicationInfoService;
-//import com.qimeng.main.Service.StudentInfoService;
-//import com.qimeng.main.entity.ApplicationInfo;
-//import com.qimeng.main.entity.PointsLog;
-//import com.qimeng.main.entity.StudentInfo;
-//import com.qimeng.main.oldStuService.OldService;
-//import com.qimeng.main.vo.MachineInfo;
-//import com.qimeng.main.vo.OldResponseJson;
-//import com.qimeng.main.vo.RequestMessage;
-//import com.qimeng.main.vo.ResponseMessage;
-//import com.qimeng.main.vo.StudentInfoVo;
-//
-//@RestController
-//@RequestMapping("/stuinfo")
-//public class mainController {
+package com.qimeng.main;
+
+import java.io.Serializable;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.commons.lang.RandomStringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.TypeReference;
+
+import com.qimeng.main.vo.OldResponseJson;
+import com.qimeng.main.vo.RequestMessage;
+import com.qimeng.main.vo.ResponseMessage;
+import com.qimeng.main.vo.StudentInfoVo;
+
+@Controller
+public class mainController {
 //
 //	@Autowired
 //	OldService oldService;
@@ -42,10 +36,10 @@
 //	ApplicationInfoService applicationInfoService;
 //	@Autowired
 //	StudentInfoService studentInfoService;
-//	@RequestMapping("/index")
-//	public String index() {
-//		return "index";
-//	}
+	@RequestMapping("/index")
+	public String index() {
+		return "index";
+	}
 //	
 //	
 //	@RequestMapping("/getstudent")
@@ -165,4 +159,4 @@
 //		return JSONObject.toJSONString(responseMessage);
 //	
 //	}
-//}
+}

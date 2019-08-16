@@ -120,4 +120,5 @@ public class StudentInformService {
 		studentInform.setIdentityCard(null);
 		return selectStudentInform(studentInform);		
 	}
+
 }

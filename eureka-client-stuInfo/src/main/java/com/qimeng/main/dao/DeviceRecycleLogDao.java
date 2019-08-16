@@ -41,7 +41,7 @@ public interface DeviceRecycleLogDao {
 	
 	@Select("Select id "+fields+" from "+tablename+" where schoolid_of_device=#{schoolCode} and recycle_type=#{type} "
 			+ "and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)")
-	List<DeviceRecycleLog> selectDeviceRecycleLogBySchoolDate(String schoolCode,byte type);
+	List<DeviceRecycleLog> selectDeviceRecycleLogBySchoolDay(String schoolCode,byte type);
 	
 	public class SqlFactory extends SQL{
 		public String selectDeviceRecycleLog(@Param("item")DeviceRecycleLog deviceRecycleLog) {

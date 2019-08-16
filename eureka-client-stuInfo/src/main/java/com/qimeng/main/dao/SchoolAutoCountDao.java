@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectProvider;
 import org.apache.ibatis.jdbc.SQL;
 import org.springframework.util.StringUtils;
@@ -33,6 +34,14 @@ public interface SchoolAutoCountDao {
 	
 	@SelectProvider(type = SqlFactory.class,method = "selectSchoolAutoCount")
 	List<SchoolAutoCount> selectSchoolAutoCountList(@Param("item")SchoolAutoCount schoolAutoCount);
+	
+	@Select("Select id "+fields+" from "+tablename+" where school_code=#{schoolCode} and type=#{type} and count_type=1 "
+			+ "and date_format(create_time,'%Y-%m')=date_format(date_sub(CURDATE(),interval 1 month),'%Y-%m')")
+	List<SchoolAutoCount> selectSchoolAutoCountForDay(String schoolCode,byte type);
+	
+	@Select("Select id "+fields+" from "+tablename+" where school_code=#{schoolCode} and type=#{type} and count_type=2 "
+			+ "and date_format(create_time,'%Y')=date_format(date_sub(CURDATE(),interval 1 year),'%Y')")
+	List<SchoolAutoCount> selectSchoolAutoCountForMonth(String schoolCode,byte type);
 	
 	public class SqlFactory extends SQL{
 		

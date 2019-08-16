@@ -8,6 +8,7 @@ public class RequestMessage<E> implements Serializable{
 	private String appID;
 	private String machineID;
 	private String accountTonken;
+	private String operator;
 	private E data;
 	public String getAppID() {
 		return appID;
@@ -34,10 +35,16 @@ public class RequestMessage<E> implements Serializable{
 		this.accountTonken = accountTonken;
 	}
 
+	public String getOperator() {
+		return operator;
+	}
+	public void setOperator(String operator) {
+		this.operator = operator;
+	}
 	@Override
 	public String toString() {
-		return "RequestMessage [appID=" + appID + ", machineID=" + machineID + ", accountTonken="
-				+ accountTonken + ", data=" + data + "]";
+		return "RequestMessage [appID=" + appID + ", machineID=" + machineID + ", accountTonken=" + accountTonken
+				+ ", operator=" + operator + ", data=" + data + "]";
 	}
 	
 

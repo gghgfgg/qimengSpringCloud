@@ -17,7 +17,7 @@ public interface StudentInformDao {
 	
 	static String tablename="kernel_student_inform";
 	static String fields="name,sex,student_code,identity_card,native_place,nation,"
-			+ "phone,school_name,school_code,birthday,birthplace,"
+			+ "phone,school_name,school_id,birthday,birthplace,"
 			+ "nationality,identity_type,grade,classS,overseas_chinese,"
 			+ "politics_status,health,census_register,census_register_type,enrollment_time,"
 			+ "entrance_way,studying_way,address,contact_address,residence,"
@@ -27,7 +27,7 @@ public interface StudentInformDao {
 			+ "family_relationship,family_work,family_residence,family_census_register,family_phone";
 	
 	static String item="#{item.name},#{item.sex},#{item.studentCode},#{item.identityCard},#{item.nativePlace},#{item.nation},"
-			+ "#{item.phone},#{item.schoolName},#{item.schoolCode},#{item.birthday},#{item.birthplace},"
+			+ "#{item.phone},#{item.schoolName},#{item.schoolId},#{item.birthday},#{item.birthplace},"
 			+ "#{item.nationality},#{item.identityType},#{item.grade},#{item.classS},#{item.overseasChinese},"
 			+ "#{item.politicsStatus},#{item.health},#{item.censusRegister},#{item.censusRegisterType},#{item.enrollmentTime},"
 			+ "#{item.entranceWay},#{item.studyingWay},#{item.address},#{item.contactAddress},#{item.residence},"
@@ -37,7 +37,7 @@ public interface StudentInformDao {
 			+ "#{item.familyRelationship},#{item.familyWork},#{item.familyResidence},#{item.familyCensusRegister},#{item.familyPhone}";
 	
 	static String update="name=VALUES(name),sex=VALUES(sex),native_place=VALUES(native_place),nation=VALUES(nation),"
-			+ "phone=VALUES(phone),school_name=VALUES(school_name),school_code=VALUES(school_code),birthday=VALUES(birthday),birthplace=VALUES(birthplace),"
+			+ "phone=VALUES(phone),school_name=VALUES(school_name),school_id=VALUES(school_id),birthday=VALUES(birthday),birthplace=VALUES(birthplace),"
 			+ "nationality=VALUES(nationality),identity_type=VALUES(identity_type),grade=VALUES(grade),classS=VALUES(classS),overseas_chinese=VALUES(overseas_chinese),"
 			+ "politics_status=VALUES(politics_status),health=VALUES(health),census_register=VALUES(census_register),census_register_type=VALUES(census_register_type),enrollment_time=VALUES(enrollment_time),"
 			+ "entrance_way=VALUES(entrance_way),studying_way=VALUES(studying_way),address=VALUES(address),contact_address=VALUES(contact_address),residence=VALUES(residence),"
@@ -111,8 +111,8 @@ public interface StudentInformDao {
 	    	if(!StringUtils.isEmpty(studentInform.getSchoolName())){
 	        	 sql.WHERE("school_name=#{item.schoolName}");
 			}
-	    	if(!StringUtils.isEmpty(studentInform.getSchoolCode())){
-	        	 sql.WHERE("school_code=#{item.schoolCode}");
+	    	if(!StringUtils.isEmpty(studentInform.getSchoolId())){
+	        	 sql.WHERE("school_id=#{item.schoolId}");
 			}
 	    	if(!StringUtils.isEmpty(studentInform.getGrade())){
 	        	 sql.WHERE("grade=#{item.grade}");

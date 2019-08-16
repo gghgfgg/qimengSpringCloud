@@ -46,7 +46,7 @@ public class SchoolAutoCountService {
 	 * @param studentAutoCount
 	 * @return
 	 */
-	List<SchoolAutoCount> selectSchoolAutoCountList(SchoolAutoCount schoolAutoCount){
+	public List<SchoolAutoCount> selectSchoolAutoCountList(SchoolAutoCount schoolAutoCount){
 		try {
 			return schoolAutoCountDao.selectSchoolAutoCountList(schoolAutoCount);
 		} catch (Exception e) {
@@ -57,5 +57,35 @@ public class SchoolAutoCountService {
 		}
 	}
 	
+	/**
+	 * 查找回收数据
+	 * @param studentAutoCount
+	 * @return
+	 */
+	public List<SchoolAutoCount> selectSchoolAutoCountForDay(String schoolCode,byte type){
+		try {
+			return schoolAutoCountDao.selectSchoolAutoCountForDay(schoolCode,type);
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.error("查找学校自动统计日回收数据参数异常");
+			logger.error("Error:", e);
+			throw new RuntimeException(e);
+		}
+	}
+	/**
+	 * 查找回收数据
+	 * @param studentAutoCount
+	 * @return
+	 */
+	public List<SchoolAutoCount> selectSchoolAutoCountForMonth(String schoolCode,byte type){
+		try {
+			return schoolAutoCountDao.selectSchoolAutoCountForMonth(schoolCode,type);
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.error("查找学校自动统计月回收数据参数异常");
+			logger.error("Error:", e);
+			throw new RuntimeException(e);
+		}
+	}
 }
 

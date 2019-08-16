@@ -37,7 +37,7 @@ public class DeviceRecycleLogService {
 		}
 	}
 	
-	List<DeviceRecycleLog> selectDeviceRecycleLogList(DeviceRecycleLog deviceRecycleLog){
+	public List<DeviceRecycleLog> selectDeviceRecycleLogList(DeviceRecycleLog deviceRecycleLog){
 		try {
 			return deviceRecycleLogDao.selectDeviceRecycleLogList(deviceRecycleLog);
 		} catch (Exception e) {
@@ -48,9 +48,9 @@ public class DeviceRecycleLogService {
 		}
 	}
 	
-	List<DeviceRecycleLog> selectDeviceRecycleLogBySchoolDate(String schoolcode,byte type){
+	public List<DeviceRecycleLog> selectDeviceRecycleLogBySchoolDay(String schoolcode,byte type){
 		try {
-			return deviceRecycleLogDao.selectDeviceRecycleLogBySchoolDate(schoolcode,type);
+			return deviceRecycleLogDao.selectDeviceRecycleLogBySchoolDay(schoolcode,type);
 		} catch (Exception e) {
 			// TODO: handle exception
 			logger.error("查询机器回收日志数据数据异常");

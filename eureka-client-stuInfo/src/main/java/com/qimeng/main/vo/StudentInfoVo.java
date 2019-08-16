@@ -13,6 +13,7 @@ public class StudentInfoVo {
 	private int unit;
 	private int point;
 	private int bind;
+	private int active;
 	public String getName() {
 		return name;
 	}
@@ -69,11 +70,20 @@ public class StudentInfoVo {
 		this.bind = bind;
 	}
 
+	public int getActive() {
+		return active;
+	}
+
+	public void setActive(int active) {
+		this.active = active;
+	}
+
 	@Override
 	public String toString() {
 		return "StudentInfoVo [name=" + name + ", stuCode=" + stuCode + ", stuCard=" + stuCard + ", wasteType="
-				+ wasteType + ", unit=" + unit + ", point=" + point + ", bind=" + bind + "]";
+				+ wasteType + ", unit=" + unit + ", point=" + point + ", bind=" + bind + ", active=" + active + "]";
 	}
+
 	
 
 }

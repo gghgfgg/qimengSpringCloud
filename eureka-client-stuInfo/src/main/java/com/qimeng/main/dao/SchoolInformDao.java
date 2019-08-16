@@ -42,6 +42,9 @@ public interface SchoolInformDao {
 	@SelectProvider(type = SqlFactory.class,method = "selectSchoolInform")
 	List<SchoolInform> selectSchoolInformList(@Param("item")SchoolInform schoolInform);
 	
+	@SelectProvider(type = SqlFactory.class,method = "selectSchoolCode")
+	List<SchoolInform> selectSchoolCodeList(@Param("item")String postalCode);
+	
 	public class SqlFactory extends SQL{
 		public String updateSchoolInform(@Param("item")SchoolInform schoolInform) {
 			SQL sql = new SQL(); //SQL语句对象，所在包：org.apache.ibatis.jdbc.SQL
@@ -74,7 +77,7 @@ public interface SchoolInformDao {
 	    	sql.FROM(tablename);
 	    	
 	    	if(!StringUtils.isEmpty(schoolInform.getSchoolName())){
-	            sql.WHERE("school_name=#{item.schoolName}");
+	            sql.WHERE("school_name like CONCAT('%',#{item.schoolName},'%')");
 	        }
 	        if(!StringUtils.isEmpty(schoolInform.getSchoolCode())){
 	            sql.WHERE("school_code=#{item.schoolCode}");
@@ -87,6 +90,28 @@ public interface SchoolInformDao {
 	        }
 	    	return sql.toString();
 		}
+		public String selectSchoolCode(@Param("item")String postalCode) {
+			SQL sql = new SQL(); //SQL语句对象，所在包：org.apache.ibatis.jdbc.SQL
+	    	
+	    	sql.SELECT("id,"+fields);
+	    	sql.FROM(tablename);
+	    	if(!StringUtils.isEmpty(postalCode)) {		
+	    		String[] postalCodeArray = postalCode.split("-");
+	    		String tempString="(";
+	    		for (int i=0;i!=postalCodeArray.length;i++) {
+	    			if(i!=postalCodeArray.length-1)
+		    		{
+		    			tempString+="postal_code='"+postalCodeArray[i]+"\' or ";
+		    		}
+		    		else {
+		    			tempString+="postal_code='"+postalCodeArray[i]+"\')";
+		    		}
+				}
+	    		sql.WHERE(tempString);
+		    }
+	    	return sql.toString();
+		}
 	}
+	
 }
 

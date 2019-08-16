@@ -28,7 +28,7 @@ public interface ApplicationManagementDao {
 	
 	static String fields="app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time";
 	
-	static String item="#{item.appId},#{item.deskey},#{item.ivkey},#{item.appType},#{item.appName},#{item.active}"
+	static String item="#{item.appId},#{item.deskey},#{item.ivkey},#{item.appType},#{item.appName},#{item.active},"
 			+ "#{item.createTime},#{item.updateTime}";
 	
 	@Insert("insert into "+tablename+"("+fields+") values" + "("+item+")")
@@ -51,14 +51,21 @@ public interface ApplicationManagementDao {
 		     if(!StringUtils.isEmpty(applicationManagement.getAppName())) {
 		    	 sql.SET("app_name=#{item.appName}");
 		     }
+		     if(!StringUtils.isEmpty(applicationManagement.getDeskey())) {
+		    	 sql.SET("deskey=#{item.deskey}");
+		     }
+		     if(!StringUtils.isEmpty(applicationManagement.getIvkey())) {
+		    	 sql.SET("ivkey=#{item.ivkey}");
+		     }
 		     if(applicationManagement.getActive()!=null) {
 		    	 sql.SET("active=#{item.active}");
 		     }
 		     sql.SET("update_time=#{item.updateTime}");
+		     
 		     if(!StringUtils.isEmpty(applicationManagement.getAppId())) {
 		    	 sql.WHERE("app_id=#{item.appId}");
 		     }
-		     if(applicationManagement.getAppId()!=null) {
+		     if(applicationManagement.getId()!=null) {
 		    	 sql.WHERE("id=#{item.id}");
 		     }
 		     return sql.toString();
@@ -80,6 +87,9 @@ public interface ApplicationManagementDao {
 	    	 if(applicationManagement.getId()!=null) {
 		    	 sql.WHERE("id=#{item.id}");
 		     }
+	    	 if(!StringUtils.isEmpty(applicationManagement.getAppName())) {
+	    		 sql.WHERE("app_name like CONCAT('%',#{item.appName},'%')");
+	    	 }
 	    	return sql.toString();
 		}
 	}

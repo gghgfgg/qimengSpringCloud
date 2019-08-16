@@ -1,12 +1,10 @@
 package com.qimeng.main;
 
-import java.io.Serializable;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +18,7 @@ import com.qimeng.main.entity.StudentData;
 import com.qimeng.main.service.ApplicationManagementService;
 import com.qimeng.main.service.StudentDataService;
 import com.qimeng.main.service.StudentUpdatePointsService;
+import com.qimeng.main.util.StaticGlobal;
 import com.qimeng.main.vo.RequestMessage;
 import com.qimeng.main.vo.ResponseMessage;
 import com.qimeng.main.vo.StudentInfoVo;
@@ -43,9 +42,6 @@ public class UpdateStudentPointsController {
 	@Autowired
 	StringRedisTemplate stringRedisTemplate;
 	@Autowired
-	RedisTemplate<String, Serializable> redisCacheTemplate;
-
-	@Autowired
 	StudentDataService studentDataService;
 	@Autowired
 	ApplicationManagementService applicationManagementService;
@@ -60,10 +56,16 @@ public class UpdateStudentPointsController {
 				});
 
 		StudentInfoVo stuInfoVo = (StudentInfoVo) requestMessage.getData();
+		if(stuInfoVo==null) {
+			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
+			responseMessage.setData("");
+			responseMessage.setFailedMessage("参数不足");
+			return JSONObject.toJSONString(responseMessage);
+		}
 		logger.debug(stuInfoVo.toString());
 		try {
 			if (applicationManagementService.selectApplicationManagementByAppId(requestMessage.getAppID(),
-					(byte) 1) == null) {
+					StaticGlobal.ACTIVE) == null) {
 				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
 				responseMessage.setData("");
 				responseMessage.setFailedMessage("该appid没有权限");
@@ -78,15 +80,22 @@ public class UpdateStudentPointsController {
 				responseMessage.setFailedMessage("找不到当前学生");
 				return JSONObject.toJSONString(responseMessage);
 			}
+			if (studentData.getActive()==StaticGlobal.CLOSED) {
+				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
+				responseMessage.setData("");
+				responseMessage.setFailedMessage("当前账号已被封停，请规范使用");
+				return JSONObject.toJSONString(responseMessage);
+			}
 			String accountTonken = RandomStringUtils.randomAlphanumeric(8);
 			while (stringRedisTemplate.hasKey(accountTonken)) {
 				accountTonken = RandomStringUtils.randomAlphanumeric(8);
 			}
-			stringRedisTemplate.opsForValue().set(accountTonken, "", 1L, TimeUnit.MINUTES);
+			stringRedisTemplate.opsForValue().set("ActionKey:"+accountTonken, "", 1L, TimeUnit.MINUTES);
 			stuInfoVo.setName(studentData.getName());
 			stuInfoVo.setWasteType(0);
 			stuInfoVo.setUnit(0);
-			stuInfoVo.setPoint(studentData.getTotalPoints()-studentData.getUsedPoints()-studentData.getDeductPoints());
+			int points=studentData.getTotalPoints()-studentData.getUsedPoints()-studentData.getDeductPoints();
+			stuInfoVo.setPoint(points<0?0:points);
 			stuInfoVo.setBind(studentData.getBinding());
 			ResponseMessage<StudentInfoVo> responseMessage = new ResponseMessage<StudentInfoVo>();
 			responseMessage.setData(stuInfoVo);
@@ -109,13 +118,20 @@ public class UpdateStudentPointsController {
 		RequestMessage<StudentInfoVo> requestMessage = JSON.parseObject(message.toString(),
 				new TypeReference<RequestMessage<StudentInfoVo>>() {
 				});
+		
 		StudentInfoVo stuInfoVo = (StudentInfoVo) requestMessage.getData();
+		if(stuInfoVo==null) {
+			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
+			responseMessage.setData("");
+			responseMessage.setFailedMessage("参数不足");
+			return JSONObject.toJSONString(responseMessage);
+		}
 		logger.debug(stuInfoVo.toString());
 		try {
 
 			ApplicationManagement applicationManagement = applicationManagementService
-					.selectApplicationManagementByAppId(requestMessage.getAppID(), (byte) 1);
-			if (applicationManagement == null||(applicationManagement.getAppType()&(byte)0x1)==0) {
+					.selectApplicationManagementByAppId(requestMessage.getAppID(),StaticGlobal.ACTIVE);
+			if (applicationManagement == null||(applicationManagement.getAppType()&StaticGlobal.ADD)==0) {
 				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
 				responseMessage.setData("");
 				responseMessage.setFailedMessage("该appid没有权限");
@@ -127,14 +143,14 @@ public class UpdateStudentPointsController {
 			/*debug测试*/
 			String accountTonken =requestMessage.getAccountTonken();
 			
-			if (!stringRedisTemplate.hasKey(accountTonken)) {
+			if (!stringRedisTemplate.hasKey("ActionKey:"+accountTonken)) {
 				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
 				responseMessage.setData("");
 				responseMessage.setFailedMessage("请求超时");
 				System.out.println(responseMessage.toString());
 				return JSONObject.toJSONString(responseMessage);
 			}
-			stringRedisTemplate.delete(accountTonken);
+			stringRedisTemplate.delete("ActionKey:"+accountTonken);
 
 			StudentData studentData = studentDataService.selectStudentDataByCodeAndCard(stuInfoVo.getStuCode(),
 					stuInfoVo.getStuCard());
@@ -142,6 +158,12 @@ public class UpdateStudentPointsController {
 				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
 				responseMessage.setData("");
 				responseMessage.setFailedMessage("找不到当前学生");
+				return JSONObject.toJSONString(responseMessage);
+			}
+			if (studentData.getActive()==StaticGlobal.CLOSED) {
+				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
+				responseMessage.setData("");
+				responseMessage.setFailedMessage("当前账号已被封停，请规范使用");
 				return JSONObject.toJSONString(responseMessage);
 			}
 			studentUpdatePointsService.updateStudentPoints(studentData,stuInfoVo.getWasteType(),stuInfoVo.getUnit(),requestMessage.getMachineID());
@@ -165,12 +187,18 @@ public class UpdateStudentPointsController {
 				new TypeReference<RequestMessage<UsedPointsVo>>() {
 				});
 		UsedPointsVo usedPointsVo = (UsedPointsVo) requestMessage.getData();
+		if(usedPointsVo==null) {
+			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
+			responseMessage.setData("");
+			responseMessage.setFailedMessage("参数不足");
+			return JSONObject.toJSONString(responseMessage);
+		}
 		logger.debug(usedPointsVo.toString());
 		try {
 
 			ApplicationManagement applicationManagement = applicationManagementService
-					.selectApplicationManagementByAppId(requestMessage.getAppID(), (byte) 1);
-			if (applicationManagement == null||(applicationManagement.getAppType()&(byte)0x2)==0) {
+					.selectApplicationManagementByAppId(requestMessage.getAppID(),StaticGlobal.ACTIVE);
+			if (applicationManagement == null||(applicationManagement.getAppType()&StaticGlobal.SUB)==0) {
 				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
 				responseMessage.setData("");
 				responseMessage.setFailedMessage("该appid没有权限");
@@ -182,14 +210,14 @@ public class UpdateStudentPointsController {
 			/*debug测试*/
 			String accountTonken =requestMessage.getAccountTonken();
 			
-			if (!stringRedisTemplate.hasKey(accountTonken)) {
+			if (!stringRedisTemplate.hasKey("ActionKey:"+accountTonken)) {
 				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
 				responseMessage.setData("");
 				responseMessage.setFailedMessage("请求超时");
 				System.out.println(responseMessage.toString());
 				return JSONObject.toJSONString(responseMessage);
 			}
-			stringRedisTemplate.delete(accountTonken);
+			stringRedisTemplate.delete("ActionKey:"+accountTonken);
 
 			StudentData studentData = studentDataService.selectStudentDataByCodeAndCard(usedPointsVo.getStuCode(),
 					usedPointsVo.getStuCard());
@@ -199,6 +227,19 @@ public class UpdateStudentPointsController {
 				responseMessage.setFailedMessage("找不到当前学生");
 				return JSONObject.toJSONString(responseMessage);
 			}
+			if (studentData.getActive()==StaticGlobal.CLOSED) {
+				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
+				responseMessage.setData("");
+				responseMessage.setFailedMessage("当前账号已被封停，请规范使用");
+				return JSONObject.toJSONString(responseMessage);
+			}
+			if(studentData.getTotalPoints()-studentData.getUsedPoints()-studentData.getDeductPoints()<usedPointsVo.getUsedPoints()) {
+				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
+				responseMessage.setData("");
+				responseMessage.setFailedMessage("积分不足");
+				return JSONObject.toJSONString(responseMessage);
+			}
+			
 			studentUpdatePointsService.usedStudentPoints(studentData,usedPointsVo.getUsedPoints(),usedPointsVo.getMark(),requestMessage.getAppID());
 			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
 			responseMessage.setData("");
@@ -220,31 +261,23 @@ public class UpdateStudentPointsController {
 				new TypeReference<RequestMessage<UsedPointsVo>>() {
 				});
 		UsedPointsVo usedPointsVo = (UsedPointsVo) requestMessage.getData();
+		if(usedPointsVo==null) {
+			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
+			responseMessage.setData("");
+			responseMessage.setFailedMessage("参数不足");
+			return JSONObject.toJSONString(responseMessage);
+		}
 		logger.debug(usedPointsVo.toString());
 		try {
 
 			ApplicationManagement applicationManagement = applicationManagementService
-					.selectApplicationManagementByAppId(requestMessage.getAppID(), (byte) 1);
-			if (applicationManagement == null||(applicationManagement.getAppType()&(byte)0x2)==0) {
+					.selectApplicationManagementByAppId(requestMessage.getAppID(),StaticGlobal.ACTIVE);
+			if (applicationManagement == null||(applicationManagement.getAppType()&StaticGlobal.SUB)==0) {
 				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
 				responseMessage.setData("");
 				responseMessage.setFailedMessage("该appid没有权限");
 				return JSONObject.toJSONString(responseMessage);
 			}
-
-//			String accountTonken = applicationManagementService.decodeMessage(applicationManagement,
-//					requestMessage.getAccountTonken());
-			/*debug测试*/
-			String accountTonken =requestMessage.getAccountTonken();
-			
-			if (!stringRedisTemplate.hasKey(accountTonken)) {
-				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-				responseMessage.setData("");
-				responseMessage.setFailedMessage("请求超时");
-				System.out.println(responseMessage.toString());
-				return JSONObject.toJSONString(responseMessage);
-			}
-			stringRedisTemplate.delete(accountTonken);
 
 			StudentData studentData = studentDataService.selectStudentDataByCodeAndCard(usedPointsVo.getStuCode(),
 					usedPointsVo.getStuCard());

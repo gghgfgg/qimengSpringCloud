@@ -19,7 +19,7 @@ public class StudentInform {
 
     private String schoolName;
 
-    private String schoolCode;
+    private String schoolId;
 
     private String birthday;
 
@@ -167,12 +167,12 @@ public class StudentInform {
         this.schoolName = schoolName == null ? null : schoolName.trim();
     }
 
-    public String getSchoolCode() {
-        return schoolCode;
+    public String getSchoolId() {
+        return schoolId;
     }
 
-    public void setSchoolCode(String schoolCode) {
-        this.schoolCode = schoolCode == null ? null : schoolCode.trim();
+    public void setSchoolId(String schoolId) {
+        this.schoolId = schoolId == null ? null : schoolId.trim();
     }
 
     public String getBirthday() {
@@ -219,7 +219,7 @@ public class StudentInform {
         return classS;
     }
 
-    public void setClass(String classS) {
+    public void setClassS(String classS) {
         this.classS = classS == null ? null : classS.trim();
     }
 

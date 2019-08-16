@@ -1,13 +1,19 @@
 package com.qimeng.main.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.alibaba.fastjson.annotation.JSONField;
 
-public class DeviceManagement {
-    private Integer id;
+public class DeviceManagement implements Serializable{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private Integer id;
 
     private String machineId;
 
@@ -15,6 +21,8 @@ public class DeviceManagement {
 
     private String schoolCode;
 
+    private String postalCode;
+    
     private Boolean active;
     @DateTimeFormat(pattern="yyyy-MM-dd HH-mm-ss")//页面写入数据库时格式化
    	@JSONField(format="yyyy-MM-dd HH-mm-ss")//数据库导出页面时json格式化
@@ -55,7 +63,15 @@ public class DeviceManagement {
         this.schoolCode = schoolCode == null ? null : schoolCode.trim();
     }
 
-    public Boolean getActive() {
+    public String getPostalCode() {
+		return postalCode;
+	}
+
+	public void setPostalCode(String postalCode) {
+		this.postalCode = postalCode;
+	}
+
+	public Boolean getActive() {
         return active;
     }
 

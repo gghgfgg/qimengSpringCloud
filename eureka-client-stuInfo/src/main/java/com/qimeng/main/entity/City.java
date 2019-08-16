@@ -5,7 +5,7 @@ public class City {
 
     private String cityName;
 
-    private String provinceId;
+    private Integer provinceId;
 
     private String firstLetter;
 
@@ -29,12 +29,12 @@ public class City {
         this.cityName = cityName == null ? null : cityName.trim();
     }
 
-    public String getProvinceId() {
+    public Integer getProvinceId() {
         return provinceId;
     }
 
-    public void setProvinceId(String provinceId) {
-        this.provinceId = provinceId == null ? null : provinceId.trim();
+    public void setProvinceId(Integer provinceId) {
+        this.provinceId = provinceId;
     }
 
     public String getFirstLetter() {

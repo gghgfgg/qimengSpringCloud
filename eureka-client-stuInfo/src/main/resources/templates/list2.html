@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://getbootstrap.com/docs/4.0/examples/dashboard/ -->
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>Dashboard Template for Bootstrap</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/asserts/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<link href="/asserts/css/dashboard.css" rel="stylesheet">
+		<style type="text/css">
+			/* Chart.js */
+			
+			@-webkit-keyframes chartjs-render-animation {
+				from {
+					opacity: 0.99
+				}
+				to {
+					opacity: 1
+				}
+			}
+			
+			@keyframes chartjs-render-animation {
+				from {
+					opacity: 0.99
+				}
+				to {
+					opacity: 1
+				}
+			}
+			
+			.chartjs-render-monitor {
+				-webkit-animation: chartjs-render-animation 0.001s;
+				animation: chartjs-render-animation 0.001s;
+			}
+			#popLayer {
+	display: none;
+	background-color: #B3B3B3;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+	-moz-opacity: 0.8;
+	opacity: .80;
+	filter: alpha(opacity = 80); /* 只支持IE6、7、8、9 */
+}
+
+/*弹出层*/
+#popBox, #popBox1 {
+	display: none;
+	background-color: #FFFFFF;
+	z-index: 11;
+	width: 1024px;
+	height: 768px;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	margin: auto;
+}
+		</style>
+	</head>
+
+	<body>
+		<!-- <nav class="navbar navbar-light bg-light sticky-top  flex-md-nowrap p-0">
+			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="">
+			<img src="/asserts/images/logo.png" width="40%"></a>
+			<ul class="navbar-nav px-3">
+				<li class="nav-item text-nowrap">
+					<a class="nav-link" href="">[[${session.userLogin}]]</a>
+				</li>
+			</ul>
+		</nav> -->
+
+		<div class="container-fluid">
+			<div class="row">
+				<!-- <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+					<div class="sidebar-sticky">
+						<ul class="nav flex-column">
+							<li class="nav-item">
+								<a class="nav-link active" href="">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+										<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+										<polyline points="9 22 9 12 15 12 15 22"></polyline>
+									</svg>
+									登陆日志 <span class="sr-only">(current)</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/log/1">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+										<path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+										<polyline points="13 2 13 9 20 9"></polyline>
+									</svg>
+									敏感词
+								</a>
+							</li>
+						</ul>		
+					</div>
+				</nav> -->
+
+				<main role="main" class="col-md-12 ml-sm-auto col-lg-12 pt-1">
+          <div id="popLayer"></div>
+			<div id="popBox">
+			<div>
+			<button style="float: right" th:onclick="document.getElementById('popLayer').style.display='none';document.getElementById('popBox').style.display='none'"
+									class="btn btn-sm btn-danger btn-info">关闭</button>
+			<ul class="pagination" style="float: left">
+               <li class="page-item"><a class="page-link" id="11" href="javascript:void(0);">首页</a></li>
+               <li class="page-item"><a class="page-link" id="12" href="javascript:void(0);">上页</a></li>
+               <li class="page-item"><a class="page-link" id="13" href="javascript:void(0);">下页</a></li>
+               <li class="page-item"><a class="page-link" id="14" href="javascript:void(0);">尾页</a></li>
+			</ul>	
+			</div>					
+			<table class="table table-striped table-sm table-bordered">
+							<thead>
+								<tr>
+									<th>用户ID</th>
+									<th>最后登陆时间</th>
+									<th>最后登陆IP</th>
+									<th>用户活动</th>
+								</tr>
+							</thead>
+							<tbody id="tablebody">
+							</tbody>
+						</table>
+						
+						
+			</div>
+					<div class="table-responsive">
+						<table class="table table-striped table-sm table-bordered">
+							<thead>
+								<tr>
+									<th>用户ID</th>
+									<th>用户名</th>
+									<th>登陆地址</th>
+									<th>最后登陆时间</th>
+									<th>最后登陆IP</th>
+									<th>详情</th>
+								</tr>
+							</thead>
+							<tbody>
+							  <tr th:each="user:${PageInfo.list}">
+							      <td th:text="${user.userId}"></td>
+							      <td th:text="${user.userName}"></td>
+								  <td th:text="${user.email}"></td>
+								  <td th:text="${user.lastLoginTime}"></td>
+								  <td th:text="${user.lastLoginIP}"></td>
+								  <td>
+								<button th:onclick="getdata([[${user.uuid}]],1)"
+									class="btn btn-sm btn-danger btn-info">详情</button>
+							    </td>
+								  
+							  </tr>
+							</tbody>
+						</table>
+					</div>
+					
+					<div class="row">
+					<div class="col-md-4 offset-md-8">
+					<nav aria-label="Page navigation example" >
+  <ul class="pagination">
+  <li class="page-item"><a class="page-link" href="/list2/1">首页</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous" th:href="@{/list2/}+${PageInfo.prePage}">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    
+  <li class="page-item">
+    <a class="page-link" th:if="${PageInfo.pageNum-2>=1&& PageInfo.pageNum == PageInfo.pages}" th:href="@{/list/}+${PageInfo.pageNum-2}" th:text="${PageInfo.pageNum-2}"></a>
+    </li>
+    <li class="page-item">
+    <a class="page-link" th:if="${PageInfo.pageNum-1>=1}" th:href="@{/list/}+${PageInfo.pageNum-1}" th:text="${PageInfo.pageNum-1}"></a>
+    </li>
+    <li class="page-item">
+    <a class="page-link"  th:href="@{/list/}+${PageInfo.pageNum}" th:text="${PageInfo.pageNum}"></a>
+    </li>
+    <li class="page-item">
+    <a class="page-link" th:if="${PageInfo.pageNum+1<=PageInfo.pages}" th:href="@{/list/}+${PageInfo.pageNum+1}" th:text="${PageInfo.pageNum+1}"></a>
+    </li>
+    <li class="page-item">
+    <a class="page-link" th:if="${PageInfo.pageNum+2<=PageInfo.pages&&PageInfo.pageNum<2}" th:href="@{/list/}+${PageInfo.pageNum+2}" th:text="${PageInfo.pageNum+2}"></a>
+    </li>
+    <li class="page-item">
+    
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next" th:href="@{/list2/}+${PageInfo.nextPage}">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+     <li class="page-item"><a class="page-link" th:href="@{/list2/}+${PageInfo.pages}">尾页</a></li>
+  </ul>
+</nav>
+					</div>
+					</div>
+				</main>
+			</div>
+		</div>
+
+		<!-- Bootstrap core JavaScript
+    ================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script type="text/javascript" src="/asserts/js/jquery-3.2.1.slim.min.js"></script>
+		<script type="text/javascript" src="/asserts/js/popper.min.js"></script>
+		<script type="text/javascript" src="/asserts/js/bootstrap.min.js"></script>
+       <script type="text/javascript"
+		src="/asserts/js/jquery-1.7.2.min.js"></script>
+		<!-- Icons -->
+		<script type="text/javascript" src="/asserts/js/feather.min.js"></script>
+		<script>
+			feather.replace()
+		</script>
+
+		<!-- Graphs -->
+		<script type="text/javascript" src="/asserts/js/Chart.min.js"></script>
+		<script>
+			var ctx = document.getElementById("myChart");
+			var myChart = new Chart(ctx, {
+				type: 'line',
+				data: {
+					labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+					datasets: [{
+						data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+						lineTension: 0,
+						backgroundColor: 'transparent',
+						borderColor: '#007bff',
+						borderWidth: 4,
+						pointBackgroundColor: '#007bff'
+					}]
+				},
+				options: {
+					scales: {
+						yAxes: [{
+							ticks: {
+								beginAtZero: false
+							}
+						}]
+					},
+					legend: {
+						display: false,
+					}
+				}
+			});
+			
+			function getdata(data1,page){
+				if(page==0)
+					return;
+				 $.getJSON("/Uuid/"+page+"/?uuid="+data1,function(data,status){
+					 $("#tablebody").empty();
+					 for(var item of data.list) { // item代表数组里面的元素
+						 
+						 var $tr = $("<tr>"+
+							        "<td>"+item.uuid+"</td>"+
+							        "<td>"+item.lastTime+"</td>"+
+							        "<td>"+item.lastIP+"</td>"+
+							        "<td>"+item.action+"</td>"+
+							        +"</tr>");
+						 $("#tablebody").append($tr);
+						};
+					
+						$("#11").attr("onclick","getdata(\'"+data1+"\',1)"); 
+						$("#12").attr("onclick","getdata(\'"+data1+"\',"+data.prePage+")"); 
+						$("#13").attr("onclick","getdata(\'"+data1+"\',"+data.nextPage+")"); 
+						$("#14").attr("onclick","getdata(\'"+data1+"\',"+data.pages+")"); 
+					  });
+				
+				 var popBox = document.getElementById("popBox");
+			     var popLayer = document.getElementById("popLayer");
+			     if(popBox.style.display!="block")
+			     {popBox.style.display = "block";
+			     popLayer.style.display = "block";		}     
+		    };
+		</script>
+
+	</body>
+
+</html>

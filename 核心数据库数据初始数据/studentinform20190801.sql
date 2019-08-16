@@ -46,7 +46,7 @@ CREATE TABLE `auxiliary_recycle_type` (
   `factor` int(11) unsigned DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
   UNIQUE KEY `type` (`type`) USING HASH
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -462,7 +462,7 @@ CREATE TABLE `kernel_points_manage_log` (
   `name` varchar(20) DEFAULT NULL,
   `app_id` varchar(20) DEFAULT NULL,
   `operator` varchar(20) DEFAULT NULL,
-  `points` int(11) unsigned DEFAULT NULL,
+  `points` int(11) DEFAULT NULL,
   `mark` varchar(255) DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -484,7 +484,7 @@ CREATE TABLE `kernel_points_used_log` (
   `app_id` varchar(20) DEFAULT NULL,
   `points` int(11) unsigned DEFAULT NULL,
   `mark` varchar(255) DEFAULT NULL,
-  `creat_time` datetime DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `uuid` (`uuid`) USING HASH
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -573,7 +573,7 @@ CREATE TABLE `kernel_student_data` (
   `card` varchar(40) DEFAULT NULL,
   `code` varchar(40) DEFAULT NULL,
   `name` varchar(20) DEFAULT NULL,
-  `type` tinyint(1) unsigned zerofill NOT NULL,
+  `type` tinyint(1) unsigned zerofill NOT NULL DEFAULT '0',
   `school_code` char(12) NOT NULL,
   `binding` tinyint(1) unsigned zerofill NOT NULL,
   `active` tinyint(1) unsigned zerofill NOT NULL,
@@ -584,7 +584,7 @@ CREATE TABLE `kernel_student_data` (
   `activity_count` int(11) unsigned zerofill NOT NULL,
   `total_points` int(11) unsigned zerofill NOT NULL,
   `used_points` int(11) unsigned zerofill NOT NULL,
-  `deduct_points` int(11) unsigned zerofill NOT NULL,
+  `deduct_points` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `uuid` (`uuid`) USING HASH,
   UNIQUE KEY `identity_card` (`identity_card`) USING HASH,
@@ -610,7 +610,7 @@ CREATE TABLE `kernel_student_inform` (
   `nation` varchar(20) DEFAULT NULL,
   `phone` varchar(20) DEFAULT NULL,
   `school_name` varchar(50) DEFAULT NULL,
-  `school_code` char(10) DEFAULT NULL,
+  `school_id` char(10) DEFAULT NULL,
   `birthday` varchar(20) DEFAULT NULL,
   `birthplace` varchar(20) DEFAULT NULL,
   `nationality` varchar(50) DEFAULT NULL,
@@ -663,14 +663,14 @@ CREATE TABLE `kernel_student_inform` (
 DROP TABLE IF EXISTS `kernel_student_recycle_count`;
 CREATE TABLE `kernel_student_recycle_count` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `uuid` char(32) DEFAULT NULL,
-  `type` tinyint(1) unsigned DEFAULT NULL,
-  `count` int(11) unsigned DEFAULT NULL,
-  `points` int(11) unsigned DEFAULT NULL,
-  `remainder` int(11) unsigned DEFAULT NULL,
-  `activity_count` int(11) unsigned DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
-  `update_time` datetime DEFAULT NULL,
+  `uuid` char(32) NOT NULL,
+  `type` tinyint(1) unsigned NOT NULL,
+  `count` int(11) unsigned NOT NULL,
+  `points` int(11) unsigned NOT NULL,
+  `remainder` int(11) unsigned NOT NULL,
+  `activity_count` int(11) unsigned NOT NULL,
+  `create_time` datetime NOT NULL,
+  `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uuid` (`uuid`,`type`) USING HASH
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -688,6 +688,7 @@ CREATE TABLE `machine_device_management` (
   `machine_id` char(14) DEFAULT NULL,
   `serial_number` varchar(50) DEFAULT NULL,
   `school_code` char(12) DEFAULT NULL,
+  `postal_code` char(6) DEFAULT NULL,
   `active` tinyint(1) unsigned DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
@@ -798,9 +799,9 @@ CREATE TABLE `management_application_management` (
   `app_id` varchar(20) DEFAULT NULL,
   `deskey` char(16) DEFAULT NULL,
   `ivkey` char(8) DEFAULT NULL,
-  `app_type` tinyint(1) unsigned DEFAULT NULL,
+  `app_type` tinyint(1) unsigned zerofill NOT NULL DEFAULT '0',
   `app_name` varchar(20) DEFAULT NULL,
-  `active` tinyint(1) DEFAULT NULL,
+  `active` tinyint(1) unsigned zerofill NOT NULL DEFAULT '0',
   `create_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),

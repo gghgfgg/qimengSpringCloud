@@ -1,13 +1,19 @@
 package com.qimeng.main.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.alibaba.fastjson.annotation.JSONField;
 
-public class RecycleType {
-    private Integer id;
+public class RecycleType implements Serializable{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private Integer id;
 
     private Byte type;
 

@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>商家登陆页面</title>
+       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+<!-- Bootstrap core CSS -->
+<link href="/asserts/css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="/asserts/css/style.css"  rel="stylesheet">
+</head>
+<body>
+	<!-- contact-form -->
+	<div class="message warning">
+		<div class="inset">
+			<div class="login-head">
+				<h1>请登录</h1>
+				<div class="alert-close"></div>
+			</div>
+			<form  method="post" action="/login">			
+				<li><input type="text" class="text" name="username"
+					onfocus="this.value = '';"
+					onblur="if (this.value == '') {this.value = 'Username';}"><a
+					href="#" class=" icon user"></a></li>
+				<li><input type="password" name="pwd"
+					onfocus="this.value = '';"
+					onblur="if (this.value == '') {this.value = 'Password';}">
+					<a href="#" class="icon lock"></a></li>
+			<div class="submit">
+				<input type="submit"  value="登陆" >
+						  <div class="clear">  </div>	
+			</div>
+			</form>
+		</div>
+	</div>
+	</div>
+	<div class="clear"></div>
+	<!--- footer --->
+	<div class="footer">
+		<p>Copyright &copy; 2014.</p>
+	</div>
+		<script type="text/javascript" src="/asserts/js/jquery-3.2.1.slim.min.js" ></script>
+		<script type="text/javascript" src="/asserts/js/popper.min.js" ></script>
+		<script type="text/javascript" src="/asserts/js/bootstrap.min.js" ></script>
+</body>
+</html>

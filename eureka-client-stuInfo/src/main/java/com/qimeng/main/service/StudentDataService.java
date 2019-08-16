@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import com.qimeng.main.dao.StudentDataDao;
 import com.qimeng.main.entity.StudentData;
@@ -188,6 +189,9 @@ public class StudentDataService {
 	 * @return
 	 */
 	public StudentData selectStudentDataByIdentityCard(String identityCard) {
+		if(StringUtils.isEmpty(identityCard)) {
+			return null;
+		}
 		StudentData studentData=new StudentData();
 		studentData.setIdentityCard(identityCard);
 		List<StudentData> list=selectStudentData(studentData);
@@ -200,6 +204,9 @@ public class StudentDataService {
 	 * @return
 	 */
 	public StudentData selectStudentDataByStudentCode(String studentCode) {
+		if(StringUtils.isEmpty(studentCode)) {
+			return null;
+		}
 		StudentData studentData=new StudentData();
 		studentData.setStudentCode(studentCode);
 		List<StudentData> list=selectStudentData(studentData);
@@ -212,6 +219,9 @@ public class StudentDataService {
 	 * @return
 	 */
 	public StudentData selectStudentDataByUuid(String uuid) {
+		if(StringUtils.isEmpty(uuid)) {
+			return null;
+		}
 		StudentData studentData=new StudentData();
 		studentData.setUuid(uuid);
 		List<StudentData> list=selectStudentData(studentData);
@@ -224,6 +234,9 @@ public class StudentDataService {
 	 * @return
 	 */
 	public StudentData selectStudentDataByCodeAndCard(String code,String card) {
+		if(StringUtils.isEmpty(code)||StringUtils.isEmpty(card)) {
+			return null;
+		}
 		StudentData studentData=new StudentData();
 		studentData.setCard(card);
 		studentData.setCode(code);

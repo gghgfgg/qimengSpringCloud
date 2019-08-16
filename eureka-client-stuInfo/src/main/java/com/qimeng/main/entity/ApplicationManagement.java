@@ -5,9 +5,14 @@ import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.alibaba.fastjson.annotation.JSONField;
+import java.io.Serializable;
+public class ApplicationManagement implements Serializable{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
-public class ApplicationManagement {
-    private Integer id;
+	private Integer id;
 
     private String appId;
 
@@ -99,4 +104,5 @@ public class ApplicationManagement {
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
+    
 }

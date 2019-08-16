@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.qimeng.main.dao.DeviceManagementDao;
@@ -19,14 +21,15 @@ import com.qimeng.main.entity.DeviceManagement;
 
 @Service
 public class DeviceManagementService {
-	private static Logger logger = Logger.getLogger(StudentInformService.class); 
+	private static Logger logger = Logger.getLogger(DeviceManagementService.class); 
 	@Autowired
-	DeviceManagementDao deviceManagementDao;;
+	DeviceManagementDao deviceManagementDao;
 	
 	/**
 	 * @param deviceManagement
 	 * @return
 	 */
+	@CacheEvict(value="DeviceManagement",key="#p0.machineId")
 	public int insertDeviceManagement(DeviceManagement deviceManagement) {
 		try {
 			return deviceManagementDao.insertDeviceManagement(deviceManagement);
@@ -42,6 +45,7 @@ public class DeviceManagementService {
 	 * @param deviceManagement
 	 * @return
 	 */
+	@CacheEvict(value="DeviceManagement",key="#p0.machineId")
 	public int updateDeviceManagement(DeviceManagement deviceManagement) {
 		try {
 			return deviceManagementDao.updateDeviceManagement(deviceManagement);
@@ -57,7 +61,7 @@ public class DeviceManagementService {
 	 * @param deviceManagement
 	 * @return
 	 */
-	List<DeviceManagement> selectDeviceManagementList(DeviceManagement deviceManagement){
+	public List<DeviceManagement> selectDeviceManagementList(DeviceManagement deviceManagement){
 		try {
 			return deviceManagementDao.selectDeviceManagementList(deviceManagement);
 		} catch (Exception e) {
@@ -72,19 +76,27 @@ public class DeviceManagementService {
 	 * @param schoolCode
 	 * @return
 	 */
-	List<DeviceManagement> selectDeviceManagementListBySchoolCode(String schoolCode){
+	public List<DeviceManagement> selectDeviceManagementListBySchoolCode(String schoolCode){
 		DeviceManagement deviceManagement=new DeviceManagement();
 		deviceManagement.setSchoolCode(schoolCode);
 		return selectDeviceManagementList(deviceManagement);
 	}
+	public List<DeviceManagement> selectDeviceManagementListByPostalCode(String postalCode){
+		DeviceManagement deviceManagement=new DeviceManagement();
+		deviceManagement.setPostalCode(postalCode);
+		return selectDeviceManagementList(deviceManagement);
+	}
 	
-	DeviceManagement selectDeviceManagementListByMachineId(String machineId){
+	@Cacheable(value="DeviceManagement",key="#machineId")
+	public DeviceManagement selectDeviceManagementListByMachineId(String machineId){
 		DeviceManagement deviceManagement=new DeviceManagement();
 		deviceManagement.setMachineId(machineId);
 		List<DeviceManagement> list=selectDeviceManagementList(deviceManagement);
 		return list.isEmpty()?null:list.get(0);
 	}
-	DeviceManagement selectDeviceManagementListByMachineId(String machineId,boolean active){
+	
+	@Cacheable(value="DeviceManagement",key="#machineId")
+	public DeviceManagement selectDeviceManagementListByMachineId(String machineId,boolean active){
 		DeviceManagement deviceManagement=new DeviceManagement();
 		deviceManagement.setMachineId(machineId);
 		deviceManagement.setActive(active);

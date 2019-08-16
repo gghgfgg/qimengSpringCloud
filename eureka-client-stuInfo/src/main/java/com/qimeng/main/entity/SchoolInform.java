@@ -108,4 +108,11 @@ public class SchoolInform {
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
+    
+    @Override
+    public boolean equals(Object obj) {
+    	SchoolInform u = (SchoolInform) obj;
+        return id.equals(u.getId()) && schoolCode.equals(u.getSchoolCode());
+    }
+
 }

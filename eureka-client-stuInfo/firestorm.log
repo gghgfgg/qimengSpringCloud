@@ -1,145 +1,273 @@
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : [true]
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} Types : [BOOLEAN]
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} executed. 1.1126 millis. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+DEBUG http-nio-7073-exec-5 druid.sql.ResultSet - {conn-10005, pstmt-20014, rs-50014} Result: [31, 72b0cfc7c2f84a98a1d017fc1627dc20, 441423201201101060, null, 72b0cfc7c2f84a98, a1d017fc1627dc20, 98, false, 12301, false, false, 2019-08-02 00:45:14.0, 2019-08-02 00:45:14.0, null, null, 0, 0, 0, 0]
+DEBUG http-nio-7073-exec-5 druid.sql.ResultSet - {conn-10005, pstmt-20014, rs-50014} closed
+DEBUG http-nio-7073-exec-5 druid.sql.Statement - {conn-10005, pstmt-20014} closed
+DEBUG http-nio-7073-exec-5 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-5 com.qimeng.main.service.GlobalDateService - http://www.qimenghb.com
+DEBUG http-nio-7073-exec-5 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-5 druid.sql.Statement - {conn-10005, pstmt-20015} created. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
+FROM kernel_student_data
+WHERE (uuid=?)
+DEBUG http-nio-7073-exec-5 druid.sql.Statement - {conn-10005, pstmt-20015} Parameters : [0eba66f132c246cfb1006df4c63e487f]
+DEBUG http-nio-7073-exec-5 druid.sql.Statement - {conn-10005, pstmt-20015} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-5 druid.sql.Statement - {conn-10005, pstmt-20015} executed. 0.773 millis. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
+FROM kernel_student_data
+WHERE (uuid=?)
+DEBUG http-nio-7073-exec-5 druid.sql.ResultSet - {conn-10005, pstmt-20015, rs-50015} open
+DEBUG http-nio-7073-exec-5 druid.sql.ResultSet - {conn-10005, pstmt-20015, rs-50015} Header: [id, uuid, identity_card, student_code, card, code, name, type, school_code, binding, active, create_time, update_time, first_time, last_time, activity_count, total_points, used_points, deduct_points]
+DEBUG http-nio-7073-exec-5 druid.sql.ResultSet - {conn-10005, pstmt-20015, rs-50015} Result: [35, 0eba66f132c246cfb1006df4c63e487f, 441423201201101061, G441423201201101060, 0eba66f132c246cf, b1006df4c63e487f, 98, false, 12300, false, false, 2019-08-02 01:08:15.0, 2019-08-02 01:09:03.0, null, null, 0, 0, 0, 0]
+DEBUG http-nio-7073-exec-5 druid.sql.ResultSet - {conn-10005, pstmt-20015, rs-50015} closed
+DEBUG http-nio-7073-exec-5 druid.sql.Statement - {conn-10005, pstmt-20015} closed
+DEBUG http-nio-7073-exec-5 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-5 com.qimeng.main.service.GlobalDateService - http://www.qimenghb.com
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisTemplate加载完成
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisCacheManager加载完成
+DEBUG http-nio-7073-exec-1 com.qimeng.main.StudentInformController - StudentVo [uuid=null, identityCard=null, studentCode=null, qrcode=null, name=null, type=null, schoolCode=null, binding=null, active=null, firstTime=null, lastTime=null, activityCount=null, totalPoints=null, usedPoints=null, deductPoints=null, postalCodename=null, schoolName=null, schoolId=null, postalCode=110101, classS=null, grade=null, sex=null, nativePlace=null, nation=null, phone=null, birthday=null, birthplace=null, nationality=null, identityType=null, overseasChinese=null, politicsStatus=null, health=null, censusRegister=null, censusRegisterType=null, enrollmentTime=null, entranceWay=null, studyingWay=null, address=null, contactAddress=null, residence=null, workersChildren=null, onlyChild=null, preschoolEducation=null, leftoverChildren=null, orphan=null, martyrChildren=null, funding=null, boarderAlimony=null, auxiliaryNumber=null, studentNumber=null, studentSource=null, learningClass=null, disabilityTypes=null, familyName=null, familyRelationship=null, familyWork=null, familyResidence=null, familyCensusRegister=null, familyPhone=null]
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10001} connected
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10002} connected
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10003} connected
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10004} connected
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10005} connected
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
 FROM kernel_school_inform
-WHERE (active=?)
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [id, school_name, school_id, school_code, postal_code, address, contacts, active, create_time, update_time]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Result: [1, 456, 123, 12300, 5555, null, null, true, null, null]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} closed
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} closed
-DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG main druid.sql.Connection - {conn-10005} pool-connect
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} created. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} Parameters : [12300, 2]
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} Types : [VARCHAR, TINYINT]
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} executed. 1.3117 millis. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} open
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} Header: [id, schoolid_of_device, uuid, schoolid_of_student, recycle_type, identity_type, count, last_remainder, factor, points, remainder, create_time]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} Result: [16, 12300, 32f96b9612764e24a94cd604baab2c30, 12300, true, false, 7066, 0, 70, 100, 66, 2019-08-05 21:28:26.0]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} closed
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} closed
-DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG main druid.sql.Connection - {conn-10005} pool-connect
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20003} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20003} Parameters : [12300, null, 7066, 100, 66, 1, 0, 2019-08-06 00:37:38.042]
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20003} Types : [VARCHAR, OTHER, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20003} executed. 4.3454 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20003, rs-50003} open
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20003, rs-50003} Header: [GENERATED_KEY]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20003, rs-50003} Result: [1]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20003, rs-50003} closed
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20003} closed
-DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG main druid.sql.Connection - {conn-10005} pool-connect
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20004} created. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20004} Parameters : [12300, 1]
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20004} Types : [VARCHAR, TINYINT]
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20004} executed. 0.8762 millis. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50004} open
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50004} Header: [id, schoolid_of_device, uuid, schoolid_of_student, recycle_type, identity_type, count, last_remainder, factor, points, remainder, create_time]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50004} Result: [14, 12300, 32f96b9612764e24a94cd604baab2c30, 12300, true, false, 7066, 0, 1, 7066, 0, 2019-08-05 16:26:50.0]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50004} Result: [15, 12300, 32f96b9612764e24a94cd604baab2c30, 12300, true, false, 7066, 0, 1, 7066, 0, 2019-08-05 16:29:35.0]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50004} closed
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20004} closed
-DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG main druid.sql.Connection - {conn-10005} pool-connect
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20005} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20005} Parameters : [12300, null, 14132, 14132, 0, 2, 0, 2019-08-06 00:37:38.042]
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20005} Types : [VARCHAR, OTHER, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20005} executed. 3.8267 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50005} open
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50005} Header: [GENERATED_KEY]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50005} Result: [2]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50005} closed
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20005} closed
-DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG Thread-5 druid.sql.Connection - {conn-10001} closed
-DEBUG Thread-5 druid.sql.Connection - {conn-10002} closed
-DEBUG Thread-5 druid.sql.Connection - {conn-10003} closed
-DEBUG Thread-5 druid.sql.Connection - {conn-10004} closed
-DEBUG Thread-5 druid.sql.Connection - {conn-10005} closed
-DEBUG main druid.sql.Connection - {conn-10001} connected
-DEBUG main druid.sql.Connection - {conn-10002} connected
-DEBUG main druid.sql.Connection - {conn-10003} connected
-DEBUG main druid.sql.Connection - {conn-10004} connected
-DEBUG main druid.sql.Connection - {conn-10005} connected
-DEBUG main druid.sql.Connection - {conn-10005} pool-connect
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} created. SELECT id,type,mark,uint,factor,create_time,update_time
-FROM auxiliary_recycle_type
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} executed. 11.0149 millis. SELECT id,type,mark,uint,factor,create_time,update_time
-FROM auxiliary_recycle_type
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, type, mark, uint, factor, create_time, update_time]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [1, true, 纸, 克, 70, null, null]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [2, true, 瓶子, 个, 1, null, null]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} closed
-DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG main druid.sql.Connection - {conn-10005} pool-connect
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} created. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 11.853 millis. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
 FROM kernel_school_inform
-WHERE (active=?)
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : [true]
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} Types : [BOOLEAN]
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} executed. 2.0751 millis. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
-FROM kernel_school_inform
-WHERE (active=?)
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [id, school_name, school_id, school_code, postal_code, address, contacts, active, create_time, update_time]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Result: [1, 456, 123, 12300, 5555, null, null, true, null, null]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} closed
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20001} closed
-DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG main druid.sql.Connection - {conn-10005} pool-connect
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} created. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} Parameters : [12300, 2]
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} Types : [VARCHAR, TINYINT]
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} executed. 1.3132 millis. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} open
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} Header: [id, schoolid_of_device, uuid, schoolid_of_student, recycle_type, identity_type, count, last_remainder, factor, points, remainder, create_time]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} Result: [16, 12300, 32f96b9612764e24a94cd604baab2c30, 12300, true, false, 7066, 0, 70, 100, 66, 2019-08-05 21:28:26.0]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} closed
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} closed
-DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG main druid.sql.Connection - {conn-10005} pool-connect
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20003} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20003} Parameters : [12300, 2, 7066, 100, 66, 1, 0, 2019-08-06 00:39:39.66]
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20003} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20003} executed. 4.8386 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20003, rs-50003} open
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20003, rs-50003} Header: [GENERATED_KEY]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20003, rs-50003} Result: [3]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20003, rs-50003} closed
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20003} closed
-DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG main druid.sql.Connection - {conn-10005} pool-connect
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20004} created. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20004} Parameters : [12300, 1]
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20004} Types : [VARCHAR, TINYINT]
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20004} executed. 1.1376 millis. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50004} open
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50004} Header: [id, schoolid_of_device, uuid, schoolid_of_student, recycle_type, identity_type, count, last_remainder, factor, points, remainder, create_time]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50004} Result: [14, 12300, 32f96b9612764e24a94cd604baab2c30, 12300, true, false, 7066, 0, 1, 7066, 0, 2019-08-05 16:26:50.0]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50004} Result: [15, 12300, 32f96b9612764e24a94cd604baab2c30, 12300, true, false, 7066, 0, 1, 7066, 0, 2019-08-05 16:29:35.0]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50004} closed
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20004} closed
-DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG main druid.sql.Connection - {conn-10005} pool-connect
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20005} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20005} Parameters : [12300, 1, 14132, 14132, 0, 2, 0, 2019-08-06 00:39:39.66]
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20005} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20005} executed. 4.3763 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50005} open
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50005} Header: [GENERATED_KEY]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50005} Result: [4]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50005} closed
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20005} closed
-DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG Thread-5 druid.sql.Connection - {conn-10001} closed
-DEBUG Thread-5 druid.sql.Connection - {conn-10002} closed
-DEBUG Thread-5 druid.sql.Connection - {conn-10003} closed
-DEBUG Thread-5 druid.sql.Connection - {conn-10004} closed
-DEBUG Thread-5 druid.sql.Connection - {conn-10005} closed
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, school_name, school_id, school_code, postal_code, address, contacts, active, create_time, update_time]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [1, 456, 123, 12300, 110101, null, null, true, null, null]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [2, 645, 123, 12301, 110102, null, null, true, null, null]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [4, 658, 123, 12302, 110101, null, null, null, null, null]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20001} created. SELECT count(0) FROM kernel_student_data a INNER JOIN kernel_student_inform b ON (a.student_code = b.student_code) OR (a.identity_card = b.identity_card)
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : []
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20001} Types : []
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20001} executed. 1.0883 millis. SELECT count(0) FROM kernel_student_data a INNER JOIN kernel_student_inform b ON (a.student_code = b.student_code) OR (a.identity_card = b.identity_card)
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [count(0)]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Result: [6]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20001} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20002} created. SELECT a.uuid
+FROM kernel_student_data a
+INNER JOIN kernel_student_inform b on (a.student_code=b.student_code) or (a.identity_card=b.identity_card) LIMIT ? 
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20002} Parameters : [20]
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20002} Types : [INTEGER]
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20002} executed. 0.959 millis. SELECT a.uuid
+FROM kernel_student_data a
+INNER JOIN kernel_student_inform b on (a.student_code=b.student_code) or (a.identity_card=b.identity_card) LIMIT ? 
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} open
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} Header: [uuid]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} Result: [32f96b9612764e24a94cd604baab2c30]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} Result: [454cd61e1bb94b6bb603d680ce31f2bc]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} Result: [7e12da7fc97f475fac304bb8aa145259]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} Result: [68e4e29b63f143c1acc90dd67da60476]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} Result: [72b0cfc7c2f84a98a1d017fc1627dc20]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} Result: [0eba66f132c246cfb1006df4c63e487f]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20002} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20003} created. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
+FROM kernel_student_data
+WHERE (uuid=?)
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20003} Parameters : [32f96b9612764e24a94cd604baab2c30]
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20003} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20003} executed. 1.1473 millis. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
+FROM kernel_student_data
+WHERE (uuid=?)
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20003, rs-50003} open
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20003, rs-50003} Header: [id, uuid, identity_card, student_code, card, code, name, type, school_code, binding, active, create_time, update_time, first_time, last_time, activity_count, total_points, used_points, deduct_points]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20003, rs-50003} Result: [23, 32f96b9612764e24a94cd604baab2c30, null, G441423201201101050, 32f96b9612764e24, a94cd604baab2c30, 99, false, 12300, false, true, 2019-08-01 15:58:02.0, 2019-08-02 01:09:03.0, 2019-08-03 04:21:44.0, 2019-08-08 12:21:09.0, 21, 0, 0, -10]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20003, rs-50003} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20003} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20004} created. select * from global_data
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20004} Parameters : []
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20004} Types : []
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20004} executed. 0.9122 millis. select * from global_data
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50004} open
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50004} Header: [id, global_key, global_value, create_time, update_time]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50004} Result: [1, qrUrl, http://www.qimenghb.com, null, null]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50004} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20004} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-1 com.qimeng.main.service.GlobalDateService - http://www.qimenghb.com
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20005} created. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
+FROM kernel_student_data
+WHERE (uuid=?)
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20005} Parameters : [454cd61e1bb94b6bb603d680ce31f2bc]
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20005} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20005} executed. 0.9017 millis. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
+FROM kernel_student_data
+WHERE (uuid=?)
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50005} open
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50005} Header: [id, uuid, identity_card, student_code, card, code, name, type, school_code, binding, active, create_time, update_time, first_time, last_time, activity_count, total_points, used_points, deduct_points]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50005} Result: [24, 454cd61e1bb94b6bb603d680ce31f2bc, null, G441423201201101051, 454cd61e1bb94b6b, b603d680ce31f2bc, 99, false, 12300, false, false, 2019-08-01 15:58:02.0, 2019-08-02 01:09:03.0, null, null, 0, 0, 0, 0]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50005} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20005} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-1 com.qimeng.main.service.GlobalDateService - http://www.qimenghb.com
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20006} created. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
+FROM kernel_student_data
+WHERE (uuid=?)
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20006} Parameters : [7e12da7fc97f475fac304bb8aa145259]
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20006} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20006} executed. 0.8422 millis. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
+FROM kernel_student_data
+WHERE (uuid=?)
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20006, rs-50006} open
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20006, rs-50006} Header: [id, uuid, identity_card, student_code, card, code, name, type, school_code, binding, active, create_time, update_time, first_time, last_time, activity_count, total_points, used_points, deduct_points]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20006, rs-50006} Result: [25, 7e12da7fc97f475fac304bb8aa145259, null, G441423201201101052, 7e12da7fc97f475f, ac304bb8aa145259, 99, false, 12300, false, false, 2019-08-01 15:58:02.0, 2019-08-02 01:09:03.0, null, null, 0, 0, 0, 0]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20006, rs-50006} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20006} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-1 com.qimeng.main.service.GlobalDateService - http://www.qimenghb.com
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20007} created. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
+FROM kernel_student_data
+WHERE (uuid=?)
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20007} Parameters : [68e4e29b63f143c1acc90dd67da60476]
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20007} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20007} executed. 0.8277 millis. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
+FROM kernel_student_data
+WHERE (uuid=?)
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20007, rs-50007} open
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20007, rs-50007} Header: [id, uuid, identity_card, student_code, card, code, name, type, school_code, binding, active, create_time, update_time, first_time, last_time, activity_count, total_points, used_points, deduct_points]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20007, rs-50007} Result: [26, 68e4e29b63f143c1acc90dd67da60476, 441423201201101059, G441423201201101057, 68e4e29b63f143c1, acc90dd67da60476, 98, false, 12301, false, false, 2019-08-01 15:58:02.0, 2019-08-01 15:59:40.0, null, null, 0, 0, 0, 0]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20007, rs-50007} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20007} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-1 com.qimeng.main.service.GlobalDateService - http://www.qimenghb.com
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20008} created. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
+FROM kernel_student_data
+WHERE (uuid=?)
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20008} Parameters : [72b0cfc7c2f84a98a1d017fc1627dc20]
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20008} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20008} executed. 0.8183 millis. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
+FROM kernel_student_data
+WHERE (uuid=?)
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20008, rs-50008} open
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20008, rs-50008} Header: [id, uuid, identity_card, student_code, card, code, name, type, school_code, binding, active, create_time, update_time, first_time, last_time, activity_count, total_points, used_points, deduct_points]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20008, rs-50008} Result: [31, 72b0cfc7c2f84a98a1d017fc1627dc20, 441423201201101060, null, 72b0cfc7c2f84a98, a1d017fc1627dc20, 98, false, 12301, false, false, 2019-08-02 00:45:14.0, 2019-08-02 00:45:14.0, null, null, 0, 0, 0, 0]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20008, rs-50008} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20008} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-1 com.qimeng.main.service.GlobalDateService - http://www.qimenghb.com
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20009} created. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
+FROM kernel_student_data
+WHERE (uuid=?)
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20009} Parameters : [0eba66f132c246cfb1006df4c63e487f]
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20009} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20009} executed. 0.942 millis. SELECT id,uuid,identity_card,student_code,card,code,name,type,school_code,binding,active,create_time,update_time,first_time,last_time,activity_count,total_points,used_points,deduct_points
+FROM kernel_student_data
+WHERE (uuid=?)
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20009, rs-50009} open
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20009, rs-50009} Header: [id, uuid, identity_card, student_code, card, code, name, type, school_code, binding, active, create_time, update_time, first_time, last_time, activity_count, total_points, used_points, deduct_points]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20009, rs-50009} Result: [35, 0eba66f132c246cfb1006df4c63e487f, 441423201201101061, G441423201201101060, 0eba66f132c246cf, b1006df4c63e487f, 98, false, 12300, false, false, 2019-08-02 01:08:15.0, 2019-08-02 01:09:03.0, null, null, 0, 0, 0, 0]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20009, rs-50009} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20009} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-1 com.qimeng.main.service.GlobalDateService - http://www.qimenghb.com
+DEBUG http-nio-7073-exec-4 com.qimeng.main.StudentInformController - StudentVo [uuid=null, identityCard=null, studentCode=G441423201201101052, qrcode=null, name=null, type=null, schoolCode=null, binding=null, active=null, firstTime=null, lastTime=null, activityCount=null, totalPoints=null, usedPoints=null, deductPoints=null, postalCodename=null, schoolName=null, schoolId=null, postalCode=null, classS=null, grade=null, sex=null, nativePlace=null, nation=null, phone=null, birthday=null, birthplace=null, nationality=null, identityType=null, overseasChinese=null, politicsStatus=null, health=null, censusRegister=null, censusRegisterType=null, enrollmentTime=null, entranceWay=null, studyingWay=null, address=null, contactAddress=null, residence=null, workersChildren=null, onlyChild=null, preschoolEducation=null, leftoverChildren=null, orphan=null, martyrChildren=null, funding=null, boarderAlimony=null, auxiliaryNumber=null, studentNumber=null, studentSource=null, learningClass=null, disabilityTypes=null, familyName=null, familyRelationship=null, familyWork=null, familyResidence=null, familyCensusRegister=null, familyPhone=null]
+DEBUG http-nio-7073-exec-4 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20010} created. SELECT id,name,sex,student_code,identity_card,native_place,nation,phone,school_name,school_id,birthday,birthplace,nationality,identity_type,grade,classS,overseas_chinese,politics_status,health,census_register,census_register_type,enrollment_time,entrance_way,studying_way,address,contact_address,residence,postal_code,workers_children,only_child,preschool_education,leftover_children,orphan,martyr_children,funding,boarder_alimony,auxiliary_number,student_number,student_source,learning_class,disability_types,family_name,family_relationship,family_work,family_residence,family_census_register,family_phone
+FROM kernel_student_inform
+WHERE (student_code=?)
+DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20010} Parameters : [G441423201201101052]
+DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20010} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20010} executed. 1.4002 millis. SELECT id,name,sex,student_code,identity_card,native_place,nation,phone,school_name,school_id,birthday,birthplace,nationality,identity_type,grade,classS,overseas_chinese,politics_status,health,census_register,census_register_type,enrollment_time,entrance_way,studying_way,address,contact_address,residence,postal_code,workers_children,only_child,preschool_education,leftover_children,orphan,martyr_children,funding,boarder_alimony,auxiliary_number,student_number,student_source,learning_class,disability_types,family_name,family_relationship,family_work,family_residence,family_census_register,family_phone
+FROM kernel_student_inform
+WHERE (student_code=?)
+DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20010, rs-50010} open
+DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20010, rs-50010} Header: [id, name, sex, student_code, identity_card, native_place, nation, phone, school_name, school_id, birthday, birthplace, nationality, identity_type, grade, classS, overseas_chinese, politics_status, health, census_register, census_register_type, enrollment_time, entrance_way, studying_way, address, contact_address, residence, postal_code, workers_children, only_child, preschool_education, leftover_children, orphan, martyr_children, funding, boarder_alimony, auxiliary_number, student_number, student_source, learning_class, disability_types, family_name, family_relationship, family_work, family_residence, family_census_register, family_phone]
+DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20010, rs-50010} Result: [47, 99, null, G441423201201101052, null, null, null, null, null, 123, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20010, rs-50010} closed
+DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20010} closed
+DEBUG http-nio-7073-exec-4 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-8 com.qimeng.main.StudentInformController - StudentVo [uuid=null, identityCard=null, studentCode=G441423201201101052, qrcode=null, name=null, type=null, schoolCode=null, binding=null, active=null, firstTime=null, lastTime=null, activityCount=null, totalPoints=null, usedPoints=null, deductPoints=null, postalCodename=null, schoolName=null, schoolId=null, postalCode=null, classS=null, grade=null, sex=null, nativePlace=null, nation=null, phone=null, birthday=null, birthplace=null, nationality=null, identityType=null, overseasChinese=null, politicsStatus=null, health=null, censusRegister=null, censusRegisterType=null, enrollmentTime=null, entranceWay=null, studyingWay=null, address=null, contactAddress=null, residence=null, workersChildren=null, onlyChild=null, preschoolEducation=null, leftoverChildren=null, orphan=null, martyrChildren=null, funding=null, boarderAlimony=null, auxiliaryNumber=null, studentNumber=null, studentSource=null, learningClass=null, disabilityTypes=null, familyName=null, familyRelationship=null, familyWork=null, familyResidence=null, familyCensusRegister=null, familyPhone=null]
+DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20011} created. SELECT id,name,sex,student_code,identity_card,native_place,nation,phone,school_name,school_id,birthday,birthplace,nationality,identity_type,grade,classS,overseas_chinese,politics_status,health,census_register,census_register_type,enrollment_time,entrance_way,studying_way,address,contact_address,residence,postal_code,workers_children,only_child,preschool_education,leftover_children,orphan,martyr_children,funding,boarder_alimony,auxiliary_number,student_number,student_source,learning_class,disability_types,family_name,family_relationship,family_work,family_residence,family_census_register,family_phone
+FROM kernel_student_inform
+WHERE (student_code=?)
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20011} Parameters : [G441423201201101052]
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20011} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20011} executed. 1.0788 millis. SELECT id,name,sex,student_code,identity_card,native_place,nation,phone,school_name,school_id,birthday,birthplace,nationality,identity_type,grade,classS,overseas_chinese,politics_status,health,census_register,census_register_type,enrollment_time,entrance_way,studying_way,address,contact_address,residence,postal_code,workers_children,only_child,preschool_education,leftover_children,orphan,martyr_children,funding,boarder_alimony,auxiliary_number,student_number,student_source,learning_class,disability_types,family_name,family_relationship,family_work,family_residence,family_census_register,family_phone
+FROM kernel_student_inform
+WHERE (student_code=?)
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20011, rs-50011} open
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20011, rs-50011} Header: [id, name, sex, student_code, identity_card, native_place, nation, phone, school_name, school_id, birthday, birthplace, nationality, identity_type, grade, classS, overseas_chinese, politics_status, health, census_register, census_register_type, enrollment_time, entrance_way, studying_way, address, contact_address, residence, postal_code, workers_children, only_child, preschool_education, leftover_children, orphan, martyr_children, funding, boarder_alimony, auxiliary_number, student_number, student_source, learning_class, disability_types, family_name, family_relationship, family_work, family_residence, family_census_register, family_phone]
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20011, rs-50011} Result: [47, 99, null, G441423201201101052, null, null, null, null, null, 123, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20011, rs-50011} closed
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20011} closed
+DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-9 com.qimeng.main.StudentInformController - StudentVo [uuid=null, identityCard=null, studentCode=G441423201201101057, qrcode=null, name=null, type=null, schoolCode=null, binding=null, active=null, firstTime=null, lastTime=null, activityCount=null, totalPoints=null, usedPoints=null, deductPoints=null, postalCodename=null, schoolName=null, schoolId=null, postalCode=null, classS=null, grade=null, sex=null, nativePlace=null, nation=null, phone=null, birthday=null, birthplace=null, nationality=null, identityType=null, overseasChinese=null, politicsStatus=null, health=null, censusRegister=null, censusRegisterType=null, enrollmentTime=null, entranceWay=null, studyingWay=null, address=null, contactAddress=null, residence=null, workersChildren=null, onlyChild=null, preschoolEducation=null, leftoverChildren=null, orphan=null, martyrChildren=null, funding=null, boarderAlimony=null, auxiliaryNumber=null, studentNumber=null, studentSource=null, learningClass=null, disabilityTypes=null, familyName=null, familyRelationship=null, familyWork=null, familyResidence=null, familyCensusRegister=null, familyPhone=null]
+DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20012} created. SELECT id,name,sex,student_code,identity_card,native_place,nation,phone,school_name,school_id,birthday,birthplace,nationality,identity_type,grade,classS,overseas_chinese,politics_status,health,census_register,census_register_type,enrollment_time,entrance_way,studying_way,address,contact_address,residence,postal_code,workers_children,only_child,preschool_education,leftover_children,orphan,martyr_children,funding,boarder_alimony,auxiliary_number,student_number,student_source,learning_class,disability_types,family_name,family_relationship,family_work,family_residence,family_census_register,family_phone
+FROM kernel_student_inform
+WHERE (student_code=?)
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20012} Parameters : [G441423201201101057]
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20012} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20012} executed. 0.9595 millis. SELECT id,name,sex,student_code,identity_card,native_place,nation,phone,school_name,school_id,birthday,birthplace,nationality,identity_type,grade,classS,overseas_chinese,politics_status,health,census_register,census_register_type,enrollment_time,entrance_way,studying_way,address,contact_address,residence,postal_code,workers_children,only_child,preschool_education,leftover_children,orphan,martyr_children,funding,boarder_alimony,auxiliary_number,student_number,student_source,learning_class,disability_types,family_name,family_relationship,family_work,family_residence,family_census_register,family_phone
+FROM kernel_student_inform
+WHERE (student_code=?)
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20012, rs-50012} open
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20012, rs-50012} Header: [id, name, sex, student_code, identity_card, native_place, nation, phone, school_name, school_id, birthday, birthplace, nationality, identity_type, grade, classS, overseas_chinese, politics_status, health, census_register, census_register_type, enrollment_time, entrance_way, studying_way, address, contact_address, residence, postal_code, workers_children, only_child, preschool_education, leftover_children, orphan, martyr_children, funding, boarder_alimony, auxiliary_number, student_number, student_source, learning_class, disability_types, family_name, family_relationship, family_work, family_residence, family_census_register, family_phone]
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20012, rs-50012} Result: [48, 98, null, G441423201201101057, 441423201201101059, null, null, null, null, 123, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20012, rs-50012} closed
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20012} closed
+DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisTemplate加载完成
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisCacheManager加载完成
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisTemplate加载完成
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisCacheManager加载完成
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisTemplate加载完成
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisCacheManager加载完成
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisTemplate加载完成
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisCacheManager加载完成
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisTemplate加载完成
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisCacheManager加载完成
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisTemplate加载完成
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisCacheManager加载完成
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisTemplate加载完成
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisCacheManager加载完成
+DEBUG http-nio-7073-exec-2 com.qimeng.main.StudentInformController - StudentVo [uuid=null, identityCard=null, studentCode=G441423201201101057, qrcode=null, name=null, type=null, schoolCode=null, binding=null, active=null, firstTime=null, lastTime=null, activityCount=null, totalPoints=null, usedPoints=null, deductPoints=null, postalCodename=null, schoolName=null, schoolId=null, postalCode=null, classS=null, grade=null, sex=null, nativePlace=null, nation=null, phone=null, birthday=null, birthplace=null, nationality=null, identityType=null, overseasChinese=null, politicsStatus=null, health=null, censusRegister=null, censusRegisterType=null, enrollmentTime=null, entranceWay=null, studyingWay=null, address=null, contactAddress=null, residence=null, workersChildren=null, onlyChild=null, preschoolEducation=null, leftoverChildren=null, orphan=null, martyrChildren=null, funding=null, boarderAlimony=null, auxiliaryNumber=null, studentNumber=null, studentSource=null, learningClass=null, disabilityTypes=null, familyName=null, familyRelationship=null, familyWork=null, familyResidence=null, familyCensusRegister=null, familyPhone=null]
+DEBUG http-nio-7073-exec-2 com.qimeng.main.StudentInformController - file
+DEBUG http-nio-7073-exec-5 com.qimeng.main.StudentInformController - StudentVo [uuid=null, identityCard=null, studentCode=G441423201201101057, qrcode=null, name=null, type=null, schoolCode=null, binding=null, active=null, firstTime=null, lastTime=null, activityCount=null, totalPoints=null, usedPoints=null, deductPoints=null, postalCodename=null, schoolName=null, schoolId=null, postalCode=null, classS=null, grade=null, sex=null, nativePlace=null, nation=null, phone=null, birthday=null, birthplace=null, nationality=null, identityType=null, overseasChinese=null, politicsStatus=null, health=null, censusRegister=null, censusRegisterType=null, enrollmentTime=null, entranceWay=null, studyingWay=null, address=null, contactAddress=null, residence=null, workersChildren=null, onlyChild=null, preschoolEducation=null, leftoverChildren=null, orphan=null, martyrChildren=null, funding=null, boarderAlimony=null, auxiliaryNumber=null, studentNumber=null, studentSource=null, learningClass=null, disabilityTypes=null, familyName=null, familyRelationship=null, familyWork=null, familyResidence=null, familyCensusRegister=null, familyPhone=null]
+DEBUG http-nio-7073-exec-5 com.qimeng.main.StudentInformController - file
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisTemplate加载完成
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisCacheManager加载完成
+DEBUG http-nio-7073-exec-2 com.qimeng.main.StudentInformController - StudentVo [uuid=null, identityCard=null, studentCode=G441423201201101057, qrcode=null, name=null, type=null, schoolCode=null, binding=null, active=null, firstTime=null, lastTime=null, activityCount=null, totalPoints=null, usedPoints=null, deductPoints=null, postalCodename=null, schoolName=null, schoolId=null, postalCode=null, classS=null, grade=null, sex=null, nativePlace=null, nation=null, phone=null, birthday=null, birthplace=null, nationality=null, identityType=null, overseasChinese=null, politicsStatus=null, health=null, censusRegister=null, censusRegisterType=null, enrollmentTime=null, entranceWay=null, studyingWay=null, address=null, contactAddress=null, residence=null, workersChildren=null, onlyChild=null, preschoolEducation=null, leftoverChildren=null, orphan=null, martyrChildren=null, funding=null, boarderAlimony=null, auxiliaryNumber=null, studentNumber=null, studentSource=null, learningClass=null, disabilityTypes=null, familyName=null, familyRelationship=null, familyWork=null, familyResidence=null, familyCensusRegister=null, familyPhone=null]
+DEBUG http-nio-7073-exec-2 com.qimeng.main.StudentInformController - file
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisTemplate加载完成
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisCacheManager加载完成
+DEBUG http-nio-7073-exec-2 com.qimeng.main.StudentInformController - StudentVo [uuid=null, identityCard=null, studentCode=G441423201201101057, qrcode=null, name=null, type=null, schoolCode=null, binding=null, active=null, firstTime=null, lastTime=null, activityCount=null, totalPoints=null, usedPoints=null, deductPoints=null, postalCodename=null, schoolName=null, schoolId=null, postalCode=null, classS=null, grade=null, sex=null, nativePlace=null, nation=null, phone=null, birthday=null, birthplace=null, nationality=null, identityType=null, overseasChinese=null, politicsStatus=null, health=null, censusRegister=null, censusRegisterType=null, enrollmentTime=null, entranceWay=null, studyingWay=null, address=null, contactAddress=null, residence=null, workersChildren=null, onlyChild=null, preschoolEducation=null, leftoverChildren=null, orphan=null, martyrChildren=null, funding=null, boarderAlimony=null, auxiliaryNumber=null, studentNumber=null, studentSource=null, learningClass=null, disabilityTypes=null, familyName=null, familyRelationship=null, familyWork=null, familyResidence=null, familyCensusRegister=null, familyPhone=null]
+DEBUG http-nio-7073-exec-5 com.qimeng.main.StudentInformController - StudentVo [uuid=null, identityCard=null, studentCode=G441423201201101057, qrcode=null, name=null, type=null, schoolCode=null, binding=null, active=null, firstTime=null, lastTime=null, activityCount=null, totalPoints=null, usedPoints=null, deductPoints=null, postalCodename=null, schoolName=null, schoolId=null, postalCode=null, classS=null, grade=null, sex=null, nativePlace=null, nation=null, phone=null, birthday=null, birthplace=null, nationality=null, identityType=null, overseasChinese=null, politicsStatus=null, health=null, censusRegister=null, censusRegisterType=null, enrollmentTime=null, entranceWay=null, studyingWay=null, address=null, contactAddress=null, residence=null, workersChildren=null, onlyChild=null, preschoolEducation=null, leftoverChildren=null, orphan=null, martyrChildren=null, funding=null, boarderAlimony=null, auxiliaryNumber=null, studentNumber=null, studentSource=null, learningClass=null, disabilityTypes=null, familyName=null, familyRelationship=null, familyWork=null, familyResidence=null, familyCensusRegister=null, familyPhone=null]
+DEBUG http-nio-7073-exec-8 com.qimeng.main.StudentInformController - StudentVo [uuid=null, identityCard=null, studentCode=G441423201201101057, qrcode=null, name=null, type=null, schoolCode=null, binding=null, active=null, firstTime=null, lastTime=null, activityCount=null, totalPoints=null, usedPoints=null, deductPoints=null, postalCodename=null, schoolName=null, schoolId=null, postalCode=null, classS=null, grade=null, sex=null, nativePlace=null, nation=null, phone=null, birthday=null, birthplace=null, nationality=null, identityType=null, overseasChinese=null, politicsStatus=null, health=null, censusRegister=null, censusRegisterType=null, enrollmentTime=null, entranceWay=null, studyingWay=null, address=null, contactAddress=null, residence=null, workersChildren=null, onlyChild=null, preschoolEducation=null, leftoverChildren=null, orphan=null, martyrChildren=null, funding=null, boarderAlimony=null, auxiliaryNumber=null, studentNumber=null, studentSource=null, learningClass=null, disabilityTypes=null, familyName=null, familyRelationship=null, familyWork=null, familyResidence=null, familyCensusRegister=null, familyPhone=null]
+DEBUG http-nio-7073-exec-1 com.qimeng.main.StudentInformController - StudentVo [uuid=null, identityCard=null, studentCode=G441423201201101057, qrcode=null, name=null, type=null, schoolCode=null, binding=null, active=null, firstTime=null, lastTime=null, activityCount=null, totalPoints=null, usedPoints=null, deductPoints=null, postalCodename=null, schoolName=null, schoolId=null, postalCode=null, classS=null, grade=null, sex=null, nativePlace=null, nation=null, phone=null, birthday=null, birthplace=null, nationality=null, identityType=null, overseasChinese=null, politicsStatus=null, health=null, censusRegister=null, censusRegisterType=null, enrollmentTime=null, entranceWay=null, studyingWay=null, address=null, contactAddress=null, residence=null, workersChildren=null, onlyChild=null, preschoolEducation=null, leftoverChildren=null, orphan=null, martyrChildren=null, funding=null, boarderAlimony=null, auxiliaryNumber=null, studentNumber=null, studentSource=null, learningClass=null, disabilityTypes=null, familyName=null, familyRelationship=null, familyWork=null, familyResidence=null, familyCensusRegister=null, familyPhone=null]
+DEBUG http-nio-7073-exec-4 com.qimeng.main.StudentInformController - StudentVo [uuid=null, identityCard=null, studentCode=G441423201201101057, qrcode=null, name=null, type=null, schoolCode=null, binding=null, active=null, firstTime=null, lastTime=null, activityCount=null, totalPoints=null, usedPoints=null, deductPoints=null, postalCodename=null, schoolName=null, schoolId=null, postalCode=null, classS=null, grade=null, sex=null, nativePlace=null, nation=null, phone=null, birthday=null, birthplace=null, nationality=null, identityType=null, overseasChinese=null, politicsStatus=null, health=null, censusRegister=null, censusRegisterType=null, enrollmentTime=null, entranceWay=null, studyingWay=null, address=null, contactAddress=null, residence=null, workersChildren=null, onlyChild=null, preschoolEducation=null, leftoverChildren=null, orphan=null, martyrChildren=null, funding=null, boarderAlimony=null, auxiliaryNumber=null, studentNumber=null, studentSource=null, learningClass=null, disabilityTypes=null, familyName=null, familyRelationship=null, familyWork=null, familyResidence=null, familyCensusRegister=null, familyPhone=null]
+DEBUG http-nio-7073-exec-7 com.qimeng.main.StudentInformController - StudentVo [uuid=null, identityCard=null, studentCode=G441423201201101057, qrcode=null, name=null, type=null, schoolCode=null, binding=null, active=null, firstTime=null, lastTime=null, activityCount=null, totalPoints=null, usedPoints=null, deductPoints=null, postalCodename=null, schoolName=null, schoolId=null, postalCode=null, classS=null, grade=null, sex=null, nativePlace=null, nation=null, phone=null, birthday=null, birthplace=null, nationality=null, identityType=null, overseasChinese=null, politicsStatus=null, health=null, censusRegister=null, censusRegisterType=null, enrollmentTime=null, entranceWay=null, studyingWay=null, address=null, contactAddress=null, residence=null, workersChildren=null, onlyChild=null, preschoolEducation=null, leftoverChildren=null, orphan=null, martyrChildren=null, funding=null, boarderAlimony=null, auxiliaryNumber=null, studentNumber=null, studentSource=null, learningClass=null, disabilityTypes=null, familyName=null, familyRelationship=null, familyWork=null, familyResidence=null, familyCensusRegister=null, familyPhone=null]
+DEBUG http-nio-7073-exec-8 com.qimeng.main.StudentInformController - StudentVo [uuid=null, identityCard=null, studentCode=G441423201201101057, qrcode=null, name=null, type=null, schoolCode=null, binding=null, active=null, firstTime=null, lastTime=null, activityCount=null, totalPoints=null, usedPoints=null, deductPoints=null, postalCodename=null, schoolName=null, schoolId=null, postalCode=null, classS=null, grade=null, sex=null, nativePlace=null, nation=null, phone=null, birthday=null, birthplace=null, nationality=null, identityType=null, overseasChinese=null, politicsStatus=null, health=null, censusRegister=null, censusRegisterType=null, enrollmentTime=null, entranceWay=null, studyingWay=null, address=null, contactAddress=null, residence=null, workersChildren=null, onlyChild=null, preschoolEducation=null, leftoverChildren=null, orphan=null, martyrChildren=null, funding=null, boarderAlimony=null, auxiliaryNumber=null, studentNumber=null, studentSource=null, learningClass=null, disabilityTypes=null, familyName=null, familyRelationship=null, familyWork=null, familyResidence=null, familyCensusRegister=null, familyPhone=null]
+DEBUG http-nio-7073-exec-1 com.qimeng.main.StudentInformController - StudentVo [uuid=null, identityCard=null, studentCode=G441423201201101057, qrcode=null, name=null, type=null, schoolCode=null, binding=null, active=null, firstTime=null, lastTime=null, activityCount=null, totalPoints=null, usedPoints=null, deductPoints=null, postalCodename=null, schoolName=null, schoolId=null, postalCode=null, classS=null, grade=null, sex=null, nativePlace=null, nation=null, phone=null, birthday=null, birthplace=null, nationality=null, identityType=null, overseasChinese=null, politicsStatus=null, health=null, censusRegister=null, censusRegisterType=null, enrollmentTime=null, entranceWay=null, studyingWay=null, address=null, contactAddress=null, residence=null, workersChildren=null, onlyChild=null, preschoolEducation=null, leftoverChildren=null, orphan=null, martyrChildren=null, funding=null, boarderAlimony=null, auxiliaryNumber=null, studentNumber=null, studentSource=null, learningClass=null, disabilityTypes=null, familyName=null, familyRelationship=null, familyWork=null, familyResidence=null, familyCensusRegister=null, familyPhone=null]
+DEBUG http-nio-7073-exec-4 com.qimeng.main.StudentInformController - StudentVo [uuid=null, identityCard=null, studentCode=G441423201201101057, qrcode=null, name=null, type=null, schoolCode=null, binding=null, active=null, firstTime=null, lastTime=null, activityCount=null, totalPoints=null, usedPoints=null, deductPoints=null, postalCodename=null, schoolName=null, schoolId=null, postalCode=null, classS=null, grade=null, sex=null, nativePlace=null, nation=null, phone=null, birthday=null, birthplace=null, nationality=null, identityType=null, overseasChinese=null, politicsStatus=null, health=null, censusRegister=null, censusRegisterType=null, enrollmentTime=null, entranceWay=null, studyingWay=null, address=null, contactAddress=null, residence=null, workersChildren=null, onlyChild=null, preschoolEducation=null, leftoverChildren=null, orphan=null, martyrChildren=null, funding=null, boarderAlimony=null, auxiliaryNumber=null, studentNumber=null, studentSource=null, learningClass=null, disabilityTypes=null, familyName=null, familyRelationship=null, familyWork=null, familyResidence=null, familyCensusRegister=null, familyPhone=null]
+DEBUG http-nio-7073-exec-7 com.qimeng.main.StudentInformController - StudentVo [uuid=null, identityCard=null, studentCode=G441423201201101057, qrcode=null, name=null, type=null, schoolCode=null, binding=null, active=null, firstTime=null, lastTime=null, activityCount=null, totalPoints=null, usedPoints=null, deductPoints=null, postalCodename=null, schoolName=null, schoolId=null, postalCode=null, classS=null, grade=null, sex=null, nativePlace=null, nation=null, phone=null, birthday=null, birthplace=null, nationality=null, identityType=null, overseasChinese=null, politicsStatus=null, health=null, censusRegister=null, censusRegisterType=null, enrollmentTime=null, entranceWay=null, studyingWay=null, address=null, contactAddress=null, residence=null, workersChildren=null, onlyChild=null, preschoolEducation=null, leftoverChildren=null, orphan=null, martyrChildren=null, funding=null, boarderAlimony=null, auxiliaryNumber=null, studentNumber=null, studentSource=null, learningClass=null, disabilityTypes=null, familyName=null, familyRelationship=null, familyWork=null, familyResidence=null, familyCensusRegister=null, familyPhone=null]
+DEBUG http-nio-7073-exec-9 com.qimeng.main.StudentInformController - StudentVo [uuid=null, identityCard=null, studentCode=G441423201201101057, qrcode=null, name=null, type=null, schoolCode=null, binding=null, active=null, firstTime=null, lastTime=null, activityCount=null, totalPoints=null, usedPoints=null, deductPoints=null, postalCodename=null, schoolName=null, schoolId=null, postalCode=null, classS=null, grade=null, sex=null, nativePlace=null, nation=null, phone=null, birthday=null, birthplace=null, nationality=null, identityType=null, overseasChinese=null, politicsStatus=null, health=null, censusRegister=null, censusRegisterType=null, enrollmentTime=null, entranceWay=null, studyingWay=null, address=null, contactAddress=null, residence=null, workersChildren=null, onlyChild=null, preschoolEducation=null, leftoverChildren=null, orphan=null, martyrChildren=null, funding=null, boarderAlimony=null, auxiliaryNumber=null, studentNumber=null, studentSource=null, learningClass=null, disabilityTypes=null, familyName=null, familyRelationship=null, familyWork=null, familyResidence=null, familyCensusRegister=null, familyPhone=null]
+DEBUG http-nio-7073-exec-10 com.qimeng.main.StudentInformController - StudentVo [uuid=null, identityCard=null, studentCode=G441423201201101057, qrcode=null, name=null, type=null, schoolCode=null, binding=null, active=null, firstTime=null, lastTime=null, activityCount=null, totalPoints=null, usedPoints=null, deductPoints=null, postalCodename=null, schoolName=null, schoolId=null, postalCode=null, classS=null, grade=null, sex=null, nativePlace=null, nation=null, phone=null, birthday=null, birthplace=null, nationality=null, identityType=null, overseasChinese=null, politicsStatus=null, health=null, censusRegister=null, censusRegisterType=null, enrollmentTime=null, entranceWay=null, studyingWay=null, address=null, contactAddress=null, residence=null, workersChildren=null, onlyChild=null, preschoolEducation=null, leftoverChildren=null, orphan=null, martyrChildren=null, funding=null, boarderAlimony=null, auxiliaryNumber=null, studentNumber=null, studentSource=null, learningClass=null, disabilityTypes=null, familyName=null, familyRelationship=null, familyWork=null, familyResidence=null, familyCensusRegister=null, familyPhone=null]
+DEBUG http-nio-7073-exec-3 com.qimeng.main.StudentInformController - StudentVo [uuid=null, identityCard=null, studentCode=G441423201201101057, qrcode=null, name=null, type=null, schoolCode=null, binding=null, active=null, firstTime=null, lastTime=null, activityCount=null, totalPoints=null, usedPoints=null, deductPoints=null, postalCodename=null, schoolName=null, schoolId=null, postalCode=null, classS=null, grade=null, sex=null, nativePlace=null, nation=null, phone=null, birthday=null, birthplace=null, nationality=null, identityType=null, overseasChinese=null, politicsStatus=null, health=null, censusRegister=null, censusRegisterType=null, enrollmentTime=null, entranceWay=null, studyingWay=null, address=null, contactAddress=null, residence=null, workersChildren=null, onlyChild=null, preschoolEducation=null, leftoverChildren=null, orphan=null, martyrChildren=null, funding=null, boarderAlimony=null, auxiliaryNumber=null, studentNumber=null, studentSource=null, learningClass=null, disabilityTypes=null, familyName=null, familyRelationship=null, familyWork=null, familyResidence=null, familyCensusRegister=null, familyPhone=null]
+DEBUG http-nio-7073-exec-2 com.qimeng.main.StudentInformController - StudentVo [uuid=null, identityCard=null, studentCode=G441423201201101057, qrcode=null, name=null, type=null, schoolCode=null, binding=null, active=null, firstTime=null, lastTime=null, activityCount=null, totalPoints=null, usedPoints=null, deductPoints=null, postalCodename=null, schoolName=null, schoolId=null, postalCode=null, classS=null, grade=null, sex=null, nativePlace=null, nation=null, phone=null, birthday=null, birthplace=null, nationality=null, identityType=null, overseasChinese=null, politicsStatus=null, health=null, censusRegister=null, censusRegisterType=null, enrollmentTime=null, entranceWay=null, studyingWay=null, address=null, contactAddress=null, residence=null, workersChildren=null, onlyChild=null, preschoolEducation=null, leftoverChildren=null, orphan=null, martyrChildren=null, funding=null, boarderAlimony=null, auxiliaryNumber=null, studentNumber=null, studentSource=null, learningClass=null, disabilityTypes=null, familyName=null, familyRelationship=null, familyWork=null, familyResidence=null, familyCensusRegister=null, familyPhone=null]
+DEBUG http-nio-7073-exec-10 com.qimeng.main.StudentInformController - StudentVo [uuid=null, identityCard=null, studentCode=G441423201201101057, qrcode=null, name=null, type=null, schoolCode=null, binding=null, active=null, firstTime=null, lastTime=null, activityCount=null, totalPoints=null, usedPoints=null, deductPoints=null, postalCodename=null, schoolName=null, schoolId=null, postalCode=null, classS=null, grade=null, sex=null, nativePlace=null, nation=null, phone=null, birthday=null, birthplace=null, nationality=null, identityType=null, overseasChinese=null, politicsStatus=null, health=null, censusRegister=null, censusRegisterType=null, enrollmentTime=null, entranceWay=null, studyingWay=null, address=null, contactAddress=null, residence=null, workersChildren=null, onlyChild=null, preschoolEducation=null, leftoverChildren=null, orphan=null, martyrChildren=null, funding=null, boarderAlimony=null, auxiliaryNumber=null, studentNumber=null, studentSource=null, learningClass=null, disabilityTypes=null, familyName=null, familyRelationship=null, familyWork=null, familyResidence=null, familyCensusRegister=null, familyPhone=null]
+DEBUG http-nio-7073-exec-8 com.qimeng.main.StudentInformController - StudentVo [uuid=null, identityCard=null, studentCode=G441423201201101057, qrcode=null, name=null, type=null, schoolCode=null, binding=null, active=null, firstTime=null, lastTime=null, activityCount=null, totalPoints=null, usedPoints=null, deductPoints=null, postalCodename=null, schoolName=null, schoolId=null, postalCode=null, classS=null, grade=null, sex=null, nativePlace=null, nation=null, phone=null, birthday=null, birthplace=null, nationality=null, identityType=null, overseasChinese=null, politicsStatus=null, health=null, censusRegister=null, censusRegisterType=null, enrollmentTime=null, entranceWay=null, studyingWay=null, address=null, contactAddress=null, residence=null, workersChildren=null, onlyChild=null, preschoolEducation=null, leftoverChildren=null, orphan=null, martyrChildren=null, funding=null, boarderAlimony=null, auxiliaryNumber=null, studentNumber=null, studentSource=null, learningClass=null, disabilityTypes=null, familyName=null, familyRelationship=null, familyWork=null, familyResidence=null, familyCensusRegister=null, familyPhone=null]
+DEBUG http-nio-7073-exec-9 com.qimeng.main.StudentInformController - StudentVo [uuid=null, identityCard=null, studentCode=G441423201201101057, qrcode=null, name=null, type=null, schoolCode=null, binding=null, active=null, firstTime=null, lastTime=null, activityCount=null, totalPoints=null, usedPoints=null, deductPoints=null, postalCodename=null, schoolName=null, schoolId=null, postalCode=null, classS=null, grade=null, sex=null, nativePlace=null, nation=null, phone=null, birthday=null, birthplace=null, nationality=null, identityType=null, overseasChinese=null, politicsStatus=null, health=null, censusRegister=null, censusRegisterType=null, enrollmentTime=null, entranceWay=null, studyingWay=null, address=null, contactAddress=null, residence=null, workersChildren=null, onlyChild=null, preschoolEducation=null, leftoverChildren=null, orphan=null, martyrChildren=null, funding=null, boarderAlimony=null, auxiliaryNumber=null, studentNumber=null, studentSource=null, learningClass=null, disabilityTypes=null, familyName=null, familyRelationship=null, familyWork=null, familyResidence=null, familyCensusRegister=null, familyPhone=null]
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisTemplate加载完成
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisCacheManager加载完成
+DEBUG http-nio-7073-exec-8 com.qimeng.main.StudentInformController - StudentVo [uuid=null, identityCard=null, studentCode=G441423201201101057, qrcode=null, name=null, type=null, schoolCode=null, binding=null, active=null, firstTime=null, lastTime=null, activityCount=null, totalPoints=null, usedPoints=null, deductPoints=null, postalCodename=null, schoolName=null, schoolId=null, postalCode=null, classS=null, grade=null, sex=null, nativePlace=null, nation=null, phone=null, birthday=null, birthplace=null, nationality=null, identityType=null, overseasChinese=null, politicsStatus=null, health=null, censusRegister=null, censusRegisterType=null, enrollmentTime=null, entranceWay=null, studyingWay=null, address=null, contactAddress=null, residence=null, workersChildren=null, onlyChild=null, preschoolEducation=null, leftoverChildren=null, orphan=null, martyrChildren=null, funding=null, boarderAlimony=null, auxiliaryNumber=null, studentNumber=null, studentSource=null, learningClass=null, disabilityTypes=null, familyName=null, familyRelationship=null, familyWork=null, familyResidence=null, familyCensusRegister=null, familyPhone=null]
+DEBUG http-nio-7073-exec-2 com.qimeng.main.StudentInformController - StudentVo [uuid=null, identityCard=null, studentCode=G441423201201101057, qrcode=null, name=null, type=null, schoolCode=null, binding=null, active=null, firstTime=null, lastTime=null, activityCount=null, totalPoints=null, usedPoints=null, deductPoints=null, postalCodename=null, schoolName=null, schoolId=null, postalCode=null, classS=null, grade=null, sex=null, nativePlace=null, nation=null, phone=null, birthday=null, birthplace=null, nationality=null, identityType=null, overseasChinese=null, politicsStatus=null, health=null, censusRegister=null, censusRegisterType=null, enrollmentTime=null, entranceWay=null, studyingWay=null, address=null, contactAddress=null, residence=null, workersChildren=null, onlyChild=null, preschoolEducation=null, leftoverChildren=null, orphan=null, martyrChildren=null, funding=null, boarderAlimony=null, auxiliaryNumber=null, studentNumber=null, studentSource=null, learningClass=null, disabilityTypes=null, familyName=null, familyRelationship=null, familyWork=null, familyResidence=null, familyCensusRegister=null, familyPhone=null]

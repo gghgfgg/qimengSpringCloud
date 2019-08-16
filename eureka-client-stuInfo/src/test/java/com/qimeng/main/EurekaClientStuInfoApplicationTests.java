@@ -18,14 +18,21 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.qimeng.main.dao.JoinDao;
 import com.qimeng.main.dao.StudentDataDao;
 import com.qimeng.main.dao.StudentInformDao;
+import com.qimeng.main.entity.ApplicationManagement;
 import com.qimeng.main.entity.StudentData;
 import com.qimeng.main.entity.StudentInform;
+import com.qimeng.main.service.ApplicationManagementService;
+import com.qimeng.main.service.DeviceActionService;
+import com.qimeng.main.service.DeviceManagementService;
+import com.qimeng.main.service.PostalCodeService;
 import com.qimeng.main.service.SchoolAutoCountRecycleService;
 import com.qimeng.main.service.StudentDataService;
 import com.qimeng.main.service.StudentInformService;
 import com.qimeng.main.service.StudentUpdateService;
+import com.qimeng.main.vo.DeviceInformVo;
 
 //import com.qimeng.main.Service.ApplicationInfoService;
 //import com.qimeng.main.Service.PointsLogService;
@@ -64,6 +71,17 @@ public class EurekaClientStuInfoApplicationTests {
 	
 	@Autowired
 	SchoolAutoCountRecycleService schoolAutoCountRecycleService;
+	
+	@Autowired
+	ApplicationManagementService applicationManagementService;
+	@Autowired
+	PostalCodeService postalCodeService;
+	@Autowired
+	DeviceManagementService deviceManagementService;
+	@Autowired
+	JoinDao joinDao;
+	@Autowired
+	DeviceActionService deviceActionService;
 	@Test
 	public void contextLoads() throws UnsupportedEncodingException {
 		
@@ -120,8 +138,22 @@ public class EurekaClientStuInfoApplicationTests {
 //			// TODO: handle exception
 //			System.out.println(e.toString());
 //		}
-		schoolAutoCountRecycleService.SchoolAutoCountRecycle((byte) 0);
+		//schoolAutoCountRecycleService.SchoolAutoCountRecycleByYear();
+		ApplicationManagement temp=new ApplicationManagement();
+		temp.setAppId("7166912116544626");
+		temp.setActive((byte) 1);
+		temp.setAppName("23");
+		//applicationManagementService.insertApplicationManagement(temp);
 		
+		//deviceManagementService.selectDeviceManagementListByMachineId("123456789",true);
+		DeviceInformVo deviceInformVo=new DeviceInformVo();
+		deviceInformVo.setSchoolName("45");
+		
+		deviceInformVo.setPostalCode("");
+	//	deviceActionService.DevPageList(1,deviceInformVo);
+		//ApplicationManagement temp2=applicationManagementService.selectApplicationManagementByAppId("7166912116544629", (byte) 1);
+		//System.out.println(temp2.toString());
+		postalCodeService.selectPostalCodeName("110106");
 		//System.out.println(dao.insertStudentDataList(list));
 		//System.out.println(dao.insertStudentInform(studentInform3));
 		//System.out.println(dao.updateStudentInformByIdentityCardOrStrudentCode(studentInform3));

@@ -49,11 +49,11 @@ public class StudentUpdateService {
 							studentInformList.get(i).getStudentCode().length()<15) {
 								throw new RuntimeException("第"+String.valueOf(i+1)+"行,学号长度不对");
 								}
-					if(StringUtils.isEmpty(studentInformList.get(i).getSchoolCode())) {
+					if(StringUtils.isEmpty(studentInformList.get(i).getSchoolId())) {
 								throw new RuntimeException("第"+String.valueOf(i+1)+"行,学校编号为空");
 					}
-					if(!StringUtils.isEmpty(studentInformList.get(i).getSchoolCode())&&
-							studentInformList.get(i).getSchoolCode().length()<10) {
+					if(!StringUtils.isEmpty(studentInformList.get(i).getSchoolId())&&
+							studentInformList.get(i).getSchoolId().length()<10) {
 						throw new RuntimeException("第"+String.valueOf(i+1)+"行,学校编号长度不对");
 						}
 				}
@@ -97,7 +97,7 @@ public class StudentUpdateService {
 					&& StringUtils.isEmpty(studentInform.getStudentCode())) {
 				throw new RuntimeException("身份证和学号都为空");
 			}
-			if (StringUtils.isEmpty(studentInform.getSchoolCode())) {
+			if (StringUtils.isEmpty(studentInform.getSchoolId())) {
 				throw new RuntimeException("学校编号为空");
 			}
 			if(StringUtils.isEmpty(schoolCode)) {
@@ -132,7 +132,7 @@ public class StudentUpdateService {
 					&& StringUtils.isEmpty(studentInform.getStudentCode())) {
 				throw new RuntimeException("身份证和学号都为空");
 			}
-			if (StringUtils.isEmpty(studentInform.getSchoolCode())) {
+			if (StringUtils.isEmpty(studentInform.getSchoolId())) {
 				throw new RuntimeException("学校编号为空");
 			}
 			

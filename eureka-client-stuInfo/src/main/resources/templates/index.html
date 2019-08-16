@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title>Signin Template for Bootstrap</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/asserts/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="/asserts/css/signin.css" rel="stylesheet">
+	</head>
+
+	<body class="text-center">
+		<form id="upload" class="form-signin" >
+			<img class="mb-4" src="asserts/images/logo.png" alt="">
+			<h1 class="h3 mb-3 font-weight-normal">启蒙环保</h1>
+			<label class="sr-only">文件名</label>
+			<input type="file" class="form-control" name="file" id="file">
+			
+			<button class="btn btn-lg btn-primary btn-block" type="button" id="btn">提交</button>
+			<p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+		</form>
+        <script type="text/javascript" src="/asserts/js/jquery-3.2.1.slim.min.js" ></script>
+       
+		<script type="text/javascript" src="/asserts/js/popper.min.js" ></script>
+		<script type="text/javascript" src="/asserts/js/bootstrap.min.js" ></script>
+		 <script type="text/javascript" src="/asserts/js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript">
+		 $('#btn').click(function (){
+	//$("#jvForm").submit();
+	var message='{"appID":"7166912116544627","machineID":"123456789","accountTonken":"iigi87At","data":{"studentCode": "G441423201201101057"}}';
+	 var formdata = new FormData();
+	 formdata.append("message",message);
+     formdata.append("file", $('#file')[0].files[0]);
+    $.ajax({  
+            type: "POST",   //提交的方法
+            url:"/stuinfo/uploadstulist", //提交的地址  
+            data:formdata,// 序列化表单值  
+            async: false, 
+            contentType: false, // 不设置内容类型
+            processData: false, // 不处理数据
+            dataType: "json",
+            error: function(request) {  //失败的话
+                 alert("Connection error");  
+            },  
+            success: function(data) {  //成功
+                 alert(data);  //就将返回的数据显示出来
+                 //window.location.href="/reg.htm"  
+            }  
+         });
+
+})
+</script>
+</body>
+
+</html>

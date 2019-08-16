@@ -146,8 +146,7 @@ public interface StudentDataDao {
 			}
 	    	if(!StringUtils.isEmpty(studentData.getName())){
 	        	 sql.WHERE("name=#{item.name}");
-			}
-	    	
+			}  	
 	    	if(!StringUtils.isEmpty(studentData.getSchoolCode())){
 	        	 sql.WHERE("school_code=#{item.schoolCode}");
 			}

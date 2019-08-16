@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.qimeng.main.dao.RecycleTypeDao;
@@ -29,6 +31,7 @@ public class RecycleTypeService {
 	 * @param recycleType
 	 * @return
 	 */
+	@CacheEvict(value="RecycleType",key="#p0.type")
 	public int insertRecycleType(RecycleType recycleType) {
 		try {
 			return recycleTypeDao.insertRecycleType(recycleType);
@@ -44,6 +47,7 @@ public class RecycleTypeService {
 	 * @param recycleType
 	 * @return
 	 */
+	@CacheEvict(value="RecycleType",key="#p0.type")
 	public int updateRecycleType(RecycleType recycleType) {
 		try {
 			return recycleTypeDao.updateRecycleType(recycleType);
@@ -91,6 +95,7 @@ public class RecycleTypeService {
 	 * @param type
 	 * @return
 	 */
+	@Cacheable(value="RecycleType",key="#type")
 	public RecycleType selectRecycleTypeByType(byte type) {
 		RecycleType recycleType=new RecycleType();
 		recycleType.setType(type);

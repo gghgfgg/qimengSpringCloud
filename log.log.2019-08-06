@@ -1,0 +1,1117 @@
+2019-08-06 00:31:26  [ main:0 ] - [ DEBUG ]  {conn-10001} connected
+2019-08-06 00:31:26  [ main:8 ] - [ DEBUG ]  {conn-10002} connected
+2019-08-06 00:31:26  [ main:12 ] - [ DEBUG ]  {conn-10003} connected
+2019-08-06 00:31:26  [ main:15 ] - [ DEBUG ]  {conn-10004} connected
+2019-08-06 00:31:26  [ main:18 ] - [ DEBUG ]  {conn-10005} connected
+2019-08-06 00:31:26  [ main:26 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 00:31:26  [ main:302 ] - [ DEBUG ]  {conn-10005, pstmt-20000} created. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+2019-08-06 00:31:26  [ main:306 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Parameters : []
+2019-08-06 00:31:26  [ main:307 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Types : []
+2019-08-06 00:31:26  [ main:320 ] - [ DEBUG ]  {conn-10005, pstmt-20000} executed. 14.6938 millis. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+2019-08-06 00:31:26  [ main:325 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} open
+2019-08-06 00:31:26  [ main:326 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Header: [id, type, mark, uint, factor, create_time, update_time]
+2019-08-06 00:31:26  [ main:333 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [1, true, 纸, 克, 70, null, null]
+2019-08-06 00:31:26  [ main:335 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [2, true, 瓶子, 个, 1, null, null]
+2019-08-06 00:31:26  [ main:335 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} closed
+2019-08-06 00:31:26  [ main:336 ] - [ DEBUG ]  {conn-10005, pstmt-20000} closed
+2019-08-06 00:31:26  [ main:337 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 00:31:26  [ main:338 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 00:31:26  [ main:369 ] - [ DEBUG ]  {conn-10005, pstmt-20001} created. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_student_inform
+WHERE (active=?)
+2019-08-06 00:31:26  [ main:371 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Parameters : [true]
+2019-08-06 00:31:26  [ main:372 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Types : [BOOLEAN]
+2019-08-06 00:31:26  [ main:389 ] - [ ERROR ]  {conn-10005, pstmt-20001} execute error. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_student_inform
+WHERE (active=?)
+java.sql.SQLSyntaxErrorException: Unknown column 'school_id' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:955)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:372)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3409)
+	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:620)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:498)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:143)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy140.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy93.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:137)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:75)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy115.selectSchoolInformList(Unknown Source)
+	at com.qimeng.main.service.SchoolInformService.selectSchoolInformList(SchoolInformService.java:51)
+	at com.qimeng.main.service.SchoolInformService.selectSchoolInformList(SchoolInformService.java:63)
+	at com.qimeng.main.service.SchoolAutoCountRecycleService.SchoolAutoCountRecycle(SchoolAutoCountRecycleService.java:39)
+	at com.qimeng.main.EurekaClientStuInfoApplicationTests.contextLoads(EurekaClientStuInfoApplicationTests.java:123)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209)
+2019-08-06 00:31:26  [ main:400 ] - [ DEBUG ]  {conn-10005, pstmt-20001} closed
+2019-08-06 00:31:26  [ main:402 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 00:31:27  [ main:462 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 00:31:27  [ main:463 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 00:31:27  [ main:464 ] - [ ERROR ]  学校信息查询异常
+2019-08-06 00:31:27  [ main:464 ] - [ ERROR ]  Error:
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'school_id' in 'field list'
+### The error may exist in com/qimeng/main/dao/SchoolInformDao.java (best guess)
+### The error may involve com.qimeng.main.dao.SchoolInformDao.selectSchoolInformList-Inline
+### The error occurred while setting parameters
+### SQL: SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time FROM kernel_student_inform WHERE (active=?)
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'school_id' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'school_id' in 'field list'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:234)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy93.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:137)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:75)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy115.selectSchoolInformList(Unknown Source)
+	at com.qimeng.main.service.SchoolInformService.selectSchoolInformList(SchoolInformService.java:51)
+	at com.qimeng.main.service.SchoolInformService.selectSchoolInformList(SchoolInformService.java:63)
+	at com.qimeng.main.service.SchoolAutoCountRecycleService.SchoolAutoCountRecycle(SchoolAutoCountRecycleService.java:39)
+	at com.qimeng.main.EurekaClientStuInfoApplicationTests.contextLoads(EurekaClientStuInfoApplicationTests.java:123)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'school_id' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:955)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:372)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3409)
+	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:620)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:498)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:143)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy140.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 41 more
+2019-08-06 00:31:27  [ Thread-5:551 ] - [ DEBUG ]  {conn-10001} closed
+2019-08-06 00:31:27  [ Thread-5:554 ] - [ DEBUG ]  {conn-10002} closed
+2019-08-06 00:31:27  [ Thread-5:555 ] - [ DEBUG ]  {conn-10003} closed
+2019-08-06 00:31:27  [ Thread-5:555 ] - [ DEBUG ]  {conn-10004} closed
+2019-08-06 00:31:27  [ Thread-5:556 ] - [ DEBUG ]  {conn-10005} closed
+2019-08-06 00:33:25  [ main:0 ] - [ DEBUG ]  {conn-10001} connected
+2019-08-06 00:33:25  [ main:7 ] - [ DEBUG ]  {conn-10002} connected
+2019-08-06 00:33:25  [ main:11 ] - [ DEBUG ]  {conn-10003} connected
+2019-08-06 00:33:25  [ main:14 ] - [ DEBUG ]  {conn-10004} connected
+2019-08-06 00:33:25  [ main:18 ] - [ DEBUG ]  {conn-10005} connected
+2019-08-06 00:33:25  [ main:29 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 00:33:25  [ main:258 ] - [ DEBUG ]  {conn-10005, pstmt-20000} created. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+2019-08-06 00:33:25  [ main:263 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Parameters : []
+2019-08-06 00:33:25  [ main:263 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Types : []
+2019-08-06 00:33:25  [ main:272 ] - [ DEBUG ]  {conn-10005, pstmt-20000} executed. 11.0297 millis. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+2019-08-06 00:33:25  [ main:276 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} open
+2019-08-06 00:33:25  [ main:278 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Header: [id, type, mark, uint, factor, create_time, update_time]
+2019-08-06 00:33:25  [ main:283 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [1, true, 纸, 克, 70, null, null]
+2019-08-06 00:33:25  [ main:285 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [2, true, 瓶子, 个, 1, null, null]
+2019-08-06 00:33:25  [ main:285 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} closed
+2019-08-06 00:33:25  [ main:286 ] - [ DEBUG ]  {conn-10005, pstmt-20000} closed
+2019-08-06 00:33:25  [ main:287 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 00:33:25  [ main:288 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 00:33:25  [ main:314 ] - [ DEBUG ]  {conn-10005, pstmt-20001} created. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_school_inform
+WHERE (active=?)
+2019-08-06 00:33:25  [ main:315 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Parameters : [true]
+2019-08-06 00:33:25  [ main:316 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Types : [BOOLEAN]
+2019-08-06 00:33:25  [ main:316 ] - [ DEBUG ]  {conn-10005, pstmt-20001} executed. 1.2755 millis. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_school_inform
+WHERE (active=?)
+2019-08-06 00:33:25  [ main:317 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} open
+2019-08-06 00:33:25  [ main:317 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Header: [id, school_name, school_id, school_code, postal_code, address, contacts, active, create_time, update_time]
+2019-08-06 00:33:25  [ main:317 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} closed
+2019-08-06 00:33:25  [ main:318 ] - [ DEBUG ]  {conn-10005, pstmt-20001} closed
+2019-08-06 00:33:25  [ main:318 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 00:33:26  [ Thread-5:381 ] - [ DEBUG ]  {conn-10001} closed
+2019-08-06 00:33:26  [ Thread-5:383 ] - [ DEBUG ]  {conn-10002} closed
+2019-08-06 00:33:26  [ Thread-5:383 ] - [ DEBUG ]  {conn-10003} closed
+2019-08-06 00:33:26  [ Thread-5:384 ] - [ DEBUG ]  {conn-10004} closed
+2019-08-06 00:33:26  [ Thread-5:385 ] - [ DEBUG ]  {conn-10005} closed
+2019-08-06 00:36:27  [ main:0 ] - [ DEBUG ]  {conn-10001} connected
+2019-08-06 00:36:27  [ main:7 ] - [ DEBUG ]  {conn-10002} connected
+2019-08-06 00:36:27  [ main:11 ] - [ DEBUG ]  {conn-10003} connected
+2019-08-06 00:36:27  [ main:15 ] - [ DEBUG ]  {conn-10004} connected
+2019-08-06 00:36:27  [ main:18 ] - [ DEBUG ]  {conn-10005} connected
+2019-08-06 00:36:27  [ main:29 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 00:36:28  [ main:282 ] - [ DEBUG ]  {conn-10005, pstmt-20000} created. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+2019-08-06 00:36:28  [ main:287 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Parameters : []
+2019-08-06 00:36:28  [ main:287 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Types : []
+2019-08-06 00:36:28  [ main:298 ] - [ DEBUG ]  {conn-10005, pstmt-20000} executed. 12.5351 millis. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+2019-08-06 00:36:28  [ main:302 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} open
+2019-08-06 00:36:28  [ main:304 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Header: [id, type, mark, uint, factor, create_time, update_time]
+2019-08-06 00:36:28  [ main:310 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [1, true, 纸, 克, 70, null, null]
+2019-08-06 00:36:28  [ main:312 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [2, true, 瓶子, 个, 1, null, null]
+2019-08-06 00:36:28  [ main:313 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} closed
+2019-08-06 00:36:28  [ main:313 ] - [ DEBUG ]  {conn-10005, pstmt-20000} closed
+2019-08-06 00:36:28  [ main:315 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 00:36:28  [ main:316 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 00:36:28  [ main:339 ] - [ DEBUG ]  {conn-10005, pstmt-20001} created. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_school_inform
+WHERE (active=?)
+2019-08-06 00:36:28  [ main:340 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Parameters : [true]
+2019-08-06 00:36:28  [ main:341 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Types : [BOOLEAN]
+2019-08-06 00:36:28  [ main:341 ] - [ DEBUG ]  {conn-10005, pstmt-20001} executed. 1.0265 millis. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_school_inform
+WHERE (active=?)
+2019-08-06 00:36:28  [ main:342 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} open
+2019-08-06 00:36:28  [ main:342 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Header: [id, school_name, school_id, school_code, postal_code, address, contacts, active, create_time, update_time]
+2019-08-06 00:36:28  [ main:342 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Result: [1, 456, 123, 12300, 5555, null, null, true, null, null]
+2019-08-06 00:36:28  [ main:343 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} closed
+2019-08-06 00:36:28  [ main:343 ] - [ DEBUG ]  {conn-10005, pstmt-20001} closed
+2019-08-06 00:36:28  [ main:343 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 00:36:28  [ main:344 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 00:36:28  [ main:348 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 00:36:28  [ main:406 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 00:36:28  [ main:407 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 00:36:28  [ main:409 ] - [ ERROR ]  查询机器回收日志数据数据异常
+2019-08-06 00:36:28  [ main:410 ] - [ ERROR ]  Error:
+org.springframework.jdbc.UncategorizedSQLException: 
+### Error querying database.  Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'here schoolid_of_device=? and recyc', expect EQ, actual EQ pos 205, line 1, column 205, token EQ : Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_logwhere schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+### The error may exist in com/qimeng/main/dao/DeviceRecycleLogDao.java (best guess)
+### The error may involve com.qimeng.main.dao.DeviceRecycleLogDao.selectDeviceRecycleLogBySchoolDate
+### The error occurred while executing a query
+### SQL: Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_logwhere schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+### Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'here schoolid_of_device=? and recyc', expect EQ, actual EQ pos 205, line 1, column 205, token EQ : Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_logwhere schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+; uncategorized SQLException; SQL state [null]; error code [0]; sql injection violation, syntax error: syntax error, error in :'here schoolid_of_device=? and recyc', expect EQ, actual EQ pos 205, line 1, column 205, token EQ : Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_logwhere schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day); nested exception is java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'here schoolid_of_device=? and recyc', expect EQ, actual EQ pos 205, line 1, column 205, token EQ : Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_logwhere schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:89)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy93.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:137)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:75)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy108.selectDeviceRecycleLogBySchoolDate(Unknown Source)
+	at com.qimeng.main.service.DeviceRecycleLogService.selectDeviceRecycleLogBySchoolDate(DeviceRecycleLogService.java:53)
+	at com.qimeng.main.service.SchoolAutoCountRecycleService.SchoolAutoCountRecycle(SchoolAutoCountRecycleService.java:44)
+	at com.qimeng.main.EurekaClientStuInfoApplicationTests.contextLoads(EurekaClientStuInfoApplicationTests.java:123)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209)
+Caused by: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'here schoolid_of_device=? and recyc', expect EQ, actual EQ pos 205, line 1, column 205, token EQ : Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_logwhere schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+	at com.alibaba.druid.wall.WallFilter.checkInternal(WallFilter.java:799)
+	at com.alibaba.druid.wall.WallFilter.connection_prepareStatement(WallFilter.java:287)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:610)
+	at com.alibaba.druid.filter.FilterAdapter.connection_prepareStatement(FilterAdapter.java:942)
+	at com.alibaba.druid.filter.FilterEventAdapter.connection_prepareStatement(FilterEventAdapter.java:143)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:610)
+	at com.alibaba.druid.filter.FilterAdapter.connection_prepareStatement(FilterAdapter.java:942)
+	at com.alibaba.druid.filter.FilterEventAdapter.connection_prepareStatement(FilterEventAdapter.java:143)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:610)
+	at com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl.prepareStatement(ConnectionProxyImpl.java:375)
+	at com.alibaba.druid.pool.DruidPooledConnection.prepareStatement(DruidPooledConnection.java:387)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(PreparedStatementHandler.java:85)
+	at org.apache.ibatis.executor.statement.BaseStatementHandler.prepare(BaseStatementHandler.java:88)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.prepare(RoutingStatementHandler.java:59)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:85)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:143)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy140.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 40 more
+Caused by: com.alibaba.druid.sql.parser.ParserException: syntax error, error in :'here schoolid_of_device=? and recyc', expect EQ, actual EQ pos 205, line 1, column 205, token EQ
+	at com.alibaba.druid.sql.parser.SQLParser.printError(SQLParser.java:284)
+	at com.alibaba.druid.sql.parser.SQLStatementParser.parseStatementList(SQLStatementParser.java:433)
+	at com.alibaba.druid.sql.parser.SQLStatementParser.parseStatementList(SQLStatementParser.java:83)
+	at com.alibaba.druid.wall.WallProvider.checkInternal(WallProvider.java:624)
+	at com.alibaba.druid.wall.WallProvider.check(WallProvider.java:578)
+	at com.alibaba.druid.wall.WallFilter.checkInternal(WallFilter.java:786)
+	... 68 more
+2019-08-06 00:36:28  [ Thread-5:476 ] - [ DEBUG ]  {conn-10001} closed
+2019-08-06 00:36:28  [ Thread-5:477 ] - [ DEBUG ]  {conn-10002} closed
+2019-08-06 00:36:28  [ Thread-5:478 ] - [ DEBUG ]  {conn-10003} closed
+2019-08-06 00:36:28  [ Thread-5:478 ] - [ DEBUG ]  {conn-10004} closed
+2019-08-06 00:36:28  [ Thread-5:479 ] - [ DEBUG ]  {conn-10005} closed
+2019-08-06 00:37:37  [ main:0 ] - [ DEBUG ]  {conn-10001} connected
+2019-08-06 00:37:37  [ main:7 ] - [ DEBUG ]  {conn-10002} connected
+2019-08-06 00:37:37  [ main:10 ] - [ DEBUG ]  {conn-10003} connected
+2019-08-06 00:37:37  [ main:12 ] - [ DEBUG ]  {conn-10004} connected
+2019-08-06 00:37:37  [ main:15 ] - [ DEBUG ]  {conn-10005} connected
+2019-08-06 00:37:37  [ main:25 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 00:37:37  [ main:277 ] - [ DEBUG ]  {conn-10005, pstmt-20000} created. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+2019-08-06 00:37:37  [ main:281 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Parameters : []
+2019-08-06 00:37:37  [ main:281 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Types : []
+2019-08-06 00:37:37  [ main:292 ] - [ DEBUG ]  {conn-10005, pstmt-20000} executed. 11.8805 millis. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+2019-08-06 00:37:37  [ main:296 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} open
+2019-08-06 00:37:37  [ main:297 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Header: [id, type, mark, uint, factor, create_time, update_time]
+2019-08-06 00:37:38  [ main:303 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [1, true, 纸, 克, 70, null, null]
+2019-08-06 00:37:38  [ main:305 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [2, true, 瓶子, 个, 1, null, null]
+2019-08-06 00:37:38  [ main:306 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} closed
+2019-08-06 00:37:38  [ main:306 ] - [ DEBUG ]  {conn-10005, pstmt-20000} closed
+2019-08-06 00:37:38  [ main:308 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 00:37:38  [ main:309 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 00:37:38  [ main:334 ] - [ DEBUG ]  {conn-10005, pstmt-20001} created. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_school_inform
+WHERE (active=?)
+2019-08-06 00:37:38  [ main:337 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Parameters : [true]
+2019-08-06 00:37:38  [ main:338 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Types : [BOOLEAN]
+2019-08-06 00:37:38  [ main:338 ] - [ DEBUG ]  {conn-10005, pstmt-20001} executed. 1.1126 millis. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_school_inform
+WHERE (active=?)
+2019-08-06 00:37:38  [ main:339 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} open
+2019-08-06 00:37:38  [ main:339 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Header: [id, school_name, school_id, school_code, postal_code, address, contacts, active, create_time, update_time]
+2019-08-06 00:37:38  [ main:339 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Result: [1, 456, 123, 12300, 5555, null, null, true, null, null]
+2019-08-06 00:37:38  [ main:340 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} closed
+2019-08-06 00:37:38  [ main:340 ] - [ DEBUG ]  {conn-10005, pstmt-20001} closed
+2019-08-06 00:37:38  [ main:340 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 00:37:38  [ main:342 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 00:37:38  [ main:348 ] - [ DEBUG ]  {conn-10005, pstmt-20002} created. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-08-06 00:37:38  [ main:349 ] - [ DEBUG ]  {conn-10005, pstmt-20002} Parameters : [12300, 2]
+2019-08-06 00:37:38  [ main:350 ] - [ DEBUG ]  {conn-10005, pstmt-20002} Types : [VARCHAR, TINYINT]
+2019-08-06 00:37:38  [ main:351 ] - [ DEBUG ]  {conn-10005, pstmt-20002} executed. 1.3117 millis. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-08-06 00:37:38  [ main:351 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} open
+2019-08-06 00:37:38  [ main:351 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} Header: [id, schoolid_of_device, uuid, schoolid_of_student, recycle_type, identity_type, count, last_remainder, factor, points, remainder, create_time]
+2019-08-06 00:37:38  [ main:352 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} Result: [16, 12300, 32f96b9612764e24a94cd604baab2c30, 12300, true, false, 7066, 0, 70, 100, 66, 2019-08-05 21:28:26.0]
+2019-08-06 00:37:38  [ main:352 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} closed
+2019-08-06 00:37:38  [ main:352 ] - [ DEBUG ]  {conn-10005, pstmt-20002} closed
+2019-08-06 00:37:38  [ main:353 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 00:37:38  [ main:353 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 00:37:38  [ main:389 ] - [ DEBUG ]  {conn-10005, pstmt-20003} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 00:37:38  [ main:394 ] - [ DEBUG ]  {conn-10005, pstmt-20003} Parameters : [12300, null, 7066, 100, 66, 1, 0, 2019-08-06 00:37:38.042]
+2019-08-06 00:37:38  [ main:394 ] - [ DEBUG ]  {conn-10005, pstmt-20003} Types : [VARCHAR, OTHER, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-08-06 00:37:38  [ main:398 ] - [ DEBUG ]  {conn-10005, pstmt-20003} executed. 4.3454 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 00:37:38  [ main:398 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} open
+2019-08-06 00:37:38  [ main:399 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} Header: [GENERATED_KEY]
+2019-08-06 00:37:38  [ main:400 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} Result: [1]
+2019-08-06 00:37:38  [ main:400 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} closed
+2019-08-06 00:37:38  [ main:401 ] - [ DEBUG ]  {conn-10005, pstmt-20003} closed
+2019-08-06 00:37:38  [ main:401 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 00:37:38  [ main:401 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 00:37:38  [ main:402 ] - [ DEBUG ]  {conn-10005, pstmt-20004} created. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-08-06 00:37:38  [ main:402 ] - [ DEBUG ]  {conn-10005, pstmt-20004} Parameters : [12300, 1]
+2019-08-06 00:37:38  [ main:402 ] - [ DEBUG ]  {conn-10005, pstmt-20004} Types : [VARCHAR, TINYINT]
+2019-08-06 00:37:38  [ main:403 ] - [ DEBUG ]  {conn-10005, pstmt-20004} executed. 0.8762 millis. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-08-06 00:37:38  [ main:403 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} open
+2019-08-06 00:37:38  [ main:403 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} Header: [id, schoolid_of_device, uuid, schoolid_of_student, recycle_type, identity_type, count, last_remainder, factor, points, remainder, create_time]
+2019-08-06 00:37:38  [ main:404 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} Result: [14, 12300, 32f96b9612764e24a94cd604baab2c30, 12300, true, false, 7066, 0, 1, 7066, 0, 2019-08-05 16:26:50.0]
+2019-08-06 00:37:38  [ main:405 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} Result: [15, 12300, 32f96b9612764e24a94cd604baab2c30, 12300, true, false, 7066, 0, 1, 7066, 0, 2019-08-05 16:29:35.0]
+2019-08-06 00:37:38  [ main:405 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} closed
+2019-08-06 00:37:38  [ main:405 ] - [ DEBUG ]  {conn-10005, pstmt-20004} closed
+2019-08-06 00:37:38  [ main:405 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 00:37:38  [ main:406 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 00:37:38  [ main:406 ] - [ DEBUG ]  {conn-10005, pstmt-20005} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 00:37:38  [ main:407 ] - [ DEBUG ]  {conn-10005, pstmt-20005} Parameters : [12300, null, 14132, 14132, 0, 2, 0, 2019-08-06 00:37:38.042]
+2019-08-06 00:37:38  [ main:407 ] - [ DEBUG ]  {conn-10005, pstmt-20005} Types : [VARCHAR, OTHER, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-08-06 00:37:38  [ main:410 ] - [ DEBUG ]  {conn-10005, pstmt-20005} executed. 3.8267 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 00:37:38  [ main:411 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} open
+2019-08-06 00:37:38  [ main:411 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} Header: [GENERATED_KEY]
+2019-08-06 00:37:38  [ main:411 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} Result: [2]
+2019-08-06 00:37:38  [ main:412 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} closed
+2019-08-06 00:37:38  [ main:412 ] - [ DEBUG ]  {conn-10005, pstmt-20005} closed
+2019-08-06 00:37:38  [ main:412 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 00:37:38  [ Thread-5:460 ] - [ DEBUG ]  {conn-10001} closed
+2019-08-06 00:37:38  [ Thread-5:462 ] - [ DEBUG ]  {conn-10002} closed
+2019-08-06 00:37:38  [ Thread-5:462 ] - [ DEBUG ]  {conn-10003} closed
+2019-08-06 00:37:38  [ Thread-5:463 ] - [ DEBUG ]  {conn-10004} closed
+2019-08-06 00:37:38  [ Thread-5:464 ] - [ DEBUG ]  {conn-10005} closed
+2019-08-06 00:39:39  [ main:0 ] - [ DEBUG ]  {conn-10001} connected
+2019-08-06 00:39:39  [ main:6 ] - [ DEBUG ]  {conn-10002} connected
+2019-08-06 00:39:39  [ main:9 ] - [ DEBUG ]  {conn-10003} connected
+2019-08-06 00:39:39  [ main:11 ] - [ DEBUG ]  {conn-10004} connected
+2019-08-06 00:39:39  [ main:14 ] - [ DEBUG ]  {conn-10005} connected
+2019-08-06 00:39:39  [ main:22 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 00:39:39  [ main:262 ] - [ DEBUG ]  {conn-10005, pstmt-20000} created. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+2019-08-06 00:39:39  [ main:266 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Parameters : []
+2019-08-06 00:39:39  [ main:267 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Types : []
+2019-08-06 00:39:39  [ main:276 ] - [ DEBUG ]  {conn-10005, pstmt-20000} executed. 11.0149 millis. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+2019-08-06 00:39:39  [ main:280 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} open
+2019-08-06 00:39:39  [ main:282 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Header: [id, type, mark, uint, factor, create_time, update_time]
+2019-08-06 00:39:39  [ main:287 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [1, true, 纸, 克, 70, null, null]
+2019-08-06 00:39:39  [ main:289 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [2, true, 瓶子, 个, 1, null, null]
+2019-08-06 00:39:39  [ main:290 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} closed
+2019-08-06 00:39:39  [ main:290 ] - [ DEBUG ]  {conn-10005, pstmt-20000} closed
+2019-08-06 00:39:39  [ main:291 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 00:39:39  [ main:292 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 00:39:39  [ main:319 ] - [ DEBUG ]  {conn-10005, pstmt-20001} created. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_school_inform
+WHERE (active=?)
+2019-08-06 00:39:39  [ main:321 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Parameters : [true]
+2019-08-06 00:39:39  [ main:322 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Types : [BOOLEAN]
+2019-08-06 00:39:39  [ main:323 ] - [ DEBUG ]  {conn-10005, pstmt-20001} executed. 2.0751 millis. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_school_inform
+WHERE (active=?)
+2019-08-06 00:39:39  [ main:323 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} open
+2019-08-06 00:39:39  [ main:324 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Header: [id, school_name, school_id, school_code, postal_code, address, contacts, active, create_time, update_time]
+2019-08-06 00:39:39  [ main:325 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Result: [1, 456, 123, 12300, 5555, null, null, true, null, null]
+2019-08-06 00:39:39  [ main:326 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} closed
+2019-08-06 00:39:39  [ main:327 ] - [ DEBUG ]  {conn-10005, pstmt-20001} closed
+2019-08-06 00:39:39  [ main:327 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 00:39:39  [ main:329 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 00:39:39  [ main:337 ] - [ DEBUG ]  {conn-10005, pstmt-20002} created. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-08-06 00:39:39  [ main:338 ] - [ DEBUG ]  {conn-10005, pstmt-20002} Parameters : [12300, 2]
+2019-08-06 00:39:39  [ main:338 ] - [ DEBUG ]  {conn-10005, pstmt-20002} Types : [VARCHAR, TINYINT]
+2019-08-06 00:39:39  [ main:339 ] - [ DEBUG ]  {conn-10005, pstmt-20002} executed. 1.3132 millis. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-08-06 00:39:39  [ main:339 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} open
+2019-08-06 00:39:39  [ main:339 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} Header: [id, schoolid_of_device, uuid, schoolid_of_student, recycle_type, identity_type, count, last_remainder, factor, points, remainder, create_time]
+2019-08-06 00:39:39  [ main:340 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} Result: [16, 12300, 32f96b9612764e24a94cd604baab2c30, 12300, true, false, 7066, 0, 70, 100, 66, 2019-08-05 21:28:26.0]
+2019-08-06 00:39:39  [ main:341 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} closed
+2019-08-06 00:39:39  [ main:341 ] - [ DEBUG ]  {conn-10005, pstmt-20002} closed
+2019-08-06 00:39:39  [ main:341 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 00:39:39  [ main:342 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 00:39:39  [ main:379 ] - [ DEBUG ]  {conn-10005, pstmt-20003} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 00:39:39  [ main:384 ] - [ DEBUG ]  {conn-10005, pstmt-20003} Parameters : [12300, 2, 7066, 100, 66, 1, 0, 2019-08-06 00:39:39.66]
+2019-08-06 00:39:39  [ main:384 ] - [ DEBUG ]  {conn-10005, pstmt-20003} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-08-06 00:39:39  [ main:389 ] - [ DEBUG ]  {conn-10005, pstmt-20003} executed. 4.8386 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 00:39:39  [ main:389 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} open
+2019-08-06 00:39:39  [ main:390 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} Header: [GENERATED_KEY]
+2019-08-06 00:39:39  [ main:391 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} Result: [3]
+2019-08-06 00:39:39  [ main:392 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} closed
+2019-08-06 00:39:39  [ main:392 ] - [ DEBUG ]  {conn-10005, pstmt-20003} closed
+2019-08-06 00:39:39  [ main:392 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 00:39:39  [ main:393 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 00:39:39  [ main:394 ] - [ DEBUG ]  {conn-10005, pstmt-20004} created. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-08-06 00:39:39  [ main:394 ] - [ DEBUG ]  {conn-10005, pstmt-20004} Parameters : [12300, 1]
+2019-08-06 00:39:39  [ main:395 ] - [ DEBUG ]  {conn-10005, pstmt-20004} Types : [VARCHAR, TINYINT]
+2019-08-06 00:39:39  [ main:396 ] - [ DEBUG ]  {conn-10005, pstmt-20004} executed. 1.1376 millis. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-08-06 00:39:39  [ main:396 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} open
+2019-08-06 00:39:39  [ main:396 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} Header: [id, schoolid_of_device, uuid, schoolid_of_student, recycle_type, identity_type, count, last_remainder, factor, points, remainder, create_time]
+2019-08-06 00:39:39  [ main:397 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} Result: [14, 12300, 32f96b9612764e24a94cd604baab2c30, 12300, true, false, 7066, 0, 1, 7066, 0, 2019-08-05 16:26:50.0]
+2019-08-06 00:39:39  [ main:397 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} Result: [15, 12300, 32f96b9612764e24a94cd604baab2c30, 12300, true, false, 7066, 0, 1, 7066, 0, 2019-08-05 16:29:35.0]
+2019-08-06 00:39:39  [ main:398 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} closed
+2019-08-06 00:39:39  [ main:399 ] - [ DEBUG ]  {conn-10005, pstmt-20004} closed
+2019-08-06 00:39:39  [ main:399 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 00:39:39  [ main:399 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 00:39:39  [ main:400 ] - [ DEBUG ]  {conn-10005, pstmt-20005} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 00:39:39  [ main:400 ] - [ DEBUG ]  {conn-10005, pstmt-20005} Parameters : [12300, 1, 14132, 14132, 0, 2, 0, 2019-08-06 00:39:39.66]
+2019-08-06 00:39:39  [ main:401 ] - [ DEBUG ]  {conn-10005, pstmt-20005} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-08-06 00:39:39  [ main:405 ] - [ DEBUG ]  {conn-10005, pstmt-20005} executed. 4.3763 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 00:39:39  [ main:405 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} open
+2019-08-06 00:39:39  [ main:406 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} Header: [GENERATED_KEY]
+2019-08-06 00:39:39  [ main:406 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} Result: [4]
+2019-08-06 00:39:39  [ main:406 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} closed
+2019-08-06 00:39:39  [ main:407 ] - [ DEBUG ]  {conn-10005, pstmt-20005} closed
+2019-08-06 00:39:39  [ main:407 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 00:39:39  [ Thread-5:484 ] - [ DEBUG ]  {conn-10001} closed
+2019-08-06 00:39:39  [ Thread-5:487 ] - [ DEBUG ]  {conn-10002} closed
+2019-08-06 00:39:39  [ Thread-5:489 ] - [ DEBUG ]  {conn-10003} closed
+2019-08-06 00:39:39  [ Thread-5:490 ] - [ DEBUG ]  {conn-10004} closed
+2019-08-06 00:39:39  [ Thread-5:490 ] - [ DEBUG ]  {conn-10005} closed
+2019-08-06 21:23:00  [ scheduling-1:0 ] - [ DEBUG ]  {conn-10001} connected
+2019-08-06 21:23:00  [ scheduling-1:6 ] - [ DEBUG ]  {conn-10002} connected
+2019-08-06 21:23:00  [ scheduling-1:8 ] - [ DEBUG ]  {conn-10003} connected
+2019-08-06 21:23:00  [ scheduling-1:11 ] - [ DEBUG ]  {conn-10004} connected
+2019-08-06 21:23:00  [ scheduling-1:13 ] - [ DEBUG ]  {conn-10005} connected
+2019-08-06 21:23:00  [ scheduling-1:15 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 21:23:00  [ scheduling-1:78 ] - [ DEBUG ]  {conn-10005, pstmt-20000} created. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+2019-08-06 21:23:00  [ scheduling-1:85 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Parameters : []
+2019-08-06 21:23:00  [ scheduling-1:85 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Types : []
+2019-08-06 21:23:00  [ scheduling-1:95 ] - [ DEBUG ]  {conn-10005, pstmt-20000} executed. 12.6525 millis. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+2019-08-06 21:23:00  [ scheduling-1:98 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} open
+2019-08-06 21:23:00  [ scheduling-1:100 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Header: [id, type, mark, uint, factor, create_time, update_time]
+2019-08-06 21:23:00  [ scheduling-1:104 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [1, true, 纸, 克, 70, null, null]
+2019-08-06 21:23:00  [ scheduling-1:105 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [2, true, 瓶子, 个, 1, null, null]
+2019-08-06 21:23:00  [ scheduling-1:106 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} closed
+2019-08-06 21:23:00  [ scheduling-1:106 ] - [ DEBUG ]  {conn-10005, pstmt-20000} closed
+2019-08-06 21:23:00  [ scheduling-1:108 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 21:23:00  [ scheduling-1:108 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 21:23:00  [ scheduling-1:127 ] - [ DEBUG ]  {conn-10005, pstmt-20001} created. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_school_inform
+WHERE (active=?)
+2019-08-06 21:23:00  [ scheduling-1:128 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Parameters : [true]
+2019-08-06 21:23:00  [ scheduling-1:129 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Types : [BOOLEAN]
+2019-08-06 21:23:00  [ scheduling-1:131 ] - [ DEBUG ]  {conn-10005, pstmt-20001} executed. 2.7855 millis. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_school_inform
+WHERE (active=?)
+2019-08-06 21:23:00  [ scheduling-1:132 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} open
+2019-08-06 21:23:00  [ scheduling-1:132 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Header: [id, school_name, school_id, school_code, postal_code, address, contacts, active, create_time, update_time]
+2019-08-06 21:23:00  [ scheduling-1:133 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Result: [1, 456, 123, 12300, 5555, null, null, true, null, null]
+2019-08-06 21:23:00  [ scheduling-1:133 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} closed
+2019-08-06 21:23:00  [ scheduling-1:133 ] - [ DEBUG ]  {conn-10005, pstmt-20001} closed
+2019-08-06 21:23:00  [ scheduling-1:134 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 21:23:00  [ scheduling-1:135 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 21:23:00  [ scheduling-1:140 ] - [ DEBUG ]  {conn-10005, pstmt-20002} created. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-08-06 21:23:00  [ scheduling-1:141 ] - [ DEBUG ]  {conn-10005, pstmt-20002} Parameters : [12300, 2]
+2019-08-06 21:23:00  [ scheduling-1:141 ] - [ DEBUG ]  {conn-10005, pstmt-20002} Types : [VARCHAR, TINYINT]
+2019-08-06 21:23:00  [ scheduling-1:144 ] - [ DEBUG ]  {conn-10005, pstmt-20002} executed. 3.6399 millis. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-08-06 21:23:00  [ scheduling-1:145 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} open
+2019-08-06 21:23:00  [ scheduling-1:145 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} Header: [id, schoolid_of_device, uuid, schoolid_of_student, recycle_type, identity_type, count, last_remainder, factor, points, remainder, create_time]
+2019-08-06 21:23:00  [ scheduling-1:147 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} Result: [16, 12300, 32f96b9612764e24a94cd604baab2c30, 12300, true, false, 7066, 0, 70, 100, 66, 2019-08-05 21:28:26.0]
+2019-08-06 21:23:00  [ scheduling-1:147 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} closed
+2019-08-06 21:23:00  [ scheduling-1:147 ] - [ DEBUG ]  {conn-10005, pstmt-20002} closed
+2019-08-06 21:23:00  [ scheduling-1:148 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 21:23:00  [ scheduling-1:148 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 21:23:00  [ scheduling-1:153 ] - [ DEBUG ]  {conn-10005, pstmt-20003} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 21:23:00  [ scheduling-1:156 ] - [ DEBUG ]  {conn-10005, pstmt-20003} Parameters : [12300, 2, 7066, 100, 66, 1, 0, 2019-08-06 21:23:00.284]
+2019-08-06 21:23:00  [ scheduling-1:156 ] - [ DEBUG ]  {conn-10005, pstmt-20003} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-08-06 21:23:00  [ scheduling-1:160 ] - [ DEBUG ]  {conn-10005, pstmt-20003} executed. 4.944 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 21:23:00  [ scheduling-1:161 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} open
+2019-08-06 21:23:00  [ scheduling-1:162 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} Header: [GENERATED_KEY]
+2019-08-06 21:23:00  [ scheduling-1:163 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} Result: [5]
+2019-08-06 21:23:00  [ scheduling-1:164 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} closed
+2019-08-06 21:23:00  [ scheduling-1:164 ] - [ DEBUG ]  {conn-10005, pstmt-20003} closed
+2019-08-06 21:23:00  [ scheduling-1:164 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 21:23:00  [ scheduling-1:165 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 21:23:00  [ scheduling-1:165 ] - [ DEBUG ]  {conn-10005, pstmt-20004} created. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-08-06 21:23:00  [ scheduling-1:165 ] - [ DEBUG ]  {conn-10005, pstmt-20004} Parameters : [12300, 1]
+2019-08-06 21:23:00  [ scheduling-1:165 ] - [ DEBUG ]  {conn-10005, pstmt-20004} Types : [VARCHAR, TINYINT]
+2019-08-06 21:23:00  [ scheduling-1:166 ] - [ DEBUG ]  {conn-10005, pstmt-20004} executed. 0.8242 millis. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-08-06 21:23:00  [ scheduling-1:166 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} open
+2019-08-06 21:23:00  [ scheduling-1:167 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} Header: [id, schoolid_of_device, uuid, schoolid_of_student, recycle_type, identity_type, count, last_remainder, factor, points, remainder, create_time]
+2019-08-06 21:23:00  [ scheduling-1:167 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} Result: [14, 12300, 32f96b9612764e24a94cd604baab2c30, 12300, true, false, 7066, 0, 1, 7066, 0, 2019-08-05 16:26:50.0]
+2019-08-06 21:23:00  [ scheduling-1:167 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} Result: [15, 12300, 32f96b9612764e24a94cd604baab2c30, 12300, true, false, 7066, 0, 1, 7066, 0, 2019-08-05 16:29:35.0]
+2019-08-06 21:23:00  [ scheduling-1:168 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} closed
+2019-08-06 21:23:00  [ scheduling-1:168 ] - [ DEBUG ]  {conn-10005, pstmt-20004} closed
+2019-08-06 21:23:00  [ scheduling-1:168 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 21:23:00  [ scheduling-1:168 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 21:23:00  [ scheduling-1:169 ] - [ DEBUG ]  {conn-10005, pstmt-20005} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 21:23:00  [ scheduling-1:169 ] - [ DEBUG ]  {conn-10005, pstmt-20005} Parameters : [12300, 1, 14132, 14132, 0, 2, 0, 2019-08-06 21:23:00.284]
+2019-08-06 21:23:00  [ scheduling-1:169 ] - [ DEBUG ]  {conn-10005, pstmt-20005} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-08-06 21:23:00  [ scheduling-1:173 ] - [ DEBUG ]  {conn-10005, pstmt-20005} executed. 3.6017 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 21:23:00  [ scheduling-1:173 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} open
+2019-08-06 21:23:00  [ scheduling-1:173 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} Header: [GENERATED_KEY]
+2019-08-06 21:23:00  [ scheduling-1:173 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} Result: [6]
+2019-08-06 21:23:00  [ scheduling-1:174 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} closed
+2019-08-06 21:23:00  [ scheduling-1:174 ] - [ DEBUG ]  {conn-10005, pstmt-20005} closed
+2019-08-06 21:23:00  [ scheduling-1:174 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 21:23:00  [ scheduling-1:174 ] - [ INFO ]  自动生成每日数据报表
+2019-08-06 22:06:57  [ main:0 ] - [ DEBUG ]  {conn-10001} connected
+2019-08-06 22:06:57  [ main:7 ] - [ DEBUG ]  {conn-10002} connected
+2019-08-06 22:06:57  [ main:11 ] - [ DEBUG ]  {conn-10003} connected
+2019-08-06 22:06:57  [ main:14 ] - [ DEBUG ]  {conn-10004} connected
+2019-08-06 22:06:57  [ main:18 ] - [ DEBUG ]  {conn-10005} connected
+2019-08-06 22:06:57  [ main:30 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:06:57  [ main:305 ] - [ DEBUG ]  {conn-10005, pstmt-20000} created. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+2019-08-06 22:06:57  [ main:310 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Parameters : []
+2019-08-06 22:06:57  [ main:310 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Types : []
+2019-08-06 22:06:57  [ main:320 ] - [ DEBUG ]  {conn-10005, pstmt-20000} executed. 11.8274 millis. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+2019-08-06 22:06:57  [ main:325 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} open
+2019-08-06 22:06:57  [ main:326 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Header: [id, type, mark, uint, factor, create_time, update_time]
+2019-08-06 22:06:57  [ main:332 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [1, true, 纸, 克, 70, null, null]
+2019-08-06 22:06:57  [ main:334 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [2, true, 瓶子, 个, 1, null, null]
+2019-08-06 22:06:57  [ main:335 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} closed
+2019-08-06 22:06:57  [ main:335 ] - [ DEBUG ]  {conn-10005, pstmt-20000} closed
+2019-08-06 22:06:57  [ main:337 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:06:57  [ main:337 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:06:57  [ main:362 ] - [ DEBUG ]  {conn-10005, pstmt-20001} created. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_school_inform
+WHERE (active=?)
+2019-08-06 22:06:57  [ main:363 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Parameters : [true]
+2019-08-06 22:06:57  [ main:363 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Types : [BOOLEAN]
+2019-08-06 22:06:57  [ main:364 ] - [ DEBUG ]  {conn-10005, pstmt-20001} executed. 1.1338 millis. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_school_inform
+WHERE (active=?)
+2019-08-06 22:06:57  [ main:364 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} open
+2019-08-06 22:06:57  [ main:364 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Header: [id, school_name, school_id, school_code, postal_code, address, contacts, active, create_time, update_time]
+2019-08-06 22:06:57  [ main:364 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Result: [1, 456, 123, 12300, 5555, null, null, true, null, null]
+2019-08-06 22:06:57  [ main:364 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} closed
+2019-08-06 22:06:57  [ main:364 ] - [ DEBUG ]  {conn-10005, pstmt-20001} closed
+2019-08-06 22:06:57  [ main:365 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:06:57  [ main:367 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:06:57  [ main:372 ] - [ DEBUG ]  {conn-10005, pstmt-20002} created. Select id school_code,type,count,points,remainder,activity_count,count_type,create_time from kernel_school_auto_count where school_code=? and type=? and count_type=1 and date_format(create_time,'%Y-%m')=date_sub(CURDATE(),interval 1 month)
+2019-08-06 22:06:57  [ main:373 ] - [ DEBUG ]  {conn-10005, pstmt-20002} Parameters : [12300, 2]
+2019-08-06 22:06:57  [ main:373 ] - [ DEBUG ]  {conn-10005, pstmt-20002} Types : [VARCHAR, TINYINT]
+2019-08-06 22:06:57  [ main:374 ] - [ DEBUG ]  {conn-10005, pstmt-20002} executed. 1.0014 millis. Select id school_code,type,count,points,remainder,activity_count,count_type,create_time from kernel_school_auto_count where school_code=? and type=? and count_type=1 and date_format(create_time,'%Y-%m')=date_sub(CURDATE(),interval 1 month)
+2019-08-06 22:06:57  [ main:374 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} open
+2019-08-06 22:06:57  [ main:375 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} Header: [id, type, count, points, remainder, activity_count, count_type, create_time]
+2019-08-06 22:06:57  [ main:375 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} closed
+2019-08-06 22:06:57  [ main:375 ] - [ DEBUG ]  {conn-10005, pstmt-20002} closed
+2019-08-06 22:06:57  [ main:375 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:06:57  [ main:376 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:06:57  [ main:415 ] - [ DEBUG ]  {conn-10005, pstmt-20003} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 22:06:57  [ main:417 ] - [ DEBUG ]  {conn-10005, pstmt-20003} Parameters : [12300, 2, 0, 0, 0, 0, 2, 2019-08-06 22:06:57.375]
+2019-08-06 22:06:57  [ main:418 ] - [ DEBUG ]  {conn-10005, pstmt-20003} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-08-06 22:06:57  [ main:425 ] - [ DEBUG ]  {conn-10005, pstmt-20003} executed. 8.046 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 22:06:57  [ main:426 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} open
+2019-08-06 22:06:57  [ main:426 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} Header: [GENERATED_KEY]
+2019-08-06 22:06:57  [ main:427 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} Result: [7]
+2019-08-06 22:06:57  [ main:428 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} closed
+2019-08-06 22:06:57  [ main:428 ] - [ DEBUG ]  {conn-10005, pstmt-20003} closed
+2019-08-06 22:06:57  [ main:428 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:06:57  [ main:429 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:06:57  [ main:429 ] - [ DEBUG ]  {conn-10005, pstmt-20004} created. Select id school_code,type,count,points,remainder,activity_count,count_type,create_time from kernel_school_auto_count where school_code=? and type=? and count_type=1 and date_format(create_time,'%Y-%m')=date_sub(CURDATE(),interval 1 month)
+2019-08-06 22:06:57  [ main:430 ] - [ DEBUG ]  {conn-10005, pstmt-20004} Parameters : [12300, 1]
+2019-08-06 22:06:57  [ main:430 ] - [ DEBUG ]  {conn-10005, pstmt-20004} Types : [VARCHAR, TINYINT]
+2019-08-06 22:06:57  [ main:430 ] - [ DEBUG ]  {conn-10005, pstmt-20004} executed. 0.7964 millis. Select id school_code,type,count,points,remainder,activity_count,count_type,create_time from kernel_school_auto_count where school_code=? and type=? and count_type=1 and date_format(create_time,'%Y-%m')=date_sub(CURDATE(),interval 1 month)
+2019-08-06 22:06:57  [ main:431 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} open
+2019-08-06 22:06:57  [ main:431 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} Header: [id, type, count, points, remainder, activity_count, count_type, create_time]
+2019-08-06 22:06:57  [ main:431 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} closed
+2019-08-06 22:06:57  [ main:431 ] - [ DEBUG ]  {conn-10005, pstmt-20004} closed
+2019-08-06 22:06:57  [ main:431 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:06:57  [ main:432 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:06:57  [ main:432 ] - [ DEBUG ]  {conn-10005, pstmt-20005} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 22:06:57  [ main:432 ] - [ DEBUG ]  {conn-10005, pstmt-20005} Parameters : [12300, 1, 0, 0, 0, 0, 2, 2019-08-06 22:06:57.375]
+2019-08-06 22:06:57  [ main:433 ] - [ DEBUG ]  {conn-10005, pstmt-20005} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-08-06 22:06:57  [ main:440 ] - [ DEBUG ]  {conn-10005, pstmt-20005} executed. 7.3922 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 22:06:57  [ main:440 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} open
+2019-08-06 22:06:57  [ main:440 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} Header: [GENERATED_KEY]
+2019-08-06 22:06:57  [ main:441 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} Result: [8]
+2019-08-06 22:06:57  [ main:441 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} closed
+2019-08-06 22:06:57  [ main:441 ] - [ DEBUG ]  {conn-10005, pstmt-20005} closed
+2019-08-06 22:06:57  [ main:441 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:06:57  [ main:441 ] - [ INFO ]  自动生成每月数据报表
+2019-08-06 22:06:57  [ Thread-5:522 ] - [ DEBUG ]  {conn-10001} closed
+2019-08-06 22:06:57  [ Thread-5:524 ] - [ DEBUG ]  {conn-10002} closed
+2019-08-06 22:06:57  [ Thread-5:525 ] - [ DEBUG ]  {conn-10003} closed
+2019-08-06 22:06:57  [ Thread-5:527 ] - [ DEBUG ]  {conn-10004} closed
+2019-08-06 22:06:57  [ Thread-5:528 ] - [ DEBUG ]  {conn-10005} closed
+2019-08-06 22:07:42  [ main:0 ] - [ DEBUG ]  {conn-10001} connected
+2019-08-06 22:07:42  [ main:7 ] - [ DEBUG ]  {conn-10002} connected
+2019-08-06 22:07:42  [ main:10 ] - [ DEBUG ]  {conn-10003} connected
+2019-08-06 22:07:42  [ main:13 ] - [ DEBUG ]  {conn-10004} connected
+2019-08-06 22:07:42  [ main:16 ] - [ DEBUG ]  {conn-10005} connected
+2019-08-06 22:07:42  [ main:26 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:07:42  [ main:296 ] - [ DEBUG ]  {conn-10005, pstmt-20000} created. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+2019-08-06 22:07:42  [ main:301 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Parameters : []
+2019-08-06 22:07:42  [ main:301 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Types : []
+2019-08-06 22:07:42  [ main:311 ] - [ DEBUG ]  {conn-10005, pstmt-20000} executed. 11.8889 millis. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+2019-08-06 22:07:42  [ main:316 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} open
+2019-08-06 22:07:42  [ main:318 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Header: [id, type, mark, uint, factor, create_time, update_time]
+2019-08-06 22:07:42  [ main:324 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [1, true, 纸, 克, 70, null, null]
+2019-08-06 22:07:42  [ main:326 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [2, true, 瓶子, 个, 1, null, null]
+2019-08-06 22:07:42  [ main:327 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} closed
+2019-08-06 22:07:42  [ main:327 ] - [ DEBUG ]  {conn-10005, pstmt-20000} closed
+2019-08-06 22:07:42  [ main:329 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:07:42  [ main:330 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:07:42  [ main:356 ] - [ DEBUG ]  {conn-10005, pstmt-20001} created. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_school_inform
+WHERE (active=?)
+2019-08-06 22:07:42  [ main:357 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Parameters : [true]
+2019-08-06 22:07:42  [ main:357 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Types : [BOOLEAN]
+2019-08-06 22:07:42  [ main:358 ] - [ DEBUG ]  {conn-10005, pstmt-20001} executed. 1.2279 millis. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_school_inform
+WHERE (active=?)
+2019-08-06 22:07:42  [ main:358 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} open
+2019-08-06 22:07:42  [ main:359 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Header: [id, school_name, school_id, school_code, postal_code, address, contacts, active, create_time, update_time]
+2019-08-06 22:07:42  [ main:359 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Result: [1, 456, 123, 12300, 5555, null, null, true, null, null]
+2019-08-06 22:07:42  [ main:360 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} closed
+2019-08-06 22:07:42  [ main:360 ] - [ DEBUG ]  {conn-10005, pstmt-20001} closed
+2019-08-06 22:07:42  [ main:360 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:07:42  [ main:361 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:07:42  [ main:369 ] - [ DEBUG ]  {conn-10005, pstmt-20002} created. Select id school_code,type,count,points,remainder,activity_count,count_type,create_time from kernel_school_auto_count where school_code=? and type=? and count_type=1 and date_format(create_time,'%Y-%m')=date_sub(CURDATE(),interval 1 month)
+2019-08-06 22:07:42  [ main:370 ] - [ DEBUG ]  {conn-10005, pstmt-20002} Parameters : [12300, 2]
+2019-08-06 22:07:42  [ main:370 ] - [ DEBUG ]  {conn-10005, pstmt-20002} Types : [VARCHAR, TINYINT]
+2019-08-06 22:07:42  [ main:371 ] - [ DEBUG ]  {conn-10005, pstmt-20002} executed. 1.0341 millis. Select id school_code,type,count,points,remainder,activity_count,count_type,create_time from kernel_school_auto_count where school_code=? and type=? and count_type=1 and date_format(create_time,'%Y-%m')=date_sub(CURDATE(),interval 1 month)
+2019-08-06 22:07:42  [ main:371 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} open
+2019-08-06 22:07:42  [ main:371 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} Header: [id, type, count, points, remainder, activity_count, count_type, create_time]
+2019-08-06 22:07:42  [ main:371 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} closed
+2019-08-06 22:07:42  [ main:372 ] - [ DEBUG ]  {conn-10005, pstmt-20002} closed
+2019-08-06 22:07:42  [ main:372 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:07:42  [ main:372 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:07:42  [ main:409 ] - [ DEBUG ]  {conn-10005, pstmt-20003} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 22:07:42  [ main:413 ] - [ DEBUG ]  {conn-10005, pstmt-20003} Parameters : [12300, 2, 0, 0, 0, 0, 2, 2019-08-06 22:07:42.855]
+2019-08-06 22:07:42  [ main:413 ] - [ DEBUG ]  {conn-10005, pstmt-20003} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-08-06 22:07:42  [ main:418 ] - [ DEBUG ]  {conn-10005, pstmt-20003} executed. 4.771 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 22:07:42  [ main:419 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} open
+2019-08-06 22:07:42  [ main:419 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} Header: [GENERATED_KEY]
+2019-08-06 22:07:42  [ main:420 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} Result: [9]
+2019-08-06 22:07:42  [ main:421 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} closed
+2019-08-06 22:07:42  [ main:421 ] - [ DEBUG ]  {conn-10005, pstmt-20003} closed
+2019-08-06 22:07:42  [ main:421 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:07:42  [ main:422 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:07:42  [ main:422 ] - [ DEBUG ]  {conn-10005, pstmt-20004} created. Select id school_code,type,count,points,remainder,activity_count,count_type,create_time from kernel_school_auto_count where school_code=? and type=? and count_type=1 and date_format(create_time,'%Y-%m')=date_sub(CURDATE(),interval 1 month)
+2019-08-06 22:07:42  [ main:422 ] - [ DEBUG ]  {conn-10005, pstmt-20004} Parameters : [12300, 1]
+2019-08-06 22:07:42  [ main:423 ] - [ DEBUG ]  {conn-10005, pstmt-20004} Types : [VARCHAR, TINYINT]
+2019-08-06 22:07:42  [ main:423 ] - [ DEBUG ]  {conn-10005, pstmt-20004} executed. 0.9309 millis. Select id school_code,type,count,points,remainder,activity_count,count_type,create_time from kernel_school_auto_count where school_code=? and type=? and count_type=1 and date_format(create_time,'%Y-%m')=date_sub(CURDATE(),interval 1 month)
+2019-08-06 22:07:42  [ main:424 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} open
+2019-08-06 22:07:42  [ main:424 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} Header: [id, type, count, points, remainder, activity_count, count_type, create_time]
+2019-08-06 22:07:42  [ main:424 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} closed
+2019-08-06 22:07:42  [ main:425 ] - [ DEBUG ]  {conn-10005, pstmt-20004} closed
+2019-08-06 22:07:42  [ main:425 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:07:42  [ main:425 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:07:42  [ main:426 ] - [ DEBUG ]  {conn-10005, pstmt-20005} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 22:07:42  [ main:426 ] - [ DEBUG ]  {conn-10005, pstmt-20005} Parameters : [12300, 1, 0, 0, 0, 0, 2, 2019-08-06 22:07:42.855]
+2019-08-06 22:07:42  [ main:426 ] - [ DEBUG ]  {conn-10005, pstmt-20005} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-08-06 22:07:42  [ main:430 ] - [ DEBUG ]  {conn-10005, pstmt-20005} executed. 4.3166 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 22:07:42  [ main:431 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} open
+2019-08-06 22:07:42  [ main:431 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} Header: [GENERATED_KEY]
+2019-08-06 22:07:42  [ main:431 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} Result: [10]
+2019-08-06 22:07:42  [ main:432 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} closed
+2019-08-06 22:07:42  [ main:432 ] - [ DEBUG ]  {conn-10005, pstmt-20005} closed
+2019-08-06 22:07:42  [ main:432 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:07:42  [ main:432 ] - [ INFO ]  自动生成每月数据报表
+2019-08-06 22:07:43  [ Thread-5:517 ] - [ DEBUG ]  {conn-10001} closed
+2019-08-06 22:07:43  [ Thread-5:520 ] - [ DEBUG ]  {conn-10002} closed
+2019-08-06 22:07:43  [ Thread-5:521 ] - [ DEBUG ]  {conn-10003} closed
+2019-08-06 22:07:43  [ Thread-5:522 ] - [ DEBUG ]  {conn-10004} closed
+2019-08-06 22:07:43  [ Thread-5:523 ] - [ DEBUG ]  {conn-10005} closed
+2019-08-06 22:12:43  [ main:0 ] - [ DEBUG ]  {conn-10001} connected
+2019-08-06 22:12:43  [ main:6 ] - [ DEBUG ]  {conn-10002} connected
+2019-08-06 22:12:43  [ main:9 ] - [ DEBUG ]  {conn-10003} connected
+2019-08-06 22:12:43  [ main:11 ] - [ DEBUG ]  {conn-10004} connected
+2019-08-06 22:12:43  [ main:14 ] - [ DEBUG ]  {conn-10005} connected
+2019-08-06 22:12:43  [ main:22 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:12:43  [ main:256 ] - [ DEBUG ]  {conn-10005, pstmt-20000} created. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+2019-08-06 22:12:43  [ main:261 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Parameters : []
+2019-08-06 22:12:43  [ main:261 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Types : []
+2019-08-06 22:12:43  [ main:272 ] - [ DEBUG ]  {conn-10005, pstmt-20000} executed. 12.2828 millis. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+2019-08-06 22:12:43  [ main:276 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} open
+2019-08-06 22:12:43  [ main:278 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Header: [id, type, mark, uint, factor, create_time, update_time]
+2019-08-06 22:12:43  [ main:284 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [1, true, 纸, 克, 70, null, null]
+2019-08-06 22:12:43  [ main:286 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [2, true, 瓶子, 个, 1, null, null]
+2019-08-06 22:12:43  [ main:287 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} closed
+2019-08-06 22:12:43  [ main:288 ] - [ DEBUG ]  {conn-10005, pstmt-20000} closed
+2019-08-06 22:12:43  [ main:289 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:12:43  [ main:290 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:12:43  [ main:317 ] - [ DEBUG ]  {conn-10005, pstmt-20001} created. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_school_inform
+WHERE (active=?)
+2019-08-06 22:12:43  [ main:319 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Parameters : [true]
+2019-08-06 22:12:43  [ main:319 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Types : [BOOLEAN]
+2019-08-06 22:12:43  [ main:320 ] - [ DEBUG ]  {conn-10005, pstmt-20001} executed. 1.2284 millis. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_school_inform
+WHERE (active=?)
+2019-08-06 22:12:43  [ main:320 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} open
+2019-08-06 22:12:43  [ main:321 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Header: [id, school_name, school_id, school_code, postal_code, address, contacts, active, create_time, update_time]
+2019-08-06 22:12:43  [ main:321 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Result: [1, 456, 123, 12300, 5555, null, null, true, null, null]
+2019-08-06 22:12:43  [ main:321 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} closed
+2019-08-06 22:12:43  [ main:322 ] - [ DEBUG ]  {conn-10005, pstmt-20001} closed
+2019-08-06 22:12:43  [ main:322 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:12:43  [ main:323 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:12:43  [ main:330 ] - [ DEBUG ]  {conn-10005, pstmt-20002} created. Select id school_code,type,count,points,remainder,activity_count,count_type,create_time from kernel_school_auto_count where school_code=? and type=? and count_type=1 and date_format(create_time,'%Y-%m')=date_sub(CURDATE(),interval 1 month)
+2019-08-06 22:12:43  [ main:331 ] - [ DEBUG ]  {conn-10005, pstmt-20002} Parameters : [12300, 2]
+2019-08-06 22:12:43  [ main:331 ] - [ DEBUG ]  {conn-10005, pstmt-20002} Types : [VARCHAR, TINYINT]
+2019-08-06 22:12:43  [ main:332 ] - [ DEBUG ]  {conn-10005, pstmt-20002} executed. 1.1603 millis. Select id school_code,type,count,points,remainder,activity_count,count_type,create_time from kernel_school_auto_count where school_code=? and type=? and count_type=1 and date_format(create_time,'%Y-%m')=date_sub(CURDATE(),interval 1 month)
+2019-08-06 22:12:43  [ main:333 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} open
+2019-08-06 22:12:43  [ main:333 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} Header: [id, type, count, points, remainder, activity_count, count_type, create_time]
+2019-08-06 22:12:43  [ main:333 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} closed
+2019-08-06 22:12:43  [ main:333 ] - [ DEBUG ]  {conn-10005, pstmt-20002} closed
+2019-08-06 22:12:43  [ main:334 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:17:45  [ main:301616 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:17:45  [ main:301655 ] - [ DEBUG ]  {conn-10005, pstmt-20003} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 22:17:45  [ main:301659 ] - [ DEBUG ]  {conn-10005, pstmt-20003} Parameters : [12300, 2, 0, 0, 0, 0, 2, 2019-08-06 22:12:43.918]
+2019-08-06 22:17:45  [ main:301659 ] - [ DEBUG ]  {conn-10005, pstmt-20003} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-08-06 22:17:45  [ main:301663 ] - [ DEBUG ]  {conn-10005, pstmt-20003} executed. 4.5964 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 22:17:45  [ main:301664 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} open
+2019-08-06 22:17:45  [ main:301664 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} Header: [GENERATED_KEY]
+2019-08-06 22:17:45  [ main:301665 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} Result: [11]
+2019-08-06 22:17:45  [ main:301666 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} closed
+2019-08-06 22:17:45  [ main:301666 ] - [ DEBUG ]  {conn-10005, pstmt-20003} closed
+2019-08-06 22:17:45  [ main:301666 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:17:45  [ main:301667 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:17:45  [ main:301668 ] - [ DEBUG ]  {conn-10005, pstmt-20004} created. Select id school_code,type,count,points,remainder,activity_count,count_type,create_time from kernel_school_auto_count where school_code=? and type=? and count_type=1 and date_format(create_time,'%Y-%m')=date_sub(CURDATE(),interval 1 month)
+2019-08-06 22:17:45  [ main:301668 ] - [ DEBUG ]  {conn-10005, pstmt-20004} Parameters : [12300, 1]
+2019-08-06 22:17:45  [ main:301669 ] - [ DEBUG ]  {conn-10005, pstmt-20004} Types : [VARCHAR, TINYINT]
+2019-08-06 22:17:45  [ main:301670 ] - [ DEBUG ]  {conn-10005, pstmt-20004} executed. 1.0633 millis. Select id school_code,type,count,points,remainder,activity_count,count_type,create_time from kernel_school_auto_count where school_code=? and type=? and count_type=1 and date_format(create_time,'%Y-%m')=date_sub(CURDATE(),interval 1 month)
+2019-08-06 22:17:45  [ main:301670 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} open
+2019-08-06 22:17:45  [ main:301670 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} Header: [id, type, count, points, remainder, activity_count, count_type, create_time]
+2019-08-06 22:17:45  [ main:301671 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} closed
+2019-08-06 22:17:45  [ main:301671 ] - [ DEBUG ]  {conn-10005, pstmt-20004} closed
+2019-08-06 22:17:45  [ main:301671 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:17:49  [ main:306282 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:17:49  [ main:306282 ] - [ DEBUG ]  {conn-10005, pstmt-20005} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 22:17:49  [ main:306283 ] - [ DEBUG ]  {conn-10005, pstmt-20005} Parameters : [12300, 1, 0, 0, 0, 0, 2, 2019-08-06 22:12:43.918]
+2019-08-06 22:17:49  [ main:306283 ] - [ DEBUG ]  {conn-10005, pstmt-20005} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-08-06 22:17:49  [ main:306286 ] - [ DEBUG ]  {conn-10005, pstmt-20005} executed. 3.5778 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 22:17:49  [ main:306287 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} open
+2019-08-06 22:17:49  [ main:306287 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} Header: [GENERATED_KEY]
+2019-08-06 22:17:49  [ main:306288 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} Result: [12]
+2019-08-06 22:17:49  [ main:306288 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} closed
+2019-08-06 22:17:49  [ main:306288 ] - [ DEBUG ]  {conn-10005, pstmt-20005} closed
+2019-08-06 22:17:49  [ main:306288 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:17:49  [ main:306289 ] - [ INFO ]  自动生成每月数据报表
+2019-08-06 22:17:49  [ Thread-5:306367 ] - [ DEBUG ]  {conn-10001} closed
+2019-08-06 22:17:49  [ Thread-5:306370 ] - [ DEBUG ]  {conn-10002} closed
+2019-08-06 22:17:49  [ Thread-5:306371 ] - [ DEBUG ]  {conn-10003} closed
+2019-08-06 22:17:49  [ Thread-5:306377 ] - [ DEBUG ]  {conn-10004} closed
+2019-08-06 22:17:49  [ Thread-5:306378 ] - [ DEBUG ]  {conn-10005} closed
+2019-08-06 22:18:35  [ main:0 ] - [ DEBUG ]  {conn-10001} connected
+2019-08-06 22:18:35  [ main:8 ] - [ DEBUG ]  {conn-10002} connected
+2019-08-06 22:18:35  [ main:11 ] - [ DEBUG ]  {conn-10003} connected
+2019-08-06 22:18:35  [ main:14 ] - [ DEBUG ]  {conn-10004} connected
+2019-08-06 22:18:35  [ main:18 ] - [ DEBUG ]  {conn-10005} connected
+2019-08-06 22:18:35  [ main:30 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:18:35  [ main:308 ] - [ DEBUG ]  {conn-10005, pstmt-20000} created. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+2019-08-06 22:18:35  [ main:312 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Parameters : []
+2019-08-06 22:18:35  [ main:313 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Types : []
+2019-08-06 22:18:35  [ main:323 ] - [ DEBUG ]  {conn-10005, pstmt-20000} executed. 11.4435 millis. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+2019-08-06 22:18:35  [ main:326 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} open
+2019-08-06 22:18:35  [ main:328 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Header: [id, type, mark, uint, factor, create_time, update_time]
+2019-08-06 22:18:35  [ main:334 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [1, true, 纸, 克, 70, null, null]
+2019-08-06 22:18:35  [ main:335 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [2, true, 瓶子, 个, 1, null, null]
+2019-08-06 22:18:35  [ main:336 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} closed
+2019-08-06 22:18:35  [ main:336 ] - [ DEBUG ]  {conn-10005, pstmt-20000} closed
+2019-08-06 22:18:35  [ main:338 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:18:35  [ main:339 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:18:35  [ main:366 ] - [ DEBUG ]  {conn-10005, pstmt-20001} created. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_school_inform
+WHERE (active=?)
+2019-08-06 22:18:35  [ main:367 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Parameters : [true]
+2019-08-06 22:18:35  [ main:368 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Types : [BOOLEAN]
+2019-08-06 22:18:35  [ main:368 ] - [ DEBUG ]  {conn-10005, pstmt-20001} executed. 1.1671 millis. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_school_inform
+WHERE (active=?)
+2019-08-06 22:18:35  [ main:369 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} open
+2019-08-06 22:18:35  [ main:369 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Header: [id, school_name, school_id, school_code, postal_code, address, contacts, active, create_time, update_time]
+2019-08-06 22:18:35  [ main:369 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Result: [1, 456, 123, 12300, 5555, null, null, true, null, null]
+2019-08-06 22:18:35  [ main:370 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} closed
+2019-08-06 22:18:35  [ main:371 ] - [ DEBUG ]  {conn-10005, pstmt-20001} closed
+2019-08-06 22:18:35  [ main:371 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:18:35  [ main:372 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:18:35  [ main:379 ] - [ DEBUG ]  {conn-10005, pstmt-20002} created. Select id school_code,type,count,points,remainder,activity_count,count_type,create_time from kernel_school_auto_count where school_code=? and type=? and count_type=1 and date_format(create_time,'%Y-%m')=date_format(date_sub(CURDATE(),interval 1 month),'%Y-%m')
+2019-08-06 22:18:35  [ main:380 ] - [ DEBUG ]  {conn-10005, pstmt-20002} Parameters : [12300, 2]
+2019-08-06 22:18:35  [ main:380 ] - [ DEBUG ]  {conn-10005, pstmt-20002} Types : [VARCHAR, TINYINT]
+2019-08-06 22:18:35  [ main:381 ] - [ DEBUG ]  {conn-10005, pstmt-20002} executed. 1.0348 millis. Select id school_code,type,count,points,remainder,activity_count,count_type,create_time from kernel_school_auto_count where school_code=? and type=? and count_type=1 and date_format(create_time,'%Y-%m')=date_format(date_sub(CURDATE(),interval 1 month),'%Y-%m')
+2019-08-06 22:18:35  [ main:381 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} open
+2019-08-06 22:18:35  [ main:382 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} Header: [id, type, count, points, remainder, activity_count, count_type, create_time]
+2019-08-06 22:18:35  [ main:382 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} Result: [2, true, 14000, 14132, 0, 2, true, 2019-07-06 00:37:38.0]
+2019-08-06 22:18:35  [ main:383 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} Result: [3, true, 7066, 100, 66, 1, true, 2019-07-06 00:39:39.0]
+2019-08-06 22:18:35  [ main:383 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} closed
+2019-08-06 22:18:35  [ main:383 ] - [ DEBUG ]  {conn-10005, pstmt-20002} closed
+2019-08-06 22:18:35  [ main:384 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:18:35  [ main:384 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:18:35  [ main:418 ] - [ DEBUG ]  {conn-10005, pstmt-20003} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 22:18:35  [ main:421 ] - [ DEBUG ]  {conn-10005, pstmt-20003} Parameters : [12300, 2, 21066, 300, 66, 3, 2, 2019-08-06 22:18:35.902]
+2019-08-06 22:18:35  [ main:421 ] - [ DEBUG ]  {conn-10005, pstmt-20003} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-08-06 22:18:35  [ main:425 ] - [ DEBUG ]  {conn-10005, pstmt-20003} executed. 4.5141 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 22:18:35  [ main:426 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} open
+2019-08-06 22:18:35  [ main:426 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} Header: [GENERATED_KEY]
+2019-08-06 22:18:35  [ main:427 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} Result: [13]
+2019-08-06 22:18:35  [ main:427 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} closed
+2019-08-06 22:18:35  [ main:428 ] - [ DEBUG ]  {conn-10005, pstmt-20003} closed
+2019-08-06 22:18:35  [ main:428 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:18:35  [ main:428 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:18:35  [ main:429 ] - [ DEBUG ]  {conn-10005, pstmt-20004} created. Select id school_code,type,count,points,remainder,activity_count,count_type,create_time from kernel_school_auto_count where school_code=? and type=? and count_type=1 and date_format(create_time,'%Y-%m')=date_format(date_sub(CURDATE(),interval 1 month),'%Y-%m')
+2019-08-06 22:18:35  [ main:429 ] - [ DEBUG ]  {conn-10005, pstmt-20004} Parameters : [12300, 1]
+2019-08-06 22:18:35  [ main:429 ] - [ DEBUG ]  {conn-10005, pstmt-20004} Types : [VARCHAR, TINYINT]
+2019-08-06 22:18:35  [ main:430 ] - [ DEBUG ]  {conn-10005, pstmt-20004} executed. 0.7316 millis. Select id school_code,type,count,points,remainder,activity_count,count_type,create_time from kernel_school_auto_count where school_code=? and type=? and count_type=1 and date_format(create_time,'%Y-%m')=date_format(date_sub(CURDATE(),interval 1 month),'%Y-%m')
+2019-08-06 22:18:35  [ main:430 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} open
+2019-08-06 22:18:35  [ main:430 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} Header: [id, type, count, points, remainder, activity_count, count_type, create_time]
+2019-08-06 22:18:35  [ main:430 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} Result: [1, true, 7066, 100, 66, 1, true, 2019-07-06 00:37:38.0]
+2019-08-06 22:18:35  [ main:431 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} Result: [4, true, 14000, 14132, 0, 2, true, 2019-07-06 00:39:39.0]
+2019-08-06 22:18:35  [ main:431 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} closed
+2019-08-06 22:18:35  [ main:431 ] - [ DEBUG ]  {conn-10005, pstmt-20004} closed
+2019-08-06 22:18:35  [ main:432 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:18:35  [ main:432 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:18:35  [ main:433 ] - [ DEBUG ]  {conn-10005, pstmt-20005} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 22:18:35  [ main:433 ] - [ DEBUG ]  {conn-10005, pstmt-20005} Parameters : [12300, 1, 21066, 21066, 0, 3, 2, 2019-08-06 22:18:35.902]
+2019-08-06 22:18:35  [ main:433 ] - [ DEBUG ]  {conn-10005, pstmt-20005} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-08-06 22:18:35  [ main:438 ] - [ DEBUG ]  {conn-10005, pstmt-20005} executed. 4.4334 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 22:18:35  [ main:438 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} open
+2019-08-06 22:18:35  [ main:439 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} Header: [GENERATED_KEY]
+2019-08-06 22:18:35  [ main:439 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} Result: [14]
+2019-08-06 22:18:35  [ main:439 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} closed
+2019-08-06 22:18:35  [ main:439 ] - [ DEBUG ]  {conn-10005, pstmt-20005} closed
+2019-08-06 22:18:35  [ main:440 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:18:35  [ main:440 ] - [ INFO ]  自动生成每月数据报表
+2019-08-06 22:18:36  [ Thread-5:509 ] - [ DEBUG ]  {conn-10001} closed
+2019-08-06 22:18:36  [ Thread-5:511 ] - [ DEBUG ]  {conn-10002} closed
+2019-08-06 22:18:36  [ Thread-5:511 ] - [ DEBUG ]  {conn-10003} closed
+2019-08-06 22:18:36  [ Thread-5:512 ] - [ DEBUG ]  {conn-10004} closed
+2019-08-06 22:18:36  [ Thread-5:512 ] - [ DEBUG ]  {conn-10005} closed
+2019-08-06 22:27:48  [ main:0 ] - [ DEBUG ]  {conn-10001} connected
+2019-08-06 22:27:48  [ main:7 ] - [ DEBUG ]  {conn-10002} connected
+2019-08-06 22:27:48  [ main:9 ] - [ DEBUG ]  {conn-10003} connected
+2019-08-06 22:27:48  [ main:12 ] - [ DEBUG ]  {conn-10004} connected
+2019-08-06 22:27:48  [ main:15 ] - [ DEBUG ]  {conn-10005} connected
+2019-08-06 22:27:48  [ main:24 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:27:48  [ main:243 ] - [ DEBUG ]  {conn-10005, pstmt-20000} created. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+2019-08-06 22:27:48  [ main:247 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Parameters : []
+2019-08-06 22:27:48  [ main:247 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Types : []
+2019-08-06 22:27:48  [ main:256 ] - [ DEBUG ]  {conn-10005, pstmt-20000} executed. 10.6613 millis. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+2019-08-06 22:27:48  [ main:260 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} open
+2019-08-06 22:27:48  [ main:261 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Header: [id, type, mark, uint, factor, create_time, update_time]
+2019-08-06 22:27:48  [ main:267 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [1, true, 纸, 克, 70, null, null]
+2019-08-06 22:27:48  [ main:268 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [2, true, 瓶子, 个, 1, null, null]
+2019-08-06 22:27:48  [ main:269 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} closed
+2019-08-06 22:27:48  [ main:269 ] - [ DEBUG ]  {conn-10005, pstmt-20000} closed
+2019-08-06 22:27:48  [ main:271 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:27:48  [ main:271 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:27:48  [ main:297 ] - [ DEBUG ]  {conn-10005, pstmt-20001} created. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_school_inform
+WHERE (active=?)
+2019-08-06 22:27:48  [ main:298 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Parameters : [true]
+2019-08-06 22:27:48  [ main:299 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Types : [BOOLEAN]
+2019-08-06 22:27:48  [ main:300 ] - [ DEBUG ]  {conn-10005, pstmt-20001} executed. 1.6367 millis. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_school_inform
+WHERE (active=?)
+2019-08-06 22:27:48  [ main:300 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} open
+2019-08-06 22:27:48  [ main:300 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Header: [id, school_name, school_id, school_code, postal_code, address, contacts, active, create_time, update_time]
+2019-08-06 22:27:48  [ main:301 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Result: [1, 456, 123, 12300, 5555, null, null, true, null, null]
+2019-08-06 22:27:48  [ main:301 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} closed
+2019-08-06 22:27:48  [ main:301 ] - [ DEBUG ]  {conn-10005, pstmt-20001} closed
+2019-08-06 22:27:48  [ main:302 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:27:48  [ main:303 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:27:48  [ main:309 ] - [ DEBUG ]  {conn-10005, pstmt-20002} created. Select id school_code,type,count,points,remainder,activity_count,count_type,create_time from kernel_school_auto_count where school_code=? and type=? and count_type=2 and date_format(create_time,'%Y')=date_format(date_sub(CURDATE(),interval 1 year),'%Y-%m')
+2019-08-06 22:27:48  [ main:310 ] - [ DEBUG ]  {conn-10005, pstmt-20002} Parameters : [12300, 2]
+2019-08-06 22:27:48  [ main:311 ] - [ DEBUG ]  {conn-10005, pstmt-20002} Types : [VARCHAR, TINYINT]
+2019-08-06 22:27:48  [ main:311 ] - [ DEBUG ]  {conn-10005, pstmt-20002} executed. 1.0636 millis. Select id school_code,type,count,points,remainder,activity_count,count_type,create_time from kernel_school_auto_count where school_code=? and type=? and count_type=2 and date_format(create_time,'%Y')=date_format(date_sub(CURDATE(),interval 1 year),'%Y-%m')
+2019-08-06 22:27:48  [ main:312 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} open
+2019-08-06 22:27:48  [ main:312 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} Header: [id, type, count, points, remainder, activity_count, count_type, create_time]
+2019-08-06 22:27:48  [ main:312 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} closed
+2019-08-06 22:27:48  [ main:313 ] - [ DEBUG ]  {conn-10005, pstmt-20002} closed
+2019-08-06 22:27:48  [ main:313 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:27:48  [ main:313 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:27:48  [ main:353 ] - [ DEBUG ]  {conn-10005, pstmt-20003} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 22:27:48  [ main:359 ] - [ DEBUG ]  {conn-10005, pstmt-20003} Parameters : [12300, 2, 0, 0, 0, 0, 3, 2019-08-06 22:27:48.933]
+2019-08-06 22:27:48  [ main:360 ] - [ DEBUG ]  {conn-10005, pstmt-20003} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-08-06 22:27:48  [ main:364 ] - [ DEBUG ]  {conn-10005, pstmt-20003} executed. 5.2306 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 22:27:48  [ main:365 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} open
+2019-08-06 22:27:48  [ main:365 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} Header: [GENERATED_KEY]
+2019-08-06 22:27:48  [ main:367 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} Result: [15]
+2019-08-06 22:27:48  [ main:367 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} closed
+2019-08-06 22:27:48  [ main:368 ] - [ DEBUG ]  {conn-10005, pstmt-20003} closed
+2019-08-06 22:27:48  [ main:368 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:27:48  [ main:368 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:27:49  [ main:369 ] - [ DEBUG ]  {conn-10005, pstmt-20004} created. Select id school_code,type,count,points,remainder,activity_count,count_type,create_time from kernel_school_auto_count where school_code=? and type=? and count_type=2 and date_format(create_time,'%Y')=date_format(date_sub(CURDATE(),interval 1 year),'%Y-%m')
+2019-08-06 22:27:49  [ main:369 ] - [ DEBUG ]  {conn-10005, pstmt-20004} Parameters : [12300, 1]
+2019-08-06 22:27:49  [ main:369 ] - [ DEBUG ]  {conn-10005, pstmt-20004} Types : [VARCHAR, TINYINT]
+2019-08-06 22:27:49  [ main:370 ] - [ DEBUG ]  {conn-10005, pstmt-20004} executed. 0.8412 millis. Select id school_code,type,count,points,remainder,activity_count,count_type,create_time from kernel_school_auto_count where school_code=? and type=? and count_type=2 and date_format(create_time,'%Y')=date_format(date_sub(CURDATE(),interval 1 year),'%Y-%m')
+2019-08-06 22:27:49  [ main:370 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} open
+2019-08-06 22:27:49  [ main:370 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} Header: [id, type, count, points, remainder, activity_count, count_type, create_time]
+2019-08-06 22:27:49  [ main:371 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} closed
+2019-08-06 22:27:49  [ main:371 ] - [ DEBUG ]  {conn-10005, pstmt-20004} closed
+2019-08-06 22:27:49  [ main:371 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:27:49  [ main:372 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:27:49  [ main:372 ] - [ DEBUG ]  {conn-10005, pstmt-20005} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 22:27:49  [ main:372 ] - [ DEBUG ]  {conn-10005, pstmt-20005} Parameters : [12300, 1, 0, 0, 0, 0, 3, 2019-08-06 22:27:48.933]
+2019-08-06 22:27:49  [ main:373 ] - [ DEBUG ]  {conn-10005, pstmt-20005} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-08-06 22:27:49  [ main:377 ] - [ DEBUG ]  {conn-10005, pstmt-20005} executed. 4.2785 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 22:27:49  [ main:377 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} open
+2019-08-06 22:27:49  [ main:377 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} Header: [GENERATED_KEY]
+2019-08-06 22:27:49  [ main:377 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} Result: [16]
+2019-08-06 22:27:49  [ main:378 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} closed
+2019-08-06 22:27:49  [ main:378 ] - [ DEBUG ]  {conn-10005, pstmt-20005} closed
+2019-08-06 22:27:49  [ main:378 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:27:49  [ main:378 ] - [ INFO ]  自动生成每年数据报表
+2019-08-06 22:27:49  [ Thread-5:457 ] - [ DEBUG ]  {conn-10001} closed
+2019-08-06 22:27:49  [ Thread-5:459 ] - [ DEBUG ]  {conn-10002} closed
+2019-08-06 22:27:49  [ Thread-5:460 ] - [ DEBUG ]  {conn-10003} closed
+2019-08-06 22:27:49  [ Thread-5:461 ] - [ DEBUG ]  {conn-10004} closed
+2019-08-06 22:27:49  [ Thread-5:461 ] - [ DEBUG ]  {conn-10005} closed
+2019-08-06 22:28:27  [ main:0 ] - [ DEBUG ]  {conn-10001} connected
+2019-08-06 22:28:27  [ main:8 ] - [ DEBUG ]  {conn-10002} connected
+2019-08-06 22:28:27  [ main:11 ] - [ DEBUG ]  {conn-10003} connected
+2019-08-06 22:28:27  [ main:14 ] - [ DEBUG ]  {conn-10004} connected
+2019-08-06 22:28:27  [ main:19 ] - [ DEBUG ]  {conn-10005} connected
+2019-08-06 22:28:27  [ main:30 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:28:27  [ main:283 ] - [ DEBUG ]  {conn-10005, pstmt-20000} created. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+2019-08-06 22:28:27  [ main:288 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Parameters : []
+2019-08-06 22:28:27  [ main:288 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Types : []
+2019-08-06 22:28:27  [ main:297 ] - [ DEBUG ]  {conn-10005, pstmt-20000} executed. 10.8503 millis. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+2019-08-06 22:28:27  [ main:302 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} open
+2019-08-06 22:28:27  [ main:305 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Header: [id, type, mark, uint, factor, create_time, update_time]
+2019-08-06 22:28:27  [ main:312 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [1, true, 纸, 克, 70, null, null]
+2019-08-06 22:28:27  [ main:314 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [2, true, 瓶子, 个, 1, null, null]
+2019-08-06 22:28:27  [ main:315 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} closed
+2019-08-06 22:28:27  [ main:315 ] - [ DEBUG ]  {conn-10005, pstmt-20000} closed
+2019-08-06 22:28:27  [ main:317 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:28:27  [ main:318 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:28:27  [ main:344 ] - [ DEBUG ]  {conn-10005, pstmt-20001} created. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_school_inform
+WHERE (active=?)
+2019-08-06 22:28:27  [ main:345 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Parameters : [true]
+2019-08-06 22:28:27  [ main:345 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Types : [BOOLEAN]
+2019-08-06 22:28:27  [ main:346 ] - [ DEBUG ]  {conn-10005, pstmt-20001} executed. 1.0261 millis. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_school_inform
+WHERE (active=?)
+2019-08-06 22:28:27  [ main:346 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} open
+2019-08-06 22:28:27  [ main:346 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Header: [id, school_name, school_id, school_code, postal_code, address, contacts, active, create_time, update_time]
+2019-08-06 22:28:27  [ main:347 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Result: [1, 456, 123, 12300, 5555, null, null, true, null, null]
+2019-08-06 22:28:27  [ main:347 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} closed
+2019-08-06 22:28:27  [ main:348 ] - [ DEBUG ]  {conn-10005, pstmt-20001} closed
+2019-08-06 22:28:27  [ main:348 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:28:27  [ main:349 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:28:27  [ main:355 ] - [ DEBUG ]  {conn-10005, pstmt-20002} created. Select id school_code,type,count,points,remainder,activity_count,count_type,create_time from kernel_school_auto_count where school_code=? and type=? and count_type=2 and date_format(create_time,'%Y')=date_format(date_sub(CURDATE(),interval 1 year),'%Y')
+2019-08-06 22:28:27  [ main:356 ] - [ DEBUG ]  {conn-10005, pstmt-20002} Parameters : [12300, 2]
+2019-08-06 22:28:27  [ main:357 ] - [ DEBUG ]  {conn-10005, pstmt-20002} Types : [VARCHAR, TINYINT]
+2019-08-06 22:28:27  [ main:357 ] - [ DEBUG ]  {conn-10005, pstmt-20002} executed. 0.9467 millis. Select id school_code,type,count,points,remainder,activity_count,count_type,create_time from kernel_school_auto_count where school_code=? and type=? and count_type=2 and date_format(create_time,'%Y')=date_format(date_sub(CURDATE(),interval 1 year),'%Y')
+2019-08-06 22:28:27  [ main:358 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} open
+2019-08-06 22:28:27  [ main:358 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} Header: [id, type, count, points, remainder, activity_count, count_type, create_time]
+2019-08-06 22:28:27  [ main:358 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} Result: [13, true, 21066, 300, 66, 3, true, 2018-08-06 22:18:35.0]
+2019-08-06 22:28:27  [ main:359 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} closed
+2019-08-06 22:28:27  [ main:359 ] - [ DEBUG ]  {conn-10005, pstmt-20002} closed
+2019-08-06 22:28:27  [ main:359 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:28:27  [ main:360 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:28:27  [ main:393 ] - [ DEBUG ]  {conn-10005, pstmt-20003} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 22:28:27  [ main:396 ] - [ DEBUG ]  {conn-10005, pstmt-20003} Parameters : [12300, 2, 21066, 300, 66, 3, 3, 2019-08-06 22:28:27.377]
+2019-08-06 22:28:27  [ main:397 ] - [ DEBUG ]  {conn-10005, pstmt-20003} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-08-06 22:28:27  [ main:402 ] - [ DEBUG ]  {conn-10005, pstmt-20003} executed. 5.8168 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 22:28:27  [ main:403 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} open
+2019-08-06 22:28:27  [ main:403 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} Header: [GENERATED_KEY]
+2019-08-06 22:28:27  [ main:404 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} Result: [17]
+2019-08-06 22:28:27  [ main:405 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} closed
+2019-08-06 22:28:27  [ main:405 ] - [ DEBUG ]  {conn-10005, pstmt-20003} closed
+2019-08-06 22:28:27  [ main:405 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:28:27  [ main:405 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:28:27  [ main:406 ] - [ DEBUG ]  {conn-10005, pstmt-20004} created. Select id school_code,type,count,points,remainder,activity_count,count_type,create_time from kernel_school_auto_count where school_code=? and type=? and count_type=2 and date_format(create_time,'%Y')=date_format(date_sub(CURDATE(),interval 1 year),'%Y')
+2019-08-06 22:28:27  [ main:406 ] - [ DEBUG ]  {conn-10005, pstmt-20004} Parameters : [12300, 1]
+2019-08-06 22:28:27  [ main:407 ] - [ DEBUG ]  {conn-10005, pstmt-20004} Types : [VARCHAR, TINYINT]
+2019-08-06 22:28:27  [ main:407 ] - [ DEBUG ]  {conn-10005, pstmt-20004} executed. 1.0034 millis. Select id school_code,type,count,points,remainder,activity_count,count_type,create_time from kernel_school_auto_count where school_code=? and type=? and count_type=2 and date_format(create_time,'%Y')=date_format(date_sub(CURDATE(),interval 1 year),'%Y')
+2019-08-06 22:28:27  [ main:408 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} open
+2019-08-06 22:28:27  [ main:408 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} Header: [id, type, count, points, remainder, activity_count, count_type, create_time]
+2019-08-06 22:28:27  [ main:409 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} Result: [14, true, 21066, 21066, 0, 3, true, 2018-08-06 22:18:35.0]
+2019-08-06 22:28:27  [ main:409 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} closed
+2019-08-06 22:28:27  [ main:409 ] - [ DEBUG ]  {conn-10005, pstmt-20004} closed
+2019-08-06 22:28:27  [ main:410 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:28:27  [ main:410 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-06 22:28:27  [ main:410 ] - [ DEBUG ]  {conn-10005, pstmt-20005} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 22:28:27  [ main:411 ] - [ DEBUG ]  {conn-10005, pstmt-20005} Parameters : [12300, 1, 21066, 21066, 0, 3, 3, 2019-08-06 22:28:27.377]
+2019-08-06 22:28:27  [ main:411 ] - [ DEBUG ]  {conn-10005, pstmt-20005} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-08-06 22:28:27  [ main:415 ] - [ DEBUG ]  {conn-10005, pstmt-20005} executed. 4.1779 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-08-06 22:28:27  [ main:415 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} open
+2019-08-06 22:28:27  [ main:416 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} Header: [GENERATED_KEY]
+2019-08-06 22:28:27  [ main:416 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} Result: [18]
+2019-08-06 22:28:27  [ main:416 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} closed
+2019-08-06 22:28:27  [ main:417 ] - [ DEBUG ]  {conn-10005, pstmt-20005} closed
+2019-08-06 22:28:27  [ main:417 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-06 22:28:27  [ main:417 ] - [ INFO ]  自动生成每年数据报表
+2019-08-06 22:28:27  [ Thread-5:489 ] - [ DEBUG ]  {conn-10001} closed
+2019-08-06 22:28:27  [ Thread-5:491 ] - [ DEBUG ]  {conn-10002} closed
+2019-08-06 22:28:27  [ Thread-5:492 ] - [ DEBUG ]  {conn-10003} closed
+2019-08-06 22:28:27  [ Thread-5:493 ] - [ DEBUG ]  {conn-10004} closed
+2019-08-06 22:28:27  [ Thread-5:494 ] - [ DEBUG ]  {conn-10005} closed
