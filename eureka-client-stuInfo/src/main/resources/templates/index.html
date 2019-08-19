@@ -30,24 +30,25 @@
 		<script type="text/javascript">
 		 $('#btn').click(function (){
 	//$("#jvForm").submit();
-	var message='{"appID":"7166912116544627","machineID":"123456789","accountTonken":"iigi87At","data":{"studentCode": "G441423201201101057"}}';
-	 var formdata = new FormData();
-	 formdata.append("message",message);
-     formdata.append("file", $('#file')[0].files[0]);
+	var message='{"appID":"7166912116544627","machineID":"123456789","accountTonken":"iigi87At","data":{"grade":1,"classS":1}}';
+	// var formdata = new FormData();
+	 //formdata.append("message",message);
+     //formdata.append("file", $('#file')[0].files[0]);
     $.ajax({  
             type: "POST",   //提交的方法
-            url:"/stuinfo/uploadstulist", //提交的地址  
-            data:formdata,// 序列化表单值  
-            async: false, 
-            contentType: false, // 不设置内容类型
-            processData: false, // 不处理数据
+            url:"/stuinfo/exportstudatalist", //提交的地址  
+            data:message,// 序列化表单值  
+            //async: false, 
+            contentType: "application/json", // 不设置内容类型
+            //processData: false, // 不处理数据
             dataType: "json",
-            error: function(request) {  //失败的话
-                 alert("Connection error");  
-            },  
+         //   error: function(request) {  //失败的话
+          //       alert("Connection error");  
+            //},  
             success: function(data) {  //成功
                  alert(data);  //就将返回的数据显示出来
                  //window.location.href="/reg.htm"  
+                 window.location.href=data.data;
             }  
          });
 

@@ -53,7 +53,7 @@ public class StudentVo {
 	
 	private String grade;
 
-    private Boolean sex;
+    private String sex;
 
     private String nativePlace;
 
@@ -292,11 +292,11 @@ public class StudentVo {
 		this.grade = grade;
 	}
 
-	public Boolean getSex() {
+	public String getSex() {
 		return sex;
 	}
 
-	public void setSex(Boolean sex) {
+	public void setSex(String sex) {
 		this.sex = sex;
 	}
 

@@ -1,11 +1,18 @@
 package com.qimeng.main.entity;
 
-public class StudentInform {
-    private Integer id;
+import java.io.Serializable;
+
+public class StudentInform implements Serializable{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private Integer id;
 
     private String name;
 
-    private Boolean sex;
+    private String sex;
 
     private String studentCode;
 
@@ -111,11 +118,11 @@ public class StudentInform {
         this.name = name == null ? null : name.trim();
     }
 
-    public Boolean getSex() {
+    public String getSex() {
         return sex;
     }
 
-    public void setSex(Boolean sex) {
+    public void setSex(String sex) {
         this.sex = sex;
     }
 

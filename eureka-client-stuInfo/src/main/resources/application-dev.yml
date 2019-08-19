@@ -54,5 +54,5 @@ spring:
   mvc:
     static-path-pattern: /**
   resources:
-    static-locations: classpath:/META-INF/resources/,classpath:/static,classpath:/resources/,file:F:/upload/
+    static-locations: classpath:/META-INF/resources/,classpath:/static,classpath:/resources/,file:F:/upload/,file:F:/export/
 

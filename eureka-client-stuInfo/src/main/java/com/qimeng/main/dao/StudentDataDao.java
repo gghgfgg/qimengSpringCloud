@@ -1,11 +1,13 @@
 package com.qimeng.main.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectProvider;
 import org.apache.ibatis.annotations.UpdateProvider;
 import org.apache.ibatis.jdbc.SQL;
@@ -61,6 +63,9 @@ public interface StudentDataDao {
 	
 	@SelectProvider(type = SqlFactory.class,method = "selectStudentData")
 	List<StudentData> selectStudentData(@Param("item")StudentData studentData);
+	
+	@Select("select COUNT(*) from "+tablename+" where school_code=#{schoolCode} and update_time=#{time}")
+	int selectStudentCountByUpdata(String schoolCode,Date time);
 	
 	public class SqlFactory extends SQL{
 	    public String updateByIdentityCardOrStrudentCode(@Param("item")StudentData studentData){

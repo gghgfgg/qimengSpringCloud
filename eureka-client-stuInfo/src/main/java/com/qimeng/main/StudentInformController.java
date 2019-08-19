@@ -2,10 +2,12 @@ package com.qimeng.main;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.ResourceUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,11 +20,12 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.github.pagehelper.PageInfo;
 import com.qimeng.main.entity.ApplicationManagement;
+import com.qimeng.main.entity.StudentInform;
 import com.qimeng.main.service.ApplicationManagementService;
 import com.qimeng.main.service.StudentService;
-import com.qimeng.main.service.UploadlogService;
+import com.qimeng.main.service.StudentUpdateService;
 import com.qimeng.main.util.StaticGlobal;
-import com.qimeng.main.util.UpLoadFileName;
+import com.qimeng.main.util.UpLoadFile;
 import com.qimeng.main.vo.RequestMessage;
 import com.qimeng.main.vo.ResponseMessage;
 import com.qimeng.main.vo.StudentVo;
@@ -45,8 +48,9 @@ public class StudentInformController {
 	@Autowired
 	StudentService studentService;
 	@Autowired
-	UpLoadFileName upLoadFileName;
-	
+	UpLoadFile upLoadFile;
+	@Autowired
+	StudentUpdateService studentUpdateService;
 	@RequestMapping("/getstudatalist/{page}")
 	public String getstudentDataList(@PathVariable("page") Integer page, @RequestBody JSONObject message) {
 		RequestMessage<StudentVo> requestMessage = JSON.parseObject(message.toString(),
@@ -117,7 +121,7 @@ public class StudentInformController {
 				new TypeReference<RequestMessage<StudentVo>>() {
 				});
 		StudentVo studentVo = (StudentVo) requestMessage.getData();
-		if(studentVo==null||!StringUtils.isEmpty(studentVo.getSchoolCode())) {
+		if(studentVo==null||StringUtils.isEmpty(studentVo.getSchoolCode())) {
 			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
 			responseMessage.setData("");
 			responseMessage.setFailedMessage("参数不足");
@@ -141,14 +145,14 @@ public class StudentInformController {
 			}
 			
 			String fileName = file.getOriginalFilename(); //文件名
-			File uploadFlie=upLoadFileName.getUploadFile(fileName,requestMessage.getAppID(),requestMessage.getOperator());
+			File uploadFlie=upLoadFile.getUploadFile(fileName,requestMessage.getAppID(),requestMessage.getOperator());
 			file.transferTo(uploadFlie);
 
-			
-			
-			
+			List<StudentInform> list =upLoadFile.uploadFileToList(uploadFlie);
+			int updatecount=studentUpdateService.insertStudentInformList(list, studentVo.getSchoolCode(), studentVo.getType());
+			String reString="读取文件学生数:"+list.size()+",更新学生数:"+updatecount;
 			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
+			responseMessage.setData(reString);
 			responseMessage.setSuccessMessage("更新学生信息成功");
 			return JSONObject.toJSONString(responseMessage);
 		} catch (Exception e) {
@@ -255,5 +259,48 @@ public class StudentInformController {
 			return JSONObject.toJSONString(responseMessage);
 		}
 	}
+	@RequestMapping("/exportstudatalist")
+	public String exportstudentDataList(@RequestBody JSONObject message,HttpServletResponse response) {
+		RequestMessage<StudentVo> requestMessage = JSON.parseObject(message.toString(),
+				new TypeReference<RequestMessage<StudentVo>>() {
+				});
+		StudentVo studentVo = (StudentVo) requestMessage.getData();
+		logger.debug(studentVo.toString());
+		try {
+			ApplicationManagement applicationManagement = applicationManagementService
+					.selectApplicationManagementByAppId(requestMessage.getAppID(), StaticGlobal.ACTIVE);
+			if (applicationManagement == null) {
+				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
+				responseMessage.setData("");
+				responseMessage.setFailedMessage("该appid没有权限");
+				return JSONObject.toJSONString(responseMessage);
+			}
 
+			List<StudentVo> studentList = studentService.StudentList(studentVo);
+			File upload = new File("/export/");
+			if (!upload.exists()) {
+				upload.mkdirs();
+			}
+			String path = upload.getAbsolutePath(); // 本地路径
+			SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMddHHmmssS");
+			String time = simpleDateFormat.format(System.currentTimeMillis());
+			String url = "/" + time + "学生信息表.xls";
+			// 存储地址
+			String destFileName = path + url;
+			File destFile = new File(destFileName);
+			destFile.getParentFile().mkdirs();
+			upLoadFile.exporFile(studentList,"学生信息表",destFile);
+			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
+			responseMessage.setData(url);
+			responseMessage.setSuccessMessage("导出学生列表信息成功");
+			return JSONObject.toJSONString(responseMessage);
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
+			responseMessage.setData("");
+			responseMessage.setFailedMessage(e.toString());
+			return JSONObject.toJSONString(responseMessage);
+		}
+	}
 }

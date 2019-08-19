@@ -16,8 +16,8 @@ import com.qimeng.main.entity.Uploadlog;
 @Mapper
 public interface UploadlogDao {
 
-	@Insert("insert into upload_log set(name,file,app_id,operator,create_time)values(#{item.appId},#{item.name},"
-			+ "#{item.file},#{item.operator},#{item.active}")
+	@Insert("insert into upload_log (name,file,app_id,operator,create_time) values(#{item.appId},#{item.name},"
+			+ "#{item.file},#{item.operator},#{item.createTime})")
 	int  insertUploadlog(@Param("item")Uploadlog uploadlog);
 }
 

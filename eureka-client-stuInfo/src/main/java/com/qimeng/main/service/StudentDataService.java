@@ -1,5 +1,6 @@
 package com.qimeng.main.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -256,5 +257,17 @@ public class StudentDataService {
 		studentData.setCard(null);
 		studentData.setCode(null);
 		return selectStudentData(studentData);
+	}
+
+	public int selectStudentCountByUpdata(String schoolCode, Date date) {
+		// TODO Auto-generated method stub	
+		try {
+			return studentDataDao.selectStudentCountByUpdata(schoolCode, date);
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.error("统计更新学生数据异常");
+			logger.error("Error:",e);
+			return 0;
+		}
 	}
 }

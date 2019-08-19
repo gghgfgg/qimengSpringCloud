@@ -52,8 +52,8 @@ public interface SchoolInformDao {
 	        if(!StringUtils.isEmpty(schoolInform.getSchoolName())){
 	            sql.SET("school_name=#{item.schoolName}");
 	        }
-	        if(!StringUtils.isEmpty(schoolInform.getSchoolCode())){
-	            sql.SET("school_code=#{item.schoolCode}");
+	        if(!StringUtils.isEmpty(schoolInform.getSchoolId())){
+	            sql.SET("school_id=#{item.schoolId}");
 	        }
 	        if(!StringUtils.isEmpty(schoolInform.getPostalCode())){
 	            sql.SET("postal_code=#{item.postalCode}");
@@ -68,6 +68,9 @@ public interface SchoolInformDao {
 	            sql.SET("active=#{item.active}");
 	        }
 	        sql.SET("update_time=#{item.updateTime}");
+	        
+	        sql.WHERE("school_code=#{item.schoolCode}");
+	        
 	        return sql.toString();
 		}
 		public String selectSchoolInform(@Param("item")SchoolInform schoolInform) {

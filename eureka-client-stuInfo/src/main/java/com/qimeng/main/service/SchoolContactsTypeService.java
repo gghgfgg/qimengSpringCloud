@@ -2,6 +2,8 @@ package com.qimeng.main.service;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.qimeng.main.dao.SchoolContactsTypeDao;
@@ -25,6 +27,7 @@ public class SchoolContactsTypeService {
 	 * @param recycleType
 	 * @return
 	 */
+	@CacheEvict(value="SchoolContactsType",key="#p0.type")
 	public int insertSchoolContactsType(SchoolContactsType schoolContactsType) {
 		try {
 			return schoolContactsTypeDao.insertSchoolContactsType(schoolContactsType);
@@ -40,6 +43,7 @@ public class SchoolContactsTypeService {
 	 * @param recycleType
 	 * @return
 	 */
+	@CacheEvict(value="SchoolContactsType",key="#p0.type")
 	public int updateSchoolContactsType(SchoolContactsType schoolContactsType) {
 		try {
 			return schoolContactsTypeDao.insertSchoolContactsType(schoolContactsType);
@@ -82,6 +86,8 @@ public class SchoolContactsTypeService {
 	 * @param type
 	 * @return
 	 */
+	
+	@Cacheable(value="SchoolContactsType",key="#type")
 	public SchoolContactsType selectSchoolContactsTypeByType(byte type) {
 		SchoolContactsType schoolContactsType=new SchoolContactsType();
 		schoolContactsType.setType(type);

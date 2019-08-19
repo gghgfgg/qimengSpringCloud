@@ -297,5 +297,66 @@ public class StudentService {
 		return studentUpdateService.updateStudentInformByIdentityCardOrStudentCode(studentInform, studentVo.getSchoolCode(), studentVo.getType());
 	}
 
+
+	public List<StudentVo> StudentList(StudentVo studentVo) {
+		// TODO Auto-generated method stub
+		String schoolcode=new String();
+		List<SchoolInform> schoollist=new ArrayList<SchoolInform>();
+		if(!StringUtils.isEmpty(studentVo.getPostalCode())) {
+			String codeString=postalCodeService.selectPostalCode(studentVo.getPostalCode());
+			schoollist.addAll(schoolInformService.selectSchoolCodeList(codeString));
+		}
+		if(!StringUtils.isEmpty(studentVo.getSchoolName())) {
+			 
+			 List<SchoolInform> schoollistbyname=schoolInformService.selectSchoolInformByName(studentVo.getSchoolName());
+			 if(!schoollist.isEmpty()) {
+				 schoollistbyname.retainAll(schoollist);
+			 }
+			 if(!schoollistbyname.isEmpty()) {
+				 for (SchoolInform schoolInform : schoollistbyname) {
+					 schoolcode+=schoolInform.getSchoolCode();
+					 schoolcode+="-";
+				}
+			 }else {
+				 for (SchoolInform schoolInform : schoollist) {
+					 schoolcode+=schoolInform.getSchoolCode();
+					 schoolcode+="-";
+				}
+			}
+			
+			if(studentVo.getSchoolCode()!=null) {
+				schoolcode=studentVo.getSchoolCode()+"-"+schoolcode;
+			}
+			studentVo.setSchoolCode(schoolcode);
+		}
+		
+		List<StudentVo> studentVolist=joinDao.selectStudentVosList(studentVo);
+		for (StudentVo item : studentVolist) {
+			StudentData studentData=studentDataService.selectStudentDataByUuid(item.getUuid());
+			
+			item.setActive(studentData.getActive());
+			item.setActivityCount(studentData.getActivityCount());
+			item.setBinding(studentData.getBinding());
+			item.setDeductPoints(studentData.getDeductPoints());
+			item.setUsedPoints(studentData.getUsedPoints());
+			item.setTotalPoints(studentData.getTotalPoints());
+			item.setIdentityCard(studentData.getIdentityCard());
+			item.setStudentCode(studentData.getStudentCode());
+			item.setName(studentData.getName());
+			item.setType(studentData.getType());
+			item.setUuid(studentData.getUuid());
+			item.setFirstTime(studentData.getFirstTime());
+			item.setLastTime(studentData.getLastTime());
+			String qrcode=globalDateService.getGlobalKeyString("qrUrl")+"?code="+studentData.getCode()+"&card="+studentData.getCard();
+			SchoolInform schoolInform = schoolInformService.selectSchoolInformBySchoolCode(studentData.getSchoolCode());
+			item.setQrcode(qrcode);
+			item.setSchoolName(schoolInform.getSchoolName());
+			item.setSchoolCode(schoolInform.getPostalCode());
+			item.setPostalCodename(postalCodeService.selectPostalCodeName(schoolInform.getPostalCode()));
+			item.setPostalCode(schoolInform.getPostalCode());
+		}
+		return studentVolist;
+	}
+	
 }
 

@@ -66,8 +66,8 @@ public class EurekaClientStuInfoApplicationTests {
 	//@Autowired
 	//StudentInformService service;
 	@Autowired
-	//StudentDataService service;
-	StudentUpdateService service;
+	StudentDataService service;
+	//StudentUpdateService service;
 	
 	@Autowired
 	SchoolAutoCountRecycleService schoolAutoCountRecycleService;
@@ -108,29 +108,29 @@ public class EurekaClientStuInfoApplicationTests {
 		
 //		StudentInfo studentInfo1=(StudentInfo)redisCacheTemplate.opsForValue().get("123");
 //		System.out.println(studentInfo1);
-		List<StudentInform> list=new ArrayList<StudentInform>();
-		StudentInform studentInform=new StudentInform();
-		studentInform.setName("99");
-		studentInform.setStudentCode("G441423201201101050");
-		studentInform.setSchoolCode("123");
-		list.add(studentInform);
-		StudentInform studentInform1=new StudentInform();
-		studentInform1.setName("99");
-		studentInform1.setStudentCode("G441423201201101051");
-		studentInform1.setSchoolCode("123");
-		list.add(studentInform1);
-		StudentInform studentInform2=new StudentInform();
-		studentInform2.setName("99");
-		studentInform2.setStudentCode("G441423201201101052");
-		studentInform2.setSchoolCode("123");
-		list.add(studentInform2);
-		StudentInform studentInform3=new StudentInform();
-		
-		studentInform3.setName("98");
-		studentInform3.setStudentCode("G441423201201101060");
-		studentInform3.setIdentityCard("441423201201101061");
-		studentInform3.setSchoolCode("123");
-		list.add(studentInform3);
+//		List<StudentInform> list=new ArrayList<StudentInform>();
+//		StudentInform studentInform=new StudentInform();
+//		studentInform.setName("99");
+//		studentInform.setStudentCode("G441423201201101050");
+//		studentInform.setSchoolCode("123");
+//		list.add(studentInform);
+//		StudentInform studentInform1=new StudentInform();
+//		studentInform1.setName("99");
+//		studentInform1.setStudentCode("G441423201201101051");
+//		studentInform1.setSchoolCode("123");
+//		list.add(studentInform1);
+//		StudentInform studentInform2=new StudentInform();
+//		studentInform2.setName("99");
+//		studentInform2.setStudentCode("G441423201201101052");
+//		studentInform2.setSchoolCode("123");
+//		list.add(studentInform2);
+//		StudentInform studentInform3=new StudentInform();
+//		
+//		studentInform3.setName("98");
+//		studentInform3.setStudentCode("G441423201201101060");
+//		studentInform3.setIdentityCard("441423201201101061");
+//		studentInform3.setSchoolCode("123");
+//		list.add(studentInform3);
 
 //		try {
 //			System.out.println(service.insertStudentInformList(list,"12300",(byte) 0));
@@ -153,7 +153,8 @@ public class EurekaClientStuInfoApplicationTests {
 	//	deviceActionService.DevPageList(1,deviceInformVo);
 		//ApplicationManagement temp2=applicationManagementService.selectApplicationManagementByAppId("7166912116544629", (byte) 1);
 		//System.out.println(temp2.toString());
-		postalCodeService.selectPostalCodeName("110106");
+		//postalCodeService.selectPostalCodeName("110106");
+		service.selectStudentCountByUpdata("123",new Date());
 		//System.out.println(dao.insertStudentDataList(list));
 		//System.out.println(dao.insertStudentInform(studentInform3));
 		//System.out.println(dao.updateStudentInformByIdentityCardOrStrudentCode(studentInform3));

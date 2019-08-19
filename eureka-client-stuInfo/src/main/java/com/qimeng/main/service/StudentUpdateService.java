@@ -13,15 +13,15 @@ import org.springframework.util.StringUtils;
 import com.qimeng.main.entity.StudentData;
 import com.qimeng.main.entity.StudentInform;
 
-/** 
+/**
  * 学生数据同步更新服务类
  * 
- * @author  陈泽键
- * @date 创建时间：2019年8月1日 下午8:58:59 
+ * @author 陈泽键
+ * @date 创建时间：2019年8月1日 下午8:58:59
  * @version 1.0
- * @parameter 
- * @since  
- * @return  
+ * @parameter
+ * @since
+ * @return
  */
 @Transactional
 @Service
@@ -31,44 +31,88 @@ public class StudentUpdateService {
 	StudentDataService studentDataService;
 	@Autowired
 	StudentInformService studentInformService;
-	
-	public int insertStudentInformList(List<StudentInform> studentInformList,String schoolCode, byte type) {
+
+	public int insertStudentInformList(List<StudentInform> studentInformList, String schoolCode, Byte type) {
 		try {
-			
+
+			boolean errBoolean = false;
+			String errString = new String();
 			for (int i = 0; i < studentInformList.size(); i++) {
-				{
-					if(StringUtils.isEmpty(studentInformList.get(i).getIdentityCard())&&
-					StringUtils.isEmpty(studentInformList.get(i).getStudentCode())) {
-						throw new RuntimeException("第"+String.valueOf(i+1)+"行,身份证和学号都为空");
-						}
-					if(!StringUtils.isEmpty(studentInformList.get(i).getIdentityCard())&&
-						studentInformList.get(i).getIdentityCard().length()<15) {
-								throw new RuntimeException("第"+String.valueOf(i+1)+"行,身份证长度不对");
-								}
-					if(!StringUtils.isEmpty(studentInformList.get(i).getStudentCode())&&
-							studentInformList.get(i).getStudentCode().length()<15) {
-								throw new RuntimeException("第"+String.valueOf(i+1)+"行,学号长度不对");
-								}
-					if(StringUtils.isEmpty(studentInformList.get(i).getSchoolId())) {
-								throw new RuntimeException("第"+String.valueOf(i+1)+"行,学校编号为空");
-					}
-					if(!StringUtils.isEmpty(studentInformList.get(i).getSchoolId())&&
-							studentInformList.get(i).getSchoolId().length()<10) {
-						throw new RuntimeException("第"+String.valueOf(i+1)+"行,学校编号长度不对");
-						}
+
+				String cardString = studentInformList.get(i).getIdentityCard().replaceAll("\\s*", "");
+				;
+				studentInformList.get(i).setIdentityCard(StringUtils.isEmpty(cardString) ? null : cardString);
+
+				String codeString = studentInformList.get(i).getStudentCode().replaceAll("\\s*", "");
+				;
+				studentInformList.get(i).setStudentCode(StringUtils.isEmpty(codeString) ? null : codeString);
+
+				if (StringUtils.isEmpty(studentInformList.get(i).getName())
+						|| StringUtils.isEmpty(studentInformList.get(i).getSex())
+						|| StringUtils.isEmpty(studentInformList.get(i).getGrade())
+						|| StringUtils.isEmpty(studentInformList.get(i).getClassS())) {
+					errString += "{第" + String.valueOf(i + 2) + "行,姓名或性别或年级或班级为空},";
+					errBoolean = true;
 				}
-			} 
-			if(StringUtils.isEmpty(schoolCode)) {
+				if (StringUtils.isEmpty(studentInformList.get(i).getIdentityCard())
+						&& StringUtils.isEmpty(studentInformList.get(i).getStudentCode())) {
+					errString += "{第" + String.valueOf(i + 2) + "行,身份证和学号都为空},";
+					errBoolean = true;
+				}
+				if (!StringUtils.isEmpty(studentInformList.get(i).getIdentityCard())
+						&& studentInformList.get(i).getIdentityCard().length() < 15) {
+					System.out.println(StringUtils.isEmpty(studentInformList.get(i).getIdentityCard()));
+					System.out.println(studentInformList.get(i).getIdentityCard().length());
+					errString += "{第" + String.valueOf(i + 2) + "行,身份证长度不对},";
+					errBoolean = true;
+				}
+				if (!StringUtils.isEmpty(studentInformList.get(i).getStudentCode())
+						&& studentInformList.get(i).getStudentCode().length() < 15) {
+					errString += "{第" + String.valueOf(i + 2) + "行,学号长度不对},";
+					errBoolean = true;
+				}
+				if (StringUtils.isEmpty(studentInformList.get(i).getSchoolId())) {
+					errString += "{第" + String.valueOf(i + 2) + "行,学校编号为空},";
+					errBoolean = true;
+				}
+				if (!StringUtils.isEmpty(studentInformList.get(i).getSchoolId())
+						&& studentInformList.get(i).getSchoolId().length() < 10) {
+					errString += "{第" + String.valueOf(i + 2) + "行,学校编号长度不对},";
+					errBoolean = true;
+				}
+
+			}
+			for (int item = 0; item < studentInformList.size(); item++) {
+				int row=item+1;
+				while(row<studentInformList.size()) {
+					if (!StringUtils.isEmpty(studentInformList.get(item).getIdentityCard())) {
+						if(studentInformList.get(item).getIdentityCard().equals(studentInformList.get(row).getIdentityCard())){
+							errString += "{第" + String.valueOf(item + 2) + "行,与第"+String.valueOf(row + 2)+"行身份证号重复},";
+							errBoolean = true;
+						}
+					}
+					if(!StringUtils.isEmpty(studentInformList.get(item).getStudentCode())){
+						if(studentInformList.get(item).getStudentCode().equals(studentInformList.get(row).getStudentCode())) {
+							errString += "{第" + String.valueOf(item + 2) + "行,与第"+String.valueOf(row + 2)+"行学号号重复},";
+							errBoolean = true;
+						}
+					}
+					row++;
+				}
+			}
+			if (errBoolean) {
+				throw new RuntimeException(errString);
+			}
+			if (StringUtils.isEmpty(schoolCode) || schoolCode.length() < 11) {
 				throw new RuntimeException("请填写学校校区编号");
 			}
-			
-			
+	
 			
 			studentInformService.insertStudentInformList(studentInformList);
-			List<StudentData> list=new ArrayList<StudentData>();
-			
+			List<StudentData> list = new ArrayList<StudentData>();
+			Date date = new Date();
 			for (StudentInform studentInform : studentInformList) {
-				StudentData studentData=new StudentData();
+				StudentData studentData = new StudentData();
 				String uuid = UUID.randomUUID().toString().replaceAll("-", "");
 				studentData.setUuid(uuid);
 				studentData.setIdentityCard(studentInform.getIdentityCard());
@@ -77,22 +121,22 @@ public class StudentUpdateService {
 				studentData.setCode(uuid.substring(16));
 				studentData.setName(studentInform.getName());
 				studentData.setSchoolCode(schoolCode);
-				studentData.setType(type);
-				Date date=new Date();
+				studentData.setType(type == null ? 0 : type);
 				studentData.setCreateTime(date);
 				studentData.setUpdateTime(date);
 				list.add(studentData);
 			}
-			return studentDataService.insertStudentDataList(list);
+			studentDataService.insertStudentDataList(list);
+			return studentDataService.selectStudentCountByUpdata(schoolCode, date);
 		} catch (Exception e) {
 			// TODO: handle exception
 			throw new RuntimeException(e);
 		}
 	}
-	
-	public int 	insertStudentInform(StudentInform studentInform,String schoolCode,byte type) {
+
+	public int insertStudentInform(StudentInform studentInform, String schoolCode, byte type) {
 		try {
-			
+
 			if (StringUtils.isEmpty(studentInform.getIdentityCard())
 					&& StringUtils.isEmpty(studentInform.getStudentCode())) {
 				throw new RuntimeException("身份证和学号都为空");
@@ -100,11 +144,11 @@ public class StudentUpdateService {
 			if (StringUtils.isEmpty(studentInform.getSchoolId())) {
 				throw new RuntimeException("学校编号为空");
 			}
-			if(StringUtils.isEmpty(schoolCode)) {
+			if (StringUtils.isEmpty(schoolCode)) {
 				throw new RuntimeException("请填写学校校区编号");
-				}
+			}
 			studentInformService.insertStudentInform(studentInform);
-		
+
 			StudentData studentData = new StudentData();
 			String uuid = UUID.randomUUID().toString().replaceAll("-", "");
 			studentData.setUuid(uuid);
@@ -118,15 +162,16 @@ public class StudentUpdateService {
 			Date date = new Date();
 			studentData.setCreateTime(date);
 			studentData.setUpdateTime(date);
-					
+
 			return studentDataService.insertStudentData(studentData);
 		} catch (Exception e) {
 			// TODO: handle exception
 			throw new RuntimeException(e);
 		}
 	}
-	
-	public int updateStudentInformByIdentityCardOrStudentCode(StudentInform studentInform,String schoolCode,Byte type){
+
+	public int updateStudentInformByIdentityCardOrStudentCode(StudentInform studentInform, String schoolCode,
+			Byte type) {
 		try {
 			if (StringUtils.isEmpty(studentInform.getIdentityCard())
 					&& StringUtils.isEmpty(studentInform.getStudentCode())) {
@@ -135,9 +180,9 @@ public class StudentUpdateService {
 			if (StringUtils.isEmpty(studentInform.getSchoolId())) {
 				throw new RuntimeException("学校编号为空");
 			}
-			
+
 			studentInformService.insertStudentInform(studentInform);
-		
+
 			StudentData studentData = new StudentData();
 			studentData.setIdentityCard(studentInform.getIdentityCard());
 			studentData.setStudentCode(studentInform.getStudentCode());
@@ -146,16 +191,12 @@ public class StudentUpdateService {
 			studentData.setType(type);
 			Date date = new Date();
 			studentData.setUpdateTime(date);
-					
+
 			return studentDataService.insertStudentData(studentData);
 		} catch (Exception e) {
 			// TODO: handle exception
 			throw new RuntimeException(e);
 		}
 	}
-	
-	public int updateStudentInformByIdentityCardOrStudentCode(StudentInform studentInform,String schoolCode) {
-		return updateStudentInformByIdentityCardOrStudentCode(studentInform,schoolCode,null);
-	}
-}
 
+}
