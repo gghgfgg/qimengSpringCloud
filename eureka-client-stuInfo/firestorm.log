@@ -556,3 +556,5 @@ DEBUG http-nio-8073-exec-4 druid.sql.Connection - {conn-10005} setAutoCommit tru
 DEBUG http-nio-8073-exec-4 druid.sql.Connection - {conn-10005} pool-recycle
 DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 鑷畾涔塕edisTemplate鍔犺浇瀹屾垚
 DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 鑷畾涔塕edisCacheManager鍔犺浇瀹屾垚
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisTemplate加载完成
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisCacheManager加载完成

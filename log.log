@@ -2344,3 +2344,5 @@ WHERE (machine_id=?)
 2019-08-26 14:54:21  [ http-nio-8073-exec-4:57307 ] - [ DEBUG ]  {conn-10005} pool-recycle
 2019-08-26 14:55:37  [ main:0 ] - [ DEBUG ]  鑷畾涔塕edisTemplate鍔犺浇瀹屾垚
 2019-08-26 14:55:38  [ main:256 ] - [ DEBUG ]  鑷畾涔塕edisCacheManager鍔犺浇瀹屾垚
+2019-08-26 17:12:43  [ main:0 ] - [ DEBUG ]  自定义RedisTemplate加载完成
+2019-08-26 17:12:44  [ main:532 ] - [ DEBUG ]  自定义RedisCacheManager加载完成
