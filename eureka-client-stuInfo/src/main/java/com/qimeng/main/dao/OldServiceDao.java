@@ -52,7 +52,7 @@ public interface OldServiceDao {
 	public int updataorder(String orderno);
 
 	@Select("select proid,dpcode,kucun ,sale from qmhb_kucun where dpcode=#{jqbh} and proid=#{lpid}")
-	public Repertory getRepertory(String jqbh, String lpid);
+	public Repertory getRepertory(@Param("jqbh")int jqbh, @Param("lpid")int lpid);
 
 	@Update("update qmhb_kucun set kucun=#{repertory.kucun},sale=#{repertory.sale} ,lastdate=#{repertory.lastdate} where proid=#{repertory.proid} and dpcode=#{repertory.dpcode}")
 	public void updateRepertory(@Param("repertory")Repertory repertory);

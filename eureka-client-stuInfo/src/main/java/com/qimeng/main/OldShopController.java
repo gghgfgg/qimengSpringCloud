@@ -108,9 +108,11 @@ public class OldShopController {
 		
 		CommodityEntity commodityEntity=oldServiceDao.getProutBy(Integer.parseInt(lpid));
 		String name=oldServiceDao.getNameByCode(jqbh);
-		Repertory repertory=oldServiceDao.getRepertory(jqbh,lpid);
+		int i=Integer.parseInt(jqbh);
+		int j=Integer.parseInt(lpid);
+		Repertory repertory=oldServiceDao.getRepertory(i,j);
 		
-		if(student==null||commodityEntity==null||repertory==null||repertory.getKucun()>0||name==null||student.getPoints()<(Integer.parseInt(jf)))
+		if(student==null||commodityEntity==null||repertory==null||repertory.getKucun()==0||name==null||student.getPoints()<(Integer.parseInt(jf)))
 		{
 			map.put("success", false);
 			return JSONObject.toJSONString(map);
