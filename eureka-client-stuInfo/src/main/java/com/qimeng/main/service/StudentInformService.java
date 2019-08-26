@@ -110,6 +110,14 @@ public class StudentInformService {
 		return list.isEmpty()?null:list.get(0);
 	}
 	
+	public StudentInform selectStudentInformByStudentCodeOrIdentityCard(String studentCode,String identityCard) {
+		StudentInform studentInform=new StudentInform();
+		studentInform.setStudentCode(studentCode);
+		studentInform.setIdentityCard(identityCard);	
+		List<StudentInform> list=selectStudentInform(studentInform);
+		return list.isEmpty()?null:list.get(0);
+	}
+	
 	/**
 	 * 根据条件查找学生
 	 * @param studentInform

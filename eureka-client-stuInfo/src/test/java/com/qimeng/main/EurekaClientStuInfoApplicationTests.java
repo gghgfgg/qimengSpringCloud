@@ -154,11 +154,21 @@ public class EurekaClientStuInfoApplicationTests {
 		//ApplicationManagement temp2=applicationManagementService.selectApplicationManagementByAppId("7166912116544629", (byte) 1);
 		//System.out.println(temp2.toString());
 		//postalCodeService.selectPostalCodeName("110106");
-		service.selectStudentCountByUpdata("123",new Date());
+		//service.selectStudentCountByUpdata("123",new Date());
 		//System.out.println(dao.insertStudentDataList(list));
 		//System.out.println(dao.insertStudentInform(studentInform3));
 		//System.out.println(dao.updateStudentInformByIdentityCardOrStrudentCode(studentInform3));
 		//dao.selectStudentInform(studentInform3);
+		
+		String tempString="http://m.qimenghb.com/api/stu.php?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29B2592CC12213D751C1B89BE293232C6049E456&sn=1&state=1";
+		tempString.substring(tempString.indexOf("?")+1);
+		System.out.println(tempString);
+		String []strings = tempString.split("&");
+		String codeString=strings[0].substring(strings[0].indexOf("=")+1);
+		System.out.println(codeString);
+		String cardString=strings[1].substring(strings[1].indexOf("=")+1);
+		System.out.println(cardString);
+		
 	}
 
 }

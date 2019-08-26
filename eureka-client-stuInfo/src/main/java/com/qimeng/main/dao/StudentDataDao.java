@@ -64,7 +64,7 @@ public interface StudentDataDao {
 	@SelectProvider(type = SqlFactory.class,method = "selectStudentData")
 	List<StudentData> selectStudentData(@Param("item")StudentData studentData);
 	
-	@Select("select COUNT(*) from "+tablename+" where school_code=#{schoolCode} and update_time=#{time}")
+	@Select("select COUNT(*) from "+tablename+" where school_code=#{schoolCode} and date_format(update_time,'%Y-%m-%d %H:%i:%S')=date_format(#{time},'%Y-%m-%d %H:%i:%S')")
 	int selectStudentCountByUpdata(String schoolCode,Date time);
 	
 	public class SqlFactory extends SQL{
@@ -98,7 +98,10 @@ public interface StudentDataDao {
 	        if(!StringUtils.isEmpty(studentData.getStudentCode())){
 	            sql.WHERE("student_code=#{item.studentCode}");
 	        }
-	        else if(!StringUtils.isEmpty(studentData.getIdentityCard())){
+	        if(!StringUtils.isEmpty(studentData.getIdentityCard())){
+	        	if(!StringUtils.isEmpty(studentData.getStudentCode())){
+		            sql.OR();
+		        }
 	        	 sql.WHERE("identity_card=#{item.identityCard}");
 			}
 	       

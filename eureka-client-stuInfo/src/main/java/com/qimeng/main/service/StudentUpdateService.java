@@ -134,7 +134,7 @@ public class StudentUpdateService {
 		}
 	}
 
-	public int insertStudentInform(StudentInform studentInform, String schoolCode, byte type) {
+	public int insertStudentInform(StudentInform studentInform, String schoolCode, Byte type) {
 		try {
 
 			if (StringUtils.isEmpty(studentInform.getIdentityCard())
@@ -181,7 +181,7 @@ public class StudentUpdateService {
 				throw new RuntimeException("学校编号为空");
 			}
 
-			studentInformService.insertStudentInform(studentInform);
+			studentInformService.updateStudentInformByIdentityCardOrStudentCode(studentInform);
 
 			StudentData studentData = new StudentData();
 			studentData.setIdentityCard(studentInform.getIdentityCard());
@@ -192,7 +192,7 @@ public class StudentUpdateService {
 			Date date = new Date();
 			studentData.setUpdateTime(date);
 
-			return studentDataService.insertStudentData(studentData);
+			return studentDataService.updateStudentDateByIdentityCardOrStrudentCode(studentData);
 		} catch (Exception e) {
 			// TODO: handle exception
 			throw new RuntimeException(e);

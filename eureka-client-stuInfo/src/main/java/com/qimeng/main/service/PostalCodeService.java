@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import com.qimeng.main.dao.PostalCodeDao;
 import com.qimeng.main.entity.City;
@@ -71,6 +72,10 @@ public class PostalCodeService {
 			}
 		}
 		logger.debug(postalCodeString);
+		if(StringUtils.isEmpty(postalCodeString))
+		{
+			return postalCode;
+		}
 		return postalCodeString;
 	}
 	@Cacheable(value="PostalCodeName",key="#postalCode")

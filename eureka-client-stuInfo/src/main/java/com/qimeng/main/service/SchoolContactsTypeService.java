@@ -1,5 +1,7 @@
 package com.qimeng.main.service;
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
@@ -59,7 +61,7 @@ public class SchoolContactsTypeService {
 	 * @param recycleType
 	 * @return
 	 */
-	public SchoolContactsType selectSchoolContactsType(SchoolContactsType schoolContactsType) {
+	public List<SchoolContactsType> selectSchoolContactsType(SchoolContactsType schoolContactsType) {
 		try {
 			return schoolContactsTypeDao.selectSchoolContactsType(schoolContactsType);
 		} catch (Exception e) {
@@ -78,7 +80,8 @@ public class SchoolContactsTypeService {
 	public SchoolContactsType selectSchoolContactsTypeById(int id) {
 		SchoolContactsType schoolContactsType=new SchoolContactsType();
 		schoolContactsType.setId(id);
-		return selectSchoolContactsType(schoolContactsType);
+		List<SchoolContactsType> list=selectSchoolContactsType(schoolContactsType);
+		return list.isEmpty()?null:list.get(0);
 	}
 	
 	/**
@@ -91,7 +94,8 @@ public class SchoolContactsTypeService {
 	public SchoolContactsType selectSchoolContactsTypeByType(byte type) {
 		SchoolContactsType schoolContactsType=new SchoolContactsType();
 		schoolContactsType.setType(type);
-		return selectSchoolContactsType(schoolContactsType);
+		List<SchoolContactsType> list=selectSchoolContactsType(schoolContactsType);
+		return list.isEmpty()?null:list.get(0);
 	}
 }
 

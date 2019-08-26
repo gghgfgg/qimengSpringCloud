@@ -46,4 +46,6 @@ public class mainController {
 	{
 		return stuService.upLoadPoints(message);
 	}
+	
+	
 }

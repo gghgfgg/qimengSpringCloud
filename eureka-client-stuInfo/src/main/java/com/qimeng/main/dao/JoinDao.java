@@ -103,8 +103,8 @@ public interface JoinDao {
 	    	if(!StringUtils.isEmpty(studentVo.getGrade())) {
 	    		sql.WHERE("b.grade=#{item.grade}");
 	    	}
-	    	if(studentVo.getBinding()!=null) {
-	    		sql.WHERE("a.binding=#{item.binding}");
+	    	if(studentVo.getSex()!=null) {
+	    		sql.WHERE("b.sex=#{item.sex}");
 	    	}
 	    	if(!StringUtils.isEmpty(studentVo.getName())) {
 	    		sql.WHERE("a.name like CONCAT('%',#{item.name},'%')");

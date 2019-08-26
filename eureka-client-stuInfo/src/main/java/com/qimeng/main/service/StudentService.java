@@ -111,14 +111,31 @@ public class StudentService {
 	public StudentVo selectStudent(StudentVo studentVo) {
 		// TODO Auto-generated method stub
 		
+		StudentData studentData = studentDataService.selectStudentDataByUuid(studentVo.getUuid());
+		
+		
 		StudentInform studentInform = new StudentInform();
-		studentInform=studentInformService.selectStudentInformByStudentCode(studentVo.getStudentCode());
+		studentInform=studentInformService.selectStudentInformByStudentCodeOrIdentityCard(studentData.getStudentCode(),
+				studentData.getIdentityCard());
 		if(studentInform==null) {
-			studentInform=studentInformService.selectStudentInformByIdentityCard(studentVo.getIdentityCard());
-			if(studentInform==null) {
-				throw new RuntimeException("当前身份证和学籍号找不到学生");
-			}
+				throw new RuntimeException("当前身份证和学籍号找不到学生");	
 		}
+		
+		studentVo.setActive(studentData.getActive());
+		studentVo.setActivityCount(studentData.getActivityCount());
+		studentVo.setBinding(studentData.getBinding());
+		studentVo.setDeductPoints(studentData.getDeductPoints());
+		studentVo.setSchoolCode(studentData.getSchoolCode());
+		studentVo.setTotalPoints(studentData.getTotalPoints());
+		studentVo.setType(studentData.getType());
+		studentVo.setUsedPoints(studentData.getUsedPoints());
+		studentVo.setUuid(studentData.getUuid());
+		studentVo.setFirstTime(studentData.getFirstTime());
+		studentVo.setLastTime(studentData.getLastTime());
+		
+		String qrcode=globalDateService.getGlobalKeyString("qrUrl")+"?code="+studentData.getCode()+"&card="+studentData.getCard();
+		studentVo.setQrcode(qrcode);
+		
 		studentVo.setAddress(studentInform.getAddress());
 		studentVo.setAuxiliaryNumber(studentInform.getAuxiliaryNumber());
 		studentVo.setBirthday(studentInform.getBirthday());
@@ -244,6 +261,7 @@ public class StudentService {
 	public int updatestudentData(StudentVo studentVo) {
 		// TODO Auto-generated method stub
 		StudentInform studentInform = new StudentInform();
+		
 		studentInform.setAddress(studentVo.getAddress());
 		studentInform.setAuxiliaryNumber(studentVo.getAuxiliaryNumber());
 		studentInform.setBirthday(studentVo.getBirthday());

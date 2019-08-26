@@ -138,10 +138,10 @@ public class UpdateStudentPointsController {
 				return JSONObject.toJSONString(responseMessage);
 			}
 
-//			String accountTonken = applicationManagementService.decodeMessage(applicationManagement,
-//					requestMessage.getAccountTonken());
+			String accountTonken = applicationManagementService.decodeMessage(applicationManagement,
+					requestMessage.getAccountTonken());
 			/*debug测试*/
-			String accountTonken =requestMessage.getAccountTonken();
+			//String accountTonken =requestMessage.getAccountTonken();
 			
 			if (!stringRedisTemplate.hasKey("ActionKey:"+accountTonken)) {
 				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
@@ -205,10 +205,10 @@ public class UpdateStudentPointsController {
 				return JSONObject.toJSONString(responseMessage);
 			}
 
-//			String accountTonken = applicationManagementService.decodeMessage(applicationManagement,
-//					requestMessage.getAccountTonken());
+			String accountTonken = applicationManagementService.decodeMessage(applicationManagement,
+					requestMessage.getAccountTonken());
 			/*debug测试*/
-			String accountTonken =requestMessage.getAccountTonken();
+			//String accountTonken =requestMessage.getAccountTonken();
 			
 			if (!stringRedisTemplate.hasKey("ActionKey:"+accountTonken)) {
 				ResponseMessage<String> responseMessage = new ResponseMessage<String>();

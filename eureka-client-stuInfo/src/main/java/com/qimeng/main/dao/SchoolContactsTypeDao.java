@@ -1,5 +1,7 @@
 package com.qimeng.main.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -36,7 +38,7 @@ public interface SchoolContactsTypeDao {
 	int updateSchoolContactsType(@Param("item")SchoolContactsType schoolContactsType);
 	
 	@SelectProvider(type = SqlFactory.class,method = "selectSchoolContactsType")
-	SchoolContactsType selectSchoolContactsType(@Param("item")SchoolContactsType schoolContactsType);
+	List<SchoolContactsType> selectSchoolContactsType(@Param("item")SchoolContactsType schoolContactsType);
 	public class SqlFactory extends SQL{
 		public String selectSchoolContactsType(@Param("item")SchoolContactsType schoolContactsType) {
 			SQL sql = new SQL(); //SQL语句对象，所在包：org.apache.ibatis.jdbc.SQL

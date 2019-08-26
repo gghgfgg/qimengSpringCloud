@@ -86,7 +86,10 @@ public interface StudentInformDao {
 	        if(!StringUtils.isEmpty(studentInform.getStudentCode())){
 	            sql.WHERE("student_code=#{item.studentCode}");
 	        }
-	        else if(!StringUtils.isEmpty(studentInform.getIdentityCard())){
+	        if(!StringUtils.isEmpty(studentInform.getIdentityCard())){
+	        	if(!StringUtils.isEmpty(studentInform.getStudentCode())){
+		            sql.OR();
+		        }
 	        	 sql.WHERE("identity_card=#{item.identityCard}");
 			}
 	        return sql.toString();

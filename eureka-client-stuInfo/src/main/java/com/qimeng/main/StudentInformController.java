@@ -52,7 +52,7 @@ public class StudentInformController {
 	@Autowired
 	StudentUpdateService studentUpdateService;
 	@RequestMapping("/getstudatalist/{page}")
-	public String getstudentDataList(@PathVariable("page") Integer page, @RequestBody JSONObject message) {
+	public String getStudentDataList(@PathVariable("page") Integer page, @RequestBody JSONObject message) {
 		RequestMessage<StudentVo> requestMessage = JSON.parseObject(message.toString(),
 				new TypeReference<RequestMessage<StudentVo>>() {
 				});
@@ -84,7 +84,7 @@ public class StudentInformController {
 	}
 
 	@RequestMapping("/getstuinfo")
-	public String getstudentInfo(@RequestBody JSONObject message) {
+	public String getStudentInfo(@RequestBody JSONObject message) {
 		RequestMessage<StudentVo> requestMessage = JSON.parseObject(message.toString(),
 				new TypeReference<RequestMessage<StudentVo>>() {
 				});
@@ -116,7 +116,7 @@ public class StudentInformController {
 	}
 	
 	@RequestMapping("/uploadstulist")
-	public String uploadstudentList(String message,MultipartFile file) {
+	public String uploadStudentList(String message,MultipartFile file) {
 		RequestMessage<StudentVo> requestMessage = JSON.parseObject(message,
 				new TypeReference<RequestMessage<StudentVo>>() {
 				});
@@ -165,7 +165,7 @@ public class StudentInformController {
 	}
 
 	@RequestMapping("/savestudata")
-	public String savestudentData(@RequestBody JSONObject message) {
+	public String saveStudentData(@RequestBody JSONObject message) {
 		RequestMessage<StudentVo> requestMessage = JSON.parseObject(message.toString(),
 				new TypeReference<RequestMessage<StudentVo>>() {
 				});
@@ -197,7 +197,7 @@ public class StudentInformController {
 	}
 
 	@RequestMapping("/updatestudata")
-	public String updatestudentData(@RequestBody JSONObject message) {
+	public String updateStudentData(@RequestBody JSONObject message) {
 		RequestMessage<StudentVo> requestMessage = JSON.parseObject(message.toString(),
 				new TypeReference<RequestMessage<StudentVo>>() {
 				});
@@ -260,7 +260,7 @@ public class StudentInformController {
 		}
 	}
 	@RequestMapping("/exportstudatalist")
-	public String exportstudentDataList(@RequestBody JSONObject message,HttpServletResponse response) {
+	public String exportStudentDataList(@RequestBody JSONObject message,HttpServletResponse response) {
 		RequestMessage<StudentVo> requestMessage = JSON.parseObject(message.toString(),
 				new TypeReference<RequestMessage<StudentVo>>() {
 				});

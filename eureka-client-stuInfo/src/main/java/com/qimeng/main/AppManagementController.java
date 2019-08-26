@@ -66,7 +66,7 @@ public class AppManagementController {
 		}
 	}
 	@RequestMapping("/getappinfo")
-	public String getAppInformList(@RequestBody JSONObject message) {
+	public String getAppInform(@RequestBody JSONObject message) {
 		RequestMessage<AppInformVo> requestMessage = JSON.parseObject(message.toString(),
 				new TypeReference<RequestMessage<AppInformVo>>() {
 				});

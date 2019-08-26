@@ -1,11 +1,11 @@
 server:
-  port: 7073
+  port: 8073
 spring:
   application:
     name: eureka-client-stuInfo
      # 环境 dev:开发环境|test:测试环境|prod:生产环境
   profiles:
-    active: dev #激活的配置文件
+    active: prod #激活的配置文件
   thymeleaf:
     cache: false
   servlet:
@@ -17,8 +17,8 @@ eureka:
   client:
     service-url:
        defaultZone: http://localhost:8761/eureka/
-    #register-with-eureka: false
-    #fetchRegistry: false
+    register-with-eureka: false
+    fetchRegistry: false
 mybatis:
   configuration:
     map-underscore-to-camel-case: true

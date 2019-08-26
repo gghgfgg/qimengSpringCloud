@@ -37,7 +37,7 @@ public class SchoolInformController {
 	SchoolService schoolService;
 	
 	@RequestMapping("/getschoollist/{page}")
-	public String getstudentDataList(@PathVariable("page") Integer page, @RequestBody JSONObject message) {
+	public String getSchoolList(@PathVariable("page") Integer page, @RequestBody JSONObject message) {
 		RequestMessage<SchoolInfoVo> requestMessage = JSON.parseObject(message.toString(),
 				new TypeReference<RequestMessage<SchoolInfoVo>>() {
 				});
@@ -135,8 +135,8 @@ public class SchoolInformController {
 		}
 	}
 
-	@RequestMapping("/updatestudata")
-	public String updatestudentData(@RequestBody JSONObject message) {
+	@RequestMapping("/updateschool")
+	public String updateSchool(@RequestBody JSONObject message) {
 		RequestMessage<SchoolInfoVo> requestMessage = JSON.parseObject(message.toString(),
 				new TypeReference<RequestMessage<SchoolInfoVo>>() {
 				});

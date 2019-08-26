@@ -1,5 +1,5 @@
 server:
-  port: 7072
+  port: 0072
 spring:
   application:
     name: eureka-client-api
