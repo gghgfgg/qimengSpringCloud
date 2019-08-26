@@ -77,12 +77,16 @@ public class DeviceActionService {
 	
 	public int updateMachineId(String machineId,String serialNumber) {
 		try {
+			DeviceManagement deviceManagement=deviceManagementService.selectDeviceManagementListByMachineId(machineId);
+			if(!StringUtils.isEmpty(deviceManagement.getSerialNumber())&&!StringUtils.isEmpty(serialNumber)){
+				throw new RuntimeException("请先解绑序列号");
+			}
 			Date date=new Date();
-			DeviceManagement deviceManagement=new DeviceManagement();
+			deviceManagement=new DeviceManagement();
 			deviceManagement.setMachineId(machineId);
 			deviceManagement.setSerialNumber(serialNumber);
 			deviceManagement.setUpdateTime(date);
-			return deviceManagementService.updateDeviceManagement(deviceManagement);
+			return deviceManagementService.updateDeviceMachineId(deviceManagement);
 		} catch (Exception e) {
 			// TODO: handle exception
 			throw new RuntimeException(e);

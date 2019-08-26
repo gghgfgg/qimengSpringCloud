@@ -43,3 +43,516 @@ DEBUG http-nio-8073-exec-5 druid.sql.Connection - {conn-10005} setAutoCommit tru
 DEBUG http-nio-8073-exec-5 druid.sql.Connection - {conn-10005} pool-recycle
 DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - �Զ���RedisTemplate�������
 DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - �Զ���RedisCacheManager�������
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisTemplate加载完成
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisCacheManager加载完成
+DEBUG http-nio-8073-exec-1 com.qimeng.main.DeviceInformController - DeviceStatusVo [serialNumber=1, status=1, statusType=1]
+DEBUG http-nio-8073-exec-3 com.qimeng.main.DeviceInformController - DeviceStatusVo [serialNumber=1, status=1, statusType=1]
+DEBUG http-nio-8073-exec-3 druid.sql.Connection - {conn-10001} connected
+DEBUG http-nio-8073-exec-3 druid.sql.Connection - {conn-10002} connected
+DEBUG http-nio-8073-exec-3 druid.sql.Connection - {conn-10003} connected
+DEBUG http-nio-8073-exec-3 druid.sql.Connection - {conn-10004} connected
+DEBUG http-nio-8073-exec-3 druid.sql.Connection - {conn-10005} connected
+DEBUG http-nio-8073-exec-3 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-8073-exec-3 druid.sql.Connection - {conn-10005} setAutoCommit false
+DEBUG http-nio-8073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20000} created. SELECT id,machine_id,serial_number,school_code,postal_code,active,create_time,update_time
+FROM machine_device_management
+WHERE (machine_id=?)
+DEBUG http-nio-8073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [123456789]
+DEBUG http-nio-8073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20000} Types : [VARCHAR]
+DEBUG http-nio-8073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 58.1467 millis. SELECT id,machine_id,serial_number,school_code,postal_code,active,create_time,update_time
+FROM machine_device_management
+WHERE (machine_id=?)
+DEBUG http-nio-8073-exec-3 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG http-nio-8073-exec-3 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, machine_id, serial_number, school_code, postal_code, active, create_time, update_time]
+DEBUG http-nio-8073-exec-3 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [1, 123456789, 12300, 12300, 110201, true, null, 2019-08-10 14:30:03.0]
+DEBUG http-nio-8073-exec-3 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG http-nio-8073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG http-nio-8073-exec-3 druid.sql.Connection - {conn 10005} rollback
+DEBUG http-nio-8073-exec-3 druid.sql.Connection - {conn-10005} setAutoCommit true
+DEBUG http-nio-8073-exec-3 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-8073-exec-4 com.qimeng.main.DeviceInformController - DeviceStatusVo [serialNumber=1, status=1, statusType=1]
+DEBUG http-nio-8073-exec-4 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-8073-exec-4 druid.sql.Connection - {conn-10005} setAutoCommit false
+DEBUG http-nio-8073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20001} created. SELECT id,machine_id,serial_number,school_code,postal_code,active,create_time,update_time
+FROM machine_device_management
+WHERE (machine_id=?)
+DEBUG http-nio-8073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : [1234567]
+DEBUG http-nio-8073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20001} executed. 29.7015 millis. SELECT id,machine_id,serial_number,school_code,postal_code,active,create_time,update_time
+FROM machine_device_management
+WHERE (machine_id=?)
+DEBUG http-nio-8073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
+DEBUG http-nio-8073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [id, machine_id, serial_number, school_code, postal_code, active, create_time, update_time]
+DEBUG http-nio-8073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Result: [5, 1234567, null, null, null, true, 2019-08-10 17:59:27.0, 2019-08-10 17:59:27.0]
+DEBUG http-nio-8073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} closed
+DEBUG http-nio-8073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20001} closed
+DEBUG http-nio-8073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20002} created. UPDATE machine_device_management
+SET serial_number=?, update_time=?
+WHERE (machine_id=?)
+DEBUG http-nio-8073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20002} Parameters : [1, 2019-08-26 14:41:04.947, 1234567]
+DEBUG http-nio-8073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20002} Types : [VARCHAR, TIMESTAMP, VARCHAR]
+DEBUG http-nio-8073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20002} executed. 62.1788 millis. UPDATE machine_device_management
+SET serial_number=?, update_time=?
+WHERE (machine_id=?)
+DEBUG http-nio-8073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20002} closed
+DEBUG http-nio-8073-exec-4 druid.sql.Connection - {conn-10005} commited
+DEBUG http-nio-8073-exec-4 druid.sql.Connection - {conn-10005} setAutoCommit true
+DEBUG http-nio-8073-exec-4 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-8073-exec-9 com.qimeng.main.DeviceInformController - DeviceStatusVo [serialNumber=, status=1, statusType=1]
+DEBUG http-nio-8073-exec-9 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-8073-exec-9 druid.sql.Connection - {conn-10005} setAutoCommit false
+DEBUG http-nio-8073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20003} created. SELECT id,machine_id,serial_number,school_code,postal_code,active,create_time,update_time
+FROM machine_device_management
+WHERE (machine_id=?)
+DEBUG http-nio-8073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20003} Parameters : [1234567]
+DEBUG http-nio-8073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20003} Types : [VARCHAR]
+DEBUG http-nio-8073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20003} executed. 30.5626 millis. SELECT id,machine_id,serial_number,school_code,postal_code,active,create_time,update_time
+FROM machine_device_management
+WHERE (machine_id=?)
+DEBUG http-nio-8073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20003, rs-50002} open
+DEBUG http-nio-8073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20003, rs-50002} Header: [id, machine_id, serial_number, school_code, postal_code, active, create_time, update_time]
+DEBUG http-nio-8073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20003, rs-50002} Result: [5, 1234567, 1, null, null, true, 2019-08-10 17:59:27.0, 2019-08-26 14:41:05.0]
+DEBUG http-nio-8073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20003, rs-50002} closed
+DEBUG http-nio-8073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20003} closed
+DEBUG http-nio-8073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20004} created. UPDATE machine_device_management
+SET update_time=?
+WHERE (machine_id=?)
+DEBUG http-nio-8073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20004} Parameters : [2019-08-26 14:42:41.748, 1234567]
+DEBUG http-nio-8073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20004} Types : [TIMESTAMP, VARCHAR]
+DEBUG http-nio-8073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20004} executed. 57.8396 millis. UPDATE machine_device_management
+SET update_time=?
+WHERE (machine_id=?)
+DEBUG http-nio-8073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20004} closed
+DEBUG http-nio-8073-exec-9 druid.sql.Connection - {conn-10005} commited
+DEBUG http-nio-8073-exec-9 druid.sql.Connection - {conn-10005} setAutoCommit true
+DEBUG http-nio-8073-exec-9 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-8073-exec-1 com.qimeng.main.DeviceInformController - DeviceStatusVo [serialNumber=, status=1, statusType=1]
+DEBUG http-nio-8073-exec-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-8073-exec-1 druid.sql.Connection - {conn-10005} setAutoCommit false
+DEBUG http-nio-8073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20005} created. SELECT id,machine_id,serial_number,school_code,postal_code,active,create_time,update_time
+FROM machine_device_management
+WHERE (machine_id=?)
+DEBUG http-nio-8073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20005} Parameters : [1234567]
+DEBUG http-nio-8073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20005} Types : [VARCHAR]
+DEBUG http-nio-8073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20005} executed. 29.9941 millis. SELECT id,machine_id,serial_number,school_code,postal_code,active,create_time,update_time
+FROM machine_device_management
+WHERE (machine_id=?)
+DEBUG http-nio-8073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50003} open
+DEBUG http-nio-8073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50003} Header: [id, machine_id, serial_number, school_code, postal_code, active, create_time, update_time]
+DEBUG http-nio-8073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50003} Result: [5, 1234567, 1, null, null, true, 2019-08-10 17:59:27.0, 2019-08-26 14:42:42.0]
+DEBUG http-nio-8073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20005, rs-50003} closed
+DEBUG http-nio-8073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20005} closed
+DEBUG http-nio-8073-exec-1 druid.sql.Connection - {conn 10005} rollback
+DEBUG http-nio-8073-exec-1 druid.sql.Connection - {conn-10005} setAutoCommit true
+DEBUG http-nio-8073-exec-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisTemplate加载完成
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisCacheManager加载完成
+DEBUG http-nio-8073-exec-1 com.qimeng.main.DeviceInformController - DeviceStatusVo [serialNumber=, status=1, statusType=1]
+DEBUG http-nio-8073-exec-1 druid.sql.Connection - {conn-10001} connected
+DEBUG http-nio-8073-exec-1 druid.sql.Connection - {conn-10002} connected
+DEBUG http-nio-8073-exec-1 druid.sql.Connection - {conn-10003} connected
+DEBUG http-nio-8073-exec-1 druid.sql.Connection - {conn-10004} connected
+DEBUG http-nio-8073-exec-1 druid.sql.Connection - {conn-10005} connected
+DEBUG http-nio-8073-exec-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-8073-exec-1 druid.sql.Connection - {conn-10005} setAutoCommit false
+DEBUG http-nio-8073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. SELECT id,machine_id,serial_number,school_code,postal_code,active,create_time,update_time
+FROM machine_device_management
+WHERE (machine_id=?)
+DEBUG http-nio-8073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [1234567]
+DEBUG http-nio-8073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : [VARCHAR]
+DEBUG http-nio-8073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 62.1871 millis. SELECT id,machine_id,serial_number,school_code,postal_code,active,create_time,update_time
+FROM machine_device_management
+WHERE (machine_id=?)
+DEBUG http-nio-8073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG http-nio-8073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, machine_id, serial_number, school_code, postal_code, active, create_time, update_time]
+DEBUG http-nio-8073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [5, 1234567, 1, null, null, true, 2019-08-10 17:59:27.0, 2019-08-26 14:42:42.0]
+DEBUG http-nio-8073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG http-nio-8073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20000} closed
+ERROR http-nio-8073-exec-1 com.qimeng.main.service.DeviceManagementService - 更新回收设备序列号异常
+ERROR http-nio-8073-exec-1 com.qimeng.main.service.DeviceManagementService - Error:
+org.springframework.jdbc.UncategorizedSQLException: 
+### Error updating database.  Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'tset serial_number=?,update_time=? ', expect SET, actual EQ pos 50, line 1, column 50, token EQ : update machine_device_managementset serial_number=?,update_time=? where machine_id=?
+### SQL: update machine_device_managementset serial_number=?,update_time=? where machine_id=?
+### Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'tset serial_number=?,update_time=? ', expect SET, actual EQ pos 50, line 1, column 50, token EQ : update machine_device_managementset serial_number=?,update_time=? where machine_id=?
+; uncategorized SQLException; SQL state [null]; error code [0]; sql injection violation, syntax error: syntax error, error in :'tset serial_number=?,update_time=? ', expect SET, actual EQ pos 50, line 1, column 50, token EQ : update machine_device_managementset serial_number=?,update_time=? where machine_id=?; nested exception is java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'tset serial_number=?,update_time=? ', expect SET, actual EQ pos 50, line 1, column 50, token EQ : update machine_device_managementset serial_number=?,update_time=? where machine_id=?
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:89)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy95.update(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.update(SqlSessionTemplate.java:294)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy109.updateDeviceMachineId(Unknown Source)
+	at com.qimeng.main.service.DeviceManagementService.updateDeviceMachineId(DeviceManagementService.java:110)
+	at com.qimeng.main.service.DeviceManagementService$$FastClassBySpringCGLIB$$bedcf26.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.cache.interceptor.CacheInterceptor.lambda$invoke$0(CacheInterceptor.java:53)
+	at org.springframework.cache.interceptor.CacheAspectSupport.invokeOperation(CacheAspectSupport.java:365)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:420)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:345)
+	at org.springframework.cache.interceptor.CacheInterceptor.invoke(CacheInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.qimeng.main.service.DeviceManagementService$$EnhancerBySpringCGLIB$$4bc423fc.updateDeviceMachineId(<generated>)
+	at com.qimeng.main.service.DeviceActionService.updateMachineId(DeviceActionService.java:89)
+	at com.qimeng.main.service.DeviceActionService$$FastClassBySpringCGLIB$$2267fbd3.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:295)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.qimeng.main.service.DeviceActionService$$EnhancerBySpringCGLIB$$beeceb.updateMachineId(<generated>)
+	at com.qimeng.main.DeviceInformController.updateMachineId(DeviceInformController.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'tset serial_number=?,update_time=? ', expect SET, actual EQ pos 50, line 1, column 50, token EQ : update machine_device_managementset serial_number=?,update_time=? where machine_id=?
+	at com.alibaba.druid.wall.WallFilter.checkInternal(WallFilter.java:799)
+	at com.alibaba.druid.wall.WallFilter.connection_prepareStatement(WallFilter.java:287)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:610)
+	at com.alibaba.druid.filter.FilterAdapter.connection_prepareStatement(FilterAdapter.java:942)
+	at com.alibaba.druid.filter.FilterEventAdapter.connection_prepareStatement(FilterEventAdapter.java:143)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:610)
+	at com.alibaba.druid.filter.FilterAdapter.connection_prepareStatement(FilterAdapter.java:942)
+	at com.alibaba.druid.filter.FilterEventAdapter.connection_prepareStatement(FilterEventAdapter.java:143)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:610)
+	at com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl.prepareStatement(ConnectionProxyImpl.java:375)
+	at com.alibaba.druid.pool.DruidPooledConnection.prepareStatement(DruidPooledConnection.java:387)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(PreparedStatementHandler.java:85)
+	at org.apache.ibatis.executor.statement.BaseStatementHandler.prepare(BaseStatementHandler.java:88)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.prepare(RoutingStatementHandler.java:59)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:85)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy152.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 90 more
+Caused by: com.alibaba.druid.sql.parser.ParserException: syntax error, error in :'tset serial_number=?,update_time=? ', expect SET, actual EQ pos 50, line 1, column 50, token EQ
+	at com.alibaba.druid.sql.parser.SQLParser.printError(SQLParser.java:284)
+	at com.alibaba.druid.sql.parser.SQLParser.accept(SQLParser.java:292)
+	at com.alibaba.druid.sql.dialect.mysql.parser.MySqlSelectParser.parseUpdateStatment(MySqlSelectParser.java:340)
+	at com.alibaba.druid.sql.dialect.mysql.parser.MySqlStatementParser.parseUpdateStatement(MySqlStatementParser.java:122)
+	at com.alibaba.druid.sql.parser.SQLStatementParser.parseStatementList(SQLStatementParser.java:155)
+	at com.alibaba.druid.sql.parser.SQLStatementParser.parseStatementList(SQLStatementParser.java:83)
+	at com.alibaba.druid.wall.WallProvider.checkInternal(WallProvider.java:624)
+	at com.alibaba.druid.wall.WallProvider.check(WallProvider.java:578)
+	at com.alibaba.druid.wall.WallFilter.checkInternal(WallFilter.java:786)
+	... 119 more
+DEBUG http-nio-8073-exec-1 druid.sql.Connection - {conn 10005} rollback
+DEBUG http-nio-8073-exec-1 druid.sql.Connection - {conn-10005} setAutoCommit true
+DEBUG http-nio-8073-exec-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-8073-exec-3 com.qimeng.main.DeviceInformController - DeviceStatusVo [serialNumber=, status=1, statusType=1]
+DEBUG http-nio-8073-exec-3 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-8073-exec-3 druid.sql.Connection - {conn-10005} setAutoCommit false
+DEBUG http-nio-8073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20001} created. SELECT id,machine_id,serial_number,school_code,postal_code,active,create_time,update_time
+FROM machine_device_management
+WHERE (machine_id=?)
+DEBUG http-nio-8073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : [1234567]
+DEBUG http-nio-8073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20001} executed. 32.3301 millis. SELECT id,machine_id,serial_number,school_code,postal_code,active,create_time,update_time
+FROM machine_device_management
+WHERE (machine_id=?)
+DEBUG http-nio-8073-exec-3 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
+DEBUG http-nio-8073-exec-3 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [id, machine_id, serial_number, school_code, postal_code, active, create_time, update_time]
+DEBUG http-nio-8073-exec-3 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Result: [5, 1234567, 1, null, null, true, 2019-08-10 17:59:27.0, 2019-08-26 14:42:42.0]
+DEBUG http-nio-8073-exec-3 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} closed
+DEBUG http-nio-8073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20001} closed
+ERROR http-nio-8073-exec-3 com.qimeng.main.service.DeviceManagementService - 更新回收设备序列号异常
+ERROR http-nio-8073-exec-3 com.qimeng.main.service.DeviceManagementService - Error:
+org.springframework.jdbc.UncategorizedSQLException: 
+### Error updating database.  Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'tset serial_number=?,update_time=? ', expect SET, actual EQ pos 50, line 1, column 50, token EQ : update machine_device_managementset serial_number=?,update_time=? where machine_id=?
+### SQL: update machine_device_managementset serial_number=?,update_time=? where machine_id=?
+### Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'tset serial_number=?,update_time=? ', expect SET, actual EQ pos 50, line 1, column 50, token EQ : update machine_device_managementset serial_number=?,update_time=? where machine_id=?
+; uncategorized SQLException; SQL state [null]; error code [0]; sql injection violation, syntax error: syntax error, error in :'tset serial_number=?,update_time=? ', expect SET, actual EQ pos 50, line 1, column 50, token EQ : update machine_device_managementset serial_number=?,update_time=? where machine_id=?; nested exception is java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'tset serial_number=?,update_time=? ', expect SET, actual EQ pos 50, line 1, column 50, token EQ : update machine_device_managementset serial_number=?,update_time=? where machine_id=?
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:89)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy95.update(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.update(SqlSessionTemplate.java:294)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy109.updateDeviceMachineId(Unknown Source)
+	at com.qimeng.main.service.DeviceManagementService.updateDeviceMachineId(DeviceManagementService.java:110)
+	at com.qimeng.main.service.DeviceManagementService$$FastClassBySpringCGLIB$$bedcf26.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.cache.interceptor.CacheInterceptor.lambda$invoke$0(CacheInterceptor.java:53)
+	at org.springframework.cache.interceptor.CacheAspectSupport.invokeOperation(CacheAspectSupport.java:365)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:420)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:345)
+	at org.springframework.cache.interceptor.CacheInterceptor.invoke(CacheInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.qimeng.main.service.DeviceManagementService$$EnhancerBySpringCGLIB$$4bc423fc.updateDeviceMachineId(<generated>)
+	at com.qimeng.main.service.DeviceActionService.updateMachineId(DeviceActionService.java:89)
+	at com.qimeng.main.service.DeviceActionService$$FastClassBySpringCGLIB$$2267fbd3.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:295)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.qimeng.main.service.DeviceActionService$$EnhancerBySpringCGLIB$$beeceb.updateMachineId(<generated>)
+	at com.qimeng.main.DeviceInformController.updateMachineId(DeviceInformController.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'tset serial_number=?,update_time=? ', expect SET, actual EQ pos 50, line 1, column 50, token EQ : update machine_device_managementset serial_number=?,update_time=? where machine_id=?
+	at com.alibaba.druid.wall.WallFilter.checkInternal(WallFilter.java:799)
+	at com.alibaba.druid.wall.WallFilter.connection_prepareStatement(WallFilter.java:287)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:610)
+	at com.alibaba.druid.filter.FilterAdapter.connection_prepareStatement(FilterAdapter.java:942)
+	at com.alibaba.druid.filter.FilterEventAdapter.connection_prepareStatement(FilterEventAdapter.java:143)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:610)
+	at com.alibaba.druid.filter.FilterAdapter.connection_prepareStatement(FilterAdapter.java:942)
+	at com.alibaba.druid.filter.FilterEventAdapter.connection_prepareStatement(FilterEventAdapter.java:143)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:610)
+	at com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl.prepareStatement(ConnectionProxyImpl.java:375)
+	at com.alibaba.druid.pool.DruidPooledConnection.prepareStatement(DruidPooledConnection.java:387)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(PreparedStatementHandler.java:85)
+	at org.apache.ibatis.executor.statement.BaseStatementHandler.prepare(BaseStatementHandler.java:88)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.prepare(RoutingStatementHandler.java:59)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:85)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy152.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 90 more
+Caused by: com.alibaba.druid.sql.parser.ParserException: syntax error, error in :'tset serial_number=?,update_time=? ', expect SET, actual EQ pos 50, line 1, column 50, token EQ
+	at com.alibaba.druid.sql.parser.SQLParser.printError(SQLParser.java:284)
+	at com.alibaba.druid.sql.parser.SQLParser.accept(SQLParser.java:292)
+	at com.alibaba.druid.sql.dialect.mysql.parser.MySqlSelectParser.parseUpdateStatment(MySqlSelectParser.java:340)
+	at com.alibaba.druid.sql.dialect.mysql.parser.MySqlStatementParser.parseUpdateStatement(MySqlStatementParser.java:122)
+	at com.alibaba.druid.sql.parser.SQLStatementParser.parseStatementList(SQLStatementParser.java:155)
+	at com.alibaba.druid.sql.parser.SQLStatementParser.parseStatementList(SQLStatementParser.java:83)
+	at com.alibaba.druid.wall.WallProvider.checkInternal(WallProvider.java:624)
+	at com.alibaba.druid.wall.WallProvider.check(WallProvider.java:578)
+	at com.alibaba.druid.wall.WallFilter.checkInternal(WallFilter.java:786)
+	... 119 more
+DEBUG http-nio-8073-exec-3 druid.sql.Connection - {conn 10005} rollback
+DEBUG http-nio-8073-exec-3 druid.sql.Connection - {conn-10005} setAutoCommit true
+DEBUG http-nio-8073-exec-3 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisTemplate加载完成
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisCacheManager加载完成
+DEBUG http-nio-8073-exec-1 com.qimeng.main.DeviceInformController - DeviceStatusVo [serialNumber=, status=1, statusType=1]
+DEBUG http-nio-8073-exec-1 druid.sql.Connection - {conn-10001} connected
+DEBUG http-nio-8073-exec-1 druid.sql.Connection - {conn-10002} connected
+DEBUG http-nio-8073-exec-1 druid.sql.Connection - {conn-10003} connected
+DEBUG http-nio-8073-exec-1 druid.sql.Connection - {conn-10004} connected
+DEBUG http-nio-8073-exec-1 druid.sql.Connection - {conn-10005} connected
+DEBUG http-nio-8073-exec-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-8073-exec-1 druid.sql.Connection - {conn-10005} setAutoCommit false
+DEBUG http-nio-8073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. SELECT id,machine_id,serial_number,school_code,postal_code,active,create_time,update_time
+FROM machine_device_management
+WHERE (machine_id=?)
+DEBUG http-nio-8073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [1234567]
+DEBUG http-nio-8073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : [VARCHAR]
+DEBUG http-nio-8073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 45.2926 millis. SELECT id,machine_id,serial_number,school_code,postal_code,active,create_time,update_time
+FROM machine_device_management
+WHERE (machine_id=?)
+DEBUG http-nio-8073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG http-nio-8073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, machine_id, serial_number, school_code, postal_code, active, create_time, update_time]
+DEBUG http-nio-8073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [5, 1234567, 1, null, null, true, 2019-08-10 17:59:27.0, 2019-08-26 14:42:42.0]
+DEBUG http-nio-8073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG http-nio-8073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG http-nio-8073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20001} created. update machine_device_management set serial_number=?,update_time=? where machine_id=?
+DEBUG http-nio-8073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : [, 2019-08-26 14:53:53.034, 1234567]
+DEBUG http-nio-8073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20001} Types : [VARCHAR, TIMESTAMP, VARCHAR]
+DEBUG http-nio-8073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20001} executed. 65.9228 millis. update machine_device_management set serial_number=?,update_time=? where machine_id=?
+DEBUG http-nio-8073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20001} closed
+DEBUG http-nio-8073-exec-1 druid.sql.Connection - {conn-10005} commited
+DEBUG http-nio-8073-exec-1 druid.sql.Connection - {conn-10005} setAutoCommit true
+DEBUG http-nio-8073-exec-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-8073-exec-3 com.qimeng.main.DeviceInformController - DeviceStatusVo [serialNumber=1, status=1, statusType=1]
+DEBUG http-nio-8073-exec-3 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-8073-exec-3 druid.sql.Connection - {conn-10005} setAutoCommit false
+DEBUG http-nio-8073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20002} created. SELECT id,machine_id,serial_number,school_code,postal_code,active,create_time,update_time
+FROM machine_device_management
+WHERE (machine_id=?)
+DEBUG http-nio-8073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20002} Parameters : [1234567]
+DEBUG http-nio-8073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20002} Types : [VARCHAR]
+DEBUG http-nio-8073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20002} executed. 33.5953 millis. SELECT id,machine_id,serial_number,school_code,postal_code,active,create_time,update_time
+FROM machine_device_management
+WHERE (machine_id=?)
+DEBUG http-nio-8073-exec-3 druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50001} open
+DEBUG http-nio-8073-exec-3 druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50001} Header: [id, machine_id, serial_number, school_code, postal_code, active, create_time, update_time]
+DEBUG http-nio-8073-exec-3 druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50001} Result: [5, 1234567, , null, null, true, 2019-08-10 17:59:27.0, 2019-08-26 14:53:53.0]
+DEBUG http-nio-8073-exec-3 druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50001} closed
+DEBUG http-nio-8073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20002} closed
+DEBUG http-nio-8073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20003} created. update machine_device_management set serial_number=?,update_time=? where machine_id=?
+DEBUG http-nio-8073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20003} Parameters : [1, 2019-08-26 14:54:09.861, 1234567]
+DEBUG http-nio-8073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20003} Types : [VARCHAR, TIMESTAMP, VARCHAR]
+DEBUG http-nio-8073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20003} executed. 65.2201 millis. update machine_device_management set serial_number=?,update_time=? where machine_id=?
+DEBUG http-nio-8073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20003} closed
+DEBUG http-nio-8073-exec-3 druid.sql.Connection - {conn-10005} commited
+DEBUG http-nio-8073-exec-3 druid.sql.Connection - {conn-10005} setAutoCommit true
+DEBUG http-nio-8073-exec-3 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-8073-exec-4 com.qimeng.main.DeviceInformController - DeviceStatusVo [serialNumber=12, status=1, statusType=1]
+DEBUG http-nio-8073-exec-4 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-8073-exec-4 druid.sql.Connection - {conn-10005} setAutoCommit false
+DEBUG http-nio-8073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20004} created. SELECT id,machine_id,serial_number,school_code,postal_code,active,create_time,update_time
+FROM machine_device_management
+WHERE (machine_id=?)
+DEBUG http-nio-8073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20004} Parameters : [1234567]
+DEBUG http-nio-8073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20004} Types : [VARCHAR]
+DEBUG http-nio-8073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20004} executed. 33.0015 millis. SELECT id,machine_id,serial_number,school_code,postal_code,active,create_time,update_time
+FROM machine_device_management
+WHERE (machine_id=?)
+DEBUG http-nio-8073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50002} open
+DEBUG http-nio-8073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50002} Header: [id, machine_id, serial_number, school_code, postal_code, active, create_time, update_time]
+DEBUG http-nio-8073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50002} Result: [5, 1234567, 1, null, null, true, 2019-08-10 17:59:27.0, 2019-08-26 14:54:10.0]
+DEBUG http-nio-8073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50002} closed
+DEBUG http-nio-8073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20004} closed
+DEBUG http-nio-8073-exec-4 druid.sql.Connection - {conn 10005} rollback
+DEBUG http-nio-8073-exec-4 druid.sql.Connection - {conn-10005} setAutoCommit true
+DEBUG http-nio-8073-exec-4 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisTemplate加载完成
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisCacheManager加载完成

@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.SelectProvider;
+import org.apache.ibatis.annotations.Update;
 import org.apache.ibatis.annotations.UpdateProvider;
 import org.apache.ibatis.jdbc.SQL;
 import org.springframework.util.StringUtils;
@@ -35,6 +36,9 @@ public interface DeviceManagementDao {
 	
 	@UpdateProvider(type = SqlFactory.class,method = "updateDeviceManagement")
 	int updateDeviceManagement(@Param("item")DeviceManagement deviceManagement);
+	
+	@Update("update "+tablename+" set serial_number=#{item.serialNumber},update_time=#{item.updateTime} where machine_id=#{item.machineId}")
+	int updateDeviceMachineId(@Param("item")DeviceManagement deviceManagement);
 	
 	@SelectProvider(type = SqlFactory.class,method = "selectDeviceManagementList")
 	List<DeviceManagement> selectDeviceManagementList(@Param("item")DeviceManagement deviceManagement);

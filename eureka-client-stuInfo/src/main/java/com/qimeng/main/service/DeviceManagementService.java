@@ -103,5 +103,17 @@ public class DeviceManagementService {
 		List<DeviceManagement> list=selectDeviceManagementList(deviceManagement);
 		return list.isEmpty()?null:list.get(0);
 	}
+
+	@CacheEvict(value="DeviceManagement",key="#p0.machineId")
+	public int updateDeviceMachineId(DeviceManagement deviceManagement) {
+		try {
+			return deviceManagementDao.updateDeviceMachineId(deviceManagement);
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.error("更新回收设备序列号异常");
+			logger.error("Error:",e);
+			throw new RuntimeException(e);
+		}
+	}
 }
 
