@@ -19,7 +19,7 @@ import com.qimeng.main.vo.Student;
 @Mapper
 public interface OldServiceDao {
 	
-	@Select("select bimg from qmhb_adv where dpjid=#{jqbh} or dpid=0 ")
+	@Select("select bimg from qmhb_adv where dpjid=#{jqbh} or dpjid=0 ")
     public List<String> getPic(String jqbh);
 	
 	@Select("select nid as id,pname as mc,jifen as jf,bimg as pic from qmhb_products where dpid=#{jqbh} or dpid=0 and ck=0")
