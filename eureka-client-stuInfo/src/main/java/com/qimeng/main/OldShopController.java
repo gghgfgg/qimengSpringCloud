@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.alibaba.fastjson.JSONObject;
 import com.qimeng.main.Service.UsePointsLogService;
 import com.qimeng.main.dao.OldServiceDao;
+import com.qimeng.main.entity.Repertory;
 import com.qimeng.main.entity.UsePointsLog;
 import com.qimeng.main.vo.CommodityEntity;
 import com.qimeng.main.vo.NewCommodityEntity;
@@ -35,7 +36,7 @@ public class OldShopController {
 	{
 		 
 		 List<Map<String,String>> list1=new ArrayList<Map<String,String>>();
-		 List<String> list=oldServiceDao.getPic();
+		 List<String> list=oldServiceDao.getPic(jqbh);
 		 for (int i = 0; i < list.size(); i++) {
 			 String string=list.get(i);
 			 string="http://sys.qimenghb.com/"+string;
@@ -104,13 +105,17 @@ public class OldShopController {
 	{
 		Map<String, Object> map = new HashMap<String, Object>();
 		Student student=oldServiceDao.getStudentByID(Integer.parseInt(userid));
+		
 		CommodityEntity commodityEntity=oldServiceDao.getProutBy(Integer.parseInt(lpid));
 		String name=oldServiceDao.getNameByCode(jqbh);
-		if(student==null||commodityEntity==null||name==null||student.getPoints()<(Integer.parseInt(jf)))
+		Repertory repertory=oldServiceDao.getRepertory(jqbh,lpid);
+		
+		if(student==null||commodityEntity==null||repertory==null||repertory.getKucun()>0||name==null||student.getPoints()<(Integer.parseInt(jf)))
 		{
 			map.put("success", false);
 			return JSONObject.toJSONString(map);
 		}
+		
 		UsePointsLog usepointsLog=new UsePointsLog();
 		//自定义订单编号生成规则   由YYYYMMDD(年月日) + 时间戳的格式组成
 		Date currDate = new Date();
@@ -118,6 +123,11 @@ public class OldShopController {
 		String newDate=sdf.format(currDate);
 		String strLong = String.valueOf(currDate.getTime()/1000);
 		String orderNo=newDate+strLong;
+		
+		repertory.setKucun(repertory.getKucun()-1);
+		repertory.setSale(repertory.getSale()+1);
+		repertory.setLastdate(currDate);
+		oldServiceDao.updateRepertory(repertory);
 		oldServiceDao.insertPointsLog(Integer.parseInt(userid), student.getName(), Integer.parseInt(lpid), commodityEntity.getMc(), Integer.parseInt(jf), jqbh, name, currDate, orderNo);
 		usepointsLog.setAppid("7564564864648644");
 		usepointsLog.setStudentName(student.getName());

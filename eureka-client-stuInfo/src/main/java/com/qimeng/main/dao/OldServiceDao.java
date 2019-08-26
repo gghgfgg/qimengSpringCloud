@@ -12,14 +12,15 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import com.fasterxml.jackson.core.sym.Name;
+import com.qimeng.main.entity.Repertory;
 import com.qimeng.main.vo.CommodityEntity;
 import com.qimeng.main.vo.NewCommodityEntity;
 import com.qimeng.main.vo.Student;
 @Mapper
 public interface OldServiceDao {
 	
-	@Select("select bimg from qmhb_adv")
-    public List<String> getPic();
+	@Select("select bimg from qmhb_adv where dpjid=#{jqbh} or dpid=0 ")
+    public List<String> getPic(String jqbh);
 	
 	@Select("select nid as id,pname as mc,jifen as jf,bimg as pic from qmhb_products where dpid=#{jqbh} or dpid=0 and ck=0")
 	public List<CommodityEntity> getProut(String jqbh);
@@ -49,5 +50,11 @@ public interface OldServiceDao {
 			                  @Param("dpjname")String dpjname,@Param("adddate")Date adddate,@Param("ddh")String ddh);
 	@Update("update qmhb_trade set hx=1 where ddh=#{orderno}")
 	public int updataorder(String orderno);
+
+	@Select("select proid,dpcode,kucun ,sale from qmhb_kucun where dpcode=#{jqbh} and proid=#{lpid}")
+	public Repertory getRepertory(String jqbh, String lpid);
+
+	@Update("update qmhb_kucun set kucun=#{repertory.kucun},sale=#{repertory.sale} ,lastdate=#{repertory.lastdate} where proid=#{repertory.proid} and dpcode=#{repertory.dpcode}")
+	public void updateRepertory(@Param("repertory")Repertory repertory);
 		
 }
