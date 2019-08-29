@@ -54,6 +54,7 @@ public class StudentUpdateService {
 					errString += "{第" + String.valueOf(i + 2) + "行,姓名或性别或年级或班级为空},";
 					errBoolean = true;
 				}
+				
 				if (StringUtils.isEmpty(studentInformList.get(i).getIdentityCard())
 						&& StringUtils.isEmpty(studentInformList.get(i).getStudentCode())) {
 					errString += "{第" + String.valueOf(i + 2) + "行,身份证和学号都为空},";
@@ -80,7 +81,18 @@ public class StudentUpdateService {
 					errString += "{第" + String.valueOf(i + 2) + "行,学校编号长度不对},";
 					errBoolean = true;
 				}
-
+				if(type!=null&&(type&0x02)!=0) {
+					if (StringUtils.isEmpty(studentInformList.get(i).getTeacherPhone())) {
+						errString += "{第" + String.valueOf(i + 2) + "行,手机号码为空,添加学生以外类型请输入手机号码},";
+						errBoolean = true;
+					}
+					
+					if (!StringUtils.isEmpty(studentInformList.get(i).getTeacherPhone())
+							&& studentInformList.get(i).getTeacherPhone().length() < 10) {
+						errString += "{第" + String.valueOf(i + 2) + "行,手机号码长度不对},";
+						errBoolean = true;
+					}
+				}
 			}
 			for (int item = 0; item < studentInformList.size(); item++) {
 				int row=item+1;

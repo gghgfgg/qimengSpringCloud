@@ -24,7 +24,7 @@ public interface StudentInformDao {
 			+ "postal_code,workers_children,only_child,preschool_education,leftover_children,"
 			+ "orphan,martyr_children,funding,boarder_alimony,auxiliary_number,"
 			+ "student_number,student_source,learning_class,disability_types,family_name,"
-			+ "family_relationship,family_work,family_residence,family_census_register,family_phone";
+			+ "family_relationship,family_work,family_residence,family_census_register,family_phone,teacher_phone";
 	
 	static String item="#{item.name},#{item.sex},#{item.studentCode},#{item.identityCard},#{item.nativePlace},#{item.nation},"
 			+ "#{item.phone},#{item.schoolName},#{item.schoolId},#{item.birthday},#{item.birthplace},"
@@ -34,7 +34,7 @@ public interface StudentInformDao {
 			+ "#{item.postalCode},#{item.workersChildren},#{item.onlyChild},#{item.preschoolEducation},#{item.leftoverChildren},"
 			+ "#{item.orphan},#{item.martyrChildren},#{item.funding},#{item.boarderAlimony},#{item.auxiliaryNumber},"
 			+ "#{item.studentNumber},#{item.studentSource},#{item.learningClass},#{item.disabilityTypes},#{item.familyName},"
-			+ "#{item.familyRelationship},#{item.familyWork},#{item.familyResidence},#{item.familyCensusRegister},#{item.familyPhone}";
+			+ "#{item.familyRelationship},#{item.familyWork},#{item.familyResidence},#{item.familyCensusRegister},#{item.familyPhone},#{item.teacherPhone}";
 	
 	static String update="name=VALUES(name),sex=VALUES(sex),native_place=VALUES(native_place),nation=VALUES(nation),"
 			+ "phone=VALUES(phone),school_name=VALUES(school_name),school_id=VALUES(school_id),birthday=VALUES(birthday),birthplace=VALUES(birthplace),"
@@ -44,7 +44,7 @@ public interface StudentInformDao {
 			+ "postal_code=VALUES(postal_code),workers_children=VALUES(workers_children),only_child=VALUES(only_child),preschool_education=VALUES(preschool_education),leftover_children=VALUES(leftover_children),"
 			+ "orphan=VALUES(orphan),martyr_children=VALUES(martyr_children),funding=VALUES(funding),boarder_alimony=VALUES(boarder_alimony),auxiliary_number=VALUES(auxiliary_number),"
 			+ "student_number=VALUES(student_number),student_source=VALUES(student_source),learning_class=VALUES(learning_class),disability_types=VALUES(disability_types),family_name=VALUES(family_name),"
-			+ "family_relationship=VALUES(family_relationship),family_work=VALUES(family_work),family_residence=VALUES(family_residence),family_census_register=VALUES(family_census_register),family_phone=VALUES(family_phone)";
+			+ "family_relationship=VALUES(family_relationship),family_work=VALUES(family_work),family_residence=VALUES(family_residence),family_census_register=VALUES(family_census_register),family_phone=VALUES(family_phone),teacher_phone=VALUES(teacher_phone)";
 	
 	static String updatecode=",student_code=VALUES(student_code),identity_card=VALUES(identity_card)";
 	
@@ -123,6 +123,10 @@ public interface StudentInformDao {
 	    	if(!StringUtils.isEmpty(studentInform.getClassS())){
 	        	 sql.WHERE("classS=#{item.classS}");
 			}
+	    	if(!StringUtils.isEmpty(studentInform.getTeacherPhone())){
+	        	 sql.WHERE("teacher_phone=#{item.teacherPhone}");
+			}
+	    	
 	    	return sql.toString();
 	    }
 	    }

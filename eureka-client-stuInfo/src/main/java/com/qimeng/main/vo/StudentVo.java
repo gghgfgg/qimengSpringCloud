@@ -128,6 +128,8 @@ public class StudentVo {
     private String familyCensusRegister;
 
     private String familyPhone;
+    
+    private String teacherPhone;
 	
 	
 	public String getUuid() {
@@ -604,6 +606,15 @@ public class StudentVo {
 		this.schoolId = schoolId;
 	}
 
+	
+	public String getTeacherPhone() {
+		return teacherPhone;
+	}
+
+	public void setTeacherPhone(String teacherPhone) {
+		this.teacherPhone = teacherPhone;
+	}
+
 	@Override
 	public String toString() {
 		return "StudentVo [uuid=" + uuid + ", identityCard=" + identityCard + ", studentCode=" + studentCode
@@ -625,9 +636,7 @@ public class StudentVo {
 				+ ", studentSource=" + studentSource + ", learningClass=" + learningClass + ", disabilityTypes="
 				+ disabilityTypes + ", familyName=" + familyName + ", familyRelationship=" + familyRelationship
 				+ ", familyWork=" + familyWork + ", familyResidence=" + familyResidence + ", familyCensusRegister="
-				+ familyCensusRegister + ", familyPhone=" + familyPhone + "]";
+				+ familyCensusRegister + ", familyPhone=" + familyPhone + ", teacherPhone=" + teacherPhone + "]";
 	}
-
-
 
 }

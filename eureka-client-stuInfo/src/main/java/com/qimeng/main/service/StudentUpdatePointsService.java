@@ -46,6 +46,8 @@ public class StudentUpdatePointsService {
 	PointsManageLogService pointsManageLogService;
 	@Autowired
 	SchoolRecycleCountService schoolRecycleCountService;
+	@Autowired
+	StudentRankService studentRankService;
 	
 	public int updateStudentPoints(StudentData studentData,int wasteType,int uint,String machineId) {
 		try {
@@ -126,7 +128,7 @@ public class StudentUpdatePointsService {
 				studentData.setLastTime(date);
 				studentDataService.updateStudentTotalPoints(studentData);
 			}
-			
+			studentRankService.add(studentData);
 			
 			studentRecycleCount.setActivityCount(studentRecycleCount.getActivityCount()+1);
 			studentRecycleCount.setCount(studentRecycleCount.getCount()+uint);

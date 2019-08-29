@@ -31,8 +31,10 @@ import com.qimeng.main.service.PostalCodeService;
 import com.qimeng.main.service.SchoolAutoCountRecycleService;
 import com.qimeng.main.service.StudentDataService;
 import com.qimeng.main.service.StudentInformService;
+import com.qimeng.main.service.StudentRankService;
 import com.qimeng.main.service.StudentUpdateService;
 import com.qimeng.main.vo.DeviceInformVo;
+import com.qimeng.main.vo.StudentVo;
 
 //import com.qimeng.main.Service.ApplicationInfoService;
 //import com.qimeng.main.Service.PointsLogService;
@@ -82,6 +84,9 @@ public class EurekaClientStuInfoApplicationTests {
 	JoinDao joinDao;
 	@Autowired
 	DeviceActionService deviceActionService;
+	@Autowired
+	StudentRankService studentRankService;
+	
 	@Test
 	public void contextLoads() throws UnsupportedEncodingException {
 		
@@ -160,14 +165,17 @@ public class EurekaClientStuInfoApplicationTests {
 		//System.out.println(dao.updateStudentInformByIdentityCardOrStrudentCode(studentInform3));
 		//dao.selectStudentInform(studentInform3);
 		
-		String tempString="http://m.qimenghb.com/api/stu.php?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29B2592CC12213D751C1B89BE293232C6049E456&sn=1&state=1";
-		tempString.substring(tempString.indexOf("?")+1);
-		System.out.println(tempString);
-		String []strings = tempString.split("&");
-		String codeString=strings[0].substring(strings[0].indexOf("=")+1);
-		System.out.println(codeString);
-		String cardString=strings[1].substring(strings[1].indexOf("=")+1);
-		System.out.println(cardString);
+//		String tempString="http://m.qimenghb.com/api/stu.php?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29B2592CC12213D751C1B89BE293232C6049E456&sn=1&state=1";
+//		tempString.substring(tempString.indexOf("?")+1);
+//		System.out.println(tempString);
+//		String []strings = tempString.split("&");
+//		String codeString=strings[0].substring(strings[0].indexOf("=")+1);
+//		System.out.println(codeString);
+//		String cardString=strings[1].substring(strings[1].indexOf("=")+1);
+//		System.out.println(cardString);
+		
+		studentRankService.addlist();
+		studentRankService.StudentRankList(0,new StudentVo());
 		
 	}
 

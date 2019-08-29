@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
 import com.github.pagehelper.PageHelper;
@@ -28,6 +29,9 @@ public class AuxiliaryService {
 	RecycleTypeService recycleTypeService;
 	@Autowired
 	SchoolContactsTypeService 	schoolContactsTypeService;
+	@Autowired
+	StringRedisTemplate stringRedisTemplate;
+	
 	public PageInfo<DeviceState> auxiliaryDeviceStatePageList(Integer pageNum, AuxiliaryVo auxiliaryVo) {
 		PageHelper.startPage(pageNum, 20);
 		DeviceState deviceState=new DeviceState();
@@ -73,7 +77,7 @@ public class AuxiliaryService {
 		auxiliaryVo.setFactor(recycleType.getFactor());
 		auxiliaryVo.setMark(recycleType.getMark());
 		auxiliaryVo.setUint(recycleType.getUint());
-		auxiliaryVo.setId(recycleType.getId());
+		//auxiliaryVo.setId(recycleType.getId());
 		return auxiliaryVo;
 	}
 
@@ -83,7 +87,7 @@ public class AuxiliaryService {
 		auxiliaryVo.setType(contactsType.getType());
 		auxiliaryVo.setWeight(contactsType.getWeight());
 		auxiliaryVo.setPosition(contactsType.getPosition());
-		auxiliaryVo.setId(contactsType.getId());
+		//auxiliaryVo.setId(contactsType.getId());
 		return auxiliaryVo;
 	}
 
@@ -126,6 +130,7 @@ public class AuxiliaryService {
 
 	public int updateDevState(AuxiliaryVo auxiliaryVo) {
 		// TODO Auto-generated method stub
+		DeviceState tempDeviceState= deviceStateService.selectDeviceState(auxiliaryVo.getId());			
 		DeviceState deviceState = new DeviceState();
 		deviceState.setId(auxiliaryVo.getId());
 		deviceState.setType(auxiliaryVo.getType());
@@ -133,13 +138,16 @@ public class AuxiliaryService {
 		deviceState.setMark(auxiliaryVo.getMark());
 		Date date = new Date();
 		deviceState.setUpdateTime(date);
-		return deviceStateService.updateDeviceState(deviceState);
+		deviceStateService.updateDeviceState(deviceState);
+		if(stringRedisTemplate.hasKey("DeviceState::"+tempDeviceState.getType()+"-"+tempDeviceState.getStatus())) {
+			stringRedisTemplate.delete("DeviceState::"+tempDeviceState.getType()+"-"+tempDeviceState.getStatus());
+		}
+		return 1;
 	}
 
 	public int updateRecycleType(AuxiliaryVo auxiliaryVo) {
 		// TODO Auto-generated method stub
 		RecycleType recycleType=new RecycleType();
-		recycleType.setId(auxiliaryVo.getId());
 		recycleType.setType(auxiliaryVo.getType());
 		recycleType.setFactor(auxiliaryVo.getFactor());
 		recycleType.setUint(auxiliaryVo.getUint());
@@ -152,7 +160,6 @@ public class AuxiliaryService {
 	public int updateContactsType(AuxiliaryVo auxiliaryVo) {
 		// TODO Auto-generated method stub
 		SchoolContactsType contactsType=new SchoolContactsType();
-		contactsType.setId(auxiliaryVo.getId());
 		contactsType.setType(auxiliaryVo.getType());
 		contactsType.setPosition(auxiliaryVo.getPosition());
 		contactsType.setWeight(auxiliaryVo.getWeight());

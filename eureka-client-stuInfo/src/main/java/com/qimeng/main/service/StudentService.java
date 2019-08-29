@@ -254,7 +254,7 @@ public class StudentService {
 		studentInform.setStudentSource(studentVo.getStudentSource());
 		studentInform.setStudyingWay(studentVo.getStudyingWay());
 		studentInform.setWorkersChildren(studentVo.getWorkersChildren());
-		
+		studentInform.setTeacherPhone(studentVo.getTeacherPhone());
 		return studentUpdateService.insertStudentInform(studentInform, studentVo.getSchoolCode(), studentVo.getType());
 	}
 
@@ -311,7 +311,7 @@ public class StudentService {
 		studentInform.setStudentSource(studentVo.getStudentSource());
 		studentInform.setStudyingWay(studentVo.getStudyingWay());
 		studentInform.setWorkersChildren(studentVo.getWorkersChildren());
-		
+		studentInform.setTeacherPhone(studentVo.getTeacherPhone());
 		return studentUpdateService.updateStudentInformByIdentityCardOrStudentCode(studentInform, studentVo.getSchoolCode(), studentVo.getType());
 	}
 
@@ -374,6 +374,18 @@ public class StudentService {
 			item.setPostalCode(schoolInform.getPostalCode());
 		}
 		return studentVolist;
+	}
+
+	public StudentData selectStudentDataByPhone(String phone) {
+		// TODO Auto-generated method stub
+		StudentInform studentInform= studentInformService.selectStudentInformByPhone(phone);
+		if(!StringUtils.isEmpty(studentInform.getIdentityCard())) {
+			return studentDataService.selectStudentDataByIdentityCard(studentInform.getIdentityCard());
+		}
+		if(!StringUtils.isEmpty(studentInform.getStudentCode())) {
+			return studentDataService.selectStudentDataByStudentCode(studentInform.getStudentCode());
+		}
+		return null;
 	}
 	
 }

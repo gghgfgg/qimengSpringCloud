@@ -327,7 +327,7 @@ private static Logger logger = Logger.getLogger(AuxiliaryController.class);
 			auxiliaryService.saveContactsType(auxiliaryVo);
 			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
 			responseMessage.setData("");
-			responseMessage.setSuccessMessage("获取联系人信息成功");
+			responseMessage.setSuccessMessage("新增联系人信息成功");
 			return JSONObject.toJSONString(responseMessage);
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -365,7 +365,7 @@ private static Logger logger = Logger.getLogger(AuxiliaryController.class);
 			auxiliaryService.updateDevState(auxiliaryVo);
 			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
 			responseMessage.setData("");
-			responseMessage.setSuccessMessage("新增设备状态信息成功");
+			responseMessage.setSuccessMessage("更新设备状态信息成功");
 			return JSONObject.toJSONString(responseMessage);
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -402,7 +402,7 @@ private static Logger logger = Logger.getLogger(AuxiliaryController.class);
 			auxiliaryService.updateRecycleType(auxiliaryVo);
 			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
 			responseMessage.setData("");
-			responseMessage.setSuccessMessage("新增回收类型信息成功");
+			responseMessage.setSuccessMessage("更新回收类型信息成功");
 			return JSONObject.toJSONString(responseMessage);
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -439,7 +439,7 @@ private static Logger logger = Logger.getLogger(AuxiliaryController.class);
 			auxiliaryService.updateContactsType(auxiliaryVo);
 			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
 			responseMessage.setData("");
-			responseMessage.setSuccessMessage("获取联系人信息成功");
+			responseMessage.setSuccessMessage("更新联系人信息成功");
 			return JSONObject.toJSONString(responseMessage);
 		} catch (Exception e) {
 			// TODO: handle exception

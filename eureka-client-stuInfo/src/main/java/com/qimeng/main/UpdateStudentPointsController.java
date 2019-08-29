@@ -87,10 +87,10 @@ public class UpdateStudentPointsController {
 				return JSONObject.toJSONString(responseMessage);
 			}
 			String accountTonken = RandomStringUtils.randomAlphanumeric(8);
-			while (stringRedisTemplate.hasKey(accountTonken)) {
+			while (stringRedisTemplate.hasKey("ActionKey::"+accountTonken)) {
 				accountTonken = RandomStringUtils.randomAlphanumeric(8);
 			}
-			stringRedisTemplate.opsForValue().set("ActionKey:"+accountTonken, "", 1L, TimeUnit.MINUTES);
+			stringRedisTemplate.opsForValue().set("ActionKey::"+accountTonken, "", 1L, TimeUnit.MINUTES);
 			stuInfoVo.setName(studentData.getName());
 			stuInfoVo.setWasteType(0);
 			stuInfoVo.setUnit(0);
@@ -143,14 +143,14 @@ public class UpdateStudentPointsController {
 			/*debug测试*/
 			//String accountTonken =requestMessage.getAccountTonken();
 			
-			if (!stringRedisTemplate.hasKey("ActionKey:"+accountTonken)) {
+			if (!stringRedisTemplate.hasKey("ActionKey::"+accountTonken)) {
 				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
 				responseMessage.setData("");
 				responseMessage.setFailedMessage("请求超时");
 				System.out.println(responseMessage.toString());
 				return JSONObject.toJSONString(responseMessage);
 			}
-			stringRedisTemplate.delete("ActionKey:"+accountTonken);
+			stringRedisTemplate.delete("ActionKey::"+accountTonken);
 
 			StudentData studentData = studentDataService.selectStudentDataByCodeAndCard(stuInfoVo.getStuCode(),
 					stuInfoVo.getStuCard());

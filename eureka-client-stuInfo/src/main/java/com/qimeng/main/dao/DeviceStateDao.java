@@ -51,6 +51,9 @@ public interface DeviceStateDao {
 		    if(deviceState.getStatus()!=null) {
 		    	sql.WHERE("status=#{item.status}");
 		    }
+		    if(deviceState.getId()!=null) {
+		    	sql.WHERE("id=#{item.id}");
+		    }
 		    return sql.toString();
 		 }
 		 

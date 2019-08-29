@@ -33,8 +33,8 @@ public interface SchoolContactsTypeDao {
 	@Insert("insert into "+tablename+"("+fields+") values" + "("+item+") ")
 	int insertSchoolContactsType(@Param("item")SchoolContactsType schoolContactsType);
 	
-	@Update("update "+tablename+"Set type=#{item.type},mark=#{item.mark},uint=#{item.uint},factor=#{item.factor},"
-			+ "update_time=#{item.update_time} where id=#{item.id} " )
+	@Update("update "+tablename+" set position=#{item.position},weight=#{item.weight},"
+			+ "update_time=#{item.updateTime} where type=#{item.type} " )
 	int updateSchoolContactsType(@Param("item")SchoolContactsType schoolContactsType);
 	
 	@SelectProvider(type = SqlFactory.class,method = "selectSchoolContactsType")

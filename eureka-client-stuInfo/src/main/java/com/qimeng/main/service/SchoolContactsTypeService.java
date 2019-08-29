@@ -48,7 +48,7 @@ public class SchoolContactsTypeService {
 	@CacheEvict(value="SchoolContactsType",key="#p0.type")
 	public int updateSchoolContactsType(SchoolContactsType schoolContactsType) {
 		try {
-			return schoolContactsTypeDao.insertSchoolContactsType(schoolContactsType);
+			return schoolContactsTypeDao.updateSchoolContactsType(schoolContactsType);
 		} catch (Exception e) {
 			// TODO: handle exception
 			logger.error("更新联系人类型异常");

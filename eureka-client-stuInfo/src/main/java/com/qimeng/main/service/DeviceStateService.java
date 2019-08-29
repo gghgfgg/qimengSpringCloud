@@ -64,5 +64,12 @@ public class DeviceStateService {
 		List<DeviceState> list=selectDeviceStateList(deviceState);
 		return list.isEmpty()?null:list.get(0);
 	}
+	
+	public DeviceState selectDeviceState(int id) {
+		DeviceState deviceState=new DeviceState();
+		deviceState.setId(id);
+		List<DeviceState> list=selectDeviceStateList(deviceState);
+		return list.isEmpty()?null:list.get(0);
+	}
 }
 

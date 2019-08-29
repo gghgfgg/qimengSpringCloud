@@ -6,7 +6,12 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.data.redis.connection.RedisConnection;
+import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.RedisSerializer;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;  
   
@@ -536,5 +541,98 @@ public class RedisUtil {
             return 0;  
         }  
     }  
-      
+    
+  //============================zset=============================  
+    /** 
+     * 将数据放入set缓存 
+     * @param key 键 
+     * @param values 值 可以是多个 
+     * @return 成功个数 
+     */  
+    public Boolean zsSet(String key, Object values, Double score) {  
+        try {  
+            return redisTemplate.opsForZSet().add(key, values,score);  
+        } catch (Exception e) {  
+            e.printStackTrace();  
+            return false;  
+        }  
+    }  
+    public Boolean zsSet(String key, Object values, Integer score) {  
+        try {  
+            return redisTemplate.opsForZSet().add(key, values,Double.valueOf(score));  
+        } catch (Exception e) {  
+            e.printStackTrace();  
+            return false;  
+        }  
+    }  
+    /** 
+     * 获取set缓存的长度 
+     * @param key 键 
+     * @return 
+     */  
+    public long zsGetSetSize(String key){  
+        try {  
+            return redisTemplate.opsForZSet().size(key);  
+        } catch (Exception e) {  
+            e.printStackTrace();  
+            return 0;  
+        }  
+    }  
+    /**
+     * 查询集合中指定顺序的值， 0 -1 表示获取全部的集合内容  zrange
+     *
+     * 返回有序的集合，score小的在前面
+     *
+     * @param key
+     * @param start
+     * @param end
+     * @return
+     */
+    public Set<Object> zsrange(String key, long start, long end) {
+    	try {  
+            return redisTemplate.opsForZSet().range(key, start, end);
+        } catch (Exception e) {  
+            e.printStackTrace();  
+            return null;  
+        }  
+    }
+    
+    public long intersectAndStore(String key, String otherKey, String destKey) {
+    	try {  
+    		return redisTemplate.opsForZSet().intersectAndStore(key,otherKey,destKey);
+        } catch (Exception e) {  
+            e.printStackTrace();  
+            return 0;  
+        }  
+    }
+    
+    public long zsCard(String key) {
+    	try {  
+    		return redisTemplate.opsForZSet().zCard(key);
+        } catch (Exception e) {  
+            e.printStackTrace();  
+            return 0;  
+        }  
+    }
+    
+	// 封装为方法
+	public Object sSet(String key, List<String> list) {
+		final StringRedisSerializer stringRedisSerializer = (StringRedisSerializer) redisTemplate.getKeySerializer();
+		final RedisSerializer<String> valueSerializer = (RedisSerializer<String>) redisTemplate.getValueSerializer();
+		final byte[] rawKey = stringRedisSerializer.serialize(key);
+           redisTemplate.executePipelined(new RedisCallback() {
+               @Override
+               public Object doInRedis(RedisConnection connection)
+                       throws DataAccessException {
+                   for (String str : list) {
+                       byte[] rawStr =valueSerializer.serialize(str);
+                       //在set中添加数据
+                       connection.sAdd(rawKey,rawStr);
+                   }
+                   connection.closePipeline();
+                   return null;
+               }
+           });
+           return null;      
+       }
 }

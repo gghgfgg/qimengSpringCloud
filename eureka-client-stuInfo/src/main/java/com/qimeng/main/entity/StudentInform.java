@@ -102,6 +102,8 @@ public class StudentInform implements Serializable{
 
     private String familyPhone;
 
+    private String teacherPhone;
+    
     public Integer getId() {
         return id;
     }
@@ -477,4 +479,14 @@ public class StudentInform implements Serializable{
     public void setFamilyPhone(String familyPhone) {
         this.familyPhone = familyPhone == null ? null : familyPhone.trim();
     }
+
+	public String getTeacherPhone() {
+		return teacherPhone;
+	}
+
+	public void setTeacherPhone(String teacherPhone) {
+		this.teacherPhone = teacherPhone== null ? null : teacherPhone.trim();
+	}
+    
+    
 }

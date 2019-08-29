@@ -129,4 +129,12 @@ public class StudentInformService {
 		return selectStudentInform(studentInform);		
 	}
 
+	public StudentInform selectStudentInformByPhone(String phone) {
+		// TODO Auto-generated method stub
+		StudentInform studentInform=new StudentInform();
+		studentInform.setTeacherPhone(phone);	
+		List<StudentInform> list=selectStudentInform(studentInform);
+		return list.isEmpty()?null:list.get(0);
+	}
+
 }

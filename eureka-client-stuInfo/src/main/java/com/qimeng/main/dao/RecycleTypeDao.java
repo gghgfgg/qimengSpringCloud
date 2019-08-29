@@ -33,8 +33,8 @@ public interface RecycleTypeDao {
 	@Insert("insert into "+tablename+"("+fields+") values" + "("+item+") ")
 	int insertRecycleType(@Param("item")RecycleType recycleType);
 	
-	@Update("update "+tablename+"Set type=#{item.type},mark=#{item.mark},uint=#{item.uint},factor=#{item.factor},"
-			+ "update_time=#{item.update_time} where id=#{item.id} " )
+	@Update("update "+tablename+" set mark=#{item.mark},uint=#{item.uint},factor=#{item.factor},"
+			+ "update_time=#{item.updateTime} where type=#{item.type} " )
 	int updateRecycleType(@Param("item")RecycleType recycleType);
 	
 	@SelectProvider(type = SqlFactory.class,method = "selectRecycleType")

@@ -29,12 +29,16 @@ public interface JoinDao {
 	@SelectProvider(type = SqlFactory.class,method = "selectStudentVos")
 	List<StudentVo> selectStudentVosList(@Param("item")StudentVo studentVo);
 	
+	@SelectProvider(type = SqlFactory.class,method = "selectStudentRank")
+	List<String> selectStudentRank(@Param("item")StudentVo studentVo);
+	
+	
 	@SelectProvider(type = SqlFactory.class,method = "selectSchoolInformVos")
 	List<SchoolInfoVo> selectSchoolInformVosList(@Param("item")SchoolInfoVo schoolInfoVo);
 	
-	@Select("select school_code ,count(*) as headcount ,count(case when type=0 then 1 else null end) as studentcount,"
-			+ "count(case when type=1 then 1 else null end) as teachercount,count(case when type=0 and active !=0 then 1 else null end) as studentactcount,"
-			+ "count(case when type=1 and active !=0 then 1 else null end) as teacheractcount from kernel_student_data")
+	@Select("select school_code ,count(*) as headcount ,count(case when type&1=0 then 1 else null end) as studentcount,"
+			+ "count(case when type&1=1 then 1 else null end) as teachercount,count(case when type&1=0 and active !=0 then 1 else null end) as studentactcount,"
+			+ "count(case when type&1=1 and active !=0 then 1 else null end) as teacheractcount from kernel_student_data")
 	SchoolInfoVo SchoolCount(String schoolCode);
 	
 	public class SqlFactory extends SQL{
@@ -88,9 +92,53 @@ public interface JoinDao {
 	    	sql.FROM("kernel_student_data a");
 	    	sql.INNER_JOIN("kernel_student_inform b on (a.student_code=b.student_code) or (a.identity_card=b.identity_card)");
 	    
-	    	if(studentVo.getActive()!=null) {
+	       	if(studentVo.getActive()!=null) {
 	        	 sql.WHERE("a.active=#{item.active}");
 	        }
+	    	if(studentVo.getType()!=null) {
+	    		sql.WHERE("a.type&1=#{item.type}");
+	    	}
+	    	if(studentVo.getBinding()!=null) {
+	    		sql.WHERE("a.binding=#{item.binding}");
+	    	}
+	    	if(!StringUtils.isEmpty(studentVo.getClassS())) {
+	    		sql.WHERE("b.classS=#{item.classS}");
+	    	}
+	    	if(!StringUtils.isEmpty(studentVo.getGrade())) {
+	    		sql.WHERE("b.grade=#{item.grade}");
+	    	}
+	    	if(studentVo.getSex()!=null) {
+	    		sql.WHERE("b.sex=#{item.sex}");
+	    	}
+	    	if(!StringUtils.isEmpty(studentVo.getName())) {
+	    		sql.WHERE("a.name like CONCAT('%',#{item.name},'%')");
+	    	}
+	    	
+	    	if(!StringUtils.isEmpty(studentVo.getSchoolCode())) {
+	    		String[] schoolCodeArray = studentVo.getSchoolCode().split("-");
+	    		String tempString="(";
+		    	for (int i=0;i!=schoolCodeArray.length;i++) {
+		    		if(i!=schoolCodeArray.length-1)
+		    		{
+		    			tempString+="a.school_code='"+schoolCodeArray[i]+"\' or ";
+		    		}
+		    		else {
+		    			tempString+="a.school_code='"+schoolCodeArray[i]+"\')";
+		    		}
+		    	}
+	    		sql.WHERE(tempString);
+	        }
+	    	
+	    	return sql.toString();
+		}
+		public String selectStudentRank(@Param("item")StudentVo studentVo) {
+			SQL sql = new SQL(); //SQL语句对象，所在包：org.apache.ibatis.jdbc.SQL
+			sql.SELECT("a.uuid");
+	    	sql.FROM("kernel_student_data a");
+	    	sql.INNER_JOIN("kernel_student_inform b on (a.student_code=b.student_code) or (a.identity_card=b.identity_card)");
+	    
+	    	sql.WHERE("a.active=1");
+	    	sql.WHERE("a.total_points>10");
 	    	if(studentVo.getType()!=null) {
 	    		sql.WHERE("a.type=#{item.type}");
 	    	}
@@ -127,7 +175,6 @@ public interface JoinDao {
 	    	
 	    	return sql.toString();
 		}
-		
 		public String selectSchoolInformVos(@Param("item")SchoolInfoVo schoolInfoVo) {
 			SQL sql = new SQL(); //SQL语句对象，所在包：org.apache.ibatis.jdbc.SQL
 			sql.SELECT("a.school_code,a.school_name,a.school_id,a.postal_code,a.address,a.contacts,a.active,"

@@ -20,14 +20,18 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.github.pagehelper.PageInfo;
 import com.qimeng.main.entity.ApplicationManagement;
+import com.qimeng.main.entity.StudentData;
 import com.qimeng.main.entity.StudentInform;
 import com.qimeng.main.service.ApplicationManagementService;
+import com.qimeng.main.service.StudentDataService;
 import com.qimeng.main.service.StudentService;
 import com.qimeng.main.service.StudentUpdateService;
 import com.qimeng.main.util.StaticGlobal;
 import com.qimeng.main.util.UpLoadFile;
 import com.qimeng.main.vo.RequestMessage;
 import com.qimeng.main.vo.ResponseMessage;
+import com.qimeng.main.vo.StudentBindVo;
+import com.qimeng.main.vo.StudentInfoVo;
 import com.qimeng.main.vo.StudentVo;
 
 /**
@@ -51,6 +55,9 @@ public class StudentInformController {
 	UpLoadFile upLoadFile;
 	@Autowired
 	StudentUpdateService studentUpdateService;
+	@Autowired
+	StudentDataService studentDataService;
+	
 	@RequestMapping("/getstudatalist/{page}")
 	public String getStudentDataList(@PathVariable("page") Integer page, @RequestBody JSONObject message) {
 		RequestMessage<StudentVo> requestMessage = JSON.parseObject(message.toString(),
@@ -303,4 +310,131 @@ public class StudentInformController {
 			return JSONObject.toJSONString(responseMessage);
 		}
 	}
+	
+	@RequestMapping("/stubindbycode")
+	public String stuBindByCode(@RequestBody JSONObject message) {
+		RequestMessage<StudentBindVo> requestMessage = JSON.parseObject(message.toString(),
+				new TypeReference<RequestMessage<StudentBindVo>>() {
+				});
+		StudentBindVo studentBindVo = (StudentBindVo) requestMessage.getData();
+		if(studentBindVo==null||StringUtils.isEmpty(studentBindVo.getName())
+				||StringUtils.isEmpty(studentBindVo.getStuCard())
+				||StringUtils.isEmpty(studentBindVo.getStuCode())) {
+			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
+			responseMessage.setData("");
+			responseMessage.setFailedMessage("参数不足");
+			return JSONObject.toJSONString(responseMessage);
+		}
+		logger.debug(studentBindVo.toString());
+		try {
+			ApplicationManagement applicationManagement = applicationManagementService
+					.selectApplicationManagementByAppId(requestMessage.getAppID(), StaticGlobal.ACTIVE);
+			if (applicationManagement == null || (applicationManagement.getAppType() & StaticGlobal.UPDATE) == 0) {
+				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
+				responseMessage.setData("");
+				responseMessage.setFailedMessage("该appid没有权限");
+				return JSONObject.toJSONString(responseMessage);
+			}
+			
+			StudentData studentData=studentDataService.selectStudentDataByCodeAndCard(studentBindVo.getStuCode(), studentBindVo.getStuCard());
+			if(studentData==null) {
+				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
+				responseMessage.setData("");
+				responseMessage.setFailedMessage("查找不到当前学生");
+				return JSONObject.toJSONString(responseMessage);
+			}
+			if(!studentData.getName().equals(studentBindVo.getName())) {
+				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
+				responseMessage.setData("");
+				responseMessage.setFailedMessage("姓名不匹配学生");
+				return JSONObject.toJSONString(responseMessage);
+			}
+			if(studentData.getBinding()==1) {
+				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
+				responseMessage.setData("");
+				responseMessage.setFailedMessage("该学生已经绑定");
+				return JSONObject.toJSONString(responseMessage);
+			}
+			studentData.setBinding((byte)1);
+			studentDataService.updateStudentBindingByIdentityCardOrStrudentCode(studentData);
+			StudentInfoVo stuInfoVo=new StudentInfoVo();
+			stuInfoVo.setName(studentData.getName());
+			stuInfoVo.setWasteType(0);
+			stuInfoVo.setUnit(0);
+			int points=studentData.getTotalPoints()-studentData.getUsedPoints()-studentData.getDeductPoints();
+			stuInfoVo.setPoint(points<0?0:points);
+			stuInfoVo.setBind(studentData.getBinding());
+			ResponseMessage<StudentInfoVo> responseMessage = new ResponseMessage<StudentInfoVo>();
+			responseMessage.setData(stuInfoVo);
+			responseMessage.setSuccessMessage("绑定学生信息成功");
+			return JSONObject.toJSONString(responseMessage);
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
+			responseMessage.setData("");
+			responseMessage.setFailedMessage(e.toString());
+			return JSONObject.toJSONString(responseMessage);
+		}
+	}
+	
+	@RequestMapping("/stubindbyphone")
+	public String stuBindByPhone(@RequestBody JSONObject message) {
+		RequestMessage<StudentBindVo> requestMessage = JSON.parseObject(message.toString(),
+				new TypeReference<RequestMessage<StudentBindVo>>() {
+				});
+		StudentBindVo studentBindVo = (StudentBindVo) requestMessage.getData();
+		if(studentBindVo==null||StringUtils.isEmpty(studentBindVo.getPhone())) {
+			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
+			responseMessage.setData("");
+			responseMessage.setFailedMessage("参数不足");
+			return JSONObject.toJSONString(responseMessage);
+		}
+		logger.debug(studentBindVo.toString());
+		try {
+			ApplicationManagement applicationManagement = applicationManagementService
+					.selectApplicationManagementByAppId(requestMessage.getAppID(), StaticGlobal.ACTIVE);
+			if (applicationManagement == null || (applicationManagement.getAppType() & StaticGlobal.UPDATE) == 0) {
+				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
+				responseMessage.setData("");
+				responseMessage.setFailedMessage("该appid没有权限");
+				return JSONObject.toJSONString(responseMessage);
+			}
+			
+			StudentData studentData=studentService.selectStudentDataByPhone(studentBindVo.getPhone());
+			if(studentData==null) {
+				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
+				responseMessage.setData("");
+				responseMessage.setFailedMessage("查找不到当前学生");
+				return JSONObject.toJSONString(responseMessage);
+			}
+			if(studentData.getBinding()==1) {
+				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
+				responseMessage.setData("");
+				responseMessage.setFailedMessage("该学生已经绑定");
+				return JSONObject.toJSONString(responseMessage);
+			}
+			studentData.setBinding((byte)1);
+			studentDataService.updateStudentBindingByIdentityCardOrStrudentCode(studentData);
+			StudentInfoVo stuInfoVo=new StudentInfoVo();
+			stuInfoVo.setName(studentData.getName());
+			stuInfoVo.setWasteType(0);
+			stuInfoVo.setUnit(0);
+			int points=studentData.getTotalPoints()-studentData.getUsedPoints()-studentData.getDeductPoints();
+			stuInfoVo.setPoint(points<0?0:points);
+			stuInfoVo.setBind(studentData.getBinding());
+			ResponseMessage<StudentInfoVo> responseMessage = new ResponseMessage<StudentInfoVo>();
+			responseMessage.setData(stuInfoVo);
+			responseMessage.setSuccessMessage("绑定学生信息成功");
+			return JSONObject.toJSONString(responseMessage);
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
+			responseMessage.setData("");
+			responseMessage.setFailedMessage(e.toString());
+			return JSONObject.toJSONString(responseMessage);
+		}
+	}
+	
 }
