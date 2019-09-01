@@ -379,6 +379,9 @@ public class StudentService {
 	public StudentData selectStudentDataByPhone(String phone) {
 		// TODO Auto-generated method stub
 		StudentInform studentInform= studentInformService.selectStudentInformByPhone(phone);
+		if(studentInform==null) {
+			return null;
+		}
 		if(!StringUtils.isEmpty(studentInform.getIdentityCard())) {
 			return studentDataService.selectStudentDataByIdentityCard(studentInform.getIdentityCard());
 		}
