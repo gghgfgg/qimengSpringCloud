@@ -1,0 +1,1111 @@
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20288} created. select * from app
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20288} Parameters : []
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20288} Types : []
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20288} executed. 0.7152 millis. select * from app
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20288, rs-50288} open
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20288, rs-50288} Header: [id, appid, secret, apptype]
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20288, rs-50288} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20288, rs-50288} closed
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20288} closed
+DEBUG http-nio-8074-exec-8 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-8 com.qimeng.main.wechat.WeChatService - {"session_key":"FMUKdS\/1NsfSo6A8XLOUgA==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+DEBUG http-nio-8074-exec-8 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20289} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20289} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20289} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20289} executed. 0.6245 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20289, rs-50289} open
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20289, rs-50289} Header: [id, openid, unionid, nick_name, create_time, update_time]
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20289, rs-50289} Result: [3, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, null, 2019-08-31 09:24:37.0, 2019-08-31 09:24:37.0]
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20289, rs-50289} closed
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20289} closed
+DEBUG http-nio-8074-exec-8 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-8 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20290} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20290} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20290} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20290} executed. 1.0802 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20290, rs-50290} open
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20290, rs-50290} Header: [id, openid, unionid, uuid]
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20290, rs-50290} Result: [1, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, 1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20290, rs-50290} closed
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20290} closed
+DEBUG http-nio-8074-exec-8 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-8 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20291} created. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20291} Parameters : [1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20291} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20291} executed. 0.6512 millis. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20291, rs-50291} open
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20291, rs-50291} Header: [id, uuid, stuinfo]
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20291, rs-50291} Result: [1, 1ddabcc6fa994bddb6665e7099975a3d, [{"unit":0,"bind":1,"wasteType":0,"qrCode":"http://www.qimenghb.com?code=9892fd67a6ee28ea&card=ab6fc4d9dba14edf","name":"黄俊星","active":0,"stuCard":"ab6fc4d9dba14edf","point":0,"stuCode":"9892fd67a6ee28ea"}]]
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20291, rs-50291} closed
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20291} closed
+DEBUG http-nio-8074-exec-8 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-5 com.qimeng.main.WechatLoginController - {"code":"0335W3h10HTwYG1r0cf10VMRg105W3hw"}
+DEBUG http-nio-8074-exec-5 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20292} created. select * from app
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20292} Parameters : []
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20292} Types : []
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20292} executed. 0.9246 millis. select * from app
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20292, rs-50292} open
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20292, rs-50292} Header: [id, appid, secret, apptype]
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20292, rs-50292} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20292, rs-50292} closed
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20292} closed
+DEBUG http-nio-8074-exec-5 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-5 com.qimeng.main.wechat.WeChatService - {"session_key":"FMUKdS\/1NsfSo6A8XLOUgA==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+DEBUG http-nio-8074-exec-5 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20293} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20293} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20293} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20293} executed. 0.703 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20293, rs-50293} open
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20293, rs-50293} Header: [id, openid, unionid, nick_name, create_time, update_time]
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20293, rs-50293} Result: [3, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, null, 2019-08-31 09:24:37.0, 2019-08-31 09:24:37.0]
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20293, rs-50293} closed
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20293} closed
+DEBUG http-nio-8074-exec-5 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-5 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20294} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20294} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20294} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20294} executed. 0.6787 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20294, rs-50294} open
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20294, rs-50294} Header: [id, openid, unionid, uuid]
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20294, rs-50294} Result: [1, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, 1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20294, rs-50294} closed
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20294} closed
+DEBUG http-nio-8074-exec-5 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-5 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20295} created. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20295} Parameters : [1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20295} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20295} executed. 0.5824 millis. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20295, rs-50295} open
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20295, rs-50295} Header: [id, uuid, stuinfo]
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20295, rs-50295} Result: [1, 1ddabcc6fa994bddb6665e7099975a3d, [{"unit":0,"bind":1,"wasteType":0,"qrCode":"http://www.qimenghb.com?code=9892fd67a6ee28ea&card=ab6fc4d9dba14edf","name":"黄俊星","active":0,"stuCard":"ab6fc4d9dba14edf","point":0,"stuCode":"9892fd67a6ee28ea"}]]
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20295, rs-50295} closed
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20295} closed
+DEBUG http-nio-8074-exec-5 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-10 com.qimeng.main.WechatLoginController - {"code":"0434YPRg2KBC0C0d8aTg29mtRg24YPRR"}
+DEBUG http-nio-8074-exec-10 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20296} created. select * from app
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20296} Parameters : []
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20296} Types : []
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20296} executed. 0.8541 millis. select * from app
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20296, rs-50296} open
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20296, rs-50296} Header: [id, appid, secret, apptype]
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20296, rs-50296} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20296, rs-50296} closed
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20296} closed
+DEBUG http-nio-8074-exec-10 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-10 com.qimeng.main.wechat.WeChatService - {"session_key":"Ysowwu\/JllFwFg0eVJyoKQ==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+DEBUG http-nio-8074-exec-10 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20297} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20297} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20297} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20297} executed. 1.0238 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20297, rs-50297} open
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20297, rs-50297} Header: [id, openid, unionid, nick_name, create_time, update_time]
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20297, rs-50297} Result: [3, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, null, 2019-08-31 09:24:37.0, 2019-08-31 09:24:37.0]
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20297, rs-50297} closed
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20297} closed
+DEBUG http-nio-8074-exec-10 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-10 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20298} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20298} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20298} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20298} executed. 0.8625 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20298, rs-50298} open
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20298, rs-50298} Header: [id, openid, unionid, uuid]
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20298, rs-50298} Result: [1, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, 1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20298, rs-50298} closed
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20298} closed
+DEBUG http-nio-8074-exec-10 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-10 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20299} created. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20299} Parameters : [1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20299} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20299} executed. 0.9095 millis. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20299, rs-50299} open
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20299, rs-50299} Header: [id, uuid, stuinfo]
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20299, rs-50299} Result: [1, 1ddabcc6fa994bddb6665e7099975a3d, [{"unit":0,"bind":1,"wasteType":0,"qrCode":"http://www.qimenghb.com?code=9892fd67a6ee28ea&card=ab6fc4d9dba14edf","name":"黄俊星","active":0,"stuCard":"ab6fc4d9dba14edf","point":0,"stuCode":"9892fd67a6ee28ea"}]]
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20299, rs-50299} closed
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20299} closed
+DEBUG http-nio-8074-exec-10 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-2 com.qimeng.main.WechatLoginController - {"code":"043SA5mB1RLtoc0kRcpB1AvZlB1SA5mY"}
+DEBUG http-nio-8074-exec-2 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20300} created. select * from app
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20300} Parameters : []
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20300} Types : []
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20300} executed. 0.7569 millis. select * from app
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20300, rs-50300} open
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20300, rs-50300} Header: [id, appid, secret, apptype]
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20300, rs-50300} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20300, rs-50300} closed
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20300} closed
+DEBUG http-nio-8074-exec-2 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-2 com.qimeng.main.wechat.WeChatService - {"session_key":"Ysowwu\/JllFwFg0eVJyoKQ==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+DEBUG http-nio-8074-exec-2 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20301} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20301} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20301} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20301} executed. 0.6067 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20301, rs-50301} open
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20301, rs-50301} Header: [id, openid, unionid, nick_name, create_time, update_time]
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20301, rs-50301} Result: [3, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, null, 2019-08-31 09:24:37.0, 2019-08-31 09:24:37.0]
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20301, rs-50301} closed
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20301} closed
+DEBUG http-nio-8074-exec-2 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-2 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20302} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20302} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20302} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20302} executed. 0.6718 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20302, rs-50302} open
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20302, rs-50302} Header: [id, openid, unionid, uuid]
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20302, rs-50302} Result: [1, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, 1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20302, rs-50302} closed
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20302} closed
+DEBUG http-nio-8074-exec-2 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-2 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20303} created. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20303} Parameters : [1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20303} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20303} executed. 0.6237 millis. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20303, rs-50303} open
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20303, rs-50303} Header: [id, uuid, stuinfo]
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20303, rs-50303} Result: [1, 1ddabcc6fa994bddb6665e7099975a3d, [{"unit":0,"bind":1,"wasteType":0,"qrCode":"http://www.qimenghb.com?code=9892fd67a6ee28ea&card=ab6fc4d9dba14edf","name":"黄俊星","active":0,"stuCard":"ab6fc4d9dba14edf","point":0,"stuCode":"9892fd67a6ee28ea"}]]
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20303, rs-50303} closed
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20303} closed
+DEBUG http-nio-8074-exec-2 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-4 com.qimeng.main.WechatLoginController - {"code":"023VYmGC05pVJk2qa2GC0cX4GC0VYmGK"}
+DEBUG http-nio-8074-exec-4 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20304} created. select * from app
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20304} Parameters : []
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20304} Types : []
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20304} executed. 0.6938 millis. select * from app
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20304, rs-50304} open
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20304, rs-50304} Header: [id, appid, secret, apptype]
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20304, rs-50304} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20304, rs-50304} closed
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20304} closed
+DEBUG http-nio-8074-exec-4 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-4 com.qimeng.main.wechat.WeChatService - {"session_key":"Ysowwu\/JllFwFg0eVJyoKQ==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+DEBUG http-nio-8074-exec-4 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20305} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20305} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20305} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20305} executed. 0.6231 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20305, rs-50305} open
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20305, rs-50305} Header: [id, openid, unionid, nick_name, create_time, update_time]
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20305, rs-50305} Result: [3, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, null, 2019-08-31 09:24:37.0, 2019-08-31 09:24:37.0]
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20305, rs-50305} closed
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20305} closed
+DEBUG http-nio-8074-exec-4 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-4 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20306} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20306} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20306} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20306} executed. 0.5479 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20306, rs-50306} open
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20306, rs-50306} Header: [id, openid, unionid, uuid]
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20306, rs-50306} Result: [1, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, 1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20306, rs-50306} closed
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20306} closed
+DEBUG http-nio-8074-exec-4 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-4 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20307} created. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20307} Parameters : [1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20307} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20307} executed. 0.5908 millis. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20307, rs-50307} open
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20307, rs-50307} Header: [id, uuid, stuinfo]
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20307, rs-50307} Result: [1, 1ddabcc6fa994bddb6665e7099975a3d, [{"unit":0,"bind":1,"wasteType":0,"qrCode":"http://www.qimenghb.com?code=9892fd67a6ee28ea&card=ab6fc4d9dba14edf","name":"黄俊星","active":0,"stuCard":"ab6fc4d9dba14edf","point":0,"stuCode":"9892fd67a6ee28ea"}]]
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20307, rs-50307} closed
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20307} closed
+DEBUG http-nio-8074-exec-4 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-1 com.qimeng.main.WechatLoginController - {"code":"0231SiJS10QvI513TbFS1DPgJS11SiJR"}
+DEBUG http-nio-8074-exec-1 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-1 druid.sql.Statement - {conn-10002, pstmt-20308} created. select * from app
+DEBUG http-nio-8074-exec-1 druid.sql.Statement - {conn-10002, pstmt-20308} Parameters : []
+DEBUG http-nio-8074-exec-1 druid.sql.Statement - {conn-10002, pstmt-20308} Types : []
+DEBUG http-nio-8074-exec-1 druid.sql.Statement - {conn-10002, pstmt-20308} executed. 0.6146 millis. select * from app
+DEBUG http-nio-8074-exec-1 druid.sql.ResultSet - {conn-10002, pstmt-20308, rs-50308} open
+DEBUG http-nio-8074-exec-1 druid.sql.ResultSet - {conn-10002, pstmt-20308, rs-50308} Header: [id, appid, secret, apptype]
+DEBUG http-nio-8074-exec-1 druid.sql.ResultSet - {conn-10002, pstmt-20308, rs-50308} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+DEBUG http-nio-8074-exec-1 druid.sql.ResultSet - {conn-10002, pstmt-20308, rs-50308} closed
+DEBUG http-nio-8074-exec-1 druid.sql.Statement - {conn-10002, pstmt-20308} closed
+DEBUG http-nio-8074-exec-1 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-1 com.qimeng.main.wechat.WeChatService - {"session_key":"Ysowwu\/JllFwFg0eVJyoKQ==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+DEBUG http-nio-8074-exec-1 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-1 druid.sql.Statement - {conn-10002, pstmt-20309} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-1 druid.sql.Statement - {conn-10002, pstmt-20309} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-1 druid.sql.Statement - {conn-10002, pstmt-20309} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-1 druid.sql.Statement - {conn-10002, pstmt-20309} executed. 0.6582 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-1 druid.sql.ResultSet - {conn-10002, pstmt-20309, rs-50309} open
+DEBUG http-nio-8074-exec-1 druid.sql.ResultSet - {conn-10002, pstmt-20309, rs-50309} Header: [id, openid, unionid, nick_name, create_time, update_time]
+DEBUG http-nio-8074-exec-1 druid.sql.ResultSet - {conn-10002, pstmt-20309, rs-50309} Result: [3, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, null, 2019-08-31 09:24:37.0, 2019-08-31 09:24:37.0]
+DEBUG http-nio-8074-exec-1 druid.sql.ResultSet - {conn-10002, pstmt-20309, rs-50309} closed
+DEBUG http-nio-8074-exec-1 druid.sql.Statement - {conn-10002, pstmt-20309} closed
+DEBUG http-nio-8074-exec-1 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-1 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-1 druid.sql.Statement - {conn-10002, pstmt-20310} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-1 druid.sql.Statement - {conn-10002, pstmt-20310} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-1 druid.sql.Statement - {conn-10002, pstmt-20310} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-1 druid.sql.Statement - {conn-10002, pstmt-20310} executed. 1.0221 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-1 druid.sql.ResultSet - {conn-10002, pstmt-20310, rs-50310} open
+DEBUG http-nio-8074-exec-1 druid.sql.ResultSet - {conn-10002, pstmt-20310, rs-50310} Header: [id, openid, unionid, uuid]
+DEBUG http-nio-8074-exec-1 druid.sql.ResultSet - {conn-10002, pstmt-20310, rs-50310} Result: [1, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, 1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-1 druid.sql.ResultSet - {conn-10002, pstmt-20310, rs-50310} closed
+DEBUG http-nio-8074-exec-1 druid.sql.Statement - {conn-10002, pstmt-20310} closed
+DEBUG http-nio-8074-exec-1 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-1 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-1 druid.sql.Statement - {conn-10002, pstmt-20311} created. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-1 druid.sql.Statement - {conn-10002, pstmt-20311} Parameters : [1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-1 druid.sql.Statement - {conn-10002, pstmt-20311} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-1 druid.sql.Statement - {conn-10002, pstmt-20311} executed. 0.5317 millis. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-1 druid.sql.ResultSet - {conn-10002, pstmt-20311, rs-50311} open
+DEBUG http-nio-8074-exec-1 druid.sql.ResultSet - {conn-10002, pstmt-20311, rs-50311} Header: [id, uuid, stuinfo]
+DEBUG http-nio-8074-exec-1 druid.sql.ResultSet - {conn-10002, pstmt-20311, rs-50311} Result: [1, 1ddabcc6fa994bddb6665e7099975a3d, [{"unit":0,"bind":1,"wasteType":0,"qrCode":"http://www.qimenghb.com?code=9892fd67a6ee28ea&card=ab6fc4d9dba14edf","name":"黄俊星","active":0,"stuCard":"ab6fc4d9dba14edf","point":0,"stuCode":"9892fd67a6ee28ea"}]]
+DEBUG http-nio-8074-exec-1 druid.sql.ResultSet - {conn-10002, pstmt-20311, rs-50311} closed
+DEBUG http-nio-8074-exec-1 druid.sql.Statement - {conn-10002, pstmt-20311} closed
+DEBUG http-nio-8074-exec-1 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-3 com.qimeng.main.WechatLoginController - {"code":"043RGeBI01fZFe2y4xBI0SPiBI0RGeBi"}
+DEBUG http-nio-8074-exec-3 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20312} created. select * from app
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20312} Parameters : []
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20312} Types : []
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20312} executed. 0.5634 millis. select * from app
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20312, rs-50312} open
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20312, rs-50312} Header: [id, appid, secret, apptype]
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20312, rs-50312} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20312, rs-50312} closed
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20312} closed
+DEBUG http-nio-8074-exec-3 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-3 com.qimeng.main.wechat.WeChatService - {"session_key":"Ysowwu\/JllFwFg0eVJyoKQ==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+DEBUG http-nio-8074-exec-3 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20313} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20313} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20313} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20313} executed. 0.7096 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20313, rs-50313} open
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20313, rs-50313} Header: [id, openid, unionid, nick_name, create_time, update_time]
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20313, rs-50313} Result: [3, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, null, 2019-08-31 09:24:37.0, 2019-08-31 09:24:37.0]
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20313, rs-50313} closed
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20313} closed
+DEBUG http-nio-8074-exec-3 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-3 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20314} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20314} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20314} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20314} executed. 0.6802 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20314, rs-50314} open
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20314, rs-50314} Header: [id, openid, unionid, uuid]
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20314, rs-50314} Result: [1, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, 1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20314, rs-50314} closed
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20314} closed
+DEBUG http-nio-8074-exec-3 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-3 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20315} created. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20315} Parameters : [1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20315} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20315} executed. 0.5521 millis. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20315, rs-50315} open
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20315, rs-50315} Header: [id, uuid, stuinfo]
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20315, rs-50315} Result: [1, 1ddabcc6fa994bddb6665e7099975a3d, [{"unit":0,"bind":1,"wasteType":0,"qrCode":"http://www.qimenghb.com?code=9892fd67a6ee28ea&card=ab6fc4d9dba14edf","name":"黄俊星","active":0,"stuCard":"ab6fc4d9dba14edf","point":0,"stuCode":"9892fd67a6ee28ea"}]]
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20315, rs-50315} closed
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20315} closed
+DEBUG http-nio-8074-exec-3 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-6 com.qimeng.main.WechatLoginController - {"code":"023995jJ1wYvr40OzqkJ1aO5jJ1995jr"}
+DEBUG http-nio-8074-exec-6 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20316} created. select * from app
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20316} Parameters : []
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20316} Types : []
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20316} executed. 0.9765 millis. select * from app
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20316, rs-50316} open
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20316, rs-50316} Header: [id, appid, secret, apptype]
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20316, rs-50316} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20316, rs-50316} closed
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20316} closed
+DEBUG http-nio-8074-exec-6 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-6 com.qimeng.main.wechat.WeChatService - {"session_key":"cwQSea1LCjfg0zeS64sk+Q==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+DEBUG http-nio-8074-exec-6 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20317} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20317} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20317} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20317} executed. 1.0849 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20317, rs-50317} open
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20317, rs-50317} Header: [id, openid, unionid, nick_name, create_time, update_time]
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20317, rs-50317} Result: [3, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, null, 2019-08-31 09:24:37.0, 2019-08-31 09:24:37.0]
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20317, rs-50317} closed
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20317} closed
+DEBUG http-nio-8074-exec-6 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-6 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20318} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20318} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20318} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20318} executed. 0.6368 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20318, rs-50318} open
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20318, rs-50318} Header: [id, openid, unionid, uuid]
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20318, rs-50318} Result: [1, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, 1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20318, rs-50318} closed
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20318} closed
+DEBUG http-nio-8074-exec-6 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-6 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20319} created. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20319} Parameters : [1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20319} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20319} executed. 0.5592 millis. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20319, rs-50319} open
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20319, rs-50319} Header: [id, uuid, stuinfo]
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20319, rs-50319} Result: [1, 1ddabcc6fa994bddb6665e7099975a3d, [{"unit":0,"bind":1,"wasteType":0,"qrCode":"http://www.qimenghb.com?code=9892fd67a6ee28ea&card=ab6fc4d9dba14edf","name":"黄俊星","active":0,"stuCard":"ab6fc4d9dba14edf","point":0,"stuCode":"9892fd67a6ee28ea"}]]
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20319, rs-50319} closed
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20319} closed
+DEBUG http-nio-8074-exec-6 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-8 com.qimeng.main.WechatLoginController - {"code":"023pJXCU0XJmqZ1KrgzU0eoOCU0pJXC1"}
+DEBUG http-nio-8074-exec-8 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20320} created. select * from app
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20320} Parameters : []
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20320} Types : []
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20320} executed. 0.737 millis. select * from app
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20320, rs-50320} open
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20320, rs-50320} Header: [id, appid, secret, apptype]
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20320, rs-50320} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20320, rs-50320} closed
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20320} closed
+DEBUG http-nio-8074-exec-8 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-8 com.qimeng.main.wechat.WeChatService - {"session_key":"+om5YMD2TltZmESG3pqBNg==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+DEBUG http-nio-8074-exec-8 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20321} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20321} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20321} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20321} executed. 0.7287 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20321, rs-50321} open
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20321, rs-50321} Header: [id, openid, unionid, nick_name, create_time, update_time]
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20321, rs-50321} Result: [3, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, null, 2019-08-31 09:24:37.0, 2019-08-31 09:24:37.0]
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20321, rs-50321} closed
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20321} closed
+DEBUG http-nio-8074-exec-8 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-8 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20322} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20322} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20322} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20322} executed. 0.7141 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20322, rs-50322} open
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20322, rs-50322} Header: [id, openid, unionid, uuid]
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20322, rs-50322} Result: [1, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, 1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20322, rs-50322} closed
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20322} closed
+DEBUG http-nio-8074-exec-8 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-8 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20323} created. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20323} Parameters : [1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20323} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20323} executed. 0.6874 millis. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20323, rs-50323} open
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20323, rs-50323} Header: [id, uuid, stuinfo]
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20323, rs-50323} Result: [1, 1ddabcc6fa994bddb6665e7099975a3d, [{"unit":0,"bind":1,"wasteType":0,"qrCode":"http://www.qimenghb.com?code=9892fd67a6ee28ea&card=ab6fc4d9dba14edf","name":"黄俊星","active":0,"stuCard":"ab6fc4d9dba14edf","point":0,"stuCode":"9892fd67a6ee28ea"}]]
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20323, rs-50323} closed
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20323} closed
+DEBUG http-nio-8074-exec-8 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-5 com.qimeng.main.WechatLoginController - {"code":"0430wCPn1wlM3q0xiTPn1BSUPn10wCPn"}
+DEBUG http-nio-8074-exec-5 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20324} created. select * from app
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20324} Parameters : []
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20324} Types : []
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20324} executed. 0.7621 millis. select * from app
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20324, rs-50324} open
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20324, rs-50324} Header: [id, appid, secret, apptype]
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20324, rs-50324} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20324, rs-50324} closed
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20324} closed
+DEBUG http-nio-8074-exec-5 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-5 com.qimeng.main.wechat.WeChatService - {"session_key":"+om5YMD2TltZmESG3pqBNg==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+DEBUG http-nio-8074-exec-5 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20325} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20325} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20325} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20325} executed. 1.2242 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20325, rs-50325} open
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20325, rs-50325} Header: [id, openid, unionid, nick_name, create_time, update_time]
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20325, rs-50325} Result: [3, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, null, 2019-08-31 09:24:37.0, 2019-08-31 09:24:37.0]
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20325, rs-50325} closed
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20325} closed
+DEBUG http-nio-8074-exec-5 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-5 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20326} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20326} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20326} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20326} executed. 0.9146 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20326, rs-50326} open
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20326, rs-50326} Header: [id, openid, unionid, uuid]
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20326, rs-50326} Result: [1, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, 1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20326, rs-50326} closed
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20326} closed
+DEBUG http-nio-8074-exec-5 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-5 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20327} created. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20327} Parameters : [1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20327} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20327} executed. 0.6061 millis. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20327, rs-50327} open
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20327, rs-50327} Header: [id, uuid, stuinfo]
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20327, rs-50327} Result: [1, 1ddabcc6fa994bddb6665e7099975a3d, [{"unit":0,"bind":1,"wasteType":0,"qrCode":"http://www.qimenghb.com?code=9892fd67a6ee28ea&card=ab6fc4d9dba14edf","name":"黄俊星","active":0,"stuCard":"ab6fc4d9dba14edf","point":0,"stuCode":"9892fd67a6ee28ea"}]]
+DEBUG http-nio-8074-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20327, rs-50327} closed
+DEBUG http-nio-8074-exec-5 druid.sql.Statement - {conn-10002, pstmt-20327} closed
+DEBUG http-nio-8074-exec-5 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-9 com.qimeng.main.WechatLoginController - {"code":"0339dt9d0nY6MA1sFd8d0UTm9d09dt9d"}
+DEBUG http-nio-8074-exec-9 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20328} created. select * from app
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20328} Parameters : []
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20328} Types : []
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20328} executed. 0.6711 millis. select * from app
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20328, rs-50328} open
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20328, rs-50328} Header: [id, appid, secret, apptype]
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20328, rs-50328} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20328, rs-50328} closed
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20328} closed
+DEBUG http-nio-8074-exec-9 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-9 com.qimeng.main.wechat.WeChatService - {"session_key":"+om5YMD2TltZmESG3pqBNg==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+DEBUG http-nio-8074-exec-9 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20329} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20329} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20329} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20329} executed. 0.5725 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20329, rs-50329} open
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20329, rs-50329} Header: [id, openid, unionid, nick_name, create_time, update_time]
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20329, rs-50329} Result: [3, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, null, 2019-08-31 09:24:37.0, 2019-08-31 09:24:37.0]
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20329, rs-50329} closed
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20329} closed
+DEBUG http-nio-8074-exec-9 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-9 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20330} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20330} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20330} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20330} executed. 0.6514 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20330, rs-50330} open
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20330, rs-50330} Header: [id, openid, unionid, uuid]
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20330, rs-50330} Result: [1, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, 1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20330, rs-50330} closed
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20330} closed
+DEBUG http-nio-8074-exec-9 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-9 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20331} created. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20331} Parameters : [1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20331} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20331} executed. 0.5623 millis. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20331, rs-50331} open
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20331, rs-50331} Header: [id, uuid, stuinfo]
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20331, rs-50331} Result: [1, 1ddabcc6fa994bddb6665e7099975a3d, [{"unit":0,"bind":1,"wasteType":0,"qrCode":"http://www.qimenghb.com?code=9892fd67a6ee28ea&card=ab6fc4d9dba14edf","name":"黄俊星","active":0,"stuCard":"ab6fc4d9dba14edf","point":0,"stuCode":"9892fd67a6ee28ea"}]]
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20331, rs-50331} closed
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20331} closed
+DEBUG http-nio-8074-exec-9 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-10 com.qimeng.main.WechatLoginController - {"code":"033qKuaB0kCNSi2P0PaB06ipaB0qKuaW"}
+DEBUG http-nio-8074-exec-10 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20332} created. select * from app
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20332} Parameters : []
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20332} Types : []
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20332} executed. 0.7398 millis. select * from app
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20332, rs-50332} open
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20332, rs-50332} Header: [id, appid, secret, apptype]
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20332, rs-50332} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20332, rs-50332} closed
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20332} closed
+DEBUG http-nio-8074-exec-10 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-10 com.qimeng.main.wechat.WeChatService - {"session_key":"+om5YMD2TltZmESG3pqBNg==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+DEBUG http-nio-8074-exec-10 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20333} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20333} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20333} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20333} executed. 0.6066 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20333, rs-50333} open
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20333, rs-50333} Header: [id, openid, unionid, nick_name, create_time, update_time]
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20333, rs-50333} Result: [3, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, null, 2019-08-31 09:24:37.0, 2019-08-31 09:24:37.0]
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20333, rs-50333} closed
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20333} closed
+DEBUG http-nio-8074-exec-10 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-10 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20334} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20334} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20334} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20334} executed. 0.7884 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20334, rs-50334} open
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20334, rs-50334} Header: [id, openid, unionid, uuid]
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20334, rs-50334} Result: [1, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, 1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20334, rs-50334} closed
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20334} closed
+DEBUG http-nio-8074-exec-10 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-10 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20335} created. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20335} Parameters : [1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20335} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20335} executed. 0.5816 millis. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20335, rs-50335} open
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20335, rs-50335} Header: [id, uuid, stuinfo]
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20335, rs-50335} Result: [1, 1ddabcc6fa994bddb6665e7099975a3d, [{"unit":0,"bind":1,"wasteType":0,"qrCode":"http://www.qimenghb.com?code=9892fd67a6ee28ea&card=ab6fc4d9dba14edf","name":"黄俊星","active":0,"stuCard":"ab6fc4d9dba14edf","point":0,"stuCode":"9892fd67a6ee28ea"}]]
+DEBUG http-nio-8074-exec-10 druid.sql.ResultSet - {conn-10002, pstmt-20335, rs-50335} closed
+DEBUG http-nio-8074-exec-10 druid.sql.Statement - {conn-10002, pstmt-20335} closed
+DEBUG http-nio-8074-exec-10 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-2 com.qimeng.main.WechatLoginController - {"code":"033ZgFp023QcBT0H5Os02jeCp02ZgFp6"}
+DEBUG http-nio-8074-exec-2 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20336} created. select * from app
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20336} Parameters : []
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20336} Types : []
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20336} executed. 0.7408 millis. select * from app
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20336, rs-50336} open
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20336, rs-50336} Header: [id, appid, secret, apptype]
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20336, rs-50336} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20336, rs-50336} closed
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20336} closed
+DEBUG http-nio-8074-exec-2 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-2 com.qimeng.main.wechat.WeChatService - {"session_key":"+om5YMD2TltZmESG3pqBNg==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+DEBUG http-nio-8074-exec-2 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20337} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20337} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20337} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20337} executed. 0.744 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20337, rs-50337} open
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20337, rs-50337} Header: [id, openid, unionid, nick_name, create_time, update_time]
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20337, rs-50337} Result: [3, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, null, 2019-08-31 09:24:37.0, 2019-08-31 09:24:37.0]
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20337, rs-50337} closed
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20337} closed
+DEBUG http-nio-8074-exec-2 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-2 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20338} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20338} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20338} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20338} executed. 0.7484 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20338, rs-50338} open
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20338, rs-50338} Header: [id, openid, unionid, uuid]
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20338, rs-50338} Result: [1, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, 1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20338, rs-50338} closed
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20338} closed
+DEBUG http-nio-8074-exec-2 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-2 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20339} created. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20339} Parameters : [1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20339} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20339} executed. 0.7164 millis. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20339, rs-50339} open
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20339, rs-50339} Header: [id, uuid, stuinfo]
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20339, rs-50339} Result: [1, 1ddabcc6fa994bddb6665e7099975a3d, [{"unit":0,"bind":1,"wasteType":0,"qrCode":"http://www.qimenghb.com?code=9892fd67a6ee28ea&card=ab6fc4d9dba14edf","name":"黄俊星","active":0,"stuCard":"ab6fc4d9dba14edf","point":0,"stuCode":"9892fd67a6ee28ea"}]]
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20339, rs-50339} closed
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20339} closed
+DEBUG http-nio-8074-exec-2 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-4 com.qimeng.main.WechatLoginController - {"code":"043V8ndD1vN8T40xQ1eD1GhwdD1V8ndX"}
+DEBUG http-nio-8074-exec-4 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20340} created. select * from app
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20340} Parameters : []
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20340} Types : []
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20340} executed. 0.9404 millis. select * from app
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20340, rs-50340} open
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20340, rs-50340} Header: [id, appid, secret, apptype]
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20340, rs-50340} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20340, rs-50340} closed
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20340} closed
+DEBUG http-nio-8074-exec-4 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-4 com.qimeng.main.wechat.WeChatService - {"session_key":"+om5YMD2TltZmESG3pqBNg==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+DEBUG http-nio-8074-exec-4 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20341} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20341} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20341} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20341} executed. 0.8389 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20341, rs-50341} open
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20341, rs-50341} Header: [id, openid, unionid, nick_name, create_time, update_time]
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20341, rs-50341} Result: [3, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, null, 2019-08-31 09:24:37.0, 2019-08-31 09:24:37.0]
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20341, rs-50341} closed
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20341} closed
+DEBUG http-nio-8074-exec-4 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-4 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20342} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20342} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20342} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20342} executed. 0.6641 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20342, rs-50342} open
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20342, rs-50342} Header: [id, openid, unionid, uuid]
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20342, rs-50342} Result: [1, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, 1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20342, rs-50342} closed
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20342} closed
+DEBUG http-nio-8074-exec-4 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-4 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20343} created. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20343} Parameters : [1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20343} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20343} executed. 0.5543 millis. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20343, rs-50343} open
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20343, rs-50343} Header: [id, uuid, stuinfo]
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20343, rs-50343} Result: [1, 1ddabcc6fa994bddb6665e7099975a3d, [{"unit":0,"bind":1,"wasteType":0,"qrCode":"http://www.qimenghb.com?code=9892fd67a6ee28ea&card=ab6fc4d9dba14edf","name":"黄俊星","active":0,"stuCard":"ab6fc4d9dba14edf","point":0,"stuCode":"9892fd67a6ee28ea"}]]
+DEBUG http-nio-8074-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20343, rs-50343} closed
+DEBUG http-nio-8074-exec-4 druid.sql.Statement - {conn-10002, pstmt-20343} closed
+DEBUG http-nio-8074-exec-4 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-3 com.qimeng.main.WechatLoginController - {"code":"043UwVhE0van8j2xKCiE0hXwhE0UwVhu"}
+DEBUG http-nio-8074-exec-3 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20344} created. select * from app
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20344} Parameters : []
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20344} Types : []
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20344} executed. 1.2031 millis. select * from app
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20344, rs-50344} open
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20344, rs-50344} Header: [id, appid, secret, apptype]
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20344, rs-50344} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20344, rs-50344} closed
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20344} closed
+DEBUG http-nio-8074-exec-3 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-3 com.qimeng.main.wechat.WeChatService - {"session_key":"a216Eyr8fV+bXV0PF1s6\/Q==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+DEBUG http-nio-8074-exec-3 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20345} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20345} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20345} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20345} executed. 1.1474 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20345, rs-50345} open
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20345, rs-50345} Header: [id, openid, unionid, nick_name, create_time, update_time]
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20345, rs-50345} Result: [3, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, null, 2019-08-31 09:24:37.0, 2019-08-31 09:24:37.0]
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20345, rs-50345} closed
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20345} closed
+DEBUG http-nio-8074-exec-3 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-3 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20346} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20346} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20346} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20346} executed. 0.7897 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20346, rs-50346} open
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20346, rs-50346} Header: [id, openid, unionid, uuid]
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20346, rs-50346} Result: [1, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, 1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20346, rs-50346} closed
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20346} closed
+DEBUG http-nio-8074-exec-3 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-3 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20347} created. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20347} Parameters : [1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20347} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20347} executed. 0.884 millis. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20347, rs-50347} open
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20347, rs-50347} Header: [id, uuid, stuinfo]
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20347, rs-50347} Result: [1, 1ddabcc6fa994bddb6665e7099975a3d, [{"unit":0,"bind":1,"wasteType":0,"qrCode":"http://www.qimenghb.com?code=9892fd67a6ee28ea&card=ab6fc4d9dba14edf","name":"黄俊星","active":0,"stuCard":"ab6fc4d9dba14edf","point":0,"stuCode":"9892fd67a6ee28ea"}]]
+DEBUG http-nio-8074-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20347, rs-50347} closed
+DEBUG http-nio-8074-exec-3 druid.sql.Statement - {conn-10002, pstmt-20347} closed
+DEBUG http-nio-8074-exec-3 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-6 com.qimeng.main.WechatLoginController - {"code":"033qw37a2OerlN0Zix4a2uNk7a2qw37Q"}
+DEBUG http-nio-8074-exec-6 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20348} created. select * from app
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20348} Parameters : []
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20348} Types : []
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20348} executed. 0.6331 millis. select * from app
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20348, rs-50348} open
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20348, rs-50348} Header: [id, appid, secret, apptype]
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20348, rs-50348} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20348, rs-50348} closed
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20348} closed
+DEBUG http-nio-8074-exec-6 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-6 com.qimeng.main.wechat.WeChatService - {"session_key":"a216Eyr8fV+bXV0PF1s6\/Q==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+DEBUG http-nio-8074-exec-6 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20349} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20349} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20349} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20349} executed. 0.9314 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20349, rs-50349} open
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20349, rs-50349} Header: [id, openid, unionid, nick_name, create_time, update_time]
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20349, rs-50349} Result: [3, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, null, 2019-08-31 09:24:37.0, 2019-08-31 09:24:37.0]
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20349, rs-50349} closed
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20349} closed
+DEBUG http-nio-8074-exec-6 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-6 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20350} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20350} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20350} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20350} executed. 0.6151 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20350, rs-50350} open
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20350, rs-50350} Header: [id, openid, unionid, uuid]
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20350, rs-50350} Result: [1, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, 1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20350, rs-50350} closed
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20350} closed
+DEBUG http-nio-8074-exec-6 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-6 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20351} created. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20351} Parameters : [1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20351} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20351} executed. 0.841 millis. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20351, rs-50351} open
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20351, rs-50351} Header: [id, uuid, stuinfo]
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20351, rs-50351} Result: [1, 1ddabcc6fa994bddb6665e7099975a3d, [{"unit":0,"bind":1,"wasteType":0,"qrCode":"http://www.qimenghb.com?code=9892fd67a6ee28ea&card=ab6fc4d9dba14edf","name":"黄俊星","active":0,"stuCard":"ab6fc4d9dba14edf","point":0,"stuCode":"9892fd67a6ee28ea"}]]
+DEBUG http-nio-8074-exec-6 druid.sql.ResultSet - {conn-10002, pstmt-20351, rs-50351} closed
+DEBUG http-nio-8074-exec-6 druid.sql.Statement - {conn-10002, pstmt-20351} closed
+DEBUG http-nio-8074-exec-6 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-7 com.qimeng.main.WechatLoginController - {"code":"033v4V062I4HoS0ZWu062FU8162v4V0D"}
+DEBUG http-nio-8074-exec-7 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-7 druid.sql.Statement - {conn-10002, pstmt-20352} created. select * from app
+DEBUG http-nio-8074-exec-7 druid.sql.Statement - {conn-10002, pstmt-20352} Parameters : []
+DEBUG http-nio-8074-exec-7 druid.sql.Statement - {conn-10002, pstmt-20352} Types : []
+DEBUG http-nio-8074-exec-7 druid.sql.Statement - {conn-10002, pstmt-20352} executed. 0.6515 millis. select * from app
+DEBUG http-nio-8074-exec-7 druid.sql.ResultSet - {conn-10002, pstmt-20352, rs-50352} open
+DEBUG http-nio-8074-exec-7 druid.sql.ResultSet - {conn-10002, pstmt-20352, rs-50352} Header: [id, appid, secret, apptype]
+DEBUG http-nio-8074-exec-7 druid.sql.ResultSet - {conn-10002, pstmt-20352, rs-50352} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+DEBUG http-nio-8074-exec-7 druid.sql.ResultSet - {conn-10002, pstmt-20352, rs-50352} closed
+DEBUG http-nio-8074-exec-7 druid.sql.Statement - {conn-10002, pstmt-20352} closed
+DEBUG http-nio-8074-exec-7 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-7 com.qimeng.main.wechat.WeChatService - {"session_key":"a216Eyr8fV+bXV0PF1s6\/Q==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+DEBUG http-nio-8074-exec-7 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-7 druid.sql.Statement - {conn-10002, pstmt-20353} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-7 druid.sql.Statement - {conn-10002, pstmt-20353} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-7 druid.sql.Statement - {conn-10002, pstmt-20353} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-7 druid.sql.Statement - {conn-10002, pstmt-20353} executed. 0.9251 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-7 druid.sql.ResultSet - {conn-10002, pstmt-20353, rs-50353} open
+DEBUG http-nio-8074-exec-7 druid.sql.ResultSet - {conn-10002, pstmt-20353, rs-50353} Header: [id, openid, unionid, nick_name, create_time, update_time]
+DEBUG http-nio-8074-exec-7 druid.sql.ResultSet - {conn-10002, pstmt-20353, rs-50353} Result: [3, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, null, 2019-08-31 09:24:37.0, 2019-08-31 09:24:37.0]
+DEBUG http-nio-8074-exec-7 druid.sql.ResultSet - {conn-10002, pstmt-20353, rs-50353} closed
+DEBUG http-nio-8074-exec-7 druid.sql.Statement - {conn-10002, pstmt-20353} closed
+DEBUG http-nio-8074-exec-7 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-7 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-7 druid.sql.Statement - {conn-10002, pstmt-20354} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-7 druid.sql.Statement - {conn-10002, pstmt-20354} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-7 druid.sql.Statement - {conn-10002, pstmt-20354} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-7 druid.sql.Statement - {conn-10002, pstmt-20354} executed. 0.5574 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-7 druid.sql.ResultSet - {conn-10002, pstmt-20354, rs-50354} open
+DEBUG http-nio-8074-exec-7 druid.sql.ResultSet - {conn-10002, pstmt-20354, rs-50354} Header: [id, openid, unionid, uuid]
+DEBUG http-nio-8074-exec-7 druid.sql.ResultSet - {conn-10002, pstmt-20354, rs-50354} Result: [1, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, 1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-7 druid.sql.ResultSet - {conn-10002, pstmt-20354, rs-50354} closed
+DEBUG http-nio-8074-exec-7 druid.sql.Statement - {conn-10002, pstmt-20354} closed
+DEBUG http-nio-8074-exec-7 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-7 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-7 druid.sql.Statement - {conn-10002, pstmt-20355} created. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-7 druid.sql.Statement - {conn-10002, pstmt-20355} Parameters : [1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-7 druid.sql.Statement - {conn-10002, pstmt-20355} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-7 druid.sql.Statement - {conn-10002, pstmt-20355} executed. 0.478 millis. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-7 druid.sql.ResultSet - {conn-10002, pstmt-20355, rs-50355} open
+DEBUG http-nio-8074-exec-7 druid.sql.ResultSet - {conn-10002, pstmt-20355, rs-50355} Header: [id, uuid, stuinfo]
+DEBUG http-nio-8074-exec-7 druid.sql.ResultSet - {conn-10002, pstmt-20355, rs-50355} Result: [1, 1ddabcc6fa994bddb6665e7099975a3d, [{"unit":0,"bind":1,"wasteType":0,"qrCode":"http://www.qimenghb.com?code=9892fd67a6ee28ea&card=ab6fc4d9dba14edf","name":"黄俊星","active":0,"stuCard":"ab6fc4d9dba14edf","point":0,"stuCode":"9892fd67a6ee28ea"}]]
+DEBUG http-nio-8074-exec-7 druid.sql.ResultSet - {conn-10002, pstmt-20355, rs-50355} closed
+DEBUG http-nio-8074-exec-7 druid.sql.Statement - {conn-10002, pstmt-20355} closed
+DEBUG http-nio-8074-exec-7 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-8 com.qimeng.main.WechatLoginController - {"code":"0336FKRH14xRn00PK4RH1GTrRH16FKRi"}
+DEBUG http-nio-8074-exec-8 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20356} created. select * from app
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20356} Parameters : []
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20356} Types : []
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20356} executed. 0.6457 millis. select * from app
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20356, rs-50356} open
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20356, rs-50356} Header: [id, appid, secret, apptype]
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20356, rs-50356} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20356, rs-50356} closed
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20356} closed
+DEBUG http-nio-8074-exec-8 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-8 com.qimeng.main.wechat.WeChatService - {"session_key":"a216Eyr8fV+bXV0PF1s6\/Q==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+DEBUG http-nio-8074-exec-8 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20357} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20357} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20357} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20357} executed. 0.8026 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20357, rs-50357} open
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20357, rs-50357} Header: [id, openid, unionid, nick_name, create_time, update_time]
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20357, rs-50357} Result: [3, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, null, 2019-08-31 09:24:37.0, 2019-08-31 09:24:37.0]
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20357, rs-50357} closed
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20357} closed
+DEBUG http-nio-8074-exec-8 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-8 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20358} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20358} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20358} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20358} executed. 0.6549 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20358, rs-50358} open
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20358, rs-50358} Header: [id, openid, unionid, uuid]
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20358, rs-50358} Result: [1, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, 1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20358, rs-50358} closed
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20358} closed
+DEBUG http-nio-8074-exec-8 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-8 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20359} created. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20359} Parameters : [1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20359} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20359} executed. 0.5474 millis. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20359, rs-50359} open
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20359, rs-50359} Header: [id, uuid, stuinfo]
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20359, rs-50359} Result: [1, 1ddabcc6fa994bddb6665e7099975a3d, [{"unit":0,"bind":1,"wasteType":0,"qrCode":"http://www.qimenghb.com?code=9892fd67a6ee28ea&card=ab6fc4d9dba14edf","name":"黄俊星","active":0,"stuCard":"ab6fc4d9dba14edf","point":0,"stuCode":"9892fd67a6ee28ea"}]]
+DEBUG http-nio-8074-exec-8 druid.sql.ResultSet - {conn-10002, pstmt-20359, rs-50359} closed
+DEBUG http-nio-8074-exec-8 druid.sql.Statement - {conn-10002, pstmt-20359} closed
+DEBUG http-nio-8074-exec-8 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-9 com.qimeng.main.WechatLoginController - {"code":"023opR391SvLwP1sJT491Ku8491opR3f"}
+DEBUG http-nio-8074-exec-9 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20360} created. select * from app
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20360} Parameters : []
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20360} Types : []
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20360} executed. 0.7016 millis. select * from app
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20360, rs-50360} open
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20360, rs-50360} Header: [id, appid, secret, apptype]
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20360, rs-50360} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20360, rs-50360} closed
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20360} closed
+DEBUG http-nio-8074-exec-9 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-9 com.qimeng.main.wechat.WeChatService - {"session_key":"MMd5TJNVuDkY2ellhA5p0g==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+DEBUG http-nio-8074-exec-9 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20361} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20361} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20361} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20361} executed. 0.6692 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20361, rs-50361} open
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20361, rs-50361} Header: [id, openid, unionid, nick_name, create_time, update_time]
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20361, rs-50361} Result: [3, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, null, 2019-08-31 09:24:37.0, 2019-08-31 09:24:37.0]
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20361, rs-50361} closed
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20361} closed
+DEBUG http-nio-8074-exec-9 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-9 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20362} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20362} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20362} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20362} executed. 0.6835 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20362, rs-50362} open
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20362, rs-50362} Header: [id, openid, unionid, uuid]
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20362, rs-50362} Result: [1, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, 1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20362, rs-50362} closed
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20362} closed
+DEBUG http-nio-8074-exec-9 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-9 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20363} created. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20363} Parameters : [1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20363} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20363} executed. 0.5711 millis. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20363, rs-50363} open
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20363, rs-50363} Header: [id, uuid, stuinfo]
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20363, rs-50363} Result: [1, 1ddabcc6fa994bddb6665e7099975a3d, [{"unit":0,"bind":1,"wasteType":0,"qrCode":"http://www.qimenghb.com?code=9892fd67a6ee28ea&card=ab6fc4d9dba14edf","name":"黄俊星","active":0,"stuCard":"ab6fc4d9dba14edf","point":0,"stuCode":"9892fd67a6ee28ea"}]]
+DEBUG http-nio-8074-exec-9 druid.sql.ResultSet - {conn-10002, pstmt-20363, rs-50363} closed
+DEBUG http-nio-8074-exec-9 druid.sql.Statement - {conn-10002, pstmt-20363} closed
+DEBUG http-nio-8074-exec-9 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-2 com.qimeng.main.WechatLoginController - {"code":"043lTAG52h3rJR0g8mF52ePDG52lTAG9"}
+DEBUG http-nio-8074-exec-2 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20364} created. select * from app
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20364} Parameters : []
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20364} Types : []
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20364} executed. 0.7296 millis. select * from app
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20364, rs-50364} open
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20364, rs-50364} Header: [id, appid, secret, apptype]
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20364, rs-50364} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20364, rs-50364} closed
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20364} closed

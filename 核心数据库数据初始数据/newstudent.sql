@@ -163,7 +163,7 @@ CREATE TABLE `kernel_school_inform` (
   `postal_code` char(6) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
   `contacts` varchar(255) DEFAULT NULL,
-  `active` tinyint(1) DEFAULT NULL,
+  `active` tinyint(1) unsigned zerofill NOT NULL,
   `create_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -272,9 +272,11 @@ CREATE TABLE `kernel_student_inform` (
   `family_residence` varchar(255) DEFAULT NULL,
   `family_census_register` varchar(255) DEFAULT NULL,
   `family_phone` varchar(50) DEFAULT NULL,
+  `teacher_phone` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `student_code` (`student_code`) USING HASH,
-  UNIQUE KEY `identity_card` (`identity_card`) USING HASH
+  UNIQUE KEY `identity_card` (`identity_card`) USING HASH,
+UNIQUE KEY `teacher_phone` (`teacher_phone`) USING HASH
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -424,3 +426,17 @@ CREATE TABLE `region` (
   `city_id` int(10) NOT NULL DEFAULT '0' COMMENT '父地区ID',
   PRIMARY KEY (`region_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+
+-- ----------------------------
+-- Table structure for upload_log
+-- ----------------------------
+DROP TABLE IF EXISTS `upload_log`;
+CREATE TABLE `upload_log` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `file` varchar(255) NOT NULL,
+  `app_id` varchar(255) NOT NULL,
+  `operator` varchar(255) DEFAULT NULL,
+  `create_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8;

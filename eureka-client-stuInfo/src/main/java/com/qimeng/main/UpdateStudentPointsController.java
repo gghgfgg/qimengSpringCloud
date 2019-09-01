@@ -16,6 +16,7 @@ import com.alibaba.fastjson.TypeReference;
 import com.qimeng.main.entity.ApplicationManagement;
 import com.qimeng.main.entity.StudentData;
 import com.qimeng.main.service.ApplicationManagementService;
+import com.qimeng.main.service.GlobalDateService;
 import com.qimeng.main.service.StudentDataService;
 import com.qimeng.main.service.StudentUpdatePointsService;
 import com.qimeng.main.util.StaticGlobal;
@@ -47,7 +48,9 @@ public class UpdateStudentPointsController {
 	ApplicationManagementService applicationManagementService;
 	@Autowired
 	StudentUpdatePointsService studentUpdatePointsService;
-
+	@Autowired
+	GlobalDateService globalDateService;
+	
 	@RequestMapping("/getstudent")
 	public String getStudent(@RequestBody JSONObject message) {
 
@@ -97,6 +100,8 @@ public class UpdateStudentPointsController {
 			int points=studentData.getTotalPoints()-studentData.getUsedPoints()-studentData.getDeductPoints();
 			stuInfoVo.setPoint(points<0?0:points);
 			stuInfoVo.setBind(studentData.getBinding());
+			String qrcode=globalDateService.getGlobalKeyString("qrUrl")+"?code="+studentData.getCode()+"&card="+studentData.getCard();
+			stuInfoVo.setQrCode(qrcode);
 			ResponseMessage<StudentInfoVo> responseMessage = new ResponseMessage<StudentInfoVo>();
 			responseMessage.setData(stuInfoVo);
 			responseMessage.setAccountTonken(accountTonken);

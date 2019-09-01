@@ -67,6 +67,7 @@ public interface DeviceRecycleLogDao {
 	    	if(deviceRecycleLog.getIdentityType()!=null){
 	        	 sql.WHERE("identity_type=#{item.identityType}");
 			}
+	    	sql.ORDER_BY("create_time DESC");
 	    	return sql.toString();
 		}
 	}

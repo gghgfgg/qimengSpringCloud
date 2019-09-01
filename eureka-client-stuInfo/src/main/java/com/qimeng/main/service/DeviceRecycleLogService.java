@@ -58,5 +58,11 @@ public class DeviceRecycleLogService {
 			throw new RuntimeException(e);
 		}
 	}
+	
+	public List<DeviceRecycleLog> selectDeviceRecycleLogListByUuid(String uuid){
+		DeviceRecycleLog deviceRecycleLog =new DeviceRecycleLog();
+		deviceRecycleLog.setUuid(uuid);
+		return selectDeviceRecycleLogList(deviceRecycleLog);
+	}
 }
 

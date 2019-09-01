@@ -96,7 +96,11 @@ public interface JoinDao {
 	        	 sql.WHERE("a.active=#{item.active}");
 	        }
 	    	if(studentVo.getType()!=null) {
-	    		sql.WHERE("a.type&1=#{item.type}");
+	    		if(studentVo.getType()>1) {
+	    			sql.WHERE("a.type=#{item.type}");
+	    		}else {
+	    			sql.WHERE("a.type&1=#{item.type}");
+				}
 	    	}
 	    	if(studentVo.getBinding()!=null) {
 	    		sql.WHERE("a.binding=#{item.binding}");
@@ -135,12 +139,16 @@ public interface JoinDao {
 			SQL sql = new SQL(); //SQL语句对象，所在包：org.apache.ibatis.jdbc.SQL
 			sql.SELECT("a.uuid");
 	    	sql.FROM("kernel_student_data a");
-	    	sql.INNER_JOIN("kernel_student_inform b on (a.student_code=b.student_code) or (a.identity_card=b.identity_card)");
+	    	sql.LEFT_OUTER_JOIN("kernel_student_inform b on (a.student_code=b.student_code) or (a.identity_card=b.identity_card)");
 	    
 	    	sql.WHERE("a.active=1");
 	    	sql.WHERE("a.total_points>10");
 	    	if(studentVo.getType()!=null) {
-	    		sql.WHERE("a.type=#{item.type}");
+	    		if(studentVo.getType()>1) {
+	    			sql.WHERE("a.type=#{item.type}");
+	    		}else {
+	    			sql.WHERE("a.type&1=#{item.type}");
+				}
 	    	}
 	    	if(studentVo.getBinding()!=null) {
 	    		sql.WHERE("a.binding=#{item.binding}");

@@ -9,6 +9,7 @@ public class StudentInfoVo {
 	private String name;
 	private String stuCode;
 	private String stuCard;
+	private String qrCode;
 	private int wasteType;
 	private int unit;
 	private int point;
@@ -78,12 +79,19 @@ public class StudentInfoVo {
 		this.active = active;
 	}
 
-	@Override
-	public String toString() {
-		return "StudentInfoVo [name=" + name + ", stuCode=" + stuCode + ", stuCard=" + stuCard + ", wasteType="
-				+ wasteType + ", unit=" + unit + ", point=" + point + ", bind=" + bind + ", active=" + active + "]";
+	public String getQrCode() {
+		return qrCode;
 	}
 
-	
+	public void setQrCode(String qrCode) {
+		this.qrCode = qrCode;
+	}
+
+	@Override
+	public String toString() {
+		return "StudentInfoVo [name=" + name + ", stuCode=" + stuCode + ", stuCard=" + stuCard + ", qrCode=" + qrCode
+				+ ", wasteType=" + wasteType + ", unit=" + unit + ", point=" + point + ", bind=" + bind + ", active="
+				+ active + "]";
+	}
 
 }

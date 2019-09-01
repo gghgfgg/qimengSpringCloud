@@ -36,7 +36,7 @@ public class GlobalDateService {
 		}
 	}
 	
-	String getGlobalKeyString(String key) {
+	public String getGlobalKeyString(String key) {
 		if(global.get(key)==null) {
 			List<GlobalDate> list=selectGlobalDateList();
 			for (GlobalDate globalDate : list) {

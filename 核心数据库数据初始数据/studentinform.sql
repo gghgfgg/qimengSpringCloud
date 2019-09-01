@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2019-08-20 09:05:42
+Date: 2019-08-31 18:32:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -163,7 +163,7 @@ CREATE TABLE `kernel_school_inform` (
   `postal_code` char(6) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
   `contacts` varchar(255) DEFAULT NULL,
-  `active` tinyint(1) DEFAULT NULL,
+  `active` tinyint(1) unsigned zerofill NOT NULL,
   `create_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -272,9 +272,11 @@ CREATE TABLE `kernel_student_inform` (
   `family_residence` varchar(255) DEFAULT NULL,
   `family_census_register` varchar(255) DEFAULT NULL,
   `family_phone` varchar(50) DEFAULT NULL,
+  `teacher_phone` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `student_code` (`student_code`) USING HASH,
-  UNIQUE KEY `identity_card` (`identity_card`) USING HASH
+  UNIQUE KEY `identity_card` (`identity_card`) USING HASH,
+  UNIQUE KEY `teacher_phone` (`teacher_phone`) USING HASH
 ) ENGINE=InnoDB AUTO_INCREMENT=26159 DEFAULT CHARSET=utf8;
 
 -- ----------------------------

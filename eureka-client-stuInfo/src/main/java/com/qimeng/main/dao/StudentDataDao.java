@@ -170,7 +170,11 @@ public interface StudentDataDao {
 	    	}
 	    	
 	    	if(studentData.getType()!=null) {
-	    		sql.WHERE("type&1=#{item.type}");
+	    		if(studentData.getType()>1) {
+	    			sql.WHERE("a.type=#{item.type}");
+	    		}else {
+	    			sql.WHERE("a.type&1=#{item.type}");
+				}
 	    	}
 	    	
 	    	if(studentData.getBinding()!=null)

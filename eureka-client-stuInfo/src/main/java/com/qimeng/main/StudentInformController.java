@@ -23,6 +23,7 @@ import com.qimeng.main.entity.ApplicationManagement;
 import com.qimeng.main.entity.StudentData;
 import com.qimeng.main.entity.StudentInform;
 import com.qimeng.main.service.ApplicationManagementService;
+import com.qimeng.main.service.GlobalDateService;
 import com.qimeng.main.service.StudentDataService;
 import com.qimeng.main.service.StudentService;
 import com.qimeng.main.service.StudentUpdateService;
@@ -57,6 +58,8 @@ public class StudentInformController {
 	StudentUpdateService studentUpdateService;
 	@Autowired
 	StudentDataService studentDataService;
+	@Autowired
+	GlobalDateService globalDateService;
 	
 	@RequestMapping("/getstudatalist/{page}")
 	public String getStudentDataList(@PathVariable("page") Integer page, @RequestBody JSONObject message) {
@@ -364,6 +367,10 @@ public class StudentInformController {
 			int points=studentData.getTotalPoints()-studentData.getUsedPoints()-studentData.getDeductPoints();
 			stuInfoVo.setPoint(points<0?0:points);
 			stuInfoVo.setBind(studentData.getBinding());
+			String qrcode=globalDateService.getGlobalKeyString("qrUrl")+"?code="+studentData.getCode()+"&card="+studentData.getCard();
+			stuInfoVo.setQrCode(qrcode);
+			stuInfoVo.setStuCard(studentData.getCard());
+			stuInfoVo.setStuCode(studentData.getCode());
 			ResponseMessage<StudentInfoVo> responseMessage = new ResponseMessage<StudentInfoVo>();
 			responseMessage.setData(stuInfoVo);
 			responseMessage.setSuccessMessage("绑定学生信息成功");
@@ -423,6 +430,10 @@ public class StudentInformController {
 			int points=studentData.getTotalPoints()-studentData.getUsedPoints()-studentData.getDeductPoints();
 			stuInfoVo.setPoint(points<0?0:points);
 			stuInfoVo.setBind(studentData.getBinding());
+			String qrcode=globalDateService.getGlobalKeyString("qrUrl")+"?code="+studentData.getCode()+"&card="+studentData.getCard();
+			stuInfoVo.setQrCode(qrcode);
+			stuInfoVo.setStuCard(studentData.getCard());
+			stuInfoVo.setStuCode(studentData.getCode());
 			ResponseMessage<StudentInfoVo> responseMessage = new ResponseMessage<StudentInfoVo>();
 			responseMessage.setData(stuInfoVo);
 			responseMessage.setSuccessMessage("绑定学生信息成功");

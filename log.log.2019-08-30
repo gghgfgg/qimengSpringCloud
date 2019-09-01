@@ -1,0 +1,1257 @@
+2019-08-30 11:55:43  [ main:0 ] - [ DEBUG ]  自定义RedisTemplate加载完成
+2019-08-30 11:55:43  [ main:449 ] - [ DEBUG ]  自定义RedisCacheManager加载完成
+2019-08-30 11:55:45  [ main:2253 ] - [ DEBUG ]  系统启动自动执行
+2019-08-30 12:06:17  [ main:0 ] - [ DEBUG ]  自定义RedisCacheManager加载完成
+2019-08-30 12:06:17  [ main:3 ] - [ DEBUG ]  自定义RedisTemplate加载完成
+2019-08-30 12:06:44  [ http-nio-8074-exec-2:27220 ] - [ DEBUG ]  {conn-10001} connected
+2019-08-30 12:06:44  [ http-nio-8074-exec-2:27224 ] - [ DEBUG ]  {conn-10002} connected
+2019-08-30 12:06:44  [ http-nio-8074-exec-2:27227 ] - [ DEBUG ]  {conn-10003} connected
+2019-08-30 12:06:44  [ http-nio-8074-exec-2:27229 ] - [ DEBUG ]  {conn-10004} connected
+2019-08-30 12:06:44  [ http-nio-8074-exec-2:27232 ] - [ DEBUG ]  {conn-10005} connected
+2019-08-30 12:06:44  [ http-nio-8074-exec-2:27234 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 12:06:44  [ http-nio-8074-exec-2:27282 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 12:06:44  [ http-nio-8074-exec-2:27321 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 12:06:44  [ http-nio-8074-exec-2:27322 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 12:06:44  [ http-nio-8074-exec-2:27323 ] - [ ERROR ]  获取app信息异常
+2019-08-30 12:06:44  [ http-nio-8074-exec-2:27325 ] - [ ERROR ]  Error:
+org.springframework.jdbc.UncategorizedSQLException: 
+### Error querying database.  Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'form app', expect IDENTIFIER, actual IDENTIFIER pos 13, line 1, column 14, token IDENTIFIER app : select * form app
+### The error may exist in com/qimeng/main/dao/AppInformDao.java (best guess)
+### The error may involve com.qimeng.main.dao.AppInformDao.selectAppInform
+### The error occurred while executing a query
+### SQL: select * form app
+### Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'form app', expect IDENTIFIER, actual IDENTIFIER pos 13, line 1, column 14, token IDENTIFIER app : select * form app
+; uncategorized SQLException; SQL state [null]; error code [0]; sql injection violation, syntax error: syntax error, error in :'form app', expect IDENTIFIER, actual IDENTIFIER pos 13, line 1, column 14, token IDENTIFIER app : select * form app; nested exception is java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'form app', expect IDENTIFIER, actual IDENTIFIER pos 13, line 1, column 14, token IDENTIFIER app : select * form app
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:89)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy85.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:166)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:82)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy88.selectAppInform(Unknown Source)
+	at com.qimeng.main.service.AppInformService.selectAppInform(AppInformService.java:24)
+	at com.qimeng.main.wechat.WeChatService.getCode2Session(WeChatService.java:39)
+	at com.qimeng.main.WechatLoginController.getCode2Session(WechatLoginController.java:27)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'form app', expect IDENTIFIER, actual IDENTIFIER pos 13, line 1, column 14, token IDENTIFIER app : select * form app
+	at com.alibaba.druid.wall.WallFilter.checkInternal(WallFilter.java:799)
+	at com.alibaba.druid.wall.WallFilter.connection_prepareStatement(WallFilter.java:287)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:610)
+	at com.alibaba.druid.filter.FilterAdapter.connection_prepareStatement(FilterAdapter.java:942)
+	at com.alibaba.druid.filter.FilterEventAdapter.connection_prepareStatement(FilterEventAdapter.java:143)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:610)
+	at com.alibaba.druid.filter.FilterAdapter.connection_prepareStatement(FilterAdapter.java:942)
+	at com.alibaba.druid.filter.FilterEventAdapter.connection_prepareStatement(FilterEventAdapter.java:143)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:610)
+	at com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl.prepareStatement(ConnectionProxyImpl.java:375)
+	at com.alibaba.druid.pool.DruidPooledConnection.prepareStatement(DruidPooledConnection.java:387)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(PreparedStatementHandler.java:85)
+	at org.apache.ibatis.executor.statement.BaseStatementHandler.prepare(BaseStatementHandler.java:88)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.prepare(RoutingStatementHandler.java:59)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:85)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:143)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy108.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 69 more
+Caused by: com.alibaba.druid.sql.parser.ParserException: syntax error, error in :'form app', expect IDENTIFIER, actual IDENTIFIER pos 13, line 1, column 14, token IDENTIFIER app
+	at com.alibaba.druid.sql.parser.SQLParser.printError(SQLParser.java:284)
+	at com.alibaba.druid.sql.parser.SQLStatementParser.parseStatementList(SQLStatementParser.java:433)
+	at com.alibaba.druid.sql.parser.SQLStatementParser.parseStatementList(SQLStatementParser.java:83)
+	at com.alibaba.druid.wall.WallProvider.checkInternal(WallProvider.java:624)
+	at com.alibaba.druid.wall.WallProvider.check(WallProvider.java:578)
+	at com.alibaba.druid.wall.WallFilter.checkInternal(WallFilter.java:786)
+	... 98 more
+2019-08-30 12:07:15  [ http-nio-8074-exec-3:57940 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 12:07:15  [ http-nio-8074-exec-3:57941 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 12:07:15  [ http-nio-8074-exec-3:57942 ] - [ ERROR ]  获取app信息异常
+2019-08-30 12:07:15  [ http-nio-8074-exec-3:57942 ] - [ ERROR ]  Error:
+org.springframework.jdbc.UncategorizedSQLException: 
+### Error querying database.  Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'form app', expect IDENTIFIER, actual IDENTIFIER pos 13, line 1, column 14, token IDENTIFIER app : select * form app
+### The error may exist in com/qimeng/main/dao/AppInformDao.java (best guess)
+### The error may involve com.qimeng.main.dao.AppInformDao.selectAppInform
+### The error occurred while executing a query
+### SQL: select * form app
+### Cause: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'form app', expect IDENTIFIER, actual IDENTIFIER pos 13, line 1, column 14, token IDENTIFIER app : select * form app
+; uncategorized SQLException; SQL state [null]; error code [0]; sql injection violation, syntax error: syntax error, error in :'form app', expect IDENTIFIER, actual IDENTIFIER pos 13, line 1, column 14, token IDENTIFIER app : select * form app; nested exception is java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'form app', expect IDENTIFIER, actual IDENTIFIER pos 13, line 1, column 14, token IDENTIFIER app : select * form app
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:89)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy85.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:166)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:82)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy88.selectAppInform(Unknown Source)
+	at com.qimeng.main.service.AppInformService.selectAppInform(AppInformService.java:24)
+	at com.qimeng.main.wechat.WeChatService.getCode2Session(WeChatService.java:39)
+	at com.qimeng.main.WechatLoginController.getCode2Session(WechatLoginController.java:27)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLException: sql injection violation, syntax error: syntax error, error in :'form app', expect IDENTIFIER, actual IDENTIFIER pos 13, line 1, column 14, token IDENTIFIER app : select * form app
+	at com.alibaba.druid.wall.WallFilter.checkInternal(WallFilter.java:799)
+	at com.alibaba.druid.wall.WallFilter.connection_prepareStatement(WallFilter.java:287)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:610)
+	at com.alibaba.druid.filter.FilterAdapter.connection_prepareStatement(FilterAdapter.java:942)
+	at com.alibaba.druid.filter.FilterEventAdapter.connection_prepareStatement(FilterEventAdapter.java:143)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:610)
+	at com.alibaba.druid.filter.FilterAdapter.connection_prepareStatement(FilterAdapter.java:942)
+	at com.alibaba.druid.filter.FilterEventAdapter.connection_prepareStatement(FilterEventAdapter.java:143)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:610)
+	at com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl.prepareStatement(ConnectionProxyImpl.java:375)
+	at com.alibaba.druid.pool.DruidPooledConnection.prepareStatement(DruidPooledConnection.java:387)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(PreparedStatementHandler.java:85)
+	at org.apache.ibatis.executor.statement.BaseStatementHandler.prepare(BaseStatementHandler.java:88)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.prepare(RoutingStatementHandler.java:59)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:85)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:143)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy108.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 69 more
+Caused by: com.alibaba.druid.sql.parser.ParserException: syntax error, error in :'form app', expect IDENTIFIER, actual IDENTIFIER pos 13, line 1, column 14, token IDENTIFIER app
+	at com.alibaba.druid.sql.parser.SQLParser.printError(SQLParser.java:284)
+	at com.alibaba.druid.sql.parser.SQLStatementParser.parseStatementList(SQLStatementParser.java:433)
+	at com.alibaba.druid.sql.parser.SQLStatementParser.parseStatementList(SQLStatementParser.java:83)
+	at com.alibaba.druid.wall.WallProvider.checkInternal(WallProvider.java:624)
+	at com.alibaba.druid.wall.WallProvider.check(WallProvider.java:578)
+	at com.alibaba.druid.wall.WallFilter.checkInternal(WallFilter.java:786)
+	... 98 more
+2019-08-30 12:08:00  [ main:0 ] - [ DEBUG ]  自定义RedisCacheManager加载完成
+2019-08-30 12:08:00  [ main:3 ] - [ DEBUG ]  自定义RedisTemplate加载完成
+2019-08-30 12:08:11  [ http-nio-8074-exec-1:10860 ] - [ DEBUG ]  {conn-10001} connected
+2019-08-30 12:08:11  [ http-nio-8074-exec-1:10864 ] - [ DEBUG ]  {conn-10002} connected
+2019-08-30 12:08:11  [ http-nio-8074-exec-1:10867 ] - [ DEBUG ]  {conn-10003} connected
+2019-08-30 12:08:11  [ http-nio-8074-exec-1:10869 ] - [ DEBUG ]  {conn-10004} connected
+2019-08-30 12:08:11  [ http-nio-8074-exec-1:10871 ] - [ DEBUG ]  {conn-10005} connected
+2019-08-30 12:08:11  [ http-nio-8074-exec-1:10873 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 12:08:11  [ http-nio-8074-exec-1:10941 ] - [ DEBUG ]  {conn-10005, pstmt-20000} created. select * from app
+2019-08-30 12:08:11  [ http-nio-8074-exec-1:10947 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Parameters : []
+2019-08-30 12:08:11  [ http-nio-8074-exec-1:10947 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Types : []
+2019-08-30 12:08:11  [ http-nio-8074-exec-1:10956 ] - [ DEBUG ]  {conn-10005, pstmt-20000} executed. 11.5523 millis. select * from app
+2019-08-30 12:08:11  [ http-nio-8074-exec-1:10959 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} open
+2019-08-30 12:08:11  [ http-nio-8074-exec-1:10960 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Header: [id, appid, secret]
+2019-08-30 12:08:11  [ http-nio-8074-exec-1:10964 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} closed
+2019-08-30 12:08:11  [ http-nio-8074-exec-1:10964 ] - [ DEBUG ]  {conn-10005, pstmt-20000} closed
+2019-08-30 12:08:11  [ http-nio-8074-exec-1:10966 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 12:09:24  [ http-nio-8074-exec-2:84680 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 12:09:24  [ http-nio-8074-exec-2:84682 ] - [ DEBUG ]  {conn-10005, pstmt-20001} created. select * from app
+2019-08-30 12:09:24  [ http-nio-8074-exec-2:84683 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Parameters : []
+2019-08-30 12:09:24  [ http-nio-8074-exec-2:84683 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Types : []
+2019-08-30 12:09:24  [ http-nio-8074-exec-2:84684 ] - [ DEBUG ]  {conn-10005, pstmt-20001} executed. 1.3435 millis. select * from app
+2019-08-30 12:09:24  [ http-nio-8074-exec-2:84685 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} open
+2019-08-30 12:09:24  [ http-nio-8074-exec-2:84685 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Header: [id, appid, secret]
+2019-08-30 12:09:24  [ http-nio-8074-exec-2:84686 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} closed
+2019-08-30 12:09:24  [ http-nio-8074-exec-2:84686 ] - [ DEBUG ]  {conn-10005, pstmt-20001} closed
+2019-08-30 12:09:24  [ http-nio-8074-exec-2:84687 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 12:13:07  [ main:0 ] - [ DEBUG ]  自定义RedisCacheManager加载完成
+2019-08-30 12:13:07  [ main:3 ] - [ DEBUG ]  自定义RedisTemplate加载完成
+2019-08-30 12:13:25  [ http-nio-8074-exec-3:18175 ] - [ DEBUG ]  {conn-10001} connected
+2019-08-30 12:13:25  [ http-nio-8074-exec-3:18179 ] - [ DEBUG ]  {conn-10002} connected
+2019-08-30 12:13:25  [ http-nio-8074-exec-3:18181 ] - [ DEBUG ]  {conn-10003} connected
+2019-08-30 12:13:25  [ http-nio-8074-exec-3:18184 ] - [ DEBUG ]  {conn-10004} connected
+2019-08-30 12:13:25  [ http-nio-8074-exec-3:18186 ] - [ DEBUG ]  {conn-10005} connected
+2019-08-30 12:13:25  [ http-nio-8074-exec-3:18188 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 12:13:25  [ http-nio-8074-exec-3:18262 ] - [ DEBUG ]  {conn-10005, pstmt-20000} created. select * from app
+2019-08-30 12:13:25  [ http-nio-8074-exec-3:18271 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Parameters : []
+2019-08-30 12:13:25  [ http-nio-8074-exec-3:18272 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Types : []
+2019-08-30 12:13:25  [ http-nio-8074-exec-3:18282 ] - [ DEBUG ]  {conn-10005, pstmt-20000} executed. 14.9364 millis. select * from app
+2019-08-30 12:13:25  [ http-nio-8074-exec-3:18286 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} open
+2019-08-30 12:13:25  [ http-nio-8074-exec-3:18287 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Header: [id, appid, secret]
+2019-08-30 12:13:25  [ http-nio-8074-exec-3:18291 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [1, wx3db2265dd9af7db2, 2aa4085955104582b0e967e08d2662b5]
+2019-08-30 12:13:25  [ http-nio-8074-exec-3:18296 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} closed
+2019-08-30 12:13:25  [ http-nio-8074-exec-3:18297 ] - [ DEBUG ]  {conn-10005, pstmt-20000} closed
+2019-08-30 12:13:25  [ http-nio-8074-exec-3:18298 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 12:14:11  [ http-nio-8074-exec-1:64175 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 12:14:11  [ http-nio-8074-exec-1:64176 ] - [ DEBUG ]  {conn-10005, pstmt-20001} created. select * from app
+2019-08-30 12:14:11  [ http-nio-8074-exec-1:64176 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Parameters : []
+2019-08-30 12:14:11  [ http-nio-8074-exec-1:64176 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Types : []
+2019-08-30 12:14:11  [ http-nio-8074-exec-1:64181 ] - [ DEBUG ]  {conn-10005, pstmt-20001} executed. 4.8089 millis. select * from app
+2019-08-30 12:14:11  [ http-nio-8074-exec-1:64182 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} open
+2019-08-30 12:14:11  [ http-nio-8074-exec-1:64182 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Header: [id, appid, secret]
+2019-08-30 12:14:11  [ http-nio-8074-exec-1:64183 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Result: [1, wx3db2265dd9af7db2, 2aa4085955104582b0e967e08d2662b5]
+2019-08-30 12:14:11  [ http-nio-8074-exec-1:64183 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} closed
+2019-08-30 12:14:11  [ http-nio-8074-exec-1:64184 ] - [ DEBUG ]  {conn-10005, pstmt-20001} closed
+2019-08-30 12:14:11  [ http-nio-8074-exec-1:64185 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 12:14:47  [ http-nio-8074-exec-6:99835 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 12:14:47  [ http-nio-8074-exec-6:99836 ] - [ DEBUG ]  {conn-10005, pstmt-20002} created. select * from app
+2019-08-30 12:14:47  [ http-nio-8074-exec-6:99837 ] - [ DEBUG ]  {conn-10005, pstmt-20002} Parameters : []
+2019-08-30 12:14:47  [ http-nio-8074-exec-6:99838 ] - [ DEBUG ]  {conn-10005, pstmt-20002} Types : []
+2019-08-30 12:14:47  [ http-nio-8074-exec-6:99841 ] - [ DEBUG ]  {conn-10005, pstmt-20002} executed. 3.203 millis. select * from app
+2019-08-30 12:14:47  [ http-nio-8074-exec-6:99842 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} open
+2019-08-30 12:14:47  [ http-nio-8074-exec-6:99843 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} Header: [id, appid, secret]
+2019-08-30 12:14:47  [ http-nio-8074-exec-6:99844 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} Result: [1, wx3db2265dd9af7db2, 2aa4085955104582b0e967e08d2662b5]
+2019-08-30 12:14:47  [ http-nio-8074-exec-6:99845 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} closed
+2019-08-30 12:14:47  [ http-nio-8074-exec-6:99846 ] - [ DEBUG ]  {conn-10005, pstmt-20002} closed
+2019-08-30 12:14:47  [ http-nio-8074-exec-6:99846 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 19:12:26  [ http-nio-8074-exec-8:25159070 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 19:12:26  [ http-nio-8074-exec-8:25159076 ] - [ DEBUG ]  {conn-10005, pstmt-20003} created. select * from app
+2019-08-30 19:12:26  [ http-nio-8074-exec-8:25159077 ] - [ DEBUG ]  {conn-10005, pstmt-20003} Parameters : []
+2019-08-30 19:12:26  [ http-nio-8074-exec-8:25159077 ] - [ DEBUG ]  {conn-10005, pstmt-20003} Types : []
+2019-08-30 19:12:26  [ http-nio-8074-exec-8:25159079 ] - [ DEBUG ]  {conn-10005, pstmt-20003} executed. 1.9867 millis. select * from app
+2019-08-30 19:12:26  [ http-nio-8074-exec-8:25159080 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} open
+2019-08-30 19:12:26  [ http-nio-8074-exec-8:25159080 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} Header: [id, appid, secret, apptype]
+2019-08-30 19:12:26  [ http-nio-8074-exec-8:25159080 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} Result: [1, wx3db2265dd9af7db2, 2aa4085955104582b0e967e08d2662b5, null]
+2019-08-30 19:12:26  [ http-nio-8074-exec-8:25159081 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} closed
+2019-08-30 19:12:26  [ http-nio-8074-exec-8:25159082 ] - [ DEBUG ]  {conn-10005, pstmt-20003} closed
+2019-08-30 19:12:26  [ http-nio-8074-exec-8:25159082 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 19:13:37  [ Druid-ConnectionPool-Destroy-1195763506:25230335 ] - [ DEBUG ]  {conn-10001} closed
+2019-08-30 19:13:37  [ Druid-ConnectionPool-Destroy-1195763506:25230336 ] - [ DEBUG ]  {conn-10002} closed
+2019-08-30 19:13:37  [ Druid-ConnectionPool-Destroy-1195763506:25230336 ] - [ DEBUG ]  {conn-10003} closed
+2019-08-30 19:13:37  [ Druid-ConnectionPool-Destroy-1195763506:25230337 ] - [ DEBUG ]  {conn-10004} closed
+2019-08-30 22:20:49  [ main:0 ] - [ DEBUG ]  自定义RedisCacheManager加载完成
+2019-08-30 22:20:49  [ main:3 ] - [ DEBUG ]  自定义RedisTemplate加载完成
+2019-08-30 22:23:16  [ http-nio-8074-exec-2:146483 ] - [ DEBUG ]  {}
+2019-08-30 22:23:16  [ http-nio-8074-exec-2:146621 ] - [ DEBUG ]  {conn-10001} connected
+2019-08-30 22:23:16  [ http-nio-8074-exec-2:146625 ] - [ DEBUG ]  {conn-10002} connected
+2019-08-30 22:23:16  [ http-nio-8074-exec-2:146628 ] - [ DEBUG ]  {conn-10003} connected
+2019-08-30 22:23:16  [ http-nio-8074-exec-2:146631 ] - [ DEBUG ]  {conn-10004} connected
+2019-08-30 22:23:16  [ http-nio-8074-exec-2:146634 ] - [ DEBUG ]  {conn-10005} connected
+2019-08-30 22:23:16  [ http-nio-8074-exec-2:146636 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:23:16  [ http-nio-8074-exec-2:146704 ] - [ DEBUG ]  {conn-10005, pstmt-20000} created. select * from app
+2019-08-30 22:23:16  [ http-nio-8074-exec-2:146711 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Parameters : []
+2019-08-30 22:23:16  [ http-nio-8074-exec-2:146711 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Types : []
+2019-08-30 22:23:16  [ http-nio-8074-exec-2:146719 ] - [ DEBUG ]  {conn-10005, pstmt-20000} executed. 10.7242 millis. select * from app
+2019-08-30 22:23:16  [ http-nio-8074-exec-2:146723 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} open
+2019-08-30 22:23:16  [ http-nio-8074-exec-2:146724 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Header: [id, appid, secret, apptype]
+2019-08-30 22:23:16  [ http-nio-8074-exec-2:146728 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+2019-08-30 22:23:16  [ http-nio-8074-exec-2:146731 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} closed
+2019-08-30 22:23:16  [ http-nio-8074-exec-2:146731 ] - [ DEBUG ]  {conn-10005, pstmt-20000} closed
+2019-08-30 22:23:16  [ http-nio-8074-exec-2:146732 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:23:16  [ http-nio-8074-exec-2:147307 ] - [ DEBUG ]  {"errcode":41008,"errmsg":"missing code, hints: [ req_id: lKODi5yFe-Q.Qg ]"}
+2019-08-30 22:24:42  [ main:0 ] - [ DEBUG ]  自定义RedisCacheManager加载完成
+2019-08-30 22:24:42  [ main:3 ] - [ DEBUG ]  自定义RedisTemplate加载完成
+2019-08-30 22:36:31  [ http-nio-8074-exec-5:708810 ] - [ DEBUG ]  {}
+2019-08-30 22:36:31  [ http-nio-8074-exec-5:708948 ] - [ DEBUG ]  {conn-10001} connected
+2019-08-30 22:36:31  [ http-nio-8074-exec-5:708952 ] - [ DEBUG ]  {conn-10002} connected
+2019-08-30 22:36:31  [ http-nio-8074-exec-5:708955 ] - [ DEBUG ]  {conn-10003} connected
+2019-08-30 22:36:31  [ http-nio-8074-exec-5:708957 ] - [ DEBUG ]  {conn-10004} connected
+2019-08-30 22:36:31  [ http-nio-8074-exec-5:708960 ] - [ DEBUG ]  {conn-10005} connected
+2019-08-30 22:36:31  [ http-nio-8074-exec-5:708962 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:36:31  [ http-nio-8074-exec-5:709031 ] - [ DEBUG ]  {conn-10005, pstmt-20000} created. select * from app
+2019-08-30 22:36:31  [ http-nio-8074-exec-5:709037 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Parameters : []
+2019-08-30 22:36:31  [ http-nio-8074-exec-5:709037 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Types : []
+2019-08-30 22:36:31  [ http-nio-8074-exec-5:709045 ] - [ DEBUG ]  {conn-10005, pstmt-20000} executed. 10.5467 millis. select * from app
+2019-08-30 22:36:31  [ http-nio-8074-exec-5:709048 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} open
+2019-08-30 22:36:31  [ http-nio-8074-exec-5:709050 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Header: [id, appid, secret, apptype]
+2019-08-30 22:36:31  [ http-nio-8074-exec-5:709054 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+2019-08-30 22:36:31  [ http-nio-8074-exec-5:709056 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} closed
+2019-08-30 22:36:31  [ http-nio-8074-exec-5:709057 ] - [ DEBUG ]  {conn-10005, pstmt-20000} closed
+2019-08-30 22:36:31  [ http-nio-8074-exec-5:709058 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:36:32  [ http-nio-8074-exec-5:709639 ] - [ DEBUG ]  {"errcode":41008,"errmsg":"missing code, hints: [ req_id: RKOD7qaLRa-nDuBca ]"}
+2019-08-30 22:36:47  [ http-nio-8074-exec-6:725140 ] - [ DEBUG ]  {}
+2019-08-30 22:36:47  [ http-nio-8074-exec-6:725141 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:36:47  [ http-nio-8074-exec-6:725142 ] - [ DEBUG ]  {conn-10005, pstmt-20001} created. select * from app
+2019-08-30 22:36:47  [ http-nio-8074-exec-6:725142 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Parameters : []
+2019-08-30 22:36:47  [ http-nio-8074-exec-6:725142 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Types : []
+2019-08-30 22:36:47  [ http-nio-8074-exec-6:725143 ] - [ DEBUG ]  {conn-10005, pstmt-20001} executed. 1.3108 millis. select * from app
+2019-08-30 22:36:47  [ http-nio-8074-exec-6:725144 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} open
+2019-08-30 22:36:47  [ http-nio-8074-exec-6:725144 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Header: [id, appid, secret, apptype]
+2019-08-30 22:36:47  [ http-nio-8074-exec-6:725144 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+2019-08-30 22:36:47  [ http-nio-8074-exec-6:725145 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} closed
+2019-08-30 22:36:47  [ http-nio-8074-exec-6:725145 ] - [ DEBUG ]  {conn-10005, pstmt-20001} closed
+2019-08-30 22:36:47  [ http-nio-8074-exec-6:725146 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:36:47  [ http-nio-8074-exec-6:725202 ] - [ DEBUG ]  {"errcode":41008,"errmsg":"missing code, hints: [ req_id: RKODpFwgE-nflvca ]"}
+2019-08-30 22:38:36  [ http-nio-8074-exec-4:834444 ] - [ DEBUG ]  {}
+2019-08-30 22:38:36  [ http-nio-8074-exec-4:834447 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:38:36  [ http-nio-8074-exec-4:834448 ] - [ DEBUG ]  {conn-10005, pstmt-20002} created. select * from app
+2019-08-30 22:38:36  [ http-nio-8074-exec-4:834448 ] - [ DEBUG ]  {conn-10005, pstmt-20002} Parameters : []
+2019-08-30 22:38:36  [ http-nio-8074-exec-4:834449 ] - [ DEBUG ]  {conn-10005, pstmt-20002} Types : []
+2019-08-30 22:38:36  [ http-nio-8074-exec-4:834450 ] - [ DEBUG ]  {conn-10005, pstmt-20002} executed. 1.7687 millis. select * from app
+2019-08-30 22:38:36  [ http-nio-8074-exec-4:834450 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} open
+2019-08-30 22:38:36  [ http-nio-8074-exec-4:834451 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} Header: [id, appid, secret, apptype]
+2019-08-30 22:38:36  [ http-nio-8074-exec-4:834451 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+2019-08-30 22:38:36  [ http-nio-8074-exec-4:834451 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} closed
+2019-08-30 22:38:36  [ http-nio-8074-exec-4:834453 ] - [ DEBUG ]  {conn-10005, pstmt-20002} closed
+2019-08-30 22:38:36  [ http-nio-8074-exec-4:834453 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:38:36  [ http-nio-8074-exec-4:834504 ] - [ DEBUG ]  {"errcode":41008,"errmsg":"missing code, hints: [ req_id: SKODpK0gE-h29d4 ]"}
+2019-08-30 22:42:39  [ http-nio-8074-exec-8:1077181 ] - [ DEBUG ]  {"code":"0335vhof2WL43J0quAof26esof25vhoq"}
+2019-08-30 22:42:39  [ http-nio-8074-exec-8:1077185 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:42:39  [ http-nio-8074-exec-8:1077186 ] - [ DEBUG ]  {conn-10005, pstmt-20003} created. select * from app
+2019-08-30 22:42:39  [ http-nio-8074-exec-8:1077186 ] - [ DEBUG ]  {conn-10005, pstmt-20003} Parameters : []
+2019-08-30 22:42:39  [ http-nio-8074-exec-8:1077186 ] - [ DEBUG ]  {conn-10005, pstmt-20003} Types : []
+2019-08-30 22:42:39  [ http-nio-8074-exec-8:1077187 ] - [ DEBUG ]  {conn-10005, pstmt-20003} executed. 0.7963 millis. select * from app
+2019-08-30 22:42:39  [ http-nio-8074-exec-8:1077187 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} open
+2019-08-30 22:42:39  [ http-nio-8074-exec-8:1077187 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} Header: [id, appid, secret, apptype]
+2019-08-30 22:42:39  [ http-nio-8074-exec-8:1077187 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+2019-08-30 22:42:39  [ http-nio-8074-exec-8:1077188 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} closed
+2019-08-30 22:42:39  [ http-nio-8074-exec-8:1077188 ] - [ DEBUG ]  {conn-10005, pstmt-20003} closed
+2019-08-30 22:42:39  [ http-nio-8074-exec-8:1077188 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:42:39  [ http-nio-8074-exec-8:1077318 ] - [ DEBUG ]  {"session_key":"S5joutghRKPM07GEaE8voA==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+2019-08-30 22:42:39  [ http-nio-8074-exec-8:1077335 ] - [ ERROR ]  查找微信用户信息异常
+2019-08-30 22:42:39  [ http-nio-8074-exec-8:1077338 ] - [ ERROR ]  Error:
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.builder.BuilderException: Error invoking SqlProvider method (com.qimeng.main.dao.WecharUserDao$SqlFactory.selectWecharUser).  Cause: org.apache.ibatis.binding.BindingException: Parameter 'item' not found. Available parameters are [WecharUser, param1]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy85.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:137)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:75)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy92.selectWecharUserList(Unknown Source)
+	at com.qimeng.main.service.WechatUserService.selectWecharUserList(WechatUserService.java:49)
+	at com.qimeng.main.service.WechatUserService.selectWecharUserByOpenidOrUnionid(WechatUserService.java:62)
+	at com.qimeng.main.WechatLoginController.getLogin(WechatLoginController.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.apache.ibatis.builder.BuilderException: Error invoking SqlProvider method (com.qimeng.main.dao.WecharUserDao$SqlFactory.selectWecharUser).  Cause: org.apache.ibatis.binding.BindingException: Parameter 'item' not found. Available parameters are [WecharUser, param1]
+	at org.apache.ibatis.builder.annotation.ProviderSqlSource.createSqlSource(ProviderSqlSource.java:135)
+	at org.apache.ibatis.builder.annotation.ProviderSqlSource.getBoundSql(ProviderSqlSource.java:103)
+	at org.apache.ibatis.mapping.MappedStatement.getBoundSql(MappedStatement.java:292)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:83)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy116.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 70 more
+Caused by: org.apache.ibatis.binding.BindingException: Parameter 'item' not found. Available parameters are [WecharUser, param1]
+	at org.apache.ibatis.binding.MapperMethod$ParamMap.get(MapperMethod.java:202)
+	at org.apache.ibatis.builder.annotation.ProviderSqlSource.extractProviderMethodArguments(ProviderSqlSource.java:157)
+	at org.apache.ibatis.builder.annotation.ProviderSqlSource.createSqlSource(ProviderSqlSource.java:121)
+	... 82 more
+2019-08-30 22:45:19  [ main:0 ] - [ DEBUG ]  自定义RedisCacheManager加载完成
+2019-08-30 22:45:19  [ main:3 ] - [ DEBUG ]  自定义RedisTemplate加载完成
+2019-08-30 22:45:35  [ http-nio-8074-exec-2:16123 ] - [ DEBUG ]  {"code":"023KKwx82pycuL099qy82NTjx82KKwx-"}
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:16252 ] - [ DEBUG ]  {conn-10001} connected
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:16257 ] - [ DEBUG ]  {conn-10002} connected
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:16260 ] - [ DEBUG ]  {conn-10003} connected
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:16262 ] - [ DEBUG ]  {conn-10004} connected
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:16265 ] - [ DEBUG ]  {conn-10005} connected
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:16267 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:16333 ] - [ DEBUG ]  {conn-10005, pstmt-20000} created. select * from app
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:16339 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Parameters : []
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:16339 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Types : []
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:16346 ] - [ DEBUG ]  {conn-10005, pstmt-20000} executed. 10.0557 millis. select * from app
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:16350 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} open
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:16351 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Header: [id, appid, secret, apptype]
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:16355 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:16358 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} closed
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:16358 ] - [ DEBUG ]  {conn-10005, pstmt-20000} closed
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:16359 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:17027 ] - [ DEBUG ]  {"session_key":"vbZkaGrh8zmYHxtzj8AIMA==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:17033 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:17035 ] - [ DEBUG ]  {conn-10005, pstmt-20001} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:17035 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Parameters : []
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:17035 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Types : []
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:17036 ] - [ DEBUG ]  {conn-10005, pstmt-20001} executed. 1.0703 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:17036 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} open
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:17037 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Header: [id, openid, unionid, nick_name, create_time, update_time]
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:17037 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} closed
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:17037 ] - [ DEBUG ]  {conn-10005, pstmt-20001} closed
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:17037 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:17038 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:17046 ] - [ DEBUG ]  {conn-10005, pstmt-20002} created. insert into wechat_user(openid,unionid,nick_name,create_time,update_time) values(?,?,?,?,?)
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:17049 ] - [ DEBUG ]  {conn-10005, pstmt-20002} Parameters : [null, null, null, 2019-08-30 22:45:36.907, 2019-08-30 22:45:36.907]
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:17049 ] - [ DEBUG ]  {conn-10005, pstmt-20002} Types : [OTHER, OTHER, OTHER, TIMESTAMP, TIMESTAMP]
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:17084 ] - [ ERROR ]  {conn-10005, pstmt-20002} execute error. insert into wechat_user(openid,unionid,nick_name,create_time,update_time) values(?,?,?,?,?)
+java.sql.SQLException: Field 'id' doesn't have a default value
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:955)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:372)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3409)
+	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:620)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:498)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy116.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy85.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:57)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy92.insertWecharUser(Unknown Source)
+	at com.qimeng.main.service.WechatUserService.insertWecharUser(WechatUserService.java:27)
+	at com.qimeng.main.WechatLoginController.getLogin(WechatLoginController.java:74)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:17088 ] - [ DEBUG ]  {conn-10005, pstmt-20002} closed
+2019-08-30 22:45:36  [ http-nio-8074-exec-2:17090 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:45:37  [ http-nio-8074-exec-2:17131 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:45:37  [ http-nio-8074-exec-2:17131 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:45:37  [ http-nio-8074-exec-2:17132 ] - [ ERROR ]  新增微信用户信息异常
+2019-08-30 22:45:37  [ http-nio-8074-exec-2:17133 ] - [ ERROR ]  Error:
+org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLException: Field 'id' doesn't have a default value
+### The error may involve com.qimeng.main.dao.WecharUserDao.insertWecharUser-Inline
+### The error occurred while setting parameters
+### SQL: insert into wechat_user(openid,unionid,nick_name,create_time,update_time) values(?,?,?,?,?)
+### Cause: java.sql.SQLException: Field 'id' doesn't have a default value
+; Field 'id' doesn't have a default value; nested exception is java.sql.SQLException: Field 'id' doesn't have a default value
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:246)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy85.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:57)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy92.insertWecharUser(Unknown Source)
+	at com.qimeng.main.service.WechatUserService.insertWecharUser(WechatUserService.java:27)
+	at com.qimeng.main.WechatLoginController.getLogin(WechatLoginController.java:74)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLException: Field 'id' doesn't have a default value
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:955)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:372)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3409)
+	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:620)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:498)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy116.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 68 more
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55584 ] - [ DEBUG ]  {"code":"023jnYUo01Dark15hKXo0WObVo0jnYUS"}
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55585 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55586 ] - [ DEBUG ]  {conn-10005, pstmt-20003} created. select * from app
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55586 ] - [ DEBUG ]  {conn-10005, pstmt-20003} Parameters : []
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55586 ] - [ DEBUG ]  {conn-10005, pstmt-20003} Types : []
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55587 ] - [ DEBUG ]  {conn-10005, pstmt-20003} executed. 1.0198 millis. select * from app
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55587 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50002} open
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55587 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50002} Header: [id, appid, secret, apptype]
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55588 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50002} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55588 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50002} closed
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55588 ] - [ DEBUG ]  {conn-10005, pstmt-20003} closed
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55589 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55696 ] - [ DEBUG ]  {"session_key":"vbZkaGrh8zmYHxtzj8AIMA==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55696 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55697 ] - [ DEBUG ]  {conn-10005, pstmt-20004} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55697 ] - [ DEBUG ]  {conn-10005, pstmt-20004} Parameters : []
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55697 ] - [ DEBUG ]  {conn-10005, pstmt-20004} Types : []
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55698 ] - [ DEBUG ]  {conn-10005, pstmt-20004} executed. 0.7964 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55698 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50003} open
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55699 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50003} Header: [id, openid, unionid, nick_name, create_time, update_time]
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55699 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50003} closed
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55699 ] - [ DEBUG ]  {conn-10005, pstmt-20004} closed
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55700 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55700 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55700 ] - [ DEBUG ]  {conn-10005, pstmt-20005} created. insert into wechat_user(openid,unionid,nick_name,create_time,update_time) values(?,?,?,?,?)
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55701 ] - [ DEBUG ]  {conn-10005, pstmt-20005} Parameters : [null, null, null, 2019-08-30 22:46:15.57, 2019-08-30 22:46:15.57]
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55701 ] - [ DEBUG ]  {conn-10005, pstmt-20005} Types : [OTHER, OTHER, OTHER, TIMESTAMP, TIMESTAMP]
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55705 ] - [ DEBUG ]  {conn-10005, pstmt-20005} executed. 4.3104 millis. insert into wechat_user(openid,unionid,nick_name,create_time,update_time) values(?,?,?,?,?)
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55706 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50004} open
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55707 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50004} Header: [GENERATED_KEY]
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55709 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50004} Result: [1]
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55711 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50004} closed
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55711 ] - [ DEBUG ]  {conn-10005, pstmt-20005} closed
+2019-08-30 22:46:15  [ http-nio-8074-exec-1:55711 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:46:16  [ http-nio-8074-exec-1:56622 ] - [ ERROR ]  新增用户关联信息异常
+2019-08-30 22:46:16  [ http-nio-8074-exec-1:56622 ] - [ ERROR ]  Error:
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.builder.BuilderException: Error invoking SqlProvider method (com.qimeng.main.dao.WechatToMainDao$SqlFactory.selectWecharToMain).  Cause: org.apache.ibatis.binding.BindingException: Parameter 'item' not found. Available parameters are [WecharUser, param1]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy85.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:137)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:75)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy93.selecWechatToMainList(Unknown Source)
+	at com.qimeng.main.service.WechatToMainService.selecWechatToMainList(WechatToMainService.java:51)
+	at com.qimeng.main.service.WechatToMainService.selecWechatToMainByOpendIdAndUnionId(WechatToMainService.java:64)
+	at com.qimeng.main.WechatLoginController.getLogin(WechatLoginController.java:81)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.apache.ibatis.builder.BuilderException: Error invoking SqlProvider method (com.qimeng.main.dao.WechatToMainDao$SqlFactory.selectWecharToMain).  Cause: org.apache.ibatis.binding.BindingException: Parameter 'item' not found. Available parameters are [WecharUser, param1]
+	at org.apache.ibatis.builder.annotation.ProviderSqlSource.createSqlSource(ProviderSqlSource.java:135)
+	at org.apache.ibatis.builder.annotation.ProviderSqlSource.getBoundSql(ProviderSqlSource.java:103)
+	at org.apache.ibatis.mapping.MappedStatement.getBoundSql(MappedStatement.java:292)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:83)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy116.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 70 more
+Caused by: org.apache.ibatis.binding.BindingException: Parameter 'item' not found. Available parameters are [WecharUser, param1]
+	at org.apache.ibatis.binding.MapperMethod$ParamMap.get(MapperMethod.java:202)
+	at org.apache.ibatis.builder.annotation.ProviderSqlSource.extractProviderMethodArguments(ProviderSqlSource.java:157)
+	at org.apache.ibatis.builder.annotation.ProviderSqlSource.createSqlSource(ProviderSqlSource.java:121)
+	... 82 more
+2019-08-30 22:47:15  [ main:0 ] - [ DEBUG ]  自定义RedisCacheManager加载完成
+2019-08-30 22:47:15  [ main:3 ] - [ DEBUG ]  自定义RedisTemplate加载完成
+2019-08-30 22:47:26  [ http-nio-8074-exec-2:11460 ] - [ DEBUG ]  {"code":"023s61vx1RCQJa0cINrx109Yux1s61vN"}
+2019-08-30 22:47:26  [ http-nio-8074-exec-2:11614 ] - [ DEBUG ]  {conn-10001} connected
+2019-08-30 22:47:26  [ http-nio-8074-exec-2:11618 ] - [ DEBUG ]  {conn-10002} connected
+2019-08-30 22:47:26  [ http-nio-8074-exec-2:11621 ] - [ DEBUG ]  {conn-10003} connected
+2019-08-30 22:47:26  [ http-nio-8074-exec-2:11623 ] - [ DEBUG ]  {conn-10004} connected
+2019-08-30 22:47:26  [ http-nio-8074-exec-2:11626 ] - [ DEBUG ]  {conn-10005} connected
+2019-08-30 22:47:26  [ http-nio-8074-exec-2:11628 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:47:26  [ http-nio-8074-exec-2:11712 ] - [ DEBUG ]  {conn-10005, pstmt-20000} created. select * from app
+2019-08-30 22:47:26  [ http-nio-8074-exec-2:11717 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Parameters : []
+2019-08-30 22:47:26  [ http-nio-8074-exec-2:11718 ] - [ DEBUG ]  {conn-10005, pstmt-20000} Types : []
+2019-08-30 22:47:26  [ http-nio-8074-exec-2:11725 ] - [ DEBUG ]  {conn-10005, pstmt-20000} executed. 10.3727 millis. select * from app
+2019-08-30 22:47:26  [ http-nio-8074-exec-2:11728 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} open
+2019-08-30 22:47:26  [ http-nio-8074-exec-2:11729 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Header: [id, appid, secret, apptype]
+2019-08-30 22:47:26  [ http-nio-8074-exec-2:11733 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+2019-08-30 22:47:26  [ http-nio-8074-exec-2:11735 ] - [ DEBUG ]  {conn-10005, pstmt-20000, rs-50000} closed
+2019-08-30 22:47:26  [ http-nio-8074-exec-2:11736 ] - [ DEBUG ]  {conn-10005, pstmt-20000} closed
+2019-08-30 22:47:26  [ http-nio-8074-exec-2:11737 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:47:27  [ http-nio-8074-exec-2:12335 ] - [ DEBUG ]  {"session_key":"vbZkaGrh8zmYHxtzj8AIMA==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+2019-08-30 22:47:27  [ http-nio-8074-exec-2:12341 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:47:27  [ http-nio-8074-exec-2:12342 ] - [ DEBUG ]  {conn-10005, pstmt-20001} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+2019-08-30 22:47:27  [ http-nio-8074-exec-2:12343 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Parameters : []
+2019-08-30 22:47:27  [ http-nio-8074-exec-2:12343 ] - [ DEBUG ]  {conn-10005, pstmt-20001} Types : []
+2019-08-30 22:47:27  [ http-nio-8074-exec-2:12344 ] - [ DEBUG ]  {conn-10005, pstmt-20001} executed. 0.8351 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+2019-08-30 22:47:27  [ http-nio-8074-exec-2:12344 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} open
+2019-08-30 22:47:27  [ http-nio-8074-exec-2:12344 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Header: [id, openid, unionid, nick_name, create_time, update_time]
+2019-08-30 22:47:27  [ http-nio-8074-exec-2:12345 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} Result: [1, null, null, null, 2019-08-30 22:46:15.0, 2019-08-30 22:46:15.0]
+2019-08-30 22:47:27  [ http-nio-8074-exec-2:12346 ] - [ DEBUG ]  {conn-10005, pstmt-20001, rs-50001} closed
+2019-08-30 22:47:27  [ http-nio-8074-exec-2:12346 ] - [ DEBUG ]  {conn-10005, pstmt-20001} closed
+2019-08-30 22:47:27  [ http-nio-8074-exec-2:12346 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:47:28  [ http-nio-8074-exec-2:13266 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:47:28  [ http-nio-8074-exec-2:13267 ] - [ DEBUG ]  {conn-10005, pstmt-20002} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+2019-08-30 22:47:28  [ http-nio-8074-exec-2:13267 ] - [ DEBUG ]  {conn-10005, pstmt-20002} Parameters : []
+2019-08-30 22:47:28  [ http-nio-8074-exec-2:13267 ] - [ DEBUG ]  {conn-10005, pstmt-20002} Types : []
+2019-08-30 22:47:28  [ http-nio-8074-exec-2:13268 ] - [ DEBUG ]  {conn-10005, pstmt-20002} executed. 0.9903 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+2019-08-30 22:47:28  [ http-nio-8074-exec-2:13269 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} open
+2019-08-30 22:47:28  [ http-nio-8074-exec-2:13269 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} Header: [id, openid, unionid, uuid]
+2019-08-30 22:47:28  [ http-nio-8074-exec-2:13269 ] - [ DEBUG ]  {conn-10005, pstmt-20002, rs-50002} closed
+2019-08-30 22:47:28  [ http-nio-8074-exec-2:13269 ] - [ DEBUG ]  {conn-10005, pstmt-20002} closed
+2019-08-30 22:47:28  [ http-nio-8074-exec-2:13270 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246115 ] - [ DEBUG ]  {"code":"043FaVE12bTpMW09e5D12zV1F12FaVE3"}
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246123 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246123 ] - [ DEBUG ]  {conn-10005, pstmt-20003} created. select * from app
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246124 ] - [ DEBUG ]  {conn-10005, pstmt-20003} Parameters : []
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246124 ] - [ DEBUG ]  {conn-10005, pstmt-20003} Types : []
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246124 ] - [ DEBUG ]  {conn-10005, pstmt-20003} executed. 0.9359 millis. select * from app
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246125 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} open
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246125 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} Header: [id, appid, secret, apptype]
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246125 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246126 ] - [ DEBUG ]  {conn-10005, pstmt-20003, rs-50003} closed
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246126 ] - [ DEBUG ]  {conn-10005, pstmt-20003} closed
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246126 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246237 ] - [ DEBUG ]  {"session_key":"trWbXzq4oqhKxQ7lrfxCrg==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246238 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246238 ] - [ DEBUG ]  {conn-10005, pstmt-20004} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246239 ] - [ DEBUG ]  {conn-10005, pstmt-20004} Parameters : []
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246239 ] - [ DEBUG ]  {conn-10005, pstmt-20004} Types : []
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246240 ] - [ DEBUG ]  {conn-10005, pstmt-20004} executed. 0.8871 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246240 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} open
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246240 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} Header: [id, openid, unionid, nick_name, create_time, update_time]
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246240 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} Result: [1, null, null, null, 2019-08-30 22:46:15.0, 2019-08-30 22:46:15.0]
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246241 ] - [ DEBUG ]  {conn-10005, pstmt-20004, rs-50004} closed
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246241 ] - [ DEBUG ]  {conn-10005, pstmt-20004} closed
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246241 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246244 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246244 ] - [ DEBUG ]  {conn-10005, pstmt-20005} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246244 ] - [ DEBUG ]  {conn-10005, pstmt-20005} Parameters : []
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246245 ] - [ DEBUG ]  {conn-10005, pstmt-20005} Types : []
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246245 ] - [ DEBUG ]  {conn-10005, pstmt-20005} executed. 0.8432 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246245 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} open
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246246 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} Header: [id, openid, unionid, uuid]
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246246 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} closed
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246246 ] - [ DEBUG ]  {conn-10005, pstmt-20005} closed
+2019-08-30 22:51:21  [ http-nio-8074-exec-3:246246 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:52:15  [ http-nio-8074-exec-4:300902 ] - [ DEBUG ]  {"code":"033Kh6hh25pguB0Rslgh2sxehh2Kh6hK"}
+2019-08-30 22:52:15  [ http-nio-8074-exec-4:300903 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:52:15  [ http-nio-8074-exec-4:300904 ] - [ DEBUG ]  {conn-10005, pstmt-20006} created. select * from app
+2019-08-30 22:52:15  [ http-nio-8074-exec-4:300904 ] - [ DEBUG ]  {conn-10005, pstmt-20006} Parameters : []
+2019-08-30 22:52:15  [ http-nio-8074-exec-4:300904 ] - [ DEBUG ]  {conn-10005, pstmt-20006} Types : []
+2019-08-30 22:52:15  [ http-nio-8074-exec-4:300906 ] - [ DEBUG ]  {conn-10005, pstmt-20006} executed. 1.3983 millis. select * from app
+2019-08-30 22:52:15  [ http-nio-8074-exec-4:300906 ] - [ DEBUG ]  {conn-10005, pstmt-20006, rs-50006} open
+2019-08-30 22:52:15  [ http-nio-8074-exec-4:300906 ] - [ DEBUG ]  {conn-10005, pstmt-20006, rs-50006} Header: [id, appid, secret, apptype]
+2019-08-30 22:52:15  [ http-nio-8074-exec-4:300907 ] - [ DEBUG ]  {conn-10005, pstmt-20006, rs-50006} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+2019-08-30 22:52:15  [ http-nio-8074-exec-4:300907 ] - [ DEBUG ]  {conn-10005, pstmt-20006, rs-50006} closed
+2019-08-30 22:52:15  [ http-nio-8074-exec-4:300907 ] - [ DEBUG ]  {conn-10005, pstmt-20006} closed
+2019-08-30 22:52:15  [ http-nio-8074-exec-4:300908 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:52:16  [ http-nio-8074-exec-4:301020 ] - [ DEBUG ]  {"session_key":"trWbXzq4oqhKxQ7lrfxCrg==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+2019-08-30 22:52:16  [ http-nio-8074-exec-4:301022 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:52:16  [ http-nio-8074-exec-4:301024 ] - [ DEBUG ]  {conn-10005, pstmt-20007} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+2019-08-30 22:52:16  [ http-nio-8074-exec-4:301025 ] - [ DEBUG ]  {conn-10005, pstmt-20007} Parameters : []
+2019-08-30 22:52:16  [ http-nio-8074-exec-4:301025 ] - [ DEBUG ]  {conn-10005, pstmt-20007} Types : []
+2019-08-30 22:52:16  [ http-nio-8074-exec-4:301028 ] - [ DEBUG ]  {conn-10005, pstmt-20007} executed. 3.1426 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+2019-08-30 22:52:16  [ http-nio-8074-exec-4:301028 ] - [ DEBUG ]  {conn-10005, pstmt-20007, rs-50007} open
+2019-08-30 22:52:16  [ http-nio-8074-exec-4:301029 ] - [ DEBUG ]  {conn-10005, pstmt-20007, rs-50007} Header: [id, openid, unionid, nick_name, create_time, update_time]
+2019-08-30 22:52:16  [ http-nio-8074-exec-4:301030 ] - [ DEBUG ]  {conn-10005, pstmt-20007, rs-50007} Result: [1, null, null, null, 2019-08-30 22:46:15.0, 2019-08-30 22:46:15.0]
+2019-08-30 22:52:16  [ http-nio-8074-exec-4:301031 ] - [ DEBUG ]  {conn-10005, pstmt-20007, rs-50007} closed
+2019-08-30 22:52:16  [ http-nio-8074-exec-4:301032 ] - [ DEBUG ]  {conn-10005, pstmt-20007} closed
+2019-08-30 22:52:16  [ http-nio-8074-exec-4:301032 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:52:16  [ http-nio-8074-exec-4:301036 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:52:16  [ http-nio-8074-exec-4:301037 ] - [ DEBUG ]  {conn-10005, pstmt-20008} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+2019-08-30 22:52:16  [ http-nio-8074-exec-4:301037 ] - [ DEBUG ]  {conn-10005, pstmt-20008} Parameters : []
+2019-08-30 22:52:16  [ http-nio-8074-exec-4:301038 ] - [ DEBUG ]  {conn-10005, pstmt-20008} Types : []
+2019-08-30 22:52:16  [ http-nio-8074-exec-4:301039 ] - [ DEBUG ]  {conn-10005, pstmt-20008} executed. 1.3911 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+2019-08-30 22:52:16  [ http-nio-8074-exec-4:301039 ] - [ DEBUG ]  {conn-10005, pstmt-20008, rs-50008} open
+2019-08-30 22:52:16  [ http-nio-8074-exec-4:301040 ] - [ DEBUG ]  {conn-10005, pstmt-20008, rs-50008} Header: [id, openid, unionid, uuid]
+2019-08-30 22:52:16  [ http-nio-8074-exec-4:301040 ] - [ DEBUG ]  {conn-10005, pstmt-20008, rs-50008} closed
+2019-08-30 22:52:16  [ http-nio-8074-exec-4:301040 ] - [ DEBUG ]  {conn-10005, pstmt-20008} closed
+2019-08-30 22:52:16  [ http-nio-8074-exec-4:301041 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408163 ] - [ DEBUG ]  {"code":"043nQyaE13Tyc50hTj9E1j4AaE1nQyah"}
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408167 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408167 ] - [ DEBUG ]  {conn-10005, pstmt-20009} created. select * from app
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408168 ] - [ DEBUG ]  {conn-10005, pstmt-20009} Parameters : []
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408168 ] - [ DEBUG ]  {conn-10005, pstmt-20009} Types : []
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408168 ] - [ DEBUG ]  {conn-10005, pstmt-20009} executed. 0.7583 millis. select * from app
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408169 ] - [ DEBUG ]  {conn-10005, pstmt-20009, rs-50009} open
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408169 ] - [ DEBUG ]  {conn-10005, pstmt-20009, rs-50009} Header: [id, appid, secret, apptype]
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408169 ] - [ DEBUG ]  {conn-10005, pstmt-20009, rs-50009} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408170 ] - [ DEBUG ]  {conn-10005, pstmt-20009, rs-50009} closed
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408170 ] - [ DEBUG ]  {conn-10005, pstmt-20009} closed
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408170 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408281 ] - [ DEBUG ]  {"session_key":"GHpWckCphqSem\/InD05tng==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408282 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408282 ] - [ DEBUG ]  {conn-10005, pstmt-20010} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408282 ] - [ DEBUG ]  {conn-10005, pstmt-20010} Parameters : []
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408283 ] - [ DEBUG ]  {conn-10005, pstmt-20010} Types : []
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408283 ] - [ DEBUG ]  {conn-10005, pstmt-20010} executed. 0.7974 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408283 ] - [ DEBUG ]  {conn-10005, pstmt-20010, rs-50010} open
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408284 ] - [ DEBUG ]  {conn-10005, pstmt-20010, rs-50010} Header: [id, openid, unionid, nick_name, create_time, update_time]
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408284 ] - [ DEBUG ]  {conn-10005, pstmt-20010, rs-50010} Result: [1, null, null, null, 2019-08-30 22:46:15.0, 2019-08-30 22:46:15.0]
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408284 ] - [ DEBUG ]  {conn-10005, pstmt-20010, rs-50010} closed
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408285 ] - [ DEBUG ]  {conn-10005, pstmt-20010} closed
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408285 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408287 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408287 ] - [ DEBUG ]  {conn-10005, pstmt-20011} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408287 ] - [ DEBUG ]  {conn-10005, pstmt-20011} Parameters : []
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408287 ] - [ DEBUG ]  {conn-10005, pstmt-20011} Types : []
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408288 ] - [ DEBUG ]  {conn-10005, pstmt-20011} executed. 0.7848 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408288 ] - [ DEBUG ]  {conn-10005, pstmt-20011, rs-50011} open
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408289 ] - [ DEBUG ]  {conn-10005, pstmt-20011, rs-50011} Header: [id, openid, unionid, uuid]
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408289 ] - [ DEBUG ]  {conn-10005, pstmt-20011, rs-50011} closed
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408290 ] - [ DEBUG ]  {conn-10005, pstmt-20011} closed
+2019-08-30 22:54:03  [ http-nio-8074-exec-6:408290 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660776 ] - [ DEBUG ]  {"code":"043PRO8c2o5UjM0k3f7c2DoH8c2PRO8W"}
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660780 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660781 ] - [ DEBUG ]  {conn-10005, pstmt-20012} created. select * from app
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660781 ] - [ DEBUG ]  {conn-10005, pstmt-20012} Parameters : []
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660781 ] - [ DEBUG ]  {conn-10005, pstmt-20012} Types : []
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660782 ] - [ DEBUG ]  {conn-10005, pstmt-20012} executed. 1.2311 millis. select * from app
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660783 ] - [ DEBUG ]  {conn-10005, pstmt-20012, rs-50012} open
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660783 ] - [ DEBUG ]  {conn-10005, pstmt-20012, rs-50012} Header: [id, appid, secret, apptype]
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660783 ] - [ DEBUG ]  {conn-10005, pstmt-20012, rs-50012} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660783 ] - [ DEBUG ]  {conn-10005, pstmt-20012, rs-50012} closed
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660784 ] - [ DEBUG ]  {conn-10005, pstmt-20012} closed
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660784 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660916 ] - [ DEBUG ]  {"session_key":"fshEgfthPLXI4WlIUGIA\/Q==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660917 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660917 ] - [ DEBUG ]  {conn-10005, pstmt-20013} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660917 ] - [ DEBUG ]  {conn-10005, pstmt-20013} Parameters : []
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660917 ] - [ DEBUG ]  {conn-10005, pstmt-20013} Types : []
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660918 ] - [ DEBUG ]  {conn-10005, pstmt-20013} executed. 0.9394 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660918 ] - [ DEBUG ]  {conn-10005, pstmt-20013, rs-50013} open
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660920 ] - [ DEBUG ]  {conn-10005, pstmt-20013, rs-50013} Header: [id, openid, unionid, nick_name, create_time, update_time]
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660920 ] - [ DEBUG ]  {conn-10005, pstmt-20013, rs-50013} Result: [1, null, null, null, 2019-08-30 22:46:15.0, 2019-08-30 22:46:15.0]
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660921 ] - [ DEBUG ]  {conn-10005, pstmt-20013, rs-50013} closed
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660921 ] - [ DEBUG ]  {conn-10005, pstmt-20013} closed
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660921 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660923 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660924 ] - [ DEBUG ]  {conn-10005, pstmt-20014} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660924 ] - [ DEBUG ]  {conn-10005, pstmt-20014} Parameters : []
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660924 ] - [ DEBUG ]  {conn-10005, pstmt-20014} Types : []
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660925 ] - [ DEBUG ]  {conn-10005, pstmt-20014} executed. 0.8901 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660925 ] - [ DEBUG ]  {conn-10005, pstmt-20014, rs-50014} open
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660925 ] - [ DEBUG ]  {conn-10005, pstmt-20014, rs-50014} Header: [id, openid, unionid, uuid]
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660926 ] - [ DEBUG ]  {conn-10005, pstmt-20014, rs-50014} closed
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660926 ] - [ DEBUG ]  {conn-10005, pstmt-20014} closed
+2019-08-30 22:58:15  [ http-nio-8074-exec-8:660926 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703717 ] - [ DEBUG ]  {"code":"043SVkoC0MD1Ch204BpC0arioC0SVkoL"}
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703718 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703718 ] - [ DEBUG ]  {conn-10005, pstmt-20015} created. select * from app
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703719 ] - [ DEBUG ]  {conn-10005, pstmt-20015} Parameters : []
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703719 ] - [ DEBUG ]  {conn-10005, pstmt-20015} Types : []
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703719 ] - [ DEBUG ]  {conn-10005, pstmt-20015} executed. 0.8053 millis. select * from app
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703720 ] - [ DEBUG ]  {conn-10005, pstmt-20015, rs-50015} open
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703720 ] - [ DEBUG ]  {conn-10005, pstmt-20015, rs-50015} Header: [id, appid, secret, apptype]
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703720 ] - [ DEBUG ]  {conn-10005, pstmt-20015, rs-50015} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703721 ] - [ DEBUG ]  {conn-10005, pstmt-20015, rs-50015} closed
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703721 ] - [ DEBUG ]  {conn-10005, pstmt-20015} closed
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703722 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703845 ] - [ DEBUG ]  {"session_key":"fshEgfthPLXI4WlIUGIA\/Q==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703846 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703846 ] - [ DEBUG ]  {conn-10005, pstmt-20016} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703846 ] - [ DEBUG ]  {conn-10005, pstmt-20016} Parameters : []
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703847 ] - [ DEBUG ]  {conn-10005, pstmt-20016} Types : []
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703847 ] - [ DEBUG ]  {conn-10005, pstmt-20016} executed. 0.861 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703848 ] - [ DEBUG ]  {conn-10005, pstmt-20016, rs-50016} open
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703848 ] - [ DEBUG ]  {conn-10005, pstmt-20016, rs-50016} Header: [id, openid, unionid, nick_name, create_time, update_time]
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703848 ] - [ DEBUG ]  {conn-10005, pstmt-20016, rs-50016} Result: [1, null, null, null, 2019-08-30 22:46:15.0, 2019-08-30 22:46:15.0]
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703849 ] - [ DEBUG ]  {conn-10005, pstmt-20016, rs-50016} closed
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703849 ] - [ DEBUG ]  {conn-10005, pstmt-20016} closed
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703850 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703854 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703854 ] - [ DEBUG ]  {conn-10005, pstmt-20017} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703854 ] - [ DEBUG ]  {conn-10005, pstmt-20017} Parameters : []
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703855 ] - [ DEBUG ]  {conn-10005, pstmt-20017} Types : []
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703855 ] - [ DEBUG ]  {conn-10005, pstmt-20017} executed. 0.9322 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703856 ] - [ DEBUG ]  {conn-10005, pstmt-20017, rs-50017} open
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703856 ] - [ DEBUG ]  {conn-10005, pstmt-20017, rs-50017} Header: [id, openid, unionid, uuid]
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703857 ] - [ DEBUG ]  {conn-10005, pstmt-20017, rs-50017} closed
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703857 ] - [ DEBUG ]  {conn-10005, pstmt-20017} closed
+2019-08-30 22:58:58  [ http-nio-8074-exec-10:703857 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 23:00:17  [ http-nio-8074-exec-2:782919 ] - [ DEBUG ]  {"code":"0437cTbL16Mny71LOkcL1dl2cL17cTbL"}
+2019-08-30 23:00:17  [ http-nio-8074-exec-2:782924 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 23:00:17  [ http-nio-8074-exec-2:782925 ] - [ DEBUG ]  {conn-10005, pstmt-20018} created. select * from app
+2019-08-30 23:00:17  [ http-nio-8074-exec-2:782925 ] - [ DEBUG ]  {conn-10005, pstmt-20018} Parameters : []
+2019-08-30 23:00:17  [ http-nio-8074-exec-2:782925 ] - [ DEBUG ]  {conn-10005, pstmt-20018} Types : []
+2019-08-30 23:00:17  [ http-nio-8074-exec-2:782926 ] - [ DEBUG ]  {conn-10005, pstmt-20018} executed. 0.7318 millis. select * from app
+2019-08-30 23:00:17  [ http-nio-8074-exec-2:782926 ] - [ DEBUG ]  {conn-10005, pstmt-20018, rs-50018} open
+2019-08-30 23:00:17  [ http-nio-8074-exec-2:782926 ] - [ DEBUG ]  {conn-10005, pstmt-20018, rs-50018} Header: [id, appid, secret, apptype]
+2019-08-30 23:00:17  [ http-nio-8074-exec-2:782926 ] - [ DEBUG ]  {conn-10005, pstmt-20018, rs-50018} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+2019-08-30 23:00:17  [ http-nio-8074-exec-2:782927 ] - [ DEBUG ]  {conn-10005, pstmt-20018, rs-50018} closed
+2019-08-30 23:00:17  [ http-nio-8074-exec-2:782927 ] - [ DEBUG ]  {conn-10005, pstmt-20018} closed
+2019-08-30 23:00:17  [ http-nio-8074-exec-2:782927 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 23:00:18  [ http-nio-8074-exec-2:783057 ] - [ DEBUG ]  {"session_key":"AU1AKD1kHOryWCFcVXLInw==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+2019-08-30 23:00:18  [ http-nio-8074-exec-2:783057 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 23:00:18  [ http-nio-8074-exec-2:783058 ] - [ DEBUG ]  {conn-10005, pstmt-20019} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+2019-08-30 23:00:18  [ http-nio-8074-exec-2:783058 ] - [ DEBUG ]  {conn-10005, pstmt-20019} Parameters : []
+2019-08-30 23:00:18  [ http-nio-8074-exec-2:783059 ] - [ DEBUG ]  {conn-10005, pstmt-20019} Types : []
+2019-08-30 23:00:18  [ http-nio-8074-exec-2:783059 ] - [ DEBUG ]  {conn-10005, pstmt-20019} executed. 1.0622 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+2019-08-30 23:00:18  [ http-nio-8074-exec-2:783060 ] - [ DEBUG ]  {conn-10005, pstmt-20019, rs-50019} open
+2019-08-30 23:00:18  [ http-nio-8074-exec-2:783060 ] - [ DEBUG ]  {conn-10005, pstmt-20019, rs-50019} Header: [id, openid, unionid, nick_name, create_time, update_time]
+2019-08-30 23:00:18  [ http-nio-8074-exec-2:783061 ] - [ DEBUG ]  {conn-10005, pstmt-20019, rs-50019} Result: [1, null, null, null, 2019-08-30 22:46:15.0, 2019-08-30 22:46:15.0]
+2019-08-30 23:00:18  [ http-nio-8074-exec-2:783061 ] - [ DEBUG ]  {conn-10005, pstmt-20019, rs-50019} closed
+2019-08-30 23:00:18  [ http-nio-8074-exec-2:783062 ] - [ DEBUG ]  {conn-10005, pstmt-20019} closed
+2019-08-30 23:00:18  [ http-nio-8074-exec-2:783062 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 23:00:18  [ http-nio-8074-exec-2:783064 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 23:00:18  [ http-nio-8074-exec-2:783064 ] - [ DEBUG ]  {conn-10005, pstmt-20020} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+2019-08-30 23:00:18  [ http-nio-8074-exec-2:783064 ] - [ DEBUG ]  {conn-10005, pstmt-20020} Parameters : []
+2019-08-30 23:00:18  [ http-nio-8074-exec-2:783064 ] - [ DEBUG ]  {conn-10005, pstmt-20020} Types : []
+2019-08-30 23:00:18  [ http-nio-8074-exec-2:783065 ] - [ DEBUG ]  {conn-10005, pstmt-20020} executed. 0.6816 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+2019-08-30 23:00:18  [ http-nio-8074-exec-2:783065 ] - [ DEBUG ]  {conn-10005, pstmt-20020, rs-50020} open
+2019-08-30 23:00:18  [ http-nio-8074-exec-2:783065 ] - [ DEBUG ]  {conn-10005, pstmt-20020, rs-50020} Header: [id, openid, unionid, uuid]
+2019-08-30 23:00:18  [ http-nio-8074-exec-2:783065 ] - [ DEBUG ]  {conn-10005, pstmt-20020, rs-50020} closed
+2019-08-30 23:00:18  [ http-nio-8074-exec-2:783066 ] - [ DEBUG ]  {conn-10005, pstmt-20020} closed
+2019-08-30 23:00:18  [ http-nio-8074-exec-2:783066 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962096 ] - [ DEBUG ]  {"code":"043iJzZ10OpGcH1DkB120vBHZ10iJzZI"}
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962100 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962100 ] - [ DEBUG ]  {conn-10005, pstmt-20021} created. select * from app
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962101 ] - [ DEBUG ]  {conn-10005, pstmt-20021} Parameters : []
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962101 ] - [ DEBUG ]  {conn-10005, pstmt-20021} Types : []
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962101 ] - [ DEBUG ]  {conn-10005, pstmt-20021} executed. 0.7658 millis. select * from app
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962102 ] - [ DEBUG ]  {conn-10005, pstmt-20021, rs-50021} open
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962102 ] - [ DEBUG ]  {conn-10005, pstmt-20021, rs-50021} Header: [id, appid, secret, apptype]
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962102 ] - [ DEBUG ]  {conn-10005, pstmt-20021, rs-50021} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962102 ] - [ DEBUG ]  {conn-10005, pstmt-20021, rs-50021} closed
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962103 ] - [ DEBUG ]  {conn-10005, pstmt-20021} closed
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962103 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962232 ] - [ DEBUG ]  {"session_key":"eEEQ8mLY+nuGLKJkeKBQSA==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962234 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962235 ] - [ DEBUG ]  {conn-10005, pstmt-20022} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962235 ] - [ DEBUG ]  {conn-10005, pstmt-20022} Parameters : []
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962236 ] - [ DEBUG ]  {conn-10005, pstmt-20022} Types : []
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962237 ] - [ DEBUG ]  {conn-10005, pstmt-20022} executed. 1.4358 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962237 ] - [ DEBUG ]  {conn-10005, pstmt-20022, rs-50022} open
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962238 ] - [ DEBUG ]  {conn-10005, pstmt-20022, rs-50022} Header: [id, openid, unionid, nick_name, create_time, update_time]
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962238 ] - [ DEBUG ]  {conn-10005, pstmt-20022, rs-50022} Result: [1, null, null, null, 2019-08-30 22:46:15.0, 2019-08-30 22:46:15.0]
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962239 ] - [ DEBUG ]  {conn-10005, pstmt-20022, rs-50022} closed
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962240 ] - [ DEBUG ]  {conn-10005, pstmt-20022} closed
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962240 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962244 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962244 ] - [ DEBUG ]  {conn-10005, pstmt-20023} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962245 ] - [ DEBUG ]  {conn-10005, pstmt-20023} Parameters : []
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962245 ] - [ DEBUG ]  {conn-10005, pstmt-20023} Types : []
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962245 ] - [ DEBUG ]  {conn-10005, pstmt-20023} executed. 0.6567 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962245 ] - [ DEBUG ]  {conn-10005, pstmt-20023, rs-50023} open
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962246 ] - [ DEBUG ]  {conn-10005, pstmt-20023, rs-50023} Header: [id, openid, unionid, uuid]
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962246 ] - [ DEBUG ]  {conn-10005, pstmt-20023, rs-50023} closed
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962246 ] - [ DEBUG ]  {conn-10005, pstmt-20023} closed
+2019-08-30 23:03:17  [ http-nio-8074-exec-3:962246 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070657 ] - [ DEBUG ]  {"code":"033NF1wA0UD8di2RWpwA0GyZvA0NF1wT"}
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070661 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070661 ] - [ DEBUG ]  {conn-10005, pstmt-20024} created. select * from app
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070661 ] - [ DEBUG ]  {conn-10005, pstmt-20024} Parameters : []
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070662 ] - [ DEBUG ]  {conn-10005, pstmt-20024} Types : []
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070662 ] - [ DEBUG ]  {conn-10005, pstmt-20024} executed. 0.7782 millis. select * from app
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070663 ] - [ DEBUG ]  {conn-10005, pstmt-20024, rs-50024} open
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070663 ] - [ DEBUG ]  {conn-10005, pstmt-20024, rs-50024} Header: [id, appid, secret, apptype]
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070663 ] - [ DEBUG ]  {conn-10005, pstmt-20024, rs-50024} Result: [1, wx204802db85a9fb3c, 7088426ea2e5b73ad58817b3ce57e29f, wechat]
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070663 ] - [ DEBUG ]  {conn-10005, pstmt-20024, rs-50024} closed
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070664 ] - [ DEBUG ]  {conn-10005, pstmt-20024} closed
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070664 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070804 ] - [ DEBUG ]  {"session_key":"eEEQ8mLY+nuGLKJkeKBQSA==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070804 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070805 ] - [ DEBUG ]  {conn-10005, pstmt-20025} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070805 ] - [ DEBUG ]  {conn-10005, pstmt-20025} Parameters : []
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070805 ] - [ DEBUG ]  {conn-10005, pstmt-20025} Types : []
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070805 ] - [ DEBUG ]  {conn-10005, pstmt-20025} executed. 0.6429 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070806 ] - [ DEBUG ]  {conn-10005, pstmt-20025, rs-50025} open
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070806 ] - [ DEBUG ]  {conn-10005, pstmt-20025, rs-50025} Header: [id, openid, unionid, nick_name, create_time, update_time]
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070806 ] - [ DEBUG ]  {conn-10005, pstmt-20025, rs-50025} Result: [1, null, null, null, 2019-08-30 22:46:15.0, 2019-08-30 22:46:15.0]
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070806 ] - [ DEBUG ]  {conn-10005, pstmt-20025, rs-50025} closed
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070807 ] - [ DEBUG ]  {conn-10005, pstmt-20025} closed
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070807 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070809 ] - [ DEBUG ]  {conn-10005} pool-connect
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070809 ] - [ DEBUG ]  {conn-10005, pstmt-20026} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070809 ] - [ DEBUG ]  {conn-10005, pstmt-20026} Parameters : []
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070809 ] - [ DEBUG ]  {conn-10005, pstmt-20026} Types : []
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070810 ] - [ DEBUG ]  {conn-10005, pstmt-20026} executed. 0.5982 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070810 ] - [ DEBUG ]  {conn-10005, pstmt-20026, rs-50026} open
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070810 ] - [ DEBUG ]  {conn-10005, pstmt-20026, rs-50026} Header: [id, openid, unionid, uuid]
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070810 ] - [ DEBUG ]  {conn-10005, pstmt-20026, rs-50026} closed
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070811 ] - [ DEBUG ]  {conn-10005, pstmt-20026} closed
+2019-08-30 23:05:05  [ http-nio-8074-exec-5:1070811 ] - [ DEBUG ]  {conn-10005} pool-recycle

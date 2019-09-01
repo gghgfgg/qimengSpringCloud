@@ -1,0 +1,47 @@
+DEBUG http-nio-8074-exec-2 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-2 com.qimeng.main.wechat.WeChatService - {"session_key":"iGVsZ1RwcbV03\/+OsWGjCQ==","openid":"osHiB4qSHEv9cqS8dhOoagmmZPmo"}
+DEBUG http-nio-8074-exec-2 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20365} created. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20365} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20365} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20365} executed. 0.7368 millis. SELECT id,openid,unionid,nick_name,create_time,update_time
+FROM wechat_user
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20365, rs-50365} open
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20365, rs-50365} Header: [id, openid, unionid, nick_name, create_time, update_time]
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20365, rs-50365} Result: [3, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, null, 2019-08-31 09:24:37.0, 2019-08-31 09:24:37.0]
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20365, rs-50365} closed
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20365} closed
+DEBUG http-nio-8074-exec-2 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-2 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20366} created. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20366} Parameters : [osHiB4qSHEv9cqS8dhOoagmmZPmo]
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20366} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20366} executed. 0.676 millis. SELECT id,openid,unionid,uuid
+FROM wechat_main
+WHERE (openid=?)
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20366, rs-50366} open
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20366, rs-50366} Header: [id, openid, unionid, uuid]
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20366, rs-50366} Result: [1, osHiB4qSHEv9cqS8dhOoagmmZPmo, null, 1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20366, rs-50366} closed
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20366} closed
+DEBUG http-nio-8074-exec-2 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8074-exec-2 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20367} created. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20367} Parameters : [1ddabcc6fa994bddb6665e7099975a3d]
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20367} Types : [VARCHAR]
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20367} executed. 0.5515 millis. SELECT id,uuid,stuinfo
+FROM main_stu
+WHERE (uuid=?)
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20367, rs-50367} open
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20367, rs-50367} Header: [id, uuid, stuinfo]
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20367, rs-50367} Result: [1, 1ddabcc6fa994bddb6665e7099975a3d, [{"unit":0,"bind":1,"wasteType":0,"qrCode":"http://www.qimenghb.com?code=9892fd67a6ee28ea&card=ab6fc4d9dba14edf","name":"黄俊星","active":0,"stuCard":"ab6fc4d9dba14edf","point":0,"stuCode":"9892fd67a6ee28ea"}]]
+DEBUG http-nio-8074-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20367, rs-50367} closed
+DEBUG http-nio-8074-exec-2 druid.sql.Statement - {conn-10002, pstmt-20367} closed
+DEBUG http-nio-8074-exec-2 druid.sql.Connection - {conn-10002} pool-recycle
