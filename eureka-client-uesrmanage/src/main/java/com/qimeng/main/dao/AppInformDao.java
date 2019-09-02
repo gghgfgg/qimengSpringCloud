@@ -15,8 +15,8 @@ import com.qimeng.main.entity.AppInform;
 @Mapper
 public interface AppInformDao {
 
-	@Select("select * from app")
-	AppInform selectAppInform();
+	@Select("select * from app where apptype=#{apptype}")
+	AppInform selectAppInform(String apptype);
 	
 }
 

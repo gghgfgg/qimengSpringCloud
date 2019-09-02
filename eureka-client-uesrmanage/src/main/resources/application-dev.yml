@@ -51,8 +51,3 @@ spring:
         max-idle: 300
         min-idle: 0
         max-wait: 1000ms
-  mvc:
-    static-path-pattern: /**
-  resources:
-    static-locations: classpath:/META-INF/resources/,classpath:/static,classpath:/resources/,file:F:/upload/,file:F:/export/
-

@@ -1,9 +1,20 @@
 server:
-  port: 7072
+  port: 7073
 spring:
   application:
     name: eureka-client-api
+  profiles:
+    active: prod #激活的配置文件
 eureka:
   client:
     service-url:
        defaultZone: http://localhost:8761/eureka/
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    jdbc-type-for-null: null
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql

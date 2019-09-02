@@ -11,7 +11,6 @@ import org.springframework.web.client.RestTemplate;
 
 import com.alibaba.fastjson.JSONObject;
 import com.qimeng.main.entity.AppInform;
-import com.qimeng.main.entity.WecharUser;
 import com.qimeng.main.service.AppInformService;
 import com.qimeng.main.util.EncryptUtil;
 
@@ -42,7 +41,7 @@ public class WeChatService {
 	public String getCode2Session(String code) {
 		 Map<String, String> map = new HashMap<>();
 	     map.put("JSCODE",code);
-	     AppInform appInform= appInformService.selectAppInform();
+	     AppInform appInform= appInformService.selectAppInform("wechat");
 	     map.put("APPID",appInform.getAppid());
 	     map.put("SECRET",appInform.getSecret());
 	     String json = restTemplate.getForEntity(BASE_URL+"sns/jscode2session?appid={APPID}&secret={SECRET}&js_code={JSCODE}&grant_type=authorization_code", String.class, map).getBody();

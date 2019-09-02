@@ -1,7 +1,5 @@
 package com.qimeng.main.dao;
 
-import java.util.List;
-
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Options;
@@ -12,7 +10,6 @@ import org.apache.ibatis.jdbc.SQL;
 import org.springframework.util.StringUtils;
 
 import com.qimeng.main.entity.MainToStudent;
-import com.qimeng.main.entity.UserMain;
 
 /** 
 * @author  作者 E-mail: 

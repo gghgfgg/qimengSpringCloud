@@ -239,7 +239,7 @@ CREATE TABLE `kernel_student_inform` (
   `birthplace` varchar(20) DEFAULT NULL,
   `nationality` varchar(50) DEFAULT NULL,
   `identity_type` varchar(20) DEFAULT NULL,
-  `grade` varchar(4) DEFAULT NULL,
+  `grade` varchar(20) DEFAULT NULL,
   `classS` varchar(4) DEFAULT NULL,
   `overseas_chinese` char(4) DEFAULT NULL,
   `politics_status` varchar(5) DEFAULT NULL,
@@ -276,7 +276,7 @@ CREATE TABLE `kernel_student_inform` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `student_code` (`student_code`) USING HASH,
   UNIQUE KEY `identity_card` (`identity_card`) USING HASH,
-UNIQUE KEY `teacher_phone` (`teacher_phone`) USING HASH
+  UNIQUE KEY `teacher_phone` (`teacher_phone`) USING HASH
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -439,4 +439,4 @@ CREATE TABLE `upload_log` (
   `operator` varchar(255) DEFAULT NULL,
   `create_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

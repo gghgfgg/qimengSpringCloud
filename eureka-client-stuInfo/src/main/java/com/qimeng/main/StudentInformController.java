@@ -270,7 +270,7 @@ public class StudentInformController {
 		}
 	}
 	@RequestMapping("/exportstudatalist")
-	public String exportStudentDataList(@RequestBody JSONObject message,HttpServletResponse response) {
+	public String exportStudentDataList(@RequestBody JSONObject message) {
 		RequestMessage<StudentVo> requestMessage = JSON.parseObject(message.toString(),
 				new TypeReference<RequestMessage<StudentVo>>() {
 				});

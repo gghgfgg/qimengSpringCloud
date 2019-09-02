@@ -155,16 +155,15 @@ public class WechatLoginController {
 				userMain.setCreateTime(date);
 				userMain.setUpdateTime(date);
 				userMainService.insertUserMain(userMain);
-
-				WecharToMain wecharToMain = wechatToMainService.selecWechatToMainByOpendIdAndUnionId(
-						jsonwechat.getString("openid"), jsonwechat.getString("unionid"));
-				if (wecharToMain == null) {
-					wecharToMain = new WecharToMain();
-					wecharToMain.setOpenid(jsonwechat.getString("openid"));
-					wecharToMain.setUnionid(jsonwechat.getString("unionid"));
-					wecharToMain.setUuid(uuid);
-					wechatToMainService.inserWechatToMain(wecharToMain);
-				}
+			}
+			WecharToMain wecharToMain = wechatToMainService.selecWechatToMainByOpendIdAndUnionId(
+					jsonwechat.getString("openid"), jsonwechat.getString("unionid"));
+			if (wecharToMain == null) {
+				wecharToMain = new WecharToMain();
+				wecharToMain.setOpenid(jsonwechat.getString("openid"));
+				wecharToMain.setUnionid(jsonwechat.getString("unionid"));
+				wecharToMain.setUuid(userMain.getUuid());
+				wechatToMainService.inserWechatToMain(wecharToMain);
 			}
 			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
 			responseMessage.setData(wechatphone);

@@ -1,6 +1,5 @@
 package com.qimeng.main.service;
 
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -86,8 +85,8 @@ public class StuInfoService {
 		return stuinfo.updateStudentActive(message);
 	}
 	
-	public String exportStudentDataList(JSONObject message,HttpServletResponse response) {
-		return stuinfo.exportStudentDataList(message, response);
+	public String exportStudentDataList(JSONObject message) {
+		return stuinfo.exportStudentDataList(message);
 	}
 	
 	public String getSchoolList(Integer page,JSONObject message){
@@ -170,5 +169,15 @@ public class StuInfoService {
 		return stuinfo.saveAppInform(message);
 	}
 	
+	public String getRecycleLog(JSONObject message) {
+		return stuinfo.getRecycleLog(message);
+	}
+
+	public String stuBindByPhone(JSONObject message) {
+		return stuinfo.stuBindByPhone(message);
+	}
 	
+	public String stuBindByCode(JSONObject message) {
+		return stuinfo.stuBindByCode(message);
+	}
 }

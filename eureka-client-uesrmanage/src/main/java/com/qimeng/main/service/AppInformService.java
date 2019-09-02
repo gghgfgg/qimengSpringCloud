@@ -19,9 +19,9 @@ public class AppInformService {
 	@Autowired
 	AppInformDao appInformDao;
 	
-	public AppInform selectAppInform() {
+	public AppInform selectAppInform(String apptype) {
 		try {
-			return appInformDao.selectAppInform();
+			return appInformDao.selectAppInform(apptype);
 		} catch (Exception e) {
 			// TODO: handle exception
 			logger.error("获取app信息异常");

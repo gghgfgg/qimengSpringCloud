@@ -2,7 +2,7 @@ spring:
   datasource:
     username: root
     password: qmhbkj20190402@
-    url: jdbc:mysql://47.112.126.70:3333/studentinform?useUnicode=true&characterEncoding=UTF-8&&serverTimezone=Asia/Shanghai&useAffectedRows=true
+    url: jdbc:mysql://47.112.126.70:3333/usermanage?useUnicode=true&characterEncoding=UTF-8&&serverTimezone=Asia/Shanghai&useAffectedRows=true
     
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
@@ -49,8 +49,3 @@ spring:
         max-idle: 300
         min-idle: 0
         max-wait: 1000ms
-  mvc:
-    static-path-pattern: /**
-  resources:
-    static-locations: classpath:/META-INF/resources/,classpath:/static,classpath:/resources/,file:/upload/,file:/export/
-    #file:F:/upload/,file:F:/export/

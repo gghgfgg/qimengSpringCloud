@@ -41,12 +41,11 @@ CREATE TABLE `main_stu` (
   `uuid` varchar(32) DEFAULT NULL,
   `stuinfo` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of main_stu
 -- ----------------------------
-INSERT INTO `main_stu` VALUES ('1', '1ddabcc6fa994bddb6665e7099975a3d', '[{\"unit\":0,\"bind\":1,\"wasteType\":0,\"qrCode\":\"http://www.qimenghb.com?code=9892fd67a6ee28ea&card=ab6fc4d9dba14edf\",\"name\":\"黄俊星\",\"active\":0,\"stuCard\":\"ab6fc4d9dba14edf\",\"point\":0,\"stuCode\":\"9892fd67a6ee28ea\"}]');
 
 -- ----------------------------
 -- Table structure for main_user
@@ -67,12 +66,11 @@ CREATE TABLE `main_user` (
   UNIQUE KEY `phone` (`phone`) USING HASH,
   UNIQUE KEY `mail` (`mail`) USING HASH,
   UNIQUE KEY `username` (`username`) USING HASH
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of main_user
 -- ----------------------------
-INSERT INTO `main_user` VALUES ('2', '1ddabcc6fa994bddb6665e7099975a3d', '15920198991', null, null, null, null, '2019-08-31 11:11:22', '2019-08-31 11:11:22');
 
 -- ----------------------------
 -- Table structure for wechat_main
@@ -85,12 +83,11 @@ CREATE TABLE `wechat_main` (
   `uuid` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `un` (`unionid`) USING HASH
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of wechat_main
 -- ----------------------------
-INSERT INTO `wechat_main` VALUES ('1', 'osHiB4qSHEv9cqS8dhOoagmmZPmo', null, '1ddabcc6fa994bddb6665e7099975a3d');
 
 -- ----------------------------
 -- Table structure for wechat_user
@@ -105,11 +102,8 @@ CREATE TABLE `wechat_user` (
   `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `un` (`openid`,`unionid`) USING HASH
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of wechat_user
 -- ----------------------------
-INSERT INTO `wechat_user` VALUES ('1', null, null, null, '2019-08-30 22:46:15', '2019-08-30 22:46:15');
-INSERT INTO `wechat_user` VALUES ('2', null, null, null, '2019-08-31 09:23:32', '2019-08-31 09:23:32');
-INSERT INTO `wechat_user` VALUES ('3', 'osHiB4qSHEv9cqS8dhOoagmmZPmo', null, null, '2019-08-31 09:24:37', '2019-08-31 09:24:37');

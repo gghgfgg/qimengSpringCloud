@@ -12,7 +12,6 @@ import org.apache.ibatis.jdbc.SQL;
 import org.springframework.util.StringUtils;
 
 import com.qimeng.main.entity.WecharToMain;
-import com.qimeng.main.entity.WecharUser;
 
 /** 
 * @author  作者 E-mail: 

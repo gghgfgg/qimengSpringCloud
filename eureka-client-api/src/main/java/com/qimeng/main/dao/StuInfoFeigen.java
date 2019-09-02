@@ -6,6 +6,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.alibaba.fastjson.JSONObject;
@@ -57,7 +58,7 @@ public interface StuInfoFeigen {
 	public String getStudentInfo(@RequestBody JSONObject message);
 	
 	@RequestMapping("/stuinfo/uploadstulist")
-	public String uploadStudentList(String message,MultipartFile file);
+	public String uploadStudentList(@RequestParam String message,@RequestParam MultipartFile file);
 	
 	@RequestMapping("/stuinfo/savestudata")
 	public String saveStudentData(@RequestBody JSONObject message);
@@ -69,7 +70,13 @@ public interface StuInfoFeigen {
 	public String updateStudentActive(@RequestBody JSONObject message);
 	
 	@RequestMapping("/stuinfo/exportstudatalist")
-	public String exportStudentDataList(@RequestBody JSONObject message,HttpServletResponse response);
+	public String exportStudentDataList(@RequestBody JSONObject message);
+	
+	@RequestMapping("/stuinfo/stubindbyphone")
+	public String stuBindByPhone(@RequestBody JSONObject message);
+	
+	@RequestMapping("/stuinfo/stubindbycode")
+	public String stuBindByCode(@RequestBody JSONObject message);
 	
 	
 	//学校信息
@@ -139,4 +146,8 @@ public interface StuInfoFeigen {
 	
 	@RequestMapping("/appinfo/saveappinfo")
 	public String saveAppInform(@RequestBody JSONObject message);
+	
+	//日志信息
+	@RequestMapping("/log/getrecyclelog")
+	public String getRecycleLog(@RequestBody JSONObject message);
 }
