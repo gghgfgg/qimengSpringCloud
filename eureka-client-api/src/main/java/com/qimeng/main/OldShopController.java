@@ -20,6 +20,7 @@ import com.alibaba.fastjson.TypeReference;
 import com.qimeng.main.service.StuInfoService;
 import com.qimeng.main.service.StudentInfoService;
 import com.qimeng.main.service.UsePointsLogService;
+import com.qimeng.main.util.EncryptUtil;
 import com.qimeng.main.dao.OldServiceDao;
 import com.qimeng.main.entity.Repertory;
 import com.qimeng.main.entity.StudentInfo;
@@ -151,8 +152,10 @@ public class OldShopController {
 			ResponseMessage<StudentInfoVo> requestMessage=JSON.parseObject(responseMessage, new TypeReference<ResponseMessage<StudentInfoVo>>() {});
 			if(requestMessage.getSuccess()) {
 				RequestMessage<UsedPointsVo> requestPoints=new RequestMessage<UsedPointsVo>();
-				requestPoints.setAppID("7564564864648644");
-				requestPoints.setAccountTonken(requestMessage.getAccountTonken());
+				requestPoints.setAppID(request.getAppID());
+				EncryptUtil encryptUtil=new EncryptUtil("9bacasuhnfahfoia","sdoapifu");
+				String accountTonken=encryptUtil.encode(requestMessage.getAccountTonken());
+				requestPoints.setAccountTonken(accountTonken);
 				UsedPointsVo usedPointsVo=new UsedPointsVo();
 				usedPointsVo.setStuCard(requestMessage.getData().getStuCard());
 				usedPointsVo.setStuCode(requestMessage.getData().getStuCode());
@@ -160,7 +163,8 @@ public class OldShopController {
 				usedPointsVo.setMark("大屏机扣分");
 				requestPoints.setData(usedPointsVo);
 				JSONObject messagePoints=JSONObject.parseObject(JSONObject.toJSONString(requestPoints));
-				logger.info(stuInfoService.getStudent(messagePoints));
+				logger.info(messagePoints.toString());
+				logger.info(stuInfoService.usedPoints(messagePoints));
 			}
 			
 		} catch (Exception e) {
@@ -194,7 +198,7 @@ public class OldShopController {
 		map.put("jf",student.getTotalPoints().intValue()-(Integer.parseInt(jf)));
 		logger.info("*********扣除商品积分生成订单*************");
 		logger.info("更新商品信息:"+repertory.toString());
-		logger.info("学生积分使用信息"+usepointsLog.toString());
+		logger.info("学生积分使用信息:"+usepointsLog.toString());
 		return JSONObject.toJSONString(map);
 	}
 	@RequestMapping("/hxdd")
@@ -238,8 +242,10 @@ public class OldShopController {
 			ResponseMessage<StudentInfoVo> requestMessage=JSON.parseObject(responseMessage, new TypeReference<ResponseMessage<StudentInfoVo>>() {});
 			if(requestMessage.getSuccess()) {
 				RequestMessage<UsedPointsVo> requestPoints=new RequestMessage<UsedPointsVo>();
-				requestPoints.setAppID("7845345646154645");
-				requestPoints.setAccountTonken(requestMessage.getAccountTonken());
+				requestPoints.setAppID(request.getAppID());
+				EncryptUtil encryptUtil=new EncryptUtil("384FJcvcjaSDAACS","13ASAhda");
+				String accountTonken=encryptUtil.encode(requestMessage.getAccountTonken());
+				requestPoints.setAccountTonken(accountTonken);
 				UsedPointsVo usedPointsVo=new UsedPointsVo();
 				usedPointsVo.setStuCard(requestMessage.getData().getStuCard());
 				usedPointsVo.setStuCode(requestMessage.getData().getStuCode());
@@ -247,7 +253,8 @@ public class OldShopController {
 				usedPointsVo.setMark("微信商城扣分");
 				requestPoints.setData(usedPointsVo);
 				JSONObject messagePoints=JSONObject.parseObject(JSONObject.toJSONString(requestPoints));
-				logger.info(stuInfoService.getStudent(messagePoints));
+				logger.info(messagePoints.toString());
+				logger.info(stuInfoService.usedPoints(messagePoints));
 			}
 			
 		} catch (Exception e) {
@@ -267,7 +274,7 @@ public class OldShopController {
 		usePointsLogService.insertPointsLog(usepointsLog);
 		
 		logger.info("*********微信商城扣除积分*************");
-		logger.info("学生积分使用信息"+usepointsLog.toString());
+		logger.info("学生积分使用信息:"+usepointsLog.toString());
 		
 		map.put("success", true);
 		return JSONObject.toJSONString(map);

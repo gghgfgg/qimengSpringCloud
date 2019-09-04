@@ -87,7 +87,7 @@ public class DeviceManagementService {
 		return selectDeviceManagementList(deviceManagement);
 	}
 	
-	@Cacheable(value="DeviceManagement",key="#machineId")
+	@Cacheable(value="DeviceManagement",key="#machineId",unless="#result == null")
 	public DeviceManagement selectDeviceManagementListByMachineId(String machineId){
 		DeviceManagement deviceManagement=new DeviceManagement();
 		deviceManagement.setMachineId(machineId);
@@ -95,7 +95,7 @@ public class DeviceManagementService {
 		return list.isEmpty()?null:list.get(0);
 	}
 	
-	@Cacheable(value="DeviceManagement",key="#machineId")
+	@Cacheable(value="DeviceManagement",key="#machineId",unless="#result == null")
 	public DeviceManagement selectDeviceManagementListByMachineId(String machineId,boolean active){
 		DeviceManagement deviceManagement=new DeviceManagement();
 		deviceManagement.setMachineId(machineId);

@@ -95,7 +95,7 @@ public class RecycleTypeService {
 	 * @param type
 	 * @return
 	 */
-	@Cacheable(value="RecycleType",key="#type")
+	@Cacheable(value="RecycleType",key="#type",unless="#result == null")
 	public RecycleType selectRecycleTypeByType(byte type) {
 		RecycleType recycleType=new RecycleType();
 		recycleType.setType(type);

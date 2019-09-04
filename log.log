@@ -3489,3 +3489,717 @@ WHERE (unionid=? AND openid=?)
 2019-09-02 22:13:39  [ http-nio-7073-exec-9:1447890 ] - [ DEBUG ]  {conn-10004} pool-recycle
 2019-09-02 22:13:39  [ http-nio-7073-exec-9:1447890 ] - [ INFO ]  *********获取广告大图*************
 2019-09-02 22:13:39  [ http-nio-7073-exec-9:1447890 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 12:02:20  [ http-nio-7073-exec-2:0 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 12:02:20  [ http-nio-7073-exec-2:3 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 12:02:50  [ http-nio-7073-exec-5:29450 ] - [ INFO ]  *********获取商城接口学生信息*************
+2019-09-03 12:02:50  [ http-nio-7073-exec-5:29451 ] - [ INFO ]  StudentInfo [id=8, name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, schoolId=10001, totalPoints=169.0, stuCard=29b2592cc12213d751c1b89be293232c6049e456, bind=0, active=0, startTime=Fri Jul 05 08:00:00 CST 2019]
+2019-09-03 12:04:04  [ http-nio-7073-exec-1:103620 ] - [ INFO ]  *********获取商城接口学生信息*************
+2019-09-03 12:04:04  [ http-nio-7073-exec-1:103620 ] - [ INFO ]  StudentInfo [id=8, name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, schoolId=10001, totalPoints=169.0, stuCard=29b2592cc12213d751c1b89be293232c6049e456, bind=2801, active=0, startTime=Fri Jul 05 08:00:00 CST 2019]
+2019-09-03 12:04:12  [ http-nio-7073-exec-10:111418 ] - [ INFO ]  *********获取商城接口学生信息*************
+2019-09-03 12:04:12  [ http-nio-7073-exec-10:111419 ] - [ INFO ]  StudentInfo [id=8, name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, schoolId=10001, totalPoints=169.0, stuCard=29b2592cc12213d751c1b89be293232c6049e456, bind=2801, active=0, startTime=Fri Jul 05 08:00:00 CST 2019]
+2019-09-03 12:07:07  [ http-nio-7073-exec-7:287118 ] - [ INFO ]  *********获取商城接口学生信息*************
+2019-09-03 12:07:07  [ http-nio-7073-exec-7:287119 ] - [ INFO ]  StudentInfo [id=8, name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, schoolId=10001, totalPoints=169.0, stuCard=29b2592cc12213d751c1b89be293232c6049e456, bind=2801, active=0, startTime=Fri Jul 05 08:00:00 CST 2019]
+2019-09-03 12:07:27  [ http-nio-7073-exec-3:306791 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 12:07:27  [ http-nio-7073-exec-3:306792 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 12:07:32  [ http-nio-7073-exec-9:311642 ] - [ INFO ]  *********获取商城接口学生信息*************
+2019-09-03 12:07:32  [ http-nio-7073-exec-9:311643 ] - [ INFO ]  StudentInfo [id=8, name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, schoolId=10001, totalPoints=169.0, stuCard=29b2592cc12213d751c1b89be293232c6049e456, bind=2801, active=0, startTime=Fri Jul 05 08:00:00 CST 2019]
+2019-09-03 12:10:55  [ http-nio-7073-exec-2:515142 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 12:10:55  [ http-nio-7073-exec-2:515142 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 12:11:08  [ http-nio-7073-exec-5:527984 ] - [ INFO ]  *********获取商城接口学生信息*************
+2019-09-03 12:11:08  [ http-nio-7073-exec-5:527984 ] - [ INFO ]  StudentInfo [id=8, name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, schoolId=10001, totalPoints=169.0, stuCard=29b2592cc12213d751c1b89be293232c6049e456, bind=2801, active=0, startTime=Fri Jul 05 08:00:00 CST 2019]
+2019-09-03 12:11:08  [ http-nio-7073-exec-4:528082 ] - [ INFO ]  *********获取商品列表*************
+2019-09-03 12:11:08  [ http-nio-7073-exec-4:528082 ] - [ INFO ]  [id=15 mc=15 jf=1 pic=http://sys.qimenghb.com/pic/heibi.jpg, id=16 mc=16 jf=1 pic=http://sys.qimenghb.com/pic/zuowenb.jpg, id=17 mc=17 jf=1 pic=http://sys.qimenghb.com/pic/pinyinb.jpg, id=18 mc=18 jf=1 pic=http://sys.qimenghb.com/pic/shuangxianb.jpg, id=19 mc=19 jf=1 pic=http://sys.qimenghb.com/pic/yingyub.jpg, id=20 mc=20 jf=1 pic=http://sys.qimenghb.com/pic/tiangeb.jpg, id=21 mc=21 jf=1 pic=http://sys.qimenghb.com/pic/fanggeb.jpg, id=22 mc=22 jf=1 pic=http://sys.qimenghb.com/pic/huatub.jpg, id=23 mc=23 jf=1 pic=http://sys.qimenghb.com/pic/shuxueb.jpg, id=24 mc=24 jf=1 pic=http://sys.qimenghb.com/pic/anxianb.jpg, id=1 mc=1 jf=10 pic=http://sys.qimenghb.com/pic/heibi.jpg, id=2 mc=2 jf=10 pic=http://sys.qimenghb.com/pic/zuowenb.jpg, id=3 mc=3 jf=10 pic=http://sys.qimenghb.com/pic/pinyinb.jpg, id=4 mc=4 jf=10 pic=http://sys.qimenghb.com/pic/shuangxianb.jpg, id=5 mc=5 jf=10 pic=http://sys.qimenghb.com/pic/yingyub.jpg, id=6 mc=6 jf=10 pic=http://sys.qimenghb.com/pic/tiangeb.jpg, id=7 mc=7 jf=10 pic=http://sys.qimenghb.com/pic/fanggeb.jpg, id=8 mc=8 jf=10 pic=http://sys.qimenghb.com/pic/huatub.jpg, id=9 mc=9 jf=10 pic=http://sys.qimenghb.com/pic/shuxueb.jpg, id=10 mc=10 jf=10 pic=http://sys.qimenghb.com/pic/anxianb.jpg, id=11 mc=11 jf=15 pic=http://sys.qimenghb.com/pic/506b.jpg, id=12 mc=12 jf=25 pic=http://sys.qimenghb.com/pic/506h.jpg, id=13 mc=13 jf=15 pic=http://sys.qimenghb.com/pic/400b.jpg, id=14 mc=14 jf=25 pic=http://sys.qimenghb.com/pic/400h.jpg, id=25 mc=25 jf=25 pic=http://sys.qimenghb.com/pic/300h.jpg]
+2019-09-03 12:11:20  [ http-nio-8071-exec-2:0 ] - [ ERROR ]  查找app异常
+2019-09-03 12:11:20  [ http-nio-8071-exec-1:0 ] - [ ERROR ]  查找app异常
+2019-09-03 12:11:20  [ http-nio-8071-exec-1:4 ] - [ ERROR ]  Error:
+org.springframework.dao.TransientDataAccessResourceException: Error attempting to get column 'create_time' from result set.  Cause: java.sql.SQLException: Zero date value prohibited
+; Zero date value prohibited; nested exception is java.sql.SQLException: Zero date value prohibited
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:110)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy95.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:137)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:75)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy99.selectApplicationManagementList(Unknown Source)
+	at com.qimeng.main.service.ApplicationManagementService.selectApplicationManagementList(ApplicationManagementService.java:98)
+	at com.qimeng.main.service.ApplicationManagementService.selectApplicationManagementByAppId(ApplicationManagementService.java:124)
+	at com.qimeng.main.service.ApplicationManagementService$$FastClassBySpringCGLIB$$a7e279d8.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.cache.interceptor.CacheInterceptor.lambda$invoke$0(CacheInterceptor.java:53)
+	at org.springframework.cache.interceptor.CacheAspectSupport.invokeOperation(CacheAspectSupport.java:365)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:420)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:345)
+	at org.springframework.cache.interceptor.CacheInterceptor.invoke(CacheInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.qimeng.main.service.ApplicationManagementService$$EnhancerBySpringCGLIB$$c4ceec64.selectApplicationManagementByAppId(<generated>)
+	at com.qimeng.main.UpdateStudentPointsController.getStudent(UpdateStudentPointsController.java:70)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLException: Zero date value prohibited
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:99)
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getTimestamp(ResultSetImpl.java:923)
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getTimestamp(ResultSetImpl.java:968)
+	at com.alibaba.druid.filter.FilterChainImpl.resultSet_getTimestamp(FilterChainImpl.java:1258)
+	at com.alibaba.druid.filter.FilterAdapter.resultSet_getTimestamp(FilterAdapter.java:1818)
+	at com.alibaba.druid.filter.FilterChainImpl.resultSet_getTimestamp(FilterChainImpl.java:1254)
+	at com.alibaba.druid.filter.FilterAdapter.resultSet_getTimestamp(FilterAdapter.java:1818)
+	at com.alibaba.druid.filter.FilterChainImpl.resultSet_getTimestamp(FilterChainImpl.java:1254)
+	at com.alibaba.druid.filter.FilterAdapter.resultSet_getTimestamp(FilterAdapter.java:1818)
+	at com.alibaba.druid.filter.FilterChainImpl.resultSet_getTimestamp(FilterChainImpl.java:1254)
+	at com.alibaba.druid.proxy.jdbc.ResultSetProxyImpl.getTimestamp(ResultSetProxyImpl.java:741)
+	at com.alibaba.druid.pool.DruidPooledResultSet.getTimestamp(DruidPooledResultSet.java:366)
+	at org.apache.ibatis.type.DateTypeHandler.getNullableResult(DateTypeHandler.java:39)
+	at org.apache.ibatis.type.DateTypeHandler.getNullableResult(DateTypeHandler.java:28)
+	at org.apache.ibatis.type.BaseTypeHandler.getResult(BaseTypeHandler.java:66)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.applyAutomaticMappings(DefaultResultSetHandler.java:516)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.getRowValue(DefaultResultSetHandler.java:397)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleRowValuesForSimpleResultMap(DefaultResultSetHandler.java:351)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleRowValues(DefaultResultSetHandler.java:326)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleResultSet(DefaultResultSetHandler.java:299)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleResultSets(DefaultResultSetHandler.java:192)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:143)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy166.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 82 more
+Caused by: com.mysql.cj.exceptions.DataReadException: Zero date value prohibited
+	at com.mysql.cj.result.SqlTimestampValueFactory.localCreateFromTimestamp(SqlTimestampValueFactory.java:99)
+	at com.mysql.cj.result.SqlTimestampValueFactory.localCreateFromTimestamp(SqlTimestampValueFactory.java:50)
+	at com.mysql.cj.result.AbstractDateTimeValueFactory.createFromTimestamp(AbstractDateTimeValueFactory.java:87)
+	at com.mysql.cj.protocol.a.MysqlTextValueDecoder.decodeTimestamp(MysqlTextValueDecoder.java:79)
+	at com.mysql.cj.protocol.result.AbstractResultsetRow.decodeAndCreateReturnValue(AbstractResultsetRow.java:87)
+	at com.mysql.cj.protocol.result.AbstractResultsetRow.getValueFromBytes(AbstractResultsetRow.java:241)
+	at com.mysql.cj.protocol.a.result.ByteArrayRow.getValue(ByteArrayRow.java:91)
+	... 118 more
+2019-09-03 12:11:20  [ http-nio-8071-exec-2:4 ] - [ ERROR ]  Error:
+org.springframework.dao.TransientDataAccessResourceException: Error attempting to get column 'create_time' from result set.  Cause: java.sql.SQLException: Zero date value prohibited
+; Zero date value prohibited; nested exception is java.sql.SQLException: Zero date value prohibited
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:110)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy95.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:137)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:75)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy99.selectApplicationManagementList(Unknown Source)
+	at com.qimeng.main.service.ApplicationManagementService.selectApplicationManagementList(ApplicationManagementService.java:98)
+	at com.qimeng.main.service.ApplicationManagementService.selectApplicationManagementByAppId(ApplicationManagementService.java:124)
+	at com.qimeng.main.service.ApplicationManagementService$$FastClassBySpringCGLIB$$a7e279d8.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.cache.interceptor.CacheInterceptor.lambda$invoke$0(CacheInterceptor.java:53)
+	at org.springframework.cache.interceptor.CacheAspectSupport.invokeOperation(CacheAspectSupport.java:365)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:420)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:345)
+	at org.springframework.cache.interceptor.CacheInterceptor.invoke(CacheInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.qimeng.main.service.ApplicationManagementService$$EnhancerBySpringCGLIB$$c4ceec64.selectApplicationManagementByAppId(<generated>)
+	at com.qimeng.main.UpdateStudentPointsController.getStudent(UpdateStudentPointsController.java:70)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLException: Zero date value prohibited
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:99)
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getTimestamp(ResultSetImpl.java:923)
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getTimestamp(ResultSetImpl.java:968)
+	at com.alibaba.druid.filter.FilterChainImpl.resultSet_getTimestamp(FilterChainImpl.java:1258)
+	at com.alibaba.druid.filter.FilterAdapter.resultSet_getTimestamp(FilterAdapter.java:1818)
+	at com.alibaba.druid.filter.FilterChainImpl.resultSet_getTimestamp(FilterChainImpl.java:1254)
+	at com.alibaba.druid.filter.FilterAdapter.resultSet_getTimestamp(FilterAdapter.java:1818)
+	at com.alibaba.druid.filter.FilterChainImpl.resultSet_getTimestamp(FilterChainImpl.java:1254)
+	at com.alibaba.druid.filter.FilterAdapter.resultSet_getTimestamp(FilterAdapter.java:1818)
+	at com.alibaba.druid.filter.FilterChainImpl.resultSet_getTimestamp(FilterChainImpl.java:1254)
+	at com.alibaba.druid.proxy.jdbc.ResultSetProxyImpl.getTimestamp(ResultSetProxyImpl.java:741)
+	at com.alibaba.druid.pool.DruidPooledResultSet.getTimestamp(DruidPooledResultSet.java:366)
+	at org.apache.ibatis.type.DateTypeHandler.getNullableResult(DateTypeHandler.java:39)
+	at org.apache.ibatis.type.DateTypeHandler.getNullableResult(DateTypeHandler.java:28)
+	at org.apache.ibatis.type.BaseTypeHandler.getResult(BaseTypeHandler.java:66)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.applyAutomaticMappings(DefaultResultSetHandler.java:516)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.getRowValue(DefaultResultSetHandler.java:397)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleRowValuesForSimpleResultMap(DefaultResultSetHandler.java:351)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleRowValues(DefaultResultSetHandler.java:326)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleResultSet(DefaultResultSetHandler.java:299)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleResultSets(DefaultResultSetHandler.java:192)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:143)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy166.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 82 more
+Caused by: com.mysql.cj.exceptions.DataReadException: Zero date value prohibited
+	at com.mysql.cj.result.SqlTimestampValueFactory.localCreateFromTimestamp(SqlTimestampValueFactory.java:99)
+	at com.mysql.cj.result.SqlTimestampValueFactory.localCreateFromTimestamp(SqlTimestampValueFactory.java:50)
+	at com.mysql.cj.result.AbstractDateTimeValueFactory.createFromTimestamp(AbstractDateTimeValueFactory.java:87)
+	at com.mysql.cj.protocol.a.MysqlTextValueDecoder.decodeTimestamp(MysqlTextValueDecoder.java:79)
+	at com.mysql.cj.protocol.result.AbstractResultsetRow.decodeAndCreateReturnValue(AbstractResultsetRow.java:87)
+	at com.mysql.cj.protocol.result.AbstractResultsetRow.getValueFromBytes(AbstractResultsetRow.java:241)
+	at com.mysql.cj.protocol.a.result.ByteArrayRow.getValue(ByteArrayRow.java:91)
+	... 118 more
+2019-09-03 12:11:20  [ http-nio-7073-exec-1:539763 ] - [ INFO ]  *********学生扣分接口*************
+2019-09-03 12:11:20  [ http-nio-7073-exec-1:539764 ] - [ INFO ]  {"accountTonken":"","data":"","message":"java.lang.RuntimeException: org.springframework.dao.TransientDataAccessResourceException: Error attempting to get column 'create_time' from result set.  Cause: java.sql.SQLException: Zero date value prohibited\n; Zero date value prohibited; nested exception is java.sql.SQLException: Zero date value prohibited","statusCode":1,"success":false}
+2019-09-03 12:11:20  [ http-nio-7073-exec-1:539775 ] - [ ERROR ]  学生扣分接口错误
+2019-09-03 12:11:20  [ http-nio-7073-exec-1:540085 ] - [ INFO ]  *********扣除商品积分生成订单*************
+2019-09-03 12:11:20  [ http-nio-7073-exec-1:540085 ] - [ INFO ]  更新商品信息:Repertory [dpcode=123456, proid=3, kucun=9, sale=1, lastdate=Tue Sep 03 12:11:20 CST 2019]
+2019-09-03 12:11:20  [ http-nio-7073-exec-1:540086 ] - [ INFO ]  学生积分使用信息UsePointsLogDao [id=9, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=10, creatTime=Tue Sep 03 12:11:20 CST 2019, appId=7564564864648644, mark=大屏机扣分]
+2019-09-03 12:11:30  [ http-nio-8071-exec-5:9568 ] - [ ERROR ]  查找app异常
+2019-09-03 12:11:30  [ http-nio-8071-exec-5:9569 ] - [ ERROR ]  Error:
+org.springframework.dao.TransientDataAccessResourceException: Error attempting to get column 'create_time' from result set.  Cause: java.sql.SQLException: Zero date value prohibited
+; Zero date value prohibited; nested exception is java.sql.SQLException: Zero date value prohibited
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:110)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy95.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:137)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:75)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy99.selectApplicationManagementList(Unknown Source)
+	at com.qimeng.main.service.ApplicationManagementService.selectApplicationManagementList(ApplicationManagementService.java:98)
+	at com.qimeng.main.service.ApplicationManagementService.selectApplicationManagementByAppId(ApplicationManagementService.java:124)
+	at com.qimeng.main.service.ApplicationManagementService$$FastClassBySpringCGLIB$$a7e279d8.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.cache.interceptor.CacheInterceptor.lambda$invoke$0(CacheInterceptor.java:53)
+	at org.springframework.cache.interceptor.CacheAspectSupport.invokeOperation(CacheAspectSupport.java:365)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:420)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:345)
+	at org.springframework.cache.interceptor.CacheInterceptor.invoke(CacheInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.qimeng.main.service.ApplicationManagementService$$EnhancerBySpringCGLIB$$c4ceec64.selectApplicationManagementByAppId(<generated>)
+	at com.qimeng.main.UpdateStudentPointsController.getStudent(UpdateStudentPointsController.java:70)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLException: Zero date value prohibited
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:99)
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getTimestamp(ResultSetImpl.java:923)
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getTimestamp(ResultSetImpl.java:968)
+	at com.alibaba.druid.filter.FilterChainImpl.resultSet_getTimestamp(FilterChainImpl.java:1258)
+	at com.alibaba.druid.filter.FilterAdapter.resultSet_getTimestamp(FilterAdapter.java:1818)
+	at com.alibaba.druid.filter.FilterChainImpl.resultSet_getTimestamp(FilterChainImpl.java:1254)
+	at com.alibaba.druid.filter.FilterAdapter.resultSet_getTimestamp(FilterAdapter.java:1818)
+	at com.alibaba.druid.filter.FilterChainImpl.resultSet_getTimestamp(FilterChainImpl.java:1254)
+	at com.alibaba.druid.filter.FilterAdapter.resultSet_getTimestamp(FilterAdapter.java:1818)
+	at com.alibaba.druid.filter.FilterChainImpl.resultSet_getTimestamp(FilterChainImpl.java:1254)
+	at com.alibaba.druid.proxy.jdbc.ResultSetProxyImpl.getTimestamp(ResultSetProxyImpl.java:741)
+	at com.alibaba.druid.pool.DruidPooledResultSet.getTimestamp(DruidPooledResultSet.java:366)
+	at org.apache.ibatis.type.DateTypeHandler.getNullableResult(DateTypeHandler.java:39)
+	at org.apache.ibatis.type.DateTypeHandler.getNullableResult(DateTypeHandler.java:28)
+	at org.apache.ibatis.type.BaseTypeHandler.getResult(BaseTypeHandler.java:66)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.applyAutomaticMappings(DefaultResultSetHandler.java:516)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.getRowValue(DefaultResultSetHandler.java:397)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleRowValuesForSimpleResultMap(DefaultResultSetHandler.java:351)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleRowValues(DefaultResultSetHandler.java:326)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleResultSet(DefaultResultSetHandler.java:299)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleResultSets(DefaultResultSetHandler.java:192)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:143)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy166.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 82 more
+Caused by: com.mysql.cj.exceptions.DataReadException: Zero date value prohibited
+	at com.mysql.cj.result.SqlTimestampValueFactory.localCreateFromTimestamp(SqlTimestampValueFactory.java:99)
+	at com.mysql.cj.result.SqlTimestampValueFactory.localCreateFromTimestamp(SqlTimestampValueFactory.java:50)
+	at com.mysql.cj.result.AbstractDateTimeValueFactory.createFromTimestamp(AbstractDateTimeValueFactory.java:87)
+	at com.mysql.cj.protocol.a.MysqlTextValueDecoder.decodeTimestamp(MysqlTextValueDecoder.java:79)
+	at com.mysql.cj.protocol.result.AbstractResultsetRow.decodeAndCreateReturnValue(AbstractResultsetRow.java:87)
+	at com.mysql.cj.protocol.result.AbstractResultsetRow.getValueFromBytes(AbstractResultsetRow.java:241)
+	at com.mysql.cj.protocol.a.result.ByteArrayRow.getValue(ByteArrayRow.java:91)
+	... 118 more
+2019-09-03 12:11:30  [ http-nio-7073-exec-10:549299 ] - [ INFO ]  *********学生扣分接口*************
+2019-09-03 12:11:30  [ http-nio-7073-exec-10:549300 ] - [ INFO ]  {"accountTonken":"","data":"","message":"java.lang.RuntimeException: org.springframework.dao.TransientDataAccessResourceException: Error attempting to get column 'create_time' from result set.  Cause: java.sql.SQLException: Zero date value prohibited\n; Zero date value prohibited; nested exception is java.sql.SQLException: Zero date value prohibited","statusCode":1,"success":false}
+2019-09-03 12:11:30  [ http-nio-7073-exec-10:549300 ] - [ ERROR ]  学生扣分接口错误
+2019-09-03 12:11:30  [ http-nio-7073-exec-10:549599 ] - [ INFO ]  *********扣除商品积分生成订单*************
+2019-09-03 12:11:30  [ http-nio-7073-exec-10:549599 ] - [ INFO ]  更新商品信息:Repertory [dpcode=123456, proid=4, kucun=9, sale=1, lastdate=Tue Sep 03 12:11:30 CST 2019]
+2019-09-03 12:11:30  [ http-nio-7073-exec-10:549599 ] - [ INFO ]  学生积分使用信息UsePointsLogDao [id=10, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=10, creatTime=Tue Sep 03 12:11:30 CST 2019, appId=7564564864648644, mark=大屏机扣分]
+2019-09-03 12:11:38  [ http-nio-7073-exec-6:557479 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 12:11:38  [ http-nio-7073-exec-6:557480 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 12:15:05  [ http-nio-7073-exec-3:764911 ] - [ INFO ]  *********获取商城接口学生信息*************
+2019-09-03 12:15:05  [ http-nio-7073-exec-3:764912 ] - [ INFO ]  StudentInfo [id=8, name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, schoolId=10001, totalPoints=149.0, stuCard=29b2592cc12213d751c1b89be293232c6049e456, bind=2801, active=0, startTime=Fri Jul 05 08:00:00 CST 2019]
+2019-09-03 12:15:05  [ http-nio-7073-exec-9:764977 ] - [ INFO ]  *********获取商品列表*************
+2019-09-03 12:15:05  [ http-nio-7073-exec-9:764978 ] - [ INFO ]  [id=15 mc=15 jf=1 pic=http://sys.qimenghb.com/pic/heibi.jpg, id=16 mc=16 jf=1 pic=http://sys.qimenghb.com/pic/zuowenb.jpg, id=17 mc=17 jf=1 pic=http://sys.qimenghb.com/pic/pinyinb.jpg, id=18 mc=18 jf=1 pic=http://sys.qimenghb.com/pic/shuangxianb.jpg, id=19 mc=19 jf=1 pic=http://sys.qimenghb.com/pic/yingyub.jpg, id=20 mc=20 jf=1 pic=http://sys.qimenghb.com/pic/tiangeb.jpg, id=21 mc=21 jf=1 pic=http://sys.qimenghb.com/pic/fanggeb.jpg, id=22 mc=22 jf=1 pic=http://sys.qimenghb.com/pic/huatub.jpg, id=23 mc=23 jf=1 pic=http://sys.qimenghb.com/pic/shuxueb.jpg, id=24 mc=24 jf=1 pic=http://sys.qimenghb.com/pic/anxianb.jpg, id=1 mc=1 jf=10 pic=http://sys.qimenghb.com/pic/heibi.jpg, id=2 mc=2 jf=10 pic=http://sys.qimenghb.com/pic/zuowenb.jpg, id=3 mc=3 jf=10 pic=http://sys.qimenghb.com/pic/pinyinb.jpg, id=4 mc=4 jf=10 pic=http://sys.qimenghb.com/pic/shuangxianb.jpg, id=5 mc=5 jf=10 pic=http://sys.qimenghb.com/pic/yingyub.jpg, id=6 mc=6 jf=10 pic=http://sys.qimenghb.com/pic/tiangeb.jpg, id=7 mc=7 jf=10 pic=http://sys.qimenghb.com/pic/fanggeb.jpg, id=8 mc=8 jf=10 pic=http://sys.qimenghb.com/pic/huatub.jpg, id=9 mc=9 jf=10 pic=http://sys.qimenghb.com/pic/shuxueb.jpg, id=10 mc=10 jf=10 pic=http://sys.qimenghb.com/pic/anxianb.jpg, id=11 mc=11 jf=15 pic=http://sys.qimenghb.com/pic/506b.jpg, id=12 mc=12 jf=25 pic=http://sys.qimenghb.com/pic/506h.jpg, id=13 mc=13 jf=15 pic=http://sys.qimenghb.com/pic/400b.jpg, id=14 mc=14 jf=25 pic=http://sys.qimenghb.com/pic/400h.jpg, id=25 mc=25 jf=25 pic=http://sys.qimenghb.com/pic/300h.jpg]
+2019-09-03 12:15:09  [ http-nio-7073-exec-8:768533 ] - [ INFO ]  *********学生扣分接口*************
+2019-09-03 12:15:09  [ http-nio-7073-exec-8:768534 ] - [ INFO ]  {"accountTonken":"MXyjqpyZ","data":{"active":0,"bind":1,"name":"张培轩","point":10,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+2019-09-03 12:15:09  [ http-nio-7073-exec-8:768714 ] - [ INFO ]  {"accountTonken":"hw9SICXZ","data":{"active":0,"bind":1,"name":"张培轩","point":10,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+2019-09-03 12:15:09  [ http-nio-7073-exec-8:769019 ] - [ INFO ]  *********扣除商品积分生成订单*************
+2019-09-03 12:15:09  [ http-nio-7073-exec-8:769019 ] - [ INFO ]  更新商品信息:Repertory [dpcode=123456, proid=15, kucun=9, sale=1, lastdate=Tue Sep 03 12:15:09 CST 2019]
+2019-09-03 12:15:09  [ http-nio-7073-exec-8:769019 ] - [ INFO ]  学生积分使用信息UsePointsLogDao [id=11, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:15:09 CST 2019, appId=7564564864648644, mark=大屏机扣分]
+2019-09-03 12:15:13  [ http-nio-7073-exec-2:772905 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 12:15:13  [ http-nio-7073-exec-2:772906 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 12:19:39  [ http-nio-7073-exec-4:1039114 ] - [ INFO ]  *********获取商城接口学生信息*************
+2019-09-03 12:19:39  [ http-nio-7073-exec-4:1039115 ] - [ INFO ]  StudentInfo [id=8, name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, schoolId=10001, totalPoints=148.0, stuCard=29b2592cc12213d751c1b89be293232c6049e456, bind=2801, active=0, startTime=Fri Jul 05 08:00:00 CST 2019]
+2019-09-03 12:19:40  [ http-nio-7073-exec-1:1039187 ] - [ INFO ]  *********获取商品列表*************
+2019-09-03 12:19:40  [ http-nio-7073-exec-1:1039187 ] - [ INFO ]  [id=15 mc=15 jf=1 pic=http://sys.qimenghb.com/pic/heibi.jpg, id=16 mc=16 jf=1 pic=http://sys.qimenghb.com/pic/zuowenb.jpg, id=17 mc=17 jf=1 pic=http://sys.qimenghb.com/pic/pinyinb.jpg, id=18 mc=18 jf=1 pic=http://sys.qimenghb.com/pic/shuangxianb.jpg, id=19 mc=19 jf=1 pic=http://sys.qimenghb.com/pic/yingyub.jpg, id=20 mc=20 jf=1 pic=http://sys.qimenghb.com/pic/tiangeb.jpg, id=21 mc=21 jf=1 pic=http://sys.qimenghb.com/pic/fanggeb.jpg, id=22 mc=22 jf=1 pic=http://sys.qimenghb.com/pic/huatub.jpg, id=23 mc=23 jf=1 pic=http://sys.qimenghb.com/pic/shuxueb.jpg, id=24 mc=24 jf=1 pic=http://sys.qimenghb.com/pic/anxianb.jpg, id=1 mc=1 jf=10 pic=http://sys.qimenghb.com/pic/heibi.jpg, id=2 mc=2 jf=10 pic=http://sys.qimenghb.com/pic/zuowenb.jpg, id=3 mc=3 jf=10 pic=http://sys.qimenghb.com/pic/pinyinb.jpg, id=4 mc=4 jf=10 pic=http://sys.qimenghb.com/pic/shuangxianb.jpg, id=5 mc=5 jf=10 pic=http://sys.qimenghb.com/pic/yingyub.jpg, id=6 mc=6 jf=10 pic=http://sys.qimenghb.com/pic/tiangeb.jpg, id=7 mc=7 jf=10 pic=http://sys.qimenghb.com/pic/fanggeb.jpg, id=8 mc=8 jf=10 pic=http://sys.qimenghb.com/pic/huatub.jpg, id=9 mc=9 jf=10 pic=http://sys.qimenghb.com/pic/shuxueb.jpg, id=10 mc=10 jf=10 pic=http://sys.qimenghb.com/pic/anxianb.jpg, id=11 mc=11 jf=15 pic=http://sys.qimenghb.com/pic/506b.jpg, id=12 mc=12 jf=25 pic=http://sys.qimenghb.com/pic/506h.jpg, id=13 mc=13 jf=15 pic=http://sys.qimenghb.com/pic/400b.jpg, id=14 mc=14 jf=25 pic=http://sys.qimenghb.com/pic/400h.jpg, id=25 mc=25 jf=25 pic=http://sys.qimenghb.com/pic/300h.jpg]
+2019-09-03 12:19:43  [ http-nio-7073-exec-10:1042247 ] - [ INFO ]  *********学生扣分接口*************
+2019-09-03 12:19:43  [ http-nio-7073-exec-10:1042247 ] - [ INFO ]  {"accountTonken":"kI5wFcqU","data":{"active":0,"bind":1,"name":"张培轩","point":10,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+2019-09-03 12:19:43  [ http-nio-7073-exec-10:1042295 ] - [ INFO ]  {"accountTonken":"","data":"","message":"请求超时","statusCode":1,"success":false}
+2019-09-03 12:19:43  [ http-nio-7073-exec-10:1042598 ] - [ INFO ]  *********扣除商品积分生成订单*************
+2019-09-03 12:19:43  [ http-nio-7073-exec-10:1042598 ] - [ INFO ]  更新商品信息:Repertory [dpcode=123456, proid=15, kucun=8, sale=2, lastdate=Tue Sep 03 12:19:43 CST 2019]
+2019-09-03 12:19:43  [ http-nio-7073-exec-10:1042598 ] - [ INFO ]  学生积分使用信息UsePointsLogDao [id=12, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:19:43 CST 2019, appId=7564564864648644, mark=大屏机扣分]
+2019-09-03 12:19:46  [ http-nio-7073-exec-6:1046081 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 12:19:46  [ http-nio-7073-exec-6:1046084 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 12:28:04  [ http-nio-7073-exec-3:1543760 ] - [ INFO ]  *********获取商城接口学生信息*************
+2019-09-03 12:28:04  [ http-nio-7073-exec-3:1543761 ] - [ INFO ]  StudentInfo [id=8, name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, schoolId=10001, totalPoints=147.0, stuCard=29b2592cc12213d751c1b89be293232c6049e456, bind=2801, active=0, startTime=Fri Jul 05 08:00:00 CST 2019]
+2019-09-03 12:28:04  [ http-nio-7073-exec-9:1543817 ] - [ INFO ]  *********获取商品列表*************
+2019-09-03 12:28:04  [ http-nio-7073-exec-9:1543817 ] - [ INFO ]  [id=15 mc=15 jf=1 pic=http://sys.qimenghb.com/pic/heibi.jpg, id=16 mc=16 jf=1 pic=http://sys.qimenghb.com/pic/zuowenb.jpg, id=17 mc=17 jf=1 pic=http://sys.qimenghb.com/pic/pinyinb.jpg, id=18 mc=18 jf=1 pic=http://sys.qimenghb.com/pic/shuangxianb.jpg, id=19 mc=19 jf=1 pic=http://sys.qimenghb.com/pic/yingyub.jpg, id=20 mc=20 jf=1 pic=http://sys.qimenghb.com/pic/tiangeb.jpg, id=21 mc=21 jf=1 pic=http://sys.qimenghb.com/pic/fanggeb.jpg, id=22 mc=22 jf=1 pic=http://sys.qimenghb.com/pic/huatub.jpg, id=23 mc=23 jf=1 pic=http://sys.qimenghb.com/pic/shuxueb.jpg, id=24 mc=24 jf=1 pic=http://sys.qimenghb.com/pic/anxianb.jpg, id=1 mc=1 jf=10 pic=http://sys.qimenghb.com/pic/heibi.jpg, id=2 mc=2 jf=10 pic=http://sys.qimenghb.com/pic/zuowenb.jpg, id=3 mc=3 jf=10 pic=http://sys.qimenghb.com/pic/pinyinb.jpg, id=4 mc=4 jf=10 pic=http://sys.qimenghb.com/pic/shuangxianb.jpg, id=5 mc=5 jf=10 pic=http://sys.qimenghb.com/pic/yingyub.jpg, id=6 mc=6 jf=10 pic=http://sys.qimenghb.com/pic/tiangeb.jpg, id=7 mc=7 jf=10 pic=http://sys.qimenghb.com/pic/fanggeb.jpg, id=8 mc=8 jf=10 pic=http://sys.qimenghb.com/pic/huatub.jpg, id=9 mc=9 jf=10 pic=http://sys.qimenghb.com/pic/shuxueb.jpg, id=10 mc=10 jf=10 pic=http://sys.qimenghb.com/pic/anxianb.jpg, id=11 mc=11 jf=15 pic=http://sys.qimenghb.com/pic/506b.jpg, id=12 mc=12 jf=25 pic=http://sys.qimenghb.com/pic/506h.jpg, id=13 mc=13 jf=15 pic=http://sys.qimenghb.com/pic/400b.jpg, id=14 mc=14 jf=25 pic=http://sys.qimenghb.com/pic/400h.jpg, id=25 mc=25 jf=25 pic=http://sys.qimenghb.com/pic/300h.jpg]
+2019-09-03 12:28:08  [ http-nio-7073-exec-8:1547259 ] - [ INFO ]  *********学生扣分接口*************
+2019-09-03 12:28:08  [ http-nio-7073-exec-8:1547259 ] - [ INFO ]  {"accountTonken":"aWBeomTc","data":{"active":0,"bind":1,"name":"张培轩","point":10,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+2019-09-03 12:28:08  [ http-nio-7073-exec-8:1547268 ] - [ INFO ]  {"machineID":"","data":{"usedPoints":1,"stuCard":"29b2592cc12213d751c1b89be293232c6049e456","mark":"大屏机扣分","operator":"","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD"},"appID":"7564564864648644","accountTonken":"UWA2QyeqxTSRlGYRYadGDQ==","operator":""}
+2019-09-03 12:28:08  [ http-nio-7073-exec-8:1547277 ] - [ INFO ]  {"accountTonken":"","data":"","message":"请求超时","statusCode":1,"success":false}
+2019-09-03 12:28:08  [ http-nio-7073-exec-8:1547571 ] - [ INFO ]  *********扣除商品积分生成订单*************
+2019-09-03 12:28:08  [ http-nio-7073-exec-8:1547572 ] - [ INFO ]  更新商品信息:Repertory [dpcode=123456, proid=15, kucun=7, sale=3, lastdate=Tue Sep 03 12:28:08 CST 2019]
+2019-09-03 12:28:08  [ http-nio-7073-exec-8:1547573 ] - [ INFO ]  学生积分使用信息UsePointsLogDao [id=13, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:28:08 CST 2019, appId=7564564864648644, mark=大屏机扣分]
+2019-09-03 12:28:12  [ http-nio-7073-exec-2:1551518 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 12:28:12  [ http-nio-7073-exec-2:1551519 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 12:37:40  [ http-nio-7073-exec-1:2119212 ] - [ INFO ]  ************获取学生信息***************
+2019-09-03 12:37:40  [ http-nio-7073-exec-1:2119227 ] - [ INFO ]  {"accountTonken":"","data":"","message":"找不到当前学生","statusCode":1,"success":false}
+2019-09-03 12:37:40  [ http-nio-7073-exec-1:2119231 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=12300, accountTonken=, operator=null, data=StudentInfoVo [name=, stuCode=a94cd604baab2c30, stuCard=32f96b9612764e24, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-09-03 12:37:40  [ http-nio-7073-exec-1:2119318 ] - [ INFO ]  ResponseMessage [statusCode=1, success=false, message=找不到当前用户, accountTonken=, data=]
+2019-09-03 12:38:35  [ http-nio-7073-exec-10:2174653 ] - [ INFO ]  ************获取学生信息***************
+2019-09-03 12:38:35  [ http-nio-7073-exec-10:2174665 ] - [ INFO ]  {"accountTonken":"BMHQtWIZ","data":{"active":0,"bind":1,"name":"张培轩","point":10,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+2019-09-03 12:38:35  [ http-nio-7073-exec-10:2174665 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=12300, accountTonken=, operator=null, data=StudentInfoVo [name=, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29b2592cc12213d751c1b89be293232c6049e456, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-09-03 12:38:35  [ http-nio-7073-exec-10:2174715 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=BMHQtWIZ, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29b2592cc12213d751c1b89be293232c6049e456, qrCode=http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456, wasteType=0, unit=0, point=146, bind=1, active=1]]
+2019-09-03 12:40:52  [ http-nio-7073-exec-7:2312037 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 12:40:52  [ http-nio-7073-exec-7:2312038 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 12:41:35  [ http-nio-7073-exec-3:2354327 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 12:41:35  [ http-nio-7073-exec-3:2354330 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 12:43:38  [ http-nio-7073-exec-2:2477900 ] - [ INFO ]  *********学生扣分接口*************
+2019-09-03 12:43:38  [ http-nio-7073-exec-2:2477901 ] - [ INFO ]  {"accountTonken":"","data":"","message":"java.lang.IllegalArgumentException: Cache 'ApplicationManagement' does not allow 'null' values. Avoid storing null via '@Cacheable(unless=\"#result == null\")' or configure RedisCache to allow 'null' via RedisCacheConfiguration.","statusCode":1,"success":false}
+2019-09-03 12:43:38  [ http-nio-7073-exec-2:2477905 ] - [ ERROR ]  学生扣分接口错误
+2019-09-03 12:43:38  [ http-nio-7073-exec-2:2478067 ] - [ INFO ]  *********微信商城扣除积分*************
+2019-09-03 12:43:38  [ http-nio-7073-exec-2:2478067 ] - [ INFO ]  学生积分使用信息UsePointsLogDao [id=14, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:43:38 CST 2019, appId=7845345646154645, mark=商城扣分]
+2019-09-03 12:45:17  [ http-nio-7073-exec-4:2576858 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 12:45:17  [ http-nio-7073-exec-4:2576858 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 12:45:55  [ http-nio-7073-exec-10:2614584 ] - [ INFO ]  *********学生扣分接口*************
+2019-09-03 12:45:55  [ http-nio-7073-exec-10:2614585 ] - [ INFO ]  {"accountTonken":"","data":"","message":"java.lang.IllegalArgumentException: Cache 'ApplicationManagement' does not allow 'null' values. Avoid storing null via '@Cacheable(unless=\"#result == null\")' or configure RedisCache to allow 'null' via RedisCacheConfiguration.","statusCode":1,"success":false}
+2019-09-03 12:45:55  [ http-nio-7073-exec-10:2614585 ] - [ ERROR ]  学生扣分接口错误
+2019-09-03 12:45:55  [ http-nio-7073-exec-10:2614744 ] - [ INFO ]  *********微信商城扣除积分*************
+2019-09-03 12:45:55  [ http-nio-7073-exec-10:2614745 ] - [ INFO ]  学生积分使用信息UsePointsLogDao [id=15, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:45:55 CST 2019, appId=7845345646154645, mark=商城扣分]
+2019-09-03 12:46:12  [ http-nio-7073-exec-6:2631751 ] - [ INFO ]  *********学生扣分接口*************
+2019-09-03 12:46:12  [ http-nio-7073-exec-6:2631752 ] - [ INFO ]  {"accountTonken":"","data":"","message":"java.lang.IllegalArgumentException: Cache 'ApplicationManagement' does not allow 'null' values. Avoid storing null via '@Cacheable(unless=\"#result == null\")' or configure RedisCache to allow 'null' via RedisCacheConfiguration.","statusCode":1,"success":false}
+2019-09-03 12:46:12  [ http-nio-7073-exec-6:2631752 ] - [ ERROR ]  学生扣分接口错误
+2019-09-03 12:46:12  [ http-nio-7073-exec-6:2631925 ] - [ INFO ]  *********微信商城扣除积分*************
+2019-09-03 12:46:12  [ http-nio-7073-exec-6:2631926 ] - [ INFO ]  学生积分使用信息UsePointsLogDao [id=16, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:46:12 CST 2019, appId=7845345646154645, mark=商城扣分]
+2019-09-03 12:48:14  [ http-nio-7073-exec-8:2753922 ] - [ INFO ]  *********学生扣分接口*************
+2019-09-03 12:48:14  [ http-nio-7073-exec-8:2753922 ] - [ INFO ]  {"accountTonken":"","data":"","message":"java.lang.IllegalArgumentException: Cache 'ApplicationManagement' does not allow 'null' values. Avoid storing null via '@Cacheable(unless=\"#result == null\")' or configure RedisCache to allow 'null' via RedisCacheConfiguration.","statusCode":1,"success":false}
+2019-09-03 12:48:14  [ http-nio-7073-exec-8:2753923 ] - [ ERROR ]  学生扣分接口错误
+2019-09-03 12:48:14  [ http-nio-7073-exec-8:2754084 ] - [ INFO ]  *********微信商城扣除积分*************
+2019-09-03 12:48:14  [ http-nio-7073-exec-8:2754085 ] - [ INFO ]  学生积分使用信息UsePointsLogDao [id=17, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:48:14 CST 2019, appId=7845345646154645, mark=商城扣分]
+2019-09-03 12:48:52  [ http-nio-7073-exec-2:2791658 ] - [ INFO ]  *********学生扣分接口*************
+2019-09-03 12:48:52  [ http-nio-7073-exec-2:2791659 ] - [ INFO ]  {"accountTonken":"","data":"","message":"java.lang.IllegalArgumentException: Cache 'ApplicationManagement' does not allow 'null' values. Avoid storing null via '@Cacheable(unless=\"#result == null\")' or configure RedisCache to allow 'null' via RedisCacheConfiguration.","statusCode":1,"success":false}
+2019-09-03 12:48:52  [ http-nio-7073-exec-2:2791659 ] - [ ERROR ]  学生扣分接口错误
+2019-09-03 12:48:52  [ http-nio-7073-exec-2:2791831 ] - [ INFO ]  *********微信商城扣除积分*************
+2019-09-03 12:48:52  [ http-nio-7073-exec-2:2791832 ] - [ INFO ]  学生积分使用信息UsePointsLogDao [id=18, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:48:52 CST 2019, appId=7845345646154645, mark=商城扣分]
+2019-09-03 12:49:44  [ http-nio-7073-exec-5:2843162 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 12:49:44  [ http-nio-7073-exec-5:2843162 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 12:49:44  [ http-nio-7073-exec-4:2843848 ] - [ INFO ]  *********学生扣分接口*************
+2019-09-03 12:49:44  [ http-nio-7073-exec-4:2843849 ] - [ INFO ]  {"accountTonken":"","data":"","message":"java.lang.IllegalArgumentException: Cache 'ApplicationManagement' does not allow 'null' values. Avoid storing null via '@Cacheable(unless=\"#result == null\")' or configure RedisCache to allow 'null' via RedisCacheConfiguration.","statusCode":1,"success":false}
+2019-09-03 12:49:44  [ http-nio-7073-exec-4:2843849 ] - [ ERROR ]  学生扣分接口错误
+2019-09-03 12:49:44  [ http-nio-7073-exec-4:2844009 ] - [ INFO ]  *********微信商城扣除积分*************
+2019-09-03 12:49:44  [ http-nio-7073-exec-4:2844009 ] - [ INFO ]  学生积分使用信息UsePointsLogDao [id=19, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:49:44 CST 2019, appId=7845345646154645, mark=商城扣分]
+2019-09-03 12:51:52  [ http-nio-7073-exec-7:2971715 ] - [ INFO ]  *********学生扣分接口*************
+2019-09-03 12:52:05  [ http-nio-7073-exec-7:2984737 ] - [ INFO ]  {"accountTonken":"","data":"","message":"java.lang.IllegalArgumentException: Cache 'ApplicationManagement' does not allow 'null' values. Avoid storing null via '@Cacheable(unless=\"#result == null\")' or configure RedisCache to allow 'null' via RedisCacheConfiguration.","statusCode":1,"success":false}
+2019-09-03 12:52:05  [ http-nio-7073-exec-7:2984738 ] - [ ERROR ]  学生扣分接口错误
+2019-09-03 12:52:05  [ http-nio-7073-exec-7:2984932 ] - [ INFO ]  *********微信商城扣除积分*************
+2019-09-03 12:52:05  [ http-nio-7073-exec-7:2984932 ] - [ INFO ]  学生积分使用信息UsePointsLogDao [id=20, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:52:05 CST 2019, appId=7845345646154645, mark=商城扣分]
+2019-09-03 12:52:57  [ http-nio-7073-exec-3:3036591 ] - [ ERROR ]  学生扣分接口错误
+2019-09-03 12:52:57  [ http-nio-7073-exec-3:3036750 ] - [ INFO ]  *********微信商城扣除积分*************
+2019-09-03 12:52:57  [ http-nio-7073-exec-3:3036751 ] - [ INFO ]  学生积分使用信息UsePointsLogDao [id=21, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:52:57 CST 2019, appId=7845345646154645, mark=商城扣分]
+2019-09-03 12:58:01  [ http-nio-7073-exec-4:3340816 ] - [ INFO ]  *********学生扣分接口*************
+2019-09-03 12:58:01  [ http-nio-7073-exec-4:3340817 ] - [ INFO ]  {"accountTonken":"1cpsxlSn","data":{"active":0,"bind":1,"name":"张培轩","point":10,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+2019-09-03 12:58:01  [ http-nio-7073-exec-4:3340819 ] - [ INFO ]  {"machineID":"","data":{"usedPoints":1,"stuCard":"29b2592cc12213d751c1b89be293232c6049e456","mark":"微信商城扣分","operator":"","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD"},"appID":"7845345646154645","accountTonken":"lTleMLJV3cfK7K8c1aGF3g==","operator":""}
+2019-09-03 12:58:09  [ http-nio-7073-exec-1:3348516 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 12:58:09  [ http-nio-7073-exec-1:3348517 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 12:58:10  [ http-nio-7073-exec-2:3349819 ] - [ INFO ]  *********学生扣分接口*************
+2019-09-03 12:58:10  [ http-nio-7073-exec-2:3349820 ] - [ INFO ]  {"accountTonken":"WeeYTw3M","data":{"active":0,"bind":1,"name":"张培轩","point":10,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+2019-09-03 12:58:10  [ http-nio-7073-exec-2:3349821 ] - [ INFO ]  {"machineID":"","data":{"usedPoints":1,"stuCard":"29b2592cc12213d751c1b89be293232c6049e456","mark":"微信商城扣分","operator":"","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD"},"appID":"7845345646154645","accountTonken":"UhoH2Nh5HpEEtkTwaed2Mg==","operator":""}
+2019-09-03 12:58:16  [ http-nio-7073-exec-4:3355499 ] - [ INFO ]  {"accountTonken":"","data":"","message":"请求超时","statusCode":1,"success":false}
+2019-09-03 12:58:16  [ http-nio-7073-exec-4:3355669 ] - [ INFO ]  *********微信商城扣除积分*************
+2019-09-03 12:58:16  [ http-nio-7073-exec-4:3355669 ] - [ INFO ]  学生积分使用信息UsePointsLogDao [id=22, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:58:16 CST 2019, appId=7845345646154645, mark=商城扣分]
+2019-09-03 12:58:20  [ http-nio-7073-exec-2:3359482 ] - [ INFO ]  {"accountTonken":"","data":"","message":"请求超时","statusCode":1,"success":false}
+2019-09-03 12:58:20  [ http-nio-7073-exec-2:3359641 ] - [ INFO ]  *********微信商城扣除积分*************
+2019-09-03 12:58:20  [ http-nio-7073-exec-2:3359641 ] - [ INFO ]  学生积分使用信息UsePointsLogDao [id=23, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:58:20 CST 2019, appId=7845345646154645, mark=商城扣分]
+2019-09-03 12:58:42  [ http-nio-7073-exec-10:3382016 ] - [ INFO ]  *********学生扣分接口*************
+2019-09-03 12:58:42  [ http-nio-7073-exec-10:3382017 ] - [ INFO ]  {"accountTonken":"XPoI7vsR","data":{"active":0,"bind":1,"name":"张培轩","point":10,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+2019-09-03 12:58:42  [ http-nio-7073-exec-10:3382018 ] - [ INFO ]  {"machineID":"","data":{"usedPoints":1,"stuCard":"29b2592cc12213d751c1b89be293232c6049e456","mark":"微信商城扣分","operator":"","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD"},"appID":"7845345646154645","accountTonken":"8nMgPOoiehqKsyG7B9kgJQ==","operator":""}
+2019-09-03 12:58:42  [ http-nio-7073-exec-10:3382026 ] - [ INFO ]  {"accountTonken":"","data":"","message":"请求超时","statusCode":1,"success":false}
+2019-09-03 12:58:43  [ http-nio-7073-exec-10:3382183 ] - [ INFO ]  *********微信商城扣除积分*************
+2019-09-03 12:58:43  [ http-nio-7073-exec-10:3382183 ] - [ INFO ]  学生积分使用信息UsePointsLogDao [id=24, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:58:42 CST 2019, appId=7845345646154645, mark=商城扣分]
+2019-09-03 12:59:46  [ http-nio-7073-exec-9:3445944 ] - [ INFO ]  *********学生扣分接口*************
+2019-09-03 12:59:46  [ http-nio-7073-exec-9:3445946 ] - [ INFO ]  {"accountTonken":"LgcSdWzj","data":{"active":0,"bind":1,"name":"张培轩","point":10,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+2019-09-03 12:59:46  [ http-nio-7073-exec-9:3445946 ] - [ INFO ]  {"machineID":"","data":{"usedPoints":1,"stuCard":"29b2592cc12213d751c1b89be293232c6049e456","mark":"微信商城扣分","operator":"","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD"},"appID":"7845345646154645","accountTonken":"11O5LolLt6VNG1Ke1RuuWw==","operator":""}
+2019-09-03 12:59:46  [ http-nio-7073-exec-9:3445957 ] - [ INFO ]  {"accountTonken":"","data":"","message":"请求超时","statusCode":1,"success":false}
+2019-09-03 12:59:46  [ http-nio-7073-exec-9:3446117 ] - [ INFO ]  *********微信商城扣除积分*************
+2019-09-03 12:59:46  [ http-nio-7073-exec-9:3446117 ] - [ INFO ]  学生积分使用信息UsePointsLogDao [id=25, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:59:46 CST 2019, appId=7845345646154645, mark=商城扣分]
+2019-09-03 13:00:14  [ http-nio-7073-exec-8:3473190 ] - [ INFO ]  *********学生扣分接口*************
+2019-09-03 13:00:14  [ http-nio-7073-exec-8:3473191 ] - [ INFO ]  {"accountTonken":"u4jsFXr7","data":{"active":0,"bind":1,"name":"张培轩","point":10,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+2019-09-03 13:00:14  [ http-nio-7073-exec-8:3473191 ] - [ INFO ]  {"machineID":"","data":{"usedPoints":1,"stuCard":"29b2592cc12213d751c1b89be293232c6049e456","mark":"微信商城扣分","operator":"","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD"},"appID":"7845345646154645","accountTonken":"CUlQiVnY4CrhHuqp0dq9gg==","operator":""}
+2019-09-03 13:00:16  [ http-nio-7073-exec-8:3475196 ] - [ ERROR ]  学生扣分接口错误
+2019-09-03 13:00:16  [ http-nio-7073-exec-8:3475352 ] - [ INFO ]  *********微信商城扣除积分*************
+2019-09-03 13:00:16  [ http-nio-7073-exec-8:3475352 ] - [ INFO ]  学生积分使用信息UsePointsLogDao [id=26, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 13:00:16 CST 2019, appId=7845345646154645, mark=商城扣分]
+2019-09-03 13:10:49  [ http-nio-7073-exec-1:4109111 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 13:10:49  [ http-nio-7073-exec-1:4109114 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 13:11:32  [ http-nio-7073-exec-4:4151429 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 13:11:32  [ http-nio-7073-exec-4:4151429 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 13:15:08  [ http-nio-7073-exec-10:4367242 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 13:15:08  [ http-nio-7073-exec-10:4367243 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 13:19:41  [ http-nio-7073-exec-7:4640283 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 13:19:41  [ http-nio-7073-exec-7:4640283 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 13:21:16  [ http-nio-7073-exec-8:4735391 ] - [ INFO ]  *********学生扣分接口*************
+2019-09-03 13:21:16  [ http-nio-7073-exec-8:4735391 ] - [ INFO ]  {"accountTonken":"W5UNgGrd","data":{"active":0,"bind":1,"name":"张培轩","point":10,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+2019-09-03 13:21:16  [ http-nio-7073-exec-8:4735392 ] - [ INFO ]  {"machineID":"","data":{"usedPoints":1,"stuCard":"29b2592cc12213d751c1b89be293232c6049e456","mark":"微信商城扣分","operator":"","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD"},"appID":"7845345646154645","accountTonken":"uY+FJX0NS0qH9BrFXzvb0g==","operator":""}
+2019-09-03 13:21:16  [ http-nio-7073-exec-8:4735401 ] - [ INFO ]  {"accountTonken":"","data":"","message":"请求超时","statusCode":1,"success":false}
+2019-09-03 13:21:16  [ http-nio-7073-exec-8:4735570 ] - [ INFO ]  *********微信商城扣除积分*************
+2019-09-03 13:21:16  [ http-nio-7073-exec-8:4735571 ] - [ INFO ]  学生积分使用信息UsePointsLogDao [id=27, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 13:21:16 CST 2019, appId=7845345646154645, mark=商城扣分]
+2019-09-03 13:21:38  [ http-nio-7073-exec-5:4758032 ] - [ INFO ]  *********学生扣分接口*************
+2019-09-03 13:21:38  [ http-nio-7073-exec-5:4758032 ] - [ INFO ]  {"accountTonken":"SmezDET0","data":{"active":0,"bind":1,"name":"张培轩","point":10,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+2019-09-03 13:21:38  [ http-nio-7073-exec-5:4758033 ] - [ INFO ]  {"machineID":"","data":{"usedPoints":1,"stuCard":"29b2592cc12213d751c1b89be293232c6049e456","mark":"微信商城扣分","operator":"","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD"},"appID":"7845345646154645","accountTonken":"fPxdaSrpB6PQlvHrMK6C3g==","operator":""}
+2019-09-03 13:21:40  [ http-nio-7073-exec-5:4760042 ] - [ ERROR ]  学生扣分接口错误
+2019-09-03 13:21:41  [ http-nio-7073-exec-5:4760205 ] - [ INFO ]  *********微信商城扣除积分*************
+2019-09-03 13:21:41  [ http-nio-7073-exec-5:4760206 ] - [ INFO ]  学生积分使用信息UsePointsLogDao [id=28, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 13:21:40 CST 2019, appId=7845345646154645, mark=商城扣分]
+2019-09-03 13:28:06  [ http-nio-7073-exec-3:0 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 13:28:06  [ http-nio-7073-exec-3:2 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 13:40:50  [ http-nio-7073-exec-9:763273 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 13:40:50  [ http-nio-7073-exec-9:763273 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 13:41:29  [ http-nio-7073-exec-10:802560 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 13:41:29  [ http-nio-7073-exec-10:802561 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 13:45:05  [ http-nio-7073-exec-2:1019077 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 13:45:05  [ http-nio-7073-exec-2:1019077 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 13:49:38  [ http-nio-7073-exec-7:1291383 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 13:49:38  [ http-nio-7073-exec-7:1291384 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 14:01:00  [ http-nio-7073-exec-1:0 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 14:01:00  [ http-nio-7073-exec-1:2 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 14:02:22  [ http-nio-7073-exec-5:82493 ] - [ INFO ]  *********学生扣分接口*************
+2019-09-03 14:02:22  [ http-nio-7073-exec-5:82494 ] - [ INFO ]  {"accountTonken":"YrHLyj9Z","data":{"active":0,"bind":1,"name":"张培轩","point":10,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+2019-09-03 14:02:23  [ http-nio-7073-exec-5:82544 ] - [ INFO ]  {"machineID":"","data":{"usedPoints":1,"stuCard":"29b2592cc12213d751c1b89be293232c6049e456","mark":"微信商城扣分","operator":"","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD"},"appID":"7845345646154645","accountTonken":"OG8bUseyRKmLHxS/VZESuw==","operator":""}
+2019-09-03 14:02:23  [ http-nio-7073-exec-5:82629 ] - [ INFO ]  {"accountTonken":"","data":"","message":"使用积分成功","statusCode":1,"success":true}
+2019-09-03 14:02:23  [ http-nio-7073-exec-5:82752 ] - [ INFO ]  *********微信商城扣除积分*************
+2019-09-03 14:02:23  [ http-nio-7073-exec-5:82754 ] - [ INFO ]  学生积分使用信息UsePointsLogDao [id=9, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 14:02:23 CST 2019, appId=7845345646154645, mark=商城扣分]
+2019-09-03 14:10:44  [ http-nio-7073-exec-4:583631 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 14:10:44  [ http-nio-7073-exec-4:583632 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 14:11:26  [ http-nio-7073-exec-7:625848 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 14:11:26  [ http-nio-7073-exec-7:625849 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 14:13:41  [ http-nio-7073-exec-1:0 ] - [ INFO ]  *********学生扣分接口*************
+2019-09-03 14:13:41  [ http-nio-7073-exec-1:2 ] - [ INFO ]  {"accountTonken":"KmDEtY3E","data":{"active":0,"bind":1,"name":"张培轩","point":9,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+2019-09-03 14:13:41  [ http-nio-7073-exec-1:46 ] - [ INFO ]  {"machineID":"","data":{"usedPoints":1,"stuCard":"29b2592cc12213d751c1b89be293232c6049e456","mark":"微信商城扣分","operator":"","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD"},"appID":"7845345646154645","accountTonken":"Qokohdj9I/vAGQfP+p3Q+A==","operator":""}
+2019-09-03 14:13:41  [ http-nio-7073-exec-1:65 ] - [ INFO ]  {"accountTonken":"","data":"","message":"使用积分成功","statusCode":1,"success":true}
+2019-09-03 14:13:41  [ http-nio-7073-exec-1:175 ] - [ INFO ]  *********微信商城扣除积分*************
+2019-09-03 14:13:41  [ http-nio-7073-exec-1:175 ] - [ INFO ]  学生积分使用信息UsePointsLogDao [id=10, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 14:13:41 CST 2019, appId=7845345646154645, mark=商城扣分]
+2019-09-03 14:15:02  [ http-nio-7073-exec-7:80781 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 14:15:02  [ http-nio-7073-exec-7:80782 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 14:19:35  [ http-nio-7073-exec-3:353609 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 14:19:35  [ http-nio-7073-exec-3:353609 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 14:28:07  [ http-nio-7073-exec-10:865904 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 14:28:07  [ http-nio-7073-exec-10:865904 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 14:40:41  [ http-nio-7073-exec-5:1619489 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 14:40:41  [ http-nio-7073-exec-5:1619489 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 14:41:24  [ http-nio-7073-exec-2:1662507 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 14:41:24  [ http-nio-7073-exec-2:1662507 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 14:45:05  [ http-nio-7073-exec-6:1884309 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 14:45:05  [ http-nio-7073-exec-6:1884309 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 14:49:34  [ http-nio-7073-exec-8:2152757 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 14:49:34  [ http-nio-7073-exec-8:2152758 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 14:57:58  [ http-nio-7073-exec-4:2656813 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 14:57:58  [ http-nio-7073-exec-4:2656814 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 15:10:38  [ http-nio-7073-exec-9:3416541 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 15:10:38  [ http-nio-7073-exec-9:3416542 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 15:11:24  [ http-nio-7073-exec-5:3463107 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 15:11:24  [ http-nio-7073-exec-5:3463108 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 15:14:58  [ http-nio-7073-exec-1:3677347 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 15:14:58  [ http-nio-7073-exec-1:3677347 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 15:19:29  [ http-nio-7073-exec-7:3947756 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 15:19:29  [ http-nio-7073-exec-7:3947756 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 15:27:56  [ http-nio-7073-exec-3:4454464 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 15:27:56  [ http-nio-7073-exec-3:4454465 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 15:40:35  [ http-nio-7073-exec-10:5213587 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 15:40:35  [ http-nio-7073-exec-10:5213588 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 15:41:17  [ http-nio-7073-exec-9:5255854 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 15:41:17  [ http-nio-7073-exec-9:5255855 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 15:44:59  [ http-nio-7073-exec-2:5478386 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 15:44:59  [ http-nio-7073-exec-2:5478386 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 15:49:26  [ http-nio-7073-exec-6:5744704 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 15:49:26  [ http-nio-7073-exec-6:5744704 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 15:57:53  [ http-nio-7073-exec-8:6251628 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 15:57:53  [ http-nio-7073-exec-8:6251628 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 16:10:32  [ http-nio-7073-exec-4:7010586 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 16:10:32  [ http-nio-7073-exec-4:7010586 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 16:11:18  [ http-nio-7073-exec-10:7056602 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 16:11:18  [ http-nio-7073-exec-10:7056602 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 16:14:51  [ http-nio-7073-exec-5:7269808 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 16:14:51  [ http-nio-7073-exec-5:7269809 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 16:19:23  [ http-nio-7073-exec-1:7541746 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 16:19:23  [ http-nio-7073-exec-1:7541746 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 16:27:53  [ http-nio-7073-exec-7:8051580 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 16:27:53  [ http-nio-7073-exec-7:8051582 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 16:40:29  [ http-nio-7073-exec-3:8807684 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 16:40:29  [ http-nio-7073-exec-3:8807684 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 16:41:11  [ http-nio-7073-exec-4:8849923 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 16:41:11  [ http-nio-7073-exec-4:8849923 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 16:44:50  [ http-nio-7073-exec-9:9069247 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 16:44:50  [ http-nio-7073-exec-9:9069249 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 16:49:20  [ http-nio-7073-exec-2:9339223 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 16:49:20  [ http-nio-7073-exec-2:9339223 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 16:57:48  [ http-nio-7073-exec-6:9846485 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 16:57:48  [ http-nio-7073-exec-6:9846486 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 17:10:26  [ http-nio-7073-exec-8:10604744 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 17:10:26  [ http-nio-7073-exec-8:10604744 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 17:11:08  [ http-nio-7073-exec-3:10646985 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 17:11:08  [ http-nio-7073-exec-3:10646985 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 17:14:46  [ http-nio-7073-exec-10:10864784 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 17:14:46  [ http-nio-7073-exec-10:10864786 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 17:19:17  [ http-nio-7073-exec-5:11135786 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 17:19:17  [ http-nio-7073-exec-5:11135787 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 17:27:44  [ http-nio-7073-exec-1:11643069 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 17:27:44  [ http-nio-7073-exec-1:11643069 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 17:40:23  [ http-nio-7073-exec-7:12401792 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 17:40:23  [ http-nio-7073-exec-7:12401793 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 17:41:05  [ http-nio-7073-exec-8:12443969 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 17:41:05  [ http-nio-7073-exec-8:12443970 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 17:44:44  [ http-nio-7073-exec-4:12662572 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 17:44:44  [ http-nio-7073-exec-4:12662572 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-03 17:49:14  [ http-nio-7073-exec-9:12932854 ] - [ INFO ]  *********获取广告大图*************
+2019-09-03 17:49:14  [ http-nio-7073-exec-9:12932854 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]

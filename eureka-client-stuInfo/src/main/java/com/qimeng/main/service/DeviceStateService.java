@@ -56,7 +56,7 @@ public class DeviceStateService {
 			throw new RuntimeException(e);		
 		}
 	}
-	@Cacheable(value="DeviceState",key="#type+'-'+#status")
+	@Cacheable(value="DeviceState",key="#type+'-'+#status",unless="#result == null")
 	public DeviceState selectDeviceState(byte type,byte status) {
 		DeviceState deviceState=new DeviceState();
 		deviceState.setType(type);

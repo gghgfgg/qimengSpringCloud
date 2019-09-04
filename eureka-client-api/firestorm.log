@@ -1,0 +1,304 @@
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10004, pstmt-20013} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10004, pstmt-20013} executed. 38.8325 millis. select bimg from qmhb_adv where dpjid=? or dpjid=0
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10004, pstmt-20013, rs-50013} open
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10004, pstmt-20013, rs-50013} Header: [bimg]
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10004, pstmt-20013, rs-50013} Result: [pic/adv01.jpg]
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10004, pstmt-20013, rs-50013} Result: [pic/adv02.jpg]
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10004, pstmt-20013, rs-50013} closed
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10004, pstmt-20013} closed
+DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10004} pool-recycle
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10004} pool-connect
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10004, pstmt-20014} created. select bimg from qmhb_adv where dpjid=? or dpjid=0
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10004, pstmt-20014} Parameters : [123456]
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10004, pstmt-20014} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10004, pstmt-20014} executed. 35.454 millis. select bimg from qmhb_adv where dpjid=? or dpjid=0
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10004, pstmt-20014, rs-50014} open
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10004, pstmt-20014, rs-50014} Header: [bimg]
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10004, pstmt-20014, rs-50014} Result: [pic/adv01.jpg]
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10004, pstmt-20014, rs-50014} Result: [pic/adv02.jpg]
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10004, pstmt-20014, rs-50014} closed
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10004, pstmt-20014} closed
+DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10004} pool-recycle
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-5 com.qimeng.main.OldShopController - *********获取商城接口学生信息*************
+INFO http-nio-7073-exec-5 com.qimeng.main.OldShopController - StudentInfo [id=8, name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, schoolId=10001, totalPoints=169.0, stuCard=29b2592cc12213d751c1b89be293232c6049e456, bind=0, active=0, startTime=Fri Jul 05 08:00:00 CST 2019]
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - *********获取商城接口学生信息*************
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - StudentInfo [id=8, name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, schoolId=10001, totalPoints=169.0, stuCard=29b2592cc12213d751c1b89be293232c6049e456, bind=2801, active=0, startTime=Fri Jul 05 08:00:00 CST 2019]
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - *********获取商城接口学生信息*************
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - StudentInfo [id=8, name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, schoolId=10001, totalPoints=169.0, stuCard=29b2592cc12213d751c1b89be293232c6049e456, bind=2801, active=0, startTime=Fri Jul 05 08:00:00 CST 2019]
+INFO http-nio-7073-exec-7 com.qimeng.main.OldShopController - *********获取商城接口学生信息*************
+INFO http-nio-7073-exec-7 com.qimeng.main.OldShopController - StudentInfo [id=8, name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, schoolId=10001, totalPoints=169.0, stuCard=29b2592cc12213d751c1b89be293232c6049e456, bind=2801, active=0, startTime=Fri Jul 05 08:00:00 CST 2019]
+INFO http-nio-7073-exec-3 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-3 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - *********获取商城接口学生信息*************
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - StudentInfo [id=8, name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, schoolId=10001, totalPoints=169.0, stuCard=29b2592cc12213d751c1b89be293232c6049e456, bind=2801, active=0, startTime=Fri Jul 05 08:00:00 CST 2019]
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-5 com.qimeng.main.OldShopController - *********获取商城接口学生信息*************
+INFO http-nio-7073-exec-5 com.qimeng.main.OldShopController - StudentInfo [id=8, name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, schoolId=10001, totalPoints=169.0, stuCard=29b2592cc12213d751c1b89be293232c6049e456, bind=2801, active=0, startTime=Fri Jul 05 08:00:00 CST 2019]
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - *********获取商品列表*************
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - [id=15 mc=15 jf=1 pic=http://sys.qimenghb.com/pic/heibi.jpg, id=16 mc=16 jf=1 pic=http://sys.qimenghb.com/pic/zuowenb.jpg, id=17 mc=17 jf=1 pic=http://sys.qimenghb.com/pic/pinyinb.jpg, id=18 mc=18 jf=1 pic=http://sys.qimenghb.com/pic/shuangxianb.jpg, id=19 mc=19 jf=1 pic=http://sys.qimenghb.com/pic/yingyub.jpg, id=20 mc=20 jf=1 pic=http://sys.qimenghb.com/pic/tiangeb.jpg, id=21 mc=21 jf=1 pic=http://sys.qimenghb.com/pic/fanggeb.jpg, id=22 mc=22 jf=1 pic=http://sys.qimenghb.com/pic/huatub.jpg, id=23 mc=23 jf=1 pic=http://sys.qimenghb.com/pic/shuxueb.jpg, id=24 mc=24 jf=1 pic=http://sys.qimenghb.com/pic/anxianb.jpg, id=1 mc=1 jf=10 pic=http://sys.qimenghb.com/pic/heibi.jpg, id=2 mc=2 jf=10 pic=http://sys.qimenghb.com/pic/zuowenb.jpg, id=3 mc=3 jf=10 pic=http://sys.qimenghb.com/pic/pinyinb.jpg, id=4 mc=4 jf=10 pic=http://sys.qimenghb.com/pic/shuangxianb.jpg, id=5 mc=5 jf=10 pic=http://sys.qimenghb.com/pic/yingyub.jpg, id=6 mc=6 jf=10 pic=http://sys.qimenghb.com/pic/tiangeb.jpg, id=7 mc=7 jf=10 pic=http://sys.qimenghb.com/pic/fanggeb.jpg, id=8 mc=8 jf=10 pic=http://sys.qimenghb.com/pic/huatub.jpg, id=9 mc=9 jf=10 pic=http://sys.qimenghb.com/pic/shuxueb.jpg, id=10 mc=10 jf=10 pic=http://sys.qimenghb.com/pic/anxianb.jpg, id=11 mc=11 jf=15 pic=http://sys.qimenghb.com/pic/506b.jpg, id=12 mc=12 jf=25 pic=http://sys.qimenghb.com/pic/506h.jpg, id=13 mc=13 jf=15 pic=http://sys.qimenghb.com/pic/400b.jpg, id=14 mc=14 jf=25 pic=http://sys.qimenghb.com/pic/400h.jpg, id=25 mc=25 jf=25 pic=http://sys.qimenghb.com/pic/300h.jpg]
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - *********学生扣分接口*************
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - {"accountTonken":"","data":"","message":"java.lang.RuntimeException: org.springframework.dao.TransientDataAccessResourceException: Error attempting to get column 'create_time' from result set.  Cause: java.sql.SQLException: Zero date value prohibited\n; Zero date value prohibited; nested exception is java.sql.SQLException: Zero date value prohibited","statusCode":1,"success":false}
+ERROR http-nio-7073-exec-1 com.qimeng.main.OldShopController - 学生扣分接口错误
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - *********扣除商品积分生成订单*************
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - 更新商品信息:Repertory [dpcode=123456, proid=3, kucun=9, sale=1, lastdate=Tue Sep 03 12:11:20 CST 2019]
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - 学生积分使用信息UsePointsLogDao [id=9, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=10, creatTime=Tue Sep 03 12:11:20 CST 2019, appId=7564564864648644, mark=大屏机扣分]
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - *********学生扣分接口*************
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - {"accountTonken":"","data":"","message":"java.lang.RuntimeException: org.springframework.dao.TransientDataAccessResourceException: Error attempting to get column 'create_time' from result set.  Cause: java.sql.SQLException: Zero date value prohibited\n; Zero date value prohibited; nested exception is java.sql.SQLException: Zero date value prohibited","statusCode":1,"success":false}
+ERROR http-nio-7073-exec-10 com.qimeng.main.OldShopController - 学生扣分接口错误
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - *********扣除商品积分生成订单*************
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - 更新商品信息:Repertory [dpcode=123456, proid=4, kucun=9, sale=1, lastdate=Tue Sep 03 12:11:30 CST 2019]
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - 学生积分使用信息UsePointsLogDao [id=10, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=10, creatTime=Tue Sep 03 12:11:30 CST 2019, appId=7564564864648644, mark=大屏机扣分]
+INFO http-nio-7073-exec-6 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-6 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-3 com.qimeng.main.OldShopController - *********获取商城接口学生信息*************
+INFO http-nio-7073-exec-3 com.qimeng.main.OldShopController - StudentInfo [id=8, name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, schoolId=10001, totalPoints=149.0, stuCard=29b2592cc12213d751c1b89be293232c6049e456, bind=2801, active=0, startTime=Fri Jul 05 08:00:00 CST 2019]
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - *********获取商品列表*************
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - [id=15 mc=15 jf=1 pic=http://sys.qimenghb.com/pic/heibi.jpg, id=16 mc=16 jf=1 pic=http://sys.qimenghb.com/pic/zuowenb.jpg, id=17 mc=17 jf=1 pic=http://sys.qimenghb.com/pic/pinyinb.jpg, id=18 mc=18 jf=1 pic=http://sys.qimenghb.com/pic/shuangxianb.jpg, id=19 mc=19 jf=1 pic=http://sys.qimenghb.com/pic/yingyub.jpg, id=20 mc=20 jf=1 pic=http://sys.qimenghb.com/pic/tiangeb.jpg, id=21 mc=21 jf=1 pic=http://sys.qimenghb.com/pic/fanggeb.jpg, id=22 mc=22 jf=1 pic=http://sys.qimenghb.com/pic/huatub.jpg, id=23 mc=23 jf=1 pic=http://sys.qimenghb.com/pic/shuxueb.jpg, id=24 mc=24 jf=1 pic=http://sys.qimenghb.com/pic/anxianb.jpg, id=1 mc=1 jf=10 pic=http://sys.qimenghb.com/pic/heibi.jpg, id=2 mc=2 jf=10 pic=http://sys.qimenghb.com/pic/zuowenb.jpg, id=3 mc=3 jf=10 pic=http://sys.qimenghb.com/pic/pinyinb.jpg, id=4 mc=4 jf=10 pic=http://sys.qimenghb.com/pic/shuangxianb.jpg, id=5 mc=5 jf=10 pic=http://sys.qimenghb.com/pic/yingyub.jpg, id=6 mc=6 jf=10 pic=http://sys.qimenghb.com/pic/tiangeb.jpg, id=7 mc=7 jf=10 pic=http://sys.qimenghb.com/pic/fanggeb.jpg, id=8 mc=8 jf=10 pic=http://sys.qimenghb.com/pic/huatub.jpg, id=9 mc=9 jf=10 pic=http://sys.qimenghb.com/pic/shuxueb.jpg, id=10 mc=10 jf=10 pic=http://sys.qimenghb.com/pic/anxianb.jpg, id=11 mc=11 jf=15 pic=http://sys.qimenghb.com/pic/506b.jpg, id=12 mc=12 jf=25 pic=http://sys.qimenghb.com/pic/506h.jpg, id=13 mc=13 jf=15 pic=http://sys.qimenghb.com/pic/400b.jpg, id=14 mc=14 jf=25 pic=http://sys.qimenghb.com/pic/400h.jpg, id=25 mc=25 jf=25 pic=http://sys.qimenghb.com/pic/300h.jpg]
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - *********学生扣分接口*************
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - {"accountTonken":"MXyjqpyZ","data":{"active":0,"bind":1,"name":"张培轩","point":10,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - {"accountTonken":"hw9SICXZ","data":{"active":0,"bind":1,"name":"张培轩","point":10,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - *********扣除商品积分生成订单*************
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - 更新商品信息:Repertory [dpcode=123456, proid=15, kucun=9, sale=1, lastdate=Tue Sep 03 12:15:09 CST 2019]
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - 学生积分使用信息UsePointsLogDao [id=11, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:15:09 CST 2019, appId=7564564864648644, mark=大屏机扣分]
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - *********获取商城接口学生信息*************
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - StudentInfo [id=8, name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, schoolId=10001, totalPoints=148.0, stuCard=29b2592cc12213d751c1b89be293232c6049e456, bind=2801, active=0, startTime=Fri Jul 05 08:00:00 CST 2019]
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - *********获取商品列表*************
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - [id=15 mc=15 jf=1 pic=http://sys.qimenghb.com/pic/heibi.jpg, id=16 mc=16 jf=1 pic=http://sys.qimenghb.com/pic/zuowenb.jpg, id=17 mc=17 jf=1 pic=http://sys.qimenghb.com/pic/pinyinb.jpg, id=18 mc=18 jf=1 pic=http://sys.qimenghb.com/pic/shuangxianb.jpg, id=19 mc=19 jf=1 pic=http://sys.qimenghb.com/pic/yingyub.jpg, id=20 mc=20 jf=1 pic=http://sys.qimenghb.com/pic/tiangeb.jpg, id=21 mc=21 jf=1 pic=http://sys.qimenghb.com/pic/fanggeb.jpg, id=22 mc=22 jf=1 pic=http://sys.qimenghb.com/pic/huatub.jpg, id=23 mc=23 jf=1 pic=http://sys.qimenghb.com/pic/shuxueb.jpg, id=24 mc=24 jf=1 pic=http://sys.qimenghb.com/pic/anxianb.jpg, id=1 mc=1 jf=10 pic=http://sys.qimenghb.com/pic/heibi.jpg, id=2 mc=2 jf=10 pic=http://sys.qimenghb.com/pic/zuowenb.jpg, id=3 mc=3 jf=10 pic=http://sys.qimenghb.com/pic/pinyinb.jpg, id=4 mc=4 jf=10 pic=http://sys.qimenghb.com/pic/shuangxianb.jpg, id=5 mc=5 jf=10 pic=http://sys.qimenghb.com/pic/yingyub.jpg, id=6 mc=6 jf=10 pic=http://sys.qimenghb.com/pic/tiangeb.jpg, id=7 mc=7 jf=10 pic=http://sys.qimenghb.com/pic/fanggeb.jpg, id=8 mc=8 jf=10 pic=http://sys.qimenghb.com/pic/huatub.jpg, id=9 mc=9 jf=10 pic=http://sys.qimenghb.com/pic/shuxueb.jpg, id=10 mc=10 jf=10 pic=http://sys.qimenghb.com/pic/anxianb.jpg, id=11 mc=11 jf=15 pic=http://sys.qimenghb.com/pic/506b.jpg, id=12 mc=12 jf=25 pic=http://sys.qimenghb.com/pic/506h.jpg, id=13 mc=13 jf=15 pic=http://sys.qimenghb.com/pic/400b.jpg, id=14 mc=14 jf=25 pic=http://sys.qimenghb.com/pic/400h.jpg, id=25 mc=25 jf=25 pic=http://sys.qimenghb.com/pic/300h.jpg]
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - *********学生扣分接口*************
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - {"accountTonken":"kI5wFcqU","data":{"active":0,"bind":1,"name":"张培轩","point":10,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - {"accountTonken":"","data":"","message":"请求超时","statusCode":1,"success":false}
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - *********扣除商品积分生成订单*************
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - 更新商品信息:Repertory [dpcode=123456, proid=15, kucun=8, sale=2, lastdate=Tue Sep 03 12:19:43 CST 2019]
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - 学生积分使用信息UsePointsLogDao [id=12, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:19:43 CST 2019, appId=7564564864648644, mark=大屏机扣分]
+INFO http-nio-7073-exec-6 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-6 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-3 com.qimeng.main.OldShopController - *********获取商城接口学生信息*************
+INFO http-nio-7073-exec-3 com.qimeng.main.OldShopController - StudentInfo [id=8, name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, schoolId=10001, totalPoints=147.0, stuCard=29b2592cc12213d751c1b89be293232c6049e456, bind=2801, active=0, startTime=Fri Jul 05 08:00:00 CST 2019]
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - *********获取商品列表*************
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - [id=15 mc=15 jf=1 pic=http://sys.qimenghb.com/pic/heibi.jpg, id=16 mc=16 jf=1 pic=http://sys.qimenghb.com/pic/zuowenb.jpg, id=17 mc=17 jf=1 pic=http://sys.qimenghb.com/pic/pinyinb.jpg, id=18 mc=18 jf=1 pic=http://sys.qimenghb.com/pic/shuangxianb.jpg, id=19 mc=19 jf=1 pic=http://sys.qimenghb.com/pic/yingyub.jpg, id=20 mc=20 jf=1 pic=http://sys.qimenghb.com/pic/tiangeb.jpg, id=21 mc=21 jf=1 pic=http://sys.qimenghb.com/pic/fanggeb.jpg, id=22 mc=22 jf=1 pic=http://sys.qimenghb.com/pic/huatub.jpg, id=23 mc=23 jf=1 pic=http://sys.qimenghb.com/pic/shuxueb.jpg, id=24 mc=24 jf=1 pic=http://sys.qimenghb.com/pic/anxianb.jpg, id=1 mc=1 jf=10 pic=http://sys.qimenghb.com/pic/heibi.jpg, id=2 mc=2 jf=10 pic=http://sys.qimenghb.com/pic/zuowenb.jpg, id=3 mc=3 jf=10 pic=http://sys.qimenghb.com/pic/pinyinb.jpg, id=4 mc=4 jf=10 pic=http://sys.qimenghb.com/pic/shuangxianb.jpg, id=5 mc=5 jf=10 pic=http://sys.qimenghb.com/pic/yingyub.jpg, id=6 mc=6 jf=10 pic=http://sys.qimenghb.com/pic/tiangeb.jpg, id=7 mc=7 jf=10 pic=http://sys.qimenghb.com/pic/fanggeb.jpg, id=8 mc=8 jf=10 pic=http://sys.qimenghb.com/pic/huatub.jpg, id=9 mc=9 jf=10 pic=http://sys.qimenghb.com/pic/shuxueb.jpg, id=10 mc=10 jf=10 pic=http://sys.qimenghb.com/pic/anxianb.jpg, id=11 mc=11 jf=15 pic=http://sys.qimenghb.com/pic/506b.jpg, id=12 mc=12 jf=25 pic=http://sys.qimenghb.com/pic/506h.jpg, id=13 mc=13 jf=15 pic=http://sys.qimenghb.com/pic/400b.jpg, id=14 mc=14 jf=25 pic=http://sys.qimenghb.com/pic/400h.jpg, id=25 mc=25 jf=25 pic=http://sys.qimenghb.com/pic/300h.jpg]
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - *********学生扣分接口*************
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - {"accountTonken":"aWBeomTc","data":{"active":0,"bind":1,"name":"张培轩","point":10,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - {"machineID":"","data":{"usedPoints":1,"stuCard":"29b2592cc12213d751c1b89be293232c6049e456","mark":"大屏机扣分","operator":"","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD"},"appID":"7564564864648644","accountTonken":"UWA2QyeqxTSRlGYRYadGDQ==","operator":""}
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - {"accountTonken":"","data":"","message":"请求超时","statusCode":1,"success":false}
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - *********扣除商品积分生成订单*************
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - 更新商品信息:Repertory [dpcode=123456, proid=15, kucun=7, sale=3, lastdate=Tue Sep 03 12:28:08 CST 2019]
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - 学生积分使用信息UsePointsLogDao [id=13, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:28:08 CST 2019, appId=7564564864648644, mark=大屏机扣分]
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-1 com.qimeng.main.StuinfoController - ************获取学生信息***************
+INFO http-nio-7073-exec-1 com.qimeng.main.StuinfoController - {"accountTonken":"","data":"","message":"找不到当前学生","statusCode":1,"success":false}
+INFO http-nio-7073-exec-1 com.qimeng.main.StuinfoController - RequestMessage [appID=7166912116544627, machineID=12300, accountTonken=, operator=null, data=StudentInfoVo [name=, stuCode=a94cd604baab2c30, stuCard=32f96b9612764e24, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+INFO http-nio-7073-exec-1 com.qimeng.main.StuinfoController - ResponseMessage [statusCode=1, success=false, message=找不到当前用户, accountTonken=, data=]
+INFO http-nio-7073-exec-10 com.qimeng.main.StuinfoController - ************获取学生信息***************
+INFO http-nio-7073-exec-10 com.qimeng.main.StuinfoController - {"accountTonken":"BMHQtWIZ","data":{"active":0,"bind":1,"name":"张培轩","point":10,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-10 com.qimeng.main.StuinfoController - RequestMessage [appID=7166912116544627, machineID=12300, accountTonken=, operator=null, data=StudentInfoVo [name=, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29b2592cc12213d751c1b89be293232c6049e456, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+INFO http-nio-7073-exec-10 com.qimeng.main.StuinfoController - ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=BMHQtWIZ, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29b2592cc12213d751c1b89be293232c6049e456, qrCode=http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456, wasteType=0, unit=0, point=146, bind=1, active=1]]
+INFO http-nio-7073-exec-7 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-7 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-3 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-3 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - *********学生扣分接口*************
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - {"accountTonken":"","data":"","message":"java.lang.IllegalArgumentException: Cache 'ApplicationManagement' does not allow 'null' values. Avoid storing null via '@Cacheable(unless=\"#result == null\")' or configure RedisCache to allow 'null' via RedisCacheConfiguration.","statusCode":1,"success":false}
+ERROR http-nio-7073-exec-2 com.qimeng.main.OldShopController - 学生扣分接口错误
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - *********微信商城扣除积分*************
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - 学生积分使用信息UsePointsLogDao [id=14, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:43:38 CST 2019, appId=7845345646154645, mark=商城扣分]
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - *********学生扣分接口*************
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - {"accountTonken":"","data":"","message":"java.lang.IllegalArgumentException: Cache 'ApplicationManagement' does not allow 'null' values. Avoid storing null via '@Cacheable(unless=\"#result == null\")' or configure RedisCache to allow 'null' via RedisCacheConfiguration.","statusCode":1,"success":false}
+ERROR http-nio-7073-exec-10 com.qimeng.main.OldShopController - 学生扣分接口错误
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - *********微信商城扣除积分*************
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - 学生积分使用信息UsePointsLogDao [id=15, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:45:55 CST 2019, appId=7845345646154645, mark=商城扣分]
+INFO http-nio-7073-exec-6 com.qimeng.main.OldShopController - *********学生扣分接口*************
+INFO http-nio-7073-exec-6 com.qimeng.main.OldShopController - {"accountTonken":"","data":"","message":"java.lang.IllegalArgumentException: Cache 'ApplicationManagement' does not allow 'null' values. Avoid storing null via '@Cacheable(unless=\"#result == null\")' or configure RedisCache to allow 'null' via RedisCacheConfiguration.","statusCode":1,"success":false}
+ERROR http-nio-7073-exec-6 com.qimeng.main.OldShopController - 学生扣分接口错误
+INFO http-nio-7073-exec-6 com.qimeng.main.OldShopController - *********微信商城扣除积分*************
+INFO http-nio-7073-exec-6 com.qimeng.main.OldShopController - 学生积分使用信息UsePointsLogDao [id=16, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:46:12 CST 2019, appId=7845345646154645, mark=商城扣分]
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - *********学生扣分接口*************
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - {"accountTonken":"","data":"","message":"java.lang.IllegalArgumentException: Cache 'ApplicationManagement' does not allow 'null' values. Avoid storing null via '@Cacheable(unless=\"#result == null\")' or configure RedisCache to allow 'null' via RedisCacheConfiguration.","statusCode":1,"success":false}
+ERROR http-nio-7073-exec-8 com.qimeng.main.OldShopController - 学生扣分接口错误
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - *********微信商城扣除积分*************
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - 学生积分使用信息UsePointsLogDao [id=17, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:48:14 CST 2019, appId=7845345646154645, mark=商城扣分]
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - *********学生扣分接口*************
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - {"accountTonken":"","data":"","message":"java.lang.IllegalArgumentException: Cache 'ApplicationManagement' does not allow 'null' values. Avoid storing null via '@Cacheable(unless=\"#result == null\")' or configure RedisCache to allow 'null' via RedisCacheConfiguration.","statusCode":1,"success":false}
+ERROR http-nio-7073-exec-2 com.qimeng.main.OldShopController - 学生扣分接口错误
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - *********微信商城扣除积分*************
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - 学生积分使用信息UsePointsLogDao [id=18, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:48:52 CST 2019, appId=7845345646154645, mark=商城扣分]
+INFO http-nio-7073-exec-5 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-5 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - *********学生扣分接口*************
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - {"accountTonken":"","data":"","message":"java.lang.IllegalArgumentException: Cache 'ApplicationManagement' does not allow 'null' values. Avoid storing null via '@Cacheable(unless=\"#result == null\")' or configure RedisCache to allow 'null' via RedisCacheConfiguration.","statusCode":1,"success":false}
+ERROR http-nio-7073-exec-4 com.qimeng.main.OldShopController - 学生扣分接口错误
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - *********微信商城扣除积分*************
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - 学生积分使用信息UsePointsLogDao [id=19, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:49:44 CST 2019, appId=7845345646154645, mark=商城扣分]
+INFO http-nio-7073-exec-7 com.qimeng.main.OldShopController - *********学生扣分接口*************
+INFO http-nio-7073-exec-7 com.qimeng.main.OldShopController - {"accountTonken":"","data":"","message":"java.lang.IllegalArgumentException: Cache 'ApplicationManagement' does not allow 'null' values. Avoid storing null via '@Cacheable(unless=\"#result == null\")' or configure RedisCache to allow 'null' via RedisCacheConfiguration.","statusCode":1,"success":false}
+ERROR http-nio-7073-exec-7 com.qimeng.main.OldShopController - 学生扣分接口错误
+INFO http-nio-7073-exec-7 com.qimeng.main.OldShopController - *********微信商城扣除积分*************
+INFO http-nio-7073-exec-7 com.qimeng.main.OldShopController - 学生积分使用信息UsePointsLogDao [id=20, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:52:05 CST 2019, appId=7845345646154645, mark=商城扣分]
+ERROR http-nio-7073-exec-3 com.qimeng.main.OldShopController - 学生扣分接口错误
+INFO http-nio-7073-exec-3 com.qimeng.main.OldShopController - *********微信商城扣除积分*************
+INFO http-nio-7073-exec-3 com.qimeng.main.OldShopController - 学生积分使用信息UsePointsLogDao [id=21, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:52:57 CST 2019, appId=7845345646154645, mark=商城扣分]
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - *********学生扣分接口*************
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - {"accountTonken":"1cpsxlSn","data":{"active":0,"bind":1,"name":"张培轩","point":10,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - {"machineID":"","data":{"usedPoints":1,"stuCard":"29b2592cc12213d751c1b89be293232c6049e456","mark":"微信商城扣分","operator":"","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD"},"appID":"7845345646154645","accountTonken":"lTleMLJV3cfK7K8c1aGF3g==","operator":""}
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - *********学生扣分接口*************
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - {"accountTonken":"WeeYTw3M","data":{"active":0,"bind":1,"name":"张培轩","point":10,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - {"machineID":"","data":{"usedPoints":1,"stuCard":"29b2592cc12213d751c1b89be293232c6049e456","mark":"微信商城扣分","operator":"","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD"},"appID":"7845345646154645","accountTonken":"UhoH2Nh5HpEEtkTwaed2Mg==","operator":""}
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - {"accountTonken":"","data":"","message":"请求超时","statusCode":1,"success":false}
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - *********微信商城扣除积分*************
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - 学生积分使用信息UsePointsLogDao [id=22, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:58:16 CST 2019, appId=7845345646154645, mark=商城扣分]
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - {"accountTonken":"","data":"","message":"请求超时","statusCode":1,"success":false}
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - *********微信商城扣除积分*************
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - 学生积分使用信息UsePointsLogDao [id=23, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:58:20 CST 2019, appId=7845345646154645, mark=商城扣分]
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - *********学生扣分接口*************
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - {"accountTonken":"XPoI7vsR","data":{"active":0,"bind":1,"name":"张培轩","point":10,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - {"machineID":"","data":{"usedPoints":1,"stuCard":"29b2592cc12213d751c1b89be293232c6049e456","mark":"微信商城扣分","operator":"","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD"},"appID":"7845345646154645","accountTonken":"8nMgPOoiehqKsyG7B9kgJQ==","operator":""}
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - {"accountTonken":"","data":"","message":"请求超时","statusCode":1,"success":false}
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - *********微信商城扣除积分*************
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - 学生积分使用信息UsePointsLogDao [id=24, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:58:42 CST 2019, appId=7845345646154645, mark=商城扣分]
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - *********学生扣分接口*************
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - {"accountTonken":"LgcSdWzj","data":{"active":0,"bind":1,"name":"张培轩","point":10,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - {"machineID":"","data":{"usedPoints":1,"stuCard":"29b2592cc12213d751c1b89be293232c6049e456","mark":"微信商城扣分","operator":"","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD"},"appID":"7845345646154645","accountTonken":"11O5LolLt6VNG1Ke1RuuWw==","operator":""}
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - {"accountTonken":"","data":"","message":"请求超时","statusCode":1,"success":false}
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - *********微信商城扣除积分*************
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - 学生积分使用信息UsePointsLogDao [id=25, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 12:59:46 CST 2019, appId=7845345646154645, mark=商城扣分]
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - *********学生扣分接口*************
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - {"accountTonken":"u4jsFXr7","data":{"active":0,"bind":1,"name":"张培轩","point":10,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - {"machineID":"","data":{"usedPoints":1,"stuCard":"29b2592cc12213d751c1b89be293232c6049e456","mark":"微信商城扣分","operator":"","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD"},"appID":"7845345646154645","accountTonken":"CUlQiVnY4CrhHuqp0dq9gg==","operator":""}
+ERROR http-nio-7073-exec-8 com.qimeng.main.OldShopController - 学生扣分接口错误
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - *********微信商城扣除积分*************
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - 学生积分使用信息UsePointsLogDao [id=26, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 13:00:16 CST 2019, appId=7845345646154645, mark=商城扣分]
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-7 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-7 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - *********学生扣分接口*************
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - {"accountTonken":"W5UNgGrd","data":{"active":0,"bind":1,"name":"张培轩","point":10,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - {"machineID":"","data":{"usedPoints":1,"stuCard":"29b2592cc12213d751c1b89be293232c6049e456","mark":"微信商城扣分","operator":"","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD"},"appID":"7845345646154645","accountTonken":"uY+FJX0NS0qH9BrFXzvb0g==","operator":""}
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - {"accountTonken":"","data":"","message":"请求超时","statusCode":1,"success":false}
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - *********微信商城扣除积分*************
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - 学生积分使用信息UsePointsLogDao [id=27, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 13:21:16 CST 2019, appId=7845345646154645, mark=商城扣分]
+INFO http-nio-7073-exec-5 com.qimeng.main.OldShopController - *********学生扣分接口*************
+INFO http-nio-7073-exec-5 com.qimeng.main.OldShopController - {"accountTonken":"SmezDET0","data":{"active":0,"bind":1,"name":"张培轩","point":10,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-5 com.qimeng.main.OldShopController - {"machineID":"","data":{"usedPoints":1,"stuCard":"29b2592cc12213d751c1b89be293232c6049e456","mark":"微信商城扣分","operator":"","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD"},"appID":"7845345646154645","accountTonken":"fPxdaSrpB6PQlvHrMK6C3g==","operator":""}
+ERROR http-nio-7073-exec-5 com.qimeng.main.OldShopController - 学生扣分接口错误
+INFO http-nio-7073-exec-5 com.qimeng.main.OldShopController - *********微信商城扣除积分*************
+INFO http-nio-7073-exec-5 com.qimeng.main.OldShopController - 学生积分使用信息UsePointsLogDao [id=28, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 13:21:40 CST 2019, appId=7845345646154645, mark=商城扣分]
+INFO http-nio-7073-exec-3 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-3 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-7 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-7 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-5 com.qimeng.main.OldShopController - *********学生扣分接口*************
+INFO http-nio-7073-exec-5 com.qimeng.main.OldShopController - {"accountTonken":"YrHLyj9Z","data":{"active":0,"bind":1,"name":"张培轩","point":10,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-5 com.qimeng.main.OldShopController - {"machineID":"","data":{"usedPoints":1,"stuCard":"29b2592cc12213d751c1b89be293232c6049e456","mark":"微信商城扣分","operator":"","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD"},"appID":"7845345646154645","accountTonken":"OG8bUseyRKmLHxS/VZESuw==","operator":""}
+INFO http-nio-7073-exec-5 com.qimeng.main.OldShopController - {"accountTonken":"","data":"","message":"使用积分成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-5 com.qimeng.main.OldShopController - *********微信商城扣除积分*************
+INFO http-nio-7073-exec-5 com.qimeng.main.OldShopController - 学生积分使用信息UsePointsLogDao [id=9, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 14:02:23 CST 2019, appId=7845345646154645, mark=商城扣分]
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-7 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-7 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - *********学生扣分接口*************
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - {"accountTonken":"KmDEtY3E","data":{"active":0,"bind":1,"name":"张培轩","point":9,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29b2592cc12213d751c1b89be293232c6049e456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - {"machineID":"","data":{"usedPoints":1,"stuCard":"29b2592cc12213d751c1b89be293232c6049e456","mark":"微信商城扣分","operator":"","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD"},"appID":"7845345646154645","accountTonken":"Qokohdj9I/vAGQfP+p3Q+A==","operator":""}
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - {"accountTonken":"","data":"","message":"使用积分成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - *********微信商城扣除积分*************
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - 学生积分使用信息UsePointsLogDao [id=10, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=1, creatTime=Tue Sep 03 14:13:41 CST 2019, appId=7845345646154645, mark=商城扣分]
+INFO http-nio-7073-exec-7 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-7 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-3 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-3 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-5 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-5 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-6 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-6 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-5 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-5 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-7 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-7 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-3 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-3 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-6 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-6 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-5 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-5 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-7 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-7 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-3 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-3 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-6 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-6 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-3 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-3 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-10 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-5 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-5 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-7 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-7 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]

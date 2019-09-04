@@ -1,6 +1,5 @@
 package com.qimeng.main.dao;
 
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;

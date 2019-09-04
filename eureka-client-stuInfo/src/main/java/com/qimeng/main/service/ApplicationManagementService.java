@@ -116,7 +116,7 @@ public class ApplicationManagementService {
 	 * @param active
 	 * @return
 	 */
-	@Cacheable(value="ApplicationManagement",key="#appId")
+	@Cacheable(value="ApplicationManagement",key="#appId",unless="#result == null")
 	public ApplicationManagement selectApplicationManagementByAppId(String appId,Byte active){
 		ApplicationManagement applicationManagement=new ApplicationManagement();
 		applicationManagement.setAppId(appId);

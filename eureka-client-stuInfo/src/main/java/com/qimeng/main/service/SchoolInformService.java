@@ -66,14 +66,14 @@ public class SchoolInformService {
 		schoolInform.setActive(active);
 		return selectSchoolInformList(schoolInform);
 	}
-	@Cacheable(value="SchoolInform",key="#schoolCode")
+	@Cacheable(value="SchoolInform",key="#schoolCode",unless="#result == null")
 	public SchoolInform selectSchoolInformBySchoolCode(String schoolCode) {
 		SchoolInform schoolInform=new SchoolInform();
 		schoolInform.setSchoolCode(schoolCode);
 		List<SchoolInform> list=selectSchoolInformList(schoolInform);
 		return list.isEmpty()?null:list.get(0);
 	}
-	@Cacheable(value="SchoolInform",key="#schoolCode")
+	@Cacheable(value="SchoolInform",key="#schoolCode",unless="#result == null")
 	public SchoolInform selectSchoolInformBySchoolCode(String schoolCode,Boolean active) {
 		SchoolInform schoolInform=new SchoolInform();
 		schoolInform.setSchoolCode(schoolCode);

@@ -90,7 +90,7 @@ public class SchoolContactsTypeService {
 	 * @return
 	 */
 	
-	@Cacheable(value="SchoolContactsType",key="#type")
+	@Cacheable(value="SchoolContactsType",key="#type",unless="#result == null")
 	public SchoolContactsType selectSchoolContactsTypeByType(byte type) {
 		SchoolContactsType schoolContactsType=new SchoolContactsType();
 		schoolContactsType.setType(type);

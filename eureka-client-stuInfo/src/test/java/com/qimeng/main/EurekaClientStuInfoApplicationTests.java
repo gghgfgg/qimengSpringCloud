@@ -33,6 +33,8 @@ import com.qimeng.main.service.StudentDataService;
 import com.qimeng.main.service.StudentInformService;
 import com.qimeng.main.service.StudentRankService;
 import com.qimeng.main.service.StudentUpdateService;
+import com.qimeng.main.util.EncryptUtil;
+import com.qimeng.main.util.StaticGlobal;
 import com.qimeng.main.vo.DeviceInformVo;
 import com.qimeng.main.vo.StudentVo;
 
@@ -174,8 +176,19 @@ public class EurekaClientStuInfoApplicationTests {
 //		String cardString=strings[1].substring(strings[1].indexOf("=")+1);
 //		System.out.println(cardString);
 		
-		studentRankService.addlist();
-		studentRankService.StudentRankList(0,new StudentVo());
+		//studentRankService.addlist();
+		//studentRankService.StudentRankList(0,new StudentVo());
+		ApplicationManagement applicationManagement = applicationManagementService
+				.selectApplicationManagementByAppId("7845345646154645", StaticGlobal.ACTIVE);
+		EncryptUtil encryptUtil;
+		try {
+			encryptUtil = new EncryptUtil(applicationManagement.getDeskey(),applicationManagement.getIvkey());
+			String accountTonken=encryptUtil.decode("CUlQiVnY4CrhHuqp0dq9gg==");
+			System.out.println(accountTonken);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 

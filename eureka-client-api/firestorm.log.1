@@ -1,0 +1,733 @@
+INFO http-nio-7073-exec-3 com.qimeng.main.StuinfoController - ************上传积分***************
+ERROR http-nio-7073-exec-3 com.qimeng.main.StuinfoController - 获取学生上传积分接口错误
+INFO http-nio-7073-exec-3 com.qimeng.main.StuinfoController - RequestMessage [appID=7166912116544627, machineID=123456789, accountTonken=9NrNY1FquVhw5jPa4a2N5g==, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29b2592cc12213d751c1b89be293232c6049e456, qrCode=null, wasteType=2, unit=700, point=179, bind=1, active=1]]
+INFO http-nio-7073-exec-3 com.qimeng.main.oldStuService.OldService - z96+sMwzKAq+bmPB6Ti8w9D4qQeRGNamSqf9hlh6eSDtRoBTXbtSnt4bcOXr3YLf8kMn5q9+vlZFkNpONlIOnA==
+INFO http-nio-7073-exec-3 com.qimeng.main.StuinfoController - {"msg":1,"success":true}
+
+INFO http-nio-7073-exec-3 com.qimeng.main.StuinfoController - 新后台上传积分：success
+INFO http-nio-7073-exec-3 com.qimeng.main.StuinfoController - ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+INFO http-nio-7073-exec-7 com.qimeng.main.StuinfoController - ************获取学生信息***************
+INFO http-nio-7073-exec-7 com.qimeng.main.StuinfoController - {"accountTonken":"","data":"","message":"找不到当前学生","statusCode":1,"success":false}
+INFO http-nio-7073-exec-7 com.qimeng.main.StuinfoController - RequestMessage [appID=7166912116544627, machineID=123456789, accountTonken=9NrNY1FquVhw5jPa4a2N5g==, operator=null, data=StudentInfoVo [name=null, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29B2592CC12213D751C1B89BE293232C6049E456, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+DEBUG http-nio-7073-exec-7 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20011} created. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, ajf as totalpoints,schoolid from qmhb_student where qrid=?
+DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20011} Parameters : [5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD]
+DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20011} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20011} executed. 46.2367 millis. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, ajf as totalpoints,schoolid from qmhb_student where qrid=?
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20011, rs-50005} open
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20011, rs-50005} Header: [nid, realname, qrid, card, rootid, hbday, ajf, schoolid]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20011, rs-50005} Result: [8, 陈泽键, 5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, 29b2592cc12213d751c1b89be293232c6049e456, 2792, 2019-07-05, 179.6, 10001]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20011, rs-50005} closed
+DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20011} closed
+DEBUG http-nio-7073-exec-7 druid.sql.Connection - {conn-10005} pool-recycle
+INFO http-nio-7073-exec-7 com.qimeng.main.StuinfoController - ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=0qy8Sobm, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29b2592cc12213d751c1b89be293232c6049e456, qrCode=http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456, wasteType=0, unit=0, point=179, bind=1, active=1]]
+INFO http-nio-7073-exec-8 com.qimeng.main.StuinfoController - ************上传积分***************
+INFO http-nio-7073-exec-8 com.qimeng.main.StuinfoController - {"accountTonken":"","data":"","message":"请求超时","statusCode":1,"success":false}
+INFO http-nio-7073-exec-8 com.qimeng.main.StuinfoController - RequestMessage [appID=7166912116544627, machineID=123456789, accountTonken=KoSBy/2xu+fBWeSbeeSSoQ==, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29b2592cc12213d751c1b89be293232c6049e456, qrCode=null, wasteType=2, unit=700, point=179, bind=1, active=1]]
+INFO http-nio-7073-exec-8 com.qimeng.main.oldStuService.OldService - z96+sMwzKAq+bmPB6Ti8w9D4qQeRGNamSqf9hlh6eSDtRoBTXbtSnt4bcOXr3YLf8kMn5q9+vlZFkNpONlIOnA==
+INFO http-nio-7073-exec-8 com.qimeng.main.StuinfoController - {"msg":1,"success":true}
+
+INFO http-nio-7073-exec-8 com.qimeng.main.StuinfoController - 新后台上传积分：success
+INFO http-nio-7073-exec-8 com.qimeng.main.StuinfoController - ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+DEBUG http-nio-7073-exec-6 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20012} created. select bimg from qmhb_adv where dpjid=? or dpjid=0
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20012} Parameters : [123456]
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20012} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20012} executed. 30.5218 millis. select bimg from qmhb_adv where dpjid=? or dpjid=0
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20012, rs-50006} open
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20012, rs-50006} Header: [bimg]
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20012, rs-50006} Result: [pic/adv01.jpg]
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20012, rs-50006} Result: [pic/adv02.jpg]
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20012, rs-50006} closed
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20012} closed
+DEBUG http-nio-7073-exec-6 druid.sql.Connection - {conn-10005} pool-recycle
+INFO http-nio-7073-exec-6 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-6 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+DEBUG http-nio-7073-exec-2 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-2 druid.sql.Statement - {conn-10005, pstmt-20013} created. select bimg from qmhb_adv where dpjid=? or dpjid=0
+DEBUG http-nio-7073-exec-2 druid.sql.Statement - {conn-10005, pstmt-20013} Parameters : [123456]
+DEBUG http-nio-7073-exec-2 druid.sql.Statement - {conn-10005, pstmt-20013} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-2 druid.sql.Statement - {conn-10005, pstmt-20013} executed. 29.4471 millis. select bimg from qmhb_adv where dpjid=? or dpjid=0
+DEBUG http-nio-7073-exec-2 druid.sql.ResultSet - {conn-10005, pstmt-20013, rs-50007} open
+DEBUG http-nio-7073-exec-2 druid.sql.ResultSet - {conn-10005, pstmt-20013, rs-50007} Header: [bimg]
+DEBUG http-nio-7073-exec-2 druid.sql.ResultSet - {conn-10005, pstmt-20013, rs-50007} Result: [pic/adv01.jpg]
+DEBUG http-nio-7073-exec-2 druid.sql.ResultSet - {conn-10005, pstmt-20013, rs-50007} Result: [pic/adv02.jpg]
+DEBUG http-nio-7073-exec-2 druid.sql.ResultSet - {conn-10005, pstmt-20013, rs-50007} closed
+DEBUG http-nio-7073-exec-2 druid.sql.Statement - {conn-10005, pstmt-20013} closed
+DEBUG http-nio-7073-exec-2 druid.sql.Connection - {conn-10005} pool-recycle
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-1 com.qimeng.main.StuinfoController - ************获取学生信息***************
+INFO http-nio-7073-exec-1 com.qimeng.main.StuinfoController - {"accountTonken":"fwNV5bso","data":{"active":0,"bind":1,"name":"张培轩","point":0,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29B2592CC12213D751C1B89BE293232C6049E456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-1 com.qimeng.main.StuinfoController - RequestMessage [appID=7166912116544627, machineID=123456789, accountTonken=KoSBy/2xu+fBWeSbeeSSoQ==, operator=null, data=StudentInfoVo [name=null, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29B2592CC12213D751C1B89BE293232C6049E456, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20014} created. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, ajf as totalpoints,schoolid from qmhb_student where qrid=?
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20014} Parameters : [5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD]
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20014} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20014} executed. 45.5837 millis. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, ajf as totalpoints,schoolid from qmhb_student where qrid=?
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20014, rs-50008} open
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20014, rs-50008} Header: [nid, realname, qrid, card, rootid, hbday, ajf, schoolid]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20014, rs-50008} Result: [8, 陈泽键, 5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, 29b2592cc12213d751c1b89be293232c6049e456, 2792, 2019-07-05, 179.6, 10001]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20014, rs-50008} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20014} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10005} pool-recycle
+INFO http-nio-7073-exec-1 com.qimeng.main.StuinfoController - ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=fwNV5bso, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29b2592cc12213d751c1b89be293232c6049e456, qrCode=http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456, wasteType=0, unit=0, point=179, bind=1, active=1]]
+INFO http-nio-7073-exec-3 com.qimeng.main.StuinfoController - ************上传积分***************
+INFO http-nio-7073-exec-3 com.qimeng.main.StuinfoController - {"accountTonken":"","data":"","message":"积分上传成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-3 com.qimeng.main.StuinfoController - RequestMessage [appID=7166912116544627, machineID=123456789, accountTonken=y9oyq6Hg6LZcU1OMPUHzFA==, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29b2592cc12213d751c1b89be293232c6049e456, qrCode=null, wasteType=2, unit=700, point=179, bind=1, active=1]]
+INFO http-nio-7073-exec-3 com.qimeng.main.oldStuService.OldService - z96+sMwzKAq+bmPB6Ti8w9D4qQeRGNamSqf9hlh6eSDtRoBTXbtSnt4bcOXr3YLf8kMn5q9+vlZFkNpONlIOnA==
+INFO http-nio-7073-exec-3 com.qimeng.main.StuinfoController - {"msg":1,"success":true}
+
+INFO http-nio-7073-exec-3 com.qimeng.main.StuinfoController - 新后台上传积分：success
+INFO http-nio-7073-exec-3 com.qimeng.main.StuinfoController - ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+INFO http-nio-7073-exec-5 com.qimeng.main.StuinfoController - ************获取学生信息***************
+INFO http-nio-7073-exec-5 com.qimeng.main.StuinfoController - {"accountTonken":"GtCGcIXE","data":{"active":0,"bind":1,"name":"张培轩","point":10,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456","stuCard":"29B2592CC12213D751C1B89BE293232C6049E456","stuCode":"5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD","unit":0,"wasteType":0},"message":"获取当前用户成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-5 com.qimeng.main.StuinfoController - RequestMessage [appID=7166912116544627, machineID=123456789, accountTonken=y9oyq6Hg6LZcU1OMPUHzFA==, operator=null, data=StudentInfoVo [name=null, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29B2592CC12213D751C1B89BE293232C6049E456, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+DEBUG http-nio-7073-exec-5 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-5 druid.sql.Statement - {conn-10005, pstmt-20015} created. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, ajf as totalpoints,schoolid from qmhb_student where qrid=?
+DEBUG http-nio-7073-exec-5 druid.sql.Statement - {conn-10005, pstmt-20015} Parameters : [5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD]
+DEBUG http-nio-7073-exec-5 druid.sql.Statement - {conn-10005, pstmt-20015} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-5 druid.sql.Statement - {conn-10005, pstmt-20015} executed. 45.431 millis. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, ajf as totalpoints,schoolid from qmhb_student where qrid=?
+DEBUG http-nio-7073-exec-5 druid.sql.ResultSet - {conn-10005, pstmt-20015, rs-50009} open
+DEBUG http-nio-7073-exec-5 druid.sql.ResultSet - {conn-10005, pstmt-20015, rs-50009} Header: [nid, realname, qrid, card, rootid, hbday, ajf, schoolid]
+DEBUG http-nio-7073-exec-5 druid.sql.ResultSet - {conn-10005, pstmt-20015, rs-50009} Result: [8, 陈泽键, 5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, 29b2592cc12213d751c1b89be293232c6049e456, 2792, 2019-07-05, 179.6, 10001]
+DEBUG http-nio-7073-exec-5 druid.sql.ResultSet - {conn-10005, pstmt-20015, rs-50009} closed
+DEBUG http-nio-7073-exec-5 druid.sql.Statement - {conn-10005, pstmt-20015} closed
+DEBUG http-nio-7073-exec-5 druid.sql.Connection - {conn-10005} pool-recycle
+INFO http-nio-7073-exec-5 com.qimeng.main.StuinfoController - ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=GtCGcIXE, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29b2592cc12213d751c1b89be293232c6049e456, qrCode=http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456, wasteType=0, unit=0, point=179, bind=1, active=1]]
+INFO http-nio-7073-exec-8 com.qimeng.main.StuinfoController - ************获取学生信息***************
+INFO http-nio-7073-exec-8 com.qimeng.main.StuinfoController - {"accountTonken":"","data":"","message":"找不到当前学生","statusCode":1,"success":false}
+INFO http-nio-7073-exec-8 com.qimeng.main.StuinfoController - RequestMessage [appID=7166912116544626, machineID=null, accountTonken=null, operator=null, data=StudentInfoVo [name=杜羽飞, stuCode=E5192BA5BEFFB196CE857A41D41D832FB162A0B9, stuCard=f3b26be4b0a1d4d7a4d3c693a9556ef0deb6c778, qrCode=http://o0c.cn/?code=E5192BA5BEFFB196CE857A41D41D832FB162A0B9&card=f3b26be4b0a1d4d7a4d3c693a9556ef0deb6c778, wasteType=0, unit=0, point=24, bind=0, active=1]]
+DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20016} created. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, ajf as totalpoints,schoolid from qmhb_student where qrid=?
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20016} Parameters : [E5192BA5BEFFB196CE857A41D41D832FB162A0B9]
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20016} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20016} executed. 45.5872 millis. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, ajf as totalpoints,schoolid from qmhb_student where qrid=?
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20016, rs-50010} open
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20016, rs-50010} Header: [nid, realname, qrid, card, rootid, hbday, ajf, schoolid]
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20016, rs-50010} Result: [5, 杜羽飞, E5192BA5BEFFB196CE857A41D41D832FB162A0B9, f3b26be4b0a1d4d7a4d3c693a9556ef0deb6c778, 0, 1970-01-01, 24.0, 10001]
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20016, rs-50010} closed
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20016} closed
+DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-recycle
+INFO http-nio-7073-exec-8 com.qimeng.main.StuinfoController - ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=dcYJNU4x, data=StudentInfoVo [name=杜羽飞, stuCode=E5192BA5BEFFB196CE857A41D41D832FB162A0B9, stuCard=f3b26be4b0a1d4d7a4d3c693a9556ef0deb6c778, qrCode=http://o0c.cn/?code=E5192BA5BEFFB196CE857A41D41D832FB162A0B9&card=f3b26be4b0a1d4d7a4d3c693a9556ef0deb6c778, wasteType=0, unit=0, point=24, bind=0, active=1]]
+INFO http-nio-7073-exec-9 com.qimeng.main.UserManageController - ************微信登陆***************
+INFO http-nio-7073-exec-9 com.qimeng.main.UserManageController - {"accountTonken":"zDgp5inb","data":[],"message":"登陆成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-4 com.qimeng.main.UserManageController - ************微信登陆***************
+INFO http-nio-7073-exec-4 com.qimeng.main.UserManageController - {"accountTonken":"HLiAgKWT","data":[],"message":"登陆成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-2 com.qimeng.main.UserManageController - ************获取电话号码***************
+INFO http-nio-7073-exec-2 com.qimeng.main.UserManageController - {"accountTonken":"","data":"15920198991","message":"获取电话号码成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-10 com.qimeng.main.StuinfoController - ************手机号绑定学生***************
+INFO http-nio-7073-exec-10 com.qimeng.main.StuinfoController - {"accountTonken":"","data":"","message":"该appid没有权限","statusCode":1,"success":false}
+INFO http-nio-7073-exec-10 com.qimeng.main.StuinfoController - RequestMessage [appID=7166912116544626, machineID=null, accountTonken=HLiAgKWT, operator=null, data=StudentBindVo [name=null, phone=15920198991, stuCode=null, stuCard=null]]
+DEBUG http-nio-7073-exec-10 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-10 druid.sql.Statement - {conn-10005, pstmt-20017} created. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, ajf as totalpoints,schoolid from qmhb_student where mobile=?
+DEBUG http-nio-7073-exec-10 druid.sql.Statement - {conn-10005, pstmt-20017} Parameters : [15920198991]
+DEBUG http-nio-7073-exec-10 druid.sql.Statement - {conn-10005, pstmt-20017} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-10 druid.sql.Statement - {conn-10005, pstmt-20017} executed. 46.496 millis. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, ajf as totalpoints,schoolid from qmhb_student where mobile=?
+DEBUG http-nio-7073-exec-10 druid.sql.ResultSet - {conn-10005, pstmt-20017, rs-50011} open
+DEBUG http-nio-7073-exec-10 druid.sql.ResultSet - {conn-10005, pstmt-20017, rs-50011} Header: [nid, realname, qrid, card, rootid, hbday, ajf, schoolid]
+DEBUG http-nio-7073-exec-10 druid.sql.ResultSet - {conn-10005, pstmt-20017, rs-50011} Result: [5, 杜羽飞, E5192BA5BEFFB196CE857A41D41D832FB162A0B9, f3b26be4b0a1d4d7a4d3c693a9556ef0deb6c778, 0, 1970-01-01, 24.0, 10001]
+DEBUG http-nio-7073-exec-10 druid.sql.ResultSet - {conn-10005, pstmt-20017, rs-50011} closed
+DEBUG http-nio-7073-exec-10 druid.sql.Statement - {conn-10005, pstmt-20017} closed
+DEBUG http-nio-7073-exec-10 druid.sql.Connection - {conn-10005} pool-recycle
+INFO http-nio-7073-exec-10 com.qimeng.main.StuinfoController - ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=, data=StudentInfoVo [name=杜羽飞, stuCode=E5192BA5BEFFB196CE857A41D41D832FB162A0B9, stuCard=f3b26be4b0a1d4d7a4d3c693a9556ef0deb6c778, qrCode=http://o0c.cn/?code=E5192BA5BEFFB196CE857A41D41D832FB162A0B9&card=f3b26be4b0a1d4d7a4d3c693a9556ef0deb6c778, wasteType=0, unit=0, point=24, bind=0, active=1]]
+INFO http-nio-7073-exec-1 com.qimeng.main.UserManageController - ************绑定学生信息***************
+INFO http-nio-7073-exec-1 com.qimeng.main.UserManageController - {"accountTonken":"","data":"","message":"绑定成功","statusCode":1,"success":true}
+DEBUG http-nio-7073-exec-5 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-5 druid.sql.Statement - {conn-10005, pstmt-20018} created. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, ajf as totalpoints,schoolid from qmhb_student where qrid=?
+DEBUG http-nio-7073-exec-5 druid.sql.Statement - {conn-10005, pstmt-20018} Parameters : [5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD]
+DEBUG http-nio-7073-exec-5 druid.sql.Statement - {conn-10005, pstmt-20018} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-5 druid.sql.Statement - {conn-10005, pstmt-20018} executed. 46.4863 millis. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, ajf as totalpoints,schoolid from qmhb_student where qrid=?
+DEBUG http-nio-7073-exec-5 druid.sql.ResultSet - {conn-10005, pstmt-20018, rs-50012} open
+DEBUG http-nio-7073-exec-5 druid.sql.ResultSet - {conn-10005, pstmt-20018, rs-50012} Header: [nid, realname, qrid, card, rootid, hbday, ajf, schoolid]
+DEBUG http-nio-7073-exec-5 druid.sql.ResultSet - {conn-10005, pstmt-20018, rs-50012} Result: [8, 陈泽键, 5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, 29b2592cc12213d751c1b89be293232c6049e456, 2792, 2019-07-05, 179.6, 10001]
+DEBUG http-nio-7073-exec-5 druid.sql.ResultSet - {conn-10005, pstmt-20018, rs-50012} closed
+DEBUG http-nio-7073-exec-5 druid.sql.Statement - {conn-10005, pstmt-20018} closed
+DEBUG http-nio-7073-exec-5 druid.sql.Connection - {conn-10005} pool-recycle
+INFO http-nio-7073-exec-5 com.qimeng.main.OldShopController - *********获取商城接口学生信息*************
+INFO http-nio-7073-exec-5 com.qimeng.main.OldShopController - StudentInfo [id=8, name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, schoolId=10001, totalPoints=179.6, stuCard=29b2592cc12213d751c1b89be293232c6049e456, bind=2792, active=0, startTime=Fri Jul 05 08:00:00 CST 2019]
+DEBUG http-nio-7073-exec-7 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20019} created. select nid as id,pname as mc,jifen as jf,bimg as pic,spower as priority from qmhb_products where dpid=? or dpid=0 and ck=0
+DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20019} Parameters : [123456]
+DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20019} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20019} executed. 30.9838 millis. select nid as id,pname as mc,jifen as jf,bimg as pic,spower as priority from qmhb_products where dpid=? or dpid=0 and ck=0
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} open
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} Header: [nid, pname, jifen, bimg, spower]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} Result: [1, 启盟环保再生笔（黑色）, 10, pic/heibi.jpg, 5]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} Result: [2, 启盟环保作文作业本（20页）, 10, pic/zuowenb.jpg, 3]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} Result: [3, 启盟环保拼音作业本（20页）, 10, pic/pinyinb.jpg, 3]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} Result: [4, 启盟环保双线作业本（20页）, 10, pic/shuangxianb.jpg, 3]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} Result: [5, 启盟环保英语作业本（20页）, 10, pic/yingyub.jpg, 3]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} Result: [6, 启盟环保田格作业本（20页）, 10, pic/tiangeb.jpg, 3]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} Result: [7, 启盟环保方格作业本（20页）, 10, pic/fanggeb.jpg, 3]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} Result: [8, 启盟环保图画作业本（20页）, 10, pic/huatub.jpg, 3]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} Result: [9, 启盟环保数学作业本（20页）, 10, pic/shuxueb.jpg, 3]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} Result: [10, 启盟环保暗线作业本（20页）, 10, pic/anxianb.jpg, 3]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} Result: [11, 启盟506格稿纸（20页）薄, 15, pic/506b.jpg, 1]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} Result: [12, 启盟506格稿纸（45页）厚, 25, pic/506h.jpg, 1]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} Result: [13, 启盟400格稿纸（20页）薄, 15, pic/400b.jpg, 1]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} Result: [14, 启盟400格稿纸（45页）厚, 25, pic/400h.jpg, 1]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} Result: [15, 启盟环保再生笔（黑色）活动专用, 1, pic/heibi.jpg, 10]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} Result: [16, 启盟环保作文作业本（20页）活动专用, 1, pic/zuowenb.jpg, 8]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} Result: [17, 启盟环保拼音作业本（20页）活动专用, 1, pic/pinyinb.jpg, 8]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} Result: [18, 启盟环保双线作业本（20页）活动专用, 1, pic/shuangxianb.jpg, 8]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} Result: [19, 启盟环保英语作业本（20页）活动专用, 1, pic/yingyub.jpg, 8]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} Result: [20, 启盟环保田格作业本（20页）活动专用, 1, pic/tiangeb.jpg, 8]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} Result: [21, 启盟环保方格作业本（20页）活动专用, 1, pic/fanggeb.jpg, 8]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} Result: [22, 启盟环保图画作业本（20页）活动专用, 1, pic/huatub.jpg, 8]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} Result: [23, 启盟环保数学作业本（20页）活动专用, 1, pic/shuxueb.jpg, 8]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} Result: [24, 启盟环保暗线作业本（20页）活动专用, 1, pic/anxianb.jpg, 8]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} Result: [25, 启盟300格稿纸（45页）厚, 25, pic/300h.jpg, 0]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20019, rs-50013} closed
+DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10005, pstmt-20019} closed
+DEBUG http-nio-7073-exec-7 druid.sql.Connection - {conn-10005} pool-recycle
+INFO http-nio-7073-exec-7 com.qimeng.main.OldShopController - *********获取商品列表*************
+INFO http-nio-7073-exec-7 com.qimeng.main.OldShopController - [id=15 mc=15 jf=1 pic=http://sys.qimenghb.com/pic/heibi.jpg, id=16 mc=16 jf=1 pic=http://sys.qimenghb.com/pic/zuowenb.jpg, id=17 mc=17 jf=1 pic=http://sys.qimenghb.com/pic/pinyinb.jpg, id=18 mc=18 jf=1 pic=http://sys.qimenghb.com/pic/shuangxianb.jpg, id=19 mc=19 jf=1 pic=http://sys.qimenghb.com/pic/yingyub.jpg, id=20 mc=20 jf=1 pic=http://sys.qimenghb.com/pic/tiangeb.jpg, id=21 mc=21 jf=1 pic=http://sys.qimenghb.com/pic/fanggeb.jpg, id=22 mc=22 jf=1 pic=http://sys.qimenghb.com/pic/huatub.jpg, id=23 mc=23 jf=1 pic=http://sys.qimenghb.com/pic/shuxueb.jpg, id=24 mc=24 jf=1 pic=http://sys.qimenghb.com/pic/anxianb.jpg, id=1 mc=1 jf=10 pic=http://sys.qimenghb.com/pic/heibi.jpg, id=2 mc=2 jf=10 pic=http://sys.qimenghb.com/pic/zuowenb.jpg, id=3 mc=3 jf=10 pic=http://sys.qimenghb.com/pic/pinyinb.jpg, id=4 mc=4 jf=10 pic=http://sys.qimenghb.com/pic/shuangxianb.jpg, id=5 mc=5 jf=10 pic=http://sys.qimenghb.com/pic/yingyub.jpg, id=6 mc=6 jf=10 pic=http://sys.qimenghb.com/pic/tiangeb.jpg, id=7 mc=7 jf=10 pic=http://sys.qimenghb.com/pic/fanggeb.jpg, id=8 mc=8 jf=10 pic=http://sys.qimenghb.com/pic/huatub.jpg, id=9 mc=9 jf=10 pic=http://sys.qimenghb.com/pic/shuxueb.jpg, id=10 mc=10 jf=10 pic=http://sys.qimenghb.com/pic/anxianb.jpg, id=11 mc=11 jf=15 pic=http://sys.qimenghb.com/pic/506b.jpg, id=12 mc=12 jf=25 pic=http://sys.qimenghb.com/pic/506h.jpg, id=13 mc=13 jf=15 pic=http://sys.qimenghb.com/pic/400b.jpg, id=14 mc=14 jf=25 pic=http://sys.qimenghb.com/pic/400h.jpg, id=25 mc=25 jf=25 pic=http://sys.qimenghb.com/pic/300h.jpg]
+DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20020} created. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, ajf as totalpoints,schoolid from qmhb_student where nid=?
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20020} Parameters : [8]
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20020} Types : [INTEGER]
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20020} executed. 30.8633 millis. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, ajf as totalpoints,schoolid from qmhb_student where nid=?
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20020, rs-50014} open
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20020, rs-50014} Header: [nid, realname, qrid, card, rootid, hbday, ajf, schoolid]
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20020, rs-50014} Result: [8, 陈泽键, 5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, 29b2592cc12213d751c1b89be293232c6049e456, 2792, 2019-07-05, 179.6, 10001]
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20020, rs-50014} closed
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20020} closed
+DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20021} created. select nid as id,pname as mc,jifen as jf,bimg as pic from qmhb_products where nid=?
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20021} Parameters : [10]
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20021} Types : [INTEGER]
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20021} executed. 29.8574 millis. select nid as id,pname as mc,jifen as jf,bimg as pic from qmhb_products where nid=?
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20021, rs-50015} open
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20021, rs-50015} Header: [nid, pname, jifen, bimg]
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20021, rs-50015} Result: [10, 启盟环保暗线作业本（20页）, 10, pic/anxianb.jpg]
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20021, rs-50015} closed
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20021} closed
+DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20022} created. select dpname from qmhb_dpj where dpcode=?
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20022} Parameters : [123456]
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20022} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20022} executed. 29.3202 millis. select dpname from qmhb_dpj where dpcode=?
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20022, rs-50016} open
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20022, rs-50016} Header: [dpname]
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20022, rs-50016} Result: [外马三小兑换点]
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20022, rs-50016} closed
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20022} closed
+DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20023} created. select proid,dpcode,kucun ,sale from qmhb_kucun where dpcode=? and proid=?
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20023} Parameters : [123456, 10]
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20023} Types : [INTEGER, INTEGER]
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20023} executed. 29.6017 millis. select proid,dpcode,kucun ,sale from qmhb_kucun where dpcode=? and proid=?
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20023, rs-50017} open
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20023, rs-50017} Header: [proid, dpcode, kucun, sale]
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20023, rs-50017} Result: [10, 123456, 10, 0]
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20023, rs-50017} closed
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20023} closed
+DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-recycle
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - *********学生扣分接口*************
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - {"accountTonken":"","data":"","message":"java.lang.IllegalArgumentException: Cache 'ApplicationManagement' does not allow 'null' values. Avoid storing null via '@Cacheable(unless=\"#result == null\")' or configure RedisCache to allow 'null' via RedisCacheConfiguration.","statusCode":1,"success":false}
+ERROR http-nio-7073-exec-8 com.qimeng.main.OldShopController - 学生扣分接口错误
+DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20024} created. update qmhb_kucun set kucun=?,sale=? ,lastdate=? where proid=? and dpcode=?
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20024} Parameters : [9, 1, 2019-09-02 21:10:31.981, 10, 123456]
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20024} Types : [INTEGER, INTEGER, TIMESTAMP, INTEGER, INTEGER]
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20024} executed. 58.728 millis. update qmhb_kucun set kucun=?,sale=? ,lastdate=? where proid=? and dpcode=?
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20024} closed
+DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20025} created. insert into qmhb_trade (stuid,realname,proid,proname,jifen,dpjid,dpjname,adddate,ddh)value(?,?,?,?,?,?,?,?,?)
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20025} Parameters : [8, 陈泽键, 10, 启盟环保暗线作业本（20页）, 10, 123456, 外马三小兑换点, 2019-09-02 21:10:31.981, 201909021567429831]
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20025} Types : [INTEGER, VARCHAR, INTEGER, VARCHAR, INTEGER, VARCHAR, VARCHAR, TIMESTAMP, VARCHAR]
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20025} executed. 62.5038 millis. insert into qmhb_trade (stuid,realname,proid,proname,jifen,dpjid,dpjname,adddate,ddh)value(?,?,?,?,?,?,?,?,?)
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20025} closed
+DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20026} created. update qmhb_student set njf=? where qrid=?
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20026} Parameters : [169, 5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD]
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20026} Types : [INTEGER, VARCHAR]
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20026} executed. 82.6494 millis. update qmhb_student set njf=? where qrid=?
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20026} closed
+DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20027} created. insert into qmhb_usepoints_log(student_name,student_code,used_points,create_time,app_id,mark)value(?,?,?,?,?,?)
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20027} Parameters : [陈泽键, 5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, 10, 2019-09-02 21:10:31.981, 7564564864648644, 大屏机扣分]
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20027} Types : [VARCHAR, VARCHAR, BIGINT, TIMESTAMP, VARCHAR, VARCHAR]
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20027} executed. 60.4103 millis. insert into qmhb_usepoints_log(student_name,student_code,used_points,create_time,app_id,mark)value(?,?,?,?,?,?)
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20027, rs-50018} open
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20027, rs-50018} Header: [GENERATED_KEY]
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20027, rs-50018} Result: [6]
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20027, rs-50018} closed
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20027} closed
+DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-recycle
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - *********扣除商品积分生成订单*************
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - 更新商品信息:Repertory [dpcode=123456, proid=10, kucun=9, sale=1, lastdate=Mon Sep 02 21:10:31 CST 2019]
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - 学生积分使用信息UsePointsLogDao [id=6, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=10, creatTime=Mon Sep 02 21:10:31 CST 2019, appId=7564564864648644, mark=大屏机扣分]
+DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20028} created. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, ajf as totalpoints,schoolid from qmhb_student where nid=?
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20028} Parameters : [8]
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20028} Types : [INTEGER]
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20028} executed. 30.0215 millis. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, ajf as totalpoints,schoolid from qmhb_student where nid=?
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20028, rs-50019} open
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20028, rs-50019} Header: [nid, realname, qrid, card, rootid, hbday, ajf, schoolid]
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20028, rs-50019} Result: [8, 陈泽键, 5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, 29b2592cc12213d751c1b89be293232c6049e456, 2792, 2019-07-05, 179.6, 10001]
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20028, rs-50019} closed
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20028} closed
+DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20029} created. select nid as id,pname as mc,jifen as jf,bimg as pic from qmhb_products where nid=?
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20029} Parameters : [10]
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20029} Types : [INTEGER]
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20029} executed. 29.8958 millis. select nid as id,pname as mc,jifen as jf,bimg as pic from qmhb_products where nid=?
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20029, rs-50020} open
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20029, rs-50020} Header: [nid, pname, jifen, bimg]
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20029, rs-50020} Result: [10, 启盟环保暗线作业本（20页）, 10, pic/anxianb.jpg]
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20029, rs-50020} closed
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20029} closed
+DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20030} created. select dpname from qmhb_dpj where dpcode=?
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20030} Parameters : [123456]
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20030} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20030} executed. 30.0545 millis. select dpname from qmhb_dpj where dpcode=?
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20030, rs-50021} open
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20030, rs-50021} Header: [dpname]
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20030, rs-50021} Result: [外马三小兑换点]
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20030, rs-50021} closed
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20030} closed
+DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20031} created. select proid,dpcode,kucun ,sale from qmhb_kucun where dpcode=? and proid=?
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20031} Parameters : [123456, 10]
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20031} Types : [INTEGER, INTEGER]
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20031} executed. 29.4522 millis. select proid,dpcode,kucun ,sale from qmhb_kucun where dpcode=? and proid=?
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20031, rs-50022} open
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20031, rs-50022} Header: [proid, dpcode, kucun, sale]
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20031, rs-50022} Result: [10, 123456, 9, 1]
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20031, rs-50022} closed
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20031} closed
+DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10005} pool-recycle
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - *********学生扣分接口*************
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - {"accountTonken":"","data":"","message":"java.lang.IllegalArgumentException: Cache 'ApplicationManagement' does not allow 'null' values. Avoid storing null via '@Cacheable(unless=\"#result == null\")' or configure RedisCache to allow 'null' via RedisCacheConfiguration.","statusCode":1,"success":false}
+ERROR http-nio-7073-exec-9 com.qimeng.main.OldShopController - 学生扣分接口错误
+DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20032} created. update qmhb_kucun set kucun=?,sale=? ,lastdate=? where proid=? and dpcode=?
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20032} Parameters : [8, 2, 2019-09-02 21:10:38.164, 10, 123456]
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20032} Types : [INTEGER, INTEGER, TIMESTAMP, INTEGER, INTEGER]
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20032} executed. 58.4948 millis. update qmhb_kucun set kucun=?,sale=? ,lastdate=? where proid=? and dpcode=?
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20032} closed
+DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20033} created. insert into qmhb_trade (stuid,realname,proid,proname,jifen,dpjid,dpjname,adddate,ddh)value(?,?,?,?,?,?,?,?,?)
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20033} Parameters : [8, 陈泽键, 10, 启盟环保暗线作业本（20页）, 10, 123456, 外马三小兑换点, 2019-09-02 21:10:38.164, 201909021567429838]
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20033} Types : [INTEGER, VARCHAR, INTEGER, VARCHAR, INTEGER, VARCHAR, VARCHAR, TIMESTAMP, VARCHAR]
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20033} executed. 72.2327 millis. insert into qmhb_trade (stuid,realname,proid,proname,jifen,dpjid,dpjname,adddate,ddh)value(?,?,?,?,?,?,?,?,?)
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20033} closed
+DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20034} created. update qmhb_student set njf=? where qrid=?
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20034} Parameters : [169, 5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD]
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20034} Types : [INTEGER, VARCHAR]
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20034} executed. 82.8594 millis. update qmhb_student set njf=? where qrid=?
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20034} closed
+DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20035} created. insert into qmhb_usepoints_log(student_name,student_code,used_points,create_time,app_id,mark)value(?,?,?,?,?,?)
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20035} Parameters : [陈泽键, 5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, 10, 2019-09-02 21:10:38.164, 7564564864648644, 大屏机扣分]
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20035} Types : [VARCHAR, VARCHAR, BIGINT, TIMESTAMP, VARCHAR, VARCHAR]
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20035} executed. 63.7824 millis. insert into qmhb_usepoints_log(student_name,student_code,used_points,create_time,app_id,mark)value(?,?,?,?,?,?)
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20035, rs-50023} open
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20035, rs-50023} Header: [GENERATED_KEY]
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20035, rs-50023} Result: [7]
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20035, rs-50023} closed
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10005, pstmt-20035} closed
+DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10005} pool-recycle
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - *********扣除商品积分生成订单*************
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - 更新商品信息:Repertory [dpcode=123456, proid=10, kucun=8, sale=2, lastdate=Mon Sep 02 21:10:38 CST 2019]
+INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - 学生积分使用信息UsePointsLogDao [id=7, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=10, creatTime=Mon Sep 02 21:10:38 CST 2019, appId=7564564864648644, mark=大屏机扣分]
+DEBUG http-nio-7073-exec-6 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20036} created. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, ajf as totalpoints,schoolid from qmhb_student where nid=?
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20036} Parameters : [8]
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20036} Types : [INTEGER]
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20036} executed. 30.3072 millis. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, ajf as totalpoints,schoolid from qmhb_student where nid=?
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20036, rs-50024} open
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20036, rs-50024} Header: [nid, realname, qrid, card, rootid, hbday, ajf, schoolid]
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20036, rs-50024} Result: [8, 陈泽键, 5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, 29b2592cc12213d751c1b89be293232c6049e456, 2792, 2019-07-05, 179.6, 10001]
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20036, rs-50024} closed
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20036} closed
+DEBUG http-nio-7073-exec-6 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-6 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20037} created. select nid as id,pname as mc,jifen as jf,bimg as pic from qmhb_products where nid=?
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20037} Parameters : [10]
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20037} Types : [INTEGER]
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20037} executed. 29.6936 millis. select nid as id,pname as mc,jifen as jf,bimg as pic from qmhb_products where nid=?
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20037, rs-50025} open
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20037, rs-50025} Header: [nid, pname, jifen, bimg]
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20037, rs-50025} Result: [10, 启盟环保暗线作业本（20页）, 10, pic/anxianb.jpg]
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20037, rs-50025} closed
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20037} closed
+DEBUG http-nio-7073-exec-6 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-6 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20038} created. select dpname from qmhb_dpj where dpcode=?
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20038} Parameters : [123456]
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20038} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20038} executed. 29.5223 millis. select dpname from qmhb_dpj where dpcode=?
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20038, rs-50026} open
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20038, rs-50026} Header: [dpname]
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20038, rs-50026} Result: [外马三小兑换点]
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20038, rs-50026} closed
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20038} closed
+DEBUG http-nio-7073-exec-6 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-6 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20039} created. select proid,dpcode,kucun ,sale from qmhb_kucun where dpcode=? and proid=?
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20039} Parameters : [123456, 10]
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20039} Types : [INTEGER, INTEGER]
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20039} executed. 30.4717 millis. select proid,dpcode,kucun ,sale from qmhb_kucun where dpcode=? and proid=?
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20039, rs-50027} open
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20039, rs-50027} Header: [proid, dpcode, kucun, sale]
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20039, rs-50027} Result: [10, 123456, 8, 2]
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20039, rs-50027} closed
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20039} closed
+DEBUG http-nio-7073-exec-6 druid.sql.Connection - {conn-10005} pool-recycle
+INFO http-nio-7073-exec-6 com.qimeng.main.OldShopController - *********学生扣分接口*************
+INFO http-nio-7073-exec-6 com.qimeng.main.OldShopController - {"accountTonken":"","data":"","message":"java.lang.IllegalArgumentException: Cache 'ApplicationManagement' does not allow 'null' values. Avoid storing null via '@Cacheable(unless=\"#result == null\")' or configure RedisCache to allow 'null' via RedisCacheConfiguration.","statusCode":1,"success":false}
+ERROR http-nio-7073-exec-6 com.qimeng.main.OldShopController - 学生扣分接口错误
+DEBUG http-nio-7073-exec-6 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20040} created. update qmhb_kucun set kucun=?,sale=? ,lastdate=? where proid=? and dpcode=?
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20040} Parameters : [7, 3, 2019-09-02 21:10:55.585, 10, 123456]
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20040} Types : [INTEGER, INTEGER, TIMESTAMP, INTEGER, INTEGER]
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20040} executed. 58.4464 millis. update qmhb_kucun set kucun=?,sale=? ,lastdate=? where proid=? and dpcode=?
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20040} closed
+DEBUG http-nio-7073-exec-6 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-6 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20041} created. insert into qmhb_trade (stuid,realname,proid,proname,jifen,dpjid,dpjname,adddate,ddh)value(?,?,?,?,?,?,?,?,?)
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20041} Parameters : [8, 陈泽键, 10, 启盟环保暗线作业本（20页）, 10, 123456, 外马三小兑换点, 2019-09-02 21:10:55.585, 201909021567429855]
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20041} Types : [INTEGER, VARCHAR, INTEGER, VARCHAR, INTEGER, VARCHAR, VARCHAR, TIMESTAMP, VARCHAR]
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20041} executed. 69.7462 millis. insert into qmhb_trade (stuid,realname,proid,proname,jifen,dpjid,dpjname,adddate,ddh)value(?,?,?,?,?,?,?,?,?)
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20041} closed
+DEBUG http-nio-7073-exec-6 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-6 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20042} created. update qmhb_student set njf=? where qrid=?
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20042} Parameters : [169, 5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD]
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20042} Types : [INTEGER, VARCHAR]
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20042} executed. 83.6166 millis. update qmhb_student set njf=? where qrid=?
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20042} closed
+DEBUG http-nio-7073-exec-6 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-6 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20043} created. insert into qmhb_usepoints_log(student_name,student_code,used_points,create_time,app_id,mark)value(?,?,?,?,?,?)
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20043} Parameters : [陈泽键, 5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, 10, 2019-09-02 21:10:55.585, 7564564864648644, 大屏机扣分]
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20043} Types : [VARCHAR, VARCHAR, BIGINT, TIMESTAMP, VARCHAR, VARCHAR]
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20043} executed. 61.4357 millis. insert into qmhb_usepoints_log(student_name,student_code,used_points,create_time,app_id,mark)value(?,?,?,?,?,?)
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20043, rs-50028} open
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20043, rs-50028} Header: [GENERATED_KEY]
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20043, rs-50028} Result: [8]
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20043, rs-50028} closed
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20043} closed
+DEBUG http-nio-7073-exec-6 druid.sql.Connection - {conn-10005} pool-recycle
+INFO http-nio-7073-exec-6 com.qimeng.main.OldShopController - *********扣除商品积分生成订单*************
+INFO http-nio-7073-exec-6 com.qimeng.main.OldShopController - 更新商品信息:Repertory [dpcode=123456, proid=10, kucun=7, sale=3, lastdate=Mon Sep 02 21:10:55 CST 2019]
+INFO http-nio-7073-exec-6 com.qimeng.main.OldShopController - 学生积分使用信息UsePointsLogDao [id=8, studenName=陈泽键, studentCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, usedPoints=10, creatTime=Mon Sep 02 21:10:55 CST 2019, appId=7564564864648644, mark=大屏机扣分]
+DEBUG http-nio-7073-exec-2 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-2 druid.sql.Statement - {conn-10005, pstmt-20044} created. select bimg from qmhb_adv where dpjid=? or dpjid=0
+DEBUG http-nio-7073-exec-2 druid.sql.Statement - {conn-10005, pstmt-20044} Parameters : [123456]
+DEBUG http-nio-7073-exec-2 druid.sql.Statement - {conn-10005, pstmt-20044} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-2 druid.sql.Statement - {conn-10005, pstmt-20044} executed. 29.4492 millis. select bimg from qmhb_adv where dpjid=? or dpjid=0
+DEBUG http-nio-7073-exec-2 druid.sql.ResultSet - {conn-10005, pstmt-20044, rs-50029} open
+DEBUG http-nio-7073-exec-2 druid.sql.ResultSet - {conn-10005, pstmt-20044, rs-50029} Header: [bimg]
+DEBUG http-nio-7073-exec-2 druid.sql.ResultSet - {conn-10005, pstmt-20044, rs-50029} Result: [pic/adv01.jpg]
+DEBUG http-nio-7073-exec-2 druid.sql.ResultSet - {conn-10005, pstmt-20044, rs-50029} Result: [pic/adv02.jpg]
+DEBUG http-nio-7073-exec-2 druid.sql.ResultSet - {conn-10005, pstmt-20044, rs-50029} closed
+DEBUG http-nio-7073-exec-2 druid.sql.Statement - {conn-10005, pstmt-20044} closed
+DEBUG http-nio-7073-exec-2 druid.sql.Connection - {conn-10005} pool-recycle
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-2 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20045} created. select bimg from qmhb_adv where dpjid=? or dpjid=0
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20045} Parameters : [123456]
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20045} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20045} executed. 29.6272 millis. select bimg from qmhb_adv where dpjid=? or dpjid=0
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20045, rs-50030} open
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20045, rs-50030} Header: [bimg]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20045, rs-50030} Result: [pic/adv01.jpg]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20045, rs-50030} Result: [pic/adv02.jpg]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20045, rs-50030} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20045} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10005} pool-recycle
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-1 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-5 com.qimeng.main.UserManageController - ************微信登陆***************
+INFO http-nio-7073-exec-5 com.qimeng.main.UserManageController - {"accountTonken":"BoHBCVsJ","data":[],"message":"登陆成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-7 com.qimeng.main.UserManageController - ************获取电话号码***************
+INFO http-nio-7073-exec-7 com.qimeng.main.UserManageController - {"accountTonken":"","data":"15920198991","message":"获取电话号码成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-8 com.qimeng.main.StuinfoController - ************手机号绑定学生***************
+INFO http-nio-7073-exec-8 com.qimeng.main.StuinfoController - {"accountTonken":"","data":"","message":"该appid没有权限","statusCode":1,"success":false}
+INFO http-nio-7073-exec-8 com.qimeng.main.StuinfoController - RequestMessage [appID=7166912116544626, machineID=null, accountTonken=BoHBCVsJ, operator=null, data=StudentBindVo [name=null, phone=15920198991, stuCode=null, stuCard=null]]
+DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20046} created. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, ajf as totalpoints,schoolid from qmhb_student where mobile=?
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20046} Parameters : [15920198991]
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20046} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20046} executed. 46.4446 millis. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, ajf as totalpoints,schoolid from qmhb_student where mobile=?
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20046, rs-50031} open
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20046, rs-50031} Header: [nid, realname, qrid, card, rootid, hbday, ajf, schoolid]
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20046, rs-50031} Result: [5, 杜羽飞, E5192BA5BEFFB196CE857A41D41D832FB162A0B9, f3b26be4b0a1d4d7a4d3c693a9556ef0deb6c778, 0, 1970-01-01, 24.0, 10001]
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20046, rs-50031} closed
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20046} closed
+DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-recycle
+INFO http-nio-7073-exec-8 com.qimeng.main.StuinfoController - ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=, data=StudentInfoVo [name=杜羽飞, stuCode=E5192BA5BEFFB196CE857A41D41D832FB162A0B9, stuCard=f3b26be4b0a1d4d7a4d3c693a9556ef0deb6c778, qrCode=http://o0c.cn/?code=E5192BA5BEFFB196CE857A41D41D832FB162A0B9&card=f3b26be4b0a1d4d7a4d3c693a9556ef0deb6c778, wasteType=0, unit=0, point=24, bind=0, active=1]]
+INFO http-nio-7073-exec-9 com.qimeng.main.UserManageController - ************绑定学生信息***************
+INFO http-nio-7073-exec-9 com.qimeng.main.UserManageController - {"accountTonken":"","data":"","message":"绑定成功","statusCode":1,"success":true}
+DEBUG http-nio-7073-exec-4 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20047} created. select bimg from qmhb_adv where dpjid=? or dpjid=0
+DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20047} Parameters : [123456]
+DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20047} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20047} executed. 29.4168 millis. select bimg from qmhb_adv where dpjid=? or dpjid=0
+DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20047, rs-50032} open
+DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20047, rs-50032} Header: [bimg]
+DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20047, rs-50032} Result: [pic/adv01.jpg]
+DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20047, rs-50032} Result: [pic/adv02.jpg]
+DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20047, rs-50032} closed
+DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10005, pstmt-20047} closed
+DEBUG http-nio-7073-exec-4 druid.sql.Connection - {conn-10005} pool-recycle
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-2 com.qimeng.main.UserManageController - ************微信登陆***************
+INFO http-nio-7073-exec-2 com.qimeng.main.UserManageController - {"accountTonken":"MQtfZuZU","data":[],"message":"登陆成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-10 com.qimeng.main.UserManageController - ************获取电话号码***************
+INFO http-nio-7073-exec-10 com.qimeng.main.UserManageController - {"accountTonken":"","data":"15920198991","message":"获取电话号码成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-1 com.qimeng.main.StuinfoController - ************手机号绑定学生***************
+INFO http-nio-7073-exec-1 com.qimeng.main.StuinfoController - {"accountTonken":"","data":"","message":"该appid没有权限","statusCode":1,"success":false}
+INFO http-nio-7073-exec-1 com.qimeng.main.StuinfoController - RequestMessage [appID=7166912116544626, machineID=null, accountTonken=MQtfZuZU, operator=null, data=StudentBindVo [name=null, phone=15920198991, stuCode=null, stuCard=null]]
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20048} created. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, ajf as totalpoints,schoolid from qmhb_student where mobile=?
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20048} Parameters : [15920198991]
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20048} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20048} executed. 44.9643 millis. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, ajf as totalpoints,schoolid from qmhb_student where mobile=?
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20048, rs-50033} open
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20048, rs-50033} Header: [nid, realname, qrid, card, rootid, hbday, ajf, schoolid]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20048, rs-50033} Result: [8, 陈泽键, 5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, 29b2592cc12213d751c1b89be293232c6049e456, 0, 2019-07-05, 179.6, 10001]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20048, rs-50033} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10005, pstmt-20048} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10005} pool-recycle
+INFO http-nio-7073-exec-1 com.qimeng.main.StuinfoController - ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29b2592cc12213d751c1b89be293232c6049e456, qrCode=http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456, wasteType=0, unit=0, point=179, bind=0, active=1]]
+INFO http-nio-7073-exec-3 com.qimeng.main.UserManageController - ************绑定学生信息***************
+INFO http-nio-7073-exec-3 com.qimeng.main.UserManageController - {"accountTonken":"","data":"","message":"绑定成功","statusCode":1,"success":true}
+DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20049} created. select bimg from qmhb_adv where dpjid=? or dpjid=0
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20049} Parameters : [123456]
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20049} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20049} executed. 29.5555 millis. select bimg from qmhb_adv where dpjid=? or dpjid=0
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20049, rs-50034} open
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20049, rs-50034} Header: [bimg]
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20049, rs-50034} Result: [pic/adv01.jpg]
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20049, rs-50034} Result: [pic/adv02.jpg]
+DEBUG http-nio-7073-exec-8 druid.sql.ResultSet - {conn-10005, pstmt-20049, rs-50034} closed
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10005, pstmt-20049} closed
+DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10005} pool-recycle
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - *********获取广告大图*************
+INFO http-nio-7073-exec-8 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+DEBUG RMI TCP Connection(2)-127.0.0.1 druid.sql.Connection - {conn-10001} closed
+DEBUG RMI TCP Connection(2)-127.0.0.1 druid.sql.Connection - {conn-10002} closed
+DEBUG RMI TCP Connection(2)-127.0.0.1 druid.sql.Connection - {conn-10003} closed
+DEBUG RMI TCP Connection(2)-127.0.0.1 druid.sql.Connection - {conn-10004} closed
+DEBUG RMI TCP Connection(2)-127.0.0.1 druid.sql.Connection - {conn-10005} closed
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisCacheManager加载完成
+DEBUG main org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration - 自定义RedisTemplate加载完成
+INFO http-nio-7073-exec-1 com.qimeng.main.UserManageController - ************微信登陆***************
+INFO http-nio-7073-exec-1 com.qimeng.main.UserManageController - {"accountTonken":"ZGGUIaLd","data":[],"message":"登陆成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-2 com.qimeng.main.UserManageController - ************获取电话号码***************
+INFO http-nio-7073-exec-2 com.qimeng.main.UserManageController - {"accountTonken":"","data":"15920198991","message":"获取电话号码成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-3 com.qimeng.main.StuinfoController - ************手机号绑定学生***************
+ERROR http-nio-7073-exec-3 com.qimeng.main.StuinfoController - 手机号绑定学生接口错误
+INFO http-nio-7073-exec-3 com.qimeng.main.StuinfoController - RequestMessage [appID=7166912116544626, machineID=null, accountTonken=ZGGUIaLd, operator=null, data=StudentBindVo [name=null, phone=15920198991, stuCode=null, stuCard=null]]
+DEBUG http-nio-7073-exec-3 druid.sql.Connection - {conn-10001} connected
+DEBUG http-nio-7073-exec-3 druid.sql.Connection - {conn-10002} connected
+DEBUG http-nio-7073-exec-3 druid.sql.Connection - {conn-10003} connected
+DEBUG http-nio-7073-exec-3 druid.sql.Connection - {conn-10004} connected
+DEBUG http-nio-7073-exec-3 druid.sql.Connection - {conn-10005} connected
+DEBUG http-nio-7073-exec-3 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20000} created. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, njf as totalpoints,schoolid from qmhb_student where mobile=?
+DEBUG http-nio-7073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [15920198991]
+DEBUG http-nio-7073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20000} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 60.6835 millis. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, njf as totalpoints,schoolid from qmhb_student where mobile=?
+DEBUG http-nio-7073-exec-3 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG http-nio-7073-exec-3 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [nid, realname, qrid, card, rootid, hbday, njf, schoolid]
+DEBUG http-nio-7073-exec-3 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [8, 陈泽键, 5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, 29b2592cc12213d751c1b89be293232c6049e456, 0, 2019-07-05, 169.0, 10001]
+DEBUG http-nio-7073-exec-3 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG http-nio-7073-exec-3 druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG http-nio-7073-exec-3 druid.sql.Connection - {conn-10005} pool-recycle
+INFO http-nio-7073-exec-4 com.qimeng.main.UserManageController - ************微信登陆***************
+INFO http-nio-7073-exec-4 com.qimeng.main.UserManageController - {"accountTonken":"cPh1QPen","data":[],"message":"登陆成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-5 com.qimeng.main.UserManageController - ************获取电话号码***************
+INFO http-nio-7073-exec-5 com.qimeng.main.UserManageController - {"accountTonken":"","data":"15920198991","message":"获取电话号码成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-6 com.qimeng.main.StuinfoController - ************手机号绑定学生***************
+ERROR http-nio-7073-exec-6 com.qimeng.main.StuinfoController - 手机号绑定学生接口错误
+INFO http-nio-7073-exec-6 com.qimeng.main.StuinfoController - RequestMessage [appID=7166912116544626, machineID=null, accountTonken=cPh1QPen, operator=null, data=StudentBindVo [name=null, phone=15920198991, stuCode=null, stuCard=null]]
+DEBUG http-nio-7073-exec-6 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20001} created. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, njf as totalpoints,schoolid from qmhb_student where mobile=?
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : [15920198991]
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20001} executed. 48.6124 millis. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, njf as totalpoints,schoolid from qmhb_student where mobile=?
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [nid, realname, qrid, card, rootid, hbday, njf, schoolid]
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Result: [8, 陈泽键, 5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, 29b2592cc12213d751c1b89be293232c6049e456, 0, 2019-07-05, 169.0, 10001]
+DEBUG http-nio-7073-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} closed
+DEBUG http-nio-7073-exec-6 druid.sql.Statement - {conn-10005, pstmt-20001} closed
+DEBUG http-nio-7073-exec-6 druid.sql.Connection - {conn-10005} pool-recycle
+INFO http-nio-7073-exec-6 com.qimeng.main.StuinfoController - NOTIP
+INFO http-nio-7073-exec-6 com.qimeng.main.StuinfoController - ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29b2592cc12213d751c1b89be293232c6049e456, qrCode=http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456, wasteType=0, unit=0, point=169, bind=0, active=1]]
+INFO http-nio-7073-exec-8 com.qimeng.main.UserManageController - ************绑定学生信息***************
+INFO http-nio-7073-exec-8 com.qimeng.main.UserManageController - {"accountTonken":"","data":"","message":"绑定成功","statusCode":1,"success":true}
+INFO http-nio-7073-exec-10 com.qimeng.main.StuinfoController - ************学生投递历史接口***************
+INFO http-nio-7073-exec-9 com.qimeng.main.StuinfoController - ************学生投递历史接口***************
+ERROR http-nio-7073-exec-10 com.qimeng.main.StuinfoController - 学生投递历史接口错误
+ERROR http-nio-7073-exec-9 com.qimeng.main.StuinfoController - 学生投递历史接口错误
+INFO http-nio-7073-exec-9 com.qimeng.main.StuinfoController - RequestMessage [appID=7166912116544626, machineID=null, accountTonken=null, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29b2592cc12213d751c1b89be293232c6049e456, qrCode=http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456, wasteType=0, unit=0, point=169, bind=0, active=1]]
+INFO http-nio-7073-exec-10 com.qimeng.main.StuinfoController - RequestMessage [appID=7166912116544626, machineID=null, accountTonken=null, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29b2592cc12213d751c1b89be293232c6049e456, qrCode=http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456, wasteType=0, unit=0, point=169, bind=0, active=1]]
+DEBUG http-nio-7073-exec-10 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-10 druid.sql.Statement - {conn-10005, pstmt-20002} created. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, njf as totalpoints,schoolid from qmhb_student where qrid=?
+DEBUG http-nio-7073-exec-10 druid.sql.Statement - {conn-10005, pstmt-20002} Parameters : [5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD]
+DEBUG http-nio-7073-exec-10 druid.sql.Statement - {conn-10005, pstmt-20002} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10004} pool-connect
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10004, pstmt-20003} created. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, njf as totalpoints,schoolid from qmhb_student where qrid=?
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10004, pstmt-20003} Parameters : [5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD]
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10004, pstmt-20003} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-10 druid.sql.Statement - {conn-10005, pstmt-20002} executed. 47.0353 millis. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, njf as totalpoints,schoolid from qmhb_student where qrid=?
+DEBUG http-nio-7073-exec-10 druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} open
+DEBUG http-nio-7073-exec-10 druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} Header: [nid, realname, qrid, card, rootid, hbday, njf, schoolid]
+DEBUG http-nio-7073-exec-10 druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} Result: [8, 陈泽键, 5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, 29b2592cc12213d751c1b89be293232c6049e456, 0, 2019-07-05, 169.0, 10001]
+DEBUG http-nio-7073-exec-10 druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} closed
+DEBUG http-nio-7073-exec-10 druid.sql.Statement - {conn-10005, pstmt-20002} closed
+DEBUG http-nio-7073-exec-10 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-7073-exec-10 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG http-nio-7073-exec-10 druid.sql.Statement - {conn-10005, pstmt-20004} created. select snum as count,jifen as points,adddate as createTime from qmhb_jifen where nid=? ORDER BY adddate DESC limit 7
+DEBUG http-nio-7073-exec-10 druid.sql.Statement - {conn-10005, pstmt-20004} Parameters : [8]
+DEBUG http-nio-7073-exec-10 druid.sql.Statement - {conn-10005, pstmt-20004} Types : [INTEGER]
+DEBUG http-nio-7073-exec-10 druid.sql.Statement - {conn-10005, pstmt-20004} executed. 32.2413 millis. select snum as count,jifen as points,adddate as createTime from qmhb_jifen where nid=? ORDER BY adddate DESC limit 7
+DEBUG http-nio-7073-exec-10 druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50003} open
+DEBUG http-nio-7073-exec-10 druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50003} Header: [snum, jifen, adddate]
+DEBUG http-nio-7073-exec-10 druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50003} Result: [0, 0, 2018-12-05 23:32:01.0]
+DEBUG http-nio-7073-exec-10 druid.sql.ResultSet - {conn-10005, pstmt-20004, rs-50003} closed
+DEBUG http-nio-7073-exec-10 druid.sql.Statement - {conn-10005, pstmt-20004} closed
+DEBUG http-nio-7073-exec-10 druid.sql.Connection - {conn-10005} pool-recycle
+INFO http-nio-7073-exec-10 com.qimeng.main.StuinfoController - ResponseMessage [statusCode=1, success=true, message=获取日志信息成功, accountTonken=, data=[RecycleLogVo [count=0, points=0, remainder=null, createTime=Wed Dec 05 23:32:01 CST 2018]]]
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10004, pstmt-20003} executed. 50.7887 millis. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, njf as totalpoints,schoolid from qmhb_student where qrid=?
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10004, pstmt-20003, rs-50004} open
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10004, pstmt-20003, rs-50004} Header: [nid, realname, qrid, card, rootid, hbday, njf, schoolid]
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10004, pstmt-20003, rs-50004} Result: [8, 陈泽键, 5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, 29b2592cc12213d751c1b89be293232c6049e456, 0, 2019-07-05, 169.0, 10001]
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10004, pstmt-20003, rs-50004} closed
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10004, pstmt-20003} closed
+DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10004} pool-recycle
+DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10004} pool-connect
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10004, pstmt-20005} created. select snum as count,jifen as points,adddate as createTime from qmhb_jifen where nid=? ORDER BY adddate DESC limit 7
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10004, pstmt-20005} Parameters : [8]
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10004, pstmt-20005} Types : [INTEGER]
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10004, pstmt-20005} executed. 35.3755 millis. select snum as count,jifen as points,adddate as createTime from qmhb_jifen where nid=? ORDER BY adddate DESC limit 7
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10004, pstmt-20005, rs-50005} open
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10004, pstmt-20005, rs-50005} Header: [snum, jifen, adddate]
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10004, pstmt-20005, rs-50005} Result: [0, 0, 2018-12-05 23:32:01.0]
+DEBUG http-nio-7073-exec-9 druid.sql.ResultSet - {conn-10004, pstmt-20005, rs-50005} closed
+DEBUG http-nio-7073-exec-9 druid.sql.Statement - {conn-10004, pstmt-20005} closed
+DEBUG http-nio-7073-exec-9 druid.sql.Connection - {conn-10004} pool-recycle
+INFO http-nio-7073-exec-9 com.qimeng.main.StuinfoController - ResponseMessage [statusCode=1, success=true, message=获取日志信息成功, accountTonken=, data=[RecycleLogVo [count=0, points=0, remainder=null, createTime=Wed Dec 05 23:32:01 CST 2018]]]
+INFO http-nio-7073-exec-7 com.qimeng.main.StuinfoController - ************获取学生信息***************
+INFO http-nio-7073-exec-1 com.qimeng.main.StuinfoController - ************学生投递历史接口***************
+ERROR http-nio-7073-exec-7 com.qimeng.main.StuinfoController - 获取学生信息接口错误
+INFO http-nio-7073-exec-7 com.qimeng.main.StuinfoController - RequestMessage [appID=7166912116544626, machineID=null, accountTonken=null, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29b2592cc12213d751c1b89be293232c6049e456, qrCode=http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456, wasteType=0, unit=0, point=169, bind=0, active=1]]
+DEBUG http-nio-7073-exec-7 druid.sql.Connection - {conn-10004} pool-connect
+DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10004, pstmt-20006} created. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, njf as totalpoints,schoolid from qmhb_student where qrid=?
+DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10004, pstmt-20006} Parameters : [5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD]
+DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10004, pstmt-20006} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10004, pstmt-20006} executed. 51.1886 millis. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, njf as totalpoints,schoolid from qmhb_student where qrid=?
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10004, pstmt-20006, rs-50006} open
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10004, pstmt-20006, rs-50006} Header: [nid, realname, qrid, card, rootid, hbday, njf, schoolid]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10004, pstmt-20006, rs-50006} Result: [8, 陈泽键, 5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, 29b2592cc12213d751c1b89be293232c6049e456, 0, 2019-07-05, 169.0, 10001]
+DEBUG http-nio-7073-exec-7 druid.sql.ResultSet - {conn-10004, pstmt-20006, rs-50006} closed
+DEBUG http-nio-7073-exec-7 druid.sql.Statement - {conn-10004, pstmt-20006} closed
+DEBUG http-nio-7073-exec-7 druid.sql.Connection - {conn-10004} pool-recycle
+INFO http-nio-7073-exec-7 com.qimeng.main.StuinfoController - ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=388P2uIT, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29b2592cc12213d751c1b89be293232c6049e456, qrCode=http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456, wasteType=0, unit=0, point=169, bind=0, active=1]]
+INFO http-nio-7073-exec-2 com.qimeng.main.StuinfoController - ************获取学生信息***************
+ERROR http-nio-7073-exec-1 com.qimeng.main.StuinfoController - 学生投递历史接口错误
+INFO http-nio-7073-exec-1 com.qimeng.main.StuinfoController - RequestMessage [appID=7166912116544626, machineID=null, accountTonken=null, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29b2592cc12213d751c1b89be293232c6049e456, qrCode=http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456, wasteType=0, unit=0, point=169, bind=0, active=1]]
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10004} pool-connect
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10004, pstmt-20007} created. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, njf as totalpoints,schoolid from qmhb_student where qrid=?
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10004, pstmt-20007} Parameters : [5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD]
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10004, pstmt-20007} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10004, pstmt-20007} executed. 51.8459 millis. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, njf as totalpoints,schoolid from qmhb_student where qrid=?
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10004, pstmt-20007, rs-50007} open
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10004, pstmt-20007, rs-50007} Header: [nid, realname, qrid, card, rootid, hbday, njf, schoolid]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10004, pstmt-20007, rs-50007} Result: [8, 陈泽键, 5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, 29b2592cc12213d751c1b89be293232c6049e456, 0, 2019-07-05, 169.0, 10001]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10004, pstmt-20007, rs-50007} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10004, pstmt-20007} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10004} pool-recycle
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10004} pool-connect
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10004, pstmt-20008} created. select snum as count,jifen as points,adddate as createTime from qmhb_jifen where nid=? ORDER BY adddate DESC limit 7
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10004, pstmt-20008} Parameters : [8]
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10004, pstmt-20008} Types : [INTEGER]
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10004, pstmt-20008} executed. 35.6167 millis. select snum as count,jifen as points,adddate as createTime from qmhb_jifen where nid=? ORDER BY adddate DESC limit 7
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10004, pstmt-20008, rs-50008} open
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10004, pstmt-20008, rs-50008} Header: [snum, jifen, adddate]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10004, pstmt-20008, rs-50008} Result: [0, 0, 2018-12-05 23:32:01.0]
+DEBUG http-nio-7073-exec-1 druid.sql.ResultSet - {conn-10004, pstmt-20008, rs-50008} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Statement - {conn-10004, pstmt-20008} closed
+DEBUG http-nio-7073-exec-1 druid.sql.Connection - {conn-10004} pool-recycle
+INFO http-nio-7073-exec-1 com.qimeng.main.StuinfoController - ResponseMessage [statusCode=1, success=true, message=获取日志信息成功, accountTonken=, data=[RecycleLogVo [count=0, points=0, remainder=null, createTime=Wed Dec 05 23:32:01 CST 2018]]]
+INFO http-nio-7073-exec-3 com.qimeng.main.StuinfoController - ************学生投递历史接口***************
+ERROR http-nio-7073-exec-2 com.qimeng.main.StuinfoController - 获取学生信息接口错误
+INFO http-nio-7073-exec-2 com.qimeng.main.StuinfoController - RequestMessage [appID=7166912116544626, machineID=null, accountTonken=null, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29b2592cc12213d751c1b89be293232c6049e456, qrCode=http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456, wasteType=0, unit=0, point=169, bind=0, active=1]]
+DEBUG http-nio-7073-exec-2 druid.sql.Connection - {conn-10004} pool-connect
+DEBUG http-nio-7073-exec-2 druid.sql.Statement - {conn-10004, pstmt-20009} created. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, njf as totalpoints,schoolid from qmhb_student where qrid=?
+DEBUG http-nio-7073-exec-2 druid.sql.Statement - {conn-10004, pstmt-20009} Parameters : [5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD]
+DEBUG http-nio-7073-exec-2 druid.sql.Statement - {conn-10004, pstmt-20009} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-2 druid.sql.Statement - {conn-10004, pstmt-20009} executed. 51.1571 millis. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, njf as totalpoints,schoolid from qmhb_student where qrid=?
+DEBUG http-nio-7073-exec-2 druid.sql.ResultSet - {conn-10004, pstmt-20009, rs-50009} open
+DEBUG http-nio-7073-exec-2 druid.sql.ResultSet - {conn-10004, pstmt-20009, rs-50009} Header: [nid, realname, qrid, card, rootid, hbday, njf, schoolid]
+DEBUG http-nio-7073-exec-2 druid.sql.ResultSet - {conn-10004, pstmt-20009, rs-50009} Result: [8, 陈泽键, 5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, 29b2592cc12213d751c1b89be293232c6049e456, 0, 2019-07-05, 169.0, 10001]
+DEBUG http-nio-7073-exec-2 druid.sql.ResultSet - {conn-10004, pstmt-20009, rs-50009} closed
+DEBUG http-nio-7073-exec-2 druid.sql.Statement - {conn-10004, pstmt-20009} closed
+DEBUG http-nio-7073-exec-2 druid.sql.Connection - {conn-10004} pool-recycle
+INFO http-nio-7073-exec-2 com.qimeng.main.StuinfoController - ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=V4S1nICP, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29b2592cc12213d751c1b89be293232c6049e456, qrCode=http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456, wasteType=0, unit=0, point=169, bind=0, active=1]]
+ERROR http-nio-7073-exec-3 com.qimeng.main.StuinfoController - 学生投递历史接口错误
+INFO http-nio-7073-exec-3 com.qimeng.main.StuinfoController - RequestMessage [appID=7166912116544626, machineID=null, accountTonken=null, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29b2592cc12213d751c1b89be293232c6049e456, qrCode=http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456, wasteType=0, unit=0, point=169, bind=0, active=1]]
+DEBUG http-nio-7073-exec-3 druid.sql.Connection - {conn-10004} pool-connect
+DEBUG http-nio-7073-exec-3 druid.sql.Statement - {conn-10004, pstmt-20010} created. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, njf as totalpoints,schoolid from qmhb_student where qrid=?
+DEBUG http-nio-7073-exec-3 druid.sql.Statement - {conn-10004, pstmt-20010} Parameters : [5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD]
+DEBUG http-nio-7073-exec-3 druid.sql.Statement - {conn-10004, pstmt-20010} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-3 druid.sql.Statement - {conn-10004, pstmt-20010} executed. 51.1843 millis. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, njf as totalpoints,schoolid from qmhb_student where qrid=?
+DEBUG http-nio-7073-exec-3 druid.sql.ResultSet - {conn-10004, pstmt-20010, rs-50010} open
+DEBUG http-nio-7073-exec-3 druid.sql.ResultSet - {conn-10004, pstmt-20010, rs-50010} Header: [nid, realname, qrid, card, rootid, hbday, njf, schoolid]
+DEBUG http-nio-7073-exec-3 druid.sql.ResultSet - {conn-10004, pstmt-20010, rs-50010} Result: [8, 陈泽键, 5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, 29b2592cc12213d751c1b89be293232c6049e456, 0, 2019-07-05, 169.0, 10001]
+DEBUG http-nio-7073-exec-3 druid.sql.ResultSet - {conn-10004, pstmt-20010, rs-50010} closed
+DEBUG http-nio-7073-exec-3 druid.sql.Statement - {conn-10004, pstmt-20010} closed
+DEBUG http-nio-7073-exec-3 druid.sql.Connection - {conn-10004} pool-recycle
+DEBUG http-nio-7073-exec-3 druid.sql.Connection - {conn-10004} pool-connect
+DEBUG http-nio-7073-exec-3 druid.sql.Statement - {conn-10004, pstmt-20011} created. select snum as count,jifen as points,adddate as createTime from qmhb_jifen where nid=? ORDER BY adddate DESC limit 7
+DEBUG http-nio-7073-exec-3 druid.sql.Statement - {conn-10004, pstmt-20011} Parameters : [8]
+DEBUG http-nio-7073-exec-3 druid.sql.Statement - {conn-10004, pstmt-20011} Types : [INTEGER]
+DEBUG http-nio-7073-exec-3 druid.sql.Statement - {conn-10004, pstmt-20011} executed. 35.4645 millis. select snum as count,jifen as points,adddate as createTime from qmhb_jifen where nid=? ORDER BY adddate DESC limit 7
+DEBUG http-nio-7073-exec-3 druid.sql.ResultSet - {conn-10004, pstmt-20011, rs-50011} open
+DEBUG http-nio-7073-exec-3 druid.sql.ResultSet - {conn-10004, pstmt-20011, rs-50011} Header: [snum, jifen, adddate]
+DEBUG http-nio-7073-exec-3 druid.sql.ResultSet - {conn-10004, pstmt-20011, rs-50011} Result: [0, 0, 2018-12-05 23:32:01.0]
+DEBUG http-nio-7073-exec-3 druid.sql.ResultSet - {conn-10004, pstmt-20011, rs-50011} closed
+DEBUG http-nio-7073-exec-3 druid.sql.Statement - {conn-10004, pstmt-20011} closed
+DEBUG http-nio-7073-exec-3 druid.sql.Connection - {conn-10004} pool-recycle
+INFO http-nio-7073-exec-3 com.qimeng.main.StuinfoController - ResponseMessage [statusCode=1, success=true, message=获取日志信息成功, accountTonken=, data=[RecycleLogVo [count=0, points=0, remainder=null, createTime=Wed Dec 05 23:32:01 CST 2018]]]
+INFO http-nio-7073-exec-4 com.qimeng.main.StuinfoController - ************获取学生信息***************
+ERROR http-nio-7073-exec-4 com.qimeng.main.StuinfoController - 获取学生信息接口错误
+INFO http-nio-7073-exec-4 com.qimeng.main.StuinfoController - RequestMessage [appID=7166912116544626, machineID=null, accountTonken=null, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29b2592cc12213d751c1b89be293232c6049e456, qrCode=http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456, wasteType=0, unit=0, point=169, bind=0, active=1]]
+DEBUG http-nio-7073-exec-4 druid.sql.Connection - {conn-10004} pool-connect
+DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10004, pstmt-20012} created. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, njf as totalpoints,schoolid from qmhb_student where qrid=?
+DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10004, pstmt-20012} Parameters : [5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD]
+DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10004, pstmt-20012} Types : [VARCHAR]
+DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10004, pstmt-20012} executed. 49.4683 millis. select nid as id,realname as name,qrid as stuCode,card as stuCard,rootid as bind,hbday as startTime, njf as totalpoints,schoolid from qmhb_student where qrid=?
+DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10004, pstmt-20012, rs-50012} open
+DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10004, pstmt-20012, rs-50012} Header: [nid, realname, qrid, card, rootid, hbday, njf, schoolid]
+DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10004, pstmt-20012, rs-50012} Result: [8, 陈泽键, 5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, 29b2592cc12213d751c1b89be293232c6049e456, 0, 2019-07-05, 169.0, 10001]
+DEBUG http-nio-7073-exec-4 druid.sql.ResultSet - {conn-10004, pstmt-20012, rs-50012} closed
+DEBUG http-nio-7073-exec-4 druid.sql.Statement - {conn-10004, pstmt-20012} closed
+DEBUG http-nio-7073-exec-4 druid.sql.Connection - {conn-10004} pool-recycle
+INFO http-nio-7073-exec-4 com.qimeng.main.StuinfoController - ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=pM29aDYg, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29b2592cc12213d751c1b89be293232c6049e456, qrCode=http://o0c.cn/?code=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD&card=29b2592cc12213d751c1b89be293232c6049e456, wasteType=0, unit=0, point=169, bind=0, active=1]]
+DEBUG http-nio-7073-exec-8 druid.sql.Connection - {conn-10004} pool-connect
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10004, pstmt-20013} created. select bimg from qmhb_adv where dpjid=? or dpjid=0
+DEBUG http-nio-7073-exec-8 druid.sql.Statement - {conn-10004, pstmt-20013} Parameters : [123456]

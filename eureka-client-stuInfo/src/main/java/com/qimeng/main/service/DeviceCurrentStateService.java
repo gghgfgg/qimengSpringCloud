@@ -48,7 +48,7 @@ public class DeviceCurrentStateService {
 		}
 	}
 	
-	@Cacheable(value="DeviceCurrentState",key="#serialNumber")
+	@Cacheable(value="DeviceCurrentState",key="#serialNumber",unless="#result == null")
 	public DeviceCurrentState selectDeviceStateLogBySerialNumber(String serialNumber) {
 		DeviceCurrentState deviceCurrentState=new DeviceCurrentState();
 		deviceCurrentState.setSerialNumber(serialNumber);
