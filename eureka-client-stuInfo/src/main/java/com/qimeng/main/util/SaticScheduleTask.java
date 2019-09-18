@@ -1,13 +1,16 @@
 package com.qimeng.main.util;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import com.qimeng.main.service.SchoolAutoCountRecycleService;
 
+import com.qimeng.main.service.DeviceOpenCodeService;
+import com.qimeng.main.service.SchoolAutoCountRecycleService;
 /** 
 * @author  作者 E-mail: 
 * @date 创建时间：2019年8月6日 下午9:16:23 
@@ -25,6 +28,9 @@ public class SaticScheduleTask {
     //@Scheduled(fixedRate=5000)
 	@Autowired
 	SchoolAutoCountRecycleService schoolAutoCountRecycleService;
+	@Autowired
+	DeviceOpenCodeService deviceOpenCodeService;
+	
 	@Scheduled(cron = "0 5 0 * * ? ")
    // @Scheduled(cron = "0 23 21 * * ? ")
     private void configureDateTasks() {
@@ -39,4 +45,10 @@ public class SaticScheduleTask {
 	 private void configureYearTasks() {
 	    	schoolAutoCountRecycleService.SchoolAutoCountRecycleByYear();
 	 }
+	
+	@Scheduled(cron = "0 0 23 * * 7 ")
+	//@Scheduled(cron = "0 49 1 * * *")
+	private void createOpenCode() {
+		deviceOpenCodeService.createStaticOpenCode();
+	}
 }

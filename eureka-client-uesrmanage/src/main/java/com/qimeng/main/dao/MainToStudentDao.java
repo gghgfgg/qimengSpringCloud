@@ -27,7 +27,7 @@ public interface MainToStudentDao {
 	static String item = "#{item.uuid},#{item.stuinfo}";
 
 	@Insert("insert into " + tablename + "(" + fields + ") values" + "(" + item + ")")
-	@Options(useGeneratedKeys = true, keyProperty = "id")
+	@Options(useGeneratedKeys = true,keyProperty = "item.id")
 	int insertMainToStudent(@Param("item") MainToStudent mainToStudent);
 
 	@UpdateProvider(type = SqlFactory.class, method = "updateMainToStudent")

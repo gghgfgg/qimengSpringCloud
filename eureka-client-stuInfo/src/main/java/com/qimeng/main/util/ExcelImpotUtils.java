@@ -58,7 +58,7 @@ public class ExcelImpotUtils {
             // 根据Excel数据源创建WorkBook
             String postfix = fileName.substring(fileName.lastIndexOf("."),
                     fileName.length());
-            if (postfix.equals(".xls")) {
+            if (".xls".equals(postfix)) {
                 // 针对 2003 Excel 文件
                 wb = new HSSFWorkbook(in);
                 //获取excel文件某个sheet

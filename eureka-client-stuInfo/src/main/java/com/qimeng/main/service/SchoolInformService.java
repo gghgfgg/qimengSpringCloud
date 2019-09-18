@@ -32,7 +32,7 @@ public class SchoolInformService {
 			return schoolInformDao.insertSchoolInform(schoolInform);
 		} catch (Exception e) {
 			// TODO: handle exception
-			logger.error("学校信息导入异常");
+			logger.error("学校信息新增异常");
 			logger.error("Error:",e);
 			throw new RuntimeException(e);		
 		}
@@ -87,6 +87,13 @@ public class SchoolInformService {
 		schoolInform.setSchoolName(schoolName);
 		return selectSchoolInformList(schoolInform);
 	}
+	
+	public List<SchoolInform> selectSchoolInformBySchoolId(String schoolId) {
+		SchoolInform schoolInform=new SchoolInform();
+		schoolInform.setSchoolId(schoolId);
+		return selectSchoolInformList(schoolInform);
+	}
+	
 	
 	public List<SchoolInform> selectSchoolCodeList(String postalCode){
 		try {

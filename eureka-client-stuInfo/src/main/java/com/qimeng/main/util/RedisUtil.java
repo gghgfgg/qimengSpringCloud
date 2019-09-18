@@ -13,7 +13,10 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.stereotype.Component;
-import org.springframework.util.CollectionUtils;  
+import org.springframework.util.CollectionUtils;
+
+import com.qimeng.main.entity.SchoolRecycleCount;
+import com.qimeng.main.entity.StudentData;  
   
   
 /** 
@@ -137,7 +140,20 @@ public class RedisUtil {
             return false;  
         }  
     }  
-      
+
+   public boolean sethours(String key,Object value,long time){  
+       try {  
+           if(time>0){  
+               redisTemplate.opsForValue().set(key,  value, time, TimeUnit.HOURS);  
+           }else{  
+               set(key, value);  
+           }  
+           return true;  
+       } catch (Exception e) {  
+           e.printStackTrace();  
+           return false;  
+       }  
+   }  
     /** 
      * 递增 
      * @param key 键 
@@ -354,7 +370,9 @@ public class RedisUtil {
     public long sSetAndTime(String key,long time,Object...values) {  
         try {  
             Long count = redisTemplate.opsForSet().add(key, values);  
-            if(time>0) expire(key, time);  
+            if(time>0) {
+            	expire(key, time);  
+            }
             return count;  
         } catch (Exception e) {  
             e.printStackTrace();  
@@ -465,7 +483,9 @@ public class RedisUtil {
     public boolean lSet(String key, Object value, long time) {  
         try {  
             redisTemplate.opsForList().rightPush(key,  value);  
-            if (time > 0) expire(key, time);  
+            if (time > 0) {
+            	expire(key, time);  
+            }
             return true;  
         } catch (Exception e) {  
             e.printStackTrace();  
@@ -500,7 +520,9 @@ public class RedisUtil {
     public boolean lSet(String key, List<Object> value, long time) {  
         try {  
             redisTemplate.opsForList().rightPushAll(key, value);  
-            if (time > 0) expire(key, time);  
+            if (time > 0) {
+            	expire(key, time);  
+            }
             return true;  
         } catch (Exception e) {  
             e.printStackTrace();  
@@ -565,6 +587,14 @@ public class RedisUtil {
             return false;  
         }  
     }  
+    public Boolean zsSet(String key, Object values, Long score) {  
+        try {  
+            return redisTemplate.opsForZSet().add(key, values,Double.valueOf(score));  
+        } catch (Exception e) {  
+            e.printStackTrace();  
+            return false;  
+        }  
+    }  
     /** 
      * 获取set缓存的长度 
      * @param key 键 
@@ -596,6 +626,23 @@ public class RedisUtil {
             return null;  
         }  
     }
+    public Set<Object>	zrangeByScore(String key, double min, double max){
+    	try {  
+            return redisTemplate.opsForZSet().rangeByScore(key, min, max);
+        } catch (Exception e) {  
+            e.printStackTrace();  
+            return null;  
+        }  
+    }
+    public Set<Object>	zrangeByScore(String key,Integer min,Integer max){
+    	try {  
+            return redisTemplate.opsForZSet().rangeByScore(key, Double.valueOf(min), Double.valueOf(max));
+        } catch (Exception e) {  
+            e.printStackTrace();  
+            return null;  
+        }  
+    }
+    
     
     public long intersectAndStore(String key, String otherKey, String destKey) {
     	try {  
@@ -614,13 +661,93 @@ public class RedisUtil {
             return 0;  
         }  
     }
+   
     
+    public long zsCount(String key,double min,double max) {
+    	try {  
+    		return redisTemplate.opsForZSet().count(key, min, max);
+        } catch (Exception e) {  
+            e.printStackTrace();  
+            return 0;  
+        }  
+    }
+    public long zsCount(String key,Long min,Long max) {
+    	return redisTemplate.opsForZSet().count(key, Double.valueOf(min), Double.valueOf(max));
+    }
+ 	/**
+ 	 * 批量导入数据
+ 	 * @param key
+ 	 * @param list
+ 	 * @return
+ 	 */
+ 	public Object zSetList(String key, List<StudentData> list) {
+ 		final StringRedisSerializer stringRedisSerializer = (StringRedisSerializer) redisTemplate.getKeySerializer();
+ 		final RedisSerializer<String> valueSerializer = (RedisSerializer<String>) redisTemplate.getValueSerializer();
+ 		final byte[] rawKey = stringRedisSerializer.serialize(key);
+            redisTemplate.executePipelined(new RedisCallback<Object>() {
+                @Override
+                public Object doInRedis(RedisConnection connection)
+                        throws DataAccessException {
+                    for (StudentData item : list) {
+                        byte[] rawStr =valueSerializer.serialize(item.getUuid());
+                        //在set中添加数据
+                        connection.zAdd(rawKey,-Double.valueOf(item.getTotalPoints()),rawStr);
+                    }
+                    connection.closePipeline();
+                    return null;
+                }
+            });
+            return null;      
+        }
+    
+    
+ 	public Object zSetCountList(String key, List<StudentData> list) {
+ 		final StringRedisSerializer stringRedisSerializer = (StringRedisSerializer) redisTemplate.getKeySerializer();
+ 		final RedisSerializer<String> valueSerializer = (RedisSerializer<String>) redisTemplate.getValueSerializer();
+ 		final byte[] rawKey = stringRedisSerializer.serialize(key);
+            redisTemplate.executePipelined(new RedisCallback<Object>() {
+                @Override
+                public Object doInRedis(RedisConnection connection)
+                        throws DataAccessException {
+                    for (StudentData item : list) {
+                        byte[] rawStr =valueSerializer.serialize(item.getUuid());
+                        //在set中添加数据
+                        connection.zAdd(rawKey,Double.valueOf(item.getSchoolCode()),rawStr);
+                    }
+                    connection.closePipeline();
+                    return null;
+                }
+            });
+            return null;      
+        }
+ 	
+ 	public Object zIncrementScoreList(String key, List<SchoolRecycleCount> list) {
+ 		final StringRedisSerializer stringRedisSerializer = (StringRedisSerializer) redisTemplate.getKeySerializer();
+ 		final RedisSerializer<String> valueSerializer = (RedisSerializer<String>) redisTemplate.getValueSerializer();
+ 		final byte[] rawKey = stringRedisSerializer.serialize(key);
+            redisTemplate.executePipelined(new RedisCallback<Object>() {
+                @Override
+                public Object doInRedis(RedisConnection connection)
+                        throws DataAccessException {
+                    for (SchoolRecycleCount item : list) {
+                        byte[] rawStr =valueSerializer.serialize(item.getSchoolCode());
+                        //在set中添加数据
+                        connection.zIncrBy(rawKey,-Double.valueOf(item.getPoints()), rawStr);
+                    }
+                    connection.closePipeline();
+                    return null;
+                }
+            });
+            return null;      
+        }
+ 	
+ 	
 	// 封装为方法
 	public Object sSet(String key, List<String> list) {
 		final StringRedisSerializer stringRedisSerializer = (StringRedisSerializer) redisTemplate.getKeySerializer();
 		final RedisSerializer<String> valueSerializer = (RedisSerializer<String>) redisTemplate.getValueSerializer();
 		final byte[] rawKey = stringRedisSerializer.serialize(key);
-           redisTemplate.executePipelined(new RedisCallback() {
+           redisTemplate.executePipelined(new RedisCallback<Object>() {
                @Override
                public Object doInRedis(RedisConnection connection)
                        throws DataAccessException {

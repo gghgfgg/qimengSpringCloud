@@ -14,23 +14,29 @@ public class StudentVo {
 
 	private String studentCode;
 
+	private String Card;
+
+	private String Code;
+	
 	private String qrcode;
 
 	private String name;
 
 	private Byte type;
 
+	private String typeName;
+	
 	private String schoolCode;
 
 	private Byte binding;
 
 	private Byte active;
 	
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH-mm-ss") // 页面写入数据库时格式化
-	@JSONField(format = "yyyy-MM-dd HH-mm-ss") // 数据库导出页面时json格式化
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") // 页面写入数据库时格式化
+	@JSONField(format = "yyyy-MM-dd HH:mm:ss") // 数据库导出页面时json格式化
 	private Date firstTime;
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH-mm-ss") // 页面写入数据库时格式化
-	@JSONField(format = "yyyy-MM-dd HH-mm-ss") // 数据库导出页面时json格式化
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") // 页面写入数据库时格式化
+	@JSONField(format = "yyyy-MM-dd HH:mm:ss") // 数据库导出页面时json格式化
 	private Date lastTime;
 
 	private Integer activityCount;
@@ -156,6 +162,22 @@ public class StudentVo {
 		this.studentCode = studentCode;
 	}
 
+	public String getCard() {
+		return Card;
+	}
+
+	public void setCard(String card) {
+		Card = card;
+	}
+
+	public String getCode() {
+		return Code;
+	}
+
+	public void setCode(String code) {
+		Code = code;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -170,6 +192,14 @@ public class StudentVo {
 
 	public void setType(Byte type) {
 		this.type = type;
+	}
+
+	public String getTypeName() {
+		return typeName;
+	}
+
+	public void setTypeName(String typeName) {
+		this.typeName = typeName;
 	}
 
 	public String getSchoolCode() {
@@ -617,26 +647,28 @@ public class StudentVo {
 
 	@Override
 	public String toString() {
-		return "StudentVo [uuid=" + uuid + ", identityCard=" + identityCard + ", studentCode=" + studentCode
-				+ ", qrcode=" + qrcode + ", name=" + name + ", type=" + type + ", schoolCode=" + schoolCode
-				+ ", binding=" + binding + ", active=" + active + ", firstTime=" + firstTime + ", lastTime=" + lastTime
-				+ ", activityCount=" + activityCount + ", totalPoints=" + totalPoints + ", usedPoints=" + usedPoints
-				+ ", deductPoints=" + deductPoints + ", postalCodename=" + postalCodename + ", schoolName=" + schoolName
-				+ ", schoolId=" + schoolId + ", postalCode=" + postalCode + ", classS=" + classS + ", grade=" + grade
-				+ ", sex=" + sex + ", nativePlace=" + nativePlace + ", nation=" + nation + ", phone=" + phone
-				+ ", birthday=" + birthday + ", birthplace=" + birthplace + ", nationality=" + nationality
-				+ ", identityType=" + identityType + ", overseasChinese=" + overseasChinese + ", politicsStatus="
-				+ politicsStatus + ", health=" + health + ", censusRegister=" + censusRegister + ", censusRegisterType="
-				+ censusRegisterType + ", enrollmentTime=" + enrollmentTime + ", entranceWay=" + entranceWay
-				+ ", studyingWay=" + studyingWay + ", address=" + address + ", contactAddress=" + contactAddress
-				+ ", residence=" + residence + ", workersChildren=" + workersChildren + ", onlyChild=" + onlyChild
-				+ ", preschoolEducation=" + preschoolEducation + ", leftoverChildren=" + leftoverChildren + ", orphan="
-				+ orphan + ", martyrChildren=" + martyrChildren + ", funding=" + funding + ", boarderAlimony="
-				+ boarderAlimony + ", auxiliaryNumber=" + auxiliaryNumber + ", studentNumber=" + studentNumber
-				+ ", studentSource=" + studentSource + ", learningClass=" + learningClass + ", disabilityTypes="
-				+ disabilityTypes + ", familyName=" + familyName + ", familyRelationship=" + familyRelationship
-				+ ", familyWork=" + familyWork + ", familyResidence=" + familyResidence + ", familyCensusRegister="
-				+ familyCensusRegister + ", familyPhone=" + familyPhone + ", teacherPhone=" + teacherPhone + "]";
+		return "StudentVo [uuid=" + uuid + ", identityCard=" + identityCard + ", studentCode=" + studentCode + ", Card="
+				+ Card + ", Code=" + Code + ", qrcode=" + qrcode + ", name=" + name + ", type=" + type + ", typeName="
+				+ typeName + ", schoolCode=" + schoolCode + ", binding=" + binding + ", active=" + active
+				+ ", firstTime=" + firstTime + ", lastTime=" + lastTime + ", activityCount=" + activityCount
+				+ ", totalPoints=" + totalPoints + ", usedPoints=" + usedPoints + ", deductPoints=" + deductPoints
+				+ ", postalCodename=" + postalCodename + ", schoolName=" + schoolName + ", schoolId=" + schoolId
+				+ ", postalCode=" + postalCode + ", classS=" + classS + ", grade=" + grade + ", sex=" + sex
+				+ ", nativePlace=" + nativePlace + ", nation=" + nation + ", phone=" + phone + ", birthday=" + birthday
+				+ ", birthplace=" + birthplace + ", nationality=" + nationality + ", identityType=" + identityType
+				+ ", overseasChinese=" + overseasChinese + ", politicsStatus=" + politicsStatus + ", health=" + health
+				+ ", censusRegister=" + censusRegister + ", censusRegisterType=" + censusRegisterType
+				+ ", enrollmentTime=" + enrollmentTime + ", entranceWay=" + entranceWay + ", studyingWay=" + studyingWay
+				+ ", address=" + address + ", contactAddress=" + contactAddress + ", residence=" + residence
+				+ ", workersChildren=" + workersChildren + ", onlyChild=" + onlyChild + ", preschoolEducation="
+				+ preschoolEducation + ", leftoverChildren=" + leftoverChildren + ", orphan=" + orphan
+				+ ", martyrChildren=" + martyrChildren + ", funding=" + funding + ", boarderAlimony=" + boarderAlimony
+				+ ", auxiliaryNumber=" + auxiliaryNumber + ", studentNumber=" + studentNumber + ", studentSource="
+				+ studentSource + ", learningClass=" + learningClass + ", disabilityTypes=" + disabilityTypes
+				+ ", familyName=" + familyName + ", familyRelationship=" + familyRelationship + ", familyWork="
+				+ familyWork + ", familyResidence=" + familyResidence + ", familyCensusRegister=" + familyCensusRegister
+				+ ", familyPhone=" + familyPhone + ", teacherPhone=" + teacherPhone + "]";
 	}
+
 
 }

@@ -22,12 +22,18 @@ import com.qimeng.main.dao.JoinDao;
 import com.qimeng.main.dao.StudentDataDao;
 import com.qimeng.main.dao.StudentInformDao;
 import com.qimeng.main.entity.ApplicationManagement;
+import com.qimeng.main.entity.DeviceRecycleRealTime;
+import com.qimeng.main.entity.GlobalDate;
 import com.qimeng.main.entity.StudentData;
 import com.qimeng.main.entity.StudentInform;
 import com.qimeng.main.service.ApplicationManagementService;
 import com.qimeng.main.service.DeviceActionService;
 import com.qimeng.main.service.DeviceManagementService;
+import com.qimeng.main.service.DeviceRecycleRealTimeService;
+import com.qimeng.main.service.DeviceStateService;
+import com.qimeng.main.service.GlobalDateService;
 import com.qimeng.main.service.PostalCodeService;
+import com.qimeng.main.service.RecycleTypeService;
 import com.qimeng.main.service.SchoolAutoCountRecycleService;
 import com.qimeng.main.service.StudentDataService;
 import com.qimeng.main.service.StudentInformService;
@@ -88,6 +94,14 @@ public class EurekaClientStuInfoApplicationTests {
 	DeviceActionService deviceActionService;
 	@Autowired
 	StudentRankService studentRankService;
+	@Autowired
+	DeviceStateService deviceStateService;
+	@Autowired
+	RecycleTypeService recycleTypeService;
+	@Autowired
+	GlobalDateService globalDateService;
+	@Autowired
+	DeviceRecycleRealTimeService deviceRecycleRealTimeService;
 	
 	@Test
 	public void contextLoads() throws UnsupportedEncodingException {
@@ -178,18 +192,48 @@ public class EurekaClientStuInfoApplicationTests {
 		
 		//studentRankService.addlist();
 		//studentRankService.StudentRankList(0,new StudentVo());
-		ApplicationManagement applicationManagement = applicationManagementService
-				.selectApplicationManagementByAppId("7845345646154645", StaticGlobal.ACTIVE);
-		EncryptUtil encryptUtil;
-		try {
-			encryptUtil = new EncryptUtil(applicationManagement.getDeskey(),applicationManagement.getIvkey());
-			String accountTonken=encryptUtil.decode("CUlQiVnY4CrhHuqp0dq9gg==");
-			System.out.println(accountTonken);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		ApplicationManagement applicationManagement = applicationManagementService
+//				.selectApplicationManagementByAppId("7845345646154645", StaticGlobal.ACTIVE);
+//		EncryptUtil encryptUtil;
+//		try {
+//			encryptUtil = new EncryptUtil(applicationManagement.getDeskey(),applicationManagement.getIvkey());
+//			String accountTonken=encryptUtil.decode("CUlQiVnY4CrhHuqp0dq9gg==");
+//			System.out.println(accountTonken);
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		//applicationManagementService.insertApplicationManagement("7166912116544633","内部测试权限",
+		//		(byte)1,(byte)7,"293dJFsmjfIJgfoa","asfsa248");
 		
+		//deviceStateService.selectDeviceState((byte)0,(byte) 0);
+		//recycleTypeService.selectRecycleTypeByType((byte)1);
+		
+//		System.out.println(globalDateService.getGlobalKeyString("qrl"));
+//		GlobalDate globalDate=new GlobalDate();
+//		globalDate.setId(1);
+//		globalDate.setGlobalKey("qrl");
+//		globalDate.setGlobalValue("www");
+//		globalDate.setUpdateTime(new Date());
+//		globalDateService.updateGlobalDate(globalDate);
+//		System.out.println(globalDateService.getGlobalKeyString("qrl"));
+		
+		//System.out.println(globalDateService.getRunTime());
+		Date date=new Date();
+		DeviceRecycleRealTime deviceRecycleRealTime=deviceRecycleRealTimeService.selectDeviceRecycleRealTime("123456789", (byte) 1);
+		if(deviceRecycleRealTime==null) {
+			deviceRecycleRealTime=new DeviceRecycleRealTime();
+			deviceRecycleRealTime.setbRecycle(false);
+			deviceRecycleRealTime.setCount(0);
+			deviceRecycleRealTime.setCreateTime(date);
+			deviceRecycleRealTime.setMachineId("123456789");
+			deviceRecycleRealTime.setType((byte) 1);
+			deviceRecycleRealTimeService.insertDeviceRecycleRealTime(deviceRecycleRealTime);
+		}
+		deviceRecycleRealTime.setCount(deviceRecycleRealTime.getCount()+100);
+		deviceRecycleRealTimeService.updateDeviceRecycleRealTimeCount(deviceRecycleRealTime);
+		deviceRecycleRealTime.setEndTime(date);
+		deviceRecycleRealTimeService.updateDeviceRecycleRealTimeRecycle(deviceRecycleRealTime);
 	}
 
 }

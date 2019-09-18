@@ -9,6 +9,7 @@ public class ResponseMessage <E> implements Serializable{
 	private String message;
 	private String accountTonken="";
 	private E data;
+	
 	public int getStatusCode() {
 		return statusCode;
 	}
@@ -56,5 +57,16 @@ public class ResponseMessage <E> implements Serializable{
 				+ ", accountTonken=" + accountTonken + ", data=" + data + "]";
 	}
 
-	
+	public static ResponseMessage<String> responseFailedMessage(String message) {
+		ResponseMessage<String> responseMessage = new ResponseMessage<String>();
+		responseMessage.setData("");
+		responseMessage.setFailedMessage(message);
+		return responseMessage;
+	}
+	public static ResponseMessage<String> responseSuccessMessage(String message) {
+		ResponseMessage<String> responseMessage = new ResponseMessage<String>();
+		responseMessage.setData("");
+		responseMessage.setSuccessMessage(message);
+		return responseMessage;
+	}
 }

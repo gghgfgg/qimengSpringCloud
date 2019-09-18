@@ -2,6 +2,7 @@ package com.qimeng.main.dao;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
 
 import com.qimeng.main.entity.Uploadlog;
@@ -18,6 +19,7 @@ public interface UploadlogDao {
 
 	@Insert("insert into upload_log (name,file,app_id,operator,create_time) values(#{item.appId},#{item.name},"
 			+ "#{item.file},#{item.operator},#{item.createTime})")
+	@Options(useGeneratedKeys = true,keyProperty = "item.id")
 	int  insertUploadlog(@Param("item")Uploadlog uploadlog);
 }
 

@@ -9,12 +9,14 @@ import org.springframework.transaction.annotation.Transactional;
 import com.qimeng.main.entity.DeviceManagement;
 import com.qimeng.main.entity.DeviceRecycleCount;
 import com.qimeng.main.entity.DeviceRecycleLog;
+import com.qimeng.main.entity.DeviceRecycleRealTime;
 import com.qimeng.main.entity.PointsManageLog;
 import com.qimeng.main.entity.PointsUsedLog;
 import com.qimeng.main.entity.RecycleType;
 import com.qimeng.main.entity.SchoolRecycleCount;
 import com.qimeng.main.entity.StudentData;
 import com.qimeng.main.entity.StudentRecycleCount;
+import com.qimeng.main.util.StaticGlobal;
 
 /** 
 * @author  作者 E-mail: 
@@ -48,6 +50,8 @@ public class StudentUpdatePointsService {
 	SchoolRecycleCountService schoolRecycleCountService;
 	@Autowired
 	StudentRankService studentRankService;
+	@Autowired
+	DeviceRecycleRealTimeService deviceRecycleRealTimeService;
 	
 	public int updateStudentPoints(StudentData studentData,int wasteType,int uint,String machineId) {
 		try {
@@ -55,7 +59,7 @@ public class StudentUpdatePointsService {
 			if(recycleType==null) {
 				throw new RuntimeException("找不到当前回收类型");
 			}
-			DeviceManagement deviceManagement=deviceManagementService.selectDeviceManagementListByMachineId(machineId,true);
+			DeviceManagement deviceManagement=deviceManagementService.selectDeviceManagementListByMachineId(machineId,StaticGlobal.ACTIVE);
 			if(deviceManagement==null) {
 				throw new RuntimeException("找不到当前回收机器");
 			}
@@ -96,6 +100,16 @@ public class StudentUpdatePointsService {
 				schoolRecycleCount.setCreateTime(date);
 				schoolRecycleCount.setUpdateTime(date);
 			}
+			DeviceRecycleRealTime deviceRecycleRealTime=deviceRecycleRealTimeService.selectDeviceRecycleRealTime(deviceManagement.getMachineId(), (byte) wasteType);
+			if(deviceRecycleRealTime==null) {
+				deviceRecycleRealTime=new DeviceRecycleRealTime();
+				deviceRecycleRealTime.setbRecycle(false);
+				deviceRecycleRealTime.setCount(0);
+				deviceRecycleRealTime.setCreateTime(date);
+				deviceRecycleRealTime.setMachineId(deviceManagement.getMachineId());
+				deviceRecycleRealTime.setType((byte) wasteType);
+				deviceRecycleRealTimeService.insertDeviceRecycleRealTime(deviceRecycleRealTime);
+			}
 			
 				
 			DeviceRecycleLog deviceRecycleLog=new DeviceRecycleLog();
@@ -128,7 +142,7 @@ public class StudentUpdatePointsService {
 				studentData.setLastTime(date);
 				studentDataService.updateStudentTotalPoints(studentData);
 			}
-			studentRankService.add(studentData);
+			studentRankService.addStudentPoints(studentData); 
 			
 			studentRecycleCount.setActivityCount(studentRecycleCount.getActivityCount()+1);
 			studentRecycleCount.setCount(studentRecycleCount.getCount()+uint);
@@ -154,7 +168,11 @@ public class StudentUpdatePointsService {
 			schoolRecycleCount.setRemainder(remainder);
 			schoolRecycleCount.setUpdateTime(date);
 			schoolRecycleCountService.insertSchoolRecycleCount(schoolRecycleCount);
+					
+			deviceRecycleRealTime.setCount(deviceRecycleRealTime.getCount()+uint);
+			deviceRecycleRealTimeService.updateDeviceRecycleRealTimeCount(deviceRecycleRealTime);
 			
+			studentRankService.addSchoolPoints(schoolRecycleCount,points);
 			return 1;
 			
 		} catch (Exception e) {

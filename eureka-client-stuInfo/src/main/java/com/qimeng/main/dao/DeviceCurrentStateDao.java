@@ -31,7 +31,7 @@ public interface DeviceCurrentStateDao {
 	
 	@Insert("insert into "+tablename+"("+fields+") values" +
 		        "("+item+") ON DUPLICATE KEY UPDATE " + update)
-	@Options(useGeneratedKeys = true,keyProperty = "id")
+	@Options(useGeneratedKeys = true,keyProperty = "item.id")
 	int insertDeviceCurrentState(@Param("item")DeviceCurrentState deviceCurrentState);
 	
 	@SelectProvider(type = SqlFactory.class,method="selectDeviceCurrentState")

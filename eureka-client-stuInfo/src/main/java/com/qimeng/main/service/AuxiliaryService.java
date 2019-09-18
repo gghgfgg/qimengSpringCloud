@@ -12,6 +12,8 @@ import com.github.pagehelper.PageInfo;
 import com.qimeng.main.entity.DeviceState;
 import com.qimeng.main.entity.RecycleType;
 import com.qimeng.main.entity.SchoolContactsType;
+import com.qimeng.main.entity.StudentType;
+import com.qimeng.main.util.StaticGlobal;
 import com.qimeng.main.vo.AuxiliaryVo;
 
 /** 
@@ -31,6 +33,8 @@ public class AuxiliaryService {
 	SchoolContactsTypeService 	schoolContactsTypeService;
 	@Autowired
 	StringRedisTemplate stringRedisTemplate;
+	@Autowired
+	StudentTypeService studentTypeService;
 	
 	public PageInfo<DeviceState> auxiliaryDeviceStatePageList(Integer pageNum, AuxiliaryVo auxiliaryVo) {
 		PageHelper.startPage(pageNum, 20);
@@ -42,6 +46,17 @@ public class AuxiliaryService {
         return appsPageInfo;
 	}
 
+	public PageInfo<StudentType> auxiliaryStudentTypePageList(Integer pageNum, AuxiliaryVo auxiliaryVo) {
+		PageHelper.startPage(pageNum, 20);
+		StudentType studentType=new StudentType();
+		studentType.setType(auxiliaryVo.getType());
+		studentType.setbPhone(auxiliaryVo.getbPhone());
+		studentType.setbTeacher(auxiliaryVo.getbTeacher());
+        List<StudentType> news = studentTypeService.selectStudentTypeList(studentType);
+        PageInfo<StudentType> appsPageInfo = new PageInfo<>(news);
+        return appsPageInfo;
+	}
+	
 	public PageInfo<RecycleType> auxiliaryRecycleTypePageList(Integer pageNum, AuxiliaryVo auxiliaryVo) {
 		PageHelper.startPage(pageNum, 20);
 		RecycleType recycleType=new RecycleType();
@@ -60,6 +75,17 @@ public class AuxiliaryService {
         return appsPageInfo;
 	}
 
+	public AuxiliaryVo auxiliaryStudentType(AuxiliaryVo auxiliaryVo) {
+		// TODO Auto-generated method stub
+		StudentType  studentType=studentTypeService.selectStudentType(auxiliaryVo.getType());
+		auxiliaryVo.setType(studentType.getType());
+		auxiliaryVo.setbPhone(studentType.getbPhone());
+		auxiliaryVo.setbTeacher(studentType.getbTeacher());
+		auxiliaryVo.setMark(studentType.getMark());
+		auxiliaryVo.setId(studentType.getId());
+		return auxiliaryVo;
+	}
+
 	public AuxiliaryVo auxiliaryDeviceState(AuxiliaryVo auxiliaryVo) {
 		// TODO Auto-generated method stub
 		DeviceState  deviceState=deviceStateService.selectDeviceState(auxiliaryVo.getType(), auxiliaryVo.getStatus());
@@ -69,7 +95,7 @@ public class AuxiliaryService {
 		auxiliaryVo.setId(deviceState.getId());
 		return auxiliaryVo;
 	}
-
+	
 	public AuxiliaryVo auxiliaryRecycleType(AuxiliaryVo auxiliaryVo) {
 		// TODO Auto-generated method stub
 		RecycleType recycleType=recycleTypeService.selectRecycleTypeByType(auxiliaryVo.getType());
@@ -103,6 +129,33 @@ public class AuxiliaryService {
 		return deviceStateService.insertDeviceState(deviceState);
 	}
 
+	public int saveStudentType(AuxiliaryVo auxiliaryVo) {
+		// TODO Auto-generated method stub
+		StudentType studentType = new StudentType();
+		if(auxiliaryVo.getType()==null) {
+			auxiliaryVo.setType((byte)0);
+		}
+		if(auxiliaryVo.getType()>31) {
+			throw new RuntimeException("类型值不能超过31");
+		}
+		byte type=(byte)(auxiliaryVo.getType()<<2);
+		if(auxiliaryVo.getbPhone()!=null&&auxiliaryVo.getbPhone()==1) {
+			type|=StaticGlobal.PHONE;
+		}
+		if(auxiliaryVo.getbTeacher()!=null&&auxiliaryVo.getbTeacher()==1) {
+			type|=StaticGlobal.TEACHER;
+		}
+		studentType.setType(type);
+		studentType.setbPhone(auxiliaryVo.getbPhone()==null?0:auxiliaryVo.getbPhone());
+		studentType.setbTeacher(auxiliaryVo.getbTeacher()==null?0:auxiliaryVo.getbTeacher());
+		studentType.setMark(auxiliaryVo.getMark());
+		Date date = new Date();
+		studentType.setCreateTime(date);
+		studentType.setUpdateTime(date);
+		return studentTypeService.insertStudentType(studentType);
+	}
+
+	
 	public int saveRecycleType(AuxiliaryVo auxiliaryVo) {
 		// TODO Auto-generated method stub
 		RecycleType recycleType=new RecycleType();
@@ -144,6 +197,38 @@ public class AuxiliaryService {
 		}
 		return 1;
 	}
+	
+	public int updateStudentType(AuxiliaryVo auxiliaryVo) {
+		// TODO Auto-generated method stub
+		StudentType tempStudentType= studentTypeService.selectStudentType(auxiliaryVo.getId());			
+		StudentType studentType = new StudentType();
+		studentType.setId(auxiliaryVo.getId());
+		if(auxiliaryVo.getType()==null) {
+			auxiliaryVo.setType((byte)0);
+		}
+		if(auxiliaryVo.getType()>31) {
+			throw new RuntimeException("类型值不能超过31");
+		}
+		int type=(auxiliaryVo.getType()<<2);
+		if(auxiliaryVo.getbPhone()!=null&&auxiliaryVo.getbPhone()==1) {
+			type|=StaticGlobal.PHONE;
+		}
+		if(auxiliaryVo.getbTeacher()!=null&&auxiliaryVo.getbTeacher()==1) {
+			type|=StaticGlobal.TEACHER;
+		}
+		studentType.setType((byte)type);
+		studentType.setbPhone(auxiliaryVo.getbPhone()==null?0:auxiliaryVo.getbPhone());
+		studentType.setbTeacher(auxiliaryVo.getbTeacher()==null?0:auxiliaryVo.getbTeacher());
+		studentType.setMark(auxiliaryVo.getMark());
+		Date date = new Date();
+		studentType.setUpdateTime(date);
+		studentTypeService.updateStudentType(studentType);
+		if(stringRedisTemplate.hasKey("StudentType::"+tempStudentType.getType())) {
+			stringRedisTemplate.delete("StudentType::"+tempStudentType.getType());
+		}
+		return 1;
+	}
+	
 
 	public int updateRecycleType(AuxiliaryVo auxiliaryVo) {
 		// TODO Auto-generated method stub

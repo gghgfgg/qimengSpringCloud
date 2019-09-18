@@ -23,12 +23,12 @@ public class DeviceManagement implements Serializable{
 
     private String postalCode;
     
-    private Boolean active;
-    @DateTimeFormat(pattern="yyyy-MM-dd HH-mm-ss")//页面写入数据库时格式化
-   	@JSONField(format="yyyy-MM-dd HH-mm-ss")//数据库导出页面时json格式化
+    private Byte active;
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")//页面写入数据库时格式化
+   	@JSONField(format="yyyy-MM-dd HH:mm:ss")//数据库导出页面时json格式化
     private Date createTime;
-    @DateTimeFormat(pattern="yyyy-MM-dd HH-mm-ss")//页面写入数据库时格式化
-   	@JSONField(format="yyyy-MM-dd HH-mm-ss")//数据库导出页面时json格式化
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")//页面写入数据库时格式化
+   	@JSONField(format="yyyy-MM-dd HH:mm:ss")//数据库导出页面时json格式化
     private Date updateTime;
 
     public Integer getId() {
@@ -71,11 +71,11 @@ public class DeviceManagement implements Serializable{
 		this.postalCode = postalCode;
 	}
 
-	public Boolean getActive() {
+	public Byte getActive() {
         return active;
     }
 
-    public void setActive(Boolean active) {
+    public void setActive(Byte active) {
         this.active = active;
     }
 

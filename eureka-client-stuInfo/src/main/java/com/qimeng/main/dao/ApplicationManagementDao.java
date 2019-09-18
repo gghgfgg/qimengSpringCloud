@@ -12,6 +12,7 @@ import org.apache.ibatis.jdbc.SQL;
 import org.springframework.util.StringUtils;
 
 import com.qimeng.main.entity.ApplicationManagement;
+import com.qimeng.main.util.StaticGlobal;
 
 /** 
 * @author  作者 E-mail: 
@@ -24,15 +25,15 @@ import com.qimeng.main.entity.ApplicationManagement;
 @Mapper
 public interface ApplicationManagementDao {
 
-	static String tablename="management_application_management";
+	static String TABLE_NAME="management_application_management";
 	
-	static String fields="app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time";
+	static String FIELDS="app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time";
 	
-	static String item="#{item.appId},#{item.deskey},#{item.ivkey},#{item.appType},#{item.appName},#{item.active},"
+	static String ITEM="#{item.appId},#{item.deskey},#{item.ivkey},#{item.appType},#{item.appName},#{item.active},"
 			+ "#{item.createTime},#{item.updateTime}";
 	
-	@Insert("insert into "+tablename+"("+fields+") values" + "("+item+")")
-	@Options(useGeneratedKeys = true,keyProperty = "id")
+	@Insert("insert into "+TABLE_NAME+"("+FIELDS+") values" + "("+ITEM+")")
+	@Options(useGeneratedKeys = true,keyProperty = "item.id")
 	int insertApplicationManagement(@Param("item")ApplicationManagement applicationManagement);
 	
 	@UpdateProvider(type = SqlFactory.class,method = "updateApplicationManagement")
@@ -44,7 +45,7 @@ public interface ApplicationManagementDao {
 	public class SqlFactory extends SQL{
 		public String updateApplicationManagement(@Param("item")ApplicationManagement applicationManagement) {
 			 SQL sql = new SQL(); //SQL语句对象，所在包：org.apache.ibatis.jdbc.SQL
-		     sql.UPDATE(tablename);
+		     sql.UPDATE(TABLE_NAME);
 		     if(applicationManagement.getAppType()!=null) {
 		    	 sql.SET("app_type=#{item.appType}");
 		     }
@@ -73,8 +74,8 @@ public interface ApplicationManagementDao {
 		
 		public String selectApplicationManagement(@Param("item")ApplicationManagement applicationManagement) {
 			SQL sql = new SQL(); //SQL语句对象，所在包：org.apache.ibatis.jdbc.SQL
-			sql.SELECT("id,"+fields);
-	    	sql.FROM(tablename);
+			sql.SELECT("id,"+FIELDS);
+	    	sql.FROM(TABLE_NAME);
 	    	if(applicationManagement.getActive()!=null) {
 	    		sql.WHERE("active=#{item.active}");
 	    	}
@@ -82,7 +83,15 @@ public interface ApplicationManagementDao {
 		    	 sql.WHERE("app_id=#{item.appId}");
 		    }
 	    	if(applicationManagement.getAppType()!=null) {
-		    	 sql.WHERE("app_type=#{item.appType}");
+	    		if((applicationManagement.getAppType()&StaticGlobal.ADD)==StaticGlobal.ADD) {
+	    			 sql.WHERE("app_type&1=1");
+	    		}
+	    		if((applicationManagement.getAppType()&StaticGlobal.SUB)==StaticGlobal.SUB) {
+	    			 sql.WHERE("app_type&2=2");
+	    		}
+	    		if((applicationManagement.getAppType()&StaticGlobal.UPDATE)==StaticGlobal.UPDATE) {
+	    			 sql.WHERE("app_type&4=4");
+	    		}
 		     }
 	    	 if(applicationManagement.getId()!=null) {
 		    	 sql.WHERE("id=#{item.id}");

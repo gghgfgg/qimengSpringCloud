@@ -29,7 +29,7 @@ public interface SchoolAutoCountDao {
 	static String item="#{item.schoolCode},#{item.type},#{item.count},#{item.points},#{item.remainder},#{item.activityCount},#{item.countType},#{item.createTime}";
 	
 	@Insert("insert into "+tablename+"("+fields+") values" + "("+item+")")
-	@Options(useGeneratedKeys = true,keyProperty = "id")
+	@Options(useGeneratedKeys = true,keyProperty = "item.id")
 	int insertSchoolAutoCount(@Param("item")SchoolAutoCount schoolAutoCount);
 	
 	@SelectProvider(type = SqlFactory.class,method = "selectSchoolAutoCount")

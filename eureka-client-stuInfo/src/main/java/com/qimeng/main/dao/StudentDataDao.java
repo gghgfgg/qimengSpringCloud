@@ -52,7 +52,7 @@ public interface StudentDataDao {
 	
 	@Insert("insert into "+tablename+"("+fieldsByInfrom+") values" +
             "("+itemByInfrom+") ON DUPLICATE KEY UPDATE " + updateByInfrom+ updatecode)
-	@Options(useGeneratedKeys = true,keyProperty = "id")
+	@Options(useGeneratedKeys = true,keyProperty = "item.id")
 	int insertStudentData(@Param("item")StudentData studentData);
 	
 	@UpdateProvider(type = SqlFactory.class,method = "updateByIdentityCardOrStrudentCode")
@@ -64,7 +64,7 @@ public interface StudentDataDao {
 	@SelectProvider(type = SqlFactory.class,method = "selectStudentData")
 	List<StudentData> selectStudentData(@Param("item")StudentData studentData);
 	
-	@Select("select COUNT(*) from "+tablename+" where school_code=#{schoolCode} and date_format(update_time,'%Y-%m-%d %H:%i:%S')=date_format(#{time},'%Y-%m-%d %H:%i:%S')")
+	@Select("select COUNT(*) from "+tablename+" where school_code=#{schoolCode} and update_time=#{time}")
 	int selectStudentCountByUpdata(String schoolCode,Date time);
 	
 	public class SqlFactory extends SQL{
@@ -171,9 +171,9 @@ public interface StudentDataDao {
 	    	
 	    	if(studentData.getType()!=null) {
 	    		if(studentData.getType()>1) {
-	    			sql.WHERE("a.type=#{item.type}");
+	    			sql.WHERE("type=#{item.type}");
 	    		}else {
-	    			sql.WHERE("a.type&1=#{item.type}");
+	    			sql.WHERE("type&1=#{item.type}");
 				}
 	    	}
 	    	

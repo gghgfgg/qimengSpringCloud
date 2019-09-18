@@ -29,11 +29,17 @@ public interface SchoolRecycleCountDao {
 	static String update="count=VALUES(count),points=VALUES(points),remainder=VALUES(remainder),activity_count=VALUES(activity_count),update_time=VALUES(update_time)";
 	
 	@Insert("insert into "+tablename+"("+fields+") values" + "("+item+") ON DUPLICATE KEY UPDATE " + update )
-	@Options(useGeneratedKeys = true,keyProperty = "id")
+	@Options(useGeneratedKeys = true,keyProperty = "item.id")
 	int insertSchoolRecycleCount(@Param("item")SchoolRecycleCount schoolRecycleCount);
 	
 	@SelectProvider(type = SqlFactory.class,method = "selectSchoolRecycleCount")
 	List<SchoolRecycleCount> selectSchoolRecycleCountList(@Param("item")SchoolRecycleCount schoolRecycleCount);
+	
+	@SelectProvider(type = SqlFactory.class,method = "selectRecycleCount")
+	Integer getCountBySchoolCodeType(@Param("schoolCode")String schoolCode,@Param("type")Byte type);
+	
+	@SelectProvider(type = SqlFactory.class,method = "selectPointsCount")
+	Integer getPointsBySchoolCode(@Param("schoolCode")String schoolCode,@Param("type")Byte type);
 	
 	public class SqlFactory extends SQL{
 		
@@ -51,6 +57,55 @@ public interface SchoolRecycleCountDao {
 	    	return sql.toString();
 	    }
 		
+		public String selectRecycleCount(@Param("schoolCode")String schoolCode,@Param("type")Byte type) {
+			SQL sql = new SQL(); //SQL语句对象，所在包：org.apache.ibatis.jdbc.SQL
+	    	
+	    	sql.SELECT("SUM(count)");
+	    	sql.FROM(tablename);
+	    	if(!StringUtils.isEmpty(schoolCode)){
+	    		String[] schoolCodeArray = schoolCode.split("-");
+	    		String tempString="(";
+		    	for (int i=0;i!=schoolCodeArray.length;i++) {
+		    		if(i!=schoolCodeArray.length-1)
+		    		{
+		    			tempString+="school_code='"+schoolCodeArray[i]+"\' or ";
+		    		}
+		    		else {
+		    			tempString+="school_code='"+schoolCodeArray[i]+"\')";
+		    		}
+		    	}
+	    		sql.WHERE(tempString);
+	        }
+	    	if(type!=null){
+	        	 sql.WHERE("type=#{type}");
+			}
+	    	return sql.toString();
+		}
+		
+		public String selectPointsCount(@Param("schoolCode")String schoolCode,@Param("type")Byte type) {
+			SQL sql = new SQL(); //SQL语句对象，所在包：org.apache.ibatis.jdbc.SQL
+	    	
+	    	sql.SELECT("SUM(points)");
+	    	sql.FROM(tablename);
+	    	if(!StringUtils.isEmpty(schoolCode)){
+	    		String[] schoolCodeArray = schoolCode.split("-");
+	    		String tempString="(";
+		    	for (int i=0;i!=schoolCodeArray.length;i++) {
+		    		if(i!=schoolCodeArray.length-1)
+		    		{
+		    			tempString+="school_code='"+schoolCodeArray[i]+"\' or ";
+		    		}
+		    		else {
+		    			tempString+="school_code='"+schoolCodeArray[i]+"\')";
+		    		}
+		    	}
+	    		sql.WHERE(tempString);
+	        }
+	    	if(type!=null){
+	        	 sql.WHERE("type=#{type}");
+			}
+	    	return sql.toString();
+		}
 	}
 }
 

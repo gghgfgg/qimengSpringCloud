@@ -23,6 +23,9 @@ public class AuxiliaryVo {
 
     private Byte weight;
 
+    private Byte bPhone;
+
+    private Byte bTeacher;
     
 	public Integer getId() {
 		return id;
@@ -88,13 +91,28 @@ public class AuxiliaryVo {
 		this.weight = weight;
 	}
 
+	public Byte getbPhone() {
+		return bPhone;
+	}
+
+	public void setbPhone(Byte bPhone) {
+		this.bPhone = bPhone;
+	}
+
+	public Byte getbTeacher() {
+		return bTeacher;
+	}
+
+	public void setbTeacher(Byte bTeacher) {
+		this.bTeacher = bTeacher;
+	}
+
 	@Override
 	public String toString() {
 		return "AuxiliaryVo [id=" + id + ", type=" + type + ", status=" + status + ", mark=" + mark + ", uint=" + uint
-				+ ", factor=" + factor + ", position=" + position + ", weight=" + weight + "]";
+				+ ", factor=" + factor + ", position=" + position + ", weight=" + weight + ", bPhone=" + bPhone
+				+ ", bTeacher=" + bTeacher + "]";
 	}
-
-
     
 }
 

@@ -30,7 +30,7 @@ public interface WechatToMainDao {
 	static String item = "#{item.openid},#{item.unionid},#{item.uuid}";
 
 	@Insert("insert into " + tablename + "(" + fields + ") values" + "(" + item + ")")
-	@Options(useGeneratedKeys = true, keyProperty = "id")
+	@Options(useGeneratedKeys = true,keyProperty = "item.id")
 	int inserWechatToMain(@Param("item") WecharToMain wecharToMain);
 
 	@UpdateProvider(type = SqlFactory.class, method = "updateWecharToMain")

@@ -31,7 +31,7 @@ public interface StudentRecycleCountDao {
 	static String update="count=VALUES(count),points=VALUES(points),remainder=VALUES(remainder),activity_count=VALUES(activity_count),update_time=VALUES(update_time)";
 	
 	@Insert("insert into "+tablename+"("+fields+") values" + "("+item+") ON DUPLICATE KEY UPDATE " + update )
-	@Options(useGeneratedKeys = true,keyProperty = "id")
+	@Options(useGeneratedKeys = true,keyProperty = "item.id")
 	int insertStudentRecycleCount(@Param("item")StudentRecycleCount studentRecycleCount);
 	
 	@SelectProvider(type = SqlFactory.class,method = "selectStudentRecycleCount")

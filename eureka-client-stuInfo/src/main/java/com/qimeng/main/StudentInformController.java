@@ -4,8 +4,6 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-import javax.servlet.http.HttpServletResponse;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
@@ -60,7 +58,7 @@ public class StudentInformController {
 	StudentDataService studentDataService;
 	@Autowired
 	GlobalDateService globalDateService;
-	
+
 	@RequestMapping("/getstudatalist/{page}")
 	public String getStudentDataList(@PathVariable("page") Integer page, @RequestBody JSONObject message) {
 		RequestMessage<StudentVo> requestMessage = JSON.parseObject(message.toString(),
@@ -70,12 +68,9 @@ public class StudentInformController {
 		logger.debug(studentVo.toString());
 		try {
 			ApplicationManagement applicationManagement = applicationManagementService
-					.selectApplicationManagementByAppId(requestMessage.getAppID(), StaticGlobal.ACTIVE);
+					.checkApplicationAuthority(requestMessage.getAppID(), StaticGlobal.READ);
 			if (applicationManagement == null) {
-				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-				responseMessage.setData("");
-				responseMessage.setFailedMessage("该appid没有权限");
-				return JSONObject.toJSONString(responseMessage);
+				return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("该appid没有权限"));
 			}
 
 			PageInfo<StudentVo> studentPageInfo = studentService.StudentPageList(page, studentVo);
@@ -99,15 +94,15 @@ public class StudentInformController {
 				new TypeReference<RequestMessage<StudentVo>>() {
 				});
 		StudentVo studentVo = (StudentVo) requestMessage.getData();
+		if (studentVo == null || StringUtils.isEmpty(studentVo.getUuid())) {
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("参数不足"));
+		}
 		logger.debug(studentVo.toString());
 		try {
 			ApplicationManagement applicationManagement = applicationManagementService
-					.selectApplicationManagementByAppId(requestMessage.getAppID(), StaticGlobal.ACTIVE);
+					.checkApplicationAuthority(requestMessage.getAppID(), StaticGlobal.READ);
 			if (applicationManagement == null) {
-				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-				responseMessage.setData("");
-				responseMessage.setFailedMessage("该appid没有权限");
-				return JSONObject.toJSONString(responseMessage);
+				return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("该appid没有权限"));
 			}
 
 			StudentVo studentInfo = studentService.selectStudent(studentVo);
@@ -124,53 +119,43 @@ public class StudentInformController {
 			return JSONObject.toJSONString(responseMessage);
 		}
 	}
-	
+
 	@RequestMapping("/uploadstulist")
-	public String uploadStudentList(String message,MultipartFile file) {
+	public String uploadStudentList(String message, MultipartFile file) {
 		RequestMessage<StudentVo> requestMessage = JSON.parseObject(message,
 				new TypeReference<RequestMessage<StudentVo>>() {
 				});
 		StudentVo studentVo = (StudentVo) requestMessage.getData();
-		if(studentVo==null||StringUtils.isEmpty(studentVo.getSchoolCode())) {
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setFailedMessage("参数不足");
-			return JSONObject.toJSONString(responseMessage);
+		if (studentVo == null || StringUtils.isEmpty(studentVo.getSchoolCode())) {
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("参数不足"));
 		}
-		if(file == null || file.getSize()==0) {
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setFailedMessage("无效文件");
-			return JSONObject.toJSONString(responseMessage);
+		if (file == null || file.getSize() == 0) {
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("无效文件"));
 		}
 		logger.debug(studentVo.toString());
 		try {
 			ApplicationManagement applicationManagement = applicationManagementService
-					.selectApplicationManagementByAppId(requestMessage.getAppID(), StaticGlobal.ACTIVE);
-			if (applicationManagement == null || (applicationManagement.getAppType() & StaticGlobal.UPDATE) == 0) {
-				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-				responseMessage.setData("");
-				responseMessage.setFailedMessage("该appid没有权限");
-				return JSONObject.toJSONString(responseMessage);
+					.checkApplicationAuthority(requestMessage.getAppID(), StaticGlobal.UPDATE);
+			if (applicationManagement == null) {
+				return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("该appid没有权限"));
 			}
-			
-			String fileName = file.getOriginalFilename(); //文件名
-			File uploadFlie=upLoadFile.getUploadFile(fileName,requestMessage.getAppID(),requestMessage.getOperator());
+
+			String fileName = file.getOriginalFilename(); // 文件名
+			File uploadFlie = upLoadFile.getUploadFile(fileName, requestMessage.getAppID(),
+					requestMessage.getOperator());
 			file.transferTo(uploadFlie);
 
-			List<StudentInform> list =upLoadFile.uploadFileToList(uploadFlie);
-			int updatecount=studentUpdateService.insertStudentInformList(list, studentVo.getSchoolCode(), studentVo.getType());
-			String reString="读取文件学生数:"+list.size()+",更新学生数:"+updatecount;
+			List<StudentInform> list = upLoadFile.uploadFileToList(uploadFlie);
+			int updatecount = studentUpdateService.insertStudentInformList(list, studentVo.getSchoolCode(),
+					studentVo.getType());
+			String reString = "读取文件学生数:" + list.size() + ",更新学生数:" + updatecount;
 			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
 			responseMessage.setData(reString);
 			responseMessage.setSuccessMessage("更新学生信息成功");
 			return JSONObject.toJSONString(responseMessage);
 		} catch (Exception e) {
 			// TODO: handle exception
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setFailedMessage(e.toString());
-			return JSONObject.toJSONString(responseMessage);
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage(e.toString()));
 		}
 	}
 
@@ -180,29 +165,23 @@ public class StudentInformController {
 				new TypeReference<RequestMessage<StudentVo>>() {
 				});
 		StudentVo studentVo = (StudentVo) requestMessage.getData();
+		if (studentVo == null || StringUtils.isEmpty(studentVo.getSchoolId())) {
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("参数不足"));
+		}
 		logger.debug(studentVo.toString());
 		try {
 			ApplicationManagement applicationManagement = applicationManagementService
-					.selectApplicationManagementByAppId(requestMessage.getAppID(), StaticGlobal.ACTIVE);
-			if (applicationManagement == null || (applicationManagement.getAppType() & StaticGlobal.UPDATE) == 0) {
-				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-				responseMessage.setData("");
-				responseMessage.setFailedMessage("该appid没有权限");
-				return JSONObject.toJSONString(responseMessage);
+					.checkApplicationAuthority(requestMessage.getAppID(), StaticGlobal.UPDATE);
+			if (applicationManagement == null) {
+				return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("该appid没有权限"));
 			}
 
 			studentService.savestudentData(studentVo);
 
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setSuccessMessage("更新学生信息成功");
-			return JSONObject.toJSONString(responseMessage);
+			return JSONObject.toJSONString(ResponseMessage.responseSuccessMessage("更新学生信息成功"));
 		} catch (Exception e) {
 			// TODO: handle exception
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setFailedMessage(e.toString());
-			return JSONObject.toJSONString(responseMessage);
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage(e.toString()));
 		}
 	}
 
@@ -215,26 +194,17 @@ public class StudentInformController {
 		logger.debug(studentVo.toString());
 		try {
 			ApplicationManagement applicationManagement = applicationManagementService
-					.selectApplicationManagementByAppId(requestMessage.getAppID(), StaticGlobal.ACTIVE);
-			if (applicationManagement == null || (applicationManagement.getAppType() & StaticGlobal.UPDATE) == 0) {
-				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-				responseMessage.setData("");
-				responseMessage.setFailedMessage("该appid没有权限");
-				return JSONObject.toJSONString(responseMessage);
+					.checkApplicationAuthority(requestMessage.getAppID(), StaticGlobal.UPDATE);
+			if (applicationManagement == null) {
+				return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("该appid没有权限"));
 			}
 
 			studentService.updatestudentData(studentVo);
 
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setSuccessMessage("更新学生信息成功");
-			return JSONObject.toJSONString(responseMessage);
+			return JSONObject.toJSONString(ResponseMessage.responseSuccessMessage("更新学生信息成功"));
 		} catch (Exception e) {
 			// TODO: handle exception
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setFailedMessage(e.toString());
-			return JSONObject.toJSONString(responseMessage);
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage(e.toString()));
 		}
 	}
 
@@ -247,28 +217,19 @@ public class StudentInformController {
 		logger.debug(studentVo.toString());
 		try {
 			ApplicationManagement applicationManagement = applicationManagementService
-					.selectApplicationManagementByAppId(requestMessage.getAppID(), StaticGlobal.ACTIVE);
-			if (applicationManagement == null || (applicationManagement.getAppType() & StaticGlobal.UPDATE) == 0) {
-				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-				responseMessage.setData("");
-				responseMessage.setFailedMessage("该appid没有权限");
-				return JSONObject.toJSONString(responseMessage);
+					.checkApplicationAuthority(requestMessage.getAppID(), StaticGlobal.UPDATE);
+			if (applicationManagement == null) {
+				return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("该appid没有权限"));
 			}
 			studentService.updataStudentActive(studentVo);
 
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setSuccessMessage("更新学生信息成功");
-			return JSONObject.toJSONString(responseMessage);
-
+			return JSONObject.toJSONString(ResponseMessage.responseSuccessMessage("更新学生信息成功"));
 		} catch (Exception e) {
 			// TODO: handle exception
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setFailedMessage(e.toString());
-			return JSONObject.toJSONString(responseMessage);
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage(e.toString()));
 		}
 	}
+
 	@RequestMapping("/exportstudatalist")
 	public String exportStudentDataList(@RequestBody JSONObject message) {
 		RequestMessage<StudentVo> requestMessage = JSON.parseObject(message.toString(),
@@ -278,12 +239,9 @@ public class StudentInformController {
 		logger.debug(studentVo.toString());
 		try {
 			ApplicationManagement applicationManagement = applicationManagementService
-					.selectApplicationManagementByAppId(requestMessage.getAppID(), StaticGlobal.ACTIVE);
+					.checkApplicationAuthority(requestMessage.getAppID(), StaticGlobal.READ);
 			if (applicationManagement == null) {
-				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-				responseMessage.setData("");
-				responseMessage.setFailedMessage("该appid没有权限");
-				return JSONObject.toJSONString(responseMessage);
+				return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("该appid没有权限"));
 			}
 
 			List<StudentVo> studentList = studentService.StudentList(studentVo);
@@ -299,21 +257,17 @@ public class StudentInformController {
 			String destFileName = path + url;
 			File destFile = new File(destFileName);
 			destFile.getParentFile().mkdirs();
-			upLoadFile.exporFile(studentList,"学生信息表",destFile);
+			upLoadFile.exporFile(studentList, "学生信息表", destFile);
 			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
 			responseMessage.setData(url);
 			responseMessage.setSuccessMessage("导出学生列表信息成功");
 			return JSONObject.toJSONString(responseMessage);
-
 		} catch (Exception e) {
 			// TODO: handle exception
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setFailedMessage(e.toString());
-			return JSONObject.toJSONString(responseMessage);
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage(e.toString()));
 		}
 	}
-	
+
 	@RequestMapping("/stubindbycode")
 	public String stuBindByCode(@RequestBody JSONObject message) {
 		RequestMessage<StudentBindVo> requestMessage = JSON.parseObject(message.toString(),
@@ -322,43 +276,39 @@ public class StudentInformController {
 		StudentBindVo studentBindVo = (StudentBindVo) requestMessage.getData();
 		if(studentBindVo==null||StringUtils.isEmpty(studentBindVo.getName())
 				||StringUtils.isEmpty(studentBindVo.getStuCard())
-				||StringUtils.isEmpty(studentBindVo.getStuCode())) {
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setFailedMessage("参数不足");
-			return JSONObject.toJSONString(responseMessage);
+				||StringUtils.isEmpty(studentBindVo.getStuCode())
+				||studentBindVo.getBind()==null) {
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("参数不足"));
 		}
 		logger.debug(studentBindVo.toString());
 		try {
 			ApplicationManagement applicationManagement = applicationManagementService
-					.selectApplicationManagementByAppId(requestMessage.getAppID(), StaticGlobal.ACTIVE);
-			if (applicationManagement == null || (applicationManagement.getAppType() & StaticGlobal.UPDATE) == 0) {
-				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-				responseMessage.setData("");
-				responseMessage.setFailedMessage("该appid没有权限");
-				return JSONObject.toJSONString(responseMessage);
+					.checkApplicationAuthority(requestMessage.getAppID(), StaticGlobal.UPDATE);
+			if (applicationManagement == null) {
+				return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("该appid没有权限"));
 			}
 			
 			StudentData studentData=studentDataService.selectStudentDataByCodeAndCard(studentBindVo.getStuCode(), studentBindVo.getStuCard());
 			if(studentData==null) {
-				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-				responseMessage.setData("");
-				responseMessage.setFailedMessage("查找不到当前学生");
-				return JSONObject.toJSONString(responseMessage);
+				return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("查找不到当前学生"));
 			}
+			
+			if(studentBindVo.getBind()==StaticGlobal.NOBIND) {
+				if(studentData.getBinding()==StaticGlobal.NOBIND) {
+					return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("该学生已经解绑"));
+				}
+				studentData.setBinding(StaticGlobal.NOBIND);
+				studentDataService.updateStudentBindingByIdentityCardOrStrudentCode(studentData);
+				return JSONObject.toJSONString(ResponseMessage.responseSuccessMessage("该学生解绑成功"));
+			}
+			
 			if(!studentData.getName().equals(studentBindVo.getName())) {
-				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-				responseMessage.setData("");
-				responseMessage.setFailedMessage("姓名不匹配学生");
-				return JSONObject.toJSONString(responseMessage);
+					return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("姓名不匹配学生"));
 			}
-			if(studentData.getBinding()==1) {
-				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-				responseMessage.setData("");
-				responseMessage.setFailedMessage("该学生已经绑定");
-				return JSONObject.toJSONString(responseMessage);
+			if(studentData.getBinding()==StaticGlobal.BIND) {
+				return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("该学生已经绑定"));
 			}
-			studentData.setBinding((byte)1);
+			studentData.setBinding(StaticGlobal.BIND);
 			studentDataService.updateStudentBindingByIdentityCardOrStrudentCode(studentData);
 			StudentInfoVo stuInfoVo=new StudentInfoVo();
 			stuInfoVo.setName(studentData.getName());
@@ -378,59 +328,45 @@ public class StudentInformController {
 
 		} catch (Exception e) {
 			// TODO: handle exception
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setFailedMessage(e.toString());
-			return JSONObject.toJSONString(responseMessage);
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage(e.toString()));
 		}
 	}
-	
+
 	@RequestMapping("/stubindbyphone")
 	public String stuBindByPhone(@RequestBody JSONObject message) {
 		RequestMessage<StudentBindVo> requestMessage = JSON.parseObject(message.toString(),
 				new TypeReference<RequestMessage<StudentBindVo>>() {
 				});
 		StudentBindVo studentBindVo = (StudentBindVo) requestMessage.getData();
-		if(studentBindVo==null||StringUtils.isEmpty(studentBindVo.getPhone())) {
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setFailedMessage("参数不足");
-			return JSONObject.toJSONString(responseMessage);
+		if (studentBindVo == null || StringUtils.isEmpty(studentBindVo.getPhone())) {
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("参数不足"));
 		}
 		logger.debug(studentBindVo.toString());
 		try {
 			ApplicationManagement applicationManagement = applicationManagementService
-					.selectApplicationManagementByAppId(requestMessage.getAppID(), StaticGlobal.ACTIVE);
-			if (applicationManagement == null || (applicationManagement.getAppType() & StaticGlobal.UPDATE) == 0) {
-				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-				responseMessage.setData("");
-				responseMessage.setFailedMessage("该appid没有权限");
-				return JSONObject.toJSONString(responseMessage);
+					.checkApplicationAuthority(requestMessage.getAppID(), StaticGlobal.UPDATE);
+			if (applicationManagement == null) {
+				return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("该appid没有权限"));
 			}
-			
-			StudentData studentData=studentService.selectStudentDataByPhone(studentBindVo.getPhone());
-			if(studentData==null) {
-				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-				responseMessage.setData("");
-				responseMessage.setFailedMessage("查找不到当前学生");
-				return JSONObject.toJSONString(responseMessage);
+
+			StudentData studentData = studentService.selectStudentDataByPhone(studentBindVo.getPhone());
+			if (studentData == null) {
+				return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("查找不到当前学生"));
 			}
-			if(studentData.getBinding()==1) {
-				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-				responseMessage.setData("");
-				responseMessage.setFailedMessage("该学生已经绑定");
-				return JSONObject.toJSONString(responseMessage);
+			if (studentData.getBinding() == StaticGlobal.BIND) {
+				return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("该学生已经绑定"));
 			}
-			studentData.setBinding((byte)1);
+			studentData.setBinding((byte) 1);
 			studentDataService.updateStudentBindingByIdentityCardOrStrudentCode(studentData);
-			StudentInfoVo stuInfoVo=new StudentInfoVo();
+			StudentInfoVo stuInfoVo = new StudentInfoVo();
 			stuInfoVo.setName(studentData.getName());
 			stuInfoVo.setWasteType(0);
 			stuInfoVo.setUnit(0);
-			int points=studentData.getTotalPoints()-studentData.getUsedPoints()-studentData.getDeductPoints();
-			stuInfoVo.setPoint(points<0?0:points);
+			int points = studentData.getTotalPoints() - studentData.getUsedPoints() - studentData.getDeductPoints();
+			stuInfoVo.setPoint(points < 0 ? 0 : points);
 			stuInfoVo.setBind(studentData.getBinding());
-			String qrcode=globalDateService.getGlobalKeyString("qrUrl")+"?code="+studentData.getCode()+"&card="+studentData.getCard();
+			String qrcode = globalDateService.getGlobalKeyString("qrUrl") + "?code=" + studentData.getCode() + "&card="
+					+ studentData.getCard();
 			stuInfoVo.setQrCode(qrcode);
 			stuInfoVo.setStuCard(studentData.getCard());
 			stuInfoVo.setStuCode(studentData.getCode());
@@ -441,11 +377,8 @@ public class StudentInformController {
 
 		} catch (Exception e) {
 			// TODO: handle exception
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setFailedMessage(e.toString());
-			return JSONObject.toJSONString(responseMessage);
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage(e.toString()));
 		}
 	}
-	
+
 }

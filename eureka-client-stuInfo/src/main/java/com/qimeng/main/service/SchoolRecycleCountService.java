@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.qimeng.main.dao.SchoolRecycleCountDao;
@@ -28,6 +30,7 @@ public class SchoolRecycleCountService {
 	 * @param studentRecycleCount
 	 * @return
 	 */
+	@CacheEvict(value = "SchoolRecycleCount", key = "#p0.schoolCode+'-'+#p0.type")
 	public int insertSchoolRecycleCount(SchoolRecycleCount schoolRecycleCount) {
 		try {
 			return schoolRecycleCountDao.insertSchoolRecycleCount(schoolRecycleCount);
@@ -45,7 +48,7 @@ public class SchoolRecycleCountService {
 	 * @param studentRecycleCount
 	 * @return
 	 */
-	List<SchoolRecycleCount> selectSchoolRecycleCountList(SchoolRecycleCount schoolRecycleCount){
+	public List<SchoolRecycleCount> selectSchoolRecycleCountList(SchoolRecycleCount schoolRecycleCount){
 		try {
 			return schoolRecycleCountDao.selectSchoolRecycleCountList(schoolRecycleCount);
 		} catch (Exception e) {
@@ -61,7 +64,7 @@ public class SchoolRecycleCountService {
 	 * @param uuid
 	 * @return
 	 */
-	List<SchoolRecycleCount> selectSchoolRecycleCountBySchoolCode(String schoolCode){
+	public List<SchoolRecycleCount> selectSchoolRecycleCountBySchoolCode(String schoolCode){
 		SchoolRecycleCount schoolRecycleCount=new SchoolRecycleCount();
 		schoolRecycleCount.setSchoolCode(schoolCode);
 		return selectSchoolRecycleCountList(schoolRecycleCount);
@@ -72,7 +75,7 @@ public class SchoolRecycleCountService {
 	 * @param type
 	 * @return
 	 */
-	List<SchoolRecycleCount> selectSchoolRecycleCountByType(byte type){
+	public List<SchoolRecycleCount> selectSchoolRecycleCountByType(byte type){
 		SchoolRecycleCount schoolRecycleCount=new SchoolRecycleCount();
 		schoolRecycleCount.setType(type);
 		return selectSchoolRecycleCountList(schoolRecycleCount);
@@ -83,12 +86,35 @@ public class SchoolRecycleCountService {
 	 * @param type
 	 * @return
 	 */
-	SchoolRecycleCount selectSchoolRecycleCount(String schoolCode,byte type){
+	@Cacheable(value = "SchoolRecycleCount", key = "#schoolCode+'-'+#type", unless = "#result == null")
+	public SchoolRecycleCount selectSchoolRecycleCount(String schoolCode,byte type){
 		SchoolRecycleCount schoolRecycleCount=new SchoolRecycleCount();
 		schoolRecycleCount.setSchoolCode(schoolCode);
 		schoolRecycleCount.setType(type);
 		List<SchoolRecycleCount> list=selectSchoolRecycleCountList(schoolRecycleCount);
 		return list.isEmpty()?null:list.get(0);
+	}
+	
+	public Integer selectRecycleCount(String schoolCode,Byte type) {
+		try {
+			return schoolRecycleCountDao.getCountBySchoolCodeType(schoolCode, type);
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.error("查找学校回收统计数据异常");
+			logger.error("Error:", e);
+			throw new RuntimeException(e);
+		}
+	}
+	
+	public Integer selectPointsCount(String schoolCode,Byte type) {
+		try {
+			return schoolRecycleCountDao.getPointsBySchoolCode(schoolCode, type);
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.error("查找学校积分统计数据异常");
+			logger.error("Error:", e);
+			throw new RuntimeException(e);
+		}
 	}
 }
 

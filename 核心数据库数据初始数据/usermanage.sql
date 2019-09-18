@@ -39,7 +39,7 @@ DROP TABLE IF EXISTS `main_stu`;
 CREATE TABLE `main_stu` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `uuid` varchar(32) DEFAULT NULL,
-  `stuinfo` varchar(255) DEFAULT NULL,
+  `stuinfo` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

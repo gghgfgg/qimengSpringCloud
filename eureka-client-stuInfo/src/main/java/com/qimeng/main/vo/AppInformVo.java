@@ -14,8 +14,14 @@ public class AppInformVo {
 
     private String ivkey;
 
-    private Byte appType;
-
+    private Boolean read;
+    
+    private Boolean update;
+    
+    private Boolean add;
+    
+    private Boolean sub;
+    
     private String appName;
 
     private Byte active;
@@ -44,14 +50,6 @@ public class AppInformVo {
 		this.ivkey = ivkey;
 	}
 
-	public Byte getAppType() {
-		return appType;
-	}
-
-	public void setAppType(Byte appType) {
-		this.appType = appType;
-	}
-
 	public String getAppName() {
 		return appName;
 	}
@@ -68,11 +66,44 @@ public class AppInformVo {
 		this.active = active;
 	}
 
+	public Boolean getRead() {
+		return read;
+	}
+
+	public void setRead(Boolean read) {
+		this.read = read;
+	}
+
+	public Boolean getUpdate() {
+		return update;
+	}
+
+	public void setUpdate(Boolean update) {
+		this.update = update;
+	}
+
+	public Boolean getAdd() {
+		return add;
+	}
+
+	public void setAdd(Boolean add) {
+		this.add = add;
+	}
+
+	public Boolean getSub() {
+		return sub;
+	}
+
+	public void setSub(Boolean sub) {
+		this.sub = sub;
+	}
+
 	@Override
 	public String toString() {
-		return "AppInformVo [appId=" + appId + ", deskey=" + deskey + ", ivkey=" + ivkey + ", appType="
-				+ appType + ", appName=" + appName + ", active=" + active + "]";
+		return "AppInformVo [appId=" + appId + ", deskey=" + deskey + ", ivkey=" + ivkey + ", read=" + read
+				+ ", update=" + update + ", add=" + add + ", sub=" + sub + ", appName=" + appName + ", active=" + active
+				+ "]";
 	}
-    
+
 }
 

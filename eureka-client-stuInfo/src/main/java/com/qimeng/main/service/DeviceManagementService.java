@@ -96,7 +96,7 @@ public class DeviceManagementService {
 	}
 	
 	@Cacheable(value="DeviceManagement",key="#machineId",unless="#result == null")
-	public DeviceManagement selectDeviceManagementListByMachineId(String machineId,boolean active){
+	public DeviceManagement selectDeviceManagementListByMachineId(String machineId,Byte active){
 		DeviceManagement deviceManagement=new DeviceManagement();
 		deviceManagement.setMachineId(machineId);
 		deviceManagement.setActive(active);

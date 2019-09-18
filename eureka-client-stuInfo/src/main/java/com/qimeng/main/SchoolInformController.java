@@ -2,6 +2,7 @@ package com.qimeng.main;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,12 +46,9 @@ public class SchoolInformController {
 		logger.debug(schoolInfoVo.toString());
 		try {
 			ApplicationManagement applicationManagement = applicationManagementService
-					.selectApplicationManagementByAppId(requestMessage.getAppID(), StaticGlobal.ACTIVE);
+					.checkApplicationAuthority(requestMessage.getAppID(), StaticGlobal.READ);
 			if (applicationManagement == null) {
-				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-				responseMessage.setData("");
-				responseMessage.setFailedMessage("该appid没有权限");
-				return JSONObject.toJSONString(responseMessage);
+				return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("该appid没有权限"));
 			}
 
 			PageInfo<SchoolInfoVo> schoolPageInfo = schoolService.schoolPageList(page, schoolInfoVo);
@@ -62,10 +60,7 @@ public class SchoolInformController {
 
 		} catch (Exception e) {
 			// TODO: handle exception
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setFailedMessage(e.toString());
-			return JSONObject.toJSONString(responseMessage);
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage(e.toString()));
 		}
 	}
 	
@@ -75,15 +70,15 @@ public class SchoolInformController {
 				new TypeReference<RequestMessage<SchoolInfoVo>>() {
 				});
 		SchoolInfoVo schoolInfoVo = (SchoolInfoVo) requestMessage.getData();
+		if(schoolInfoVo==null||StringUtils.isEmpty(schoolInfoVo.getSchoolCode())) {
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("参数不足"));
+		}
 		logger.debug(schoolInfoVo.toString());
 		try {
 			ApplicationManagement applicationManagement = applicationManagementService
-					.selectApplicationManagementByAppId(requestMessage.getAppID(), StaticGlobal.ACTIVE);
+					.checkApplicationAuthority(requestMessage.getAppID(), StaticGlobal.READ);
 			if (applicationManagement == null) {
-				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-				responseMessage.setData("");
-				responseMessage.setFailedMessage("该appid没有权限");
-				return JSONObject.toJSONString(responseMessage);
+				return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("该appid没有权限"));
 			}
 
 			SchoolInfoVo schoolInfo = schoolService.schoolInform(schoolInfoVo);
@@ -95,10 +90,7 @@ public class SchoolInformController {
 
 		} catch (Exception e) {
 			// TODO: handle exception
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setFailedMessage(e.toString());
-			return JSONObject.toJSONString(responseMessage);
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage(e.toString()));
 		}
 	}
 	
@@ -109,29 +101,23 @@ public class SchoolInformController {
 				new TypeReference<RequestMessage<SchoolInfoVo>>() {
 				});
 		SchoolInfoVo schoolInfoVo = (SchoolInfoVo) requestMessage.getData();
+		if(schoolInfoVo==null||StringUtils.isEmpty(schoolInfoVo.getSchoolCode())) {
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("参数不足"));
+		}
 		logger.debug(schoolInfoVo.toString());
 		try {
 			ApplicationManagement applicationManagement = applicationManagementService
-					.selectApplicationManagementByAppId(requestMessage.getAppID(), StaticGlobal.ACTIVE);
-			if (applicationManagement == null || (applicationManagement.getAppType() & StaticGlobal.UPDATE) == 0) {
-				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-				responseMessage.setData("");
-				responseMessage.setFailedMessage("该appid没有权限");
-				return JSONObject.toJSONString(responseMessage);
+					.checkApplicationAuthority(requestMessage.getAppID(), StaticGlobal.UPDATE);
+			if (applicationManagement == null) {
+				return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("该appid没有权限"));
 			}
 
 			schoolService.saveSchoolinfo(schoolInfoVo);
 
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setSuccessMessage("保存学校信息成功");
-			return JSONObject.toJSONString(responseMessage);
+			return JSONObject.toJSONString(ResponseMessage.responseSuccessMessage("新增学校信息成功"));
 		} catch (Exception e) {
 			// TODO: handle exception
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setFailedMessage(e.toString());
-			return JSONObject.toJSONString(responseMessage);
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage(e.toString()));
 		}
 	}
 
@@ -141,29 +127,23 @@ public class SchoolInformController {
 				new TypeReference<RequestMessage<SchoolInfoVo>>() {
 				});
 		SchoolInfoVo schoolInfoVo = (SchoolInfoVo) requestMessage.getData();
+		if(schoolInfoVo==null||StringUtils.isEmpty(schoolInfoVo.getSchoolCode())) {
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("参数不足"));
+		}
 		logger.debug(schoolInfoVo.toString());
 		try {
 			ApplicationManagement applicationManagement = applicationManagementService
-					.selectApplicationManagementByAppId(requestMessage.getAppID(), StaticGlobal.ACTIVE);
-			if (applicationManagement == null || (applicationManagement.getAppType() & StaticGlobal.UPDATE) == 0) {
-				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-				responseMessage.setData("");
-				responseMessage.setFailedMessage("该appid没有权限");
-				return JSONObject.toJSONString(responseMessage);
+					.checkApplicationAuthority(requestMessage.getAppID(), StaticGlobal.UPDATE);
+			if (applicationManagement == null) {
+				return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("该appid没有权限"));
 			}
 
 			schoolService.updateSchoolinfo(schoolInfoVo);
 
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setSuccessMessage("更新学校信息成功");
-			return JSONObject.toJSONString(responseMessage);
+			return JSONObject.toJSONString(ResponseMessage.responseSuccessMessage("更新学校信息成功"));
 		} catch (Exception e) {
 			// TODO: handle exception
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setFailedMessage(e.toString());
-			return JSONObject.toJSONString(responseMessage);
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage(e.toString()));
 		}
 	}
 	

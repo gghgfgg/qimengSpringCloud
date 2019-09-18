@@ -28,7 +28,7 @@ public interface DeviceStateLogDao {
 	static String item="#{item.serialNumber},#{item.status},#{item.statusType},#{item.mark},#{item.createTime}";
 	
 	@Insert("insert into "+tablename+"("+fields+") values" +"("+item+") ")
-	@Options(useGeneratedKeys = true,keyProperty = "id")
+	@Options(useGeneratedKeys = true,keyProperty = "item.id")
 	int insertDeviceStateLog(@Param("item")DeviceStateLog deviceStateLog);
 	
 	@SelectProvider(type = SqlFactory.class,method = "selectDeviceStateLog")

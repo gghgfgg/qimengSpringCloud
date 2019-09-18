@@ -31,7 +31,7 @@ public interface DeviceManagementDao {
 	static String item="#{item.machineId},#{item.serialNumber},#{item.schoolCode},#{item.postalCode},#{item.active},#{item.createTime},#{item.updateTime}";
 	
 	@Insert("insert into "+tablename+"("+fields+") values" + "("+item+")")
-	@Options(useGeneratedKeys = true,keyProperty = "id")
+	@Options(useGeneratedKeys = true,keyProperty = "item.id")
 	int insertDeviceManagement(@Param("item")DeviceManagement deviceManagement);
 	
 	@UpdateProvider(type = SqlFactory.class,method = "updateDeviceManagement")

@@ -17,6 +17,7 @@ import com.qimeng.main.util.RedisPage;
 import com.qimeng.main.util.StaticGlobal;
 import com.qimeng.main.vo.RequestMessage;
 import com.qimeng.main.vo.ResponseMessage;
+import com.qimeng.main.vo.SchoolInfoVo;
 import com.qimeng.main.vo.StudentVo;
 
 /** 
@@ -45,26 +46,46 @@ public class RankController {
 		logger.debug(studentVo.toString());
 		try {
 			ApplicationManagement applicationManagement = applicationManagementService
-					.selectApplicationManagementByAppId(requestMessage.getAppID(), StaticGlobal.ACTIVE);
+					.checkApplicationAuthority(requestMessage.getAppID(), StaticGlobal.READ);
 			if (applicationManagement == null) {
-				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-				responseMessage.setData("");
-				responseMessage.setFailedMessage("该appid没有权限");
-				return JSONObject.toJSONString(responseMessage);
+				return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("该appid没有权限"));
 			}
 
 			RedisPage<StudentVo> studentPageInfo = studentRankService.StudentRankList(page, studentVo);
 			ResponseMessage<RedisPage<StudentVo>> responseMessage = new ResponseMessage<RedisPage<StudentVo>>();
 			responseMessage.setData(studentPageInfo);
-			responseMessage.setSuccessMessage("获取学生列表信息成功");
+			responseMessage.setSuccessMessage("获取学生排行列表信息成功");
 			return JSONObject.toJSONString(responseMessage);
 
 		} catch (Exception e) {
 			// TODO: handle exception
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setFailedMessage(e.toString());
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage(e.toString()));
+		}
+	}
+	
+	@RequestMapping("/getschoolranklist/{page}")
+	public String getSchoolRankList(@PathVariable("page") Integer page, @RequestBody JSONObject message) {
+		RequestMessage<SchoolInfoVo> requestMessage = JSON.parseObject(message.toString(),
+				new TypeReference<RequestMessage<SchoolInfoVo>>() {
+				});
+		SchoolInfoVo schoolInfoVo = (SchoolInfoVo) requestMessage.getData();
+		logger.debug(schoolInfoVo.toString());
+		try {
+			ApplicationManagement applicationManagement = applicationManagementService
+					.checkApplicationAuthority(requestMessage.getAppID(), StaticGlobal.READ);
+			if (applicationManagement == null) {
+				return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("该appid没有权限"));
+			}
+
+			RedisPage<SchoolInfoVo> studentPageInfo = studentRankService.SchoolRankList(page, schoolInfoVo);
+			ResponseMessage<RedisPage<SchoolInfoVo>> responseMessage = new ResponseMessage<RedisPage<SchoolInfoVo>>();
+			responseMessage.setData(studentPageInfo);
+			responseMessage.setSuccessMessage("获取学校排行列表信息成功");
 			return JSONObject.toJSONString(responseMessage);
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage(e.toString()));
 		}
 	}
 }

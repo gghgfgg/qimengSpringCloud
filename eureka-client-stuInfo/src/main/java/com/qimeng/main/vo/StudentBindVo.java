@@ -16,6 +16,7 @@ public class StudentBindVo {
 	
 	private String stuCard;
 
+	private Byte bind;
 	public String getName() {
 		return name;
 	}
@@ -48,12 +49,20 @@ public class StudentBindVo {
 		this.stuCard = stuCard;
 	}
 
+	public Byte getBind() {
+		return bind;
+	}
+
+	public void setBind(Byte bind) {
+		this.bind = bind;
+	}
+
 	@Override
 	public String toString() {
 		return "StudentBindVo [name=" + name + ", phone=" + phone + ", stuCode=" + stuCode + ", stuCard=" + stuCard
-				+ "]";
+				+ ", bind=" + bind + "]";
 	}
-	
+
 	
 }
 

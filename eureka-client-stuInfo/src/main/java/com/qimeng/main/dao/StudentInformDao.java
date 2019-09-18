@@ -56,7 +56,7 @@ public interface StudentInformDao {
 	int insertStudentInformList(@Param("list")List<StudentInform> studentInformList);
 	
 	@Insert("insert into "+tablename+"("+fields+") values" + "("+item+") ON DUPLICATE KEY UPDATE " + update+updatecode )
-	@Options(useGeneratedKeys = true,keyProperty = "id")
+	@Options(useGeneratedKeys = true,keyProperty = "item.id")
 	int insertStudentInform(@Param("item")StudentInform studentInform);
 	
 	@UpdateProvider(type = SqlFactory.class,method = "updateByIdentityCardOrStudentCode")
@@ -79,7 +79,9 @@ public interface StudentInformDao {
 	        for (int i = 0; i < tempitem.length; i++) {
 	        	tempString+=tempfields[i]+"="+tempitem[i];
 	        	if(i!=tempitem.length-1)
+	        	{
 	        		tempString+=",";
+	        	}
 			}
 	        sql.SET(tempString);
 	       

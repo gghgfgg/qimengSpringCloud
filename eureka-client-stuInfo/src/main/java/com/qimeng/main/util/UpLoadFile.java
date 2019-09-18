@@ -108,7 +108,7 @@ public class UpLoadFile {
 			fieldMap.add(new FieldDefine("家庭成员现住址", "familyResidence"));
 			fieldMap.add(new FieldDefine("家庭成员户口所在地", "familyCensusRegister"));
 			fieldMap.add(new FieldDefine("家庭成员联系电话", "familyPhone"));
-
+			fieldMap.add(new FieldDefine("快速关联手机号", "teacherPhone"));
 			List<StudentInform> list=ExcelImpotUtils.excelToList(inputStream,0, StudentInform.class,fieldMap,upload.getName());
 			return list;
 		} catch (Exception e) {

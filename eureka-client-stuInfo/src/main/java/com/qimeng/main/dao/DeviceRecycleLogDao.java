@@ -33,7 +33,7 @@ public interface DeviceRecycleLogDao {
 			+ "#{item.points},#{item.remainder},#{item.createTime}";
 	
 	@Insert("insert into "+tablename+"("+fields+") values" + "("+item+")")
-	@Options(useGeneratedKeys = true,keyProperty = "id")
+	@Options(useGeneratedKeys = true,keyProperty = "item.id")
 	int insertDeviceRecycleLog(@Param("item")DeviceRecycleLog deviceRecycleLog);
 	
 	@SelectProvider(type = SqlFactory.class,method = "selectDeviceRecycleLog")

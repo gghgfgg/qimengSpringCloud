@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.SelectProvider;
 import org.apache.ibatis.annotations.Update;
@@ -31,6 +32,7 @@ public interface RecycleTypeDao {
 	static String update="type=VALUES(type),mark=VALUES(mark),uint=VALUES(uint),factor=VALUES(factor),update_time=VALUES(update_time)";
 	
 	@Insert("insert into "+tablename+"("+fields+") values" + "("+item+") ")
+	@Options(useGeneratedKeys = true,keyProperty = "item.id")
 	int insertRecycleType(@Param("item")RecycleType recycleType);
 	
 	@Update("update "+tablename+" set mark=#{item.mark},uint=#{item.uint},factor=#{item.factor},"

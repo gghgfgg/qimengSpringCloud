@@ -101,11 +101,18 @@ private static Logger logger = Logger.getLogger(LogController.class);
 			return JSONObject.toJSONString(responseMessage);
 		} catch (Exception e) {
 			// TODO: handle exception
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setFailedMessage(e.toString());
-			return JSONObject.toJSONString(responseMessage);
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage(e.toString()));
 		}
 	}
+	
+//	@RequestMapping("/getschoolrecyclelog")
+//	public String getSchoolRecycleLog(@RequestBody JSONObject message) {
+//		try {
+//			
+//		} catch (Exception e) {
+//			// TODO: handle exception
+//			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage(e.toString()));
+//		}
+//	}
 }
 

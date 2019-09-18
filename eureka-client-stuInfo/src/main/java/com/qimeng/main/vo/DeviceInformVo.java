@@ -5,11 +5,12 @@ import java.util.Date;
 public class DeviceInformVo {
 	private String machineID;
 	private String serialNumber;
+	private String schoolId;
 	private String schoolCode;
 	private String schoolName;
 	private String postalCode;
 	private String address;
-	private Boolean active;
+	private Byte active;
 	private Byte status;
 	private Byte type;
 	private String mark;
@@ -25,6 +26,12 @@ public class DeviceInformVo {
 	}
 	public void setSerialNumber(String serialNumber) {
 		this.serialNumber = serialNumber;
+	}
+	public String getSchoolId() {
+		return schoolId;
+	}
+	public void setSchoolId(String schoolId) {
+		this.schoolId = schoolId;
 	}
 	public String getSchoolCode() {
 		return schoolCode;
@@ -50,10 +57,10 @@ public class DeviceInformVo {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public Boolean getActive() {
+	public Byte getActive() {
 		return active;
 	}
-	public void setActive(Boolean active) {
+	public void setActive(Byte active) {
 		this.active = active;
 	}
 	public Byte getStatus() {
@@ -83,10 +90,10 @@ public class DeviceInformVo {
 	}
 	@Override
 	public String toString() {
-		return "DeviceInformVo [machineID=" + machineID + ", serialNumber=" + serialNumber + ", schoolCode="
-				+ schoolCode + ", schoolName=" + schoolName + ", postalCode=" + postalCode + ", address=" + address
-				+ ", active=" + active + ", status=" + status + ", type=" + type + ", mark=" + mark + ", updateTime="
-				+ updateTime + "]";
+		return "DeviceInformVo [machineID=" + machineID + ", serialNumber=" + serialNumber + ", schoolId=" + schoolId
+				+ ", schoolCode=" + schoolCode + ", schoolName=" + schoolName + ", postalCode=" + postalCode
+				+ ", address=" + address + ", active=" + active + ", status=" + status + ", type=" + type + ", mark="
+				+ mark + ", updateTime=" + updateTime + "]";
 	}
-
+	
 }

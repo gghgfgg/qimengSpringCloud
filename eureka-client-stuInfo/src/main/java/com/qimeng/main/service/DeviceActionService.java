@@ -18,6 +18,7 @@ import com.qimeng.main.entity.DeviceManagement;
 import com.qimeng.main.entity.DeviceState;
 import com.qimeng.main.entity.DeviceStateLog;
 import com.qimeng.main.entity.SchoolInform;
+import com.qimeng.main.util.StaticGlobal;
 import com.qimeng.main.vo.DeviceInformVo;
 
 /** 
@@ -44,6 +45,8 @@ public class DeviceActionService {
 	SchoolInformService schoolInformService;
 	@Autowired
 	JoinDao joinDao;
+	@Autowired
+	SchoolService schoolService;
 	
 	@Autowired
 	PostalCodeService postalCodeService;
@@ -78,6 +81,9 @@ public class DeviceActionService {
 	public int updateMachineId(String machineId,String serialNumber) {
 		try {
 			DeviceManagement deviceManagement=deviceManagementService.selectDeviceManagementListByMachineId(machineId);
+			if(deviceManagement==null) {
+				throw new RuntimeException("请先创建设备");
+			}
 			if(!StringUtils.isEmpty(deviceManagement.getSerialNumber())&&!StringUtils.isEmpty(serialNumber)){
 				throw new RuntimeException("请先解绑序列号");
 			}
@@ -103,28 +109,25 @@ public class DeviceActionService {
 	
 	public PageInfo<DeviceInformVo> DevPageList(Integer pageNum,DeviceInformVo devInformVo){
 
-		if(!StringUtils.isEmpty(devInformVo.getPostalCode())) {
-			String codeString=postalCodeService.selectPostalCode(devInformVo.getPostalCode());
-			System.out.println(codeString);
-			devInformVo.setPostalCode(codeString);
+		List<SchoolInform> schoollist=schoolService.getSchoolInformList(devInformVo.getSchoolCode(),devInformVo.getSchoolId(),devInformVo.getPostalCode(),devInformVo.getSchoolName());
+		if(schoollist==null) {
+			devInformVo.setSchoolCode("0");
 		}
-		if(!StringUtils.isEmpty(devInformVo.getSchoolName())) {
-			 String schoolcode=new String();
-			 List<SchoolInform> schoollist=schoolInformService.selectSchoolInformByName(devInformVo.getSchoolName());
-			 for (SchoolInform schoolInform : schoollist) {
-				 schoolcode+=schoolInform.getSchoolCode();
-				 schoolcode+="-";
-			}
-			if(devInformVo.getSchoolCode()!=null) {
-				schoolcode=devInformVo.getSchoolCode()+"-"+schoolcode;
+		else
+		{   
+			String schoolcode ="";
+			for (SchoolInform schoolInform : schoollist) {
+				schoolcode += schoolInform.getSchoolCode();
+				schoolcode += "-";
 			}
 			devInformVo.setSchoolCode(schoolcode);
 		}
+		
 	    PageInfo<DeviceInformVo> devPageInfo = selectDevPageList(pageNum,devInformVo);
 	    Iterator<DeviceInformVo> it = devPageInfo.getList().iterator();
 	    while(it.hasNext()){
 		  DeviceInformVo item=it.next();
-		  if(item.getActive()) {
+		  if(item.getActive()==StaticGlobal.ACTIVE) {
 //	    		Date date=new Date();
 //	    		long timeout=date.getTime()-item.getUpdateTime().getTime();
 //	    		if(item.getStatus()==1&&timeout>1000*60*30) {
@@ -137,10 +140,17 @@ public class DeviceActionService {
 //	    			it.remove();
 //	    		}
 	    	}
+		  
+		  if(StringUtils.isEmpty(item.getSerialNumber())||item.getType()==null||item.getStatus()==null) {
+			  item.setType((byte)0);
+			  item.setStatus((byte)0);
+		  }
 		  DeviceState deviceState=deviceStateService.selectDeviceState(item.getType(),item.getStatus());
-		  item.setMark(deviceState.getMark());
+		  item.setMark(deviceState==null?null:deviceState.getMark());
 		  SchoolInform schoolInform=schoolInformService.selectSchoolInformBySchoolCode(item.getSchoolCode());
-		  item.setAddress(schoolInform.getAddress());
+		  item.setAddress(schoolInform==null?null:schoolInform.getAddress());
+		  item.setSchoolId(schoolInform==null?null:schoolInform.getSchoolId());
+		  item.setSchoolName(schoolInform==null?null:schoolInform.getSchoolName());
 	    }
 	    return devPageInfo;
 	}
@@ -154,6 +164,10 @@ public class DeviceActionService {
 			if(!StringUtils.isEmpty(devInformVo.getSchoolCode())) {
 				deviceManagement.setSchoolCode(devInformVo.getSchoolCode());
 				SchoolInform schoolInform=schoolInformService.selectSchoolInformBySchoolCode(devInformVo.getSchoolCode());
+				if(schoolInform==null)
+				{
+					throw new RuntimeException("找不到当前关联学校");
+				}
 				deviceManagement.setPostalCode(schoolInform.getPostalCode());
 			}		
 			deviceManagement.setUpdateTime(date);
@@ -167,7 +181,9 @@ public class DeviceActionService {
 	public DeviceInformVo selectDeviceInformVoByMachineID(String machineId) {
 		DeviceManagement deviceManagement=deviceManagementService.selectDeviceManagementListByMachineId(machineId);
 		if(deviceManagement==null)
+		{
 			return null;
+		}
 		DeviceInformVo deviceInformVo=new DeviceInformVo();
 		
 		deviceInformVo.setActive(deviceManagement.getActive());
@@ -178,13 +194,18 @@ public class DeviceActionService {
 		SchoolInform schoolInform=schoolInformService.selectSchoolInformBySchoolCode(deviceManagement.getSchoolCode());
 		deviceInformVo.setSchoolName(schoolInform.getSchoolName());
 		deviceInformVo.setAddress(schoolInform.getAddress());
+		deviceInformVo.setSchoolId(schoolInform.getSchoolId());
+		DeviceCurrentState deviceCurrentState=null;
+		if(!StringUtils.isEmpty(deviceManagement.getSerialNumber())){
+			deviceCurrentState=deviceCurrentStateService.selectDeviceStateLogBySerialNumber(deviceManagement.getSerialNumber());
+		}
+
+		deviceInformVo.setStatus(deviceCurrentState==null?0:deviceCurrentState.getStatus());
+		deviceInformVo.setType(deviceCurrentState==null?0:deviceCurrentState.getStatusType());
 		
-		DeviceCurrentState deviceCurrentState=deviceCurrentStateService.selectDeviceStateLogBySerialNumber(deviceManagement.getSerialNumber());
-		deviceInformVo.setStatus(deviceCurrentState.getStatus());
-		deviceInformVo.setType(deviceCurrentState.getStatusType());
-		DeviceState deviceState=deviceStateService.selectDeviceState(deviceCurrentState.getStatus(),deviceCurrentState.getStatusType());
-		deviceInformVo.setMark(deviceState.getMark());
-		deviceInformVo.setUpdateTime(deviceCurrentState.getUpdateTime());
+		DeviceState deviceState=deviceStateService.selectDeviceState(deviceInformVo.getType(),deviceInformVo.getStatus());
+		deviceInformVo.setMark(deviceState==null?null:deviceState.getMark());
+		deviceInformVo.setUpdateTime(deviceCurrentState==null?null:deviceCurrentState.getUpdateTime());
 		return deviceInformVo;
 	}
 	
@@ -197,6 +218,10 @@ public class DeviceActionService {
 			if(!StringUtils.isEmpty(devInformVo.getSchoolCode())) {
 				deviceManagement.setSchoolCode(devInformVo.getSchoolCode());
 				SchoolInform schoolInform=schoolInformService.selectSchoolInformBySchoolCode(devInformVo.getSchoolCode());
+				if(schoolInform==null)
+				{
+					throw new RuntimeException("找不到当前关联学校");
+				}
 				deviceManagement.setPostalCode(schoolInform.getPostalCode());
 			}
 			deviceManagement.setCreateTime(date);

@@ -30,7 +30,7 @@ public interface WecharUserDao {
 	static String item = "#{item.openid},#{item.unionid},#{item.nickName},#{item.createTime},#{item.updateTime}";
 
 	@Insert("insert into " + tablename + "(" + fields + ") values" + "(" + item + ")")
-	@Options(useGeneratedKeys = true, keyProperty = "id")
+	@Options(useGeneratedKeys = true,keyProperty = "item.id")
 	int insertWecharUser(@Param("item") WecharUser wecharUser);
 
 	@UpdateProvider(type = SqlFactory.class, method = "updateWecharUser")

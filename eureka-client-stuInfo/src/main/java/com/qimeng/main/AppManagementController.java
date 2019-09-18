@@ -44,25 +44,28 @@ public class AppManagementController {
 		logger.debug(appInformVo.toString());
 		try {
 			ApplicationManagement applicationManagement = applicationManagementService
-					.selectApplicationManagementByAppId(requestMessage.getAppID(), StaticGlobal.ACTIVE);
+					.checkApplicationAuthority(requestMessage.getAppID(), StaticGlobal.READ);
 			if (applicationManagement == null) {
-				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-				responseMessage.setData("");
-				responseMessage.setFailedMessage("该appid没有权限");
-				return JSONObject.toJSONString(responseMessage);
+				return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("该appid没有权限"));
 			}
-			
-			PageInfo<ApplicationManagement> appPageInfo=applicationManagementService.selectAppPageList(page,appInformVo.getAppName(),appInformVo.getActive(),appInformVo.getAppType());
+			int appType=0;
+			if(appInformVo.getAdd()!=null&&appInformVo.getAdd()) {
+				appType=appType|StaticGlobal.ADD;
+			}
+			if(appInformVo.getSub()!=null&&appInformVo.getSub()) {
+				appType=appType|StaticGlobal.SUB;
+			}
+			if(appInformVo.getUpdate()!=null&&appInformVo.getUpdate()) {
+				appType=appType|StaticGlobal.UPDATE;
+			}
+			PageInfo<ApplicationManagement> appPageInfo=applicationManagementService.selectAppPageList(page,appInformVo.getAppName(),appInformVo.getActive(),(byte)appType);
 			ResponseMessage<PageInfo<ApplicationManagement>> responseMessage = new ResponseMessage<PageInfo<ApplicationManagement>>();
 			responseMessage.setData(appPageInfo);
 			responseMessage.setSuccessMessage("获取app信息成功");
 			return JSONObject.toJSONString(responseMessage);
 		} catch (Exception e) {
 			// TODO: handle exception
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setFailedMessage(e.toString());
-			return JSONObject.toJSONString(responseMessage);
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage(e.toString()));
 		}
 	}
 	@RequestMapping("/getappinfo")
@@ -80,25 +83,28 @@ public class AppManagementController {
 		logger.debug(appInformVo.toString());
 		try {
 			ApplicationManagement applicationManagement = applicationManagementService
-					.selectApplicationManagementByAppId(requestMessage.getAppID(), StaticGlobal.ACTIVE);
+					.checkApplicationAuthority(requestMessage.getAppID(), StaticGlobal.READ);
 			if (applicationManagement == null) {
-				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-				responseMessage.setData("");
-				responseMessage.setFailedMessage("该appid没有权限");
-				return JSONObject.toJSONString(responseMessage);
+				return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("该appid没有权限"));
 			}
 			ApplicationManagement appInfo=applicationManagementService.selectApplicationManagementByAppId(appInformVo.getAppId(), null);
-			ResponseMessage<ApplicationManagement> responseMessage = new ResponseMessage<ApplicationManagement>();
-			responseMessage.setData(appInfo);
+			
+			appInformVo.setAppId(appInfo.getAppId());
+			appInformVo.setAppName(appInfo.getAppName());
+			appInformVo.setDeskey(appInfo.getDeskey());
+			appInformVo.setIvkey(appInfo.getIvkey());
+			appInformVo.setAdd((appInfo.getAppType()&StaticGlobal.ADD)==StaticGlobal.ADD?true:false);
+			appInformVo.setUpdate((appInfo.getAppType()&StaticGlobal.UPDATE)==StaticGlobal.UPDATE?true:false);
+			appInformVo.setSub((appInfo.getAppType()&StaticGlobal.SUB)==StaticGlobal.SUB?true:false);
+			appInformVo.setRead(true);
+			ResponseMessage<AppInformVo> responseMessage = new ResponseMessage<AppInformVo>();
+			responseMessage.setData(appInformVo);
 			responseMessage.setSuccessMessage("获取app信息成功");
 			return JSONObject.toJSONString(responseMessage);
 			
 		} catch (Exception e) {
 			// TODO: handle exception
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setFailedMessage(e.toString());
-			return JSONObject.toJSONString(responseMessage);
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage(e.toString()));
 		}
 	}
 	
@@ -109,34 +115,33 @@ public class AppManagementController {
 				});
 		AppInformVo appInformVo = (AppInformVo) requestMessage.getData();
 		if(appInformVo==null||StringUtils.isEmpty(appInformVo.getAppId())) {
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setFailedMessage("参数不足");
-			return JSONObject.toJSONString(responseMessage);
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("参数不足"));
 		}
 		logger.debug(appInformVo.toString());
 		try {
 			ApplicationManagement applicationManagement = applicationManagementService
-					.selectApplicationManagementByAppId(requestMessage.getAppID(), StaticGlobal.ACTIVE);
-			if (applicationManagement == null ||(applicationManagement.getAppType()&StaticGlobal.UPDATE)==0) {
-				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-				responseMessage.setData("");
-				responseMessage.setFailedMessage("该appid没有权限");
-				return JSONObject.toJSONString(responseMessage);
+					.checkApplicationAuthority(requestMessage.getAppID(), StaticGlobal.UPDATE);
+			if (applicationManagement == null) {
+				return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("该appid没有权限"));
+			}
+			int appType=0;
+			if(appInformVo.getAdd()) {
+				appType=appType|StaticGlobal.ADD;
+			}
+			if(appInformVo.getSub()) {
+				appType=appType|StaticGlobal.SUB;
+			}
+			if(appInformVo.getUpdate()) {
+				appType=appType|StaticGlobal.UPDATE;
 			}
 			applicationManagementService.updateApplicationManagement(appInformVo.getAppId(),appInformVo.getAppName(),
-					appInformVo.getActive(),appInformVo.getAppType(),appInformVo.getDeskey(),appInformVo.getIvkey());
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setSuccessMessage("修改app信息成功");
-			return JSONObject.toJSONString(responseMessage);
+					appInformVo.getActive(),(byte)appType,appInformVo.getDeskey(),appInformVo.getIvkey());
+			
+			return JSONObject.toJSONString(ResponseMessage.responseSuccessMessage("修改app信息成功"));
 			
 		} catch (Exception e) {
 			// TODO: handle exception
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setFailedMessage(e.toString());
-			return JSONObject.toJSONString(responseMessage);
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage(e.toString()));
 		}
 	}
 	
@@ -147,34 +152,32 @@ public class AppManagementController {
 				});
 		AppInformVo appInformVo = (AppInformVo) requestMessage.getData();
 		if(appInformVo==null||StringUtils.isEmpty(appInformVo.getAppId())) {
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setFailedMessage("参数不足");
-			return JSONObject.toJSONString(responseMessage);
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("参数不足"));
 		}
 		logger.debug(appInformVo.toString());
 		try {
 			ApplicationManagement applicationManagement = applicationManagementService
-					.selectApplicationManagementByAppId(requestMessage.getAppID(), StaticGlobal.ACTIVE);
-			if (applicationManagement == null ||(applicationManagement.getAppType()&StaticGlobal.UPDATE)==0) {
-				ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-				responseMessage.setData("");
-				responseMessage.setFailedMessage("该appid没有权限");
-				return JSONObject.toJSONString(responseMessage);
+					.checkApplicationAuthority(requestMessage.getAppID(), StaticGlobal.UPDATE);
+			if (applicationManagement == null) {
+				return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("该appid没有权限"));
+			}
+			int appType=0;
+			if(appInformVo.getAdd()) {
+				appType=appType|StaticGlobal.ADD;
+			}
+			if(appInformVo.getSub()) {
+				appType=appType|StaticGlobal.SUB;
+			}
+			if(appInformVo.getUpdate()) {
+				appType=appType|StaticGlobal.UPDATE;
 			}
 			applicationManagementService.insertApplicationManagement(appInformVo.getAppId(),appInformVo.getAppName(),
-					appInformVo.getActive(),appInformVo.getAppType(),appInformVo.getDeskey(),appInformVo.getIvkey());
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setSuccessMessage("新增app信息成功");
-			return JSONObject.toJSONString(responseMessage);
+					appInformVo.getActive(),(byte)appType,appInformVo.getDeskey(),appInformVo.getIvkey());
 			
+			return JSONObject.toJSONString(ResponseMessage.responseSuccessMessage("新增app信息成功"));
 		} catch (Exception e) {
 			// TODO: handle exception
-			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
-			responseMessage.setData("");
-			responseMessage.setFailedMessage(e.toString());
-			return JSONObject.toJSONString(responseMessage);
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage(e.toString()));
 		}
 	}
 }

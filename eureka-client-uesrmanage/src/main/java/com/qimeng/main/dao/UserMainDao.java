@@ -32,7 +32,7 @@ public interface UserMainDao {
 			+ "#{item.createTime},#{item.updateTime}";
 
 	@Insert("insert into " + tablename + "(" + fields + ") values" + "(" + item + ")")
-	@Options(useGeneratedKeys = true, keyProperty = "id")
+	@Options(useGeneratedKeys = true,keyProperty = "item.id")
 	int insertUserMain(@Param("item") UserMain userMain);
 
 	@UpdateProvider(type = SqlFactory.class, method = "updateUserMain")

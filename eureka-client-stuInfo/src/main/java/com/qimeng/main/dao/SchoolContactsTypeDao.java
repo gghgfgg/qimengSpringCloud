@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.SelectProvider;
 import org.apache.ibatis.annotations.Update;
@@ -31,6 +32,7 @@ public interface SchoolContactsTypeDao {
 	static String update="type=VALUES(type),mark=VALUES(position),uint=VALUES(weight),update_time=VALUES(update_time)";
 	
 	@Insert("insert into "+tablename+"("+fields+") values" + "("+item+") ")
+	@Options(useGeneratedKeys = true,keyProperty = "item.id")
 	int insertSchoolContactsType(@Param("item")SchoolContactsType schoolContactsType);
 	
 	@Update("update "+tablename+" set position=#{item.position},weight=#{item.weight},"

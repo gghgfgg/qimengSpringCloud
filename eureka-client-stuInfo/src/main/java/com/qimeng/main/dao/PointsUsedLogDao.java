@@ -30,7 +30,7 @@ public interface PointsUsedLogDao {
 	static String item="#{item.uuid},#{item.name},#{item.appId},#{item.points},#{item.mark},#{item.createTime}";
 	
 	@Insert("insert into "+tablename+"("+fields+") values" + "("+item+")")
-	@Options(useGeneratedKeys = true,keyProperty = "id")
+	@Options(useGeneratedKeys = true,keyProperty = "item.id")
 	int insertPointsUsedLog(@Param("item")PointsUsedLog pointsUsedLog);
 
 	@SelectProvider(type = SqlFactory.class,method ="selectPointsUsedLog")

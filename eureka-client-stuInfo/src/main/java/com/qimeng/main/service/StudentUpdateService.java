@@ -1,10 +1,12 @@
 package com.qimeng.main.service;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
+import org.apache.commons.lang.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,6 +14,7 @@ import org.springframework.util.StringUtils;
 
 import com.qimeng.main.entity.StudentData;
 import com.qimeng.main.entity.StudentInform;
+import com.qimeng.main.util.StaticGlobal;
 
 /**
  * 学生数据同步更新服务类
@@ -31,20 +34,20 @@ public class StudentUpdateService {
 	StudentDataService studentDataService;
 	@Autowired
 	StudentInformService studentInformService;
-
+	@Autowired
+	StudentRankService studentRankService; 
 	public int insertStudentInformList(List<StudentInform> studentInformList, String schoolCode, Byte type) {
 		try {
-
 			boolean errBoolean = false;
 			String errString = new String();
 			for (int i = 0; i < studentInformList.size(); i++) {
 
 				String cardString = studentInformList.get(i).getIdentityCard().replaceAll("\\s*", "");
-				;
+				
 				studentInformList.get(i).setIdentityCard(StringUtils.isEmpty(cardString) ? null : cardString);
 
 				String codeString = studentInformList.get(i).getStudentCode().replaceAll("\\s*", "");
-				;
+				
 				studentInformList.get(i).setStudentCode(StringUtils.isEmpty(codeString) ? null : codeString);
 
 				if (StringUtils.isEmpty(studentInformList.get(i).getName())
@@ -81,9 +84,9 @@ public class StudentUpdateService {
 					errString += "{第" + String.valueOf(i + 2) + "行,学校编号长度不对},";
 					errBoolean = true;
 				}
-				if(type!=null&&(type&0x02)!=0) {
+				if(type!=null&&(type&StaticGlobal.PHONE)==StaticGlobal.PHONE) {
 					if (StringUtils.isEmpty(studentInformList.get(i).getTeacherPhone())) {
-						errString += "{第" + String.valueOf(i + 2) + "行,手机号码为空,添加学生以外类型请输入手机号码},";
+						errString += "{第" + String.valueOf(i + 2) + "行,手机号码为空,添加普通学生以外类型请输入手机号码},";
 						errBoolean = true;
 					}
 					
@@ -115,14 +118,14 @@ public class StudentUpdateService {
 			if (errBoolean) {
 				throw new RuntimeException(errString);
 			}
-			if (StringUtils.isEmpty(schoolCode) || schoolCode.length() < 11) {
+			if (StringUtils.isEmpty(schoolCode) || schoolCode.length() < 10) {
 				throw new RuntimeException("请填写学校校区编号");
 			}
 	
 			
 			studentInformService.insertStudentInformList(studentInformList);
 			List<StudentData> list = new ArrayList<StudentData>();
-			Date date = new Date();
+			Date date = DateUtils.round(new Date(), Calendar.SECOND);
 			for (StudentInform studentInform : studentInformList) {
 				StudentData studentData = new StudentData();
 				String uuid = UUID.randomUUID().toString().replaceAll("-", "");
@@ -139,6 +142,9 @@ public class StudentUpdateService {
 				list.add(studentData);
 			}
 			studentDataService.insertStudentDataList(list);
+			
+			studentRankService.addListSchoolCount(schoolCode);
+			
 			return studentDataService.selectStudentCountByUpdata(schoolCode, date);
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -148,7 +154,20 @@ public class StudentUpdateService {
 
 	public int insertStudentInform(StudentInform studentInform, String schoolCode, Byte type) {
 		try {
+			String cardString = studentInform.getIdentityCard().replaceAll("\\s*", "");
+			
+			studentInform.setIdentityCard(StringUtils.isEmpty(cardString) ? null : cardString);
 
+			String codeString = studentInform.getStudentCode().replaceAll("\\s*", "");
+			
+			studentInform.setStudentCode(StringUtils.isEmpty(codeString) ? null : codeString);
+
+			if (StringUtils.isEmpty(studentInform.getName())
+					|| StringUtils.isEmpty(studentInform.getSex())
+					|| StringUtils.isEmpty(studentInform.getGrade())
+					|| StringUtils.isEmpty(studentInform.getClassS())) {
+				throw new RuntimeException("姓名或性别或年级或班级为空");
+			}
 			if (StringUtils.isEmpty(studentInform.getIdentityCard())
 					&& StringUtils.isEmpty(studentInform.getStudentCode())) {
 				throw new RuntimeException("身份证和学号都为空");
@@ -159,6 +178,18 @@ public class StudentUpdateService {
 			if (StringUtils.isEmpty(schoolCode)) {
 				throw new RuntimeException("请填写学校校区编号");
 			}
+			if(type!=null&&(type&StaticGlobal.PHONE)==StaticGlobal.PHONE) {
+				if (StringUtils.isEmpty(studentInform.getTeacherPhone())) {
+					throw new RuntimeException("手机号码为空,添加学生以外类型请输入手机号码");
+				}
+				
+				if (!StringUtils.isEmpty(studentInform.getTeacherPhone())
+						&& studentInform.getTeacherPhone().length() < 10) {
+					throw new RuntimeException("手机号码长度不对");
+				}
+			}
+			
+			
 			studentInformService.insertStudentInform(studentInform);
 
 			StudentData studentData = new StudentData();
@@ -170,12 +201,14 @@ public class StudentUpdateService {
 			studentData.setCode(uuid.substring(16));
 			studentData.setName(studentInform.getName());
 			studentData.setSchoolCode(schoolCode);
-			studentData.setType(type);
+			studentData.setType(type == null ? 0 : type);
 			Date date = new Date();
 			studentData.setCreateTime(date);
 			studentData.setUpdateTime(date);
 
-			return studentDataService.insertStudentData(studentData);
+			studentDataService.insertStudentData(studentData);
+			studentRankService.addSchoolCount(studentData);
+			return 1;
 		} catch (Exception e) {
 			// TODO: handle exception
 			throw new RuntimeException(e);
@@ -185,6 +218,20 @@ public class StudentUpdateService {
 	public int updateStudentInformByIdentityCardOrStudentCode(StudentInform studentInform, String schoolCode,
 			Byte type) {
 		try {
+			String cardString = studentInform.getIdentityCard().replaceAll("\\s*", "");
+			
+			studentInform.setIdentityCard(StringUtils.isEmpty(cardString) ? null : cardString);
+
+			String codeString = studentInform.getStudentCode().replaceAll("\\s*", "");
+			
+			studentInform.setStudentCode(StringUtils.isEmpty(codeString) ? null : codeString);
+
+			if (StringUtils.isEmpty(studentInform.getName())
+					|| StringUtils.isEmpty(studentInform.getSex())
+					|| StringUtils.isEmpty(studentInform.getGrade())
+					|| StringUtils.isEmpty(studentInform.getClassS())) {
+				throw new RuntimeException("姓名或性别或年级或班级为空");
+			}
 			if (StringUtils.isEmpty(studentInform.getIdentityCard())
 					&& StringUtils.isEmpty(studentInform.getStudentCode())) {
 				throw new RuntimeException("身份证和学号都为空");
@@ -192,7 +239,19 @@ public class StudentUpdateService {
 			if (StringUtils.isEmpty(studentInform.getSchoolId())) {
 				throw new RuntimeException("学校编号为空");
 			}
-
+			if (StringUtils.isEmpty(schoolCode)) {
+				throw new RuntimeException("请填写学校校区编号");
+			}
+			if(type!=null&&(type&StaticGlobal.PHONE)==StaticGlobal.PHONE) {
+				if (StringUtils.isEmpty(studentInform.getTeacherPhone())) {
+					throw new RuntimeException("手机号码为空,添加学生以外类型请输入手机号码");
+				}
+				
+				if (!StringUtils.isEmpty(studentInform.getTeacherPhone())
+						&& studentInform.getTeacherPhone().length() < 10) {
+					throw new RuntimeException("手机号码长度不对");
+				}
+			}
 			studentInformService.updateStudentInformByIdentityCardOrStudentCode(studentInform);
 
 			StudentData studentData = new StudentData();
@@ -200,11 +259,13 @@ public class StudentUpdateService {
 			studentData.setStudentCode(studentInform.getStudentCode());
 			studentData.setName(studentInform.getName());
 			studentData.setSchoolCode(schoolCode);
-			studentData.setType(type);
+			studentData.setType(type == null ? 0 : type);
 			Date date = new Date();
 			studentData.setUpdateTime(date);
 
-			return studentDataService.updateStudentDateByIdentityCardOrStrudentCode(studentData);
+			studentDataService.updateStudentDateByIdentityCardOrStrudentCode(studentData);
+			studentRankService.addSchoolCount(studentData);
+			return 1;
 		} catch (Exception e) {
 			// TODO: handle exception
 			throw new RuntimeException(e);

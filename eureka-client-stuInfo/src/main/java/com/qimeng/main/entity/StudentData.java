@@ -28,17 +28,17 @@ public class StudentData {
     private Byte binding;
 
     private Byte active;
-    @DateTimeFormat(pattern="yyyy-MM-dd HH-mm-ss")//页面写入数据库时格式化
-   	@JSONField(format="yyyy-MM-dd HH-mm-ss")//数据库导出页面时json格式化
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")//页面写入数据库时格式化
+   	@JSONField(format="yyyy-MM-dd HH:mm:ss")//数据库导出页面时json格式化
     private Date createTime;
-    @DateTimeFormat(pattern="yyyy-MM-dd HH-mm-ss")//页面写入数据库时格式化
-   	@JSONField(format="yyyy-MM-dd HH-mm-ss")//数据库导出页面时json格式化
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")//页面写入数据库时格式化
+   	@JSONField(format="yyyy-MM-dd HH:mm:ss")//数据库导出页面时json格式化
     private Date updateTime;
-    @DateTimeFormat(pattern="yyyy-MM-dd HH-mm-ss")//页面写入数据库时格式化
-   	@JSONField(format="yyyy-MM-dd HH-mm-ss")//数据库导出页面时json格式化
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")//页面写入数据库时格式化
+   	@JSONField(format="yyyy-MM-dd HH:mm:ss")//数据库导出页面时json格式化
     private Date firstTime;
-    @DateTimeFormat(pattern="yyyy-MM-dd HH-mm-ss")//页面写入数据库时格式化
-   	@JSONField(format="yyyy-MM-dd HH-mm-ss")//数据库导出页面时json格式化
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")//页面写入数据库时格式化
+   	@JSONField(format="yyyy-MM-dd HH:mm:ss")//数据库导出页面时json格式化
     private Date lastTime;
 
     private Integer activityCount;

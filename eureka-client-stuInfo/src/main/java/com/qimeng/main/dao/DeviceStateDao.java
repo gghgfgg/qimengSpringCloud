@@ -28,7 +28,7 @@ public interface DeviceStateDao {
 	
 	static String item="#{item.type},#{item.status},#{item.mark},#{item.createTime},#{item.updateTime}";
 	@Insert("insert into "+tablename+"("+fields+") values" + "("+item+")")
-	@Options(useGeneratedKeys = true,keyProperty = "id")
+	@Options(useGeneratedKeys = true,keyProperty = "item.id")
 	int insertDeviceState(@Param("item")DeviceState deviceState);
 	
 	@Update("update "+tablename+" set type=#{item.type},status=#{item.status},mark=#{item.mark},"

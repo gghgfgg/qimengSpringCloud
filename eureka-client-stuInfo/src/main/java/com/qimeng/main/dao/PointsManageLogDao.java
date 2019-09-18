@@ -31,7 +31,7 @@ public interface PointsManageLogDao {
 	static String item="#{item.uuid},#{item.name},#{item.appId},#{item.operator},#{item.points},#{item.mark},#{item.createTime}";
 	
 	@Insert("insert into "+tablename+"("+fields+") values" + "("+item+")")
-	@Options(useGeneratedKeys = true,keyProperty = "id")
+	@Options(useGeneratedKeys = true,keyProperty = "item.id")
 	int insertPointsManageLog(@Param("item")PointsManageLog PointsManageLog);
 	
 	@SelectProvider(type = SqlFactory.class,method ="selectPointsManageLog")

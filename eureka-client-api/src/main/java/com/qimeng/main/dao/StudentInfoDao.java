@@ -45,7 +45,7 @@ public interface StudentInfoDao {
 	
 	@Select("select snum as count,"
 			+ "jifen as points,"
-			+ "adddate as createTime from qmhb_jifen where nid=#{id} ORDER BY adddate DESC limit 7")
+			+ "adddate as createTime from qmhb_jifen where stuid=#{id} ORDER BY adddate DESC limit 7")
 	public List<RecycleLogVo> getRecycleLog(int id);
 	
 	

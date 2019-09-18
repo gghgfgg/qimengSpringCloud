@@ -5,10 +5,12 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang.RandomStringUtils;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,15 +18,21 @@ import org.springframework.web.bind.annotation.RestController;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
-
+import com.github.pagehelper.PageInfo;
+import com.qimeng.main.entity.ApplicationManagement;
+import com.qimeng.main.service.ApplicationManagementService;
+import com.qimeng.main.service.IndexCountService;
+import com.qimeng.main.util.StaticGlobal;
+import com.qimeng.main.vo.AppInformVo;
+import com.qimeng.main.vo.IndexCountVo;
 import com.qimeng.main.vo.OldResponseJson;
 import com.qimeng.main.vo.RequestMessage;
 import com.qimeng.main.vo.ResponseMessage;
 import com.qimeng.main.vo.StudentInfoVo;
 
-@Controller
+@RestController
 public class mainController {
-//
+	private static Logger logger = Logger.getLogger(mainController.class);
 //	@Autowired
 //	OldService oldService;
 //	@Autowired
@@ -32,13 +40,32 @@ public class mainController {
 //	
 //	@Autowired
 //	RedisTemplate<String, Serializable> redisCacheTemplate;
-//	@Autowired
-//	ApplicationInfoService applicationInfoService;
-//	@Autowired
-//	StudentInfoService studentInfoService;
+	@Autowired
+	ApplicationManagementService applicationManagementService;
+	@Autowired
+	IndexCountService indexCountService;
 	@RequestMapping("/index")
-	public String index() {
-		return "index";
+	public String index(@RequestBody JSONObject message) {
+		RequestMessage<IndexCountVo> requestMessage = JSON.parseObject(message.toString(),
+				new TypeReference<RequestMessage<IndexCountVo>>() {
+				});
+		IndexCountVo indexCountVo = (IndexCountVo) requestMessage.getData();
+		logger.debug(indexCountVo.toString());
+		try {
+			ApplicationManagement applicationManagement = applicationManagementService
+					.checkApplicationAuthority(requestMessage.getAppID(), StaticGlobal.READ);
+			if (applicationManagement == null) {
+				return JSONObject.toJSONString(ResponseMessage.responseFailedMessage("该appid没有权限"));
+			}
+			indexCountVo=indexCountService.getCount(indexCountVo);
+			ResponseMessage<IndexCountVo> responseMessage = new ResponseMessage<IndexCountVo>();
+			responseMessage.setData(indexCountVo);
+			responseMessage.setSuccessMessage("获取首页信息成功");
+			return JSONObject.toJSONString(responseMessage);
+		} catch (Exception e) {
+			// TODO: handle exception
+			return JSONObject.toJSONString(ResponseMessage.responseFailedMessage(e.toString()));
+		}
 	}
 	@RequestMapping("/list")
 	public String list() {
