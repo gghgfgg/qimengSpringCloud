@@ -158,16 +158,15 @@ public class StudentRankService {
 	 */
 	public void addSchoolCount(StudentData studentData) {
 		addSchool(COUNT_KEY,studentData);
-		if((studentData.getType()&StaticGlobal.STUDENT)==StaticGlobal.STUDENT) {
-			addSchool(STUCOUNT_KEY,studentData);
-			if(studentData.getActive()==StaticGlobal.ACTIVE) {
-				addSchool(STUCOUNTACT_KEY,studentData);
-			}
-		}
 		if((studentData.getType()&StaticGlobal.TEACHER)==StaticGlobal.TEACHER) {
 			addSchool(TEACHCOUNT_KEY,studentData);
-			if(studentData.getActive()==StaticGlobal.ACTIVE) {
+			if(studentData.getActive()!=null&&studentData.getActive()==StaticGlobal.ACTIVE) {
 				addSchool(TEACHCOUNTACT_KEY,studentData);
+			}
+		}else {
+			addSchool(STUCOUNT_KEY,studentData);
+			if(studentData.getActive()!=null&&studentData.getActive()==StaticGlobal.ACTIVE) {
+				addSchool(STUCOUNTACT_KEY,studentData);
 			}
 		}
 	}	

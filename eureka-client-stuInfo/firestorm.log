@@ -1,35 +1,11 @@
-DEBUG http-nio-8071-exec-6 druid.sql.Statement - {conn-10005, pstmt-20054} closed
-ERROR http-nio-8071-exec-6 com.qimeng.main.service.DeviceRecycleOrderService - 新增回收单数据异常
-ERROR http-nio-8071-exec-6 com.qimeng.main.service.DeviceRecycleOrderService - Error:
-org.springframework.dao.DataIntegrityViolationException: 
-### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'b_end' cannot be null
-### The error may involve com.qimeng.main.dao.DeviceRecycleOrderDao.insertDeviceRecycleOrder-Inline
-### The error occurred while setting parameters
-### SQL: insert into machine_device_recycle_order(machine_id,uuid,order_type,recycle_type,sys_count,create_time,real_count,upload_time,end_time,b_end) values(?,?,?,?,?,?,?,?,?,?)
-### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'b_end' cannot be null
-; Column 'b_end' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'b_end' cannot be null
-	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:87)
-	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
-	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
-	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
-	at com.sun.proxy.$Proxy95.insert(Unknown Source)
-	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
-	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:57)
-	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
-	at com.sun.proxy.$Proxy120.insertDeviceRecycleOrder(Unknown Source)
-	at com.qimeng.main.service.DeviceRecycleOrderService.insertDeviceRecycleOrder(DeviceRecycleOrderService.java:26)
-	at com.qimeng.main.service.DeviceOpenCodeService.checkDevOrder(DeviceOpenCodeService.java:114)
-	at com.qimeng.main.service.DeviceOpenCodeService$$FastClassBySpringCGLIB$$68905292.invoke(<generated>)
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:295)
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
-	at com.qimeng.main.service.DeviceOpenCodeService$$EnhancerBySpringCGLIB$$10027d89.checkDevOrder(<generated>)
-	at com.qimeng.main.DeviceInformController.uploadOrder(DeviceInformController.java:306)
+ERROR http-nio-8071-exec-2 com.qimeng.main.util.ExcelImpotUtils - 异常:
+java.lang.NumberFormatException: 江阳阳 is not a valid number.
+	at org.apache.commons.lang.math.NumberUtils.createNumber(NumberUtils.java:597)
+	at com.qimeng.main.util.ExcelImpotUtils.setFieldValueByName(ExcelImpotUtils.java:245)
+	at com.qimeng.main.util.ExcelImpotUtils.excelToList(ExcelImpotUtils.java:116)
+	at com.qimeng.main.util.ExcelImpotUtils.excelToList(ExcelImpotUtils.java:145)
+	at com.qimeng.main.util.UpLoadFile.uploadPoint(UpLoadFile.java:181)
+	at com.qimeng.main.UpdatePointByExcel.usedPoints(UpdatePointByExcel.java:110)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -43,8 +19,8 @@ org.springframework.dao.DataIntegrityViolationException:
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
@@ -91,136 +67,13 @@ org.springframework.dao.DataIntegrityViolationException:
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Unknown Source)
-Caused by: java.sql.SQLIntegrityConstraintViolationException: Column 'b_end' cannot be null
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:955)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:372)
-	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3409)
-	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:620)
-	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
-	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
-	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
-	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
-	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
-	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
-	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:498)
-	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
-	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
-	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
-	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
-	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
-	at com.sun.proxy.$Proxy153.update(Unknown Source)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
-	... 78 more
-DEBUG http-nio-8071-exec-6 druid.sql.Connection - {conn 10005} rollback
-DEBUG http-nio-8071-exec-6 druid.sql.Connection - {conn-10005} setAutoCommit true
-DEBUG http-nio-8071-exec-6 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-8071-exec-10 com.qimeng.main.DeviceInformController - DeviceOrderVo [order=a637ff4a5a8d4be484bbba0f32068291, qrOrder=Open$023c42805d1f40fd864113ed5fbb2ab1, status=1, orderType=0, recycleType=1, count=150]
-DEBUG http-nio-8071-exec-10 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-8071-exec-10 druid.sql.Statement - {conn-10005, pstmt-20055} created. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-8071-exec-10 druid.sql.Statement - {conn-10005, pstmt-20055} Parameters : [1, 7166912116544633]
-DEBUG http-nio-8071-exec-10 druid.sql.Statement - {conn-10005, pstmt-20055} Types : [TINYINT, VARCHAR]
-DEBUG http-nio-8071-exec-10 druid.sql.Statement - {conn-10005, pstmt-20055} executed. 34.1005 millis. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-8071-exec-10 druid.sql.ResultSet - {conn-10005, pstmt-20055, rs-50047} open
-DEBUG http-nio-8071-exec-10 druid.sql.ResultSet - {conn-10005, pstmt-20055, rs-50047} Header: [id, app_id, deskey, ivkey, app_type, app_name, active, create_time, update_time]
-DEBUG http-nio-8071-exec-10 druid.sql.ResultSet - {conn-10005, pstmt-20055, rs-50047} Result: [10, 7166912116544633, 293dJFsmjfIJgfoa, asfsa248, true, 测试, true, 2019-08-08 17:49:18.0, 2019-08-08 17:49:18.0]
-DEBUG http-nio-8071-exec-10 druid.sql.ResultSet - {conn-10005, pstmt-20055, rs-50047} closed
-DEBUG http-nio-8071-exec-10 druid.sql.Statement - {conn-10005, pstmt-20055} closed
-DEBUG http-nio-8071-exec-10 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-8071-exec-10 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-8071-exec-10 druid.sql.Connection - {conn-10005} setAutoCommit false
-DEBUG http-nio-8071-exec-10 druid.sql.Connection - {conn-10005} commited
-DEBUG http-nio-8071-exec-10 druid.sql.Connection - {conn-10005} setAutoCommit true
-DEBUG http-nio-8071-exec-10 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-8071-exec-9 com.qimeng.main.DeviceInformController - DeviceOrderVo [order=697e84ed1915450a85c7abd3c9f4f031, qrOrder=Open$023c42805d1f40fd864113ed5fbb2ab1, status=1, orderType=0, recycleType=1, count=150]
-DEBUG http-nio-8071-exec-9 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-8071-exec-9 druid.sql.Statement - {conn-10005, pstmt-20056} created. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-8071-exec-9 druid.sql.Statement - {conn-10005, pstmt-20056} Parameters : [1, 7166912116544633]
-DEBUG http-nio-8071-exec-9 druid.sql.Statement - {conn-10005, pstmt-20056} Types : [TINYINT, VARCHAR]
-DEBUG http-nio-8071-exec-9 druid.sql.Statement - {conn-10005, pstmt-20056} executed. 38.5413 millis. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-8071-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20056, rs-50048} open
-DEBUG http-nio-8071-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20056, rs-50048} Header: [id, app_id, deskey, ivkey, app_type, app_name, active, create_time, update_time]
-DEBUG http-nio-8071-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20056, rs-50048} Result: [10, 7166912116544633, 293dJFsmjfIJgfoa, asfsa248, true, 测试, true, 2019-08-08 17:49:18.0, 2019-08-08 17:49:18.0]
-DEBUG http-nio-8071-exec-9 druid.sql.ResultSet - {conn-10005, pstmt-20056, rs-50048} closed
-DEBUG http-nio-8071-exec-9 druid.sql.Statement - {conn-10005, pstmt-20056} closed
-DEBUG http-nio-8071-exec-9 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-8071-exec-9 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-8071-exec-9 druid.sql.Connection - {conn-10005} setAutoCommit false
-DEBUG http-nio-8071-exec-9 druid.sql.Statement - {conn-10005, pstmt-20057} created. insert into machine_device_recycle_order(machine_id,uuid,order_type,recycle_type,sys_count,create_time,real_count,upload_time,end_time,b_end) values(?,?,?,?,?,?,?,?,?,?)
-DEBUG http-nio-8071-exec-9 druid.sql.Statement - {conn-10005, pstmt-20057} Parameters : [123456789, 697e84ed1915450a85c7abd3c9f4f031, 0, 1, null, 2019-09-19 02:31:51.022, null, null, null, null]
-DEBUG http-nio-8071-exec-9 druid.sql.Statement - {conn-10005, pstmt-20057} Types : [VARCHAR, VARCHAR, TINYINT, TINYINT, OTHER, TIMESTAMP, OTHER, OTHER, OTHER, OTHER]
-ERROR http-nio-8071-exec-9 druid.sql.Statement - {conn-10005, pstmt-20057} execute error. insert into machine_device_recycle_order(machine_id,uuid,order_type,recycle_type,sys_count,create_time,real_count,upload_time,end_time,b_end) values(?,?,?,?,?,?,?,?,?,?)
-java.sql.SQLIntegrityConstraintViolationException: Column 'b_end' cannot be null
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:955)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:372)
-	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3409)
-	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:620)
-	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
-	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
-	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
-	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
-	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
-	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
-	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:498)
-	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
-	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
-	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
-	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
-	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
-	at com.sun.proxy.$Proxy153.update(Unknown Source)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
-	at com.sun.proxy.$Proxy95.insert(Unknown Source)
-	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
-	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:57)
-	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
-	at com.sun.proxy.$Proxy120.insertDeviceRecycleOrder(Unknown Source)
-	at com.qimeng.main.service.DeviceRecycleOrderService.insertDeviceRecycleOrder(DeviceRecycleOrderService.java:26)
-	at com.qimeng.main.service.DeviceOpenCodeService.checkDevOrder(DeviceOpenCodeService.java:114)
-	at com.qimeng.main.service.DeviceOpenCodeService$$FastClassBySpringCGLIB$$68905292.invoke(<generated>)
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:295)
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
-	at com.qimeng.main.service.DeviceOpenCodeService$$EnhancerBySpringCGLIB$$10027d89.checkDevOrder(<generated>)
-	at com.qimeng.main.DeviceInformController.uploadOrder(DeviceInformController.java:306)
+ERROR http-nio-8071-exec-2 com.qimeng.main.util.UpLoadFile - 上传学生积分信息文件异常
+ERROR http-nio-8071-exec-2 com.qimeng.main.util.UpLoadFile - Error:
+com.qimeng.main.util.ExcelException: excel转list异常
+	at com.qimeng.main.util.ExcelImpotUtils.excelToList(ExcelImpotUtils.java:129)
+	at com.qimeng.main.util.ExcelImpotUtils.excelToList(ExcelImpotUtils.java:145)
+	at com.qimeng.main.util.UpLoadFile.uploadPoint(UpLoadFile.java:181)
+	at com.qimeng.main.UpdatePointByExcel.usedPoints(UpdatePointByExcel.java:110)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -234,8 +87,8 @@ java.sql.SQLIntegrityConstraintViolationException: Column 'b_end' cannot be null
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
@@ -282,264 +135,3 @@ java.sql.SQLIntegrityConstraintViolationException: Column 'b_end' cannot be null
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Unknown Source)
-DEBUG http-nio-8071-exec-9 druid.sql.Statement - {conn-10005, pstmt-20057} closed
-ERROR http-nio-8071-exec-9 com.qimeng.main.service.DeviceRecycleOrderService - 新增回收单数据异常
-ERROR http-nio-8071-exec-9 com.qimeng.main.service.DeviceRecycleOrderService - Error:
-org.springframework.dao.DataIntegrityViolationException: 
-### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'b_end' cannot be null
-### The error may involve com.qimeng.main.dao.DeviceRecycleOrderDao.insertDeviceRecycleOrder-Inline
-### The error occurred while setting parameters
-### SQL: insert into machine_device_recycle_order(machine_id,uuid,order_type,recycle_type,sys_count,create_time,real_count,upload_time,end_time,b_end) values(?,?,?,?,?,?,?,?,?,?)
-### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'b_end' cannot be null
-; Column 'b_end' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'b_end' cannot be null
-	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:87)
-	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
-	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
-	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
-	at com.sun.proxy.$Proxy95.insert(Unknown Source)
-	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
-	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:57)
-	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
-	at com.sun.proxy.$Proxy120.insertDeviceRecycleOrder(Unknown Source)
-	at com.qimeng.main.service.DeviceRecycleOrderService.insertDeviceRecycleOrder(DeviceRecycleOrderService.java:26)
-	at com.qimeng.main.service.DeviceOpenCodeService.checkDevOrder(DeviceOpenCodeService.java:114)
-	at com.qimeng.main.service.DeviceOpenCodeService$$FastClassBySpringCGLIB$$68905292.invoke(<generated>)
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:295)
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
-	at com.qimeng.main.service.DeviceOpenCodeService$$EnhancerBySpringCGLIB$$10027d89.checkDevOrder(<generated>)
-	at com.qimeng.main.DeviceInformController.uploadOrder(DeviceInformController.java:306)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Unknown Source)
-Caused by: java.sql.SQLIntegrityConstraintViolationException: Column 'b_end' cannot be null
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:955)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:372)
-	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3409)
-	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:620)
-	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
-	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
-	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
-	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
-	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
-	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
-	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:498)
-	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
-	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
-	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
-	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
-	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
-	at com.sun.proxy.$Proxy153.update(Unknown Source)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
-	... 78 more
-DEBUG http-nio-8071-exec-9 druid.sql.Connection - {conn 10005} rollback
-DEBUG http-nio-8071-exec-9 druid.sql.Connection - {conn-10005} setAutoCommit true
-DEBUG http-nio-8071-exec-9 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-8071-exec-3 com.qimeng.main.DeviceInformController - DeviceOrderVo [order=697e84ed1915450a85c7abd3c9f4f031, qrOrder=Open$023c42805d1f40fd864113ed5fbb2ab1, status=1, orderType=0, recycleType=1, count=150]
-DEBUG http-nio-8071-exec-3 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-8071-exec-3 druid.sql.Statement - {conn-10005, pstmt-20058} created. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-8071-exec-3 druid.sql.Statement - {conn-10005, pstmt-20058} Parameters : [1, 7166912116544633]
-DEBUG http-nio-8071-exec-3 druid.sql.Statement - {conn-10005, pstmt-20058} Types : [TINYINT, VARCHAR]
-DEBUG http-nio-8071-exec-3 druid.sql.Statement - {conn-10005, pstmt-20058} executed. 34.9294 millis. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-8071-exec-3 druid.sql.ResultSet - {conn-10005, pstmt-20058, rs-50049} open
-DEBUG http-nio-8071-exec-3 druid.sql.ResultSet - {conn-10005, pstmt-20058, rs-50049} Header: [id, app_id, deskey, ivkey, app_type, app_name, active, create_time, update_time]
-DEBUG http-nio-8071-exec-3 druid.sql.ResultSet - {conn-10005, pstmt-20058, rs-50049} Result: [10, 7166912116544633, 293dJFsmjfIJgfoa, asfsa248, true, 测试, true, 2019-08-08 17:49:18.0, 2019-08-08 17:49:18.0]
-DEBUG http-nio-8071-exec-3 druid.sql.ResultSet - {conn-10005, pstmt-20058, rs-50049} closed
-DEBUG http-nio-8071-exec-3 druid.sql.Statement - {conn-10005, pstmt-20058} closed
-DEBUG http-nio-8071-exec-3 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-8071-exec-3 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-8071-exec-3 druid.sql.Connection - {conn-10005} setAutoCommit false
-DEBUG http-nio-8071-exec-3 druid.sql.Connection - {conn-10005} commited
-DEBUG http-nio-8071-exec-3 druid.sql.Connection - {conn-10005} setAutoCommit true
-DEBUG http-nio-8071-exec-3 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-8071-exec-4 com.qimeng.main.DeviceInformController - DeviceOrderVo [order=44d63ac73ba24a0d806a2ab6177323ca, qrOrder=Open$023c42805d1f40fd864113ed5fbb2ab1, status=1, orderType=0, recycleType=1, count=150]
-DEBUG http-nio-8071-exec-4 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-8071-exec-4 druid.sql.Statement - {conn-10005, pstmt-20059} created. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-8071-exec-4 druid.sql.Statement - {conn-10005, pstmt-20059} Parameters : [1, 7166912116544633]
-DEBUG http-nio-8071-exec-4 druid.sql.Statement - {conn-10005, pstmt-20059} Types : [TINYINT, VARCHAR]
-DEBUG http-nio-8071-exec-4 druid.sql.Statement - {conn-10005, pstmt-20059} executed. 34.9538 millis. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-8071-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20059, rs-50050} open
-DEBUG http-nio-8071-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20059, rs-50050} Header: [id, app_id, deskey, ivkey, app_type, app_name, active, create_time, update_time]
-DEBUG http-nio-8071-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20059, rs-50050} Result: [10, 7166912116544633, 293dJFsmjfIJgfoa, asfsa248, true, 测试, true, 2019-08-08 17:49:18.0, 2019-08-08 17:49:18.0]
-DEBUG http-nio-8071-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20059, rs-50050} closed
-DEBUG http-nio-8071-exec-4 druid.sql.Statement - {conn-10005, pstmt-20059} closed
-DEBUG http-nio-8071-exec-4 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-8071-exec-4 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-8071-exec-4 druid.sql.Connection - {conn-10005} setAutoCommit false
-DEBUG http-nio-8071-exec-4 druid.sql.Statement - {conn-10005, pstmt-20060} created. insert into machine_device_recycle_order(machine_id,uuid,order_type,recycle_type,sys_count,create_time,real_count,upload_time,end_time,b_end) values(?,?,?,?,?,?,?,?,?,?)
-DEBUG http-nio-8071-exec-4 druid.sql.Statement - {conn-10005, pstmt-20060} Parameters : [123456789, 44d63ac73ba24a0d806a2ab6177323ca, 0, 1, null, 2019-09-19 02:34:24.924, null, null, null, false]
-DEBUG http-nio-8071-exec-4 druid.sql.Statement - {conn-10005, pstmt-20060} Types : [VARCHAR, VARCHAR, TINYINT, TINYINT, OTHER, TIMESTAMP, OTHER, OTHER, OTHER, BOOLEAN]
-DEBUG http-nio-8071-exec-4 druid.sql.Statement - {conn-10005, pstmt-20060} executed. 67.798 millis. insert into machine_device_recycle_order(machine_id,uuid,order_type,recycle_type,sys_count,create_time,real_count,upload_time,end_time,b_end) values(?,?,?,?,?,?,?,?,?,?)
-DEBUG http-nio-8071-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20060, rs-50051} open
-DEBUG http-nio-8071-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20060, rs-50051} Header: [GENERATED_KEY]
-DEBUG http-nio-8071-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20060, rs-50051} Result: [2]
-DEBUG http-nio-8071-exec-4 druid.sql.ResultSet - {conn-10005, pstmt-20060, rs-50051} closed
-DEBUG http-nio-8071-exec-4 druid.sql.Statement - {conn-10005, pstmt-20060} closed
-DEBUG http-nio-8071-exec-4 druid.sql.Connection - {conn-10005} commited
-DEBUG http-nio-8071-exec-4 druid.sql.Connection - {conn-10005} setAutoCommit true
-DEBUG http-nio-8071-exec-4 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-8071-exec-5 com.qimeng.main.DeviceInformController - DeviceOrderVo [order=44d63ac73ba24a0d806a2ab6177323ca, qrOrder=Open$023c42805d1f40fd864113ed5fbb2ab1, status=2, orderType=0, recycleType=1, count=150]
-DEBUG http-nio-8071-exec-5 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-8071-exec-5 druid.sql.Statement - {conn-10005, pstmt-20061} created. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-8071-exec-5 druid.sql.Statement - {conn-10005, pstmt-20061} Parameters : [1, 7166912116544633]
-DEBUG http-nio-8071-exec-5 druid.sql.Statement - {conn-10005, pstmt-20061} Types : [TINYINT, VARCHAR]
-DEBUG http-nio-8071-exec-5 druid.sql.Statement - {conn-10005, pstmt-20061} executed. 35.567 millis. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-8071-exec-5 druid.sql.ResultSet - {conn-10005, pstmt-20061, rs-50052} open
-DEBUG http-nio-8071-exec-5 druid.sql.ResultSet - {conn-10005, pstmt-20061, rs-50052} Header: [id, app_id, deskey, ivkey, app_type, app_name, active, create_time, update_time]
-DEBUG http-nio-8071-exec-5 druid.sql.ResultSet - {conn-10005, pstmt-20061, rs-50052} Result: [10, 7166912116544633, 293dJFsmjfIJgfoa, asfsa248, true, 测试, true, 2019-08-08 17:49:18.0, 2019-08-08 17:49:18.0]
-DEBUG http-nio-8071-exec-5 druid.sql.ResultSet - {conn-10005, pstmt-20061, rs-50052} closed
-DEBUG http-nio-8071-exec-5 druid.sql.Statement - {conn-10005, pstmt-20061} closed
-DEBUG http-nio-8071-exec-5 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-8071-exec-5 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-8071-exec-5 druid.sql.Connection - {conn-10005} setAutoCommit false
-DEBUG http-nio-8071-exec-5 druid.sql.Statement - {conn-10005, pstmt-20062} created. UPDATE machine_device_recycle_order
-SET real_count=?, upload_time=?
-WHERE (uuid=? AND machine_id=? AND b_end=0)
-DEBUG http-nio-8071-exec-5 druid.sql.Statement - {conn-10005, pstmt-20062} Parameters : [150, 2019-09-19 02:34:39.982, 44d63ac73ba24a0d806a2ab6177323ca, 123456789]
-DEBUG http-nio-8071-exec-5 druid.sql.Statement - {conn-10005, pstmt-20062} Types : [INTEGER, TIMESTAMP, VARCHAR, VARCHAR]
-DEBUG http-nio-8071-exec-5 druid.sql.Statement - {conn-10005, pstmt-20062} executed. 67.6999 millis. UPDATE machine_device_recycle_order
-SET real_count=?, upload_time=?
-WHERE (uuid=? AND machine_id=? AND b_end=0)
-DEBUG http-nio-8071-exec-5 druid.sql.Statement - {conn-10005, pstmt-20062} closed
-DEBUG http-nio-8071-exec-5 druid.sql.Connection - {conn-10005} commited
-DEBUG http-nio-8071-exec-5 druid.sql.Connection - {conn-10005} setAutoCommit true
-DEBUG http-nio-8071-exec-5 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-8071-exec-6 com.qimeng.main.DeviceInformController - DeviceOrderVo [order=44d63ac73ba24a0d806a2ab6177323ca, qrOrder=Open$023c42805d1f40fd864113ed5fbb2ab1, status=1, orderType=0, recycleType=1, count=150]
-DEBUG http-nio-8071-exec-6 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-8071-exec-6 druid.sql.Statement - {conn-10005, pstmt-20063} created. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-8071-exec-6 druid.sql.Statement - {conn-10005, pstmt-20063} Parameters : [1, 7166912116544633]
-DEBUG http-nio-8071-exec-6 druid.sql.Statement - {conn-10005, pstmt-20063} Types : [TINYINT, VARCHAR]
-DEBUG http-nio-8071-exec-6 druid.sql.Statement - {conn-10005, pstmt-20063} executed. 37.6069 millis. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-8071-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20063, rs-50053} open
-DEBUG http-nio-8071-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20063, rs-50053} Header: [id, app_id, deskey, ivkey, app_type, app_name, active, create_time, update_time]
-DEBUG http-nio-8071-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20063, rs-50053} Result: [10, 7166912116544633, 293dJFsmjfIJgfoa, asfsa248, true, 测试, true, 2019-08-08 17:49:18.0, 2019-08-08 17:49:18.0]
-DEBUG http-nio-8071-exec-6 druid.sql.ResultSet - {conn-10005, pstmt-20063, rs-50053} closed
-DEBUG http-nio-8071-exec-6 druid.sql.Statement - {conn-10005, pstmt-20063} closed
-DEBUG http-nio-8071-exec-6 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-8071-exec-6 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-8071-exec-6 druid.sql.Connection - {conn-10005} setAutoCommit false
-DEBUG http-nio-8071-exec-6 druid.sql.Connection - {conn-10005} setAutoCommit true
-DEBUG http-nio-8071-exec-6 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-8071-exec-7 com.qimeng.main.DeviceInformController - DeviceOrderVo [order=44d63ac73ba24a0d806a2ab6177323ca, qrOrder=Open$023c42805d1f40fd864113ed5fbb2ab1, status=0, orderType=0, recycleType=1, count=150]
-DEBUG http-nio-8071-exec-7 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-8071-exec-7 druid.sql.Statement - {conn-10005, pstmt-20064} created. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-8071-exec-7 druid.sql.Statement - {conn-10005, pstmt-20064} Parameters : [1, 7166912116544633]
-DEBUG http-nio-8071-exec-7 druid.sql.Statement - {conn-10005, pstmt-20064} Types : [TINYINT, VARCHAR]
-DEBUG http-nio-8071-exec-7 druid.sql.Statement - {conn-10005, pstmt-20064} executed. 34.3866 millis. SELECT id,app_id,deskey,ivkey,app_type,app_name,active,create_time,update_time
-FROM management_application_management
-WHERE (active=? AND app_id=?)
-DEBUG http-nio-8071-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20064, rs-50054} open
-DEBUG http-nio-8071-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20064, rs-50054} Header: [id, app_id, deskey, ivkey, app_type, app_name, active, create_time, update_time]
-DEBUG http-nio-8071-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20064, rs-50054} Result: [10, 7166912116544633, 293dJFsmjfIJgfoa, asfsa248, true, 测试, true, 2019-08-08 17:49:18.0, 2019-08-08 17:49:18.0]
-DEBUG http-nio-8071-exec-7 druid.sql.ResultSet - {conn-10005, pstmt-20064, rs-50054} closed
-DEBUG http-nio-8071-exec-7 druid.sql.Statement - {conn-10005, pstmt-20064} closed
-DEBUG http-nio-8071-exec-7 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-8071-exec-7 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-8071-exec-7 druid.sql.Connection - {conn-10005} setAutoCommit false
-DEBUG http-nio-8071-exec-7 druid.sql.Statement - {conn-10005, pstmt-20065} created. UPDATE machine_device_recycle_order
-SET end_time=?, b_end=?
-WHERE (uuid=? AND machine_id=? AND b_end=0)
-DEBUG http-nio-8071-exec-7 druid.sql.Statement - {conn-10005, pstmt-20065} Parameters : [2019-09-19 02:34:53.338, true, 44d63ac73ba24a0d806a2ab6177323ca, 123456789]
-DEBUG http-nio-8071-exec-7 druid.sql.Statement - {conn-10005, pstmt-20065} Types : [TIMESTAMP, BOOLEAN, VARCHAR, VARCHAR]
-DEBUG http-nio-8071-exec-7 druid.sql.Statement - {conn-10005, pstmt-20065} executed. 66.4055 millis. UPDATE machine_device_recycle_order
-SET end_time=?, b_end=?
-WHERE (uuid=? AND machine_id=? AND b_end=0)
-DEBUG http-nio-8071-exec-7 druid.sql.Statement - {conn-10005, pstmt-20065} closed
-DEBUG http-nio-8071-exec-7 druid.sql.Connection - {conn-10005} commited
-DEBUG http-nio-8071-exec-7 druid.sql.Connection - {conn-10005} setAutoCommit true
-DEBUG http-nio-8071-exec-7 druid.sql.Connection - {conn-10005} pool-recycle

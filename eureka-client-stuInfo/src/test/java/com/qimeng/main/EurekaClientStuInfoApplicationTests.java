@@ -160,17 +160,17 @@ public class EurekaClientStuInfoApplicationTests {
 //			System.out.println(e.toString());
 //		}
 		//schoolAutoCountRecycleService.SchoolAutoCountRecycleByYear();
-		ApplicationManagement temp=new ApplicationManagement();
-		temp.setAppId("7166912116544626");
-		temp.setActive((byte) 1);
-		temp.setAppName("23");
-		//applicationManagementService.insertApplicationManagement(temp);
-		
-		//deviceManagementService.selectDeviceManagementListByMachineId("123456789",true);
-		DeviceInformVo deviceInformVo=new DeviceInformVo();
-		deviceInformVo.setSchoolName("45");
-		
-		deviceInformVo.setPostalCode("");
+//		ApplicationManagement temp=new ApplicationManagement();
+//		temp.setAppId("7166912116544626");
+//		temp.setActive((byte) 1);
+//		temp.setAppName("23");
+//		//applicationManagementService.insertApplicationManagement(temp);
+//		
+//		//deviceManagementService.selectDeviceManagementListByMachineId("123456789",true);
+//		DeviceInformVo deviceInformVo=new DeviceInformVo();
+//		deviceInformVo.setSchoolName("45");
+//		
+//		deviceInformVo.setPostalCode("");
 	//	deviceActionService.DevPageList(1,deviceInformVo);
 		//ApplicationManagement temp2=applicationManagementService.selectApplicationManagementByAppId("7166912116544629", (byte) 1);
 		//System.out.println(temp2.toString());
@@ -219,21 +219,23 @@ public class EurekaClientStuInfoApplicationTests {
 //		System.out.println(globalDateService.getGlobalKeyString("qrl"));
 		
 		//System.out.println(globalDateService.getRunTime());
-		Date date=new Date();
-		DeviceRecycleRealTime deviceRecycleRealTime=deviceRecycleRealTimeService.selectDeviceRecycleRealTime("123456789", (byte) 1);
-		if(deviceRecycleRealTime==null) {
-			deviceRecycleRealTime=new DeviceRecycleRealTime();
-			deviceRecycleRealTime.setbRecycle(false);
-			deviceRecycleRealTime.setCount(0);
-			deviceRecycleRealTime.setCreateTime(date);
-			deviceRecycleRealTime.setMachineId("123456789");
-			deviceRecycleRealTime.setType((byte) 1);
-			deviceRecycleRealTimeService.insertDeviceRecycleRealTime(deviceRecycleRealTime);
-		}
-		deviceRecycleRealTime.setCount(deviceRecycleRealTime.getCount()+100);
-		deviceRecycleRealTimeService.updateDeviceRecycleRealTimeCount(deviceRecycleRealTime);
-		deviceRecycleRealTime.setEndTime(date);
-		deviceRecycleRealTimeService.updateDeviceRecycleRealTimeRecycle(deviceRecycleRealTime);
+//		Date date=new Date();
+//		DeviceRecycleRealTime deviceRecycleRealTime=deviceRecycleRealTimeService.selectDeviceRecycleRealTime("123456789", (byte) 1);
+//		if(deviceRecycleRealTime==null) {
+//			deviceRecycleRealTime=new DeviceRecycleRealTime();
+//			deviceRecycleRealTime.setbRecycle(false);
+//			deviceRecycleRealTime.setCount(0);
+//			deviceRecycleRealTime.setCreateTime(date);
+//			deviceRecycleRealTime.setMachineId("123456789");
+//			deviceRecycleRealTime.setType((byte) 1);
+//			deviceRecycleRealTimeService.insertDeviceRecycleRealTime(deviceRecycleRealTime);
+//		}
+//		deviceRecycleRealTime.setCount(deviceRecycleRealTime.getCount()+100);
+//		deviceRecycleRealTimeService.updateDeviceRecycleRealTimeCount(deviceRecycleRealTime);
+//		deviceRecycleRealTime.setEndTime(date);
+//		deviceRecycleRealTimeService.updateDeviceRecycleRealTimeRecycle(deviceRecycleRealTime);
+		
+		System.out.println("2144003475".indexOf("2144003475"));
 	}
 
 }

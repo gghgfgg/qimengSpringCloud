@@ -37,6 +37,7 @@ public class StuinfoController {
 	StuInfoService stuInfoService;
 	@Autowired
 	StringRedisTemplate stringRedisTemplate;
+
 	@RequestMapping("/index")
 	public String index() {
 		return "index";
@@ -45,6 +46,19 @@ public class StuinfoController {
 	@RequestMapping("/stuinfo/getstudent")
 	public String getStudent(@RequestBody JSONObject message) {
 
+		RequestMessage<StudentInfoVo> requestMessage = JSON.parseObject(message.toString(),
+				new TypeReference<RequestMessage<StudentInfoVo>>() {
+				});
+		logger.info(requestMessage.toString());
+		StudentInfoVo stuInfoVo = (StudentInfoVo) requestMessage.getData();
+		if (stuInfoVo.getStuCode().length() > 16 ||stuInfoVo.getStuCard().length() > 16) {
+			stuInfoVo.setStuCode(stuInfoVo.getStuCode().substring(0,16));
+			stuInfoVo.setStuCard(stuInfoVo.getStuCard().substring(0,16));
+			message.put("data", stuInfoVo);
+			logger.info("************二维码转换***************");
+			logger.info(message.toJSONString());
+		}
+		
 		logger.info("************获取学生信息***************");
 		String responseString = null;
 		try {
@@ -55,14 +69,8 @@ public class StuinfoController {
 			logger.error("获取学生信息接口错误");
 		}
 
-		RequestMessage<StudentInfoVo> requestMessage = JSON.parseObject(message.toString(),
-				new TypeReference<RequestMessage<StudentInfoVo>>() {
-				});
-		logger.info(requestMessage.toString());
-		StudentInfoVo stuInfoVo = (StudentInfoVo) requestMessage.getData();
-
-		StudentInfo studentInfo = studentInfoService.getStudent(stuInfoVo.getStuCode());
-
+		StudentInfo studentInfo = studentInfoService.getStudentByCodeCard(stuInfoVo.getStuCode(), stuInfoVo.getStuCard());
+		
 		if (studentInfo == null) {
 			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
 			responseMessage.setData("");
@@ -98,6 +106,22 @@ public class StuinfoController {
 
 	@RequestMapping("/stuinfo/uploadpoints")
 	public String upLoadPoints(@RequestBody JSONObject message) throws Exception {
+		
+		RequestMessage<StudentInfoVo> requestMessage = JSON.parseObject(message.toString(),
+				new TypeReference<RequestMessage<StudentInfoVo>>() {
+				});
+		logger.info(requestMessage.toString());
+		StudentInfoVo stuInfoVo = (StudentInfoVo) requestMessage.getData();
+		String code=stuInfoVo.getStuCode();
+		if (stuInfoVo.getStuCode().length() > 16 ||stuInfoVo.getStuCard().length() > 16) {
+			stuInfoVo.setStuCode(stuInfoVo.getStuCode().substring(0,16));
+			stuInfoVo.setStuCard(stuInfoVo.getStuCard().substring(0,16));
+			message.put("data", stuInfoVo);
+			logger.info("************二维码转换***************");
+			logger.info(message.toJSONString());
+		}
+		
+		
 		logger.info("************上传积分***************");
 		String responseString = null;
 		try {
@@ -108,15 +132,11 @@ public class StuinfoController {
 			logger.error("获取学生上传积分接口错误");
 		}
 
-		RequestMessage<StudentInfoVo> requestMessage = JSON.parseObject(message.toString(),
-				new TypeReference<RequestMessage<StudentInfoVo>>() {
-				});
-		logger.info(requestMessage.toString());
-		StudentInfoVo stuInfo = (StudentInfoVo) requestMessage.getData();
 
-		//logger.info(oldService.uploadIntegral(stuInfo, requestMessage.getMachineID()));
+		// logger.info(oldService.uploadIntegral(stuInfo,
+		// requestMessage.getMachineID()));
 
-		String jsonString = oldService.newuploadIntegral(stuInfo, requestMessage.getMachineID());
+		String jsonString = oldService.newuploadIntegral(stuInfoVo, requestMessage.getMachineID(),code);
 		logger.info("新后台上传积分：" + jsonString);
 
 		ResponseMessage<String> responseMessage = new ResponseMessage<String>();
@@ -151,7 +171,8 @@ public class StuinfoController {
 		logger.info(requestMessage.toString());
 
 		DeviceStatusVo machineInfo = (DeviceStatusVo) requestMessage.getData();
-		//logger.info(oldService.updateJqm(machineInfo, requestMessage.getMachineID()));
+		// logger.info(oldService.updateJqm(machineInfo,
+		// requestMessage.getMachineID()));
 
 		ResponseMessage<String> responseMessage = new ResponseMessage<String>();
 
@@ -182,7 +203,7 @@ public class StuinfoController {
 				new TypeReference<RequestMessage<StudentBindVo>>() {
 				});
 		logger.info(requestMessage.toString());
-		
+
 		if (!stringRedisTemplate.hasKey("WechatKey::" + requestMessage.getAccountTonken())) {
 			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
 			responseMessage.setData("");
@@ -190,9 +211,9 @@ public class StuinfoController {
 			return JSONObject.toJSONString(responseMessage);
 		}
 
-		JSONObject jsonwechat = JSONObject.parseObject(
-				stringRedisTemplate.opsForValue().get("WechatKey::" + requestMessage.getAccountTonken()));
-		
+		JSONObject jsonwechat = JSONObject
+				.parseObject(stringRedisTemplate.opsForValue().get("WechatKey::" + requestMessage.getAccountTonken()));
+
 		StudentBindVo stubindVo = (StudentBindVo) requestMessage.getData();
 
 		StudentInfo studentInfo = studentInfoService.getStudentByPhone(stubindVo.getPhone());
@@ -210,18 +231,18 @@ public class StuinfoController {
 			logger.info(responseMessage.toString());
 			return JSONObject.toJSONString(responseMessage);
 		}
-		
-        String response=oldService.bindstu(jsonwechat.getString("openid"),jsonwechat.getString("unionid"),stubindVo.getPhone());
-		logger.info("绑定返回信息:"+response);
-		if(!"success".equals(response)) {
+
+		String response = oldService.bindstu(jsonwechat.getString("openid"), jsonwechat.getString("unionid"),
+				stubindVo.getPhone());
+		logger.info("绑定返回信息:" + response);
+		if (!"success".equals(response)) {
 			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
 			responseMessage.setData("");
 			responseMessage.setFailedMessage("绑定失败");
 			logger.info(responseMessage.toString());
 			return JSONObject.toJSONString(responseMessage);
 		}
-		
-		
+
 		StudentInfoVo stuInfoVo = new StudentInfoVo();
 		stuInfoVo.setName(studentInfo.getName());
 		stuInfoVo.setActive(1);
@@ -237,8 +258,22 @@ public class StuinfoController {
 		logger.info(responseMessage.toString());
 		return JSONObject.toJSONString(responseMessage);
 	}
+
 	@RequestMapping("/stuinfo/getrecyclelog")
 	public String getRecycleLog(@RequestBody JSONObject message) {
+		RequestMessage<StudentInfoVo> requestMessage = JSON.parseObject(message.toString(),
+				new TypeReference<RequestMessage<StudentInfoVo>>() {
+				});
+		logger.info(requestMessage.toString());
+		StudentInfoVo stuInfoVo = (StudentInfoVo) requestMessage.getData();
+		if (stuInfoVo.getStuCode().length() > 16 ||stuInfoVo.getStuCard().length() > 16) {
+			stuInfoVo.setStuCode(stuInfoVo.getStuCode().substring(0,16));
+			stuInfoVo.setStuCard(stuInfoVo.getStuCard().substring(0,16));
+			message.put("data", stuInfoVo);
+			logger.info("************二维码转换***************");
+			logger.info(message.toJSONString());
+		}
+		
 		logger.info("************学生投递历史接口***************");
 		String responseString = null;
 		try {
@@ -248,15 +283,10 @@ public class StuinfoController {
 			// TODO: handle exception
 			logger.error("学生投递历史接口错误");
 		}
+
 		
-		RequestMessage<StudentInfoVo> requestMessage = JSON.parseObject(message.toString(),
-				new TypeReference<RequestMessage<StudentInfoVo>>() {
-				});
-		logger.info(requestMessage.toString());
-		StudentInfoVo stuInfoVo = (StudentInfoVo) requestMessage.getData();
-
-		StudentInfo studentInfo = studentInfoService.getStudent(stuInfoVo.getStuCode());
-
+		StudentInfo studentInfo  = studentInfoService.getStudentByCodeCard(stuInfoVo.getStuCode(), stuInfoVo.getStuCard());
+		
 		if (studentInfo == null) {
 			ResponseMessage<String> responseMessage = new ResponseMessage<String>();
 			responseMessage.setData("");
@@ -264,8 +294,8 @@ public class StuinfoController {
 			logger.info(responseMessage.toString());
 			return JSONObject.toJSONString(responseMessage);
 		}
-		List<RecycleLogVo> list=studentInfoService.getRecycleLog(studentInfo.getId());
-		
+		List<RecycleLogVo> list = studentInfoService.getRecycleLog(studentInfo.getId());
+
 		ResponseMessage<List<RecycleLogVo>> responseMessage = new ResponseMessage<List<RecycleLogVo>>();
 		responseMessage.setData(list);
 		responseMessage.setSuccessMessage("获取日志信息成功");

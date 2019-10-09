@@ -1,6 +1,8 @@
 package com.qimeng.main.service;
 
+import java.text.ParseException;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,6 +12,7 @@ import com.qimeng.main.entity.DeviceManagement;
 import com.qimeng.main.entity.DeviceRecycleCount;
 import com.qimeng.main.entity.DeviceRecycleLog;
 import com.qimeng.main.entity.DeviceRecycleRealTime;
+import com.qimeng.main.entity.ExcelRecycle;
 import com.qimeng.main.entity.PointsManageLog;
 import com.qimeng.main.entity.PointsUsedLog;
 import com.qimeng.main.entity.RecycleType;
@@ -53,7 +56,7 @@ public class StudentUpdatePointsService {
 	@Autowired
 	DeviceRecycleRealTimeService deviceRecycleRealTimeService;
 	
-	public int updateStudentPoints(StudentData studentData,int wasteType,int uint,String machineId) {
+	public int updateStudentPoints(StudentData studentData,int wasteType,int uint,String machineId,Date date) {
 		try {
 			RecycleType recycleType=recycleTypeService.selectRecycleTypeByType((byte) wasteType);
 			if(recycleType==null) {
@@ -63,7 +66,6 @@ public class StudentUpdatePointsService {
 			if(deviceManagement==null) {
 				throw new RuntimeException("找不到当前回收机器");
 			}
-			Date date=new Date();
 			StudentRecycleCount studentRecycleCount=studentRecycleCountService.selectStudentRecycleCount(studentData.getUuid(), (byte) wasteType);
 			if(studentRecycleCount==null) {
 				studentRecycleCount=new StudentRecycleCount();
@@ -180,10 +182,12 @@ public class StudentUpdatePointsService {
 			throw new RuntimeException(e);
 		}
 	}
+	public int updateStudentPoints(StudentData studentData,int wasteType,int uint,String machineId) {
+		return updateStudentPoints(studentData,wasteType,uint,machineId,new Date());
+	}
 	
-	public int usedStudentPoints(StudentData studentData,int usedPoints,String mark,String appId) {
+	public int usedStudentPoints(StudentData studentData,int usedPoints,String mark,String appId,Date date) {
 		try {
-			Date date=new Date();
 			studentData.setUsedPoints(studentData.getUsedPoints()+usedPoints);
 			studentDataService.updateStudentUsedPoints(studentData);
 			PointsUsedLog pointsUsedLog=new PointsUsedLog();
@@ -200,7 +204,9 @@ public class StudentUpdatePointsService {
 			throw new RuntimeException(e);
 		}
 	}
-	
+	public int usedStudentPoints(StudentData studentData,int usedPoints,String mark,String appId) {
+		return usedStudentPoints(studentData,usedPoints,mark,appId,new Date());
+	}
 	public int deductStudentPoints(StudentData studentData,int deductPoints,String mark,String operator,String appId) {
 		try {
 			Date date=new Date();
@@ -220,6 +226,35 @@ public class StudentUpdatePointsService {
 			// TODO: handle exception
 			throw new RuntimeException(e);
 		}
+	}
+
+	public int updateStudentPointsByExcel(List<ExcelRecycle> list) throws ParseException {
+		// TODO Auto-generated method stub
+		int i=0;
+		for (ExcelRecycle excelRecycle : list) {
+			i++;
+			StudentData studentData = studentDataService.selectStudentDataByQRID(excelRecycle.getQrid());
+			if (studentData==null) {
+				System.out.println("{第" + String.valueOf(i + 1) + "行,qrid"+excelRecycle.getQrid()+"},");
+				continue;
+			}
+			updateStudentPoints(studentData,excelRecycle.getRecycleType(),excelRecycle.getCount(),excelRecycle.getMachineId(),excelRecycle.getCreateTime());
+		}
+		return 1;
+	}
+	public int updateStudentUsedPointsByExcel(List<ExcelRecycle> list,String mark,String appId) {
+		// TODO Auto-generated method stub
+		int i=0;
+		for (ExcelRecycle excelRecycle : list) {
+			i++;
+			StudentData studentData = studentDataService.selectStudentDataByQRID(excelRecycle.getQrid());
+			if (studentData==null) {
+				System.out.println("{第" + String.valueOf(i + 1) + "行,qrid"+excelRecycle.getQrid()+"},");
+				continue;
+			}
+			usedStudentPoints(studentData,excelRecycle.getPoints(),mark,appId,excelRecycle.getCreateTime());
+		}
+		return 1;
 	}
 }
 

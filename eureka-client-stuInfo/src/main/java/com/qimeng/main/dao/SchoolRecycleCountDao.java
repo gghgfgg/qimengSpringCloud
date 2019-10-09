@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.SelectProvider;
 import org.apache.ibatis.jdbc.SQL;
@@ -29,7 +28,6 @@ public interface SchoolRecycleCountDao {
 	static String update="count=VALUES(count),points=VALUES(points),remainder=VALUES(remainder),activity_count=VALUES(activity_count),update_time=VALUES(update_time)";
 	
 	@Insert("insert into "+tablename+"("+fields+") values" + "("+item+") ON DUPLICATE KEY UPDATE " + update )
-	@Options(useGeneratedKeys = true,keyProperty = "item.id")
 	int insertSchoolRecycleCount(@Param("item")SchoolRecycleCount schoolRecycleCount);
 	
 	@SelectProvider(type = SqlFactory.class,method = "selectSchoolRecycleCount")
@@ -46,7 +44,7 @@ public interface SchoolRecycleCountDao {
 		public String selectSchoolRecycleCount(@Param("item")SchoolRecycleCount schoolRecycleCount){
 	    	SQL sql = new SQL(); //SQL语句对象，所在包：org.apache.ibatis.jdbc.SQL
 	    	
-	    	sql.SELECT("id,"+fields);
+	    	sql.SELECT(fields);
 	    	sql.FROM(tablename);
 	    	if(!StringUtils.isEmpty(schoolRecycleCount.getSchoolCode())){
 	            sql.WHERE("school_code=#{item.schoolCode}");

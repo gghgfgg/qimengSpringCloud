@@ -13,9 +13,10 @@ import com.qimeng.main.vo.RecycleLogVo;
 @Mapper
 public interface StudentInfoDao {
 
+	
 	@Select("select nid as id,"
 			+ "realname as name,"
-			+ "qrid as stuCode,"
+			+ "code as stuCode,"
 			+ "card as stuCard,"
 			+ "rootid as bind,"
 			+ "hbday as startTime, "
@@ -23,9 +24,30 @@ public interface StudentInfoDao {
 			+ "schoolid from qmhb_student where qrid=#{studcode}")
 	public StudentInfo getStudent(@Param("studcode")String studcode);
 	
+	
 	@Select("select nid as id,"
 			+ "realname as name,"
-			+ "qrid as stuCode,"
+			+ "code as stuCode,"
+			+ "card as stuCard,"
+			+ "rootid as bind,"
+			+ "hbday as startTime, "
+			+ "njf as totalpoints,"
+			+ "schoolid from qmhb_student where code=#{studcode} and card=#{studcard}")
+	public StudentInfo getStudentByCodeCard(@Param("studcode")String studcode,@Param("studcard")String studcard);
+	
+	@Select("select nid as id,"
+			+ "realname as name,"
+			+ "code as stuCode,"
+			+ "card as stuCard,"
+			+ "rootid as bind,"
+			+ "hbday as startTime, "
+			+ "njf as totalpoints,"
+			+ "schoolid from qmhb_student where code=#{studcode}")
+	public StudentInfo getStudentByCode(@Param("studcode")String studcode);
+	
+	@Select("select nid as id,"
+			+ "realname as name,"
+			+ "code as stuCode,"
 			+ "card as stuCard,"
 			+ "rootid as bind,"
 			+ "hbday as startTime, "
@@ -35,12 +57,12 @@ public interface StudentInfoDao {
 	
 	@Select("select nid as id,"
 			+ "realname as name,"
-			+ "qrid as stuCode,"
+			+ "code as stuCode,"
 			+ "card as stuCard,"
 			+ "rootid as bind,"
 			+ "hbday as startTime, "
 			+ "njf as totalpoints,"
-			+ "schoolid from qmhb_student where mobile=#{phone}")
+			+ "schoolid from qmhb_student where mobile=#{phone} and ftype>1")
 	public StudentInfo getStudentByPhone(String phone);
 	
 	@Select("select snum as count,"

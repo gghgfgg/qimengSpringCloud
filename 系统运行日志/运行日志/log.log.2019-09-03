@@ -1,0 +1,246 @@
+2019-09-04 00:05:00  [ Druid-ConnectionPool-Create-1593165620:177666217 ] - [ DEBUG ]  {conn-10007} connected
+2019-09-04 00:05:00  [ scheduling-1:177666219 ] - [ DEBUG ]  {conn-10007} pool-connect
+2019-09-04 00:05:00  [ scheduling-1:177666220 ] - [ DEBUG ]  {conn-10007, pstmt-20044} created. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+2019-09-04 00:05:00  [ scheduling-1:177666221 ] - [ DEBUG ]  {conn-10007, pstmt-20044} Parameters : []
+2019-09-04 00:05:00  [ scheduling-1:177666221 ] - [ DEBUG ]  {conn-10007, pstmt-20044} Types : []
+2019-09-04 00:05:00  [ scheduling-1:177666223 ] - [ DEBUG ]  {conn-10007, pstmt-20044} executed. 2.053905 millis. SELECT id,type,mark,uint,factor,create_time,update_time
+FROM auxiliary_recycle_type
+2019-09-04 00:05:00  [ scheduling-1:177666223 ] - [ DEBUG ]  {conn-10007, pstmt-20044, rs-50044} open
+2019-09-04 00:05:00  [ scheduling-1:177666224 ] - [ DEBUG ]  {conn-10007, pstmt-20044, rs-50044} Header: [id, type, mark, uint, factor, create_time, update_time]
+2019-09-04 00:05:00  [ scheduling-1:177666224 ] - [ DEBUG ]  {conn-10007, pstmt-20044, rs-50044} Result: [1, true, 纸, 克, 70, null, null]
+2019-09-04 00:05:00  [ scheduling-1:177666225 ] - [ DEBUG ]  {conn-10007, pstmt-20044, rs-50044} Result: [2, true, 瓶子, 个, 1, null, 2019-08-28 14:03:48.0]
+2019-09-04 00:05:00  [ scheduling-1:177666228 ] - [ DEBUG ]  {conn-10007, pstmt-20044, rs-50044} closed
+2019-09-04 00:05:00  [ scheduling-1:177666228 ] - [ DEBUG ]  {conn-10007, pstmt-20044} closed
+2019-09-04 00:05:00  [ scheduling-1:177666229 ] - [ DEBUG ]  {conn-10007} pool-recycle
+2019-09-04 00:05:00  [ scheduling-1:177666230 ] - [ DEBUG ]  {conn-10007} pool-connect
+2019-09-04 00:05:00  [ scheduling-1:177666230 ] - [ DEBUG ]  {conn-10007, pstmt-20045} created. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_school_inform
+WHERE (active=?)
+2019-09-04 00:05:00  [ scheduling-1:177666231 ] - [ DEBUG ]  {conn-10007, pstmt-20045} Parameters : [true]
+2019-09-04 00:05:00  [ scheduling-1:177666231 ] - [ DEBUG ]  {conn-10007, pstmt-20045} Types : [BOOLEAN]
+2019-09-04 00:05:00  [ scheduling-1:177666236 ] - [ DEBUG ]  {conn-10007, pstmt-20045} executed. 5.701859 millis. SELECT id,school_name,school_id,school_code,postal_code,address,contacts,active,create_time,update_time
+FROM kernel_school_inform
+WHERE (active=?)
+2019-09-04 00:05:00  [ scheduling-1:177666237 ] - [ DEBUG ]  {conn-10007, pstmt-20045, rs-50045} open
+2019-09-04 00:05:00  [ scheduling-1:177666237 ] - [ DEBUG ]  {conn-10007, pstmt-20045, rs-50045} Header: [id, school_name, school_id, school_code, postal_code, address, contacts, active, create_time, update_time]
+2019-09-04 00:05:00  [ scheduling-1:177666238 ] - [ DEBUG ]  {conn-10007, pstmt-20045, rs-50045} Result: [1, 456, 123, 214400365400, 110101, null, null, true, null, null]
+2019-09-04 00:05:00  [ scheduling-1:177666241 ] - [ DEBUG ]  {conn-10007, pstmt-20045, rs-50045} Result: [2, 645, 123, 12301, 110102, null, null, true, null, null]
+2019-09-04 00:05:00  [ scheduling-1:177666242 ] - [ DEBUG ]  {conn-10007, pstmt-20045, rs-50045} Result: [5, 新乡小学, 2144003701, 214400370100, 310109, 广东汕头的, [{"name":"陈泽键","phone":"123456","type":0},{"name":"陈键","phone":"123456","type":0}], true, 2019-08-19 17:58:54.0, 2019-08-24 16:26:32.0]
+2019-09-04 00:05:00  [ scheduling-1:177666243 ] - [ DEBUG ]  {conn-10007, pstmt-20045, rs-50045} Result: [6, 大华北, 2144003701, 214400370101, 310100, 上海, [{"name":"陈泽键","phone":"123456","type":0},{"name":"陈泽键","phone":"123456","type":0}], true, 2019-08-22 10:23:57.0, 2019-08-22 13:46:25.0]
+2019-09-04 00:05:00  [ scheduling-1:177666243 ] - [ DEBUG ]  {conn-10007, pstmt-20045, rs-50045} Result: [7, 汕头市第二中学, 4522210451, 452221045100, 515000, 第一中学学校地址学校地址, null, true, 2019-08-24 15:20:00.0, 2019-08-24 15:28:15.0]
+2019-09-04 00:05:00  [ scheduling-1:177666244 ] - [ DEBUG ]  {conn-10007, pstmt-20045, rs-50045} closed
+2019-09-04 00:05:00  [ scheduling-1:177666244 ] - [ DEBUG ]  {conn-10007, pstmt-20045} closed
+2019-09-04 00:05:00  [ scheduling-1:177666244 ] - [ DEBUG ]  {conn-10007} pool-recycle
+2019-09-04 00:05:00  [ scheduling-1:177666245 ] - [ DEBUG ]  {conn-10007} pool-connect
+2019-09-04 00:05:00  [ scheduling-1:177666246 ] - [ DEBUG ]  {conn-10007, pstmt-20046} created. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-09-04 00:05:00  [ scheduling-1:177666246 ] - [ DEBUG ]  {conn-10007, pstmt-20046} Parameters : [214400365400, 2]
+2019-09-04 00:05:00  [ scheduling-1:177666247 ] - [ DEBUG ]  {conn-10007, pstmt-20046} Types : [VARCHAR, TINYINT]
+2019-09-04 00:05:00  [ scheduling-1:177666248 ] - [ DEBUG ]  {conn-10007, pstmt-20046} executed. 1.695969 millis. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-09-04 00:05:00  [ scheduling-1:177666249 ] - [ DEBUG ]  {conn-10007, pstmt-20046, rs-50046} open
+2019-09-04 00:05:00  [ scheduling-1:177666249 ] - [ DEBUG ]  {conn-10007, pstmt-20046, rs-50046} Header: [id, schoolid_of_device, uuid, schoolid_of_student, recycle_type, identity_type, count, last_remainder, factor, points, remainder, create_time]
+2019-09-04 00:05:00  [ scheduling-1:177666249 ] - [ DEBUG ]  {conn-10007, pstmt-20046, rs-50046} closed
+2019-09-04 00:05:00  [ scheduling-1:177666250 ] - [ DEBUG ]  {conn-10007, pstmt-20046} closed
+2019-09-04 00:05:00  [ scheduling-1:177666250 ] - [ DEBUG ]  {conn-10007} pool-recycle
+2019-09-04 00:05:00  [ scheduling-1:177666250 ] - [ DEBUG ]  {conn-10007} pool-connect
+2019-09-04 00:05:00  [ scheduling-1:177666251 ] - [ DEBUG ]  {conn-10007, pstmt-20047} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-09-04 00:05:00  [ scheduling-1:177666251 ] - [ DEBUG ]  {conn-10007, pstmt-20047} Parameters : [214400365400, 2, 0, 0, 0, 0, 1, 2019-09-04 00:05:00.035]
+2019-09-04 00:05:00  [ scheduling-1:177666251 ] - [ DEBUG ]  {conn-10007, pstmt-20047} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-09-04 00:05:00  [ scheduling-1:177666256 ] - [ DEBUG ]  {conn-10007, pstmt-20047} executed. 4.66236 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-09-04 00:05:00  [ scheduling-1:177666256 ] - [ DEBUG ]  {conn-10007, pstmt-20047, rs-50047} open
+2019-09-04 00:05:00  [ scheduling-1:177666257 ] - [ DEBUG ]  {conn-10007, pstmt-20047, rs-50047} Header: [GENERATED_KEY]
+2019-09-04 00:05:00  [ scheduling-1:177666257 ] - [ DEBUG ]  {conn-10007, pstmt-20047, rs-50047} Result: [157]
+2019-09-04 00:05:00  [ scheduling-1:177666258 ] - [ DEBUG ]  {conn-10007, pstmt-20047, rs-50047} closed
+2019-09-04 00:05:00  [ scheduling-1:177666258 ] - [ DEBUG ]  {conn-10007, pstmt-20047} closed
+2019-09-04 00:05:00  [ scheduling-1:177666258 ] - [ DEBUG ]  {conn-10007} pool-recycle
+2019-09-04 00:05:00  [ scheduling-1:177666259 ] - [ DEBUG ]  {conn-10007} pool-connect
+2019-09-04 00:05:00  [ scheduling-1:177666260 ] - [ DEBUG ]  {conn-10007, pstmt-20048} created. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-09-04 00:05:00  [ scheduling-1:177666260 ] - [ DEBUG ]  {conn-10007, pstmt-20048} Parameters : [214400365400, 1]
+2019-09-04 00:05:00  [ scheduling-1:177666260 ] - [ DEBUG ]  {conn-10007, pstmt-20048} Types : [VARCHAR, TINYINT]
+2019-09-04 00:05:00  [ scheduling-1:177666261 ] - [ DEBUG ]  {conn-10007, pstmt-20048} executed. 1.46119 millis. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-09-04 00:05:00  [ scheduling-1:177666262 ] - [ DEBUG ]  {conn-10007, pstmt-20048, rs-50048} open
+2019-09-04 00:05:00  [ scheduling-1:177666262 ] - [ DEBUG ]  {conn-10007, pstmt-20048, rs-50048} Header: [id, schoolid_of_device, uuid, schoolid_of_student, recycle_type, identity_type, count, last_remainder, factor, points, remainder, create_time]
+2019-09-04 00:05:00  [ scheduling-1:177666263 ] - [ DEBUG ]  {conn-10007, pstmt-20048, rs-50048} closed
+2019-09-04 00:05:00  [ scheduling-1:177666263 ] - [ DEBUG ]  {conn-10007, pstmt-20048} closed
+2019-09-04 00:05:00  [ scheduling-1:177666263 ] - [ DEBUG ]  {conn-10007} pool-recycle
+2019-09-04 00:05:00  [ scheduling-1:177666264 ] - [ DEBUG ]  {conn-10007} pool-connect
+2019-09-04 00:05:00  [ scheduling-1:177666264 ] - [ DEBUG ]  {conn-10007, pstmt-20049} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-09-04 00:05:00  [ scheduling-1:177666265 ] - [ DEBUG ]  {conn-10007, pstmt-20049} Parameters : [214400365400, 1, 0, 0, 0, 0, 1, 2019-09-04 00:05:00.035]
+2019-09-04 00:05:00  [ scheduling-1:177666265 ] - [ DEBUG ]  {conn-10007, pstmt-20049} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-09-04 00:05:00  [ scheduling-1:177666270 ] - [ DEBUG ]  {conn-10007, pstmt-20049} executed. 4.48425 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-09-04 00:05:00  [ scheduling-1:177666270 ] - [ DEBUG ]  {conn-10007, pstmt-20049, rs-50049} open
+2019-09-04 00:05:00  [ scheduling-1:177666270 ] - [ DEBUG ]  {conn-10007, pstmt-20049, rs-50049} Header: [GENERATED_KEY]
+2019-09-04 00:05:00  [ scheduling-1:177666271 ] - [ DEBUG ]  {conn-10007, pstmt-20049, rs-50049} Result: [158]
+2019-09-04 00:05:00  [ scheduling-1:177666271 ] - [ DEBUG ]  {conn-10007, pstmt-20049, rs-50049} closed
+2019-09-04 00:05:00  [ scheduling-1:177666271 ] - [ DEBUG ]  {conn-10007, pstmt-20049} closed
+2019-09-04 00:05:00  [ scheduling-1:177666272 ] - [ DEBUG ]  {conn-10007} pool-recycle
+2019-09-04 00:05:00  [ scheduling-1:177666272 ] - [ DEBUG ]  {conn-10007} pool-connect
+2019-09-04 00:05:00  [ scheduling-1:177666273 ] - [ DEBUG ]  {conn-10007, pstmt-20050} created. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-09-04 00:05:00  [ scheduling-1:177666274 ] - [ DEBUG ]  {conn-10007, pstmt-20050} Parameters : [12301, 2]
+2019-09-04 00:05:00  [ scheduling-1:177666274 ] - [ DEBUG ]  {conn-10007, pstmt-20050} Types : [VARCHAR, TINYINT]
+2019-09-04 00:05:00  [ scheduling-1:177666275 ] - [ DEBUG ]  {conn-10007, pstmt-20050} executed. 1.337267 millis. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-09-04 00:05:00  [ scheduling-1:177666275 ] - [ DEBUG ]  {conn-10007, pstmt-20050, rs-50050} open
+2019-09-04 00:05:00  [ scheduling-1:177666275 ] - [ DEBUG ]  {conn-10007, pstmt-20050, rs-50050} Header: [id, schoolid_of_device, uuid, schoolid_of_student, recycle_type, identity_type, count, last_remainder, factor, points, remainder, create_time]
+2019-09-04 00:05:00  [ scheduling-1:177666276 ] - [ DEBUG ]  {conn-10007, pstmt-20050, rs-50050} closed
+2019-09-04 00:05:00  [ scheduling-1:177666276 ] - [ DEBUG ]  {conn-10007, pstmt-20050} closed
+2019-09-04 00:05:00  [ scheduling-1:177666276 ] - [ DEBUG ]  {conn-10007} pool-recycle
+2019-09-04 00:05:00  [ scheduling-1:177666277 ] - [ DEBUG ]  {conn-10007} pool-connect
+2019-09-04 00:05:00  [ scheduling-1:177666277 ] - [ DEBUG ]  {conn-10007, pstmt-20051} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-09-04 00:05:00  [ scheduling-1:177666278 ] - [ DEBUG ]  {conn-10007, pstmt-20051} Parameters : [12301, 2, 0, 0, 0, 0, 1, 2019-09-04 00:05:00.035]
+2019-09-04 00:05:00  [ scheduling-1:177666278 ] - [ DEBUG ]  {conn-10007, pstmt-20051} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-09-04 00:05:00  [ scheduling-1:177666302 ] - [ DEBUG ]  {conn-10007, pstmt-20051} executed. 23.757654 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-09-04 00:05:00  [ scheduling-1:177666302 ] - [ DEBUG ]  {conn-10007, pstmt-20051, rs-50051} open
+2019-09-04 00:05:00  [ scheduling-1:177666303 ] - [ DEBUG ]  {conn-10007, pstmt-20051, rs-50051} Header: [GENERATED_KEY]
+2019-09-04 00:05:00  [ scheduling-1:177666303 ] - [ DEBUG ]  {conn-10007, pstmt-20051, rs-50051} Result: [159]
+2019-09-04 00:05:00  [ scheduling-1:177666303 ] - [ DEBUG ]  {conn-10007, pstmt-20051, rs-50051} closed
+2019-09-04 00:05:00  [ scheduling-1:177666303 ] - [ DEBUG ]  {conn-10007, pstmt-20051} closed
+2019-09-04 00:05:00  [ scheduling-1:177666303 ] - [ DEBUG ]  {conn-10007} pool-recycle
+2019-09-04 00:05:00  [ scheduling-1:177666304 ] - [ DEBUG ]  {conn-10007} pool-connect
+2019-09-04 00:05:00  [ scheduling-1:177666305 ] - [ DEBUG ]  {conn-10007, pstmt-20052} created. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-09-04 00:05:00  [ scheduling-1:177666305 ] - [ DEBUG ]  {conn-10007, pstmt-20052} Parameters : [12301, 1]
+2019-09-04 00:05:00  [ scheduling-1:177666305 ] - [ DEBUG ]  {conn-10007, pstmt-20052} Types : [VARCHAR, TINYINT]
+2019-09-04 00:05:00  [ scheduling-1:177666307 ] - [ DEBUG ]  {conn-10007, pstmt-20052} executed. 1.501964 millis. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-09-04 00:05:00  [ scheduling-1:177666307 ] - [ DEBUG ]  {conn-10007, pstmt-20052, rs-50052} open
+2019-09-04 00:05:00  [ scheduling-1:177666307 ] - [ DEBUG ]  {conn-10007, pstmt-20052, rs-50052} Header: [id, schoolid_of_device, uuid, schoolid_of_student, recycle_type, identity_type, count, last_remainder, factor, points, remainder, create_time]
+2019-09-04 00:05:00  [ scheduling-1:177666308 ] - [ DEBUG ]  {conn-10007, pstmt-20052, rs-50052} closed
+2019-09-04 00:05:00  [ scheduling-1:177666308 ] - [ DEBUG ]  {conn-10007, pstmt-20052} closed
+2019-09-04 00:05:00  [ scheduling-1:177666308 ] - [ DEBUG ]  {conn-10007} pool-recycle
+2019-09-04 00:05:00  [ scheduling-1:177666309 ] - [ DEBUG ]  {conn-10007} pool-connect
+2019-09-04 00:05:00  [ scheduling-1:177666309 ] - [ DEBUG ]  {conn-10007, pstmt-20053} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-09-04 00:05:00  [ scheduling-1:177666310 ] - [ DEBUG ]  {conn-10007, pstmt-20053} Parameters : [12301, 1, 0, 0, 0, 0, 1, 2019-09-04 00:05:00.035]
+2019-09-04 00:05:00  [ scheduling-1:177666310 ] - [ DEBUG ]  {conn-10007, pstmt-20053} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-09-04 00:05:00  [ scheduling-1:177666316 ] - [ DEBUG ]  {conn-10007, pstmt-20053} executed. 6.354692 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-09-04 00:05:00  [ scheduling-1:177666317 ] - [ DEBUG ]  {conn-10007, pstmt-20053, rs-50053} open
+2019-09-04 00:05:00  [ scheduling-1:177666317 ] - [ DEBUG ]  {conn-10007, pstmt-20053, rs-50053} Header: [GENERATED_KEY]
+2019-09-04 00:05:00  [ scheduling-1:177666317 ] - [ DEBUG ]  {conn-10007, pstmt-20053, rs-50053} Result: [160]
+2019-09-04 00:05:00  [ scheduling-1:177666318 ] - [ DEBUG ]  {conn-10007, pstmt-20053, rs-50053} closed
+2019-09-04 00:05:00  [ scheduling-1:177666318 ] - [ DEBUG ]  {conn-10007, pstmt-20053} closed
+2019-09-04 00:05:00  [ scheduling-1:177666318 ] - [ DEBUG ]  {conn-10007} pool-recycle
+2019-09-04 00:05:00  [ scheduling-1:177666319 ] - [ DEBUG ]  {conn-10007} pool-connect
+2019-09-04 00:05:00  [ scheduling-1:177666320 ] - [ DEBUG ]  {conn-10007, pstmt-20054} created. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-09-04 00:05:00  [ scheduling-1:177666320 ] - [ DEBUG ]  {conn-10007, pstmt-20054} Parameters : [214400370100, 2]
+2019-09-04 00:05:00  [ scheduling-1:177666320 ] - [ DEBUG ]  {conn-10007, pstmt-20054} Types : [VARCHAR, TINYINT]
+2019-09-04 00:05:00  [ scheduling-1:177666321 ] - [ DEBUG ]  {conn-10007, pstmt-20054} executed. 1.393852 millis. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-09-04 00:05:00  [ scheduling-1:177666322 ] - [ DEBUG ]  {conn-10007, pstmt-20054, rs-50054} open
+2019-09-04 00:05:00  [ scheduling-1:177666322 ] - [ DEBUG ]  {conn-10007, pstmt-20054, rs-50054} Header: [id, schoolid_of_device, uuid, schoolid_of_student, recycle_type, identity_type, count, last_remainder, factor, points, remainder, create_time]
+2019-09-04 00:05:00  [ scheduling-1:177666322 ] - [ DEBUG ]  {conn-10007, pstmt-20054, rs-50054} closed
+2019-09-04 00:05:00  [ scheduling-1:177666323 ] - [ DEBUG ]  {conn-10007, pstmt-20054} closed
+2019-09-04 00:05:00  [ scheduling-1:177666323 ] - [ DEBUG ]  {conn-10007} pool-recycle
+2019-09-04 00:05:00  [ scheduling-1:177666323 ] - [ DEBUG ]  {conn-10007} pool-connect
+2019-09-04 00:05:00  [ scheduling-1:177666324 ] - [ DEBUG ]  {conn-10007, pstmt-20055} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-09-04 00:05:00  [ scheduling-1:177666324 ] - [ DEBUG ]  {conn-10007, pstmt-20055} Parameters : [214400370100, 2, 0, 0, 0, 0, 1, 2019-09-04 00:05:00.035]
+2019-09-04 00:05:00  [ scheduling-1:177666324 ] - [ DEBUG ]  {conn-10007, pstmt-20055} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-09-04 00:05:00  [ scheduling-1:177666330 ] - [ DEBUG ]  {conn-10007, pstmt-20055} executed. 6.236682 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-09-04 00:05:00  [ scheduling-1:177666331 ] - [ DEBUG ]  {conn-10007, pstmt-20055, rs-50055} open
+2019-09-04 00:05:00  [ scheduling-1:177666331 ] - [ DEBUG ]  {conn-10007, pstmt-20055, rs-50055} Header: [GENERATED_KEY]
+2019-09-04 00:05:00  [ scheduling-1:177666332 ] - [ DEBUG ]  {conn-10007, pstmt-20055, rs-50055} Result: [161]
+2019-09-04 00:05:00  [ scheduling-1:177666332 ] - [ DEBUG ]  {conn-10007, pstmt-20055, rs-50055} closed
+2019-09-04 00:05:00  [ scheduling-1:177666332 ] - [ DEBUG ]  {conn-10007, pstmt-20055} closed
+2019-09-04 00:05:00  [ scheduling-1:177666332 ] - [ DEBUG ]  {conn-10007} pool-recycle
+2019-09-04 00:05:00  [ scheduling-1:177666333 ] - [ DEBUG ]  {conn-10007} pool-connect
+2019-09-04 00:05:00  [ scheduling-1:177666334 ] - [ DEBUG ]  {conn-10007, pstmt-20056} created. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-09-04 00:05:00  [ scheduling-1:177666334 ] - [ DEBUG ]  {conn-10007, pstmt-20056} Parameters : [214400370100, 1]
+2019-09-04 00:05:00  [ scheduling-1:177666335 ] - [ DEBUG ]  {conn-10007, pstmt-20056} Types : [VARCHAR, TINYINT]
+2019-09-04 00:05:00  [ scheduling-1:177666336 ] - [ DEBUG ]  {conn-10007, pstmt-20056} executed. 1.499231 millis. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-09-04 00:05:00  [ scheduling-1:177666336 ] - [ DEBUG ]  {conn-10007, pstmt-20056, rs-50056} open
+2019-09-04 00:05:00  [ scheduling-1:177666336 ] - [ DEBUG ]  {conn-10007, pstmt-20056, rs-50056} Header: [id, schoolid_of_device, uuid, schoolid_of_student, recycle_type, identity_type, count, last_remainder, factor, points, remainder, create_time]
+2019-09-04 00:05:00  [ scheduling-1:177666337 ] - [ DEBUG ]  {conn-10007, pstmt-20056, rs-50056} closed
+2019-09-04 00:05:00  [ scheduling-1:177666337 ] - [ DEBUG ]  {conn-10007, pstmt-20056} closed
+2019-09-04 00:05:00  [ scheduling-1:177666337 ] - [ DEBUG ]  {conn-10007} pool-recycle
+2019-09-04 00:05:00  [ scheduling-1:177666338 ] - [ DEBUG ]  {conn-10007} pool-connect
+2019-09-04 00:05:00  [ scheduling-1:177666338 ] - [ DEBUG ]  {conn-10007, pstmt-20057} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-09-04 00:05:00  [ scheduling-1:177666339 ] - [ DEBUG ]  {conn-10007, pstmt-20057} Parameters : [214400370100, 1, 0, 0, 0, 0, 1, 2019-09-04 00:05:00.035]
+2019-09-04 00:05:00  [ scheduling-1:177666339 ] - [ DEBUG ]  {conn-10007, pstmt-20057} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-09-04 00:05:00  [ scheduling-1:177666343 ] - [ DEBUG ]  {conn-10007, pstmt-20057} executed. 3.874322 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-09-04 00:05:00  [ scheduling-1:177666343 ] - [ DEBUG ]  {conn-10007, pstmt-20057, rs-50057} open
+2019-09-04 00:05:00  [ scheduling-1:177666344 ] - [ DEBUG ]  {conn-10007, pstmt-20057, rs-50057} Header: [GENERATED_KEY]
+2019-09-04 00:05:00  [ scheduling-1:177666344 ] - [ DEBUG ]  {conn-10007, pstmt-20057, rs-50057} Result: [162]
+2019-09-04 00:05:00  [ scheduling-1:177666344 ] - [ DEBUG ]  {conn-10007, pstmt-20057, rs-50057} closed
+2019-09-04 00:05:00  [ scheduling-1:177666345 ] - [ DEBUG ]  {conn-10007, pstmt-20057} closed
+2019-09-04 00:05:00  [ scheduling-1:177666345 ] - [ DEBUG ]  {conn-10007} pool-recycle
+2019-09-04 00:05:00  [ scheduling-1:177666345 ] - [ DEBUG ]  {conn-10007} pool-connect
+2019-09-04 00:05:00  [ scheduling-1:177666346 ] - [ DEBUG ]  {conn-10007, pstmt-20058} created. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-09-04 00:05:00  [ scheduling-1:177666347 ] - [ DEBUG ]  {conn-10007, pstmt-20058} Parameters : [214400370101, 2]
+2019-09-04 00:05:00  [ scheduling-1:177666347 ] - [ DEBUG ]  {conn-10007, pstmt-20058} Types : [VARCHAR, TINYINT]
+2019-09-04 00:05:00  [ scheduling-1:177666348 ] - [ DEBUG ]  {conn-10007, pstmt-20058} executed. 1.430233 millis. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-09-04 00:05:00  [ scheduling-1:177666348 ] - [ DEBUG ]  {conn-10007, pstmt-20058, rs-50058} open
+2019-09-04 00:05:00  [ scheduling-1:177666349 ] - [ DEBUG ]  {conn-10007, pstmt-20058, rs-50058} Header: [id, schoolid_of_device, uuid, schoolid_of_student, recycle_type, identity_type, count, last_remainder, factor, points, remainder, create_time]
+2019-09-04 00:05:00  [ scheduling-1:177666349 ] - [ DEBUG ]  {conn-10007, pstmt-20058, rs-50058} closed
+2019-09-04 00:05:00  [ scheduling-1:177666349 ] - [ DEBUG ]  {conn-10007, pstmt-20058} closed
+2019-09-04 00:05:00  [ scheduling-1:177666349 ] - [ DEBUG ]  {conn-10007} pool-recycle
+2019-09-04 00:05:00  [ scheduling-1:177666350 ] - [ DEBUG ]  {conn-10007} pool-connect
+2019-09-04 00:05:00  [ scheduling-1:177666350 ] - [ DEBUG ]  {conn-10007, pstmt-20059} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-09-04 00:05:00  [ scheduling-1:177666351 ] - [ DEBUG ]  {conn-10007, pstmt-20059} Parameters : [214400370101, 2, 0, 0, 0, 0, 1, 2019-09-04 00:05:00.035]
+2019-09-04 00:05:00  [ scheduling-1:177666351 ] - [ DEBUG ]  {conn-10007, pstmt-20059} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-09-04 00:05:00  [ scheduling-1:177666356 ] - [ DEBUG ]  {conn-10007, pstmt-20059} executed. 4.807696 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-09-04 00:05:00  [ scheduling-1:177666356 ] - [ DEBUG ]  {conn-10007, pstmt-20059, rs-50059} open
+2019-09-04 00:05:00  [ scheduling-1:177666356 ] - [ DEBUG ]  {conn-10007, pstmt-20059, rs-50059} Header: [GENERATED_KEY]
+2019-09-04 00:05:00  [ scheduling-1:177666356 ] - [ DEBUG ]  {conn-10007, pstmt-20059, rs-50059} Result: [163]
+2019-09-04 00:05:00  [ scheduling-1:177666357 ] - [ DEBUG ]  {conn-10007, pstmt-20059, rs-50059} closed
+2019-09-04 00:05:00  [ scheduling-1:177666357 ] - [ DEBUG ]  {conn-10007, pstmt-20059} closed
+2019-09-04 00:05:00  [ scheduling-1:177666357 ] - [ DEBUG ]  {conn-10007} pool-recycle
+2019-09-04 00:05:00  [ scheduling-1:177666358 ] - [ DEBUG ]  {conn-10007} pool-connect
+2019-09-04 00:05:00  [ scheduling-1:177666358 ] - [ DEBUG ]  {conn-10007, pstmt-20060} created. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-09-04 00:05:00  [ scheduling-1:177666359 ] - [ DEBUG ]  {conn-10007, pstmt-20060} Parameters : [214400370101, 1]
+2019-09-04 00:05:00  [ scheduling-1:177666359 ] - [ DEBUG ]  {conn-10007, pstmt-20060} Types : [VARCHAR, TINYINT]
+2019-09-04 00:05:00  [ scheduling-1:177666360 ] - [ DEBUG ]  {conn-10007, pstmt-20060} executed. 1.201773 millis. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-09-04 00:05:00  [ scheduling-1:177666360 ] - [ DEBUG ]  {conn-10007, pstmt-20060, rs-50060} open
+2019-09-04 00:05:00  [ scheduling-1:177666360 ] - [ DEBUG ]  {conn-10007, pstmt-20060, rs-50060} Header: [id, schoolid_of_device, uuid, schoolid_of_student, recycle_type, identity_type, count, last_remainder, factor, points, remainder, create_time]
+2019-09-04 00:05:00  [ scheduling-1:177666361 ] - [ DEBUG ]  {conn-10007, pstmt-20060, rs-50060} closed
+2019-09-04 00:05:00  [ scheduling-1:177666362 ] - [ DEBUG ]  {conn-10007, pstmt-20060} closed
+2019-09-04 00:05:00  [ scheduling-1:177666362 ] - [ DEBUG ]  {conn-10007} pool-recycle
+2019-09-04 00:05:00  [ scheduling-1:177666362 ] - [ DEBUG ]  {conn-10007} pool-connect
+2019-09-04 00:05:00  [ scheduling-1:177666363 ] - [ DEBUG ]  {conn-10007, pstmt-20061} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-09-04 00:05:00  [ scheduling-1:177666364 ] - [ DEBUG ]  {conn-10007, pstmt-20061} Parameters : [214400370101, 1, 0, 0, 0, 0, 1, 2019-09-04 00:05:00.035]
+2019-09-04 00:05:00  [ scheduling-1:177666364 ] - [ DEBUG ]  {conn-10007, pstmt-20061} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-09-04 00:05:00  [ scheduling-1:177666369 ] - [ DEBUG ]  {conn-10007, pstmt-20061} executed. 4.861828 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-09-04 00:05:00  [ scheduling-1:177666369 ] - [ DEBUG ]  {conn-10007, pstmt-20061, rs-50061} open
+2019-09-04 00:05:00  [ scheduling-1:177666370 ] - [ DEBUG ]  {conn-10007, pstmt-20061, rs-50061} Header: [GENERATED_KEY]
+2019-09-04 00:05:00  [ scheduling-1:177666370 ] - [ DEBUG ]  {conn-10007, pstmt-20061, rs-50061} Result: [164]
+2019-09-04 00:05:00  [ scheduling-1:177666371 ] - [ DEBUG ]  {conn-10007, pstmt-20061, rs-50061} closed
+2019-09-04 00:05:00  [ scheduling-1:177666371 ] - [ DEBUG ]  {conn-10007, pstmt-20061} closed
+2019-09-04 00:05:00  [ scheduling-1:177666371 ] - [ DEBUG ]  {conn-10007} pool-recycle
+2019-09-04 00:05:00  [ scheduling-1:177666372 ] - [ DEBUG ]  {conn-10007} pool-connect
+2019-09-04 00:05:00  [ scheduling-1:177666373 ] - [ DEBUG ]  {conn-10007, pstmt-20062} created. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-09-04 00:05:00  [ scheduling-1:177666373 ] - [ DEBUG ]  {conn-10007, pstmt-20062} Parameters : [452221045100, 2]
+2019-09-04 00:05:00  [ scheduling-1:177666373 ] - [ DEBUG ]  {conn-10007, pstmt-20062} Types : [VARCHAR, TINYINT]
+2019-09-04 00:05:00  [ scheduling-1:177666375 ] - [ DEBUG ]  {conn-10007, pstmt-20062} executed. 1.587606 millis. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-09-04 00:05:00  [ scheduling-1:177666375 ] - [ DEBUG ]  {conn-10007, pstmt-20062, rs-50062} open
+2019-09-04 00:05:00  [ scheduling-1:177666375 ] - [ DEBUG ]  {conn-10007, pstmt-20062, rs-50062} Header: [id, schoolid_of_device, uuid, schoolid_of_student, recycle_type, identity_type, count, last_remainder, factor, points, remainder, create_time]
+2019-09-04 00:05:00  [ scheduling-1:177666376 ] - [ DEBUG ]  {conn-10007, pstmt-20062, rs-50062} closed
+2019-09-04 00:05:00  [ scheduling-1:177666376 ] - [ DEBUG ]  {conn-10007, pstmt-20062} closed
+2019-09-04 00:05:00  [ scheduling-1:177666376 ] - [ DEBUG ]  {conn-10007} pool-recycle
+2019-09-04 00:05:00  [ scheduling-1:177666377 ] - [ DEBUG ]  {conn-10007} pool-connect
+2019-09-04 00:05:00  [ scheduling-1:177666377 ] - [ DEBUG ]  {conn-10007, pstmt-20063} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-09-04 00:05:00  [ scheduling-1:177666378 ] - [ DEBUG ]  {conn-10007, pstmt-20063} Parameters : [452221045100, 2, 0, 0, 0, 0, 1, 2019-09-04 00:05:00.035]
+2019-09-04 00:05:00  [ scheduling-1:177666378 ] - [ DEBUG ]  {conn-10007, pstmt-20063} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-09-04 00:05:00  [ scheduling-1:177666383 ] - [ DEBUG ]  {conn-10007, pstmt-20063} executed. 5.238057 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-09-04 00:05:00  [ scheduling-1:177666384 ] - [ DEBUG ]  {conn-10007, pstmt-20063, rs-50063} open
+2019-09-04 00:05:00  [ scheduling-1:177666384 ] - [ DEBUG ]  {conn-10007, pstmt-20063, rs-50063} Header: [GENERATED_KEY]
+2019-09-04 00:05:00  [ scheduling-1:177666384 ] - [ DEBUG ]  {conn-10007, pstmt-20063, rs-50063} Result: [165]
+2019-09-04 00:05:00  [ scheduling-1:177666385 ] - [ DEBUG ]  {conn-10007, pstmt-20063, rs-50063} closed
+2019-09-04 00:05:00  [ scheduling-1:177666385 ] - [ DEBUG ]  {conn-10007, pstmt-20063} closed
+2019-09-04 00:05:00  [ scheduling-1:177666386 ] - [ DEBUG ]  {conn-10007} pool-recycle
+2019-09-04 00:05:00  [ scheduling-1:177666386 ] - [ DEBUG ]  {conn-10007} pool-connect
+2019-09-04 00:05:00  [ scheduling-1:177666387 ] - [ DEBUG ]  {conn-10007, pstmt-20064} created. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-09-04 00:05:00  [ scheduling-1:177666387 ] - [ DEBUG ]  {conn-10007, pstmt-20064} Parameters : [452221045100, 1]
+2019-09-04 00:05:00  [ scheduling-1:177666388 ] - [ DEBUG ]  {conn-10007, pstmt-20064} Types : [VARCHAR, TINYINT]
+2019-09-04 00:05:00  [ scheduling-1:177666389 ] - [ DEBUG ]  {conn-10007, pstmt-20064} executed. 1.324666 millis. Select id machine_id,schoolid_of_device,uuid,schoolid_of_student,recycle_type,identity_type,count,last_remainder,factor,points,remainder,create_time from machine_device_recycle_log where schoolid_of_device=? and recycle_type=? and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)
+2019-09-04 00:05:00  [ scheduling-1:177666389 ] - [ DEBUG ]  {conn-10007, pstmt-20064, rs-50064} open
+2019-09-04 00:05:00  [ scheduling-1:177666389 ] - [ DEBUG ]  {conn-10007, pstmt-20064, rs-50064} Header: [id, schoolid_of_device, uuid, schoolid_of_student, recycle_type, identity_type, count, last_remainder, factor, points, remainder, create_time]
+2019-09-04 00:05:00  [ scheduling-1:177666390 ] - [ DEBUG ]  {conn-10007, pstmt-20064, rs-50064} closed
+2019-09-04 00:05:00  [ scheduling-1:177666390 ] - [ DEBUG ]  {conn-10007, pstmt-20064} closed
+2019-09-04 00:05:00  [ scheduling-1:177666390 ] - [ DEBUG ]  {conn-10007} pool-recycle
+2019-09-04 00:05:00  [ scheduling-1:177666391 ] - [ DEBUG ]  {conn-10007} pool-connect
+2019-09-04 00:05:00  [ scheduling-1:177666391 ] - [ DEBUG ]  {conn-10007, pstmt-20065} created. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-09-04 00:05:00  [ scheduling-1:177666392 ] - [ DEBUG ]  {conn-10007, pstmt-20065} Parameters : [452221045100, 1, 0, 0, 0, 0, 1, 2019-09-04 00:05:00.035]
+2019-09-04 00:05:00  [ scheduling-1:177666392 ] - [ DEBUG ]  {conn-10007, pstmt-20065} Types : [VARCHAR, TINYINT, INTEGER, INTEGER, INTEGER, INTEGER, TINYINT, TIMESTAMP]
+2019-09-04 00:05:00  [ scheduling-1:177666396 ] - [ DEBUG ]  {conn-10007, pstmt-20065} executed. 4.39355 millis. insert into kernel_school_auto_count(school_code,type,count,points,remainder,activity_count,count_type,create_time) values(?,?,?,?,?,?,?,?)
+2019-09-04 00:05:00  [ scheduling-1:177666397 ] - [ DEBUG ]  {conn-10007, pstmt-20065, rs-50065} open
+2019-09-04 00:05:00  [ scheduling-1:177666397 ] - [ DEBUG ]  {conn-10007, pstmt-20065, rs-50065} Header: [GENERATED_KEY]
+2019-09-04 00:05:00  [ scheduling-1:177666398 ] - [ DEBUG ]  {conn-10007, pstmt-20065, rs-50065} Result: [166]
+2019-09-04 00:05:00  [ scheduling-1:177666398 ] - [ DEBUG ]  {conn-10007, pstmt-20065, rs-50065} closed
+2019-09-04 00:05:00  [ scheduling-1:177666398 ] - [ DEBUG ]  {conn-10007, pstmt-20065} closed
+2019-09-04 00:05:00  [ scheduling-1:177666398 ] - [ DEBUG ]  {conn-10007} pool-recycle
+2019-09-04 00:05:00  [ scheduling-1:177666399 ] - [ INFO ]  自动生成每日数据报表
+2019-09-04 07:05:06  [ Druid-ConnectionPool-Destroy-1593165620:202872409 ] - [ DEBUG ]  {conn-10007} closed

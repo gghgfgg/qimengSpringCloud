@@ -1,0 +1,352 @@
+2019-10-07 15:09:22  [ http-nio-7073-exec-7:659713404 ] - [ INFO ]  ************更新机器编码***************
+2019-10-07 15:09:22  [ http-nio-7073-exec-7:659713410 ] - [ ERROR ]  获取更新机器码接口错误
+2019-10-07 15:09:22  [ http-nio-7073-exec-7:659713418 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=null, operator=null, data=DeviceStatusVo [serialNumber=1c29eafd4bbcc41d0777f019b02c330b, status=null, statusType=null]]
+2019-10-07 15:09:22  [ http-nio-7073-exec-7:659713435 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=更新成功, accountTonken=, data=]
+2019-10-07 15:09:28  [ http-nio-7073-exec-8:659719215 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 15:09:28  [ http-nio-7073-exec-8:659719218 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 15:09:28  [ http-nio-7073-exec-8:659719219 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=2144003654, accountTonken=null, operator=null, data=StudentInfoVo [name=null, stuCode=AC09DACF55CA45DD, stuCard=4F952539543E5497, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 15:09:28  [ http-nio-7073-exec-8:659719239 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=yH18R4Ke, data=StudentInfoVo [name=陈瑀菲, stuCode=AC09DACF55CA45DD, stuCard=4F952539543E5497, qrCode=http://o0c.cn/?code=AC09DACF55CA45DD&card=4F952539543E5497, wasteType=0, unit=0, point=0, bind=0, active=1]]
+2019-10-07 15:09:32  [ http-nio-7073-exec-9:659723201 ] - [ INFO ]  ************上传积分***************
+2019-10-07 15:09:32  [ http-nio-7073-exec-9:659723203 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 15:09:32  [ http-nio-7073-exec-9:659723204 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=Lbt4hp5S4S5+EMfsqKIhXg==, operator=null, data=StudentInfoVo [name=陈瑀菲, stuCode=AC09DACF55CA45DD, stuCard=4F952539543E5497, qrCode=null, wasteType=2, unit=0, point=0, bind=0, active=1]]
+2019-10-07 15:09:33  [ http-nio-7073-exec-9:659724332 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 15:09:33  [ http-nio-7073-exec-9:659724333 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 15:09:51  [ http-nio-7073-exec-10:659742709 ] - [ INFO ]  ************微信登陆***************
+2019-10-07 15:09:52  [ http-nio-7073-exec-10:659742999 ] - [ INFO ]  {"accountTonken":"soRPaE22","data":[{"active":1,"bind":0,"name":"陈泽键","point":139,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D6&card=29b2592cc12213d7","stuCard":"29b2592cc12213d7","stuCode":"5B2DDE67C27283D6","unit":0,"wasteType":0}],"message":"登陆成功","statusCode":1,"success":true}
+2019-10-07 15:09:52  [ http-nio-7073-exec-1:659743119 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 15:09:52  [ http-nio-7073-exec-1:659743120 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 15:09:52  [ http-nio-7073-exec-1:659743121 ] - [ INFO ]  RequestMessage [appID=7166912116544626, machineID=null, accountTonken=null, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29b2592cc12213d7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29b2592cc12213d7, wasteType=0, unit=0, point=139, bind=0, active=1]]
+2019-10-07 15:09:52  [ http-nio-7073-exec-1:659743140 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=AnxRWiEu, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 15:09:54  [ http-nio-7073-exec-3:659745749 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 15:09:54  [ http-nio-7073-exec-3:659745751 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 15:09:54  [ http-nio-7073-exec-3:659745751 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=Lbt4hp5S4S5+EMfsqKIhXg==, operator=null, data=StudentInfoVo [name=null, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 15:09:54  [ http-nio-7073-exec-3:659745770 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=VY7ncwBM, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 15:09:58  [ http-nio-7073-exec-2:659749770 ] - [ INFO ]  ************上传积分***************
+2019-10-07 15:09:58  [ http-nio-7073-exec-2:659749772 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 15:09:58  [ http-nio-7073-exec-2:659749772 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=uR8wLhDxPiGYpHwWpRuHEA==, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=null, wasteType=2, unit=0, point=220, bind=1, active=1]]
+2019-10-07 15:10:00  [ http-nio-7073-exec-2:659750813 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 15:10:00  [ http-nio-7073-exec-2:659750814 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 15:10:04  [ http-nio-7073-exec-4:659755194 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 15:10:04  [ http-nio-7073-exec-4:659755196 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 15:10:04  [ http-nio-7073-exec-4:659755197 ] - [ INFO ]  RequestMessage [appID=7166912116544626, machineID=null, accountTonken=null, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 15:10:04  [ http-nio-7073-exec-4:659755200 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=YHb83Wc8, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 15:39:41  [ http-nio-7073-exec-5:661532622 ] - [ INFO ]  *********获取广告大图*************
+2019-10-07 15:39:41  [ http-nio-7073-exec-5:661532623 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-10-07 15:40:46  [ http-nio-7073-exec-6:661597401 ] - [ INFO ]  *********获取商城接口学生信息*************
+2019-10-07 15:40:46  [ http-nio-7073-exec-6:661597403 ] - [ INFO ]  StudentInfo [id=1, name=江阳阳, stuCode=72FC81049751D5FC, schoolId=10001, totalPoints=526.0, stuCard=BAF737C8A6F54793, bind=2791, active=0, startTime=Sun Jun 23 00:00:00 CST 2019]
+2019-10-07 15:40:46  [ http-nio-7073-exec-7:661597513 ] - [ INFO ]  *********获取商品列表*************
+2019-10-07 15:40:46  [ http-nio-7073-exec-7:661597514 ] - [ INFO ]  [id=15 mc=15 jf=1 pic=http://sys.qimenghb.com/pic/heibi.jpg, id=16 mc=16 jf=1 pic=http://sys.qimenghb.com/pic/zuowenb.jpg, id=17 mc=17 jf=1 pic=http://sys.qimenghb.com/pic/pinyinb.jpg, id=18 mc=18 jf=1 pic=http://sys.qimenghb.com/pic/shuangxianb.jpg, id=19 mc=19 jf=1 pic=http://sys.qimenghb.com/pic/yingyub.jpg, id=20 mc=20 jf=1 pic=http://sys.qimenghb.com/pic/tiangeb.jpg, id=21 mc=21 jf=1 pic=http://sys.qimenghb.com/pic/fanggeb.jpg, id=22 mc=22 jf=1 pic=http://sys.qimenghb.com/pic/huatub.jpg, id=23 mc=23 jf=1 pic=http://sys.qimenghb.com/pic/shuxueb.jpg, id=24 mc=24 jf=1 pic=http://sys.qimenghb.com/pic/anxianb.jpg, id=1 mc=1 jf=10 pic=http://sys.qimenghb.com/pic/heibi.jpg, id=2 mc=2 jf=10 pic=http://sys.qimenghb.com/pic/zuowenb.jpg, id=3 mc=3 jf=10 pic=http://sys.qimenghb.com/pic/pinyinb.jpg, id=4 mc=4 jf=10 pic=http://sys.qimenghb.com/pic/shuangxianb.jpg, id=5 mc=5 jf=10 pic=http://sys.qimenghb.com/pic/yingyub.jpg, id=6 mc=6 jf=10 pic=http://sys.qimenghb.com/pic/tiangeb.jpg, id=7 mc=7 jf=10 pic=http://sys.qimenghb.com/pic/fanggeb.jpg, id=8 mc=8 jf=10 pic=http://sys.qimenghb.com/pic/huatub.jpg, id=9 mc=9 jf=10 pic=http://sys.qimenghb.com/pic/shuxueb.jpg, id=10 mc=10 jf=10 pic=http://sys.qimenghb.com/pic/anxianb.jpg, id=11 mc=11 jf=15 pic=http://sys.qimenghb.com/pic/506b.jpg, id=12 mc=12 jf=25 pic=http://sys.qimenghb.com/pic/506h.jpg, id=13 mc=13 jf=15 pic=http://sys.qimenghb.com/pic/400b.jpg, id=14 mc=14 jf=25 pic=http://sys.qimenghb.com/pic/400h.jpg, id=25 mc=25 jf=25 pic=http://sys.qimenghb.com/pic/300h.jpg]
+2019-10-07 15:41:26  [ http-nio-7073-exec-8:661636946 ] - [ ERROR ]  学生扣分接口错误
+2019-10-07 15:41:26  [ http-nio-7073-exec-8:661637059 ] - [ INFO ]  *********扣除商品积分生成订单*************
+2019-10-07 15:41:26  [ http-nio-7073-exec-8:661637059 ] - [ INFO ]  更新商品信息:Repertory [dpcode=123456, proid=15, kucun=32, sale=28, lastdate=Mon Oct 07 15:41:26 CST 2019]
+2019-10-07 15:41:26  [ http-nio-7073-exec-8:661637060 ] - [ INFO ]  学生积分使用信息:UsePointsLogDao [id=64, studenName=江阳阳, studentCode=72FC81049751D5FC11569BEDA8AD490269498818, usedPoints=1, creatTime=Mon Oct 07 15:41:26 CST 2019, appId=7564564864648644, mark=大屏机扣分]
+2019-10-07 15:43:56  [ http-nio-7073-exec-9:661786910 ] - [ INFO ]  *********获取广告大图*************
+2019-10-07 15:43:56  [ http-nio-7073-exec-9:661786911 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-10-07 15:43:58  [ http-nio-7073-exec-10:661789419 ] - [ INFO ]  *********获取商城接口学生信息*************
+2019-10-07 15:43:58  [ http-nio-7073-exec-10:661789419 ] - [ INFO ]  StudentInfo [id=2, name=体验卡, stuCode=9031E9AE86941E48, schoolId=10001, totalPoints=503.8, stuCard=7FC1B10EF11BD944, bind=1946, active=0, startTime=Wed Sep 11 00:00:00 CST 2019]
+2019-10-07 15:43:58  [ http-nio-7073-exec-1:661789478 ] - [ INFO ]  *********获取商品列表*************
+2019-10-07 15:43:58  [ http-nio-7073-exec-1:661789479 ] - [ INFO ]  [id=15 mc=15 jf=1 pic=http://sys.qimenghb.com/pic/heibi.jpg, id=16 mc=16 jf=1 pic=http://sys.qimenghb.com/pic/zuowenb.jpg, id=17 mc=17 jf=1 pic=http://sys.qimenghb.com/pic/pinyinb.jpg, id=18 mc=18 jf=1 pic=http://sys.qimenghb.com/pic/shuangxianb.jpg, id=19 mc=19 jf=1 pic=http://sys.qimenghb.com/pic/yingyub.jpg, id=20 mc=20 jf=1 pic=http://sys.qimenghb.com/pic/tiangeb.jpg, id=21 mc=21 jf=1 pic=http://sys.qimenghb.com/pic/fanggeb.jpg, id=22 mc=22 jf=1 pic=http://sys.qimenghb.com/pic/huatub.jpg, id=23 mc=23 jf=1 pic=http://sys.qimenghb.com/pic/shuxueb.jpg, id=24 mc=24 jf=1 pic=http://sys.qimenghb.com/pic/anxianb.jpg, id=1 mc=1 jf=10 pic=http://sys.qimenghb.com/pic/heibi.jpg, id=2 mc=2 jf=10 pic=http://sys.qimenghb.com/pic/zuowenb.jpg, id=3 mc=3 jf=10 pic=http://sys.qimenghb.com/pic/pinyinb.jpg, id=4 mc=4 jf=10 pic=http://sys.qimenghb.com/pic/shuangxianb.jpg, id=5 mc=5 jf=10 pic=http://sys.qimenghb.com/pic/yingyub.jpg, id=6 mc=6 jf=10 pic=http://sys.qimenghb.com/pic/tiangeb.jpg, id=7 mc=7 jf=10 pic=http://sys.qimenghb.com/pic/fanggeb.jpg, id=8 mc=8 jf=10 pic=http://sys.qimenghb.com/pic/huatub.jpg, id=9 mc=9 jf=10 pic=http://sys.qimenghb.com/pic/shuxueb.jpg, id=10 mc=10 jf=10 pic=http://sys.qimenghb.com/pic/anxianb.jpg, id=11 mc=11 jf=15 pic=http://sys.qimenghb.com/pic/506b.jpg, id=12 mc=12 jf=25 pic=http://sys.qimenghb.com/pic/506h.jpg, id=13 mc=13 jf=15 pic=http://sys.qimenghb.com/pic/400b.jpg, id=14 mc=14 jf=25 pic=http://sys.qimenghb.com/pic/400h.jpg, id=25 mc=25 jf=25 pic=http://sys.qimenghb.com/pic/300h.jpg]
+2019-10-07 15:44:02  [ http-nio-7073-exec-3:661793689 ] - [ ERROR ]  学生扣分接口错误
+2019-10-07 15:44:02  [ http-nio-7073-exec-3:661793735 ] - [ INFO ]  *********扣除商品积分生成订单*************
+2019-10-07 15:44:02  [ http-nio-7073-exec-3:661793736 ] - [ INFO ]  更新商品信息:Repertory [dpcode=123456, proid=15, kucun=31, sale=29, lastdate=Mon Oct 07 15:44:02 CST 2019]
+2019-10-07 15:44:02  [ http-nio-7073-exec-3:661793736 ] - [ INFO ]  学生积分使用信息:UsePointsLogDao [id=65, studenName=体验卡, studentCode=9031E9AE86941E4802D7BF3CCFF0DB544C898092, usedPoints=1, creatTime=Mon Oct 07 15:44:02 CST 2019, appId=7564564864648644, mark=大屏机扣分]
+2019-10-07 15:44:09  [ http-nio-7073-exec-2:661799846 ] - [ INFO ]  *********获取广告大图*************
+2019-10-07 15:44:09  [ http-nio-7073-exec-2:661799848 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-10-07 15:44:11  [ http-nio-7073-exec-4:661802493 ] - [ INFO ]  *********获取商城接口学生信息*************
+2019-10-07 15:44:11  [ http-nio-7073-exec-4:661802494 ] - [ INFO ]  StudentInfo [id=30466, name=体验卡, stuCode=AB17AA3E01CE988C, schoolId=10001, totalPoints=100.0, stuCard=A41CF3C1B51200A8, bind=0, active=0, startTime=Tue Jan 01 00:00:00 CST 2019]
+2019-10-07 18:25:34  [ http-nio-7073-exec-7:671485695 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:25:34  [ http-nio-7073-exec-7:671485697 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:25:34  [ http-nio-7073-exec-7:671485697 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=uR8wLhDxPiGYpHwWpRuHEA==, operator=null, data=StudentInfoVo [name=null, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B38091156E7E8897ED09F029D, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 18:25:34  [ http-nio-7073-exec-7:671485725 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=4xPXbBNI, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=http://o0c.cn/?code=9472954473DCCA189E03742C44962A385B356169&card=EE1E080E09902E0B, wasteType=0, unit=0, point=964, bind=1, active=1]]
+2019-10-07 18:26:03  [ http-nio-7073-exec-8:671514754 ] - [ INFO ]  ************上传积分***************
+2019-10-07 18:26:03  [ http-nio-7073-exec-8:671514756 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 18:26:03  [ http-nio-7073-exec-8:671514756 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=6MTtLXXowzkisor0BBHiWg==, operator=null, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=null, wasteType=2, unit=0, point=964, bind=1, active=1]]
+2019-10-07 18:26:05  [ http-nio-7073-exec-8:671515880 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 18:26:05  [ http-nio-7073-exec-8:671515881 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 18:26:16  [ http-nio-7073-exec-9:671527555 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:26:16  [ http-nio-7073-exec-9:671527556 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:26:16  [ http-nio-7073-exec-9:671527557 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=6MTtLXXowzkisor0BBHiWg==, operator=null, data=StudentInfoVo [name=null, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B38091156E7E8897ED09F029D, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 18:26:16  [ http-nio-7073-exec-9:671527576 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=vdcYisZI, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=http://o0c.cn/?code=9472954473DCCA189E03742C44962A385B356169&card=EE1E080E09902E0B, wasteType=0, unit=0, point=964, bind=1, active=1]]
+2019-10-07 18:26:30  [ http-nio-7073-exec-10:671541338 ] - [ INFO ]  ************上传积分***************
+2019-10-07 18:26:30  [ http-nio-7073-exec-10:671541340 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 18:26:30  [ http-nio-7073-exec-10:671541340 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=Z1rnDJduCi41j8ztEao0mQ==, operator=null, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=null, wasteType=2, unit=4, point=964, bind=1, active=1]]
+2019-10-07 18:26:31  [ http-nio-7073-exec-10:671542412 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 18:26:31  [ http-nio-7073-exec-10:671542413 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 18:28:06  [ http-nio-7073-exec-1:671637687 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:28:06  [ http-nio-7073-exec-1:671637688 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:28:06  [ http-nio-7073-exec-1:671637688 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=Z1rnDJduCi41j8ztEao0mQ==, operator=null, data=StudentInfoVo [name=null, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B38091156E7E8897ED09F029D, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 18:28:06  [ http-nio-7073-exec-1:671637709 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=UtBXkn4e, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=http://o0c.cn/?code=9472954473DCCA189E03742C44962A385B356169&card=EE1E080E09902E0B, wasteType=0, unit=0, point=964, bind=1, active=1]]
+2019-10-07 18:28:13  [ http-nio-7073-exec-3:671643831 ] - [ INFO ]  ************上传积分***************
+2019-10-07 18:28:13  [ http-nio-7073-exec-3:671643833 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 18:28:13  [ http-nio-7073-exec-3:671643833 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=CGvEY6TUkEdyrH44nVKebg==, operator=null, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=null, wasteType=2, unit=34, point=964, bind=1, active=1]]
+2019-10-07 18:28:14  [ http-nio-7073-exec-3:671644911 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 18:28:14  [ http-nio-7073-exec-3:671644911 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 18:28:52  [ http-nio-7073-exec-2:671683017 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:28:52  [ http-nio-7073-exec-2:671683019 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:28:52  [ http-nio-7073-exec-2:671683019 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=CGvEY6TUkEdyrH44nVKebg==, operator=null, data=StudentInfoVo [name=null, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B38091156E7E8897ED09F029D, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 18:28:52  [ http-nio-7073-exec-2:671683039 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=6BipIrig, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=http://o0c.cn/?code=9472954473DCCA189E03742C44962A385B356169&card=EE1E080E09902E0B, wasteType=0, unit=0, point=965, bind=1, active=1]]
+2019-10-07 18:29:10  [ http-nio-7073-exec-4:671701537 ] - [ INFO ]  ************上传积分***************
+2019-10-07 18:29:10  [ http-nio-7073-exec-4:671701539 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 18:29:10  [ http-nio-7073-exec-4:671701539 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=1NljzCjNc7fBlV9xAHu8xQ==, operator=null, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=null, wasteType=2, unit=0, point=965, bind=1, active=1]]
+2019-10-07 18:29:11  [ http-nio-7073-exec-4:671702629 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 18:29:11  [ http-nio-7073-exec-4:671702630 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 18:29:26  [ http-nio-7073-exec-5:671717411 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:29:26  [ http-nio-7073-exec-5:671717413 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:29:26  [ http-nio-7073-exec-5:671717413 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=1NljzCjNc7fBlV9xAHu8xQ==, operator=null, data=StudentInfoVo [name=null, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B38091156E7E8897ED09F029D, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 18:29:26  [ http-nio-7073-exec-5:671717433 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=dnVePEqt, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=http://o0c.cn/?code=9472954473DCCA189E03742C44962A385B356169&card=EE1E080E09902E0B, wasteType=0, unit=0, point=965, bind=1, active=1]]
+2019-10-07 18:29:40  [ http-nio-7073-exec-6:671731253 ] - [ INFO ]  ************上传积分***************
+2019-10-07 18:29:40  [ http-nio-7073-exec-6:671731254 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 18:29:40  [ http-nio-7073-exec-6:671731255 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=mx8kYo7BjQJL0BoWKFx2SA==, operator=null, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=null, wasteType=2, unit=9, point=965, bind=1, active=1]]
+2019-10-07 18:29:41  [ http-nio-7073-exec-6:671732333 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 18:29:41  [ http-nio-7073-exec-6:671732333 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 18:33:25  [ http-nio-7073-exec-7:671956270 ] - [ INFO ]  ************微信登陆***************
+2019-10-07 18:33:25  [ http-nio-7073-exec-7:671956514 ] - [ INFO ]  {"accountTonken":"zByXkKgO","data":[{"active":1,"bind":0,"name":"陈泽键","point":139,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D6&card=29b2592cc12213d7","stuCard":"29b2592cc12213d7","stuCode":"5B2DDE67C27283D6","unit":0,"wasteType":0}],"message":"登陆成功","statusCode":1,"success":true}
+2019-10-07 18:33:26  [ http-nio-7073-exec-8:671957298 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:33:26  [ http-nio-7073-exec-8:671957300 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:33:26  [ http-nio-7073-exec-8:671957300 ] - [ INFO ]  RequestMessage [appID=7166912116544626, machineID=null, accountTonken=null, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29b2592cc12213d7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29b2592cc12213d7, wasteType=0, unit=0, point=139, bind=0, active=1]]
+2019-10-07 18:33:26  [ http-nio-7073-exec-8:671957322 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=IUMGEhRy, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 18:33:27  [ http-nio-7073-exec-9:671958599 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:33:27  [ http-nio-7073-exec-9:671958601 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:33:27  [ http-nio-7073-exec-9:671958601 ] - [ INFO ]  RequestMessage [appID=7166912116544626, machineID=null, accountTonken=null, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 18:33:27  [ http-nio-7073-exec-9:671958621 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=JW6frTL6, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 18:33:49  [ http-nio-7073-exec-10:671979843 ] - [ INFO ]  ************学生投递历史接口***************
+2019-10-07 18:33:49  [ http-nio-7073-exec-10:671979845 ] - [ ERROR ]  学生投递历史接口错误
+2019-10-07 18:33:49  [ http-nio-7073-exec-10:671979847 ] - [ INFO ]  RequestMessage [appID=7166912116544626, machineID=null, accountTonken=null, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 18:33:49  [ http-nio-7073-exec-10:671979873 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取日志信息成功, accountTonken=, data=[RecycleLogVo [count=0, points=0, remainder=null, createTime=Sun Sep 22 09:08:04 CST 2019], RecycleLogVo [count=2, points=0, remainder=null, createTime=Sun Sep 22 09:07:52 CST 2019], RecycleLogVo [count=191, points=2, remainder=null, createTime=Tue Sep 17 10:20:24 CST 2019], RecycleLogVo [count=172, points=2, remainder=null, createTime=Tue Sep 17 10:08:41 CST 2019], RecycleLogVo [count=4, points=0, remainder=null, createTime=Tue Sep 17 10:07:57 CST 2019], RecycleLogVo [count=220, points=3, remainder=null, createTime=Wed Sep 11 13:21:05 CST 2019], RecycleLogVo [count=0, points=0, remainder=null, createTime=Wed Sep 11 13:20:09 CST 2019]]]
+2019-10-07 18:33:50  [ http-nio-7073-exec-1:671981439 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:33:50  [ http-nio-7073-exec-1:671981441 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:33:50  [ http-nio-7073-exec-1:671981441 ] - [ INFO ]  RequestMessage [appID=7166912116544626, machineID=null, accountTonken=null, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 18:33:50  [ http-nio-7073-exec-1:671981445 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=3b4MONII, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 18:34:33  [ http-nio-7073-exec-3:672023870 ] - [ INFO ]  ************微信登陆***************
+2019-10-07 18:34:33  [ http-nio-7073-exec-3:672024155 ] - [ INFO ]  {"accountTonken":"daWecyWm","data":[{"active":1,"bind":0,"name":"陈泽键","point":139,"qrCode":"http://o0c.cn/?code=5B2DDE67C27283D6&card=29b2592cc12213d7","stuCard":"29b2592cc12213d7","stuCode":"5B2DDE67C27283D6","unit":0,"wasteType":0}],"message":"登陆成功","statusCode":1,"success":true}
+2019-10-07 18:34:33  [ http-nio-7073-exec-2:672024260 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:34:33  [ http-nio-7073-exec-2:672024262 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:34:33  [ http-nio-7073-exec-2:672024263 ] - [ INFO ]  RequestMessage [appID=7166912116544626, machineID=null, accountTonken=null, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29b2592cc12213d7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29b2592cc12213d7, wasteType=0, unit=0, point=139, bind=0, active=1]]
+2019-10-07 18:34:33  [ http-nio-7073-exec-2:672024266 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=SoPHnXJO, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 18:34:38  [ http-nio-7073-exec-4:672029777 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:34:38  [ http-nio-7073-exec-4:672029778 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:34:38  [ http-nio-7073-exec-4:672029779 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=mx8kYo7BjQJL0BoWKFx2SA==, operator=null, data=StudentInfoVo [name=null, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 18:34:38  [ http-nio-7073-exec-4:672029784 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=HmTaHqw8, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 18:34:42  [ http-nio-7073-exec-5:672033785 ] - [ INFO ]  ************上传积分***************
+2019-10-07 18:34:42  [ http-nio-7073-exec-5:672033786 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 18:34:42  [ http-nio-7073-exec-5:672033787 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=vscuywMogkmnQ37kTL6aDA==, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=null, wasteType=2, unit=2, point=220, bind=1, active=1]]
+2019-10-07 18:34:44  [ http-nio-7073-exec-5:672034844 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 18:34:44  [ http-nio-7073-exec-5:672034846 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 18:34:58  [ http-nio-7073-exec-6:672049718 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:34:58  [ http-nio-7073-exec-6:672049720 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:34:58  [ http-nio-7073-exec-6:672049720 ] - [ INFO ]  RequestMessage [appID=7166912116544626, machineID=null, accountTonken=null, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 18:34:58  [ http-nio-7073-exec-6:672049723 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=cOaiD70O, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 18:34:59  [ http-nio-7073-exec-7:672050775 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:34:59  [ http-nio-7073-exec-7:672050777 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:34:59  [ http-nio-7073-exec-7:672050777 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=vscuywMogkmnQ37kTL6aDA==, operator=null, data=StudentInfoVo [name=null, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 18:34:59  [ http-nio-7073-exec-7:672050780 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=pI43obj1, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 18:35:05  [ http-nio-7073-exec-8:672056468 ] - [ INFO ]  ************上传积分***************
+2019-10-07 18:35:05  [ http-nio-7073-exec-8:672056470 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 18:35:05  [ http-nio-7073-exec-8:672056470 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=aF9/5KMlhdDn5n+4RbQUgw==, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=null, wasteType=2, unit=41, point=220, bind=1, active=1]]
+2019-10-07 18:35:06  [ http-nio-7073-exec-8:672057518 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 18:35:06  [ http-nio-7073-exec-8:672057520 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 18:35:18  [ http-nio-7073-exec-9:672069256 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:35:18  [ http-nio-7073-exec-9:672069257 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:35:18  [ http-nio-7073-exec-9:672069258 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=aF9/5KMlhdDn5n+4RbQUgw==, operator=null, data=StudentInfoVo [name=null, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 18:35:18  [ http-nio-7073-exec-9:672069261 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=6PZuPRNO, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 18:35:22  [ http-nio-7073-exec-10:672073119 ] - [ INFO ]  ************上传积分***************
+2019-10-07 18:35:22  [ http-nio-7073-exec-10:672073121 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 18:35:22  [ http-nio-7073-exec-10:672073121 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=XJHk4TCawvyfyeqrhARDmQ==, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=null, wasteType=2, unit=6, point=220, bind=1, active=1]]
+2019-10-07 18:35:23  [ http-nio-7073-exec-10:672074144 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 18:35:23  [ http-nio-7073-exec-10:672074145 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 18:35:34  [ http-nio-7073-exec-1:672084923 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:35:34  [ http-nio-7073-exec-1:672084927 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:35:34  [ http-nio-7073-exec-1:672084927 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=XJHk4TCawvyfyeqrhARDmQ==, operator=null, data=StudentInfoVo [name=null, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 18:35:34  [ http-nio-7073-exec-1:672084930 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=0zGi4iCj, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 18:35:37  [ http-nio-7073-exec-3:672088770 ] - [ INFO ]  ************上传积分***************
+2019-10-07 18:35:37  [ http-nio-7073-exec-3:672088771 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 18:35:37  [ http-nio-7073-exec-3:672088772 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=l7o37zvXS3dzbXsDRvnVWQ==, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=null, wasteType=2, unit=0, point=220, bind=1, active=1]]
+2019-10-07 18:35:38  [ http-nio-7073-exec-3:672089784 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 18:35:38  [ http-nio-7073-exec-3:672089785 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 18:35:56  [ http-nio-7073-exec-2:672107224 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:35:56  [ http-nio-7073-exec-2:672107226 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:35:56  [ http-nio-7073-exec-2:672107227 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=l7o37zvXS3dzbXsDRvnVWQ==, operator=null, data=StudentInfoVo [name=null, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 18:35:56  [ http-nio-7073-exec-2:672107229 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=AVw63qgr, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 18:36:02  [ http-nio-7073-exec-4:672113232 ] - [ INFO ]  ************上传积分***************
+2019-10-07 18:36:02  [ http-nio-7073-exec-4:672113238 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 18:36:02  [ http-nio-7073-exec-4:672113239 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=1YKQVvEsvbfvtnQhejLNqg==, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=null, wasteType=2, unit=142, point=220, bind=1, active=1]]
+2019-10-07 18:36:03  [ http-nio-7073-exec-4:672114269 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 18:36:03  [ http-nio-7073-exec-4:672114269 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 18:36:13  [ http-nio-7073-exec-5:672124623 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:36:13  [ http-nio-7073-exec-5:672124625 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:36:13  [ http-nio-7073-exec-5:672124626 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=1YKQVvEsvbfvtnQhejLNqg==, operator=null, data=StudentInfoVo [name=null, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 18:36:13  [ http-nio-7073-exec-5:672124629 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=ZIqnk9xM, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 18:36:17  [ http-nio-7073-exec-6:672128484 ] - [ INFO ]  ************上传积分***************
+2019-10-07 18:36:17  [ http-nio-7073-exec-6:672128486 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 18:36:17  [ http-nio-7073-exec-6:672128487 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=+pwB7nQ6T3MpxcOfmZvqqQ==, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=null, wasteType=2, unit=3, point=220, bind=1, active=1]]
+2019-10-07 18:36:18  [ http-nio-7073-exec-6:672129523 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 18:36:18  [ http-nio-7073-exec-6:672129524 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 18:36:48  [ http-nio-7073-exec-7:672159213 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:36:48  [ http-nio-7073-exec-7:672159214 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:36:48  [ http-nio-7073-exec-7:672159215 ] - [ INFO ]  RequestMessage [appID=7166912116544626, machineID=null, accountTonken=null, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 18:36:48  [ http-nio-7073-exec-7:672159217 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=4vAzH0Zh, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 18:36:49  [ http-nio-7073-exec-8:672160471 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:36:49  [ http-nio-7073-exec-8:672160473 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:36:49  [ http-nio-7073-exec-8:672160473 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=+pwB7nQ6T3MpxcOfmZvqqQ==, operator=null, data=StudentInfoVo [name=null, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 18:36:49  [ http-nio-7073-exec-8:672160479 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=S5xueNxC, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 18:36:57  [ http-nio-7073-exec-9:672168415 ] - [ INFO ]  ************上传积分***************
+2019-10-07 18:36:57  [ http-nio-7073-exec-9:672168417 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 18:36:57  [ http-nio-7073-exec-9:672168417 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=TUQ7yYQw9XG5lAy3igziVQ==, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=null, wasteType=2, unit=326, point=220, bind=1, active=1]]
+2019-10-07 18:36:58  [ http-nio-7073-exec-9:672169535 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 18:36:58  [ http-nio-7073-exec-9:672169535 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 18:37:07  [ http-nio-7073-exec-10:672178149 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:37:07  [ http-nio-7073-exec-10:672178151 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:37:07  [ http-nio-7073-exec-10:672178151 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=TUQ7yYQw9XG5lAy3igziVQ==, operator=null, data=StudentInfoVo [name=null, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 18:37:07  [ http-nio-7073-exec-10:672178154 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=5A6eJmBP, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 18:37:11  [ http-nio-7073-exec-1:672182003 ] - [ INFO ]  ************上传积分***************
+2019-10-07 18:37:11  [ http-nio-7073-exec-1:672182005 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 18:37:11  [ http-nio-7073-exec-1:672182005 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=lhf0d5mA6BW/xTuYjeT9hg==, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=null, wasteType=2, unit=4, point=220, bind=1, active=1]]
+2019-10-07 18:37:12  [ http-nio-7073-exec-1:672183019 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 18:37:12  [ http-nio-7073-exec-1:672183019 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 18:37:15  [ http-nio-7073-exec-3:672186181 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:37:15  [ http-nio-7073-exec-3:672186182 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:37:15  [ http-nio-7073-exec-3:672186183 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=lhf0d5mA6BW/xTuYjeT9hg==, operator=null, data=StudentInfoVo [name=null, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 18:37:15  [ http-nio-7073-exec-3:672186185 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=iOHSQSiA, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 18:37:19  [ http-nio-7073-exec-2:672190583 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:37:19  [ http-nio-7073-exec-2:672190584 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:37:19  [ http-nio-7073-exec-2:672190585 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=w4W6Ka7IU+o1B2ft8IeTQQ==, operator=null, data=StudentInfoVo [name=null, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 18:37:19  [ http-nio-7073-exec-2:672190588 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=cg4E4Oor, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 18:37:28  [ http-nio-7073-exec-4:672199446 ] - [ INFO ]  ************上传积分***************
+2019-10-07 18:37:28  [ http-nio-7073-exec-4:672199447 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 18:37:28  [ http-nio-7073-exec-4:672199448 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=m+ys0iBWBfAyJHMgNcjANA==, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=null, wasteType=2, unit=0, point=220, bind=1, active=1]]
+2019-10-07 18:37:29  [ http-nio-7073-exec-4:672200487 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 18:37:29  [ http-nio-7073-exec-4:672200487 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 18:37:48  [ http-nio-7073-exec-5:672218959 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:37:48  [ http-nio-7073-exec-5:672218960 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:37:48  [ http-nio-7073-exec-5:672218961 ] - [ INFO ]  RequestMessage [appID=7166912116544626, machineID=null, accountTonken=null, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 18:37:48  [ http-nio-7073-exec-5:672218963 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=gf7ZPc9D, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 18:37:52  [ http-nio-7073-exec-6:672223327 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:37:52  [ http-nio-7073-exec-6:672223328 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:37:52  [ http-nio-7073-exec-6:672223329 ] - [ INFO ]  RequestMessage [appID=7166912116544626, machineID=null, accountTonken=null, operator=null, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 18:37:52  [ http-nio-7073-exec-6:672223331 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=LZa4INHI, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=220, bind=1, active=1]]
+2019-10-07 18:43:16  [ http-nio-7073-exec-7:672546878 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:43:16  [ http-nio-7073-exec-7:672546880 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:43:16  [ http-nio-7073-exec-7:672546880 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=m+ys0iBWBfAyJHMgNcjANA==, operator=null, data=StudentInfoVo [name=null, stuCode=AC09DACF55CA45DD, stuCard=4F952539543E5497, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 18:43:16  [ http-nio-7073-exec-7:672546901 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=28tsAKrg, data=StudentInfoVo [name=陈瑀菲, stuCode=AC09DACF55CA45DD, stuCard=4F952539543E5497, qrCode=http://o0c.cn/?code=AC09DACF55CA45DD&card=4F952539543E5497, wasteType=0, unit=0, point=0, bind=0, active=1]]
+2019-10-07 18:43:20  [ http-nio-7073-exec-8:672550942 ] - [ INFO ]  ************上传积分***************
+2019-10-07 18:43:20  [ http-nio-7073-exec-8:672550944 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 18:43:20  [ http-nio-7073-exec-8:672550944 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=AYKvQYvWGlWPXuSZvza3yA==, operator=null, data=StudentInfoVo [name=陈瑀菲, stuCode=AC09DACF55CA45DD, stuCard=4F952539543E5497, qrCode=null, wasteType=2, unit=0, point=0, bind=0, active=1]]
+2019-10-07 18:43:21  [ http-nio-7073-exec-8:672551988 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 18:43:21  [ http-nio-7073-exec-8:672551990 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 18:47:27  [ http-nio-7073-exec-9:672798539 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:47:27  [ http-nio-7073-exec-9:672798541 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:47:27  [ http-nio-7073-exec-9:672798541 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=AYKvQYvWGlWPXuSZvza3yA==, operator=null, data=StudentInfoVo [name=null, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B38091156E7E8897ED09F029D, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 18:47:27  [ http-nio-7073-exec-9:672798563 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=nus9bfPS, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=http://o0c.cn/?code=9472954473DCCA189E03742C44962A385B356169&card=EE1E080E09902E0B, wasteType=0, unit=0, point=965, bind=1, active=1]]
+2019-10-07 18:47:42  [ http-nio-7073-exec-10:672813588 ] - [ INFO ]  ************上传积分***************
+2019-10-07 18:47:42  [ http-nio-7073-exec-10:672813590 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 18:47:42  [ http-nio-7073-exec-10:672813590 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=oTTHt2+Smq1CLFiS09bGBw==, operator=null, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=null, wasteType=2, unit=352, point=965, bind=1, active=1]]
+2019-10-07 18:47:43  [ http-nio-7073-exec-10:672814695 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 18:47:43  [ http-nio-7073-exec-10:672814695 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 18:48:23  [ http-nio-7073-exec-1:672854569 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:48:23  [ http-nio-7073-exec-1:672854571 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:48:23  [ http-nio-7073-exec-1:672854572 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=oTTHt2+Smq1CLFiS09bGBw==, operator=null, data=StudentInfoVo [name=null, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B38091156E7E8897ED09F029D, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 18:48:23  [ http-nio-7073-exec-1:672854590 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=gF3JUPmW, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=http://o0c.cn/?code=9472954473DCCA189E03742C44962A385B356169&card=EE1E080E09902E0B, wasteType=0, unit=0, point=970, bind=1, active=1]]
+2019-10-07 18:48:36  [ http-nio-7073-exec-3:672867443 ] - [ INFO ]  ************上传积分***************
+2019-10-07 18:48:36  [ http-nio-7073-exec-3:672867444 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 18:48:36  [ http-nio-7073-exec-3:672867445 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=rks9+RT9wsiRZNaAie0mLQ==, operator=null, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=null, wasteType=2, unit=0, point=970, bind=1, active=1]]
+2019-10-07 18:48:37  [ http-nio-7073-exec-3:672868524 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 18:48:37  [ http-nio-7073-exec-3:672868524 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 18:49:16  [ http-nio-7073-exec-2:672906843 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:49:16  [ http-nio-7073-exec-2:672906846 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:49:16  [ http-nio-7073-exec-2:672906847 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=rks9+RT9wsiRZNaAie0mLQ==, operator=null, data=StudentInfoVo [name=null, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B38091156E7E8897ED09F029D, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 18:49:16  [ http-nio-7073-exec-2:672906866 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=Z3BdgFhd, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=http://o0c.cn/?code=9472954473DCCA189E03742C44962A385B356169&card=EE1E080E09902E0B, wasteType=0, unit=0, point=970, bind=1, active=1]]
+2019-10-07 18:49:20  [ http-nio-7073-exec-4:672910888 ] - [ INFO ]  ************上传积分***************
+2019-10-07 18:49:20  [ http-nio-7073-exec-4:672910889 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 18:49:20  [ http-nio-7073-exec-4:672910890 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=Hlx+EVLFT13+u5zEeNyWUw==, operator=null, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=null, wasteType=2, unit=0, point=970, bind=1, active=1]]
+2019-10-07 18:49:21  [ http-nio-7073-exec-4:672911990 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 18:49:21  [ http-nio-7073-exec-4:672911992 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 18:50:28  [ http-nio-7073-exec-5:672979476 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:50:28  [ http-nio-7073-exec-5:672979478 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:50:28  [ http-nio-7073-exec-5:672979479 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=Hlx+EVLFT13+u5zEeNyWUw==, operator=null, data=StudentInfoVo [name=null, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B38091156E7E8897ED09F029D, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 18:50:28  [ http-nio-7073-exec-5:672979501 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=cHHwx556, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=http://o0c.cn/?code=9472954473DCCA189E03742C44962A385B356169&card=EE1E080E09902E0B, wasteType=0, unit=0, point=970, bind=1, active=1]]
+2019-10-07 18:50:32  [ http-nio-7073-exec-6:672983507 ] - [ INFO ]  ************上传积分***************
+2019-10-07 18:50:32  [ http-nio-7073-exec-6:672983509 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 18:50:32  [ http-nio-7073-exec-6:672983510 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=e7P2K8uPKglcUB1TV0D2tA==, operator=null, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=null, wasteType=2, unit=0, point=970, bind=1, active=1]]
+2019-10-07 18:50:33  [ http-nio-7073-exec-6:672984569 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 18:50:33  [ http-nio-7073-exec-6:672984569 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 18:51:32  [ http-nio-7073-exec-7:673043497 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:51:32  [ http-nio-7073-exec-7:673043498 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:51:32  [ http-nio-7073-exec-7:673043499 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=e7P2K8uPKglcUB1TV0D2tA==, operator=null, data=StudentInfoVo [name=null, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B38091156E7E8897ED09F029D, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 18:51:32  [ http-nio-7073-exec-7:673043520 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=XvONq7mG, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=http://o0c.cn/?code=9472954473DCCA189E03742C44962A385B356169&card=EE1E080E09902E0B, wasteType=0, unit=0, point=970, bind=1, active=1]]
+2019-10-07 18:51:36  [ http-nio-7073-exec-8:673047524 ] - [ INFO ]  ************上传积分***************
+2019-10-07 18:51:36  [ http-nio-7073-exec-8:673047526 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 18:51:36  [ http-nio-7073-exec-8:673047526 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=/VLHSar6l2Vo+aUtB4dyaw==, operator=null, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=null, wasteType=2, unit=0, point=970, bind=1, active=1]]
+2019-10-07 18:51:37  [ http-nio-7073-exec-8:673048614 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 18:51:37  [ http-nio-7073-exec-8:673048614 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 18:51:45  [ http-nio-7073-exec-9:673056036 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:51:45  [ http-nio-7073-exec-9:673056038 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:51:45  [ http-nio-7073-exec-9:673056039 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=/VLHSar6l2Vo+aUtB4dyaw==, operator=null, data=StudentInfoVo [name=null, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B38091156E7E8897ED09F029D, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 18:51:45  [ http-nio-7073-exec-9:673056059 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=BPgP20FM, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=http://o0c.cn/?code=9472954473DCCA189E03742C44962A385B356169&card=EE1E080E09902E0B, wasteType=0, unit=0, point=970, bind=1, active=1]]
+2019-10-07 18:51:49  [ http-nio-7073-exec-10:673059926 ] - [ INFO ]  ************上传积分***************
+2019-10-07 18:51:49  [ http-nio-7073-exec-10:673059929 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 18:51:49  [ http-nio-7073-exec-10:673059930 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=uoVSC6Q6Q0Q45ie3+NOIFw==, operator=null, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=null, wasteType=2, unit=0, point=970, bind=1, active=1]]
+2019-10-07 18:51:50  [ http-nio-7073-exec-10:673061020 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 18:51:50  [ http-nio-7073-exec-10:673061021 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 18:52:33  [ http-nio-7073-exec-1:673104313 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:52:33  [ http-nio-7073-exec-1:673104315 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:52:33  [ http-nio-7073-exec-1:673104315 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=uoVSC6Q6Q0Q45ie3+NOIFw==, operator=null, data=StudentInfoVo [name=null, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B38091156E7E8897ED09F029D, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 18:52:33  [ http-nio-7073-exec-1:673104335 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=k6RkRQVf, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=http://o0c.cn/?code=9472954473DCCA189E03742C44962A385B356169&card=EE1E080E09902E0B, wasteType=0, unit=0, point=970, bind=1, active=1]]
+2019-10-07 18:52:37  [ http-nio-7073-exec-3:673108387 ] - [ INFO ]  ************上传积分***************
+2019-10-07 18:52:37  [ http-nio-7073-exec-3:673108388 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 18:52:37  [ http-nio-7073-exec-3:673108389 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=aLBFv87I7Xagto4tyqI8rg==, operator=null, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=null, wasteType=2, unit=0, point=970, bind=1, active=1]]
+2019-10-07 18:52:38  [ http-nio-7073-exec-3:673109481 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 18:52:38  [ http-nio-7073-exec-3:673109481 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 18:52:46  [ http-nio-7073-exec-2:673117373 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:52:46  [ http-nio-7073-exec-2:673117375 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:52:46  [ http-nio-7073-exec-2:673117375 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=aLBFv87I7Xagto4tyqI8rg==, operator=null, data=StudentInfoVo [name=null, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B38091156E7E8897ED09F029D, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 18:52:46  [ http-nio-7073-exec-2:673117395 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=H0ailemb, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=http://o0c.cn/?code=9472954473DCCA189E03742C44962A385B356169&card=EE1E080E09902E0B, wasteType=0, unit=0, point=970, bind=1, active=1]]
+2019-10-07 18:53:06  [ http-nio-7073-exec-4:673137265 ] - [ INFO ]  ************上传积分***************
+2019-10-07 18:53:06  [ http-nio-7073-exec-4:673137267 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 18:53:06  [ http-nio-7073-exec-4:673137267 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=jwkmG+qKu86UhFHwqQZBAA==, operator=null, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=null, wasteType=2, unit=0, point=970, bind=1, active=1]]
+2019-10-07 18:53:07  [ http-nio-7073-exec-4:673138349 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 18:53:07  [ http-nio-7073-exec-4:673138350 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 18:55:49  [ http-nio-7073-exec-5:673299874 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:55:49  [ http-nio-7073-exec-5:673299876 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:55:49  [ http-nio-7073-exec-5:673299877 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=jwkmG+qKu86UhFHwqQZBAA==, operator=null, data=StudentInfoVo [name=null, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B38091156E7E8897ED09F029D, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 18:55:49  [ http-nio-7073-exec-5:673299898 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=3TpKyIid, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=http://o0c.cn/?code=9472954473DCCA189E03742C44962A385B356169&card=EE1E080E09902E0B, wasteType=0, unit=0, point=970, bind=1, active=1]]
+2019-10-07 18:56:00  [ http-nio-7073-exec-6:673311305 ] - [ INFO ]  ************上传积分***************
+2019-10-07 18:56:00  [ http-nio-7073-exec-6:673311306 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 18:56:00  [ http-nio-7073-exec-6:673311307 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=mXuR2d1Xnd7DESbS8BTVFg==, operator=null, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=null, wasteType=2, unit=25, point=970, bind=1, active=1]]
+2019-10-07 18:56:01  [ http-nio-7073-exec-6:673312396 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 18:56:01  [ http-nio-7073-exec-6:673312397 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 18:57:48  [ http-nio-7073-exec-7:673419197 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 18:57:48  [ http-nio-7073-exec-7:673419198 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 18:57:48  [ http-nio-7073-exec-7:673419199 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=mXuR2d1Xnd7DESbS8BTVFg==, operator=null, data=StudentInfoVo [name=null, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B38091156E7E8897ED09F029D, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 18:57:48  [ http-nio-7073-exec-7:673419220 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=p9BMV9iT, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=http://o0c.cn/?code=9472954473DCCA189E03742C44962A385B356169&card=EE1E080E09902E0B, wasteType=0, unit=0, point=970, bind=1, active=1]]
+2019-10-07 18:57:59  [ http-nio-7073-exec-8:673430264 ] - [ INFO ]  ************上传积分***************
+2019-10-07 18:57:59  [ http-nio-7073-exec-8:673430265 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 18:57:59  [ http-nio-7073-exec-8:673430266 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=ljUUCWBZhAccJrB4QQx6Fg==, operator=null, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=null, wasteType=2, unit=39, point=970, bind=1, active=1]]
+2019-10-07 18:58:00  [ http-nio-7073-exec-8:673431458 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 18:58:00  [ http-nio-7073-exec-8:673431458 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 19:00:06  [ http-nio-7073-exec-9:673557163 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 19:00:06  [ http-nio-7073-exec-9:673557165 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 19:00:06  [ http-nio-7073-exec-9:673557166 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=ljUUCWBZhAccJrB4QQx6Fg==, operator=null, data=StudentInfoVo [name=null, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B38091156E7E8897ED09F029D, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 19:00:06  [ http-nio-7073-exec-9:673557188 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=jdz2jHwE, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=http://o0c.cn/?code=9472954473DCCA189E03742C44962A385B356169&card=EE1E080E09902E0B, wasteType=0, unit=0, point=971, bind=1, active=1]]
+2019-10-07 19:00:10  [ http-nio-7073-exec-10:673561204 ] - [ INFO ]  ************上传积分***************
+2019-10-07 19:00:10  [ http-nio-7073-exec-10:673561205 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 19:00:10  [ http-nio-7073-exec-10:673561206 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=LJPqmHSVSppVLDXVOqKgZg==, operator=null, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=null, wasteType=2, unit=0, point=971, bind=1, active=1]]
+2019-10-07 19:00:11  [ http-nio-7073-exec-10:673562268 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 19:00:11  [ http-nio-7073-exec-10:673562269 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 19:05:20  [ http-nio-7073-exec-1:673871161 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 19:05:20  [ http-nio-7073-exec-1:673871163 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 19:05:20  [ http-nio-7073-exec-1:673871164 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=LJPqmHSVSppVLDXVOqKgZg==, operator=null, data=StudentInfoVo [name=null, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B38091156E7E8897ED09F029D, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 19:05:20  [ http-nio-7073-exec-1:673871168 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=Ahv6o9Ou, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=http://o0c.cn/?code=9472954473DCCA189E03742C44962A385B356169&card=EE1E080E09902E0B, wasteType=0, unit=0, point=971, bind=1, active=1]]
+2019-10-07 19:05:24  [ http-nio-7073-exec-3:673875187 ] - [ INFO ]  ************上传积分***************
+2019-10-07 19:05:24  [ http-nio-7073-exec-3:673875189 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 19:05:24  [ http-nio-7073-exec-3:673875189 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=fHPM1kpVXPQUxdsu4pnM5g==, operator=null, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=null, wasteType=2, unit=4, point=971, bind=1, active=1]]
+2019-10-07 19:05:25  [ http-nio-7073-exec-3:673876273 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 19:05:25  [ http-nio-7073-exec-3:673876273 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-07 19:08:57  [ http-nio-7073-exec-2:674088606 ] - [ INFO ]  ************获取学生信息***************
+2019-10-07 19:08:57  [ http-nio-7073-exec-2:674088608 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-07 19:08:57  [ http-nio-7073-exec-2:674088608 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=fHPM1kpVXPQUxdsu4pnM5g==, operator=null, data=StudentInfoVo [name=null, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B38091156E7E8897ED09F029D, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-07 19:08:57  [ http-nio-7073-exec-2:674088628 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=aKP1gqf6, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=http://o0c.cn/?code=9472954473DCCA189E03742C44962A385B356169&card=EE1E080E09902E0B, wasteType=0, unit=0, point=971, bind=1, active=1]]
+2019-10-07 19:09:01  [ http-nio-7073-exec-4:674092620 ] - [ INFO ]  ************上传积分***************
+2019-10-07 19:09:01  [ http-nio-7073-exec-4:674092622 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-07 19:09:01  [ http-nio-7073-exec-4:674092623 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=9131012510, accountTonken=9citWkGvzXlRumBGJcIwQA==, operator=null, data=StudentInfoVo [name=林浩东, stuCode=9472954473DCCA189E03742C44962A385B356169, stuCard=EE1E080E09902E0B, qrCode=null, wasteType=2, unit=22, point=971, bind=1, active=1]]
+2019-10-07 19:09:03  [ http-nio-7073-exec-4:674093819 ] - [ INFO ]  新后台上传积分：success
+2019-10-07 19:09:03  [ http-nio-7073-exec-4:674093820 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]

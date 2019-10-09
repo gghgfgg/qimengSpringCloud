@@ -35,46 +35,107 @@ public class StudentUpdateService {
 	@Autowired
 	StudentInformService studentInformService;
 	@Autowired
-	StudentRankService studentRankService; 
+	StudentRankService studentRankService;
+
 	public int insertStudentInformList(List<StudentInform> studentInformList, String schoolCode, Byte type) {
 		try {
 			boolean errBoolean = false;
 			String errString = new String();
+			if (!StringUtils.isEmpty(schoolCode)) {
+				schoolCode= schoolCode.replaceAll("\\s*", "");
+			}
+			
+			if (StringUtils.isEmpty(schoolCode) || schoolCode.length() < 10) {
+				throw new RuntimeException("请填写学校校区编号");
+			}
+
 			for (int i = 0; i < studentInformList.size(); i++) {
 
-				String cardString = studentInformList.get(i).getIdentityCard().replaceAll("\\s*", "");
-				
-				studentInformList.get(i).setIdentityCard(StringUtils.isEmpty(cardString) ? null : cardString);
+				if (!StringUtils.isEmpty(studentInformList.get(i).getIdentityCard())) {
+					String cardString = studentInformList.get(i).getIdentityCard().replaceAll("\\s*", "");
 
-				String codeString = studentInformList.get(i).getStudentCode().replaceAll("\\s*", "");
-				
-				studentInformList.get(i).setStudentCode(StringUtils.isEmpty(codeString) ? null : codeString);
+					studentInformList.get(i).setIdentityCard(StringUtils.isEmpty(cardString) ? null : cardString);
+				}
 
-				if (StringUtils.isEmpty(studentInformList.get(i).getName())
-						|| StringUtils.isEmpty(studentInformList.get(i).getSex())
-						|| StringUtils.isEmpty(studentInformList.get(i).getGrade())
-						|| StringUtils.isEmpty(studentInformList.get(i).getClassS())) {
-					errString += "{第" + String.valueOf(i + 2) + "行,姓名或性别或年级或班级为空},";
-					errBoolean = true;
+				if (!StringUtils.isEmpty(studentInformList.get(i).getStudentCode())) {
+					String codeString = studentInformList.get(i).getStudentCode().replaceAll("\\s*", "");
+
+					studentInformList.get(i).setStudentCode(StringUtils.isEmpty(codeString) ? null : codeString);
+				}
+				if (!StringUtils.isEmpty(studentInformList.get(i).getName())) {
+					String name = studentInformList.get(i).getName().replaceAll("\\s*", "");
+
+					studentInformList.get(i).setName(StringUtils.isEmpty(name) ? null : name);
+				}
+				if (!StringUtils.isEmpty(studentInformList.get(i).getSex())) {
+					String sex = studentInformList.get(i).getSex().replaceAll("\\s*", "");
+
+					studentInformList.get(i).setSex(StringUtils.isEmpty(sex) ? null : sex);
+				}
+				if (!StringUtils.isEmpty(studentInformList.get(i).getGrade())) {
+					String grade = studentInformList.get(i).getGrade().replaceAll("\\s*", "");
+
+					studentInformList.get(i).setGrade(StringUtils.isEmpty(grade) ? null : grade);
+				}
+				if (!StringUtils.isEmpty(studentInformList.get(i).getClassS())) {
+					String classS = studentInformList.get(i).getClassS().replaceAll("\\s*", "");
+
+					studentInformList.get(i).setClassS(StringUtils.isEmpty(classS) ? null : classS);
+				}
+				if (!StringUtils.isEmpty(studentInformList.get(i).getSchoolId())) {
+					String schoolId = studentInformList.get(i).getSchoolId().replaceAll("\\s*", "");
+
+					studentInformList.get(i).setSchoolId(StringUtils.isEmpty(schoolId) ? null : schoolId);
+				}
+				if (!StringUtils.isEmpty(studentInformList.get(i).getTeacherPhone())) {
+					String teacherPhone = studentInformList.get(i).getTeacherPhone().replaceAll("\\s*", "");
+
+					studentInformList.get(i).setTeacherPhone(StringUtils.isEmpty(teacherPhone) ? null : teacherPhone);
 				}
 				
+				
+				if (StringUtils.isEmpty(studentInformList.get(i).getName())
+						|| StringUtils.isEmpty(studentInformList.get(i).getSex())) {
+					errString += "{第" + String.valueOf(i + 2) + "行,姓名或性别为空},";
+					errBoolean = true;
+				}
+				if (type != null && (type & StaticGlobal.TEACHER) != StaticGlobal.TEACHER) {
+					if (StringUtils.isEmpty(studentInformList.get(i).getGrade())
+							|| StringUtils.isEmpty(studentInformList.get(i).getClassS())) {
+						errString += "{第" + String.valueOf(i + 2) + "行,年级或班级为空},";
+						errBoolean = true;
+					}
+					if (!StringUtils.isEmpty(studentInformList.get(i).getGrade())
+							&& studentInformList.get(i).getGrade().indexOf("级") == -1) {
+						errString += "{第" + String.valueOf(i + 2) + "行,班级格式不对},";
+						errBoolean = true;
+					}
+				}
+
 				if (StringUtils.isEmpty(studentInformList.get(i).getIdentityCard())
 						&& StringUtils.isEmpty(studentInformList.get(i).getStudentCode())) {
 					errString += "{第" + String.valueOf(i + 2) + "行,身份证和学号都为空},";
 					errBoolean = true;
 				}
 				if (!StringUtils.isEmpty(studentInformList.get(i).getIdentityCard())
-						&& studentInformList.get(i).getIdentityCard().length() < 15) {
-					System.out.println(StringUtils.isEmpty(studentInformList.get(i).getIdentityCard()));
-					System.out.println(studentInformList.get(i).getIdentityCard().length());
+						&&( studentInformList.get(i).getIdentityCard().length() < 5
+						|| studentInformList.get(i).getIdentityCard().length() > 18)) {
 					errString += "{第" + String.valueOf(i + 2) + "行,身份证长度不对},";
 					errBoolean = true;
 				}
+				if (!StringUtils.isEmpty(studentInformList.get(i).getIdentityCard())
+						&& studentInformList.get(i).getIdentityCard().indexOf("E") != -1
+						&& studentInformList.get(i).getIdentityCard().indexOf(".") != -1) {
+					errString += "{第" + String.valueOf(i + 2) + "行,身份证格式不对},";
+					errBoolean = true;
+				}
 				if (!StringUtils.isEmpty(studentInformList.get(i).getStudentCode())
-						&& studentInformList.get(i).getStudentCode().length() < 15) {
+						&&( studentInformList.get(i).getStudentCode().length() < 15
+						|| studentInformList.get(i).getStudentCode().length() > 19)) {
 					errString += "{第" + String.valueOf(i + 2) + "行,学号长度不对},";
 					errBoolean = true;
 				}
+
 				if (StringUtils.isEmpty(studentInformList.get(i).getSchoolId())) {
 					errString += "{第" + String.valueOf(i + 2) + "行,学校编号为空},";
 					errBoolean = true;
@@ -84,12 +145,18 @@ public class StudentUpdateService {
 					errString += "{第" + String.valueOf(i + 2) + "行,学校编号长度不对},";
 					errBoolean = true;
 				}
-				if(type!=null&&(type&StaticGlobal.PHONE)==StaticGlobal.PHONE) {
+				if (!StringUtils.isEmpty(studentInformList.get(i).getSchoolId())
+						&& schoolCode.indexOf(studentInformList.get(i).getSchoolId()) == -1) {
+
+					errString += "{第" + String.valueOf(i + 2) + "行,学校编号不匹配},";
+					errBoolean = true;
+				}
+				if (type != null && (type & StaticGlobal.PHONE) == StaticGlobal.PHONE) {
 					if (StringUtils.isEmpty(studentInformList.get(i).getTeacherPhone())) {
 						errString += "{第" + String.valueOf(i + 2) + "行,手机号码为空,添加普通学生以外类型请输入手机号码},";
 						errBoolean = true;
 					}
-					
+
 					if (!StringUtils.isEmpty(studentInformList.get(i).getTeacherPhone())
 							&& studentInformList.get(i).getTeacherPhone().length() < 10) {
 						errString += "{第" + String.valueOf(i + 2) + "行,手机号码长度不对},";
@@ -98,17 +165,21 @@ public class StudentUpdateService {
 				}
 			}
 			for (int item = 0; item < studentInformList.size(); item++) {
-				int row=item+1;
-				while(row<studentInformList.size()) {
+				int row = item + 1;
+				while (row < studentInformList.size()) {
 					if (!StringUtils.isEmpty(studentInformList.get(item).getIdentityCard())) {
-						if(studentInformList.get(item).getIdentityCard().equals(studentInformList.get(row).getIdentityCard())){
-							errString += "{第" + String.valueOf(item + 2) + "行,与第"+String.valueOf(row + 2)+"行身份证号重复},";
+						if (studentInformList.get(item).getIdentityCard()
+								.equals(studentInformList.get(row).getIdentityCard())) {
+							errString += "{第" + String.valueOf(item + 2) + "行,与第" + String.valueOf(row + 2)
+									+ "行身份证号重复},";
 							errBoolean = true;
 						}
 					}
-					if(!StringUtils.isEmpty(studentInformList.get(item).getStudentCode())){
-						if(studentInformList.get(item).getStudentCode().equals(studentInformList.get(row).getStudentCode())) {
-							errString += "{第" + String.valueOf(item + 2) + "行,与第"+String.valueOf(row + 2)+"行学号号重复},";
+					if (!StringUtils.isEmpty(studentInformList.get(item).getStudentCode())) {
+						if (studentInformList.get(item).getStudentCode()
+								.equals(studentInformList.get(row).getStudentCode())) {
+							errString += "{第" + String.valueOf(item + 2) + "行,与第" + String.valueOf(row + 2)
+									+ "行学号号重复},";
 							errBoolean = true;
 						}
 					}
@@ -118,11 +189,7 @@ public class StudentUpdateService {
 			if (errBoolean) {
 				throw new RuntimeException(errString);
 			}
-			if (StringUtils.isEmpty(schoolCode) || schoolCode.length() < 10) {
-				throw new RuntimeException("请填写学校校区编号");
-			}
-	
-			
+
 			studentInformService.insertStudentInformList(studentInformList);
 			List<StudentData> list = new ArrayList<StudentData>();
 			Date date = DateUtils.round(new Date(), Calendar.SECOND);
@@ -142,9 +209,9 @@ public class StudentUpdateService {
 				list.add(studentData);
 			}
 			studentDataService.insertStudentDataList(list);
-			
+
 			studentRankService.addListSchoolCount(schoolCode);
-			
+
 			return studentDataService.selectStudentCountByUpdata(schoolCode, date);
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -154,42 +221,100 @@ public class StudentUpdateService {
 
 	public int insertStudentInform(StudentInform studentInform, String schoolCode, Byte type) {
 		try {
-			String cardString = studentInform.getIdentityCard().replaceAll("\\s*", "");
-			
-			studentInform.setIdentityCard(StringUtils.isEmpty(cardString) ? null : cardString);
-
-			String codeString = studentInform.getStudentCode().replaceAll("\\s*", "");
-			
-			studentInform.setStudentCode(StringUtils.isEmpty(codeString) ? null : codeString);
-
-			if (StringUtils.isEmpty(studentInform.getName())
-					|| StringUtils.isEmpty(studentInform.getSex())
-					|| StringUtils.isEmpty(studentInform.getGrade())
-					|| StringUtils.isEmpty(studentInform.getClassS())) {
-				throw new RuntimeException("姓名或性别或年级或班级为空");
+			if (!StringUtils.isEmpty(schoolCode)) {
+				schoolCode= schoolCode.replaceAll("\\s*", "");
 			}
+			if (StringUtils.isEmpty(schoolCode) || schoolCode.length() < 10) {
+				throw new RuntimeException("请填写学校校区编号");
+			}
+			if (!StringUtils.isEmpty(studentInform.getIdentityCard())) {
+				String cardString = studentInform.getIdentityCard().replaceAll("\\s*", "");
+
+				studentInform.setIdentityCard(StringUtils.isEmpty(cardString) ? null : cardString);
+			}
+			if (!StringUtils.isEmpty(studentInform.getStudentCode())) {
+				String codeString = studentInform.getStudentCode().replaceAll("\\s*", "");
+
+				studentInform.setStudentCode(StringUtils.isEmpty(codeString) ? null : codeString);
+			}
+			if (!StringUtils.isEmpty(studentInform.getName())) {
+				String name = studentInform.getName().replaceAll("\\s*", "");
+
+				studentInform.setName(StringUtils.isEmpty(name) ? null : name);
+			}
+			if (!StringUtils.isEmpty(studentInform.getSex())) {
+				String sex = studentInform.getSex().replaceAll("\\s*", "");
+
+				studentInform.setSex(StringUtils.isEmpty(sex) ? null : sex);
+			}
+			if (!StringUtils.isEmpty(studentInform.getGrade())) {
+				String grade = studentInform.getGrade().replaceAll("\\s*", "");
+
+				studentInform.setGrade(StringUtils.isEmpty(grade) ? null : grade);
+			}
+			if (!StringUtils.isEmpty(studentInform.getClassS())) {
+				String classS = studentInform.getClassS().replaceAll("\\s*", "");
+
+				studentInform.setClassS(StringUtils.isEmpty(classS) ? null : classS);
+			}
+			if (!StringUtils.isEmpty(studentInform.getSchoolId())) {
+				String schoolId = studentInform.getSchoolId().replaceAll("\\s*", "");
+
+				studentInform.setSchoolId(StringUtils.isEmpty(schoolId) ? null : schoolId);
+			}
+			if (!StringUtils.isEmpty(studentInform.getTeacherPhone())) {
+				String teacherPhone = studentInform.getTeacherPhone().replaceAll("\\s*", "");
+
+				studentInform.setTeacherPhone(StringUtils.isEmpty(teacherPhone) ? null : teacherPhone);
+			}
+			
+			if (StringUtils.isEmpty(studentInform.getName()) || StringUtils.isEmpty(studentInform.getSex())) {
+				throw new RuntimeException("姓名或性别为空");
+			}
+
+			if (type != null && (type & StaticGlobal.TEACHER) != StaticGlobal.TEACHER) {
+				if (StringUtils.isEmpty(studentInform.getGrade()) || StringUtils.isEmpty(studentInform.getClassS())) {
+					throw new RuntimeException("年级或班级为空");
+				}
+				if (!StringUtils.isEmpty(studentInform.getGrade()) && studentInform.getGrade().indexOf("级") == -1) {
+					throw new RuntimeException("班级格式不对");
+				}
+			}
+
 			if (StringUtils.isEmpty(studentInform.getIdentityCard())
 					&& StringUtils.isEmpty(studentInform.getStudentCode())) {
 				throw new RuntimeException("身份证和学号都为空");
 			}
+			if (!StringUtils.isEmpty(studentInform.getIdentityCard()) && (studentInform.getIdentityCard().length() < 5
+					|| studentInform.getIdentityCard().length() > 18)) {
+				throw new RuntimeException("身份证长度不对");
+			}
+			if (!StringUtils.isEmpty(studentInform.getStudentCode()) && (studentInform.getStudentCode().length() < 15
+					|| studentInform.getStudentCode().length() > 19)) {
+				throw new RuntimeException("学号长度不对");
+			}
+
 			if (StringUtils.isEmpty(studentInform.getSchoolId())) {
 				throw new RuntimeException("学校编号为空");
 			}
-			if (StringUtils.isEmpty(schoolCode)) {
-				throw new RuntimeException("请填写学校校区编号");
+			if (!StringUtils.isEmpty(studentInform.getSchoolId()) && studentInform.getSchoolId().length() < 10) {
+				throw new RuntimeException("学校编号长度不对");
 			}
-			if(type!=null&&(type&StaticGlobal.PHONE)==StaticGlobal.PHONE) {
+			if (!StringUtils.isEmpty(studentInform.getSchoolId())
+					&& schoolCode.indexOf(studentInform.getSchoolId()) == -1) {
+				throw new RuntimeException("学校编号不匹配");
+			}
+			if (type != null && (type & StaticGlobal.PHONE) == StaticGlobal.PHONE) {
 				if (StringUtils.isEmpty(studentInform.getTeacherPhone())) {
-					throw new RuntimeException("手机号码为空,添加学生以外类型请输入手机号码");
+					throw new RuntimeException("手机号码为空,添加普通学生以外类型请输入手机号码");
 				}
-				
+
 				if (!StringUtils.isEmpty(studentInform.getTeacherPhone())
 						&& studentInform.getTeacherPhone().length() < 10) {
 					throw new RuntimeException("手机号码长度不对");
 				}
 			}
-			
-			
+
 			studentInformService.insertStudentInform(studentInform);
 
 			StudentData studentData = new StudentData();
@@ -218,35 +343,94 @@ public class StudentUpdateService {
 	public int updateStudentInformByIdentityCardOrStudentCode(StudentInform studentInform, String schoolCode,
 			Byte type) {
 		try {
-			String cardString = studentInform.getIdentityCard().replaceAll("\\s*", "");
-			
-			studentInform.setIdentityCard(StringUtils.isEmpty(cardString) ? null : cardString);
-
-			String codeString = studentInform.getStudentCode().replaceAll("\\s*", "");
-			
-			studentInform.setStudentCode(StringUtils.isEmpty(codeString) ? null : codeString);
-
-			if (StringUtils.isEmpty(studentInform.getName())
-					|| StringUtils.isEmpty(studentInform.getSex())
-					|| StringUtils.isEmpty(studentInform.getGrade())
-					|| StringUtils.isEmpty(studentInform.getClassS())) {
-				throw new RuntimeException("姓名或性别或年级或班级为空");
+			if (!StringUtils.isEmpty(schoolCode)) {
+				schoolCode= schoolCode.replaceAll("\\s*", "");
 			}
+			if (StringUtils.isEmpty(schoolCode) || schoolCode.length() < 10) {
+				throw new RuntimeException("请填写学校校区编号");
+			}
+			if (!StringUtils.isEmpty(studentInform.getIdentityCard())) {
+				String cardString = studentInform.getIdentityCard().replaceAll("\\s*", "");
+
+				studentInform.setIdentityCard(StringUtils.isEmpty(cardString) ? null : cardString);
+			}
+			if (!StringUtils.isEmpty(studentInform.getStudentCode())) {
+				String codeString = studentInform.getStudentCode().replaceAll("\\s*", "");
+
+				studentInform.setStudentCode(StringUtils.isEmpty(codeString) ? null : codeString);
+			}
+			if (!StringUtils.isEmpty(studentInform.getName())) {
+				String name = studentInform.getName().replaceAll("\\s*", "");
+
+				studentInform.setName(StringUtils.isEmpty(name) ? null : name);
+			}
+			if (!StringUtils.isEmpty(studentInform.getSex())) {
+				String sex = studentInform.getSex().replaceAll("\\s*", "");
+
+				studentInform.setSex(StringUtils.isEmpty(sex) ? null : sex);
+			}
+			if (!StringUtils.isEmpty(studentInform.getGrade())) {
+				String grade = studentInform.getGrade().replaceAll("\\s*", "");
+
+				studentInform.setGrade(StringUtils.isEmpty(grade) ? null : grade);
+			}
+			if (!StringUtils.isEmpty(studentInform.getClassS())) {
+				String classS = studentInform.getClassS().replaceAll("\\s*", "");
+
+				studentInform.setClassS(StringUtils.isEmpty(classS) ? null : classS);
+			}
+			if (!StringUtils.isEmpty(studentInform.getSchoolId())) {
+				String schoolId = studentInform.getSchoolId().replaceAll("\\s*", "");
+
+				studentInform.setSchoolId(StringUtils.isEmpty(schoolId) ? null : schoolId);
+			}
+			if (!StringUtils.isEmpty(studentInform.getTeacherPhone())) {
+				String teacherPhone = studentInform.getTeacherPhone().replaceAll("\\s*", "");
+
+				studentInform.setTeacherPhone(StringUtils.isEmpty(teacherPhone) ? null : teacherPhone);
+			}
+			
+			if (StringUtils.isEmpty(studentInform.getName()) || StringUtils.isEmpty(studentInform.getSex())) {
+				throw new RuntimeException("姓名或性别为空");
+			}
+
+			if (type != null && (type & StaticGlobal.TEACHER) != StaticGlobal.TEACHER) {
+				if (StringUtils.isEmpty(studentInform.getGrade()) || StringUtils.isEmpty(studentInform.getClassS())) {
+					throw new RuntimeException("年级或班级为空");
+				}
+				if (!StringUtils.isEmpty(studentInform.getGrade()) && studentInform.getGrade().indexOf("级") == -1) {
+					throw new RuntimeException("班级格式不对");
+				}
+			}
+
 			if (StringUtils.isEmpty(studentInform.getIdentityCard())
 					&& StringUtils.isEmpty(studentInform.getStudentCode())) {
 				throw new RuntimeException("身份证和学号都为空");
 			}
+			if (!StringUtils.isEmpty(studentInform.getIdentityCard()) && (studentInform.getIdentityCard().length() < 5
+					|| studentInform.getIdentityCard().length() > 18)) {
+				throw new RuntimeException("身份证长度不对");
+			}
+			if (!StringUtils.isEmpty(studentInform.getStudentCode()) && (studentInform.getStudentCode().length() < 15
+					|| studentInform.getStudentCode().length() > 19)) {
+				throw new RuntimeException("学号长度不对");
+			}
+
 			if (StringUtils.isEmpty(studentInform.getSchoolId())) {
 				throw new RuntimeException("学校编号为空");
 			}
-			if (StringUtils.isEmpty(schoolCode)) {
-				throw new RuntimeException("请填写学校校区编号");
+			if (!StringUtils.isEmpty(studentInform.getSchoolId()) && studentInform.getSchoolId().length() < 10) {
+				throw new RuntimeException("学校编号长度不对");
 			}
-			if(type!=null&&(type&StaticGlobal.PHONE)==StaticGlobal.PHONE) {
+			if (!StringUtils.isEmpty(studentInform.getSchoolId())
+					&& schoolCode.indexOf(studentInform.getSchoolId()) == -1) {
+				throw new RuntimeException("学校编号不匹配");
+			}
+			if (type != null && (type & StaticGlobal.PHONE) == StaticGlobal.PHONE) {
 				if (StringUtils.isEmpty(studentInform.getTeacherPhone())) {
-					throw new RuntimeException("手机号码为空,添加学生以外类型请输入手机号码");
+					throw new RuntimeException("手机号码为空,添加普通学生以外类型请输入手机号码");
 				}
-				
+
 				if (!StringUtils.isEmpty(studentInform.getTeacherPhone())
 						&& studentInform.getTeacherPhone().length() < 10) {
 					throw new RuntimeException("手机号码长度不对");

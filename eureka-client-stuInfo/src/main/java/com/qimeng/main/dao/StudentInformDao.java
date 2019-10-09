@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.SelectProvider;
 import org.apache.ibatis.annotations.UpdateProvider;
@@ -56,7 +55,6 @@ public interface StudentInformDao {
 	int insertStudentInformList(@Param("list")List<StudentInform> studentInformList);
 	
 	@Insert("insert into "+tablename+"("+fields+") values" + "("+item+") ON DUPLICATE KEY UPDATE " + update+updatecode )
-	@Options(useGeneratedKeys = true,keyProperty = "item.id")
 	int insertStudentInform(@Param("item")StudentInform studentInform);
 	
 	@UpdateProvider(type = SqlFactory.class,method = "updateByIdentityCardOrStudentCode")
@@ -99,7 +97,7 @@ public interface StudentInformDao {
 	    public String selectStudentInform(@Param("item")StudentInform studentInform){
 	    	SQL sql = new SQL(); //SQL语句对象，所在包：org.apache.ibatis.jdbc.SQL
 	    	
-	    	sql.SELECT("id,"+fields);
+	    	sql.SELECT(fields);
 	    	sql.FROM(tablename);
 	    	if(!StringUtils.isEmpty(studentInform.getStudentCode())){
 	            sql.WHERE("student_code=#{item.studentCode}");

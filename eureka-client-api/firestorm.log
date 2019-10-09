@@ -302,3 +302,40 @@ INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - *********获取广
 INFO http-nio-7073-exec-4 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
 INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - *********获取广告大图*************
 INFO http-nio-7073-exec-9 com.qimeng.main.OldShopController - [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+INFO http-nio-7073-exec-1 com.qimeng.main.StuinfoController - RequestMessage [appID=7166912116544633, machineID=123456, accountTonken=, operator=null, data=StudentInfoVo [name=, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29B2592CC12213D751C1B89BE293232C6049E456, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+INFO http-nio-7073-exec-1 com.qimeng.main.StuinfoController - ************二维码转换***************
+INFO http-nio-7073-exec-1 com.qimeng.main.StuinfoController - {"machineID":"123456","data":{"active":0,"bind":0,"name":"","point":0,"qrCode":"","stuCard":"29B2592CC12213D7","stuCode":"5B2DDE67C27283D6","unit":0,"wasteType":0},"appID":"7166912116544633","accountTonken":""}
+INFO http-nio-7073-exec-1 com.qimeng.main.StuinfoController - ************获取学生信息***************
+ERROR http-nio-7073-exec-1 com.qimeng.main.StuinfoController - 获取学生信息接口错误
+INFO http-nio-7073-exec-1 com.qimeng.main.StuinfoController - ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=cEw0Vbia, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=219, bind=1, active=1]]
+INFO http-nio-7073-exec-2 com.qimeng.main.StuinfoController - RequestMessage [appID=7166912116544633, machineID=123456, accountTonken=, operator=null, data=StudentInfoVo [name=, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29B2592CC12213D751C1B89BE293232C6049E456, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+INFO http-nio-7073-exec-2 com.qimeng.main.StuinfoController - ************二维码转换***************
+INFO http-nio-7073-exec-2 com.qimeng.main.StuinfoController - {"machineID":"123456","data":{"active":0,"bind":0,"name":"","point":0,"qrCode":"","stuCard":"29B2592CC12213D7","stuCode":"5B2DDE67C27283D6","unit":0,"wasteType":0},"appID":"7166912116544633","accountTonken":""}
+INFO http-nio-7073-exec-2 com.qimeng.main.StuinfoController - ************获取学生信息***************
+ERROR http-nio-7073-exec-2 com.qimeng.main.StuinfoController - 获取学生信息接口错误
+INFO http-nio-7073-exec-2 com.qimeng.main.StuinfoController - ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=U7ZI4eov, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=219, bind=1, active=1]]
+INFO http-nio-7073-exec-8 com.qimeng.main.StuinfoController - RequestMessage [appID=7166912116544633, machineID=123456, accountTonken=, operator=null, data=StudentInfoVo [name=, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+INFO http-nio-7073-exec-8 com.qimeng.main.StuinfoController - ************获取学生信息***************
+ERROR http-nio-7073-exec-8 com.qimeng.main.StuinfoController - 获取学生信息接口错误
+INFO http-nio-7073-exec-8 com.qimeng.main.StuinfoController - ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=CJ6LyvsI, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=219, bind=1, active=1]]
+INFO http-nio-7073-exec-5 com.qimeng.main.StuinfoController - RequestMessage [appID=7166912116544633, machineID=123456, accountTonken=, operator=null, data=StudentInfoVo [name=, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29B2592CC12213D751C1B89BE293232C6049E456, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+INFO http-nio-7073-exec-5 com.qimeng.main.StuinfoController - ************二维码转换***************
+INFO http-nio-7073-exec-5 com.qimeng.main.StuinfoController - {"machineID":"123456","data":{"active":0,"bind":0,"name":"","point":0,"qrCode":"","stuCard":"29B2592CC12213D7","stuCode":"5B2DDE67C27283D6","unit":0,"wasteType":0},"appID":"7166912116544633","accountTonken":""}
+INFO http-nio-7073-exec-5 com.qimeng.main.StuinfoController - ************上传积分***************
+ERROR http-nio-7073-exec-5 com.qimeng.main.StuinfoController - 获取学生上传积分接口错误
+INFO http-nio-7073-exec-5 com.qimeng.main.StuinfoController - 新后台上传积分：classtype_error
+INFO http-nio-7073-exec-5 com.qimeng.main.StuinfoController - ResponseMessage [statusCode=1, success=false, message=积分上传失败, accountTonken=, data=]
+INFO http-nio-7073-exec-1 com.qimeng.main.StuinfoController - RequestMessage [appID=7166912116544633, machineID=123456789, accountTonken=, operator=null, data=StudentInfoVo [name=, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29B2592CC12213D751C1B89BE293232C6049E456, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+INFO http-nio-7073-exec-1 com.qimeng.main.StuinfoController - ************二维码转换***************
+INFO http-nio-7073-exec-1 com.qimeng.main.StuinfoController - {"machineID":"123456789","data":{"active":0,"bind":0,"name":"","point":0,"qrCode":"","stuCard":"29B2592CC12213D7","stuCode":"5B2DDE67C27283D6","unit":0,"wasteType":0},"appID":"7166912116544633","accountTonken":""}
+INFO http-nio-7073-exec-1 com.qimeng.main.StuinfoController - ************上传积分***************
+ERROR http-nio-7073-exec-1 com.qimeng.main.StuinfoController - 获取学生上传积分接口错误
+INFO http-nio-7073-exec-1 com.qimeng.main.StuinfoController - 新后台上传积分：classtype_error
+INFO http-nio-7073-exec-1 com.qimeng.main.StuinfoController - ResponseMessage [statusCode=1, success=false, message=积分上传失败, accountTonken=, data=]
+INFO http-nio-7073-exec-2 com.qimeng.main.StuinfoController - RequestMessage [appID=7166912116544633, machineID=123456789, accountTonken=, operator=null, data=StudentInfoVo [name=, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29B2592CC12213D751C1B89BE293232C6049E456, qrCode=null, wasteType=1, unit=1, point=0, bind=0, active=0]]
+INFO http-nio-7073-exec-2 com.qimeng.main.StuinfoController - ************二维码转换***************
+INFO http-nio-7073-exec-2 com.qimeng.main.StuinfoController - {"machineID":"123456789","data":{"active":0,"bind":0,"name":"","point":0,"qrCode":"","stuCard":"29B2592CC12213D7","stuCode":"5B2DDE67C27283D6","unit":1,"wasteType":1},"appID":"7166912116544633","accountTonken":""}
+INFO http-nio-7073-exec-2 com.qimeng.main.StuinfoController - ************上传积分***************
+ERROR http-nio-7073-exec-2 com.qimeng.main.StuinfoController - 获取学生上传积分接口错误
+INFO http-nio-7073-exec-2 com.qimeng.main.StuinfoController - 新后台上传积分：success
+INFO http-nio-7073-exec-2 com.qimeng.main.StuinfoController - ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]

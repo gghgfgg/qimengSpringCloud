@@ -51,10 +51,10 @@ public class OldService {
 		 return json;
 	}
 	
-	public String newuploadIntegral(StudentInfoVo stuInfo,String machineID) throws Exception
+	public String newuploadIntegral(StudentInfoVo stuInfo,String machineID,String code) throws Exception
 	{
 		 HashMap<String, String> map = new HashMap<>();
-	     map.put("code",stuInfo.getStuCode());
+	     map.put("code",code);
 	     map.put("classtype",String.valueOf(stuInfo.getWasteType()));
 	     map.put("snum", String.valueOf(stuInfo.getUnit()));
 	     map.put("maid",machineID);

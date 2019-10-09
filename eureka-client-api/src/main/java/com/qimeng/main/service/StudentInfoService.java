@@ -20,6 +20,14 @@ public class StudentInfoService {
     	return studentInfoDao.getStudent(studcode);
     }
     
+    public StudentInfo getStudentByCodeCard(String studcode,String studcard) {
+    	return studentInfoDao.getStudentByCodeCard(studcode,studcard);
+    }
+    
+    public StudentInfo getStudentByCode(String studcode) {
+    	return studentInfoDao.getStudentByCode(studcode);
+    }
+    
     public StudentInfo getStudentByID(int id) {
     	return studentInfoDao.getStudentByID(id);
     }

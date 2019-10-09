@@ -7,8 +7,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.alibaba.fastjson.annotation.JSONField;
 
 public class SchoolRecycleCount {
-    private Integer id;
-
+	
     private String schoolCode;
 
     private Byte type;
@@ -26,14 +25,6 @@ public class SchoolRecycleCount {
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")//页面写入数据库时格式化
    	@JSONField(format="yyyy-MM-dd HH:mm:ss")//数据库导出页面时json格式化
     private Date updateTime;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getSchoolCode() {
         return schoolCode;

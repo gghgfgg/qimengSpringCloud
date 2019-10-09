@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectProvider;
@@ -52,7 +51,6 @@ public interface StudentDataDao {
 	
 	@Insert("insert into "+tablename+"("+fieldsByInfrom+") values" +
             "("+itemByInfrom+") ON DUPLICATE KEY UPDATE " + updateByInfrom+ updatecode)
-	@Options(useGeneratedKeys = true,keyProperty = "item.id")
 	int insertStudentData(@Param("item")StudentData studentData);
 	
 	@UpdateProvider(type = SqlFactory.class,method = "updateByIdentityCardOrStrudentCode")
@@ -66,6 +64,12 @@ public interface StudentDataDao {
 	
 	@Select("select COUNT(*) from "+tablename+" where school_code=#{schoolCode} and update_time=#{time}")
 	int selectStudentCountByUpdata(String schoolCode,Date time);
+	
+	@Select("SELECT a.* FROM kernel_student_data a INNER JOIN qmhb_student b ON a.identity_card=b.idcard WHERE b.qrid=#{card}")
+	StudentData selectStudentDataByQRID(String card);
+	
+	@Select("SELECT a.* FROM kernel_student_data a INNER JOIN qmhb_student b ON a.student_code=b.stuid WHERE b.qrid=#{card}")
+	StudentData selectStudentDataByQRIDusedcode(String code);
 	
 	public class SqlFactory extends SQL{
 	    public String updateByIdentityCardOrStrudentCode(@Param("item")StudentData studentData){
@@ -144,7 +148,7 @@ public interface StudentDataDao {
 	    public String selectStudentData(@Param("item")StudentData studentData){
 	    	SQL sql = new SQL(); //SQL语句对象，所在包：org.apache.ibatis.jdbc.SQL
 	    	
-	    	sql.SELECT("id,"+fields);
+	    	sql.SELECT(fields);
 	    	sql.FROM(tablename);
 	    	if(!StringUtils.isEmpty(studentData.getStudentCode())){
 	            sql.WHERE("strudent_code=#{item.strudentCode}");
@@ -189,5 +193,4 @@ public interface StudentDataDao {
 	    	return sql.toString();
 	    }
 	    }
-
 }

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2019-09-19 02:08:02
+Date: 2019-09-19 15:10:35
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -93,7 +93,7 @@ CREATE TABLE `auxiliary_school_id` (
   `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `school_id` (`school_id`) USING HASH
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of auxiliary_school_id
@@ -106,6 +106,8 @@ INSERT INTO `auxiliary_school_id` VALUES ('5', '2144003655', '汕头市外马路
 INSERT INTO `auxiliary_school_id` VALUES ('6', '2144003475', '汕头市东厦小学', '2019-09-05 20:07:18', '2019-09-05 20:07:18');
 INSERT INTO `auxiliary_school_id` VALUES ('7', '2144003477', '汕头市金龙小学', '2019-09-05 20:07:36', '2019-09-05 20:07:36');
 INSERT INTO `auxiliary_school_id` VALUES ('8', '2144003406', '汕头市龙湖区金涛小学', '2019-09-05 20:08:02', '2019-09-05 20:37:54');
+INSERT INTO `auxiliary_school_id` VALUES ('9', '2144003654', '汕头市金平区大华路第二小学', '2019-09-19 15:09:31', '2019-09-19 15:09:31');
+INSERT INTO `auxiliary_school_id` VALUES ('10', '3444000518', '汕头市第二中学', '2019-09-19 15:10:17', '2019-09-19 15:10:17');
 
 -- ----------------------------
 -- Table structure for auxiliary_student_type
@@ -121,15 +123,31 @@ CREATE TABLE `auxiliary_student_type` (
   `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `type` (`type`) USING HASH
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of auxiliary_student_type
 -- ----------------------------
 INSERT INTO `auxiliary_student_type` VALUES ('1', '0', '0', '0', '普通学生', '2019-09-07 23:20:36', '2019-09-07 23:20:36');
 INSERT INTO `auxiliary_student_type` VALUES ('2', '2', '1', '0', '带手机认证学生', '2019-09-07 23:21:41', '2019-09-07 23:21:41');
-INSERT INTO `auxiliary_student_type` VALUES ('3', '1', '0', '1', '普通老师', '2019-09-07 23:28:53', '2019-09-07 23:28:53');
-INSERT INTO `auxiliary_student_type` VALUES ('4', '3', '1', '1', '带手机认证老师', '2019-09-07 23:29:23', '2019-09-07 23:29:23');
+INSERT INTO `auxiliary_student_type` VALUES ('3', '1', '0', '1', '普通教师', '2019-09-07 23:28:53', '2019-09-07 23:28:53');
+INSERT INTO `auxiliary_student_type` VALUES ('4', '3', '1', '1', '带手机认证教师', '2019-09-07 23:29:23', '2019-09-07 23:29:23');
+INSERT INTO `auxiliary_student_type` VALUES ('5', '5', '0', '1', '校长', '2019-09-24 10:58:17', '2019-09-24 10:58:17');
+INSERT INTO `auxiliary_student_type` VALUES ('6', '9', '0', '1', '副校长', '2019-09-24 10:59:21', '2019-09-24 10:59:21');
+INSERT INTO `auxiliary_student_type` VALUES ('7', '13', '0', '1', '主任', '2019-09-24 10:59:36', '2019-09-24 10:59:36');
+INSERT INTO `auxiliary_student_type` VALUES ('8', '17', '0', '1', '副主任', '2019-09-24 11:00:05', '2019-09-24 11:00:05');
+INSERT INTO `auxiliary_student_type` VALUES ('9', '21', '0', '1', '总务处主任', '2019-09-24 11:07:31', '2019-09-24 11:07:31');
+INSERT INTO `auxiliary_student_type` VALUES ('10', '25', '0', '1', '总务处副主任', '2019-09-24 11:07:39', '2019-09-24 11:07:39');
+INSERT INTO `auxiliary_student_type` VALUES ('11', '29', '0', '1', '教务处主任', '2019-09-24 11:08:34', '2019-09-24 11:08:34');
+INSERT INTO `auxiliary_student_type` VALUES ('12', '33', '0', '1', '教务处副主任', '2019-09-24 11:08:41', '2019-09-24 11:08:41');
+INSERT INTO `auxiliary_student_type` VALUES ('13', '37', '0', '1', '体卫处主任', '2019-09-24 11:16:17', '2019-09-24 11:16:17');
+INSERT INTO `auxiliary_student_type` VALUES ('14', '41', '0', '1', '体卫处副主任', '2019-09-24 11:16:30', '2019-09-24 11:16:30');
+INSERT INTO `auxiliary_student_type` VALUES ('15', '45', '0', '1', '团支书', '2019-09-24 11:17:08', '2019-09-24 11:17:08');
+INSERT INTO `auxiliary_student_type` VALUES ('16', '49', '0', '1', '大队辅导员', '2019-09-24 11:17:15', '2019-09-24 11:17:15');
+INSERT INTO `auxiliary_student_type` VALUES ('17', '53', '0', '1', '校内安保人员', '2019-09-25 17:39:05', '2019-09-25 17:42:45');
+INSERT INTO `auxiliary_student_type` VALUES ('18', '57', '0', '1', '学校账号', '2019-09-25 18:02:32', '2019-09-25 18:02:32');
+INSERT INTO `auxiliary_student_type` VALUES ('19', '61', '0', '1', '公司内部账号', '2019-09-25 18:07:17', '2019-09-25 18:07:17');
+INSERT INTO `auxiliary_student_type` VALUES ('20', '65', '0', '1', '领导账号', '2019-09-25 18:08:52', '2019-09-25 18:08:52');
 
 -- ----------------------------
 -- Table structure for city
@@ -595,7 +613,7 @@ CREATE TABLE `kernel_school_inform` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `school_code` (`school_code`) USING HASH,
   KEY `school_id` (`school_id`) USING HASH
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of kernel_school_inform
@@ -609,13 +627,13 @@ INSERT INTO `kernel_school_inform` VALUES ('6', '汕头市东厦小学', '214400
 INSERT INTO `kernel_school_inform` VALUES ('7', '汕头市金龙小学', '2144003477', '2144003477', '440511', '广东省汕头市金平区龙眼路108号', null, '1', '2019-09-07 14:44:53', '2019-09-07 14:44:53');
 INSERT INTO `kernel_school_inform` VALUES ('8', '汕头市龙湖区金涛小学', '2144003406', '2144003406', '440507', '广东省汕头市龙湖区嘉福大厦西北角', null, '1', '2019-09-07 14:54:24', '2019-09-07 14:54:24');
 INSERT INTO `kernel_school_inform` VALUES ('9', '汕头市东厦小学北校区', '2144003475', '214400347501', '440511', '广东省汕头市金平区金湖路126号', null, '1', '2019-09-07 14:54:50', '2019-09-07 14:55:16');
+INSERT INTO `kernel_school_inform` VALUES ('10', '汕头市大华路第二小学', '2144003654', '2144003654', '440511', '广东省汕头市金平区大华路43号', null, '0', '2019-09-23 18:13:32', '2019-09-23 18:13:32');
 
 -- ----------------------------
 -- Table structure for kernel_school_recycle_count
 -- ----------------------------
 DROP TABLE IF EXISTS `kernel_school_recycle_count`;
 CREATE TABLE `kernel_school_recycle_count` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `school_code` char(12) DEFAULT NULL,
   `type` tinyint(1) unsigned DEFAULT NULL,
   `count` int(11) unsigned DEFAULT NULL,
@@ -624,7 +642,6 @@ CREATE TABLE `kernel_school_recycle_count` (
   `activity_count` int(11) unsigned DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
   UNIQUE KEY `school_code` (`school_code`,`type`) USING HASH
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -637,7 +654,6 @@ CREATE TABLE `kernel_school_recycle_count` (
 -- ----------------------------
 DROP TABLE IF EXISTS `kernel_student_data`;
 CREATE TABLE `kernel_student_data` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `uuid` char(32) NOT NULL,
   `identity_card` char(18) DEFAULT NULL,
   `student_code` char(19) DEFAULT NULL,
@@ -656,7 +672,6 @@ CREATE TABLE `kernel_student_data` (
   `total_points` int(11) unsigned NOT NULL DEFAULT '0',
   `used_points` int(11) unsigned NOT NULL DEFAULT '0',
   `deduct_points` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
   UNIQUE KEY `uuid` (`uuid`) USING HASH,
   UNIQUE KEY `identity_card` (`identity_card`) USING HASH,
   UNIQUE KEY `student_code` (`student_code`) USING HASH,
@@ -672,12 +687,11 @@ CREATE TABLE `kernel_student_data` (
 -- ----------------------------
 DROP TABLE IF EXISTS `kernel_student_inform`;
 CREATE TABLE `kernel_student_inform` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(20) DEFAULT NULL,
   `sex` char(4) DEFAULT NULL,
   `student_code` char(20) DEFAULT NULL,
   `identity_card` char(19) DEFAULT NULL,
-  `native_place` varchar(20) DEFAULT NULL,
+  `native_place` varchar(50) DEFAULT NULL,
   `nation` varchar(20) DEFAULT NULL,
   `phone` varchar(20) DEFAULT NULL,
   `school_name` varchar(50) DEFAULT NULL,
@@ -685,16 +699,16 @@ CREATE TABLE `kernel_student_inform` (
   `birthday` varchar(20) DEFAULT NULL,
   `birthplace` varchar(20) DEFAULT NULL,
   `nationality` varchar(50) DEFAULT NULL,
-  `identity_type` varchar(20) DEFAULT NULL,
+  `identity_type` varchar(50) DEFAULT NULL,
   `grade` varchar(20) DEFAULT NULL,
   `classS` varchar(4) DEFAULT NULL,
-  `overseas_chinese` char(4) DEFAULT NULL,
+  `overseas_chinese` varchar(20) DEFAULT NULL,
   `politics_status` varchar(5) DEFAULT NULL,
   `health` varchar(10) DEFAULT NULL,
-  `census_register` varchar(20) DEFAULT NULL,
+  `census_register` varchar(50) DEFAULT NULL,
   `census_register_type` varchar(20) DEFAULT NULL,
   `enrollment_time` varchar(20) DEFAULT NULL,
-  `entrance_way` varchar(10) DEFAULT NULL,
+  `entrance_way` varchar(50) DEFAULT NULL,
   `studying_way` varchar(10) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
   `contact_address` varchar(255) DEFAULT NULL,
@@ -711,16 +725,15 @@ CREATE TABLE `kernel_student_inform` (
   `auxiliary_number` varchar(20) DEFAULT NULL,
   `student_number` varchar(20) DEFAULT NULL,
   `student_source` varchar(20) DEFAULT NULL,
-  `learning_class` char(4) DEFAULT NULL,
+  `learning_class` varchar(20) DEFAULT NULL,
   `disability_types` varchar(50) DEFAULT '',
   `family_name` varchar(20) DEFAULT NULL,
   `family_relationship` varchar(20) DEFAULT NULL,
-  `family_work` varchar(20) DEFAULT NULL,
+  `family_work` varchar(255) DEFAULT NULL,
   `family_residence` varchar(255) DEFAULT NULL,
   `family_census_register` varchar(255) DEFAULT NULL,
   `family_phone` varchar(50) DEFAULT NULL,
   `teacher_phone` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`id`),
   UNIQUE KEY `student_code` (`student_code`) USING HASH,
   UNIQUE KEY `identity_card` (`identity_card`) USING HASH,
   UNIQUE KEY `teacher_phone` (`teacher_phone`) USING HASH
@@ -735,7 +748,6 @@ CREATE TABLE `kernel_student_inform` (
 -- ----------------------------
 DROP TABLE IF EXISTS `kernel_student_recycle_count`;
 CREATE TABLE `kernel_student_recycle_count` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `uuid` char(32) NOT NULL,
   `type` tinyint(1) unsigned NOT NULL,
   `count` int(11) unsigned NOT NULL,
@@ -744,7 +756,6 @@ CREATE TABLE `kernel_student_recycle_count` (
   `activity_count` int(11) unsigned NOT NULL,
   `create_time` datetime NOT NULL,
   `update_time` datetime NOT NULL,
-  PRIMARY KEY (`id`),
   UNIQUE KEY `uuid` (`uuid`,`type`) USING HASH
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -776,7 +787,7 @@ CREATE TABLE `machine_device_management` (
 -- ----------------------------
 INSERT INTO `machine_device_management` VALUES ('1', '2144003701', '083c8de7134a1765a72efb4cc9cc71d0', '2144003701', '440511', '1', '2019-09-07 16:41:03', '2019-09-07 17:05:22');
 INSERT INTO `machine_device_management` VALUES ('2', '2144003680', '372d42dd2c70958e4ff5b9ac8e9703c8', '2144003680', '440511', '1', '2019-09-07 16:42:32', '2019-09-07 17:05:50');
-INSERT INTO `machine_device_management` VALUES ('3', '2144003473', 'a85cc5a4fb370f1dea8957f54e37b71a', '2144003473', '440511', '1', '2019-09-07 16:42:40', '2019-09-07 17:06:02');
+INSERT INTO `machine_device_management` VALUES ('3', '2144003473', '0f1dea8957f54e37b71aa85cc5a4fb37', '2144003473', '440511', '1', '2019-09-07 16:42:40', '2019-09-07 17:06:02');
 INSERT INTO `machine_device_management` VALUES ('4', '2144003686', 'b7cdfd90fadf584ccc65e4e9105c259a', '2144003686', '440511', '1', '2019-09-07 16:42:46', '2019-09-07 17:06:14');
 INSERT INTO `machine_device_management` VALUES ('5', '2144003655', '61728977dcf73f7e6d331a782ee3e194', '2144003655', '440511', '1', '2019-09-07 16:42:52', '2019-09-07 17:06:26');
 INSERT INTO `machine_device_management` VALUES ('6', '2144003475', '3b4485f7a412a3874d9162dcc99899a4', '2144003475', '440511', '1', '2019-09-07 16:42:59', '2019-09-07 17:06:50');
@@ -804,8 +815,7 @@ CREATE TABLE `machine_device_opencode_log` (
 -- ----------------------------
 DROP TABLE IF EXISTS `machine_device_recycle_count`;
 CREATE TABLE `machine_device_recycle_count` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `machine_id` char(14) DEFAULT NULL,
+  `machine_id` char(14) NOT NULL,
   `type` tinyint(1) unsigned DEFAULT NULL,
   `count` int(11) unsigned DEFAULT NULL,
   `points` int(11) unsigned DEFAULT NULL,
@@ -813,7 +823,6 @@ CREATE TABLE `machine_device_recycle_count` (
   `activity_count` int(11) unsigned DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
   UNIQUE KEY `machine_id` (`machine_id`,`type`) USING HASH
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -898,28 +907,26 @@ CREATE TABLE `machine_device_recycle_real_time` (
 -- ----------------------------
 DROP TABLE IF EXISTS `machine_device_state`;
 CREATE TABLE `machine_device_state` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `serial_number` varchar(50) DEFAULT NULL,
+  `serial_number` varchar(50) NOT NULL,
   `status` tinyint(1) unsigned zerofill DEFAULT NULL,
   `status_type` tinyint(1) unsigned DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
   UNIQUE KEY `serial_number` (`serial_number`) USING HASH
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of machine_device_state
 -- ----------------------------
-INSERT INTO `machine_device_state` VALUES ('1', '083c8de7134a1765a72efb4cc9cc71d0', '1', '0', '2019-09-07 17:16:13', '2019-09-07 17:16:13');
-INSERT INTO `machine_device_state` VALUES ('2', '372d42dd2c70958e4ff5b9ac8e9703c8', '1', '0', '2019-09-07 17:16:43', '2019-09-07 17:16:43');
-INSERT INTO `machine_device_state` VALUES ('3', 'a85cc5a4fb370f1dea8957f54e37b71a', '1', '0', '2019-09-07 17:16:48', '2019-09-07 17:16:48');
-INSERT INTO `machine_device_state` VALUES ('4', 'b7cdfd90fadf584ccc65e4e9105c259a', '1', '0', '2019-09-07 17:16:52', '2019-09-07 17:16:52');
-INSERT INTO `machine_device_state` VALUES ('5', '61728977dcf73f7e6d331a782ee3e194', '1', '0', '2019-09-07 17:16:58', '2019-09-07 17:16:58');
-INSERT INTO `machine_device_state` VALUES ('6', '3b4485f7a412a3874d9162dcc99899a4', '1', '0', '2019-09-07 17:17:04', '2019-09-07 17:17:04');
-INSERT INTO `machine_device_state` VALUES ('7', 'cad5f302f2638a43ad839081611e3c68', '1', '0', '2019-09-07 17:17:12', '2019-09-07 17:17:12');
-INSERT INTO `machine_device_state` VALUES ('8', '4932ba462ac7173ea231da0d8fe1e10a', '1', '0', '2019-09-07 17:17:18', '2019-09-07 17:17:18');
-INSERT INTO `machine_device_state` VALUES ('9', '196e93a3ffa5c52118b0985f1db12b24', '1', '0', '2019-09-07 17:17:23', '2019-09-07 17:17:23');
+INSERT INTO `machine_device_state` VALUES ('083c8de7134a1765a72efb4cc9cc71d0', '1', '0', '2019-09-07 17:16:13', '2019-09-07 17:16:13');
+INSERT INTO `machine_device_state` VALUES ('372d42dd2c70958e4ff5b9ac8e9703c8', '1', '0', '2019-09-07 17:16:43', '2019-09-07 17:16:43');
+INSERT INTO `machine_device_state` VALUES ('a85cc5a4fb370f1dea8957f54e37b71a', '1', '0', '2019-09-07 17:16:48', '2019-09-07 17:16:48');
+INSERT INTO `machine_device_state` VALUES ('b7cdfd90fadf584ccc65e4e9105c259a', '1', '0', '2019-09-07 17:16:52', '2019-09-07 17:16:52');
+INSERT INTO `machine_device_state` VALUES ('61728977dcf73f7e6d331a782ee3e194', '1', '0', '2019-09-07 17:16:58', '2019-09-07 17:16:58');
+INSERT INTO `machine_device_state` VALUES ('3b4485f7a412a3874d9162dcc99899a4', '1', '0', '2019-09-07 17:17:04', '2019-09-07 17:17:04');
+INSERT INTO `machine_device_state` VALUES ('cad5f302f2638a43ad839081611e3c68', '1', '0', '2019-09-07 17:17:12', '2019-09-07 17:17:12');
+INSERT INTO `machine_device_state` VALUES ('4932ba462ac7173ea231da0d8fe1e10a', '1', '0', '2019-09-07 17:17:18', '2019-09-07 17:17:18');
+INSERT INTO `machine_device_state` VALUES ('196e93a3ffa5c52118b0985f1db12b24', '1', '0', '2019-09-07 17:17:23', '2019-09-07 17:17:23');
 
 -- ----------------------------
 -- Table structure for machine_device_state_log

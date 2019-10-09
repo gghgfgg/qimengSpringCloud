@@ -270,4 +270,21 @@ public class StudentDataService {
 			return 0;
 		}
 	}
+
+	public StudentData selectStudentDataByQRID(String card) {
+		// TODO Auto-generated method stub
+		try {
+			StudentData studentData=studentDataDao.selectStudentDataByQRID(card);
+			if(studentData==null) {
+				studentData=studentDataDao.selectStudentDataByQRIDusedcode(card);
+			}
+			return  studentData;
+					
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.error("学生数据,查询异常");
+			logger.error("Error:",e);
+			return null;
+		}
+	}
 }

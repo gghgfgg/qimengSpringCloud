@@ -193,7 +193,7 @@ public class StudentService {
 
 	public int savestudentData(StudentVo studentVo) {
 		// TODO Auto-generated method stub
-		if (!StringUtils.isEmpty(studentVo.getSchoolCode())) {
+		if (StringUtils.isEmpty(studentVo.getSchoolCode())) {
 			studentVo.setSchoolCode(studentVo.getSchoolId() + "00");
 		}
 		StudentInform studentInform = new StudentInform();

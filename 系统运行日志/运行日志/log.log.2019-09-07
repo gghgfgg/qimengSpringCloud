@@ -1,0 +1,48 @@
+2019-09-07 12:02:26  [ http-nio-7073-exec-2:222280324 ] - [ INFO ]  *********获取广告大图*************
+2019-09-07 12:02:26  [ http-nio-7073-exec-2:222280325 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-07 12:32:23  [ http-nio-7073-exec-7:224077279 ] - [ INFO ]  *********获取广告大图*************
+2019-09-07 12:32:23  [ http-nio-7073-exec-7:224077280 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-07 13:02:20  [ http-nio-7073-exec-9:225874337 ] - [ INFO ]  *********获取广告大图*************
+2019-09-07 13:02:20  [ http-nio-7073-exec-9:225874337 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-07 13:32:18  [ http-nio-7073-exec-10:227671802 ] - [ INFO ]  *********获取广告大图*************
+2019-09-07 13:32:18  [ http-nio-7073-exec-10:227671802 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-07 14:02:15  [ http-nio-7073-exec-8:229468734 ] - [ INFO ]  *********获取广告大图*************
+2019-09-07 14:02:15  [ http-nio-7073-exec-8:229468734 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-07 14:32:12  [ http-nio-7073-exec-1:231265871 ] - [ INFO ]  *********获取广告大图*************
+2019-09-07 14:32:12  [ http-nio-7073-exec-1:231265871 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-07 15:02:09  [ http-nio-7073-exec-5:233062681 ] - [ INFO ]  *********获取广告大图*************
+2019-09-07 15:02:09  [ http-nio-7073-exec-5:233062681 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-07 15:32:06  [ http-nio-7073-exec-6:234859803 ] - [ INFO ]  *********获取广告大图*************
+2019-09-07 15:32:06  [ http-nio-7073-exec-6:234859803 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-07 16:02:03  [ http-nio-7073-exec-10:236656732 ] - [ INFO ]  *********获取广告大图*************
+2019-09-07 16:02:03  [ http-nio-7073-exec-10:236656733 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-07 16:32:00  [ http-nio-7073-exec-1:238454117 ] - [ INFO ]  *********获取广告大图*************
+2019-09-07 16:32:00  [ http-nio-7073-exec-1:238454117 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-07 17:01:57  [ http-nio-7073-exec-2:240250949 ] - [ INFO ]  *********获取广告大图*************
+2019-09-07 17:01:57  [ http-nio-7073-exec-2:240250950 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-07 17:31:54  [ http-nio-7073-exec-9:242048590 ] - [ INFO ]  *********获取广告大图*************
+2019-09-07 17:31:54  [ http-nio-7073-exec-9:242048590 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-07 18:01:51  [ http-nio-7073-exec-10:243845114 ] - [ INFO ]  *********获取广告大图*************
+2019-09-07 18:01:51  [ http-nio-7073-exec-10:243845114 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-07 18:31:48  [ http-nio-7073-exec-3:245642349 ] - [ INFO ]  *********获取广告大图*************
+2019-09-07 18:31:48  [ http-nio-7073-exec-3:245642349 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-07 19:01:45  [ http-nio-7073-exec-1:247439160 ] - [ INFO ]  *********获取广告大图*************
+2019-09-07 19:01:45  [ http-nio-7073-exec-1:247439160 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-07 19:31:42  [ http-nio-7073-exec-5:249236335 ] - [ INFO ]  *********获取广告大图*************
+2019-09-07 19:31:42  [ http-nio-7073-exec-5:249236335 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-07 20:01:39  [ http-nio-7073-exec-4:251033293 ] - [ INFO ]  *********获取广告大图*************
+2019-09-07 20:01:39  [ http-nio-7073-exec-4:251033293 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-07 20:31:36  [ http-nio-7073-exec-6:252830583 ] - [ INFO ]  *********获取广告大图*************
+2019-09-07 20:31:36  [ http-nio-7073-exec-6:252830583 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-07 21:01:33  [ http-nio-7073-exec-2:254627474 ] - [ INFO ]  *********获取广告大图*************
+2019-09-07 21:01:33  [ http-nio-7073-exec-2:254627475 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-07 21:31:35  [ http-nio-7073-exec-7:256429437 ] - [ INFO ]  *********获取广告大图*************
+2019-09-07 21:31:35  [ http-nio-7073-exec-7:256429437 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-07 22:01:27  [ http-nio-7073-exec-9:258221533 ] - [ INFO ]  *********获取广告大图*************
+2019-09-07 22:01:27  [ http-nio-7073-exec-9:258221533 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-07 22:31:25  [ http-nio-7073-exec-3:260018829 ] - [ INFO ]  *********获取广告大图*************
+2019-09-07 22:31:25  [ http-nio-7073-exec-3:260018829 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-07 23:01:21  [ http-nio-7073-exec-1:261815606 ] - [ INFO ]  *********获取广告大图*************
+2019-09-07 23:01:21  [ http-nio-7073-exec-1:261815606 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]
+2019-09-07 23:31:19  [ http-nio-7073-exec-4:263612810 ] - [ INFO ]  *********获取广告大图*************
+2019-09-07 23:31:19  [ http-nio-7073-exec-4:263612810 ] - [ INFO ]  [{pic=http://sys.qimenghb.com/pic/adv01.jpg}, {pic=http://sys.qimenghb.com/pic/adv02.jpg}]

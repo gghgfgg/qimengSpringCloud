@@ -55,6 +55,10 @@ public class IndexCountService {
 			
 			for (SchoolInform schoolInform : schoollist) {
 				schoolcode += schoolInform.getSchoolCode();
+				
+				indexCountVo.setHeadActCount(indexCountVo.getHeadActCount()==null?0:indexCountVo.getHeadActCount()+Integer.parseInt(String.valueOf(studentRankService.StudentActCount(schoolInform.getSchoolCode())+studentRankService.TeacherActCount(schoolInform.getSchoolCode()))));
+				indexCountVo.setHeadCount(indexCountVo.getHeadCount()==null?0:indexCountVo.getHeadCount()+Integer.parseInt(String.valueOf(studentRankService.SchoolCount(schoolInform.getSchoolCode()))));
+				
 				schoolcode += "-";
 			}
 			indexCountVo.setSchoolCode(schoolcode);

@@ -31,7 +31,6 @@ public interface StudentRecycleCountDao {
 	static String update="count=VALUES(count),points=VALUES(points),remainder=VALUES(remainder),activity_count=VALUES(activity_count),update_time=VALUES(update_time)";
 	
 	@Insert("insert into "+tablename+"("+fields+") values" + "("+item+") ON DUPLICATE KEY UPDATE " + update )
-	@Options(useGeneratedKeys = true,keyProperty = "item.id")
 	int insertStudentRecycleCount(@Param("item")StudentRecycleCount studentRecycleCount);
 	
 	@SelectProvider(type = SqlFactory.class,method = "selectStudentRecycleCount")
@@ -43,7 +42,7 @@ public interface StudentRecycleCountDao {
 		public String selectStudentRecycleCount(@Param("item")StudentRecycleCount studentRecycleCount){
 	    	SQL sql = new SQL(); //SQL语句对象，所在包：org.apache.ibatis.jdbc.SQL
 	    	
-	    	sql.SELECT("id,"+fields);
+	    	sql.SELECT(fields);
 	    	sql.FROM(tablename);
 	    	if(!StringUtils.isEmpty(studentRecycleCount.getUuid())){
 	            sql.WHERE("uuid=#{item.uuid}");

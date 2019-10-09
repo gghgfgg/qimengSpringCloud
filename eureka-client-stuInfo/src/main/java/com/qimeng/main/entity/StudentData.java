@@ -7,8 +7,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.alibaba.fastjson.annotation.JSONField;
 
 public class StudentData {
-    private Integer id;
-
     private String uuid;
 
     private String identityCard;
@@ -48,14 +46,6 @@ public class StudentData {
     private Integer usedPoints;
 
     private Integer deductPoints;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getUuid() {
         return uuid;

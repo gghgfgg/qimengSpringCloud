@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.SelectProvider;
 import org.apache.ibatis.jdbc.SQL;
@@ -31,7 +30,6 @@ public interface DeviceCurrentStateDao {
 	
 	@Insert("insert into "+tablename+"("+fields+") values" +
 		        "("+item+") ON DUPLICATE KEY UPDATE " + update)
-	@Options(useGeneratedKeys = true,keyProperty = "item.id")
 	int insertDeviceCurrentState(@Param("item")DeviceCurrentState deviceCurrentState);
 	
 	@SelectProvider(type = SqlFactory.class,method="selectDeviceCurrentState")
@@ -41,7 +39,7 @@ public interface DeviceCurrentStateDao {
 		public String selectDeviceCurrentState(@Param("item")DeviceCurrentState deviceCurrentState) {
 			SQL sql = new SQL(); //SQL语句对象，所在包：org.apache.ibatis.jdbc.SQL
 	    	
-	    	sql.SELECT("id,"+fields);
+	    	sql.SELECT(fields);
 	    	sql.FROM(tablename);
 	    	if(!StringUtils.isEmpty(deviceCurrentState.getSerialNumber())) {
 	    		sql.WHERE("serial_number=#{item.serialNumber}");

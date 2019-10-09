@@ -102,7 +102,13 @@ public class OldShopController {
 	@RequestMapping("/getUserDp")
 	public String getUserDp(String code)
 	{
-		StudentInfo student=studentInfoService.getStudent(code);
+		StudentInfo student = null;
+		if(code.length()>16)
+		{
+			student = studentInfoService.getStudent(code);
+		}else {
+			student = studentInfoService.getStudentByCode(code);
+		}
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		if(student==null){
@@ -220,8 +226,15 @@ public class OldShopController {
 	public String getXsJfSy(String code,String jf)
 	{
 		Map<String, Object> map = new HashMap<String, Object>();
-		StudentInfo student=studentInfoService.getStudent(code);
-		if(student==null||student.getTotalPoints().intValue()<Integer.parseInt(jf)*10)
+		StudentInfo student=null;
+		if(code.length()>16)
+		{
+			student = studentInfoService.getStudent(code);
+		}else {
+			student = studentInfoService.getStudentByCode(code);
+		}
+		
+		if(student==null||student.getTotalPoints().intValue()<Integer.parseInt(jf))
 		{
 			map.put("success", false);
 			return JSONObject.toJSONString(map);
@@ -270,7 +283,7 @@ public class OldShopController {
 		usepointsLog.setUsedPoints(Integer.parseInt(jf));
 		usepointsLog.setCreateTime(currDate);
 		usepointsLog.setMark("商城扣分");
-		oldServiceDao.updatePoints(student.getStuCode(), student.getTotalPoints().intValue()-(Integer.parseInt(jf)*10));
+		oldServiceDao.updatePoints(student.getStuCode(), student.getTotalPoints().intValue()-(Integer.parseInt(jf)));
 		usePointsLogService.insertPointsLog(usepointsLog);
 		
 		logger.info("*********微信商城扣除积分*************");

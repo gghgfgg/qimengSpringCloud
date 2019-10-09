@@ -8,8 +8,6 @@ public class StudentInform implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private Integer id;
-
     private String name;
 
     private String sex;
@@ -104,14 +102,6 @@ public class StudentInform implements Serializable{
 
     private String teacherPhone;
     
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
     }

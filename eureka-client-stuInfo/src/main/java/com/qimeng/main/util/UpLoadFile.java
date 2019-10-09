@@ -3,6 +3,7 @@ package com.qimeng.main.util;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
@@ -15,6 +16,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.qimeng.main.entity.ExcelRecycle;
 import com.qimeng.main.entity.StudentInform;
 import com.qimeng.main.entity.Uploadlog;
 import com.qimeng.main.service.UploadlogService;
@@ -58,9 +60,10 @@ public class UpLoadFile {
 		return destFile;
 	}
 
-	public List<StudentInform> uploadFileToList(File upload) {
+	public List<StudentInform> uploadFileToList(File upload) throws IOException {
+		InputStream inputStream = null;
 		try {
-			InputStream inputStream = new FileInputStream(upload);
+			inputStream = new FileInputStream(upload);
 			List<FieldDefine> fieldMap = new ArrayList<FieldDefine>();
 			fieldMap.add(new FieldDefine("学生姓名", "name"));
 			fieldMap.add(new FieldDefine("性别", "sex"));
@@ -108,7 +111,7 @@ public class UpLoadFile {
 			fieldMap.add(new FieldDefine("家庭成员现住址", "familyResidence"));
 			fieldMap.add(new FieldDefine("家庭成员户口所在地", "familyCensusRegister"));
 			fieldMap.add(new FieldDefine("家庭成员联系电话", "familyPhone"));
-			fieldMap.add(new FieldDefine("快速关联手机号", "teacherPhone"));
+			fieldMap.add(new FieldDefine("手机号码", "teacherPhone"));
 			List<StudentInform> list=ExcelImpotUtils.excelToList(inputStream,0, StudentInform.class,fieldMap,upload.getName());
 			return list;
 		} catch (Exception e) {
@@ -116,11 +119,16 @@ public class UpLoadFile {
 			logger.error("上传学生信息文件异常");
 			logger.error("Error:", e);
 			throw new RuntimeException(e);
+		}finally {
+			if (inputStream != null) {
+				inputStream.close();
+			}
 		}
 	}
 	
-	public void exporFile(List<StudentVo> studentList, String sheetName,File expor) {
+	public void exporFile(List<StudentVo> studentList, String sheetName,File expor) throws IOException {
 		// TODO Auto-generated method stub
+		OutputStream outputStream =null;
 		try {
 			List<FieldDefine> fieldMap = new ArrayList<FieldDefine>();
 			
@@ -145,13 +153,42 @@ public class UpLoadFile {
 			fieldMap.add(new FieldDefine("使用积分", "usedPoints"));
 			fieldMap.add(new FieldDefine("扣除积分", "deductPoints"));
 			
-			OutputStream outputStream = new FileOutputStream(expor);
+			outputStream = new FileOutputStream(expor);
 			ExcelImpotUtils.listToExcel(studentList, fieldMap, sheetName, outputStream);
 		} catch (Exception e) {
 			// TODO: handle exception
 			logger.error("导出学生信息文件异常");
 			logger.error("Error:", e);
 			throw new RuntimeException(e);
+		}finally {
+			if (outputStream != null) {
+				outputStream.close();
+			}
+		}
+	}
+	
+	public List<ExcelRecycle> uploadPoint(File upload) throws IOException {
+		InputStream inputStream = null;
+		try {
+			inputStream = new FileInputStream(upload);
+			List<FieldDefine> fieldMap = new ArrayList<FieldDefine>();
+			fieldMap.add(new FieldDefine("类型", "recycleType"));
+			fieldMap.add(new FieldDefine("数量", "count"));
+			fieldMap.add(new FieldDefine("积分", "points"));
+			fieldMap.add(new FieldDefine("页面网址", "qrid"));
+			fieldMap.add(new FieldDefine("创建日期", "createTime"));
+			fieldMap.add(new FieldDefine("机器ID", "machineId"));
+			List<ExcelRecycle> list=ExcelImpotUtils.excelToList(inputStream,0, ExcelRecycle.class,fieldMap,upload.getName());
+			return list;
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.error("上传学生积分信息文件异常");
+			logger.error("Error:", e);
+			throw new RuntimeException(e);
+		}finally {
+			if (inputStream != null) {
+				inputStream.close();
+			}
 		}
 	}
 }

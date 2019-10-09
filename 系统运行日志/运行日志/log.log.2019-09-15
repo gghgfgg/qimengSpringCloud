@@ -1,0 +1,16 @@
+2019-09-15 11:46:00  [ http-nio-7073-exec-5:912493666 ] - [ INFO ]  ************获取学生信息***************
+2019-09-15 11:46:00  [ http-nio-7073-exec-5:912493669 ] - [ ERROR ]  获取学生信息接口错误
+2019-09-15 11:46:00  [ http-nio-7073-exec-5:912493670 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=2144003655, accountTonken=null, operator=null, data=StudentInfoVo [name=null, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29B2592CC12213D751C1B89BE293232C6049E456, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-09-15 11:46:00  [ http-nio-7073-exec-5:912493696 ] - [ INFO ]  ResponseMessage [statusCode=1, success=false, message=找不到当前用户, accountTonken=, data=]
+2019-09-15 11:46:05  [ http-nio-7073-exec-2:912499397 ] - [ INFO ]  ************获取学生信息***************
+2019-09-15 11:46:05  [ http-nio-7073-exec-2:912499398 ] - [ ERROR ]  获取学生信息接口错误
+2019-09-15 11:46:05  [ http-nio-7073-exec-2:912499399 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=2144003655, accountTonken=null, operator=null, data=StudentInfoVo [name=null, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29B2592CC12213D751C1B89BE293232C6049E456, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-09-15 11:46:05  [ http-nio-7073-exec-2:912499400 ] - [ INFO ]  ResponseMessage [statusCode=1, success=false, message=找不到当前用户, accountTonken=, data=]
+2019-09-15 11:46:09  [ http-nio-7073-exec-4:912502696 ] - [ INFO ]  ************获取学生信息***************
+2019-09-15 11:46:09  [ http-nio-7073-exec-4:912502697 ] - [ ERROR ]  获取学生信息接口错误
+2019-09-15 11:46:09  [ http-nio-7073-exec-4:912502697 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=2144003655, accountTonken=null, operator=null, data=StudentInfoVo [name=null, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29B2592CC12213D751C1B89BE293232C6049E456, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-09-15 11:46:09  [ http-nio-7073-exec-4:912502699 ] - [ INFO ]  ResponseMessage [statusCode=1, success=false, message=找不到当前用户, accountTonken=, data=]
+2019-09-15 11:46:10  [ http-nio-7073-exec-6:912503706 ] - [ INFO ]  ************获取学生信息***************
+2019-09-15 11:46:10  [ http-nio-7073-exec-6:912503707 ] - [ ERROR ]  获取学生信息接口错误
+2019-09-15 11:46:10  [ http-nio-7073-exec-6:912503707 ] - [ INFO ]  RequestMessage [appID=7166912116544627, machineID=2144003655, accountTonken=null, operator=null, data=StudentInfoVo [name=null, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29B2592CC12213D751C1B89BE293232C6049E456, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-09-15 11:46:10  [ http-nio-7073-exec-6:912503709 ] - [ INFO ]  ResponseMessage [statusCode=1, success=false, message=找不到当前用户, accountTonken=, data=]
