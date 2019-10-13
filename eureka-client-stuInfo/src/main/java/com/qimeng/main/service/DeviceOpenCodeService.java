@@ -107,7 +107,7 @@ public class DeviceOpenCodeService {
 			temp.setSysCount(deviceRecycleRealTime.getCount());
 			deviceRecycleRealTimeService.updateDeviceRecycleRealTimeRecycle(deviceRecycleRealTime);
 		} else {
-			redisUtil.del("OrderKey::Repair::" + machineID);
+			redisUtil.del("OrderKey::Repair::" + machineID); 
 		}
 		
 		temp.setCreateTime(date);
