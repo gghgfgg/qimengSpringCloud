@@ -37,6 +37,16 @@ public interface StudentInfoDao {
 	
 	@Select("select nid as id,"
 			+ "realname as name,"
+			+ "qrid as stuCode,"
+			+ "card as stuCard,"
+			+ "rootid as bind,"
+			+ "hbday as startTime, "
+			+ "njf as totalpoints,"
+			+ "schoolid from qmhb_student where code=#{studcode} and card=#{studcard}")
+	public StudentInfo getStudentByCodeCardQR(@Param("studcode")String studcode,@Param("studcard")String studcard);
+	
+	@Select("select nid as id,"
+			+ "realname as name,"
 			+ "code as stuCode,"
 			+ "card as stuCard,"
 			+ "rootid as bind,"

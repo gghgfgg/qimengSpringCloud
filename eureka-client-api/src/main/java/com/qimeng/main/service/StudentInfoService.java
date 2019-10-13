@@ -23,7 +23,9 @@ public class StudentInfoService {
     public StudentInfo getStudentByCodeCard(String studcode,String studcard) {
     	return studentInfoDao.getStudentByCodeCard(studcode,studcard);
     }
-    
+    public StudentInfo getStudentByCodeCardQR(String stuCode, String stuCard) {
+    	return studentInfoDao.getStudentByCodeCardQR(stuCode,stuCard);
+	}
     public StudentInfo getStudentByCode(String studcode) {
     	return studentInfoDao.getStudentByCode(studcode);
     }
@@ -45,4 +47,6 @@ public class StudentInfoService {
     {
     	return studentInfoDao.updateMachineID(machineID,serialNumber);
     }
+
+	
 }

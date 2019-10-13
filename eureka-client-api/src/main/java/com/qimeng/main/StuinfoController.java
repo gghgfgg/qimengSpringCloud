@@ -112,7 +112,6 @@ public class StuinfoController {
 				});
 		logger.info(requestMessage.toString());
 		StudentInfoVo stuInfoVo = (StudentInfoVo) requestMessage.getData();
-		String code=stuInfoVo.getStuCode();
 		if (stuInfoVo.getStuCode().length() > 16 ||stuInfoVo.getStuCard().length() > 16) {
 			stuInfoVo.setStuCode(stuInfoVo.getStuCode().substring(0,16));
 			stuInfoVo.setStuCard(stuInfoVo.getStuCard().substring(0,16));
@@ -135,8 +134,8 @@ public class StuinfoController {
 
 		// logger.info(oldService.uploadIntegral(stuInfo,
 		// requestMessage.getMachineID()));
-
-		String jsonString = oldService.newuploadIntegral(stuInfoVo, requestMessage.getMachineID(),code);
+		StudentInfo temp = studentInfoService.getStudentByCodeCardQR(stuInfoVo.getStuCode(), stuInfoVo.getStuCard());
+		String jsonString = oldService.newuploadIntegral(stuInfoVo, requestMessage.getMachineID(),temp.getStuCode());
 		logger.info("新后台上传积分：" + jsonString);
 
 		ResponseMessage<String> responseMessage = new ResponseMessage<String>();

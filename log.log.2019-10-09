@@ -1,0 +1,174 @@
+2019-10-09 15:58:47  [ http-nio-7073-exec-1:0 ] - [ INFO ]  RequestMessage [appID=7166912116544633, machineID=123456, accountTonken=, operator=null, data=StudentInfoVo [name=, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29B2592CC12213D751C1B89BE293232C6049E456, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-09 15:58:47  [ http-nio-7073-exec-1:3 ] - [ INFO ]  ************二维码转换***************
+2019-10-09 15:58:47  [ http-nio-7073-exec-1:8 ] - [ INFO ]  {"machineID":"123456","data":{"active":0,"bind":0,"name":"","point":0,"qrCode":"","stuCard":"29B2592CC12213D7","stuCode":"5B2DDE67C27283D6","unit":0,"wasteType":0},"appID":"7166912116544633","accountTonken":""}
+2019-10-09 15:58:47  [ http-nio-7073-exec-1:9 ] - [ INFO ]  ************获取学生信息***************
+2019-10-09 15:58:47  [ http-nio-7073-exec-1:281 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-09 15:58:50  [ http-nio-7073-exec-1:2512 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=cEw0Vbia, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=219, bind=1, active=1]]
+2019-10-09 19:49:22  [ http-nio-7073-exec-2:0 ] - [ INFO ]  RequestMessage [appID=7166912116544633, machineID=123456, accountTonken=, operator=null, data=StudentInfoVo [name=, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29B2592CC12213D751C1B89BE293232C6049E456, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-09 19:49:22  [ http-nio-7073-exec-2:2 ] - [ INFO ]  ************二维码转换***************
+2019-10-09 19:49:22  [ http-nio-7073-exec-2:12 ] - [ INFO ]  {"machineID":"123456","data":{"active":0,"bind":0,"name":"","point":0,"qrCode":"","stuCard":"29B2592CC12213D7","stuCode":"5B2DDE67C27283D6","unit":0,"wasteType":0},"appID":"7166912116544633","accountTonken":""}
+2019-10-09 19:49:22  [ http-nio-7073-exec-2:13 ] - [ INFO ]  ************获取学生信息***************
+2019-10-09 19:49:23  [ http-nio-7073-exec-2:221 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-09 19:49:25  [ http-nio-7073-exec-2:2334 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=U7ZI4eov, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=219, bind=1, active=1]]
+2019-10-09 19:50:46  [ http-nio-7073-exec-8:84034 ] - [ INFO ]  RequestMessage [appID=7166912116544633, machineID=123456, accountTonken=, operator=null, data=StudentInfoVo [name=, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-09 19:50:46  [ http-nio-7073-exec-8:84035 ] - [ INFO ]  ************获取学生信息***************
+2019-10-09 19:50:46  [ http-nio-7073-exec-8:84036 ] - [ ERROR ]  获取学生信息接口错误
+2019-10-09 19:50:47  [ http-nio-7073-exec-8:84112 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=获取当前用户成功, accountTonken=CJ6LyvsI, data=StudentInfoVo [name=陈泽键, stuCode=5B2DDE67C27283D6, stuCard=29B2592CC12213D7, qrCode=http://o0c.cn/?code=5B2DDE67C27283D6&card=29B2592CC12213D7, wasteType=0, unit=0, point=219, bind=1, active=1]]
+2019-10-09 19:52:35  [ http-nio-7073-exec-5:192911 ] - [ INFO ]  RequestMessage [appID=7166912116544633, machineID=123456, accountTonken=, operator=null, data=StudentInfoVo [name=, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29B2592CC12213D751C1B89BE293232C6049E456, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-09 19:52:35  [ http-nio-7073-exec-5:192911 ] - [ INFO ]  ************二维码转换***************
+2019-10-09 19:52:35  [ http-nio-7073-exec-5:192912 ] - [ INFO ]  {"machineID":"123456","data":{"active":0,"bind":0,"name":"","point":0,"qrCode":"","stuCard":"29B2592CC12213D7","stuCode":"5B2DDE67C27283D6","unit":0,"wasteType":0},"appID":"7166912116544633","accountTonken":""}
+2019-10-09 19:52:35  [ http-nio-7073-exec-5:192912 ] - [ INFO ]  ************上传积分***************
+2019-10-09 19:52:35  [ http-nio-7073-exec-5:192913 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-09 19:52:37  [ http-nio-7073-exec-5:194197 ] - [ INFO ]  新后台上传积分：classtype_error
+2019-10-09 19:52:37  [ http-nio-7073-exec-5:194198 ] - [ INFO ]  ResponseMessage [statusCode=1, success=false, message=积分上传失败, accountTonken=, data=]
+2019-10-09 19:54:38  [ http-nio-7073-exec-1:315118 ] - [ INFO ]  RequestMessage [appID=7166912116544633, machineID=123456789, accountTonken=, operator=null, data=StudentInfoVo [name=, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29B2592CC12213D751C1B89BE293232C6049E456, qrCode=null, wasteType=0, unit=0, point=0, bind=0, active=0]]
+2019-10-09 19:54:38  [ http-nio-7073-exec-1:315118 ] - [ INFO ]  ************二维码转换***************
+2019-10-09 19:54:38  [ http-nio-7073-exec-1:315119 ] - [ INFO ]  {"machineID":"123456789","data":{"active":0,"bind":0,"name":"","point":0,"qrCode":"","stuCard":"29B2592CC12213D7","stuCode":"5B2DDE67C27283D6","unit":0,"wasteType":0},"appID":"7166912116544633","accountTonken":""}
+2019-10-09 19:54:38  [ http-nio-7073-exec-1:315119 ] - [ INFO ]  ************上传积分***************
+2019-10-09 19:54:38  [ http-nio-7073-exec-1:315119 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-09 19:54:39  [ http-nio-7073-exec-1:316249 ] - [ INFO ]  新后台上传积分：classtype_error
+2019-10-09 19:54:39  [ http-nio-7073-exec-1:316249 ] - [ INFO ]  ResponseMessage [statusCode=1, success=false, message=积分上传失败, accountTonken=, data=]
+2019-10-09 19:54:51  [ http-nio-7073-exec-2:328392 ] - [ INFO ]  RequestMessage [appID=7166912116544633, machineID=123456789, accountTonken=, operator=null, data=StudentInfoVo [name=, stuCode=5B2DDE67C27283D61FED7C6CEE15FE35783B7EDD, stuCard=29B2592CC12213D751C1B89BE293232C6049E456, qrCode=null, wasteType=1, unit=1, point=0, bind=0, active=0]]
+2019-10-09 19:54:51  [ http-nio-7073-exec-2:328393 ] - [ INFO ]  ************二维码转换***************
+2019-10-09 19:54:51  [ http-nio-7073-exec-2:328393 ] - [ INFO ]  {"machineID":"123456789","data":{"active":0,"bind":0,"name":"","point":0,"qrCode":"","stuCard":"29B2592CC12213D7","stuCode":"5B2DDE67C27283D6","unit":1,"wasteType":1},"appID":"7166912116544633","accountTonken":""}
+2019-10-09 19:54:51  [ http-nio-7073-exec-2:328393 ] - [ INFO ]  ************上传积分***************
+2019-10-09 19:54:51  [ http-nio-7073-exec-2:328394 ] - [ ERROR ]  获取学生上传积分接口错误
+2019-10-09 19:54:52  [ http-nio-7073-exec-2:329554 ] - [ INFO ]  新后台上传积分：success
+2019-10-09 19:54:52  [ http-nio-7073-exec-2:329554 ] - [ INFO ]  ResponseMessage [statusCode=1, success=true, message=积分上传成功, accountTonken=, data=]
+2019-10-09 20:39:08  [ http-nio-8071-exec-2:0 ] - [ ERROR ]  异常:
+java.lang.NumberFormatException: 江阳阳 is not a valid number.
+	at org.apache.commons.lang.math.NumberUtils.createNumber(NumberUtils.java:597)
+	at com.qimeng.main.util.ExcelImpotUtils.setFieldValueByName(ExcelImpotUtils.java:245)
+	at com.qimeng.main.util.ExcelImpotUtils.excelToList(ExcelImpotUtils.java:116)
+	at com.qimeng.main.util.ExcelImpotUtils.excelToList(ExcelImpotUtils.java:145)
+	at com.qimeng.main.util.UpLoadFile.uploadPoint(UpLoadFile.java:181)
+	at com.qimeng.main.UpdatePointByExcel.usedPoints(UpdatePointByExcel.java:110)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+2019-10-09 20:39:08  [ http-nio-8071-exec-2:4 ] - [ ERROR ]  上传学生积分信息文件异常
+2019-10-09 20:39:08  [ http-nio-8071-exec-2:4 ] - [ ERROR ]  Error:
+com.qimeng.main.util.ExcelException: excel转list异常
+	at com.qimeng.main.util.ExcelImpotUtils.excelToList(ExcelImpotUtils.java:129)
+	at com.qimeng.main.util.ExcelImpotUtils.excelToList(ExcelImpotUtils.java:145)
+	at com.qimeng.main.util.UpLoadFile.uploadPoint(UpLoadFile.java:181)
+	at com.qimeng.main.UpdatePointByExcel.usedPoints(UpdatePointByExcel.java:110)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
