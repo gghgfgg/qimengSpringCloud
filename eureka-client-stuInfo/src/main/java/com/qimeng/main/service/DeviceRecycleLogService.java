@@ -64,5 +64,16 @@ public class DeviceRecycleLogService {
 		deviceRecycleLog.setUuid(uuid);
 		return selectDeviceRecycleLogList(deviceRecycleLog);
 	}
+
+	public List<DeviceRecycleLog> selectStudentRecycleLogByUuid(String uuid, Byte type) {
+		try {
+			return deviceRecycleLogDao.selectStudentRecycleLogByUuid(uuid,type);
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.error("查询学生回收日志数据数据异常");
+			logger.error("Error:", e);
+			throw new RuntimeException(e);
+		}
+	}
 }
 

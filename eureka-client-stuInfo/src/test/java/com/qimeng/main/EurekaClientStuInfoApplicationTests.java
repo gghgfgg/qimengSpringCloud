@@ -234,7 +234,7 @@ public class EurekaClientStuInfoApplicationTests {
 //		deviceRecycleRealTimeService.updateDeviceRecycleRealTimeCount(deviceRecycleRealTime);
 //		deviceRecycleRealTime.setEndTime(date);
 //		deviceRecycleRealTimeService.updateDeviceRecycleRealTimeRecycle(deviceRecycleRealTime);
-		
+		schoolAutoCountRecycleService.StudentAutoCountRecycleByDay();
 		System.out.println("2144003475".indexOf("2144003475"));
 	}
 

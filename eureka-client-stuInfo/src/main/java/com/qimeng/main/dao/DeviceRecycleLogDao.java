@@ -43,6 +43,11 @@ public interface DeviceRecycleLogDao {
 			+ "and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)")
 	List<DeviceRecycleLog> selectDeviceRecycleLogBySchoolDay(String schoolCode,byte type);
 	
+	
+	@Select("Select id "+fields+" from "+tablename+" where uuid=#{uuid} and recycle_type=#{type} "
+			+ "and date_format(create_time,'%Y-%m-%d')=date_sub(CURDATE(),interval 1 day)")
+	List<DeviceRecycleLog> selectStudentRecycleLogByUuid(String uuid,byte type);
+	
 	public class SqlFactory extends SQL{
 		public String selectDeviceRecycleLog(@Param("item")DeviceRecycleLog deviceRecycleLog) {
 			SQL sql = new SQL(); //SQL语句对象，所在包：org.apache.ibatis.jdbc.SQL

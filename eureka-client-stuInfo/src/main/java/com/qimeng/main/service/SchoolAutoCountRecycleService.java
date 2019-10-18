@@ -2,12 +2,15 @@ package com.qimeng.main.service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.qimeng.main.entity.DeviceRecycleLog;
+import com.qimeng.main.entity.ExceptionLog;
 import com.qimeng.main.entity.RecycleType;
 import com.qimeng.main.entity.SchoolAutoCount;
 import com.qimeng.main.entity.SchoolInform;
@@ -35,7 +38,12 @@ public class SchoolAutoCountRecycleService {
 	DeviceRecycleLogService deviceRecycleLogService;
 	@Autowired
 	SchoolAutoCountService schoolAutoCountService;
-	
+	@Autowired
+	GlobalDateService globalDateService;
+	@Autowired
+	StudentRankService studentRankService;
+	@Autowired
+	ExceptionLogService exceptionLogService;
 	
 	public int SchoolAutoCountRecycleByDay() {
 		try {
@@ -146,4 +154,48 @@ public class SchoolAutoCountRecycleService {
 		}
 	}
 	
+	
+	public int StudentAutoCountRecycleByDay() {
+		try {
+
+			List<RecycleType> typelist = recycleTypeService.selectRecycleTypeList();
+			Map<String, Integer> map=globalDateService.getRecycleException();
+			
+			for (RecycleType recycleType : typelist) {
+				Integer countInteger=map.get(recycleType.getType().toString());
+				if(countInteger==null) {
+					continue;
+				}
+				Set<Object> studentSet=studentRankService.StudentException(recycleType.getType());
+				for (Object object : studentSet) {
+					List<DeviceRecycleLog> logList = deviceRecycleLogService
+							.selectStudentRecycleLogByUuid(object.toString(), recycleType.getType());
+					int logcount=0;
+					for (DeviceRecycleLog deviceRecycleLog : logList) {
+						logcount+=deviceRecycleLog.getCount();
+					}
+					if(logcount<countInteger) {
+						break;
+					}
+					ExceptionLog exceptionLog=new ExceptionLog();
+					
+					exceptionLog.setActivityCount(logList.size());
+					exceptionLog.setCount(logcount);
+					exceptionLog.setExCount(countInteger);
+					exceptionLog.setType(recycleType.getType());
+					exceptionLog.setUuid(object.toString());
+					exceptionLog.setCreateTime(new Date());
+					exceptionLogService.insertExceptionLog(exceptionLog);
+				}
+			}
+			for (RecycleType recycleType : typelist) {
+				studentRankService.cleanStudentRecCount(recycleType.getType());
+			}
+			logger.info("自动生成每日异常回收数据报表");
+			return 1;
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);
+		}
+	}
 }

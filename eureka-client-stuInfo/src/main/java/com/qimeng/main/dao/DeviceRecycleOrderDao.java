@@ -22,9 +22,9 @@ public interface DeviceRecycleOrderDao {
 
 	static String TABLE_NAME="machine_device_recycle_order";
 	
-	static String FIELDS="machine_id,uuid,order_type,recycle_type,sys_count,create_time,real_count,upload_time,end_time,b_end";
+	static String FIELDS="machine_id,uuid,worker_uuid,worker_name,order_type,recycle_type,sys_count,create_time,real_count,upload_time,end_time,b_end";
 	
-	static String ITEM="#{item.machineId},#{item.uuid},#{item.orderType},#{item.recycleType},#{item.sysCount},#{item.createTime},#{item.realCount},"
+	static String ITEM="#{item.machineId},#{item.uuid},#{item.workerUuid},#{item.workerName},#{item.orderType},#{item.recycleType},#{item.sysCount},#{item.createTime},#{item.realCount},"
 			+ "#{item.uploadTime},#{item.endTime},#{item.bEnd}";
 	
 	@Insert("insert into "+TABLE_NAME+"("+FIELDS+") values" + "("+ITEM+")")
@@ -53,6 +53,12 @@ public interface DeviceRecycleOrderDao {
 		     }
 		     if(!StringUtils.isEmpty(deviceRecycleOrder.getUuid())) {
 		    	 sql.WHERE("uuid=#{item.uuid}");
+		     }
+		     if(!StringUtils.isEmpty(deviceRecycleOrder.getWorkerUuid())) {
+		    	 sql.WHERE("worker_uuid=#{item.workerUuid}");
+		     }
+		     if(!StringUtils.isEmpty(deviceRecycleOrder.getWorkerName())) {
+		    	 sql.WHERE("worker_name=#{item.workerName}");
 		     }
 		     if(!StringUtils.isEmpty(deviceRecycleOrder.getMachineId())) {
 		    	 sql.WHERE("machine_id=#{item.machineId}");

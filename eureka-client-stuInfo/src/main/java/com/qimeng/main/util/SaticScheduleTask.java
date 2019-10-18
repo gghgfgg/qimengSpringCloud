@@ -35,6 +35,7 @@ public class SaticScheduleTask {
    // @Scheduled(cron = "0 23 21 * * ? ")
     private void configureDateTasks() {
     	schoolAutoCountRecycleService.SchoolAutoCountRecycleByDay();
+    	schoolAutoCountRecycleService.StudentAutoCountRecycleByDay();
     }
 	
 	@Scheduled(cron = "0 10 0 1 * ? ")

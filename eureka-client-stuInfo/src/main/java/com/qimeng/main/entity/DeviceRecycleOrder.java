@@ -19,6 +19,10 @@ public class DeviceRecycleOrder implements Serializable{
 
     private String uuid;
     
+    private String workerUuid;
+    
+    private String workerName;
+    
     private Byte orderType;
     
     private Byte recycleType;
@@ -62,7 +66,23 @@ public class DeviceRecycleOrder implements Serializable{
         this.uuid = uuid == null ? null : uuid.trim();
     }
 
-    public Byte getOrderType() {
+    public String getWorkerUuid() {
+		return workerUuid;
+	}
+
+	public void setWorkerUuid(String workerUuid) {
+		this.workerUuid = workerUuid;
+	}
+
+	public String getWorkerName() {
+		return workerName;
+	}
+
+	public void setWorkerName(String workerName) {
+		this.workerName = workerName;
+	}
+
+	public Byte getOrderType() {
 		return orderType;
 	}
 

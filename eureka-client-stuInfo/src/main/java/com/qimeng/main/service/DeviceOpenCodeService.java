@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.qimeng.main.entity.DecviceOpenCodeLog;
 import com.qimeng.main.entity.DeviceRecycleOrder;
 import com.qimeng.main.entity.DeviceRecycleRealTime;
+import com.qimeng.main.entity.ManagementWorker;
 import com.qimeng.main.util.RedisUtil;
 import com.qimeng.main.util.StaticGlobal;
 import com.qimeng.main.vo.DeviceOrderVo;
@@ -34,6 +35,9 @@ public class DeviceOpenCodeService {
 	DeviceRecycleOrderService deviceRecycleOrderService;
 	@Autowired
 	DeviceRecycleRealTimeService deviceRecycleRealTimeService;
+	@Autowired
+	ManagementWorkerService managementWorkerService;
+	
 	public int createStaticOpenCode() {
 		if (redisUtil.hasKey("OpenKey")) {
 			redisUtil.del("OpenKey");
@@ -51,6 +55,7 @@ public class DeviceOpenCodeService {
 		return decviceOpenCodeLogService.insertDecviceOpenCodeLog(decviceOpenCodeLog);
 	}
 
+	@Deprecated
 	public int createDevOrder(String machineID, DeviceOrderVo deviceOrderVo) {
 
 		String uuid = UUID.randomUUID().toString().replaceAll("-", "");
@@ -80,38 +85,61 @@ public class DeviceOpenCodeService {
 
 	public DeviceOrderVo checkDevOrder(String machineID, DeviceOrderVo deviceOrderVo) {
 
-		if (!redisUtil.hasKey("OrderOpenKey::" + deviceOrderVo.getOrder())) {
+//		if (!redisUtil.hasKey("OrderOpenKey::" + deviceOrderVo.getOrder())) {
+//			throw new RuntimeException("找不到当前开门码");
+//		}
+//		DeviceRecycleOrder deviceRecycleOrder = (DeviceRecycleOrder) redisUtil
+//				.get("OrderOpenKey::" + deviceOrderVo.getOrder());
+//		DeviceRecycleOrder temp = null;
+//		if (deviceRecycleOrder.getOrderType() == StaticGlobal.RECORDER) {
+//			temp = (DeviceRecycleOrder) redisUtil
+//					.get("OrderKey::Recycle::" + machineID + "-" + deviceRecycleOrder.getRecycleType().toString());
+//		} else {
+//			temp = (DeviceRecycleOrder) redisUtil.get("OrderKey::Repair::" + machineID);
+//		}
+//		if (temp == null || !temp.getUuid().equals(deviceRecycleOrder.getUuid())) {
+//			throw new RuntimeException("当前开门码不匹配");
+//		}
+//		Date date=new Date();
+//		redisUtil.del("OrderOpenKey::" + deviceRecycleOrder.getUuid());
+//		if (temp.getOrderType() == StaticGlobal.RECORDER) {
+//			redisUtil.del("OrderKey::Recycle::" + machineID + "-" + temp.getRecycleType().toString());
+//			DeviceRecycleRealTime deviceRecycleRealTime=deviceRecycleRealTimeService.selectDeviceRecycleRealTime(machineID, temp.getRecycleType());
+//			if(deviceRecycleRealTime==null) {
+//				throw new RuntimeException("没有累积重量");
+//			}
+//			deviceRecycleRealTime.setEndTime(date);
+//			temp.setSysCount(deviceRecycleRealTime.getCount());
+//			deviceRecycleRealTimeService.updateDeviceRecycleRealTimeRecycle(deviceRecycleRealTime);
+//		} else {
+//			redisUtil.del("OrderKey::Repair::" + machineID); 
+//		}
+		
+		ManagementWorker worker=managementWorkerService.selectManagementWorker(deviceOrderVo.getOrder(), (byte)1);
+		if(worker==null) {
 			throw new RuntimeException("找不到当前开门码");
 		}
-		DeviceRecycleOrder deviceRecycleOrder = (DeviceRecycleOrder) redisUtil
-				.get("OrderOpenKey::" + deviceOrderVo.getOrder());
-		DeviceRecycleOrder temp = null;
-		if (deviceRecycleOrder.getOrderType() == StaticGlobal.RECORDER) {
-			temp = (DeviceRecycleOrder) redisUtil
-					.get("OrderKey::Recycle::" + machineID + "-" + deviceRecycleOrder.getRecycleType().toString());
-		} else {
-			temp = (DeviceRecycleOrder) redisUtil.get("OrderKey::Repair::" + machineID);
-		}
-		if (temp == null || !temp.getUuid().equals(deviceRecycleOrder.getUuid())) {
-			throw new RuntimeException("当前开门码不匹配");
-		}
 		Date date=new Date();
-		redisUtil.del("OrderOpenKey::" + deviceRecycleOrder.getUuid());
-		if (temp.getOrderType() == StaticGlobal.RECORDER) {
-			redisUtil.del("OrderKey::Recycle::" + machineID + "-" + temp.getRecycleType().toString());
-			DeviceRecycleRealTime deviceRecycleRealTime=deviceRecycleRealTimeService.selectDeviceRecycleRealTime(machineID, temp.getRecycleType());
+		DeviceRecycleOrder temp = new DeviceRecycleOrder();
+	
+		if (worker.getType() == StaticGlobal.RECORDER) {
+			DeviceRecycleRealTime deviceRecycleRealTime=deviceRecycleRealTimeService.selectDeviceRecycleRealTime(machineID, deviceOrderVo.getRecycleType());
 			if(deviceRecycleRealTime==null) {
 				throw new RuntimeException("没有累积重量");
 			}
 			deviceRecycleRealTime.setEndTime(date);
 			temp.setSysCount(deviceRecycleRealTime.getCount());
 			deviceRecycleRealTimeService.updateDeviceRecycleRealTimeRecycle(deviceRecycleRealTime);
-		} else {
-			redisUtil.del("OrderKey::Repair::" + machineID); 
 		}
-		
+		String uuid = UUID.randomUUID().toString().replaceAll("-", "");
+		temp.setUuid(uuid);
 		temp.setCreateTime(date);
-		
+		temp.setOrderType(worker.getType());
+		temp.setRecycleType(deviceOrderVo.getRecycleType());
+		temp.setWorkerUuid(worker.getUuid());
+		temp.setWorkerName(worker.getName());
+		temp.setMachineId(machineID);
+		temp.setbEnd(false);
 		deviceRecycleOrderService.insertDeviceRecycleOrder(temp);
 		
 		deviceOrderVo.setRecycleType(temp.getRecycleType());

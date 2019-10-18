@@ -207,6 +207,7 @@ public class DeviceInformController {
 		}
 	}
 
+	@Deprecated
 	@RequestMapping("/getdevorder")
 	public String getDevOrder(@RequestBody JSONObject message) {
 		RequestMessage<DeviceOrderVo> requestMessage = JSON.parseObject(message.toString(),

@@ -11,6 +11,8 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.TypeReference;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.qimeng.main.dao.GlobalDateDao;
@@ -115,5 +117,15 @@ public class GlobalDateService {
             e.printStackTrace();
         }
         return Integer.parseInt(String.valueOf(between_days));
+	}
+	
+	public Map<String, Integer> getRecycleException() {
+        try {
+        	Map<String, Integer> map=JSONObject.parseObject(getGlobalKeyString("Exception"), new TypeReference<Map<String, Integer>>(){});
+            return map;
+        }catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
 	}
 }

@@ -626,6 +626,16 @@ public class RedisUtil {
             return null;  
         }  
     }
+    
+    public Set<Object> zsrerange(String key, long start, long end) {
+    	try {  
+            return redisTemplate.opsForZSet().reverseRange(key, start, end);
+        } catch (Exception e) {  
+            e.printStackTrace();  
+            return null;  
+        }  
+    }
+    
     public Set<Object>	zrangeByScore(String key, double min, double max){
     	try {  
             return redisTemplate.opsForZSet().rangeByScore(key, min, max);
@@ -643,6 +653,14 @@ public class RedisUtil {
         }  
     }
     
+    public Double incrementScore(String key, Object values, double delta) {
+    	try {  
+    		return redisTemplate.opsForZSet().incrementScore(key,values,delta);
+        } catch (Exception e) {  
+            e.printStackTrace();  
+            return 0.0;  
+        }  
+    }
     
     public long intersectAndStore(String key, String otherKey, String destKey) {
     	try {  

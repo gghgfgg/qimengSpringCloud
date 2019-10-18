@@ -146,6 +146,8 @@ public class StudentUpdatePointsService {
 			}
 			studentRankService.addStudentPoints(studentData); 
 			
+			studentRankService.addStudentRecCount(studentData.getUuid(),wasteType,uint);
+			
 			studentRecycleCount.setActivityCount(studentRecycleCount.getActivityCount()+1);
 			studentRecycleCount.setCount(studentRecycleCount.getCount()+uint);
 			studentRecycleCount.setPoints(studentRecycleCount.getPoints()+points);

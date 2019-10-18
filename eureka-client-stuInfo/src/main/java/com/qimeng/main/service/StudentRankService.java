@@ -46,6 +46,8 @@ public class StudentRankService {
 	public static final String STUCOUNTACT_KEY="Count::StuActCount";
 	public static final String TEACHCOUNTACT_KEY="Count::TeachActCount";
 	
+	public static final String EXCEPTION="Exception::";
+	
 	@Autowired
 	RedisUtil redisUtil;
 	@Autowired
@@ -335,6 +337,24 @@ public class StudentRankService {
 		redisPage.setSize(result.size());
 		return redisPage;
 	}
+
+	public void addStudentRecCount(String uuid, int wasteType, int uint) {
+		// TODO Auto-generated method stub
+		String keyString=EXCEPTION+wasteType;
+		redisUtil.incrementScore(keyString, uuid, uint);
+	}
+	public void cleanStudentRecCount(int wasteType) {
+		// TODO Auto-generated method stub
+		String keyString=EXCEPTION+wasteType;
+		if(redisUtil.hasKey(keyString)){
+			redisUtil.del(keyString);
+		}
+	}
 	
+	public Set<Object> StudentException(int wasteType){
+		String keyString=EXCEPTION+wasteType;
+		Set<Object> set=redisUtil.zsrerange(keyString, 0,-1);
+		return set;
+	}
 }
 

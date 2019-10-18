@@ -14,6 +14,7 @@ import org.springframework.util.StringUtils;
 
 import com.qimeng.main.entity.StudentData;
 import com.qimeng.main.entity.StudentInform;
+import com.qimeng.main.util.IdCardCheck;
 import com.qimeng.main.util.StaticGlobal;
 
 /**
@@ -51,43 +52,42 @@ public class StudentUpdateService {
 
 			for (int i = 0; i < studentInformList.size(); i++) {
 
-				if (!StringUtils.isEmpty(studentInformList.get(i).getIdentityCard())) {
+				if (studentInformList.get(i).getIdentityCard()!=null) {
 					String cardString = studentInformList.get(i).getIdentityCard().replaceAll("\\s*", "");
 
 					studentInformList.get(i).setIdentityCard(StringUtils.isEmpty(cardString) ? null : cardString);
 				}
-
-				if (!StringUtils.isEmpty(studentInformList.get(i).getStudentCode())) {
+				if (studentInformList.get(i).getStudentCode()!=null) {
 					String codeString = studentInformList.get(i).getStudentCode().replaceAll("\\s*", "");
 
 					studentInformList.get(i).setStudentCode(StringUtils.isEmpty(codeString) ? null : codeString);
 				}
-				if (!StringUtils.isEmpty(studentInformList.get(i).getName())) {
+				if (studentInformList.get(i).getName()!=null) {
 					String name = studentInformList.get(i).getName().replaceAll("\\s*", "");
 
 					studentInformList.get(i).setName(StringUtils.isEmpty(name) ? null : name);
 				}
-				if (!StringUtils.isEmpty(studentInformList.get(i).getSex())) {
+				if (studentInformList.get(i).getSex()!=null) {
 					String sex = studentInformList.get(i).getSex().replaceAll("\\s*", "");
 
 					studentInformList.get(i).setSex(StringUtils.isEmpty(sex) ? null : sex);
 				}
-				if (!StringUtils.isEmpty(studentInformList.get(i).getGrade())) {
+				if (studentInformList.get(i).getGrade()!=null) {
 					String grade = studentInformList.get(i).getGrade().replaceAll("\\s*", "");
 
 					studentInformList.get(i).setGrade(StringUtils.isEmpty(grade) ? null : grade);
 				}
-				if (!StringUtils.isEmpty(studentInformList.get(i).getClassS())) {
+				if (studentInformList.get(i).getClassS()!=null) {
 					String classS = studentInformList.get(i).getClassS().replaceAll("\\s*", "");
 
 					studentInformList.get(i).setClassS(StringUtils.isEmpty(classS) ? null : classS);
 				}
-				if (!StringUtils.isEmpty(studentInformList.get(i).getSchoolId())) {
+				if (studentInformList.get(i).getSchoolId()!=null) {
 					String schoolId = studentInformList.get(i).getSchoolId().replaceAll("\\s*", "");
 
 					studentInformList.get(i).setSchoolId(StringUtils.isEmpty(schoolId) ? null : schoolId);
 				}
-				if (!StringUtils.isEmpty(studentInformList.get(i).getTeacherPhone())) {
+				if (studentInformList.get(i).getTeacherPhone()!=null) {
 					String teacherPhone = studentInformList.get(i).getTeacherPhone().replaceAll("\\s*", "");
 
 					studentInformList.get(i).setTeacherPhone(StringUtils.isEmpty(teacherPhone) ? null : teacherPhone);
@@ -128,6 +128,14 @@ public class StudentUpdateService {
 						&& studentInformList.get(i).getIdentityCard().indexOf(".") != -1) {
 					errString += "{第" + String.valueOf(i + 2) + "行,身份证格式不对},";
 					errBoolean = true;
+				}
+				if (!StringUtils.isEmpty(studentInformList.get(i).getIdentityCard())
+						&& studentInformList.get(i).getIdentityCard().endsWith("000")) {
+					if(!IdCardCheck.checkIDNo(studentInformList.get(i).getIdentityCard()))
+					{
+						errString += "{第" + String.valueOf(i + 2) + "行,身份证校验最后3位为0，请确认身份证号有效并单独添加学生},";
+					    errBoolean = true;
+					}
 				}
 				if (!StringUtils.isEmpty(studentInformList.get(i).getStudentCode())
 						&&( studentInformList.get(i).getStudentCode().length() < 15
@@ -227,42 +235,42 @@ public class StudentUpdateService {
 			if (StringUtils.isEmpty(schoolCode) || schoolCode.length() < 10) {
 				throw new RuntimeException("请填写学校校区编号");
 			}
-			if (!StringUtils.isEmpty(studentInform.getIdentityCard())) {
+			if (studentInform.getIdentityCard()!=null) {
 				String cardString = studentInform.getIdentityCard().replaceAll("\\s*", "");
 
 				studentInform.setIdentityCard(StringUtils.isEmpty(cardString) ? null : cardString);
 			}
-			if (!StringUtils.isEmpty(studentInform.getStudentCode())) {
+			if (studentInform.getStudentCode()!=null) {
 				String codeString = studentInform.getStudentCode().replaceAll("\\s*", "");
 
 				studentInform.setStudentCode(StringUtils.isEmpty(codeString) ? null : codeString);
 			}
-			if (!StringUtils.isEmpty(studentInform.getName())) {
+			if (studentInform.getName()!=null) {
 				String name = studentInform.getName().replaceAll("\\s*", "");
 
 				studentInform.setName(StringUtils.isEmpty(name) ? null : name);
 			}
-			if (!StringUtils.isEmpty(studentInform.getSex())) {
+			if (studentInform.getSex()!=null) {
 				String sex = studentInform.getSex().replaceAll("\\s*", "");
 
 				studentInform.setSex(StringUtils.isEmpty(sex) ? null : sex);
 			}
-			if (!StringUtils.isEmpty(studentInform.getGrade())) {
+			if (studentInform.getGrade()!=null) {
 				String grade = studentInform.getGrade().replaceAll("\\s*", "");
 
 				studentInform.setGrade(StringUtils.isEmpty(grade) ? null : grade);
 			}
-			if (!StringUtils.isEmpty(studentInform.getClassS())) {
+			if (studentInform.getClassS()!=null) {
 				String classS = studentInform.getClassS().replaceAll("\\s*", "");
 
 				studentInform.setClassS(StringUtils.isEmpty(classS) ? null : classS);
 			}
-			if (!StringUtils.isEmpty(studentInform.getSchoolId())) {
+			if (studentInform.getSchoolId()!=null) {
 				String schoolId = studentInform.getSchoolId().replaceAll("\\s*", "");
 
 				studentInform.setSchoolId(StringUtils.isEmpty(schoolId) ? null : schoolId);
 			}
-			if (!StringUtils.isEmpty(studentInform.getTeacherPhone())) {
+			if (studentInform.getTeacherPhone()!=null) {
 				String teacherPhone = studentInform.getTeacherPhone().replaceAll("\\s*", "");
 
 				studentInform.setTeacherPhone(StringUtils.isEmpty(teacherPhone) ? null : teacherPhone);
